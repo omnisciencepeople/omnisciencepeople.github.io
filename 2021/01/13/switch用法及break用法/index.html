@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>求一个数是否是素数 | My Blog</title>
+  <title>switch用法及break用法 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="#include&lt;stdio.h&gt;int main(){    int i,j;    printf(“请输入你要判断的数字:”);    scanf(“%d”,&amp;i);    for(j&#x3D;2;j&lt;&#x3D;i;j++)        if(i%j&#x3D;&#x3D;0)           break;    if(i&#x3D;&#x3D;j)       printf(“Yes!\n”);    else">
+  <meta name="description" content="#include&lt;stdio.h&gt;int main(){    int i;    printf(“请输入你想要进入的楼层:”);    scanf(“%d”,&amp;i);    switch(i)    {        case 1:             printf(“1层开\n”);             break;        case 2:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="求一个数是否是素数">
-<meta property="og:url" content="https://username.github.io/2021/01/13/%E6%B1%82%E4%B8%80%E4%B8%AA%E6%95%B0%E6%98%AF%E5%90%A6%E6%98%AF%E7%B4%A0%E6%95%B0/index.html">
+<meta property="og:title" content="switch用法及break用法">
+<meta property="og:url" content="https://username.github.io/2021/01/13/switch%E7%94%A8%E6%B3%95%E5%8F%8Abreak%E7%94%A8%E6%B3%95/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="#include&lt;stdio.h&gt;int main(){    int i,j;    printf(“请输入你要判断的数字:”);    scanf(“%d”,&amp;i);    for(j&#x3D;2;j&lt;&#x3D;i;j++)        if(i%j&#x3D;&#x3D;0)           break;    if(i&#x3D;&#x3D;j)       printf(“Yes!\n”);    else">
+<meta property="og:description" content="#include&lt;stdio.h&gt;int main(){    int i;    printf(“请输入你想要进入的楼层:”);    scanf(“%d”,&amp;i);    switch(i)    {        case 1:             printf(“1层开\n”);             break;        case 2:">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-01-13T08:11:22.000Z">
-<meta property="article:modified_time" content="2021-01-13T08:18:43.563Z">
+<meta property="article:published_time" content="2021-01-13T14:24:07.000Z">
+<meta property="article:modified_time" content="2021-01-13T14:37:33.797Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-求一个数是否是素数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-switch用法及break用法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/01/13/%E6%B1%82%E4%B8%80%E4%B8%AA%E6%95%B0%E6%98%AF%E5%90%A6%E6%98%AF%E7%B4%A0%E6%95%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T08:11:22.000Z" itemprop="datePublished">2021-01-13</time>
+    <a href="/2021/01/13/switch%E7%94%A8%E6%B3%95%E5%8F%8Abreak%E7%94%A8%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2021-01-13T14:24:07.000Z" itemprop="datePublished">2021-01-13</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      求一个数是否是素数
+      switch用法及break用法
     </h1>
   
 
@@ -95,12 +95,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>#include&lt;stdio.h&gt;<br>int main()<br>{<br>    int i,j;<br>    printf(“请输入你要判断的数字:”);<br>    scanf(“%d”,&amp;i);<br>    for(j=2;j&lt;=i;j++)<br>        if(i%j==0)<br>           break;<br>    if(i==j)<br>       printf(“Yes!\n”);<br>    else<br>       printf(“No!”\n);<br>    return 0;<br>}</p>
+        <p>#include&lt;stdio.h&gt;<br>int main()<br>{<br>    int i;<br>    printf(“请输入你想要进入的楼层:”);<br>    scanf(“%d”,&amp;i);<br>    switch(i)<br>    {<br>        case 1:<br>             printf(“1层开\n”);<br>             break;<br>        case 2:<br>             printf(“2层开\n”);<br>             break;<br>        case 3:<br>             printf(“3层开\n”);<br>             break;<br>        case 4:<br>             printf(“4层开\n”);<br>             break;<br>        default:<br>             printf(“输入楼层错误\n”);<br>             break;<br>    }<br>    return 0;<br>}<br>/*<br>switch(i)<br>{<br>    case 1:<br>         A;<br>    case 2:<br>         B;<br>    default:<br>         C;<br>    case 3:<br>         D;<br>}<br>输入1，执行A B C D;<br>输入2，执行B C D;<br>输入3，执行D;<br>输入4，执行C D;<br>break 用法:<br>1.终止距离其最近的for循环；<br>2.终止switch语句；<br>3.终止if语句（此时if属于循环内部的语句）；<br>*/</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E6%B1%82%E4%B8%80%E4%B8%AA%E6%95%B0%E6%98%AF%E5%90%A6%E6%98%AF%E7%B4%A0%E6%95%B0/" data-id="ckjv5hd9i00009wvp58yz17ry" data-title="求一个数是否是素数" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/13/switch%E7%94%A8%E6%B3%95%E5%8F%8Abreak%E7%94%A8%E6%B3%95/" data-id="ckjvj3k90000078vpateg903x" data-title="switch用法及break用法" class="article-share-link">Teilen</a>
       
       
       
@@ -110,19 +110,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/01/13/C%E8%AF%AD%E8%A8%80printf%E7%94%A8%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          C语言printf用法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/01/13/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">欢迎来到我的博客</div>
+      <div class="article-nav-title">求一元二次方程解</div>
     </a>
   
 </nav>
