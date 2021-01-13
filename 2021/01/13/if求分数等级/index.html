@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>C语言printf用法 | My Blog</title>
+  <title>if求分数等级 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; int main(){    printf(“Hello world!\n”);    int i&#x3D;5,j&#x3D;1;    printf(“%d\n”,i);    printf(“%d %d\n”,i,j);    printf(“%d,%d\n”,i,j);    printf(“i&#x3D;%d,j&#x3D;%d">
+  <meta name="description" content="#include&lt;stdio.h&gt;int main(){    float score;    char ch;    do    {    printf(“请输入你的成绩:”);    scanf(“%f”,&amp;score);    if(score&gt;100)        printf(“做梦!\n”);    else if(80&lt;&#x3D;score&amp;&amp;amp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言printf用法">
-<meta property="og:url" content="https://username.github.io/2021/01/13/C%E8%AF%AD%E8%A8%80printf%E7%94%A8%E6%B3%95/index.html">
+<meta property="og:title" content="if求分数等级">
+<meta property="og:url" content="https://username.github.io/2021/01/13/if%E6%B1%82%E5%88%86%E6%95%B0%E7%AD%89%E7%BA%A7/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; int main(){    printf(“Hello world!\n”);    int i&#x3D;5,j&#x3D;1;    printf(“%d\n”,i);    printf(“%d %d\n”,i,j);    printf(“%d,%d\n”,i,j);    printf(“i&#x3D;%d,j&#x3D;%d">
+<meta property="og:description" content="#include&lt;stdio.h&gt;int main(){    float score;    char ch;    do    {    printf(“请输入你的成绩:”);    scanf(“%f”,&amp;score);    if(score&gt;100)        printf(“做梦!\n”);    else if(80&lt;&#x3D;score&amp;&amp;amp">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-01-13T08:27:44.000Z">
-<meta property="article:modified_time" content="2021-01-13T08:28:14.010Z">
+<meta property="article:published_time" content="2021-01-13T09:20:56.000Z">
+<meta property="article:modified_time" content="2021-01-13T09:21:40.058Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-C语言printf用法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-if求分数等级" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/01/13/C%E8%AF%AD%E8%A8%80printf%E7%94%A8%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T08:27:44.000Z" itemprop="datePublished">2021-01-13</time>
+    <a href="/2021/01/13/if%E6%B1%82%E5%88%86%E6%95%B0%E7%AD%89%E7%BA%A7/" class="article-date">
+  <time class="dt-published" datetime="2021-01-13T09:20:56.000Z" itemprop="datePublished">2021-01-13</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      C语言printf用法
+      if求分数等级
     </h1>
   
 
@@ -95,13 +95,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main()<br>{<br>    printf(“Hello world!\n”);<br>    int i=5,j=1;<br>    printf(“%d\n”,i);<br>    printf(“%d %d\n”,i,j);<br>    printf(“%d,%d\n”,i,j);<br>    printf(“i=%d,j=%d\n”,i,j);<br>    printf(“%5d%5d\n”,i,j);<br>    printf(“%-5d%-5d\n”,i,j);<br>    float a=1.23;<br>    printf(“%f\n”,a);<br>    printf(“%5.3f\n”,a);<br>    printf(“%5.1f\n”,a);<br>    printf(“%-5.1f\n”,a);<br>    float b=126.456789;<br>    printf(“%e\n”,b);<br>    printf(“%15.8e\n”,b);<br>    printf(“%-15.1e\n”,b);<br>    printf(“%%d\n”);<br>    printf(“\\n”);<br>    printf(“&quot;&quot;\n”);<br>    printf(“%f%%\n”,a);<br>    return 0;<br>}</p>
+        <p>#include&lt;stdio.h&gt;<br>int main()<br>{<br>    float score;<br>    char ch;<br>    do<br>    {<br>    printf(“请输入你的成绩:”);<br>    scanf(“%f”,&amp;score);<br>    if(score&gt;100)<br>        printf(“做梦!\n”);<br>    else if(80&lt;=score&amp;&amp;score&lt;=100)<br>        printf(“优秀!\n”);<br>    else if(70&lt;=score&amp;&amp;score&lt;80)<br>        printf(“良好!\n”);<br>    else if(60&lt;=score&amp;&amp;score&lt;70)<br>        printf(“及格!\n”);<br>    else if(0&lt;=score&amp;&amp;score&lt;60)<br>        printf(“挂科!\n”);<br>    else<br>        printf(“你输入的成绩错误!\n”);<br>    printf(“你是否还要继续（Y/N）:\n”);<br>    scanf(“ %c”,&amp;ch);//这里%c前加一个空格才可实现人机交互；<br>    }while(ch==’Y’);<br>    return 0;<br>}</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/C%E8%AF%AD%E8%A8%80printf%E7%94%A8%E6%B3%95/" data-id="ckjv5wiuh0000agvpeo1g9ypw" data-title="C语言printf用法" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/01/13/if%E6%B1%82%E5%88%86%E6%95%B0%E7%AD%89%E7%BA%A7/" data-id="ckjv7tdni0000fsvp4nnb11et" data-title="if求分数等级" class="article-share-link">Share</a>
       
       
       
@@ -111,19 +110,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/01/13/C%E8%AF%AD%E8%A8%80scanf%E7%94%A8%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          C语言scanf用法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/01/13/%E6%B1%82%E4%B8%80%E4%B8%AA%E6%95%B0%E6%98%AF%E5%90%A6%E6%98%AF%E7%B4%A0%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/01/13/%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">求一个数是否是素数</div>
+      <div class="article-nav-title">程序执行</div>
     </a>
   
 </nav>
