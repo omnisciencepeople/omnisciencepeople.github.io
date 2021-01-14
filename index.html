@@ -93,7 +93,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>#include&lt;stdio.h&gt;<br>int main()<br>{<br>    int a[2][3]=hello{{1,2,3},{4,5,6}};<br>    int b[3][2],i,j;<br>    for(i=0;i&lt;2;i++)<br>    {<br>       for(j=0;j&lt;3;j++)<br>       {<br>           printf(“%d “,a[i][j]);<br>           b[j][i]=a[i][j];<br>       }<br>       printf(“\n”);<br>    }<br>    printf(“互换后的结果:\n”);<br>    for(i=0;i&lt;3;i++)<br>    {<br>        for(j=0;j&lt;2;j++)<br>            printf(“%d “,b[i][j]);<br>        printf(“\n”);<br>    }<br>    return 0;<br>}</p>
+        <p>#include&lt;stdio.h&gt;<br>int main()<br>{<br>    int a[2][3]={{1,2,3},{4,5,6}};<br>    int b[3][2],i,j;<br>    for(i=0;i&lt;2;i++)<br>    {<br>       for(j=0;j&lt;3;j++)<br>       {<br>           printf(“%d “,a[i][j]);<br>           b[j][i]=a[i][j];<br>       }<br>       printf(“\n”);<br>    }<br>    printf(“互换后的结果:\n”);<br>    for(i=0;i&lt;3;i++)<br>    {<br>        for(j=0;j&lt;2;j++)<br>            printf(“%d “,b[i][j]);<br>        printf(“\n”);<br>    }<br>    return 0;<br>}</p>
 
       
     </div>
