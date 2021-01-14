@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>求1+1/2+...+1/100 | My Blog</title>
+  <title>一维数组冒泡排序 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="#include&lt;stdio.h&gt;int main(){    int i;    float sum&#x3D;0;    for(i&#x3D;1;i&lt;&#x3D;100;i++)        sum&#x3D;sum+1.0&#x2F;i;&#x2F;&#x2F;或者为sum&#x3D;sum+1&#x2F;float（i）；    printf(“sum&#x3D;%f\n”,sum);    return 0;}&#x2F;*整形数据&#x2F;整形数据，结果为整形；除法运算符中若有至">
+  <meta name="description" content="#include&lt;stdio.h&gt;int main(){    int i,j,t;    int a[10];    printf(“请为数组赋值(中间以空格相隔):\n”);    for(i&#x3D;0;i&lt;10;i++)        scanf(“%d”,&amp;a[i]);    for(i&#x3D;0;i&lt;9;i++)       for(j&#x3D;0;j&lt;9-i;j++)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="求1+1&#x2F;2+...+1&#x2F;100">
-<meta property="og:url" content="https://username.github.io/2021/01/13/%E6%B1%821-1-2-1-100/index.html">
+<meta property="og:title" content="一维数组冒泡排序">
+<meta property="og:url" content="https://username.github.io/2021/01/14/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="#include&lt;stdio.h&gt;int main(){    int i;    float sum&#x3D;0;    for(i&#x3D;1;i&lt;&#x3D;100;i++)        sum&#x3D;sum+1.0&#x2F;i;&#x2F;&#x2F;或者为sum&#x3D;sum+1&#x2F;float（i）；    printf(“sum&#x3D;%f\n”,sum);    return 0;}&#x2F;*整形数据&#x2F;整形数据，结果为整形；除法运算符中若有至">
+<meta property="og:description" content="#include&lt;stdio.h&gt;int main(){    int i,j,t;    int a[10];    printf(“请为数组赋值(中间以空格相隔):\n”);    for(i&#x3D;0;i&lt;10;i++)        scanf(“%d”,&amp;a[i]);    for(i&#x3D;0;i&lt;9;i++)       for(j&#x3D;0;j&lt;9-i;j++)">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-01-13T09:57:18.000Z">
-<meta property="article:modified_time" content="2021-01-13T10:14:43.528Z">
+<meta property="article:published_time" content="2021-01-14T02:18:50.000Z">
+<meta property="article:modified_time" content="2021-01-14T02:31:50.155Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-求1-1-2-1-100" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-一维数组冒泡排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/01/13/%E6%B1%821-1-2-1-100/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T09:57:18.000Z" itemprop="datePublished">2021-01-13</time>
+    <a href="/2021/01/14/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time class="dt-published" datetime="2021-01-14T02:18:50.000Z" itemprop="datePublished">2021-01-14</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      求1+1/2+...+1/100
+      一维数组冒泡排序
     </h1>
   
 
@@ -95,13 +95,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>#include&lt;stdio.h&gt;<br>int main()<br>{<br>    int i;<br>    float sum=0;<br>    for(i=1;i&lt;=100;i++)<br>        sum=sum+1.0/i;//或者为sum=sum+1/float（i）；<br>    printf(“sum=%f\n”,sum);<br>    return 0;<br>}<br>/*<br>整形数据/整形数据，结果为整形；<br>除法运算符中若有至少一个浮点型，结果为浮点型；<br>商的符号由除数和被除数决定<br>因此对上述sum求值过程中进行强制类型转换；</p>
-<p>取余运算符符号只和被除数符号相同；<br>*/</p>
+        <p>#include&lt;stdio.h&gt;<br>int main()<br>{<br>    int i,j,t;<br>    int a[10];<br>    printf(“请为数组赋值(中间以空格相隔):\n”);<br>    for(i=0;i&lt;10;i++)<br>        scanf(“%d”,&amp;a[i]);<br>    for(i=0;i&lt;9;i++)<br>       for(j=0;j&lt;9-i;j++)<br>           if(a[j]&gt;a[j+1])<br>              {<br>                  t=a[j];<br>                  a[j]=a[j+1];<br>                  a[j+1]=t;<br>              }<br>    printf(“排序后的结果为:\n”);<br>    for(i=0;i&lt;10;i++)<br>        printf(“%d “,a[i]);<br>    printf(“\n”);<br>    return 0;<br>}</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E6%B1%821-1-2-1-100/" data-id="ckjv9pqs90000e4vph5ir6288" data-title="求1+1/2+...+1/100" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/14/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckjw8lzmm0000t0vp2ztk9niw" data-title="一维数组冒泡排序" class="article-share-link">Teilen</a>
       
       
       
@@ -111,19 +110,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/01/13/%E6%B1%821-1-2-1-3-1-4-1-100/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          求1-1/2+1/3-1/4+...-1/100
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/01/13/%E5%A6%82%E4%BD%95%E7%9C%8B%E6%87%82%E7%A8%8B%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/01/13/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E9%80%86%E5%BA%8F%E8%BE%93%E5%87%BA/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">如何看懂程序</div>
+      <div class="article-nav-title">一维数组逆序输出</div>
     </a>
   
 </nav>
