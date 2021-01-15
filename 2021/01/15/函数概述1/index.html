@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>scanf输入字符串时注意事项 | My Blog</title>
+  <title>函数概述1 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="#include&lt;stdio.h&gt;int main(){    char a[100];    scanf(“%s”,&amp;a);&#x2F;&#x2F;error:字符数组中字符数组名即为该数组第一个元素的地址或者说该数组的起始地址；    scanf(“%s”,a)    printf(“%s\n”,a);&#x2F;&#x2F;字符数组以%s输出时，输出控制项为字符数组名；    return 0;}#includ">
+  <meta name="description" content="为什么需要函数：1.函数可避免大量重复性代码；2.有利于程序模块化；函数定义1：逻辑上，能完成特定独立功能的代码单元块；物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；函数适用范围：适用大量同类型问题；函数功能越单一越好（可移植性越强）；函数定义2：  函数返回值类型 函数名（函数形参）  {      函数执行体  }定义2本质：1.详细描述函数之所以能实现某个特定功能的具体实现方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="scanf输入字符串时注意事项">
-<meta property="og:url" content="https://username.github.io/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/index.html">
+<meta property="og:title" content="函数概述1">
+<meta property="og:url" content="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B01/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="#include&lt;stdio.h&gt;int main(){    char a[100];    scanf(“%s”,&amp;a);&#x2F;&#x2F;error:字符数组中字符数组名即为该数组第一个元素的地址或者说该数组的起始地址；    scanf(“%s”,a)    printf(“%s\n”,a);&#x2F;&#x2F;字符数组以%s输出时，输出控制项为字符数组名；    return 0;}#includ">
+<meta property="og:description" content="为什么需要函数：1.函数可避免大量重复性代码；2.有利于程序模块化；函数定义1：逻辑上，能完成特定独立功能的代码单元块；物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；函数适用范围：适用大量同类型问题；函数功能越单一越好（可移植性越强）；函数定义2：  函数返回值类型 函数名（函数形参）  {      函数执行体  }定义2本质：1.详细描述函数之所以能实现某个特定功能的具体实现方法">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-01-14T10:07:59.000Z">
-<meta property="article:modified_time" content="2021-01-14T13:45:44.508Z">
+<meta property="article:published_time" content="2021-01-15T01:35:13.000Z">
+<meta property="article:modified_time" content="2021-01-15T02:55:56.179Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-scanf输入字符串时注意事项" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-函数概述1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="article-date">
-  <time class="dt-published" datetime="2021-01-14T10:07:59.000Z" itemprop="datePublished">2021-01-14</time>
+    <a href="/2021/01/15/%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B01/" class="article-date">
+  <time class="dt-published" datetime="2021-01-15T01:35:13.000Z" itemprop="datePublished">2021-01-15</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      scanf输入字符串时注意事项
+      函数概述1
     </h1>
   
 
@@ -95,12 +95,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>#include&lt;stdio.h&gt;<br>int main()<br>{<br>    char a[100];<br>    scanf(“%s”,&amp;a);//error:字符数组中字符数组名即为该数组第一个元素的地址或者说该数组的起始地址；<br>    scanf(“%s”,a)<br>    printf(“%s\n”,a);//字符数组以%s输出时，输出控制项为字符数组名；<br>    return 0;<br>}<br>#include&lt;stdio.h&gt;<br>int main()<br>{<br>    char a[100],b[100],c[100];<br>    scanf(“%s%s%s”,a,b,c);//若输入How are you?输出How are you?；若输入Howareyou?输出无输出;有空格字符分隔作为三个字符串输入，无空格字符，当作一个字符串输入；<br>    两者a[100],b[100],c[100]不同<br>    printf(“%s%s%s\n”,a,b,c);//字符数组以%s输出时，输出控制项为字符数组名；<br>    char ch[100];<br>    scanf(“%s”,ch);//若输入How are you？//输出How；系统将空格字符当作字符串间的分隔符故输出How<br>    printf(“%s\n”,ch);<br>    return 0;<br>}<br>//字符串的输出只需要字符数组首地址即可，系统会沿着第一个字符的地址找下去直至遇到\0；系统这么做的前提是数组为连续分配的内存；<br>疑问：<br>    char ch[1或2];<br>    scanf(“%s”,ch);//若输入How are you？为什么输出How；<br>    printf(“%s\n”,ch);</p>
+        <p>为什么需要函数：<br>1.函数可避免大量重复性代码；<br>2.有利于程序模块化；<br>函数定义1：<br>逻辑上，能完成特定独立功能的代码单元块；<br>物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；<br>函数适用范围：<br>适用大量同类型问题；<br>函数功能越单一越好（可移植性越强）；<br>函数定义2：<br>  函数返回值类型 函数名（函数形参）<br>  {<br>      函数执行体<br>  }<br>定义2本质：<br>1.详细描述函数之所以能实现某个特定功能的具体实现方法；<br>2.return表达式：向主调函数返回函数值；为空则表示终止函数；<br>3.函数返回值类型称函数类型；如果函数返回值类型和return表达式中数据类型不同的话，以函数名前返回值类型为主；（函数类型决定返回值类型）<br>函数分类：<br>有参函数和无参函数；<br>有返回值函数和无返回值函数；<br>库函数和用户自定义函数；<br>普通函数和主函数；<br>值传递函数和地址传递函数；<br>函数注意问题：<br>一个程序有且只有一个主函数；<br>主函数可调用普通函数；<br>普通函数不可调用主函数；<br>普通函数可相互调用；<br>程序从主函数入主函数出；<br>函数必须先定义后使用；<br>函数声明：<br>1.告诉编译器即将出现的若干个字母代表函数；<br>2.告诉编译器即将出现的若干个字母代表函数具体情况；<br>3.其为一个语句必加分号；<br>4.对库函数的声明是通过#include&lt;库函数所在文件名.h&gt;来实现的；<br>函数形参和实参：<br>个数相同；位置对应；类型相互兼容；<br>函数重要性：<br>函数为C语言的基本单位，类为Java/C++/C#的基本单位；<br>常见的系统函数：<br>sqrt:求平方根；<br>abs：求整型数据的绝对值；<br>fabs：求浮点型数据绝对值；<br>变量分类：<br>1.按作用域：全局变量和局部变量；<br>2.按存储方式：静态局部变量，自动变量，寄存器变量；</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" data-id="ckjwqignx0000rkvpg3vea5yz" data-title="scanf输入字符串时注意事项" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B01/" data-id="ckjxowwbp00015cvp8bkhetru" data-title="函数概述1" class="article-share-link">Teilen</a>
       
       
       
@@ -110,19 +110,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/01/14/%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/01/15/%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B02/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
-          使用字符串处理函数
+          函数概述2
         
       </div>
     </a>
   
   
-    <a href="/2021/01/14/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/01/15/%E6%AF%94%E8%BE%833%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%BE%E5%87%BA%E5%85%B6%E4%B8%AD%E6%9C%80%E5%A4%A7%E8%80%85/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">字符数组</div>
+      <div class="article-nav-title">比较3个字符串找出其中最大者</div>
     </a>
   
 </nav>
