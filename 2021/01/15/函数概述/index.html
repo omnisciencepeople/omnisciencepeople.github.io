@@ -14,7 +14,7 @@
 <meta property="og:description" content="为什么需要函数：1.函数可避免大量重复性代码；2.有利于程序模块化；函数定义1：逻辑上，能完成特定独立功能的代码单元块；物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；函数适用范围：适用大量同类型问题；函数功能越单一越好（可移植性越强）；函数定义2：  函数返回值类型 函数名（函数形参）  {      函数执行体  }定义2本质：1.详细描述函数之所以能实现某个特定功能的具体实现方法">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-15T01:35:13.000Z">
-<meta property="article:modified_time" content="2021-01-15T04:59:14.984Z">
+<meta property="article:modified_time" content="2021-01-16T09:34:08.348Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -63,10 +63,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -95,12 +95,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>为什么需要函数：<br>1.函数可避免大量重复性代码；<br>2.有利于程序模块化；<br>函数定义1：<br>逻辑上，能完成特定独立功能的代码单元块；<br>物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；<br>函数适用范围：<br>适用大量同类型问题；<br>函数功能越单一越好（可移植性越强）；<br>函数定义2：<br>  函数返回值类型 函数名（函数形参）<br>  {<br>      函数执行体<br>  }<br>定义2本质：<br>1.详细描述函数之所以能实现某个特定功能的具体实现方法；<br>2.return表达式：向主调函数返回函数值；为空则表示终止函数；<br>3.函数返回值类型称函数类型；如果函数返回值类型和return表达式中数据类型不同的话，以函数名前返回值类型为主；（函数类型决定返回值类型）<br>函数分类：<br>有参函数和无参函数；<br>有返回值函数和无返回值函数；<br>库函数和用户自定义函数；<br>普通函数和主函数；<br>值传递函数和地址传递函数；<br>函数注意问题：<br>一个程序有且只有一个主函数；<br>主函数可调用普通函数；<br>普通函数不可调用主函数；<br>普通函数可相互调用；<br>程序从主函数入主函数出；<br>函数必须先定义后使用；<br>函数声明：<br>1.告诉编译器即将出现的若干个字母代表函数；<br>2.告诉编译器即将出现的若干个字母代表函数具体情况；<br>3.其为一个语句必加分号；<br>4.对库函数的声明是通过#include&lt;库函数所在文件名.h&gt;来实现的；<br>函数形参和实参：<br>个数相同；位置对应；类型相互兼容；<br>函数重要性：<br>函数为C语言的基本单位，类为Java/C++/C#的基本单位；<br>常见的系统函数：<br>sqrt:求平方根；<br>abs：求整型数据的绝对值；<br>fabs：求浮点型数据绝对值；<br>变量分类：<br>1.按作用域：全局变量和局部变量；<br>2.按存储方式：静态局部变量，自动变量，寄存器变量；<br>注：在一个函数内部定义的变量或函数的形参称为局部变量；<br>在所有函数外部定义的变量称全局变量；<br>全局变量和局部变量命名冲突问题：<br>在一个函数内部，若定义一个局部变量，其名与全局变量相同，局部变量会屏蔽掉全局变量；<br>俗称“强龙不压地头蛇”。<br>例如：<br>#include&lt;stdio.h&gt;<br>int i=99;//定义一个全局变量；<br>void f(int i)//定义一个局部变量，名字和全局变量相同；<br>{<br>  printf(“%d\n”,i);<br>}<br>int main()<br>{<br>   f(8);//调用f函数；<br>   return 0;<br>}<br>//输出8，而非99；</p>
+        <p>为什么需要函数：<br>1.函数可避免大量重复性代码；<br>2.有利于程序模块化；<br>函数定义1：<br>逻辑上，能完成特定独立功能的代码单元块；<br>物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；<br>函数适用范围：<br>适用大量同类型问题；<br>函数功能越单一越好（可移植性越强）；<br>函数定义2：<br>  函数返回值类型 函数名（函数形参）<br>  {<br>      函数执行体<br>  }<br>定义2本质：<br>1.详细描述函数之所以能实现某个特定功能的具体实现方法；<br>2.return表达式：向主调函数返回函数值；为空则表示终止函数；<br>3.函数返回值类型称函数类型；如果函数返回值类型和return表达式中数据类型不同的话，以函数名前返回值类型为主；（函数类型决定返回值类型）<br>函数分类：<br>有参函数和无参函数；<br>有返回值函数和无返回值函数；<br>库函数和用户自定义函数；<br>普通函数和主函数；<br>值传递函数和地址传递函数；<br>函数注意问题：<br>一个程序有且只有一个主函数；<br>主函数可调用普通函数；<br>普通函数不可调用主函数；<br>普通函数可相互调用；<br>程序从主函数入主函数出；<br>函数必须先定义后使用；<br>函数声明：<br>1.告诉编译器即将出现的若干个字母代表函数；<br>2.告诉编译器即将出现的若干个字母代表函数具体情况；<br>3.其为一个语句必加分号；<br>4.对库函数的声明是通过#include&lt;库函数所在文件名.h&gt;来实现的；<br>函数形参和实参：<br>个数相同；位置对应；类型相互兼容；<br>函数重要性：<br>函数为C语言的基本单位，类为Java/C++/C#的基本单位；<br>常见的系统函数：<br>sqrt:求平方根；<br>abs：求整型数据的绝对值；<br>fabs：求浮点型数据绝对值；<br>变量分类：<br>1.按作用域：全局变量和局部变量；<br>2.按存储方式：静态局部变量，自动变量，寄存器变量,静态外部变量，外部变量；<br>注：在一个函数内部定义的变量或函数的形参称为局部变量；<br>在所有函数外部定义的变量称全局变量；<br>全局变量和局部变量命名冲突问题：<br>在一个函数内部，若定义一个局部变量，其名与全局变量相同，局部变量会屏蔽掉全局变量；<br>俗称“强龙不压地头蛇”。<br>例如：<br>#include&lt;stdio.h&gt;<br>int i=99;//定义一个全局变量；<br>void f(int i)//定义一个局部变量，名字和全局变量相同；<br>{<br>  printf(“%d\n”,i);<br>}<br>int main()<br>{<br>   f(8);//调用f函数；<br>   return 0;<br>}<br>//输出8，而非99；</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B0/" data-id="ckjxwgffc0001gsvp9gz23bsr" data-title="函数概述" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B0/" data-id="ckjxwgffc0001gsvp9gz23bsr" data-title="函数概述" class="article-share-link">Share</a>
       
       
       
@@ -111,7 +111,7 @@
 <nav id="article-nav">
   
     <a href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E6%A6%82%E8%BF%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
+      <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
           函数递归概述
@@ -121,7 +121,7 @@
   
   
     <a href="/2021/01/15/%E6%AF%94%E8%BE%833%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%BE%E5%87%BA%E5%85%B6%E4%B8%AD%E6%9C%80%E5%A4%A7%E8%80%85/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Älter</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">比较3个字符串找出其中最大者</div>
     </a>
   
@@ -145,7 +145,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -155,9 +155,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/01/16/%E7%94%A8%E5%B8%83%E5%B0%94%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E7%B4%A0%E6%95%B0/">用布尔函数判断是否为素数</a>
+          </li>
         
           <li>
             <a href="/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/">函数变量之全局变量</a>
@@ -173,10 +177,6 @@
         
           <li>
             <a href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/">函数递归之流程解析</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E9%98%B6%E4%B9%98/">函数递归之阶乘</a>
           </li>
         
       </ul>
