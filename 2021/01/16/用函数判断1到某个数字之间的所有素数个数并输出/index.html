@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>continue用法 | My Blog</title>
+  <title>用函数判断1到某个数字之间的所有素数个数并输出 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="#include&lt;stdio.h&gt;int main(){    for(A;B;C)    {        D;        E;        continue;        F;        G;    }    return 0;}&#x2F;*执行顺序A-&gt;B-&gt;D-&gt;E-&gt;C-&gt;…执行过程中跳过了F和G；continue用于跳过本次循环余下的语句，">
+  <meta name="description" content="#include&lt;stdio.h&gt;#include&lt;stdbool.h&gt;bool Isprime(int val);void traverse(int val);int main(){    int val;    char ch;    do    {    printf(“请输入你想要输入的数字:”);    scanf(“%d”,&amp;val);    print">
 <meta property="og:type" content="article">
-<meta property="og:title" content="continue用法">
-<meta property="og:url" content="https://username.github.io/2021/01/13/continue%E7%94%A8%E6%B3%95/index.html">
+<meta property="og:title" content="用函数判断1到某个数字之间的所有素数个数并输出">
+<meta property="og:url" content="https://username.github.io/2021/01/16/%E7%94%A8%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD1%E5%88%B0%E6%9F%90%E4%B8%AA%E6%95%B0%E5%AD%97%E4%B9%8B%E9%97%B4%E7%9A%84%E6%89%80%E6%9C%89%E7%B4%A0%E6%95%B0%E4%B8%AA%E6%95%B0%E5%B9%B6%E8%BE%93%E5%87%BA/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="#include&lt;stdio.h&gt;int main(){    for(A;B;C)    {        D;        E;        continue;        F;        G;    }    return 0;}&#x2F;*执行顺序A-&gt;B-&gt;D-&gt;E-&gt;C-&gt;…执行过程中跳过了F和G；continue用于跳过本次循环余下的语句，">
+<meta property="og:description" content="#include&lt;stdio.h&gt;#include&lt;stdbool.h&gt;bool Isprime(int val);void traverse(int val);int main(){    int val;    char ch;    do    {    printf(“请输入你想要输入的数字:”);    scanf(“%d”,&amp;val);    print">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-01-13T14:38:54.000Z">
-<meta property="article:modified_time" content="2021-01-13T14:43:33.738Z">
+<meta property="article:published_time" content="2021-01-16T09:46:34.000Z">
+<meta property="article:modified_time" content="2021-01-16T10:01:09.663Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-continue用法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-用函数判断1到某个数字之间的所有素数个数并输出" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/01/13/continue%E7%94%A8%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T14:38:54.000Z" itemprop="datePublished">2021-01-13</time>
+    <a href="/2021/01/16/%E7%94%A8%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD1%E5%88%B0%E6%9F%90%E4%B8%AA%E6%95%B0%E5%AD%97%E4%B9%8B%E9%97%B4%E7%9A%84%E6%89%80%E6%9C%89%E7%B4%A0%E6%95%B0%E4%B8%AA%E6%95%B0%E5%B9%B6%E8%BE%93%E5%87%BA/" class="article-date">
+  <time class="dt-published" datetime="2021-01-16T09:46:34.000Z" itemprop="datePublished">2021-01-16</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      continue用法
+      用函数判断1到某个数字之间的所有素数个数并输出
     </h1>
   
 
@@ -95,12 +95,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>#include&lt;stdio.h&gt;<br>int main()<br>{<br>    for(A;B;C)<br>    {<br>        D;<br>        E;<br>        continue;<br>        F;<br>        G;<br>    }<br>    return 0;<br>}<br>/*<br>执行顺序A-&gt;B-&gt;D-&gt;E-&gt;C-&gt;…<br>执行过程中跳过了F和G；<br>continue用于跳过本次循环余下的语句，转去判断是否执行下次循环；<br>*/</p>
+        <p>#include&lt;stdio.h&gt;<br>#include&lt;stdbool.h&gt;<br>bool Isprime(int val);<br>void traverse(int val);<br>int main()<br>{<br>    int val;<br>    char ch;<br>    do<br>    {<br>    printf(“请输入你想要输入的数字:”);<br>    scanf(“%d”,&amp;val);<br>    printf(“输出素数为:”);<br>    traverse(val);<br>    printf(“请问你是否还要继续（Y/N）:”);<br>    scanf(“ %c”,&amp;ch);<br>    }while(ch==’Y’||ch==’y’);<br>    return 0;<br>}<br>bool Isprime(int val)<br>{<br>    int i;<br>    for(i=2;i&lt;=val;i++)<br>        if(val%i==0)<br>          break;<br>    if(val==i)<br>       return true;<br>    else<br>       return false;<br>}<br>void traverse(int val)<br>{<br>      int cnt=0;<br>      for(int i=1;i&lt;=val;i++)<br>         if(Isprime(i))<br>         {<br>            printf(“%d\n”,i);<br>            cnt++;<br>         }<br>         printf(“素数的个数为：%d\n”,cnt);<br>}</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/continue%E7%94%A8%E6%B3%95/" data-id="ckjvjbcyl0000mwvp06u9dm55" data-title="continue用法" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/16/%E7%94%A8%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD1%E5%88%B0%E6%9F%90%E4%B8%AA%E6%95%B0%E5%AD%97%E4%B9%8B%E9%97%B4%E7%9A%84%E6%89%80%E6%9C%89%E7%B4%A0%E6%95%B0%E4%B8%AA%E6%95%B0%E5%B9%B6%E8%BE%93%E5%87%BA/" data-id="ckjzjjg7w0000aovp1sndez9s" data-title="用函数判断1到某个数字之间的所有素数个数并输出" class="article-share-link">Teilen</a>
       
       
       
@@ -110,19 +110,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/01/13/%E6%95%B0%E7%BB%84/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          数组
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/01/13/switch%E7%94%A8%E6%B3%95%E5%8F%8Abreak%E7%94%A8%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/01/16/%E7%94%A8%E5%B8%83%E5%B0%94%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E7%B4%A0%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">switch用法及break用法</div>
+      <div class="article-nav-title">用布尔函数判断是否为素数</div>
     </a>
   
 </nav>
