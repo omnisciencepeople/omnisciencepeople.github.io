@@ -71,6 +71,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-求一元二次方程解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2021-01-13T14:08:55.000Z" itemprop="datePublished">2021-01-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/">求一元二次方程解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>#include&lt;stdio.h&gt;<br>#include&lt;math.h&gt;<br>int main()<br>{<br>    float a,b,c,delta;<br>    double x1,x2;<br>    char ch;<br>    do<br>    {<br>    printf(“请为一元二次方程的系数赋值(中间以空格相隔):”);<br>    scanf(“%f %f %f”,&amp;a,&amp;b,&amp;c);<br>    delta=b<em>b-4</em>a<em>c;<br>    if(delta&gt;0)<br>       {<br>         x1=(-b+sqrt(delta))/(2</em>a);<br>         x2=(-b-sqrt(delta))/(2<em>a);<br>       }<br>    else if(delta==0)<br>       {<br>           x1=x2=(-b)/(2</em>a);<br>       }<br>    else<br>       printf(“无解\n”);<br>    printf(“x1=%lf x2=%lf\n”,x1,x2);<br>    printf(“请问你是否还要继续（Y/N）:”);<br>    scanf(“%c”,&amp;ch);<br>    }while(ch==’Y’);<br>    return 0;<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/" data-id="ckjviiymk000014vpg7wed5nw" data-title="求一元二次方程解" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-斐波拉契数列" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/13/%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E6%95%B0%E5%88%97/" class="article-date">
@@ -424,45 +463,6 @@
 
 
   
-    <article id="post-if求分数等级" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/13/if%E6%B1%82%E5%88%86%E6%95%B0%E7%AD%89%E7%BA%A7/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T09:20:56.000Z" itemprop="datePublished">2021-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/13/if%E6%B1%82%E5%88%86%E6%95%B0%E7%AD%89%E7%BA%A7/">if求分数等级</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>#include&lt;stdio.h&gt;<br>int main()<br>{<br>    float score;<br>    char ch;<br>    do<br>    {<br>    printf(“请输入你的成绩:”);<br>    scanf(“%f”,&amp;score);<br>    if(score&gt;100)<br>        printf(“做梦!\n”);<br>    else if(80&lt;=score&amp;&amp;score&lt;=100)<br>        printf(“优秀!\n”);<br>    else if(70&lt;=score&amp;&amp;score&lt;80)<br>        printf(“良好!\n”);<br>    else if(60&lt;=score&amp;&amp;score&lt;70)<br>        printf(“及格!\n”);<br>    else if(0&lt;=score&amp;&amp;score&lt;60)<br>        printf(“挂科!\n”);<br>    else<br>        printf(“你输入的成绩错误!\n”);<br>    printf(“你是否还要继续（Y/N）:\n”);<br>    scanf(“ %c”,&amp;ch);//这里%c前加一个空格才可实现人机交互；<br>    }while(ch==’Y’);<br>    return 0;<br>}</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/if%E6%B1%82%E5%88%86%E6%95%B0%E7%AD%89%E7%BA%A7/" data-id="ckjv7tdni0000fsvp4nnb11et" data-title="if求分数等级" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -499,6 +499,10 @@
       <ul>
         
           <li>
+            <a href="/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/">函数变量之全局变量</a>
+          </li>
+        
+          <li>
             <a href="/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E9%9D%99%E6%80%81%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/">函数变量之静态局部变量</a>
           </li>
         
@@ -512,10 +516,6 @@
         
           <li>
             <a href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E9%98%B6%E4%B9%98/">函数递归之阶乘</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E6%B1%89%E8%AF%BA%E5%A1%94/">函数递归之汉诺塔</a>
           </li>
         
       </ul>

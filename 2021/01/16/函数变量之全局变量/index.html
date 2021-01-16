@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>逗号表达式及自增表达式 | My Blog</title>
+  <title>函数变量之全局变量 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="#include&lt;stdio.h&gt;int main(){    int a;    int i&#x3D;1;    a&#x3D;(i++,++i,i+3,i+5);    printf(“%d”,&amp;a);    return 0;}&#x2F;*输出8i++先赋值再自增；++i先自增再赋值；（A,B,C,D）从左到右依次执行，逗号表达式最终值为最后一项；*&#x2F;">
+  <meta name="description" content="#include&lt;stdio.h&gt;int A,B,C;&#x2F;&#x2F;定义了三个全局变量;必须定义在函数前;int max();int main(){    printf(“请输入三个整数(中间以空格隔开):”);    scanf(“%d %d %d”,&amp;A,&amp;B,&amp;C);    printf(“max is %d\n”,max());&#x2F;&#x2F;A,B,C为全局变量所以在调用m">
 <meta property="og:type" content="article">
-<meta property="og:title" content="逗号表达式及自增表达式">
-<meta property="og:url" content="https://username.github.io/2021/01/13/%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8F%8A%E8%87%AA%E5%A2%9E%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:title" content="函数变量之全局变量">
+<meta property="og:url" content="https://username.github.io/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="#include&lt;stdio.h&gt;int main(){    int a;    int i&#x3D;1;    a&#x3D;(i++,++i,i+3,i+5);    printf(“%d”,&amp;a);    return 0;}&#x2F;*输出8i++先赋值再自增；++i先自增再赋值；（A,B,C,D）从左到右依次执行，逗号表达式最终值为最后一项；*&#x2F;">
+<meta property="og:description" content="#include&lt;stdio.h&gt;int A,B,C;&#x2F;&#x2F;定义了三个全局变量;必须定义在函数前;int max();int main(){    printf(“请输入三个整数(中间以空格隔开):”);    scanf(“%d %d %d”,&amp;A,&amp;B,&amp;C);    printf(“max is %d\n”,max());&#x2F;&#x2F;A,B,C为全局变量所以在调用m">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-01-13T13:41:05.000Z">
-<meta property="article:modified_time" content="2021-01-13T13:56:26.605Z">
+<meta property="article:published_time" content="2021-01-16T04:44:11.000Z">
+<meta property="article:modified_time" content="2021-01-16T04:54:01.841Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-逗号表达式及自增表达式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-函数变量之全局变量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/01/13/%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8F%8A%E8%87%AA%E5%A2%9E%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T13:41:05.000Z" itemprop="datePublished">2021-01-13</time>
+    <a href="/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/" class="article-date">
+  <time class="dt-published" datetime="2021-01-16T04:44:11.000Z" itemprop="datePublished">2021-01-16</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      逗号表达式及自增表达式
+      函数变量之全局变量
     </h1>
   
 
@@ -95,12 +95,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>#include&lt;stdio.h&gt;<br>int main()<br>{<br>    int a;<br>    int i=1;<br>    a=(i++,++i,i+3,i+5);<br>    printf(“%d”,&amp;a);<br>    return 0;<br>}<br>/*<br>输出8<br>i++先赋值再自增；<br>++i先自增再赋值；<br>（A,B,C,D）从左到右依次执行，逗号表达式最终值为最后一项；<br>*/</p>
+        <p>#include&lt;stdio.h&gt;<br>int A,B,C;//定义了三个全局变量;必须定义在函数前;<br>int max();<br>int main()<br>{<br>    printf(“请输入三个整数(中间以空格隔开):”);<br>    scanf(“%d %d %d”,&amp;A,&amp;B,&amp;C);<br>    printf(“max is %d\n”,max());//A,B,C为全局变量所以在调用max函数时用不到传参，max可以直接使用A,B,C;<br>    return 0;<br>}<br>int max()<br>{<br>    int m;<br>    m=A&gt;B?A:C;<br>    if(C&gt;m)<br>        m=C;<br>    return m;<br>}</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8F%8A%E8%87%AA%E5%A2%9E%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-id="ckjvh94yy00007cvp98z4bn34" data-title="逗号表达式及自增表达式" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/" data-id="ckjz8klmf0000dkvp3jbk5meo" data-title="函数变量之全局变量" class="article-share-link">Teilen</a>
       
       
       
@@ -110,19 +110,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/01/13/%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          三目运算符
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/01/13/%E6%B1%821-1-2-1-3-1-4-1-100/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E9%9D%99%E6%80%81%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">求1-1/2+1/3-1/4+...-1/100</div>
+      <div class="article-nav-title">函数变量之静态局部变量</div>
     </a>
   
 </nav>
