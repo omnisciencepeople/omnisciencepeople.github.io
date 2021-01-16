@@ -6,13 +6,15 @@
   
   <title>变量的存储方式和生存期 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="article">
+  <meta name="description" content="变量的存储方式有两种：静态存储方式和动态存储方式；静态存储方式：指程序在运行期间由系统分配固定的存储空间的方式；动态存储方式：指程序在运行期间根据需要进行动态的分配存储空间的方式；内存中供用户使用的存储空间分为三部分：1.程序区2.静态存储区3.动态存储区全局变量全部存放在静态存储区，程序执行完毕就释放，在程序执行过程中，它们占据着固定的存储单元而不是动态地进行分配和释放；在动态存储区中存放以下数">
+<meta property="og:type" content="article">
 <meta property="og:title" content="变量的存储方式和生存期">
 <meta property="og:url" content="https://username.github.io/2021/01/15/%E5%8F%98%E9%87%8F%E7%9A%84%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%92%8C%E7%94%9F%E5%AD%98%E6%9C%9F/index.html">
 <meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="变量的存储方式有两种：静态存储方式和动态存储方式；静态存储方式：指程序在运行期间由系统分配固定的存储空间的方式；动态存储方式：指程序在运行期间根据需要进行动态的分配存储空间的方式；内存中供用户使用的存储空间分为三部分：1.程序区2.静态存储区3.动态存储区全局变量全部存放在静态存储区，程序执行完毕就释放，在程序执行过程中，它们占据着固定的存储单元而不是动态地进行分配和释放；在动态存储区中存放以下数">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-15T13:44:09.000Z">
-<meta property="article:modified_time" content="2021-01-15T13:44:09.204Z">
+<meta property="article:modified_time" content="2021-01-16T04:10:38.236Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -61,10 +63,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -93,11 +95,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <p>变量的存储方式有两种：静态存储方式和动态存储方式；<br>静态存储方式：指程序在运行期间由系统分配固定的存储空间的方式；<br>动态存储方式：指程序在运行期间根据需要进行动态的分配存储空间的方式；<br>内存中供用户使用的存储空间分为三部分：<br>1.程序区<br>2.静态存储区<br>3.动态存储区<br>全局变量全部存放在静态存储区，程序执行完毕就释放，在程序执行过程中，它们占据着固定的存储单元而不是动态地进行分配和释放；<br>在动态存储区中存放以下数据：<br>1.函数形参<br>2.自动变量<br>3.函数调用时的现场保护和返回地址等<br>对以上数据在函数调用时分配存储空间，函数结束时就释放；在函数执行过程中，这种分配和释放是动态的；如果在一个程序中两次调用同一函数（此函数中定义了局部变量）在两次调用时分配给这些局部变量的存储空间的地址可能是不同的；<br>局部变量的存储类别：<br>1.自动变量（auto变量）<br>函数的形参和函数的局部变量，生命周期和函数相同，函数调用结束后就自动释放这些存储空间；<br>auto 可省略；<br>2.静态局部变量<br>用关键词 “static”指定该变量为静态局部变量<br>函数结束后该变量所占用的存储的单元不会释放从而该局部变量的值得以保存；<br>静态局部变量缺点：占内存（长期占用不释放，而不能像动态内存那样一个存储单元可以先后为多个变量使用，节约内存）；<br>降低了程序的可读性（当调用次数过多时往往弄不清静态局部变量的当前值）；<br>3.寄存器变量<br>存储在CPU的寄存器中；<br>为提高执行效率；<br>对寄存器的存取速度远高于对内存的存取速度；<br>全局变量的存储类别<br>1.在一个文件内扩展外部变量的作用域extern<br>2.将外部变量的作用域扩展至其他文件extern<br>3.将外部变量的作用域限制在本文件中static<br>static声明一个变量的作用：<br>1.对局部变量进行声明，把它分配在静态存储区，该变量在整个程序执行不释放，其所分配的存储空间始终存在直至程序结束，函数内有效；<br>2.对全局变量进行声明，则该变量作用域只限于本文件夹不能被其他文件引用；</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/15/%E5%8F%98%E9%87%8F%E7%9A%84%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%92%8C%E7%94%9F%E5%AD%98%E6%9C%9F/" data-id="ckjz3z5hp0000acvp1dp491dk" data-title="变量的存储方式和生存期" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/01/15/%E5%8F%98%E9%87%8F%E7%9A%84%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%92%8C%E7%94%9F%E5%AD%98%E6%9C%9F/" data-id="ckjz3z5hp0000acvp1dp491dk" data-title="变量的存储方式和生存期" class="article-share-link">Teilen</a>
       
       
       
@@ -109,7 +112,7 @@
   
   
     <a href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">函数递归之流程解析</div>
     </a>
   
@@ -133,7 +136,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -143,7 +146,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
