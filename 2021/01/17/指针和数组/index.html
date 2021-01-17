@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>逗号表达式及自增表达式 | My Blog</title>
+  <title>指针和数组 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="123456789101112131415#include&lt;stdio.h&gt;int main()&amp;#123;    int a;    int i&#x3D;1;    a&#x3D;(i++,++i,i+3,i+5);    printf(&quot;%d&quot;,&amp;a);    return 0;&amp;#125;&#x2F;*输出8i++先赋值再自增；++i先自增再赋值；（">
+  <meta name="description" content="123456789#include&lt;stdio.h&gt;int main()&amp;#123;    int a[10];    printf(&quot;%#X\n&quot;,a);    printf(&quot;%#X\n&quot;,&amp;a[0]);    return 0;&amp;#125;两个printf结果相同; 此程序说明数组名是一个指针常量，存放该数组第一个元素的地址； 12">
 <meta property="og:type" content="article">
-<meta property="og:title" content="逗号表达式及自增表达式">
-<meta property="og:url" content="https://username.github.io/2021/01/13/%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8F%8A%E8%87%AA%E5%A2%9E%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:title" content="指针和数组">
+<meta property="og:url" content="https://username.github.io/2021/01/17/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="123456789101112131415#include&lt;stdio.h&gt;int main()&amp;#123;    int a;    int i&#x3D;1;    a&#x3D;(i++,++i,i+3,i+5);    printf(&quot;%d&quot;,&amp;a);    return 0;&amp;#125;&#x2F;*输出8i++先赋值再自增；++i先自增再赋值；（">
+<meta property="og:description" content="123456789#include&lt;stdio.h&gt;int main()&amp;#123;    int a[10];    printf(&quot;%#X\n&quot;,a);    printf(&quot;%#X\n&quot;,&amp;a[0]);    return 0;&amp;#125;两个printf结果相同; 此程序说明数组名是一个指针常量，存放该数组第一个元素的地址； 12">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-01-13T13:41:05.000Z">
-<meta property="article:modified_time" content="2021-01-17T01:33:57.079Z">
+<meta property="article:published_time" content="2021-01-17T09:04:17.000Z">
+<meta property="article:modified_time" content="2021-01-17T09:19:06.621Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-逗号表达式及自增表达式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-指针和数组" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/01/13/%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8F%8A%E8%87%AA%E5%A2%9E%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T13:41:05.000Z" itemprop="datePublished">2021-01-13</time>
+    <a href="/2021/01/17/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" class="article-date">
+  <time class="dt-published" datetime="2021-01-17T09:04:17.000Z" itemprop="datePublished">2021-01-17</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      逗号表达式及自增表达式
+      指针和数组
     </h1>
   
 
@@ -95,11 +95,15 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a;</span><br><span class="line">    int i&#x3D;1;</span><br><span class="line">    a&#x3D;(i++,++i,i+3,i+5);</span><br><span class="line">    printf(&quot;%d&quot;,&amp;a);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*</span><br><span class="line">输出8</span><br><span class="line">i++先赋值再自增；</span><br><span class="line">++i先自增再赋值；</span><br><span class="line">（A,B,C,D）从左到右依次执行，逗号表达式最终值为最后一项；</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[10];</span><br><span class="line">    printf(&quot;%#X\n&quot;,a);</span><br><span class="line">    printf(&quot;%#X\n&quot;,&amp;a[0]);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">两个printf结果相同;</span><br></pre></td></tr></table></figure>
+<p>此程序说明数组名是一个指针常量，存放该数组第一个元素的地址；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[10]&#x3D;&#123;1,2&#125;;</span><br><span class="line">    int *p&#x3D;a;</span><br><span class="line">    printf(&quot;%d\n&quot;,a[1]);</span><br><span class="line">    printf(&quot;%d\n&quot;,*(a+1));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>指针和下标的关系：<br>以本程序为例，p存放数组a的首地址，<em>p相当于a[0];<br>数组为连续分配的内存；故p+1指向a[1],</em>(p+1)相当于a[1];<br>同理可得*(p+n)相当于a[n];</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8F%8A%E8%87%AA%E5%A2%9E%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-id="ckjvh94yy00007cvp98z4bn34" data-title="逗号表达式及自增表达式" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/17/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" data-id="ckk0xhz7500007cvphp7p1g2o" data-title="指针和数组" class="article-share-link">Partager</a>
       
       
       
@@ -109,19 +113,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/01/13/%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
-      <div class="article-nav-title">
-        
-          三目运算符
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/01/13/%E6%B1%821-1-2-1-3-1-4-1-100/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/01/17/%E6%8C%87%E9%92%88%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E4%BB%A5%E4%B8%8A%E7%9A%84%E5%80%BC/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Ancien</strong>
-      <div class="article-nav-title">求1-1/2+1/3-1/4+...-1/100</div>
+      <div class="article-nav-title">指针返回一个以上的值</div>
     </a>
   
 </nav>
