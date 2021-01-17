@@ -14,7 +14,7 @@
 <meta property="og:description" content="123456789101112#include&lt;stdio.h&gt;int main()&amp;#123;    int* p;&#x2F;&#x2F;定义一个指针变量（用于存放地址的变量）；p为指针变量的名字，int*为一个数据类型表示p存放int类型变量    的地址；    int i&#x3D;3;    p&#x3D;i;&#x2F;&#x2F;error;p为存放变量地址的变量而非存">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-17T00:15:56.000Z">
-<meta property="article:modified_time" content="2021-01-17T03:43:02.836Z">
+<meta property="article:modified_time" content="2021-01-17T03:53:21.061Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -61,12 +61,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Buscar"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -96,12 +96,12 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int* p;&#x2F;&#x2F;定义一个指针变量（用于存放地址的变量）；p为指针变量的名字，int*为一个数据类型表示p存放int类型变量</span><br><span class="line">    的地址；</span><br><span class="line">    int i&#x3D;3;</span><br><span class="line">    p&#x3D;i;&#x2F;&#x2F;error;p为存放变量地址的变量而非存放变量的变量；</span><br><span class="line">    p&#x3D;&amp;i;&#x2F;&#x2F;ok;p保存了i的地址因此p指向i;</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    printf(&quot;%d\n&quot;,*p);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注：<br>p指向i，但修改i的值不影响p的值，修改p的值不影响i的值；<br>如果一个指针变量指向了一个普通变量，那么（* 指针变量）就等同于普通变量，在本程序中在所有出现<em>p的地方，都可以替换<br>为i；同理所有i都可替换为</em> p；<br>*p就是以p的内容为地址的变量</p>
+<p>注：<br>p指向i，但修改i的值不影响p的值，修改p的值不影响i的值；<br>如果一个指针变量指向了一个普通变量，那么（* 指针变量）就等同于普通变量，在本程序中在所有出现* p的地方，都可以替<br>换为i；同理所有i都可替换为* p；<br>*p就是以p的内容为地址的变量</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/17/%E6%8C%87%E9%92%88%E7%AE%80%E5%8D%95%E7%A8%8B%E5%BA%8F%E8%AE%B2%E8%A7%A3/" data-id="ckk0ed2fm0000x0vpbxm3ehy4" data-title="指针简单程序讲解" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/17/%E6%8C%87%E9%92%88%E7%AE%80%E5%8D%95%E7%A8%8B%E5%BA%8F%E8%AE%B2%E8%A7%A3/" data-id="ckk0ed2fm0000x0vpbxm3ehy4" data-title="指针简单程序讲解" class="article-share-link">Compartir</a>
       
       
       
@@ -113,7 +113,7 @@
   
   
     <a href="/2021/01/16/%E6%8C%87%E9%92%88%E6%A6%82%E8%BF%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Älter</strong>
+      <strong class="article-nav-caption">Viejo</strong>
       <div class="article-nav-title">指针概述</div>
     </a>
   
@@ -137,7 +137,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -147,7 +147,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
         
@@ -185,7 +185,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
