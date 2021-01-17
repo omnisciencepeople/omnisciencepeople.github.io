@@ -93,7 +93,9 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int* p;&#x2F;&#x2F;定义一个指针变量（用于存放地址的变量）；p为指针变量的名字，int*为一个数据类型表示p存放int类型变量的地址；</span><br><span class="line">    int i&#x3D;3;</span><br><span class="line">    p&#x3D;i;&#x2F;&#x2F;error;p为存放变量地址的变量而非存放变量的变量；</span><br><span class="line">    p&#x3D;&amp;i;&#x2F;&#x2F;ok;p保存了i的地址因此p指向i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int* p;&#x2F;&#x2F;定义一个指针变量（用于存放地址的变量）；p为指针变量的名字，int*为一个数据类型表示p存放int类型变量</span><br><span class="line">    的地址；</span><br><span class="line">    int i&#x3D;3;</span><br><span class="line">    p&#x3D;i;&#x2F;&#x2F;error;p为存放变量地址的变量而非存放变量的变量；</span><br><span class="line">    p&#x3D;&amp;i;&#x2F;&#x2F;ok;p保存了i的地址因此p指向i;</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    printf(&quot;%d\n&quot;,*p);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注：<br>p指向i，但修改i的值不影响p的值，修改p的值不影响i的值；<br>如果一个指针变量指向了一个普通变量，那么（* 指针变量）就等同于普通变量，在本程序中在所有出现<em>p的地方，都可以替换<br>为i；同理所有i都可替换为</em> p；<br>*p就是以p的内容为地址的变量</p>
+
       
     </div>
     <footer class="article-footer">
@@ -131,7 +133,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>指针和指针变量：<br>指针就是地址；地址是内存单元的编号，从0开始的非负整数，范围为0到4G-1；本质上为一个操作受限的非负整数；<br>指针变量就是存放内存单元编号的变量即存放地址的变量；<br>指针和指针变量是两个完全不同的概念，但是我们叙述时通常将指针变量简称为指针，实际上他们含义并不相同；<br>CPU和内存条之间有3根线：<br>地址总线：确定内存单元；<br>控制总线：控制传输方向；<br>数据总线：传输数据；<br>若有32根地址总线，则有2的32次方个内存单元（一根地址总线对应两种状态），则有2的32次方个字节，则内存为4G(0到4G-1);<br>指针分类：<br>1.基本类型指针<br>2.指针和数组<br>3.指针和函数<br>4.指针和结构体</p>
+        <p>指针和指针变量：<br>指针就是地址；地址是内存单元的编号，从0开始的非负整数，范围为0到4G-1；本质上为一个操作受限的非负整数；<br>指针变量就是存放内存单元编号的变量即存放地址的变量；<br>指针和指针变量是两个完全不同的概念，但是我们叙述时通常将指针变量简称为指针，实际上他们含义并不相同；<br>CPU和内存条之间有3根线：<br>地址总线：确定内存单元；<br>控制总线：控制传输方向；<br>数据总线：传输数据；<br>若有32根地址总线，则有2的32次方个内存单元（一根地址总线对应两种状态），则有2的32次方个字节，则内存为4G(0到4G-1)<br>;<br>指针分类：<br>1.基本类型指针<br>2.指针和数组<br>3.指针和函数<br>4.指针和结构体</p>
 
       
     </div>
@@ -322,7 +324,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>变量的存储方式有两种：静态存储方式和动态存储方式；<br>静态存储方式：指程序在运行期间由系统分配固定的存储空间的方式；<br>动态存储方式：指程序在运行期间根据需要进行动态的分配存储空间的方式；<br>内存中供用户使用的存储空间分为三部分：<br>1.程序区<br>2.静态存储区<br>3.动态存储区<br>全局变量全部存放在静态存储区，程序执行完毕就释放，在程序执行过程中，它们占据着固定的存储单元而不是动态地进行分配和释放；<br>在动态存储区中存放以下数据：<br>1.函数形参<br>2.自动变量<br>3.函数调用时的现场保护和返回地址等<br>对以上数据在函数调用时分配存储空间，函数结束时就释放；在函数执行过程中，这种分配和释放是动态的；如果在一个程序中两次调用同一函数（此函数中定义了局部变量）在两次调用时分配给这些局部变量的存储空间的地址可能是不同的；<br>局部变量的存储类别：<br>1.自动变量（auto变量）<br>函数的形参和函数的局部变量，生命周期和函数相同，函数调用结束后就自动释放这些存储空间；<br>auto 可省略；<br>2.静态局部变量<br>用关键词 “static”指定该变量为静态局部变量<br>函数结束后该变量所占用的存储的单元不会释放从而该局部变量的值得以保存；<br>静态局部变量缺点：占内存（长期占用不释放，而不能像动态内存那样一个存储单元可以先后为多个变量使用，节约内存）；<br>降低了程序的可读性（当调用次数过多时往往弄不清静态局部变量的当前值）；<br>3.寄存器变量<br>存储在CPU的寄存器中；<br>为提高执行效率；<br>对寄存器的存取速度远高于对内存的存取速度；<br>全局变量的存储类别<br>1.在一个文件内扩展外部变量的作用域extern<br>2.将外部变量的作用域扩展至其他文件extern<br>3.将外部变量的作用域限制在本文件中static<br>static声明一个变量的作用：<br>1.对局部变量进行声明，把它分配在静态存储区，该变量在整个程序执行不释放，其所分配的存储空间始终存在直至程序结束，函数内有效；<br>2.对全局变量进行声明，则该变量作用域只限于本文件夹不能被其他文件引用；</p>
+        <p>变量的存储方式有两种：静态存储方式和动态存储方式；<br>静态存储方式：指程序在运行期间由系统分配固定的存储空间的方式；<br>动态存储方式：指程序在运行期间根据需要进行动态的分配存储空间的方式；<br>内存中供用户使用的存储空间分为三部分：<br>1.程序区<br>2.静态存储区<br>3.动态存储区<br>全局变量全部存放在静态存储区，程序执行完毕就释放，在程序执行过程中，它们占据着固定的存储单元而不是动态地进行分配<br>和释放；<br>在动态存储区中存放以下数据：<br>1.函数形参<br>2.自动变量<br>3.函数调用时的现场保护和返回地址等<br>对以上数据在函数调用时分配存储空间，函数结束时就释放；在函数执行过程中，这种分配和释放是动态的；如果在一个程序中<br>两次调用同一函数（此函数中定义了局部变量）在两次调用时分配给这些局部变量的存储空间的地址可能是不同的；<br>局部变量的存储类别：<br>1.自动变量（auto变量）<br>函数的形参和函数的局部变量，生命周期和函数相同，函数调用结束后就自动释放这些存储空间；<br>auto 可省略；<br>2.静态局部变量<br>用关键词 “static”指定该变量为静态局部变量<br>函数结束后该变量所占用的存储的单元不会释放从而该局部变量的值得以保存；<br>静态局部变量缺点：占内存（长期占用不释放，而不能像动态内存那样一个存储单元可以先后为多个变量使用，节约内存）；<br>降低了程序的可读性（当调用次数过多时往往弄不清静态局部变量的当前值）；<br>3.寄存器变量<br>存储在CPU的寄存器中；<br>为提高执行效率；<br>对寄存器的存取速度远高于对内存的存取速度；<br>全局变量的存储类别<br>1.在一个文件内扩展外部变量的作用域extern<br>2.将外部变量的作用域扩展至其他文件extern<br>3.将外部变量的作用域限制在本文件中static<br>static声明一个变量的作用：<br>1.对局部变量进行声明，把它分配在静态存储区，该变量在整个程序执行不释放，其所分配的存储空间始终存在直至程序结束，<br>函数内有效；<br>2.对全局变量进行声明，则该变量作用域只限于本文件夹不能被其他文件引用；</p>
 
       
     </div>

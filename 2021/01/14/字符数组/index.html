@@ -14,7 +14,7 @@
 <meta property="og:description" content="定义字符数组与定义数值型数据的方法类似，例如char a[10];字符数组的初始化（这里说的是定义时并初始化而定义以后单个初始化）：1.完全初始化如 char a[13]&#x3D;{‘I’,’ ‘,’a’,’m’,’a’,’C’,’h’,’i’,’n’,’e’,’s’,’e’,’.’};2.不完全初始化如 char a[3]&#x3D;{‘I’};未初始化的元素自动定为空字符（\0）；3.未初始化如 char a[">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-14T03:14:25.000Z">
-<meta property="article:modified_time" content="2021-01-14T09:59:22.666Z">
+<meta property="article:modified_time" content="2021-01-17T03:45:49.150Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -96,7 +96,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>定义字符数组与定义数值型数据的方法类似，例如char a[10];<br>字符数组的初始化（这里说的是定义时并初始化而定义以后单个初始化）：<br>1.完全初始化<br>如 char a[13]={‘I’,’ ‘,’a’,’m’,’a’,’C’,’h’,’i’,’n’,’e’,’s’,’e’,’.’};<br>2.不完全初始化<br>如 char a[3]={‘I’};<br>未初始化的元素自动定为空字符（\0）；<br>3.未初始化<br>如 char a[3];<br>输出值为垃圾值；</p>
-<p>若{}内提供的初值个数大于数组长度则会报错；因此，在定义字符数组时应估计其实际长度保证实际长度不大于数组长度；<br>字符数组的结束标志：以空字符(\0)为结束标志；以空字符作为结束标志不会产生任何附加操作或增加有效字符，只起一个供辨别的标志；<br>printf(“How do you do?\n”);系统会自动在最后一个字符\n后加一个\0；<br>char a[5]={“china”};//error 此时数组实际长度为6&gt;5;字符串赋值；<br>char a[5]={‘c’,’h’,’i’,’n’,’a’};//ok 字符赋值；</p>
+<p>若{}内提供的初值个数大于数组长度则会报错；因此，在定义字符数组时应估计其实际长度保证实际长度不大于数组长度；<br>字符数组的结束标志：以空字符(\0)为结束标志；以空字符作为结束标志不会产生任何附加操作或增加有效字符，只起一个供辨<br>别的标志；<br>printf(“How do you do?\n”);系统会自动在最后一个字符\n后加一个\0；<br>char a[5]={“china”};//error 此时数组实际长度为6&gt;5;字符串赋值；<br>char a[5]={‘c’,’h’,’i’,’n’,’a’};//ok 字符赋值；</p>
 <p>字符数组的输出：<br>1.输出字符不包括空字符；<br>2.若以%s格式符输出时，printf函数的输出控制项为字符数组名；<br>3.若数组长度大于数组实际长度也只遇到\0结束；<br>4.若包含一个以上的空字符，则遇到第一个空字符就结束；<br>5.可用scanf函数输入一个字符串<br>如 scanf(“%s”,字符数组名)；</p>
 
       
