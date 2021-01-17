@@ -6,15 +6,15 @@
   
   <title>求1+1/2+...+1/100 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="#include&lt;stdio.h&gt;int main(){    int i;    float sum&#x3D;0;    for(i&#x3D;1;i&lt;&#x3D;100;i++)        sum&#x3D;sum+1.0&#x2F;i;&#x2F;&#x2F;或者为sum&#x3D;sum+1&#x2F;float（i）；    printf(“sum&#x3D;%f\n”,sum);    return 0;}&#x2F;*整形数据&#x2F;整形数据，结果为整形；除法运算符中若有至">
+  <meta name="description" content="12345678910#include&lt;stdio.h&gt;int main()&amp;#123;    int i;    float sum&#x3D;0;    for(i&#x3D;1;i&lt;&#x3D;100;i++)        sum&#x3D;sum+1.0&#x2F;i;&#x2F;&#x2F;或者为sum&#x3D;sum+1&#x2F;float（i）；    pri">
 <meta property="og:type" content="article">
 <meta property="og:title" content="求1+1&#x2F;2+...+1&#x2F;100">
 <meta property="og:url" content="https://username.github.io/2021/01/13/%E6%B1%821-1-2-1-100/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="#include&lt;stdio.h&gt;int main(){    int i;    float sum&#x3D;0;    for(i&#x3D;1;i&lt;&#x3D;100;i++)        sum&#x3D;sum+1.0&#x2F;i;&#x2F;&#x2F;或者为sum&#x3D;sum+1&#x2F;float（i）；    printf(“sum&#x3D;%f\n”,sum);    return 0;}&#x2F;*整形数据&#x2F;整形数据，结果为整形；除法运算符中若有至">
+<meta property="og:description" content="12345678910#include&lt;stdio.h&gt;int main()&amp;#123;    int i;    float sum&#x3D;0;    for(i&#x3D;1;i&lt;&#x3D;100;i++)        sum&#x3D;sum+1.0&#x2F;i;&#x2F;&#x2F;或者为sum&#x3D;sum+1&#x2F;float（i）；    pri">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-13T09:57:18.000Z">
-<meta property="article:modified_time" content="2021-01-13T10:14:43.528Z">
+<meta property="article:modified_time" content="2021-01-17T01:42:56.569Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -95,8 +95,8 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>#include&lt;stdio.h&gt;<br>int main()<br>{<br>    int i;<br>    float sum=0;<br>    for(i=1;i&lt;=100;i++)<br>        sum=sum+1.0/i;//或者为sum=sum+1/float（i）；<br>    printf(“sum=%f\n”,sum);<br>    return 0;<br>}<br>/*<br>整形数据/整形数据，结果为整形；<br>除法运算符中若有至少一个浮点型，结果为浮点型；<br>商的符号由除数和被除数决定<br>因此对上述sum求值过程中进行强制类型转换；</p>
-<p>取余运算符符号只和被除数符号相同；<br>*/</p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    float sum&#x3D;0;</span><br><span class="line">    for(i&#x3D;1;i&lt;&#x3D;100;i++)</span><br><span class="line">        sum&#x3D;sum+1.0&#x2F;i;&#x2F;&#x2F;或者为sum&#x3D;sum+1&#x2F;float（i）；</span><br><span class="line">    printf(&quot;sum&#x3D;%f\n&quot;,sum);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>整型数据/整型数据，结果为整型；<br>除法运算符中若有至少一个浮点型，结果为浮点型；<br>商的符号由除数和被除数决定<br>因此对上述sum求值过程中进行强制类型转换；<br>取余运算结果符号只和被除数符号相同；</p>
 
       
     </div>

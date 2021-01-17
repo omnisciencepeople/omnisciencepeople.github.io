@@ -6,15 +6,15 @@
   
   <title>一维数组冒泡排序 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="#include&lt;stdio.h&gt;int main(){    int i,j,t;    int a[10];    printf(“请为数组赋值(中间以空格相隔):\n”);    for(i&#x3D;0;i&lt;10;i++)        scanf(“%d”,&amp;a[i]);    for(i&#x3D;0;i&lt;9;i++)       for(j&#x3D;0;j&lt;9-i;j++)">
+  <meta name="description" content="12345678910111213141516171819202122#include&lt;stdio.h&gt;int main()&amp;#123;    int i,j,t;    int a[10];    printf(&quot;请为数组赋值(中间以空格相隔):\n&quot;);    for(i&#x3D;0;i&lt;10;i++)        scanf(&quot;%d&amp;quo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一维数组冒泡排序">
 <meta property="og:url" content="https://username.github.io/2021/01/14/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="#include&lt;stdio.h&gt;int main(){    int i,j,t;    int a[10];    printf(“请为数组赋值(中间以空格相隔):\n”);    for(i&#x3D;0;i&lt;10;i++)        scanf(“%d”,&amp;a[i]);    for(i&#x3D;0;i&lt;9;i++)       for(j&#x3D;0;j&lt;9-i;j++)">
+<meta property="og:description" content="12345678910111213141516171819202122#include&lt;stdio.h&gt;int main()&amp;#123;    int i,j,t;    int a[10];    printf(&quot;请为数组赋值(中间以空格相隔):\n&quot;);    for(i&#x3D;0;i&lt;10;i++)        scanf(&quot;%d&amp;quo">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-14T02:18:50.000Z">
-<meta property="article:modified_time" content="2021-01-14T02:31:50.155Z">
+<meta property="article:modified_time" content="2021-01-17T01:46:54.712Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -95,8 +95,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>#include&lt;stdio.h&gt;<br>int main()<br>{<br>    int i,j,t;<br>    int a[10];<br>    printf(“请为数组赋值(中间以空格相隔):\n”);<br>    for(i=0;i&lt;10;i++)<br>        scanf(“%d”,&amp;a[i]);<br>    for(i=0;i&lt;9;i++)<br>       for(j=0;j&lt;9-i;j++)<br>           if(a[j]&gt;a[j+1])<br>              {<br>                  t=a[j];<br>                  a[j]=a[j+1];<br>                  a[j+1]=t;<br>              }<br>    printf(“排序后的结果为:\n”);<br>    for(i=0;i&lt;10;i++)<br>        printf(“%d “,a[i]);<br>    printf(“\n”);<br>    return 0;<br>}</p>
-
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,j,t;</span><br><span class="line">    int a[10];</span><br><span class="line">    printf(&quot;请为数组赋值(中间以空格相隔):\n&quot;);</span><br><span class="line">    for(i&#x3D;0;i&lt;10;i++)</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</span><br><span class="line">    for(i&#x3D;0;i&lt;9;i++)</span><br><span class="line">       for(j&#x3D;0;j&lt;9-i;j++)</span><br><span class="line">           if(a[j]&gt;a[j+1])</span><br><span class="line">              &#123;</span><br><span class="line">                  t&#x3D;a[j];</span><br><span class="line">                  a[j]&#x3D;a[j+1];</span><br><span class="line">                  a[j+1]&#x3D;t;</span><br><span class="line">              &#125;</span><br><span class="line">    printf(&quot;排序后的结果为:\n&quot;);</span><br><span class="line">    for(i&#x3D;0;i&lt;10;i++)</span><br><span class="line">        printf(&quot;%d &quot;,a[i]);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">

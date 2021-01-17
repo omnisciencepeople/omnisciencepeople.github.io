@@ -6,15 +6,15 @@
   
   <title>C语言printf用法 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; int main(){    printf(“Hello world!\n”);    int i&#x3D;5,j&#x3D;1;    printf(“%d\n”,i);    printf(“%d %d\n”,i,j);    printf(“%d,%d\n”,i,j);    printf(“i&#x3D;%d,j&#x3D;%d">
+  <meta name="description" content="1234567891011121314151617181920212223242526#include &lt;stdio.h&gt;int main()&amp;#123;    printf(&quot;Hello world!\n&quot;);    int i&#x3D;5,j&#x3D;1;    printf(&quot;%d\n&quot;,i);    printf(&quot;%d %">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C语言printf用法">
 <meta property="og:url" content="https://username.github.io/2021/01/13/C%E8%AF%AD%E8%A8%80printf%E7%94%A8%E6%B3%95/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; int main(){    printf(“Hello world!\n”);    int i&#x3D;5,j&#x3D;1;    printf(“%d\n”,i);    printf(“%d %d\n”,i,j);    printf(“%d,%d\n”,i,j);    printf(“i&#x3D;%d,j&#x3D;%d">
+<meta property="og:description" content="1234567891011121314151617181920212223242526#include &lt;stdio.h&gt;int main()&amp;#123;    printf(&quot;Hello world!\n&quot;);    int i&#x3D;5,j&#x3D;1;    printf(&quot;%d\n&quot;,i);    printf(&quot;%d %">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-13T08:27:44.000Z">
-<meta property="article:modified_time" content="2021-01-13T08:28:14.010Z">
+<meta property="article:modified_time" content="2021-01-17T01:50:16.077Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -95,9 +95,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main()<br>{<br>    printf(“Hello world!\n”);<br>    int i=5,j=1;<br>    printf(“%d\n”,i);<br>    printf(“%d %d\n”,i,j);<br>    printf(“%d,%d\n”,i,j);<br>    printf(“i=%d,j=%d\n”,i,j);<br>    printf(“%5d%5d\n”,i,j);<br>    printf(“%-5d%-5d\n”,i,j);<br>    float a=1.23;<br>    printf(“%f\n”,a);<br>    printf(“%5.3f\n”,a);<br>    printf(“%5.1f\n”,a);<br>    printf(“%-5.1f\n”,a);<br>    float b=126.456789;<br>    printf(“%e\n”,b);<br>    printf(“%15.8e\n”,b);<br>    printf(“%-15.1e\n”,b);<br>    printf(“%%d\n”);<br>    printf(“\\n”);<br>    printf(“&quot;&quot;\n”);<br>    printf(“%f%%\n”,a);<br>    return 0;<br>}</p>
-
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;Hello world!\n&quot;);</span><br><span class="line">    int i&#x3D;5,j&#x3D;1;</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    printf(&quot;%d %d\n&quot;,i,j);</span><br><span class="line">    printf(&quot;%d,%d\n&quot;,i,j);</span><br><span class="line">    printf(&quot;i&#x3D;%d,j&#x3D;%d\n&quot;,i,j);</span><br><span class="line">    printf(&quot;%5d%5d\n&quot;,i,j);</span><br><span class="line">    printf(&quot;%-5d%-5d\n&quot;,i,j);</span><br><span class="line">    float a&#x3D;1.23;</span><br><span class="line">    printf(&quot;%f\n&quot;,a);</span><br><span class="line">    printf(&quot;%5.3f\n&quot;,a);</span><br><span class="line">    printf(&quot;%5.1f\n&quot;,a);</span><br><span class="line">    printf(&quot;%-5.1f\n&quot;,a);</span><br><span class="line">    float b&#x3D;126.456789;</span><br><span class="line">    printf(&quot;%e\n&quot;,b);</span><br><span class="line">    printf(&quot;%15.8e\n&quot;,b);</span><br><span class="line">    printf(&quot;%-15.1e\n&quot;,b);</span><br><span class="line">    printf(&quot;%%d\n&quot;);</span><br><span class="line">    printf(&quot;\\\n&quot;);</span><br><span class="line">    printf(&quot;\&quot;\&quot;\n&quot;);</span><br><span class="line">    printf(&quot;%f%%\n&quot;,a);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
