@@ -14,7 +14,7 @@
 <meta property="og:description" content="12345678910111213#include&lt;stdio.h&gt;void f(int** q)&amp;#123;    int i&#x3D;5;    *q&#x3D;&amp;i;&amp;#125;int main()&amp;#123;    int* p;    f(&amp;p);    printf(&quot;%d\n&quot;,*p);    return 0;&amp;#125; 这个程序">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-18T14:23:32.000Z">
-<meta property="article:modified_time" content="2021-01-19T01:49:29.005Z">
+<meta property="article:modified_time" content="2021-01-19T01:50:33.552Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -61,12 +61,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Rechercher"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -98,13 +98,13 @@
         <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void f(int** q)</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;5;</span><br><span class="line">    *q&#x3D;&amp;i;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int* p;</span><br><span class="line">    f(&amp;p);</span><br><span class="line">    printf(&quot;%d\n&quot;,*p);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这个程序语法上没出错，但逻辑上错误；<br>f函数结束后，为其分配的内存空间被释放（内存空间的操作权限被收回）；<br>p保留了i的地址，但p无法访问i的内容，因为为i分配的内存空间的操作权限没有分配给本程序；</p>
 <p>动态内存的跨函数使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void f(int** q)</span><br><span class="line">&#123;</span><br><span class="line">    *q&#x3D;(int*)malloc(sizeof(int));</span><br><span class="line">    **q&#x3D;5;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int *p;</span><br><span class="line">    f(&amp;p);</span><br><span class="line">    printf(&quot;%d\n&quot;,*p);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">void f(int** q)</span><br><span class="line">&#123;</span><br><span class="line">    *q&#x3D;(int*)malloc(sizeof(int));</span><br><span class="line">    **q&#x3D;5;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int *p;</span><br><span class="line">    f(&amp;p);</span><br><span class="line">    printf(&quot;%d\n&quot;,*p);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>该程序没有逻辑上的错误，因为动态分配的内存在函数结束后内存不会被释放；</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/18/%E8%B7%A8%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/" data-id="ckk3caoe00000egvp1qgmfdlt" data-title="跨函数使用" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/18/%E8%B7%A8%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/" data-id="ckk3caoe00000egvp1qgmfdlt" data-title="跨函数使用" class="article-share-link">Share</a>
       
       
       
@@ -116,7 +116,7 @@
   
   
     <a href="/2021/01/18/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">动态构造一维数组</div>
     </a>
   
@@ -150,7 +150,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -188,7 +188,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Propulsé par <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
