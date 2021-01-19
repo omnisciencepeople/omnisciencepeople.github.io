@@ -71,6 +71,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-C语言到此结束" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/19/C%E8%AF%AD%E8%A8%80%E5%88%B0%E6%AD%A4%E7%BB%93%E6%9D%9F/" class="article-date">
+  <time class="dt-published" datetime="2021-01-19T11:12:08.000Z" itemprop="datePublished">2021-01-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/19/C%E8%AF%AD%E8%A8%80%E5%88%B0%E6%AD%A4%E7%BB%93%E6%9D%9F/">C语言到此结束</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>C语言到这里就结束了；<br>接下来将进行数据结构的复习；<br>谢谢朋友们！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/19/C%E8%AF%AD%E8%A8%80%E5%88%B0%E6%AD%A4%E7%BB%93%E6%9D%9F/" data-id="ckk3wfjtq0000wsvp7v0legae" data-title="C语言到此结束" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-动态构造链表举例" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E4%B8%BE%E4%BE%8B/" class="article-date">
@@ -421,74 +460,11 @@
 
 
   
-    <article id="post-结构体概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/19/%E7%BB%93%E6%9E%84%E4%BD%93%E6%A6%82%E8%BF%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-19T01:54:37.000Z" itemprop="datePublished">2021-01-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/19/%E7%BB%93%E6%9E%84%E4%BD%93%E6%A6%82%E8%BF%B0/">结构体概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>为什么需要结构体？<br>为表示复杂的事物，普通数据类型无法满足要求；<br>结构体定义1：<br>把一些基本类型组合在一起形成一个新的复合数据类型；<br>结构体类型变量的定义：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">struct 结构体名</span><br><span class="line">      &#123;成员表列&#125;;</span><br></pre></td></tr></table></figure>
-<p>1.先声明结构体类型再定义该类型的变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">struct student</span><br><span class="line">&#123;</span><br><span class="line">    char name[100];</span><br><span class="line">    int age;</span><br><span class="line">    float score;</span><br><span class="line">&#125;;</span><br><span class="line">struct student;</span><br></pre></td></tr></table></figure>
-<p>2.定义时同时定义</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">struct student</span><br><span class="line">&#123;</span><br><span class="line">    char name[100];</span><br><span class="line">    int age;</span><br><span class="line">    float score;</span><br><span class="line">&#125;st;</span><br></pre></td></tr></table></figure>
-<p>3.省略结构体类型名（不提倡使用）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">struct</span><br><span class="line">&#123;</span><br><span class="line">    char name[100];</span><br><span class="line">    int age;</span><br><span class="line">    float score;</span><br><span class="line">&#125;st;</span><br></pre></td></tr></table></figure>
-<p>如何使用结构体变量：<br>1.赋值和初始化：<br>定义时初始化可整体赋值如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">struct student</span><br><span class="line">&#123;</span><br><span class="line">    char name[100];</span><br><span class="line">    int age;</span><br><span class="line">    float score;</span><br><span class="line">&#125;st&#x3D;&#123;&quot;张三&quot;,18,100&#125;;</span><br></pre></td></tr></table></figure>
-<p>定义后只能单个赋值如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">struct student</span><br><span class="line">&#123;</span><br><span class="line">    char name[100];</span><br><span class="line">    int age;</span><br><span class="line">    float score;</span><br><span class="line">&#125;st;</span><br><span class="line">st.name&#x3D;&quot;张三&quot;；</span><br><span class="line">st.age&#x3D;18;</span><br><span class="line">st.score&#x3D;100;</span><br></pre></td></tr></table></figure>
-<p>2.如何表示结构体变量中的每一个成员：<br>结构体变量名.成员名；<br>指针变量名-&gt;成员名如</p>
-<pre><code>struct student
-&#123;
-    char name[100];
-    int age;
-    float score;
-&#125;;
-struct student st=&#123;&quot;张三&quot;,18,100&#125;；
-struct student*pst=&amp;st;
-pst-&gt;age=88;//在计算机内部会被转化成（*pst）.age；
-pst-&gt;age含义：pst指向结构体中age这个成员；
-3.结构体变量的运算：
-不能相加减乘除但可以相互赋值；</code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/19/%E7%BB%93%E6%9E%84%E4%BD%93%E6%A6%82%E8%BF%B0/" data-id="ckk3djo5q0000t8vp4w9m546p" data-title="结构体概述" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -520,6 +496,10 @@ pst-&gt;age含义：pst指向结构体中age这个成员；
       <ul>
         
           <li>
+            <a href="/2021/01/19/C%E8%AF%AD%E8%A8%80%E5%88%B0%E6%AD%A4%E7%BB%93%E6%9D%9F/">C语言到此结束</a>
+          </li>
+        
+          <li>
             <a href="/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E4%B8%BE%E4%BE%8B/">动态构造链表举例</a>
           </li>
         
@@ -533,10 +513,6 @@ pst-&gt;age含义：pst指向结构体中age这个成员；
         
           <li>
             <a href="/2021/01/19/%E9%93%BE%E8%A1%A8%E6%A6%82%E8%BF%B0/">链表概述</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/19/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%BE%E4%BE%8B/">位运算符举例</a>
           </li>
         
       </ul>
