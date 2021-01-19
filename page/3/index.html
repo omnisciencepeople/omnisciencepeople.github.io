@@ -57,12 +57,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Rechercher"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,45 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-函数递归概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E6%A6%82%E8%BF%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-01-15T06:37:20.000Z" itemprop="datePublished">2021-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E6%A6%82%E8%BF%B0/">函数递归概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>定义：函数直接或间接调用自己；<br>函数为什么可以自己调用自己？<br>前提：函数的调用是通过栈实现的；<br>A.一个函数在运行期间去调用其它函数，在运行被调函数前需做三件事：<br>1.将所有实参、返回地址（下一条指令的地址）等信息传给被调函数保存；<br>2.为被调函数的局部变量分配内存（包括形参）；<br>3.将控制转移到被调函数的入口从而执行被调函数；<br>B.从被调函数转移到主调函数前系统也需做三件事：<br>1.保存被调函数返回的结果；<br>2.释放被调函数所占用的内存空间（系统收回被调用函数占用的内存空间的使用权限）；<br>3.依照被调函数所保存的返回地址，将控制转移到主调函数（从被调函数跳出）；<br>C.当多个函数相互调用时，按照“后调用先返回”的原则，函数间的信息传递和控制转移必须借助栈来实现。即整个程序运行所需<br>的数据空间安排在一个栈中。每调用一个函数时，就在栈顶分配一个存储区进行压栈操作，每当一个函数退出时，就释放它的存<br>储区即出栈。当前运行的函数永远在栈顶。<br>D.在计算机看来，函数A调用函数B 和 函数A调用函数A是没有区别的。（执行步骤相同）<br>注：<br>不能无限压栈和出栈，否则系统会崩溃；<br>递归必须满足两个条件：<br>1.递归必须有明确的终止条件；<br>2.该函数所处理的数据规模必须在递减；n-&gt;n-1-&gt;n-2-&gt;n-3-&gt;…-&gt;1<br>递归和循环的关系：<br>所有循环都可转化为递归；所有递归不一定能由循环实现；<br>递归和循环优缺点：<br>递归：<br>优点：易于理解；缺点：速度慢、存储空间大（浪费空间多）；<br>循环：<br>优点：速度快、存储空间小（浪费空间少）；缺点：不易理解；<br>递归应用：<br>树和森林以递归方式定义；<br>树和图的很多算法都是以递归实现；<br>很多数学公式都是以递归方式定义的，如斐波拉契数列；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E6%A6%82%E8%BF%B0/" data-id="ckjxwttx20000nkvp4bebgubb" data-title="函数递归概述" class="article-share-link">Partager</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-函数概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -98,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B0/" data-id="ckjxwgffc0001gsvp9gz23bsr" data-title="函数概述" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B0/" data-id="ckjxwgffc0001gsvp9gz23bsr" data-title="函数概述" class="article-share-link">Partager</a>
       
       
       
@@ -136,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/15/%E6%AF%94%E8%BE%833%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%BE%E5%87%BA%E5%85%B6%E4%B8%AD%E6%9C%80%E5%A4%A7%E8%80%85/" data-id="ckjxlyt330000zgvp38fx824n" data-title="比较3个字符串找出其中最大者" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/15/%E6%AF%94%E8%BE%833%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%BE%E5%87%BA%E5%85%B6%E4%B8%AD%E6%9C%80%E5%A4%A7%E8%80%85/" data-id="ckjxlyt330000zgvp38fx824n" data-title="比较3个字符串找出其中最大者" class="article-share-link">Partager</a>
       
       
       
@@ -174,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E8%BE%93%E5%85%A5%E4%B8%80%E8%A1%8C%E5%AD%97%E7%AC%A6%EF%BC%8C%E7%BB%9F%E8%AE%A1%E5%85%B6%E4%B8%AD%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%8D%95%E8%AF%8D%EF%BC%88%E5%8D%95%E8%AF%8D%E9%97%B4%E4%BB%A5%E7%A9%BA%E6%A0%BC%E5%88%86%E9%9A%94%E5%BC%80%EF%BC%89/" data-id="ckjwyw0x40000gwvpaik85leb" data-title="输入一行字符，统计其中有多少个单词（单词间以空格分隔开）" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/14/%E8%BE%93%E5%85%A5%E4%B8%80%E8%A1%8C%E5%AD%97%E7%AC%A6%EF%BC%8C%E7%BB%9F%E8%AE%A1%E5%85%B6%E4%B8%AD%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%8D%95%E8%AF%8D%EF%BC%88%E5%8D%95%E8%AF%8D%E9%97%B4%E4%BB%A5%E7%A9%BA%E6%A0%BC%E5%88%86%E9%9A%94%E5%BC%80%EF%BC%89/" data-id="ckjwyw0x40000gwvpaik85leb" data-title="输入一行字符，统计其中有多少个单词（单词间以空格分隔开）" class="article-share-link">Partager</a>
       
       
       
@@ -212,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/" data-id="ckjwxykqa0000ycvp7ds71yvd" data-title="使用字符串处理函数" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/14/%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/" data-id="ckjwxykqa0000ycvp7ds71yvd" data-title="使用字符串处理函数" class="article-share-link">Partager</a>
       
       
       
@@ -252,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" data-id="ckjwqignx0000rkvpg3vea5yz" data-title="scanf输入字符串时注意事项" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" data-id="ckjwqignx0000rkvpg3vea5yz" data-title="scanf输入字符串时注意事项" class="article-share-link">Partager</a>
       
       
       
@@ -293,7 +332,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/" data-id="ckjwotkcl00004ovpa56t0xtm" data-title="字符数组" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/14/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/" data-id="ckjwotkcl00004ovpa56t0xtm" data-title="字符数组" class="article-share-link">Partager</a>
       
       
       
@@ -331,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E6%B1%82%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8F%8A%E6%9C%80%E5%A4%A7%E5%80%BC%E8%A1%8C%E5%88%97%E6%95%B0/" data-id="ckjwa1lbx00008cvp2wcm7aak" data-title="求二维数组最大值及最大值行列数" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/14/%E6%B1%82%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8F%8A%E6%9C%80%E5%A4%A7%E5%80%BC%E8%A1%8C%E5%88%97%E6%95%B0/" data-id="ckjwa1lbx00008cvp2wcm7aak" data-title="求二维数组最大值及最大值行列数" class="article-share-link">Partager</a>
       
       
       
@@ -369,7 +408,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E8%A1%8C%E5%88%97%E4%BA%92%E6%8D%A2/" data-id="ckjw9q0nc0000p0vpc6xc4o0t" data-title="二维数组行列互换" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/14/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E8%A1%8C%E5%88%97%E4%BA%92%E6%8D%A2/" data-id="ckjw9q0nc0000p0vpc6xc4o0t" data-title="二维数组行列互换" class="article-share-link">Partager</a>
       
       
       
@@ -407,45 +446,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckjw8lzmm0000t0vp2ztk9niw" data-title="一维数组冒泡排序" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-一维数组逆序输出" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/13/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E9%80%86%E5%BA%8F%E8%BE%93%E5%87%BA/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T15:11:16.000Z" itemprop="datePublished">2021-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/13/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E9%80%86%E5%BA%8F%E8%BE%93%E5%87%BA/">一维数组逆序输出</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[5]&#x3D;&#123;1,2,3,4,5&#125;;</span><br><span class="line">    int t,i&#x3D;0,j&#x3D;4;</span><br><span class="line">    while(i&lt;j)</span><br><span class="line">    &#123;</span><br><span class="line">        t&#x3D;a[i];</span><br><span class="line">        a[i]&#x3D;a[j];</span><br><span class="line">        a[j]&#x3D;t;</span><br><span class="line">        i++;</span><br><span class="line">        j--;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int k&#x3D;0;k&lt;5;k++)</span><br><span class="line">        printf(&quot;%d &quot;,a[k]);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E9%80%86%E5%BA%8F%E8%BE%93%E5%87%BA/" data-id="ckjvkkjyw0000okvpcghi9vhy" data-title="一维数组逆序输出" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/14/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckjw8lzmm0000t0vp2ztk9niw" data-title="一维数组冒泡排序" class="article-share-link">Partager</a>
       
       
       
@@ -461,7 +462,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Précédent</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Suivant &raquo;</a>
   </nav>
 
 </section>
@@ -478,7 +479,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -488,9 +489,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/01/18/%E8%B7%A8%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/">跨函数使用</a>
+          </li>
         
           <li>
             <a href="/2021/01/18/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/">动态构造一维数组</a>
@@ -508,10 +513,6 @@
             <a href="/2021/01/17/%E5%A6%82%E4%BD%95%E7%A1%AE%E5%AE%9A%E4%B8%80%E4%B8%AA%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/">如何确定一个一维数组</a>
           </li>
         
-          <li>
-            <a href="/2021/01/17/%E6%8C%87%E9%92%88%E4%B8%8E%E6%95%B0%E7%BB%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">指针与数组注意事项</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -526,7 +527,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Propulsé par <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
