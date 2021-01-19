@@ -71,6 +71,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-数值型数据在计算机内部的表示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/19/%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E9%83%A8%E7%9A%84%E8%A1%A8%E7%A4%BA/" class="article-date">
+  <time class="dt-published" datetime="2021-01-19T03:23:25.000Z" itemprop="datePublished">2021-01-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/19/%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E9%83%A8%E7%9A%84%E8%A1%A8%E7%A4%BA/">数值型数据在计算机内部的表示</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>数值型数据包括无符号数和有符号数；<br>有符号数包括原码、反码、补码；<br>无符号数：<br>1.非负整数，数值位均表示大小；若字长为n，则表示2的n次方个数（0到2的n次方-1）<br>有符号数：<br>最高为表示符号位（0正1负）；<br>机器数：连同符号位数值化来供机器识别；<br>真值：机器数表示的真实数值；<br>原码：最高位表符号位，数值部分为真值的绝对值；<br>反码：正数反码为其本身；负数除最高位，按位取反；用反码做运算时，若有进位则循环进位；<br>补码：正数补码为其本身；负数补码除符号位外其余按位取反并在末尾加一；用补码做运算时，若有进位则舍弃进位；<br>补码求真值：<br>1.根据最高位确定符号位；<br>2.若为正数则数值位不变；若为负数则连同符号位取反加一<br>补充：<br>数值型数据在计算机内用补码表示；<br>非数值型数据在计算机内表示：汉字输入码（外码）-&gt;汉字交换码（国标码）-&gt;汉字机内码-&gt;汉字地址码-&gt;汉字字形码；<br>区位码+20H20H-&gt;国标码+80H80H-&gt;机内码；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/19/%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E9%83%A8%E7%9A%84%E8%A1%A8%E7%A4%BA/" data-id="ckk3m5mun000068vp10hpfnt4" data-title="数值型数据在计算机内部的表示" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-枚举" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/19/%E6%9E%9A%E4%B8%BE/" class="article-date">
@@ -453,48 +492,6 @@ pst-&gt;age含义：pst指向结构体中age这个成员；
 
 
   
-    <article id="post-指针和数组" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/17/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" class="article-date">
-  <time class="dt-published" datetime="2021-01-17T09:04:17.000Z" itemprop="datePublished">2021-01-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/17/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/">指针和数组</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[10];</span><br><span class="line">    printf(&quot;%#X\n&quot;,a);</span><br><span class="line">    printf(&quot;%#X\n&quot;,&amp;a[0]);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">两个printf结果相同;</span><br></pre></td></tr></table></figure>
-<p>此程序说明数组名是一个指针常量，存放该数组第一个元素的地址；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[10]&#x3D;&#123;1,2&#125;;</span><br><span class="line">    int *p&#x3D;a;</span><br><span class="line">    printf(&quot;%d\n&quot;,a[1]);</span><br><span class="line">    printf(&quot;%d\n&quot;,*(a+1));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>指针和下标的关系：<br>以本程序为例，p存放数组a的首地址，* p相当于a[0];<br>数组为连续分配的内存；故p+1指向a[1],* (p+1)相当于a[1];<br>同理可得*(p+n)相当于a[n];</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/17/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" data-id="ckk0xhz7500007cvphp7p1g2o" data-title="指针和数组" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -531,6 +528,10 @@ pst-&gt;age含义：pst指向结构体中age这个成员；
       <ul>
         
           <li>
+            <a href="/2021/01/19/%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E9%83%A8%E7%9A%84%E8%A1%A8%E7%A4%BA/">数值型数据在计算机内部的表示</a>
+          </li>
+        
+          <li>
             <a href="/2021/01/19/%E6%9E%9A%E4%B8%BE/">枚举</a>
           </li>
         
@@ -544,10 +545,6 @@ pst-&gt;age含义：pst指向结构体中age这个成员；
         
           <li>
             <a href="/2021/01/18/%E8%B7%A8%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/">跨函数使用</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/18/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/">动态构造一维数组</a>
           </li>
         
       </ul>

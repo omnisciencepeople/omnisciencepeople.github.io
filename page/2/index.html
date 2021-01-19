@@ -71,6 +71,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-指针和数组" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/17/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" class="article-date">
+  <time class="dt-published" datetime="2021-01-17T09:04:17.000Z" itemprop="datePublished">2021-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/17/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/">指针和数组</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[10];</span><br><span class="line">    printf(&quot;%#X\n&quot;,a);</span><br><span class="line">    printf(&quot;%#X\n&quot;,&amp;a[0]);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">两个printf结果相同;</span><br></pre></td></tr></table></figure>
+<p>此程序说明数组名是一个指针常量，存放该数组第一个元素的地址；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[10]&#x3D;&#123;1,2&#125;;</span><br><span class="line">    int *p&#x3D;a;</span><br><span class="line">    printf(&quot;%d\n&quot;,a[1]);</span><br><span class="line">    printf(&quot;%d\n&quot;,*(a+1));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>指针和下标的关系：<br>以本程序为例，p存放数组a的首地址，* p相当于a[0];<br>数组为连续分配的内存；故p+1指向a[1],* (p+1)相当于a[1];<br>同理可得*(p+n)相当于a[n];</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/17/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" data-id="ckk0xhz7500007cvphp7p1g2o" data-title="指针和数组" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-指针返回一个以上的值" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/17/%E6%8C%87%E9%92%88%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E4%BB%A5%E4%B8%8A%E7%9A%84%E5%80%BC/" class="article-date">
@@ -425,45 +467,6 @@
 
 
   
-    <article id="post-变量的存储方式和生存期" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/15/%E5%8F%98%E9%87%8F%E7%9A%84%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%92%8C%E7%94%9F%E5%AD%98%E6%9C%9F/" class="article-date">
-  <time class="dt-published" datetime="2021-01-15T13:44:09.000Z" itemprop="datePublished">2021-01-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/15/%E5%8F%98%E9%87%8F%E7%9A%84%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%92%8C%E7%94%9F%E5%AD%98%E6%9C%9F/">变量的存储方式和生存期</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>变量的存储方式有两种：静态存储方式和动态存储方式；<br>静态存储方式：指程序在运行期间由系统分配固定的存储空间的方式；<br>动态存储方式：指程序在运行期间根据需要进行动态的分配存储空间的方式；<br>内存中供用户使用的存储空间分为三部分：<br>1.程序区<br>2.静态存储区<br>3.动态存储区<br>全局变量全部存放在静态存储区，程序执行完毕就释放，在程序执行过程中，它们占据着固定的存储单元而不是动态地进行分配<br>和释放；<br>在动态存储区中存放以下数据：<br>1.函数形参<br>2.自动变量<br>3.函数调用时的现场保护和返回地址等<br>对以上数据在函数调用时分配存储空间，函数结束时就释放；在函数执行过程中，这种分配和释放是动态的；如果在一个程序中<br>两次调用同一函数（此函数中定义了局部变量）在两次调用时分配给这些局部变量的存储空间的地址可能是不同的；<br>局部变量的存储类别：<br>1.自动变量（auto变量）<br>函数的形参和函数的局部变量，生命周期和函数相同，函数调用结束后就自动释放这些存储空间；<br>auto 可省略；<br>2.静态局部变量<br>用关键词 “static”指定该变量为静态局部变量<br>函数结束后该变量所占用的存储的单元不会释放从而该局部变量的值得以保存；<br>静态局部变量缺点：占内存（长期占用不释放，而不能像动态内存那样一个存储单元可以先后为多个变量使用，节约内存）；<br>降低了程序的可读性（当调用次数过多时往往弄不清静态局部变量的当前值）；<br>3.寄存器变量<br>存储在CPU的寄存器中；<br>为提高执行效率；<br>对寄存器的存取速度远高于对内存的存取速度；<br>全局变量的存储类别<br>1.在一个文件内扩展外部变量的作用域extern<br>2.将外部变量的作用域扩展至其他文件extern<br>3.将外部变量的作用域限制在本文件中static<br>static声明一个变量的作用：<br>1.对局部变量进行声明，把它分配在静态存储区，该变量在整个程序执行不释放，其所分配的存储空间始终存在直至程序结束，<br>函数内有效；<br>2.对全局变量进行声明，则该变量作用域只限于本文件夹不能被其他文件引用；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/15/%E5%8F%98%E9%87%8F%E7%9A%84%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%92%8C%E7%94%9F%E5%AD%98%E6%9C%9F/" data-id="ckjz3z5hp0000acvp1dp491dk" data-title="变量的存储方式和生存期" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -500,6 +503,10 @@
       <ul>
         
           <li>
+            <a href="/2021/01/19/%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E9%83%A8%E7%9A%84%E8%A1%A8%E7%A4%BA/">数值型数据在计算机内部的表示</a>
+          </li>
+        
+          <li>
             <a href="/2021/01/19/%E6%9E%9A%E4%B8%BE/">枚举</a>
           </li>
         
@@ -513,10 +520,6 @@
         
           <li>
             <a href="/2021/01/18/%E8%B7%A8%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/">跨函数使用</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/18/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/">动态构造一维数组</a>
           </li>
         
       </ul>

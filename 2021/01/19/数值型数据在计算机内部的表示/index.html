@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>指针简单程序讲解 | My Blog</title>
+  <title>数值型数据在计算机内部的表示 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="123456789101112#include&lt;stdio.h&gt;int main()&amp;#123;    int* p;&#x2F;&#x2F;定义一个指针变量（用于存放地址的变量）；p为指针变量的名字，int*为一个数据类型表示p存放int类型变量    的地址；    int i&#x3D;3;    p&#x3D;i;&#x2F;&#x2F;error;p为存放变量地址的变量而非存">
+  <meta name="description" content="数值型数据包括无符号数和有符号数；有符号数包括原码、反码、补码；无符号数：1.非负整数，数值位均表示大小；若字长为n，则表示2的n次方个数（0到2的n次方-1）有符号数：最高为表示符号位（0正1负）；机器数：连同符号位数值化来供机器识别；真值：机器数表示的真实数值；原码：最高位表符号位，数值部分为真值的绝对值；反码：正数反码为其本身；负数除最高位，按位取反；用反码做运算时，若有进位则循环进位；补码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="指针简单程序讲解">
-<meta property="og:url" content="https://username.github.io/2021/01/17/%E6%8C%87%E9%92%88%E7%AE%80%E5%8D%95%E7%A8%8B%E5%BA%8F%E8%AE%B2%E8%A7%A3/index.html">
+<meta property="og:title" content="数值型数据在计算机内部的表示">
+<meta property="og:url" content="https://username.github.io/2021/01/19/%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E9%83%A8%E7%9A%84%E8%A1%A8%E7%A4%BA/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="123456789101112#include&lt;stdio.h&gt;int main()&amp;#123;    int* p;&#x2F;&#x2F;定义一个指针变量（用于存放地址的变量）；p为指针变量的名字，int*为一个数据类型表示p存放int类型变量    的地址；    int i&#x3D;3;    p&#x3D;i;&#x2F;&#x2F;error;p为存放变量地址的变量而非存">
+<meta property="og:description" content="数值型数据包括无符号数和有符号数；有符号数包括原码、反码、补码；无符号数：1.非负整数，数值位均表示大小；若字长为n，则表示2的n次方个数（0到2的n次方-1）有符号数：最高为表示符号位（0正1负）；机器数：连同符号位数值化来供机器识别；真值：机器数表示的真实数值；原码：最高位表符号位，数值部分为真值的绝对值；反码：正数反码为其本身；负数除最高位，按位取反；用反码做运算时，若有进位则循环进位；补码">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-01-17T00:15:56.000Z">
-<meta property="article:modified_time" content="2021-01-17T03:53:21.061Z">
+<meta property="article:published_time" content="2021-01-19T03:23:25.000Z">
+<meta property="article:modified_time" content="2021-01-19T06:24:36.657Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-指针简单程序讲解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-数值型数据在计算机内部的表示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/01/17/%E6%8C%87%E9%92%88%E7%AE%80%E5%8D%95%E7%A8%8B%E5%BA%8F%E8%AE%B2%E8%A7%A3/" class="article-date">
-  <time class="dt-published" datetime="2021-01-17T00:15:56.000Z" itemprop="datePublished">2021-01-17</time>
+    <a href="/2021/01/19/%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E9%83%A8%E7%9A%84%E8%A1%A8%E7%A4%BA/" class="article-date">
+  <time class="dt-published" datetime="2021-01-19T03:23:25.000Z" itemprop="datePublished">2021-01-19</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      指针简单程序讲解
+      数值型数据在计算机内部的表示
     </h1>
   
 
@@ -95,13 +95,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int* p;&#x2F;&#x2F;定义一个指针变量（用于存放地址的变量）；p为指针变量的名字，int*为一个数据类型表示p存放int类型变量</span><br><span class="line">    的地址；</span><br><span class="line">    int i&#x3D;3;</span><br><span class="line">    p&#x3D;i;&#x2F;&#x2F;error;p为存放变量地址的变量而非存放变量的变量；</span><br><span class="line">    p&#x3D;&amp;i;&#x2F;&#x2F;ok;p保存了i的地址因此p指向i;</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    printf(&quot;%d\n&quot;,*p);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注：<br>p指向i，但修改i的值不影响p的值，修改p的值不影响i的值；<br>如果一个指针变量指向了一个普通变量，那么（* 指针变量）就等同于普通变量，在本程序中在所有出现* p的地方，都可以替<br>换为i；同理所有i都可替换为* p；<br>*p就是以p的内容为地址的变量</p>
+        <p>数值型数据包括无符号数和有符号数；<br>有符号数包括原码、反码、补码；<br>无符号数：<br>1.非负整数，数值位均表示大小；若字长为n，则表示2的n次方个数（0到2的n次方-1）<br>有符号数：<br>最高为表示符号位（0正1负）；<br>机器数：连同符号位数值化来供机器识别；<br>真值：机器数表示的真实数值；<br>原码：最高位表符号位，数值部分为真值的绝对值；<br>反码：正数反码为其本身；负数除最高位，按位取反；用反码做运算时，若有进位则循环进位；<br>补码：正数补码为其本身；负数补码除符号位外其余按位取反并在末尾加一；用补码做运算时，若有进位则舍弃进位；<br>补码求真值：<br>1.根据最高位确定符号位；<br>2.若为正数则数值位不变；若为负数则连同符号位取反加一<br>补充：<br>数值型数据在计算机内用补码表示；<br>非数值型数据在计算机内表示：汉字输入码（外码）-&gt;汉字交换码（国标码）-&gt;汉字机内码-&gt;汉字地址码-&gt;汉字字形码；<br>区位码+20H20H-&gt;国标码+80H80H-&gt;机内码；</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/17/%E6%8C%87%E9%92%88%E7%AE%80%E5%8D%95%E7%A8%8B%E5%BA%8F%E8%AE%B2%E8%A7%A3/" data-id="ckk0ed2fm0000x0vpbxm3ehy4" data-title="指针简单程序讲解" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/19/%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E9%83%A8%E7%9A%84%E8%A1%A8%E7%A4%BA/" data-id="ckk3m5mun000068vp10hpfnt4" data-title="数值型数据在计算机内部的表示" class="article-share-link">Teilen</a>
       
       
       
@@ -111,19 +110,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/01/17/%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E6%8C%87%E9%92%88%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          基本类型指针常见问题解析
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/01/16/%E6%8C%87%E9%92%88%E6%A6%82%E8%BF%B0/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/01/19/%E6%9E%9A%E4%B8%BE/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">指针概述</div>
+      <div class="article-nav-title">枚举</div>
     </a>
   
 </nav>
