@@ -71,6 +71,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-用布尔函数判断是否为素数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/16/%E7%94%A8%E5%B8%83%E5%B0%94%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E7%B4%A0%E6%95%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-01-16T09:28:59.000Z" itemprop="datePublished">2021-01-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/16/%E7%94%A8%E5%B8%83%E5%B0%94%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E7%B4%A0%E6%95%B0/">用布尔函数判断是否为素数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line">bool Isprime(int val);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int val;</span><br><span class="line">    char ch;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">     printf(&quot;请输入你要判断的数字:&quot;);</span><br><span class="line">     scanf(&quot;%d&quot;,&amp;val);</span><br><span class="line">     if(Isprime(val))</span><br><span class="line">        printf(&quot;Yes\n&quot;);</span><br><span class="line">     else</span><br><span class="line">        printf(&quot;No\n&quot;);</span><br><span class="line">     printf(&quot;请问你是否还要继续（Y&#x2F;N）:&quot;);</span><br><span class="line">     scanf(&quot; %c&quot;,&amp;ch);</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;||ch&#x3D;&#x3D;&#39;y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">bool Isprime(int val)</span><br><span class="line">&#123;</span><br><span class="line">    for(int j&#x3D;2;j&lt;val;j++)</span><br><span class="line">        if(val%j&#x3D;&#x3D;0)</span><br><span class="line">            break;</span><br><span class="line">    if(val&#x3D;&#x3D;j)</span><br><span class="line">        return true;</span><br><span class="line">    else</span><br><span class="line">        return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/16/%E7%94%A8%E5%B8%83%E5%B0%94%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E7%B4%A0%E6%95%B0/" data-id="ckjziw4t40000z8vpgbgyg7aw" data-title="用布尔函数判断是否为素数" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-函数变量之全局变量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/" class="article-date">
@@ -418,44 +456,6 @@
 
 
   
-    <article id="post-输入一行字符，统计其中有多少个单词（单词间以空格分隔开）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/14/%E8%BE%93%E5%85%A5%E4%B8%80%E8%A1%8C%E5%AD%97%E7%AC%A6%EF%BC%8C%E7%BB%9F%E8%AE%A1%E5%85%B6%E4%B8%AD%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%8D%95%E8%AF%8D%EF%BC%88%E5%8D%95%E8%AF%8D%E9%97%B4%E4%BB%A5%E7%A9%BA%E6%A0%BC%E5%88%86%E9%9A%94%E5%BC%80%EF%BC%89/" class="article-date">
-  <time class="dt-published" datetime="2021-01-14T14:26:39.000Z" itemprop="datePublished">2021-01-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/14/%E8%BE%93%E5%85%A5%E4%B8%80%E8%A1%8C%E5%AD%97%E7%AC%A6%EF%BC%8C%E7%BB%9F%E8%AE%A1%E5%85%B6%E4%B8%AD%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%8D%95%E8%AF%8D%EF%BC%88%E5%8D%95%E8%AF%8D%E9%97%B4%E4%BB%A5%E7%A9%BA%E6%A0%BC%E5%88%86%E9%9A%94%E5%BC%80%EF%BC%89/">输入一行字符，统计其中有多少个单词（单词间以空格分隔开）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,num&#x3D;0,word&#x3D;0;</span><br><span class="line">    char str[100];</span><br><span class="line">    char ch;</span><br><span class="line">    gets(str);&#x2F;&#x2F;也可以scanf(&quot;%s&quot;,str);</span><br><span class="line">    for(i&#x3D;0;(ch&#x3D;str[i])!&#x3D;&#39;\0&#39;;i++)</span><br><span class="line">       if(ch&#x3D;&#x3D;&#39; &#39;)</span><br><span class="line">         word&#x3D;0;</span><br><span class="line">       else</span><br><span class="line">           if(word&#x3D;&#x3D;0)</span><br><span class="line">             &#123;</span><br><span class="line">                 word&#x3D;1;</span><br><span class="line">                 num++;</span><br><span class="line">             &#125;</span><br><span class="line">    printf(&quot;单词数量为:%d\n&quot;,num);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E8%BE%93%E5%85%A5%E4%B8%80%E8%A1%8C%E5%AD%97%E7%AC%A6%EF%BC%8C%E7%BB%9F%E8%AE%A1%E5%85%B6%E4%B8%AD%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%8D%95%E8%AF%8D%EF%BC%88%E5%8D%95%E8%AF%8D%E9%97%B4%E4%BB%A5%E7%A9%BA%E6%A0%BC%E5%88%86%E9%9A%94%E5%BC%80%EF%BC%89/" data-id="ckjwyw0x40000gwvpaik85leb" data-title="输入一行字符，统计其中有多少个单词（单词间以空格分隔开）" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -492,6 +492,10 @@
       <ul>
         
           <li>
+            <a href="/2021/01/19/%E9%93%BE%E8%A1%A8%E6%A6%82%E8%BF%B0/">链表概述</a>
+          </li>
+        
+          <li>
             <a href="/2021/01/19/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%BE%E4%BE%8B/">位运算符举例</a>
           </li>
         
@@ -505,10 +509,6 @@
         
           <li>
             <a href="/2021/01/19/%E6%9E%9A%E4%B8%BE/">枚举</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E6%8C%89%E6%88%90%E7%BB%A9%E6%8E%92%E5%BA%8F%EF%BC%88%E6%95%B0%E7%BB%84%EF%BC%89/">动态构造学生信息系统并按成绩排序（数组）</a>
           </li>
         
       </ul>
