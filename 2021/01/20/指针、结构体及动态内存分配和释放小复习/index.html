@@ -14,7 +14,7 @@
 <meta property="og:description" content="指针小复习：1.指针非法访问：定义一个指针变量并未初始化，此时该指针变量有指向，指向一个我们不知道的内存单元，我们可以访问p即输出该内存单元的地址，但我们不可访问p所指向的内存单元的内容，因为该内存单元的操作权限未分配给本程序；2.指针就是地址（内存单元的编号），本质上为一个操作受限的非负整数；  指针变量是存放内存单元地址的变量即存放指针的变量；3.CPU和内存条之间有三根线：数据总线（传输数据">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-20T02:11:41.000Z">
-<meta property="article:modified_time" content="2021-01-20T03:12:31.468Z">
+<meta property="article:modified_time" content="2021-01-20T03:18:32.951Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -61,12 +61,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Rechercher"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -97,16 +97,16 @@
       
         <p>指针小复习：<br>1.指针非法访问：定义一个指针变量并未初始化，此时该指针变量有指向，指向一个我们不知道的内存单元，我们可以访问p即<br>输出该内存单元的地址，但我们不可访问p所指向的内存单元的内容，因为该内存单元的操作权限未分配给本程序；<br>2.指针就是地址（内存单元的编号），本质上为一个操作受限的非负整数；<br>  指针变量是存放内存单元地址的变量即存放指针的变量；<br>3.CPU和内存条之间有三根线：数据总线（传输数据）、控制总线（控制输入输出、控制只读只写或读写）、地址总线（确定内<br>存单元）；<br>4.内存释放：并非内存真正释放而是指系统将分配给本程序的内存空间的操作权限收回，里面的数据未流失，只是本程序不可访<br>问；内存释放后内存中数据依然存在故定义变量需要初始化，否则会得到一个垃圾值；<br>5.确定一维数组需要知道两个条件：数组首地址和数组长度；<br>6.无论一个指针变量指向的变量占几个字节，该指针变量只占四个字节；<br>7.若想要通过其他函数改变主函数中变量的值，实参必须为该变量的地址；<br>8.int* p=&i;//p保留了i的地址；p指向i；*p就等同于i；<br>9.数组名为数组首地址，是一个常量；</p>
 <p>结构体小复习：<br>1.定义：将一些基本数据类型组合在一起形成的新的复合数据类型；<br>2.定义结构体变量时末尾有分号；定义结构体变量时可整体赋值，否则只能单个赋值；<br>单个赋值时，为字符串赋值需用strcpy函数进行，不能直接赋值；<br>3.struct student st,* pst;pst=&st;//规定pst-&gt;数据成员 就等价于 (*pst).数据成员 就等价于 st.数据成员;<br>4.结构体变量不能加减乘除，但可相互赋值;<br>5.调用函数时是直接发送变量还是发送变量地址:<br>发送变量：耗内存（需发送大量字节）、耗时间;<br>发送变量地址:省时间、省内存（只需发送4个字节）;</p>
-<p>动态内存分配专题：<br>1.内存分配的两种方式：<br>从静态存储区分配：<br>编译器请求系统自动分配和释放，生命周期和程序长存；<br>从动态存储区分配：<br>栈（stack）：在函数调用期间分配存储空间，函数结束时释放存储空间；生命周期和函数长存；<br>堆（heap）：由程序员手动分配和释放，函数结束后内存空间不会被释放故可以跨函数使用；但会存在内存泄露（内存越用越少）和程序崩溃等问题；<br>2.动态内存分配方式：<br>使用malloc函数<br>注：使用该函数必须添加malloc.h该头文件；<br>    该函数只能有一个形参；<br>    该函数只会返回所分配内存空间的第一个字节的地址；<br>3.举例：</p>
+<p>动态内存分配专题：<br>1.内存分配的两种方式：<br>从静态存储区分配：<br>编译器请求系统自动分配和释放，生命周期和程序长存；<br>从动态存储区分配：<br>栈（stack）：在函数调用期间分配存储空间，函数结束时释放存储空间；生命周期和函数长存；<br>堆（heap）：由程序员手动分配和释放，函数结束后内存空间不会被释放故可以跨函数使用；但会存在内存泄露（内存越用越少）和程序崩溃(动态分配的内存被多次释放)等问题；<br>2.动态内存分配方式：<br>使用malloc函数<br>注：使用该函数必须添加malloc.h该头文件；<br>    该函数只能有一个形参；<br>    该函数只会返回所分配内存空间的第一个字节的地址；<br>3.举例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int f();</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;9;</span><br><span class="line">    i&#x3D;f();</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">int f()</span><br><span class="line">&#123;</span><br><span class="line">    int j&#x3D;20;</span><br><span class="line">    return j;</span><br><span class="line">&#125;</span><br><span class="line">输出20；</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void f(int);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;9;</span><br><span class="line">    f(i);</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">void f(int j)</span><br><span class="line">&#123;</span><br><span class="line">    j&#x3D;20;</span><br><span class="line">&#125;</span><br><span class="line">输出9</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void f(int*);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;9;</span><br><span class="line">    f(&amp;i);</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">void f(int* j)</span><br><span class="line">&#123;</span><br><span class="line">    *j&#x3D;20;</span><br><span class="line">&#125;</span><br><span class="line">输出20；</span><br></pre></td></tr></table></figure>
-<p>下列程序中p指向一个合法单元的是（C）<br>A.main()<br>{<br>    int* p;<br>    f(p);<br>}<br>int f(int* p)<br>{<br>    int s;<br>    p=&s;<br>}<br>B.main()<br>{<br>    int* p;<br>    f(&amp;p);<br>}<br>int f(int** p)<br>{<br>    int s;<br>    <em>p=&s;<br>}<br>C.main()<br>{<br>    int</em> p;<br>    f(&amp;p);<br>}<br>int f(int** p)<br>{<br>     * p=(int*)malloc(4);<br>}</p>
+<p>下列程序中p指向一个合法单元的是（C）<br>A.main()<br>{<br>    int* p;<br>    f(p);<br>}<br>int f(int* p)<br>{<br>    int s;<br>    p=&s;<br>}<br>B.main()<br>{<br>    int* p;<br>    f(&amp;p);<br>}<br>int f(int** p)<br>{<br>    int s;<br>    * p=&s;<br>}<br>C.main()<br>{<br>    int* p;<br>    f(&amp;p);<br>}<br>int f(int** p)<br>{<br>     * p=(int*)malloc(4);<br>}</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E6%8C%87%E9%92%88%E3%80%81%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%8A%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E5%92%8C%E9%87%8A%E6%94%BE%E5%B0%8F%E5%A4%8D%E4%B9%A0/" data-id="ckk4ur7ed0000igvp9ga90edt" data-title="指针、结构体及动态内存分配和释放小复习" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/20/%E6%8C%87%E9%92%88%E3%80%81%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%8A%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E5%92%8C%E9%87%8A%E6%94%BE%E5%B0%8F%E5%A4%8D%E4%B9%A0/" data-id="ckk4ur7ed0000igvp9ga90edt" data-title="指针、结构体及动态内存分配和释放小复习" class="article-share-link">Teilen</a>
       
       
       
@@ -118,7 +118,7 @@
   
   
     <a href="/2021/01/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">数据结构概述</div>
     </a>
   
@@ -142,7 +142,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -152,7 +152,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
@@ -190,7 +190,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Propulsé par <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
