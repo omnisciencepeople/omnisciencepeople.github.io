@@ -71,6 +71,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-枚举" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/19/%E6%9E%9A%E4%B8%BE/" class="article-date">
+  <time class="dt-published" datetime="2021-01-19T03:03:02.000Z" itemprop="datePublished">2021-01-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/19/%E6%9E%9A%E4%B8%BE/">枚举</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>枚举：将一个事物所有的取值一一列举出来；<br>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">enum weekday</span><br><span class="line">&#123;</span><br><span class="line">    Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    enum weekday day;&#x2F;&#x2F;定义了一个变量，它的数据类型为enum weekday；</span><br><span class="line">    day&#x3D;Friday;</span><br><span class="line">    printf(&quot;%d\n&quot;,day);</span><br><span class="line">    printf(&quot;请为day赋值:\nday&#x3D;&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;day);</span><br><span class="line">    switch(day)</span><br><span class="line">    &#123;</span><br><span class="line">        case 0:</span><br><span class="line">             printf(&quot;Mon\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 1:</span><br><span class="line">             printf(&quot;Tue\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 2:</span><br><span class="line">             printf(&quot;Wed\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 3:</span><br><span class="line">             printf(&quot;Thu\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 4:</span><br><span class="line">             printf(&quot;Fri\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 5:</span><br><span class="line">             printf(&quot;Sat\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 6:</span><br><span class="line">             printf(&quot;Sun\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>枚举优点：代码更安全；<br>枚举缺点：书写麻烦；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/19/%E6%9E%9A%E4%B8%BE/" data-id="ckk3flfed0000ogvp21ag4k4b" data-title="枚举" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-动态构造学生信息系统并按成绩排序（数组）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E6%8C%89%E6%88%90%E7%BB%A9%E6%8E%92%E5%BA%8F%EF%BC%88%E6%95%B0%E7%BB%84%EF%BC%89/" class="article-date">
@@ -454,46 +495,6 @@ pst-&gt;age含义：pst指向结构体中age这个成员；
 
 
   
-    <article id="post-指针返回一个以上的值" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/17/%E6%8C%87%E9%92%88%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E4%BB%A5%E4%B8%8A%E7%9A%84%E5%80%BC/" class="article-date">
-  <time class="dt-published" datetime="2021-01-17T08:51:04.000Z" itemprop="datePublished">2021-01-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/17/%E6%8C%87%E9%92%88%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E4%BB%A5%E4%B8%8A%E7%9A%84%E5%80%BC/">指针返回一个以上的值</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void g(int*,int*);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a&#x3D;5,b&#x3D;3;</span><br><span class="line">    g(&amp;a,&amp;b);</span><br><span class="line">    printf(&quot;a&#x3D;%d b&#x3D;%d\n&quot;,a,b);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">void g(int* p,int* q)</span><br><span class="line">&#123;</span><br><span class="line">    *p&#x3D;1;</span><br><span class="line">    *q&#x3D;2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如何通过被调函数修改主调函数的值：<br>1.实参为该变量地址；<br>2.形参为指针变量；<br>3.在被调函数中通过*形参名的的方式修改主调函数相关变量的值；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/17/%E6%8C%87%E9%92%88%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E4%BB%A5%E4%B8%8A%E7%9A%84%E5%80%BC/" data-id="ckk0wtfva00009gvp2bqq2wfe" data-title="指针返回一个以上的值" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -530,6 +531,10 @@ pst-&gt;age含义：pst指向结构体中age这个成员；
       <ul>
         
           <li>
+            <a href="/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/">循环队列演示</a>
+          </li>
+        
+          <li>
             <a href="/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/">线性结构队列概述</a>
           </li>
         
@@ -543,10 +548,6 @@ pst-&gt;age含义：pst指向结构体中age这个成员；
         
           <li>
             <a href="/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD/">动态构造链表并进行插入删除等功能</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E6%95%B0%E7%BB%84%EF%BC%89/">动态构造学生信息系统并实现插入删除等功能（数组）</a>
           </li>
         
       </ul>
