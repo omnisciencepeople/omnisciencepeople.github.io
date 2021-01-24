@@ -71,6 +71,83 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-链式树遍历演示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/" class="article-date">
+  <time class="dt-published" datetime="2021-01-24T11:12:43.000Z" itemprop="datePublished">2021-01-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/">链式树遍历演示</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">typedef struct TNode</span><br><span class="line">&#123;</span><br><span class="line">    char ch;</span><br><span class="line">    struct TNode*PLnode;</span><br><span class="line">    struct TNode*PRnode;</span><br><span class="line">&#125;TN,*PTN;</span><br><span class="line">void intraverse_tree(PTN pT);</span><br><span class="line">void pretraverse_tree(PTN pT);</span><br><span class="line">void posttraverse_tree(PTN pT);</span><br><span class="line">PTN creat_tree();</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    PTN pt;</span><br><span class="line">    pt&#x3D;creat_tree();</span><br><span class="line">    printf(&quot;先序输出为:\n&quot;);</span><br><span class="line">    pretraverse_tree(pt);</span><br><span class="line">    printf(&quot;中序输出为:\n&quot;);</span><br><span class="line">    intraverse_tree(pt);</span><br><span class="line">    printf(&quot;后序输出为:\n&quot;);</span><br><span class="line">    posttraverse_tree(pt);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">PTN creat_tree()</span><br><span class="line">&#123;</span><br><span class="line">    PTN pA&#x3D;(PTN)malloc(sizeof(TN));</span><br><span class="line">    PTN pB&#x3D;(PTN)malloc(sizeof(TN));</span><br><span class="line">    PTN pC&#x3D;(PTN)malloc(sizeof(TN));</span><br><span class="line">    PTN pD&#x3D;(PTN)malloc(sizeof(TN));</span><br><span class="line">    PTN pE&#x3D;(PTN)malloc(sizeof(TN));</span><br><span class="line">    pA-&gt;ch&#x3D;&#39;A&#39;;</span><br><span class="line">    pB-&gt;ch&#x3D;&#39;B&#39;;</span><br><span class="line">    pC-&gt;ch&#x3D;&#39;C&#39;;</span><br><span class="line">    pD-&gt;ch&#x3D;&#39;D&#39;;</span><br><span class="line">    pE-&gt;ch&#x3D;&#39;E&#39;;</span><br><span class="line">    pA-&gt;PLnode&#x3D;pB;</span><br><span class="line">    pA-&gt;PRnode&#x3D;pC;</span><br><span class="line">    pB-&gt;PLnode&#x3D;pB-&gt;PRnode&#x3D;NULL;</span><br><span class="line">    pC-&gt;PLnode&#x3D;pD;</span><br><span class="line">    pC-&gt;PRnode&#x3D;NULL;</span><br><span class="line">    pD-&gt;PRnode&#x3D;pE;</span><br><span class="line">    pD-&gt;PLnode&#x3D;NULL;</span><br><span class="line">    pE-&gt;PLnode&#x3D;pE-&gt;PRnode&#x3D;NULL;</span><br><span class="line">    return pA;</span><br><span class="line">&#125;</span><br><span class="line">void pretraverse_tree(PTN pT)</span><br><span class="line">&#123;</span><br><span class="line">    if(pT!&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;%c\n&quot;,pT-&gt;ch);</span><br><span class="line">        if(pT-&gt;PLnode!&#x3D;NULL)</span><br><span class="line">           pretraverse_tree(pT-&gt;PLnode);</span><br><span class="line">        if(pT-&gt;PRnode!&#x3D;NULL)</span><br><span class="line">           pretraverse_tree(pT-&gt;PRnode);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void intraverse_tree(PTN pT)</span><br><span class="line">&#123;</span><br><span class="line">    if(pT!&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">       if(pT-&gt;PLnode!&#x3D;NULL)</span><br><span class="line">          intraverse_tree(pT-&gt;PLnode);    </span><br><span class="line">       printf(&quot;%c\n&quot;,pT-&gt;ch);</span><br><span class="line">       if(pT-&gt;PRnode!&#x3D;NULL)</span><br><span class="line">          intraverse_tree(pT-&gt;PRnode);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void posttraverse_tree(PTN pT)</span><br><span class="line">&#123;</span><br><span class="line">    if(pT!&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">      if(pT-&gt;PLnode!&#x3D;NULL)</span><br><span class="line">          posttraverse_tree(pT-&gt;PLnode);</span><br><span class="line">      if(pT-&gt;PRnode!&#x3D;NULL)</span><br><span class="line">          posttraverse_tree(pT-&gt;PRnode);</span><br><span class="line">      printf(&quot;%c\n&quot;,pT-&gt;ch);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/" data-id="ckkb1n8hs000130vpauy80iwh" data-title="链式树遍历演示" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-非线性结构树的概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-01-23T13:56:31.000Z" itemprop="datePublished">2021-01-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/">非线性结构树的概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>树<br>专业定义：有且只有一个称为根的结点；有若干个互不相交的子树，这些子树本身也为一棵树；<br>通俗定义：树由结点和边组成（边指的是指针域）；每个结点只有一个父节点，但可以有多个子节点（根节点除外，根节点无父节点）；<br>专业术语：<br>父节点、子节点、子孙、堂兄弟（父亲为兄弟，他们的孩子为堂兄弟）、祖先；<br>深度：从根节点到最底层节点的层数；根节点为第一层；<br>叶子节点：无子结点的结点；<br>非终端节点：实际上为非叶子节点（有子节点的结点）；<br>度：子结点的个数<br>树的度：子结点个数的最大值；<br>树分类：<br>    一般树<br>         任意一个子结点的个数不受限制；<br>    二叉树<br>         任何一个节点的个数最多两个，且子结点顺序不可更改（有序树）；<br>         分类：<br>             满二叉树：每一层的节点数都是最大节点数的二叉树；<br>             完全二叉树：如果只是删除了满二叉树最底层最右边的连续若干个结点，这样形成的二叉树为完全二叉树；<br>             满二叉树是完全二叉树的一个特例；<br>    森林<br>          n个互不相交的树的集合；<br>树的存储<br>        二叉树的存储<br>               连续存储【必须转化为完全二叉树进行存储：内存是线性一维的；存储不可只存储有效节点，否则无法还原二叉树】<br>                    优点：查找某个结点的父节点和子节点（也包括判断有没有子节点）速度快；<br>                    缺点：耗用内存空间过大；<br>               链式存储：<br>                   耗用内存少，浪费空间少；<br>        一般树的存储<br>               双亲表示法<br>                     求父节点方便，求子结点难；<br>               孩子表示法<br>                     求子结点方便，求父节点难；<br>               双亲孩子表示法<br>                     求子结点和父节点都方便；<br>               二叉树表示法<br>                     将普通树转化为二叉树来存储；<br>                     具体实现方法：<br>                     设法保证任意一个结点的左指针域指向他的第一个孩子，他的右指针域指向他的第一个兄弟；只要满足此条件就可将一个普通树转化为二叉树；<br>                     一个普通树转化成二叉树一定无右子树；<br>        森林的存储<br>               将森林转化为二叉树进行存储；<br>二叉树操作：<br>       先序遍历：<br>       1.先访问根节点；<br>       2.再先序遍历左子树；<br>       3.再先序遍历右子树；<br>       中序遍历：<br>       1.先中序访问左子树；<br>       2.再访问根节点；<br>       3.再中序访问右子树；<br>       后序遍历：<br>       1.先后序访问左子树；<br>       2.再后序访问右子树；<br>       3.再访问根节点；<br>       先序中序后序将非线性结构转化为线性结构输出；<br>       已知两种遍历方式求原始二叉树：<br>             1.单个遍历方式无法还原二叉树；<br>             2.已知先序和后序无法还原二叉树；<br>             3.通过先序和中序 或 中序和后序可还原原始二叉树；<br>             例如<br>             已知先序：ABCDEFGH 中序：BDCEAFHG则后序为DECBHGFA;<br>             已知先序：ABDGHCEFI 中序：GDHBAECIF则后序为GHDBEIFCA;<br>             已知先序：ABFDCLMN 中序：BFACDLNM则后序为FBCNMLDA;<br>             已知先序：MFLAQGBE 中序：FALGQMEB则后序为AGQLFEBM;<br>             已知中序：BDCEAFHG 后序：DECBHGFA则先序为ABCDEFGH;<br>树应用：<br>1.树为数据库中数据组织的一种重要形式；<br>2.操作系统子父进程的关系本身为一棵树；<br>3.面向对象语言中类的继承关系本身为一棵树；<br>4.赫夫曼树（如何存树使效率达到最高）；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" data-id="ckkb1n8ho000030vp4hi16rct" data-title="非线性结构树的概述" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-循环队列演示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" class="article-date">
@@ -379,89 +456,6 @@
 
 
   
-    <article id="post-动态构造数组链表" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8/" class="article-date">
-  <time class="dt-published" datetime="2021-01-20T08:15:21.000Z" itemprop="datePublished">2021-01-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8/">动态构造数组链表</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>动态构造一维数组：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;&#x2F;&#x2F;包含exit函数</span><br><span class="line">#include&lt;malloc.h&gt;&#x2F;&#x2F;包含malloc函数</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int len;</span><br><span class="line">    printf(&quot;请输入你想要构造数组的长度：&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;len);</span><br><span class="line">    int* PArr&#x3D;(int*)malloc(sizeof(int)*len);&#x2F;&#x2F;动态构造数组</span><br><span class="line">    if(PArr&#x3D;&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;动态数组构造失败，程序终止\n&quot;);</span><br><span class="line">        exit(-1);</span><br><span class="line">    &#125;&#x2F;&#x2F;检验动态数组是否构造成功</span><br><span class="line">    printf(&quot;请为数组赋值：&quot;);</span><br><span class="line">    for(int i&#x3D;0;i&lt;len;i++)</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;PArr[i]);</span><br><span class="line">    printf(&quot;输出数组为：&quot;);</span><br><span class="line">    for(i&#x3D;0;i&lt;len;i++)</span><br><span class="line">        printf(&quot;%d &quot;,PArr[i]);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>动态构造单链表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;&#x2F;&#x2F;包含malloc函数</span><br><span class="line">#include&lt;stdlib.h&gt;&#x2F;&#x2F;包含exit函数</span><br><span class="line">struct Node</span><br><span class="line">&#123;</span><br><span class="line">    int data;</span><br><span class="line">    struct Node* Next;</span><br><span class="line">&#125;;&#x2F;&#x2F;每个结点都包括指针域和数据域故使用结构体</span><br><span class="line">struct Node* creat_list();&#x2F;&#x2F;构造链表并返回头结点的地址</span><br><span class="line">void traverse_list(struct Node*);&#x2F;&#x2F;输出链表</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    struct Node* head&#x3D;NULL;&#x2F;&#x2F;定义一个头指针，确定一个链表只需知链表的头指针</span><br><span class="line">    head&#x3D;creat_list();</span><br><span class="line">    traverse_list(head);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">struct Node* creat_list()</span><br><span class="line">&#123;</span><br><span class="line">    struct Node*phead&#x3D;(struct Node*)malloc(sizeof(struct Node));&#x2F;&#x2F;构造一个头结点</span><br><span class="line">    if(phead&#x3D;&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;头结点构造失败，程序终止\n&quot;);</span><br><span class="line">        exit(-1);</span><br><span class="line">    &#125;&#x2F;&#x2F;判断头结点是否构造成功</span><br><span class="line">    struct Node* ptail&#x3D;phead;&#x2F;&#x2F;定义一个中间变量一边链接链表的每个结点</span><br><span class="line">    ptail-&gt;Next&#x3D;NULL;</span><br><span class="line">    int len,val;</span><br><span class="line">    printf(&quot;请输入你想要构造结点的个数：&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;len);</span><br><span class="line">    printf(&quot;请为每一个结点赋值：&quot;);</span><br><span class="line">    for(int i&#x3D;0;i&lt;len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        struct Node* pNext&#x3D;(struct Node*)malloc(sizeof(struct Node));</span><br><span class="line">        if(pNext&#x3D;&#x3D;NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            printf(&quot;结点构造失败，程序终止\n&quot;);</span><br><span class="line">            exit(-1);</span><br><span class="line">        &#125;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;val);</span><br><span class="line">        pNext-&gt;data&#x3D;val;</span><br><span class="line">        pNext-&gt;Next&#x3D;NULL;&#x2F;&#x2F;65到75之间构造节点并对节点进行操作</span><br><span class="line">        ptail-&gt;Next&#x3D;pNext;</span><br><span class="line">        ptail&#x3D;pNext;&#x2F;&#x2F;76到77链接结点构造链表</span><br><span class="line">    &#125;</span><br><span class="line">    return phead;&#x2F;&#x2F;返回链表头结点的地址给头指针</span><br><span class="line">&#125;</span><br><span class="line">void traverse_list(struct Node*p)</span><br><span class="line">&#123;</span><br><span class="line">    p&#x3D;p-&gt;Next;</span><br><span class="line">    printf(&quot;输出链表为：&quot;);</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;%d &quot;,p-&gt;data);</span><br><span class="line">        p&#x3D;p-&gt;Next;</span><br><span class="line">    &#125;while(p!&#x3D;NULL);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8/" data-id="ckk56svys0000c0vp5ipja5f9" data-title="动态构造数组链表" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-数据结构之线性结构" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" class="article-date">
-  <time class="dt-published" datetime="2021-01-20T03:21:02.000Z" itemprop="datePublished">2021-01-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/">数据结构之线性结构</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>什么是线性结构？<br>用一根线能将所有点串在一起的结构；</p>
-<p>线性结构分类<br>连续存储（数组）<br>              优点：存储速度快、查找元素效率高；<br>              缺点：需连续的很大的内存、插入删除效率低；<br>离散存储（链表）<br>              优点：空间无限制，插入删除效率高；<br>              缺点：查找元素效率低、存储速度慢；</p>
-<p>线性结构应用<br>1.栈<br>一种先进后出的存储结构；<br>分类：静态栈（顺序栈）、动态栈（链式栈）<br>算法：压栈、出栈；<br>应用：<br>函数调用、中断、表达式求值、缓冲处理、迷宫<br>2.队列<br>一种先进先出的存储结构；<br>分类：链式队列、动态队列；<br>算法：出队、入队；<br>应用：<br>凡是和时间有关的操作都和队列有关；</p>
-<p>线性结构的算法<br>遍历、查找、清空、销毁、删除、求长度、排序、插入</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" data-id="ckk4vukjd0000hgvpay0m2mr2" data-title="数据结构之线性结构" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -498,6 +492,14 @@
       <ul>
         
           <li>
+            <a href="/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/">链式树遍历演示</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/">非线性结构树的概述</a>
+          </li>
+        
+          <li>
             <a href="/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/">循环队列演示</a>
           </li>
         
@@ -507,14 +509,6 @@
         
           <li>
             <a href="/2021/01/22/%E9%93%BE%E5%BC%8F%E6%A0%88%E6%BC%94%E7%A4%BA/">链式栈演示</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/22/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E9%93%BE%E8%A1%A8%EF%BC%89/">动态构造学生信息系统并实现插入删除等功能（链表）</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD/">动态构造链表并进行插入删除等功能</a>
           </li>
         
       </ul>
