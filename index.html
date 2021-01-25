@@ -57,12 +57,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Buscar"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -93,31 +93,15 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2>赫夫曼树，又称最优树，是一类带权路径长度最短的树</h2>
-<h2>专业术语</h2>
-结点的权值（weight）：树节点间与连线相关的数（如频率等）；
-节点路径长度：从根节点到该结点的路径上的连线数；
-树路径长度：树的每个叶子节点的路径长度之和；
-结点带权路径长度：结点路径长度与它的权值的乘积；
-树的带权路径长度（weighted path length）：树的每个叶子节点的带权路径长度之和；
-WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小；
-<h2>赫夫曼算法</h2>
-1.根据给定的n个权值{w1,w2,w3,...,Wn}构成n棵二叉树的集合F={T1,T2,...,Tn},其中每个二叉树Ti（1=< i<= n）只有一
-个带权为Wi（1=< i<= n）的根节点，其左右子树均为空；
-2.在F中选取两棵根节点权值最小的树作为左右子树构成一棵新的二叉树，该二叉树的权值为其左右子树权值之和；
-3.在F中删除选取的两棵二叉树，同时将新的二叉树放入F中；
-4.重复2和3的操作直至F中只剩下一棵树，该树即为赫夫曼树;
-<h2>赫夫曼编码</h2>
-赫夫曼编码：可以有效地压缩数据（通常可节省%20~%90的空间，具体压缩率取决于数据的特性）
-要设计长短不等的编码，则必须是任一个字符的编码都不是另一个字符的编码的前缀，这种编码称做前缀编码；
-可以利用二叉树来设计二进制的前缀编码，约定左子树表示字符'0',右子树表示字符'1'；从根节点到叶子节点的路径上分支字
-符组成的字符串作为该叶子节点字符的编码，该编码必为前缀编码；
-设计总长最短的二进制前缀编码即为以n种字符出现的频率为权，设计一棵赫夫曼树的问题得到的二进制前缀编码称为赫夫曼编码
-赫夫曼树的每个结点包括四部分：该结点的权值、双亲游标、左孩子游标、游标孩子；
+        <p>赫夫曼树，又称最优树，是一类带权路径长度最短的树；</p>
+<p>专业术语<br>结点的权值（weight）：树节点间与连线相关的数（如频率等）；<br>节点路径长度：从根节点到该结点的路径上的连线数；<br>树路径长度：树的每个叶子节点的路径长度之和；<br>结点带权路径长度：结点路径长度与它的权值的乘积；<br>树的带权路径长度（weighted path length）：树的每个叶子节点的带权路径长度之和；<br>WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小；</p>
+<p>赫夫曼算法<br>1.根据给定的n个权值{w1,w2,w3,…,Wn}构成n棵二叉树的集合F={T1,T2,…,Tn},其中每个二叉树Ti（1=&lt; i&lt;= n）只有一<br>个带权为Wi（1=&lt; i&lt;= n）的根节点，其左右子树均为空；<br>2.在F中选取两棵根节点权值最小的树作为左右子树构成一棵新的二叉树，该二叉树的权值为其左右子树权值之和；<br>3.在F中删除选取的两棵二叉树，同时将新的二叉树放入F中；<br>4.重复2和3的操作直至F中只剩下一棵树，该树即为赫夫曼树;</p>
+<p>赫夫曼编码<br>赫夫曼编码：可以有效地压缩数据（通常可节省%20~%90的空间，具体压缩率取决于数据的特性）<br>要设计长短不等的编码，则必须是任一个字符的编码都不是另一个字符的编码的前缀，这种编码称做前缀编码；<br>可以利用二叉树来设计二进制的前缀编码，约定左子树表示字符’0’,右子树表示字符’1’；从根节点到叶子节点的路径上分支字<br>符组成的字符串作为该叶子节点字符的编码，该编码必为前缀编码；<br>设计总长最短的二进制前缀编码即为以n种字符出现的频率为权，设计一棵赫夫曼树的问题得到的二进制前缀编码称为赫夫曼编码<br>赫夫曼树的每个结点包括四部分：该结点的权值、双亲游标、左孩子游标、游标孩子；</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/" data-id="ckkc121eb0000p0vpaixvf6nd" data-title="赫夫曼树概述" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/" data-id="ckkc121eb0000p0vpaixvf6nd" data-title="赫夫曼树概述" class="article-share-link">Compartir</a>
       
       
       
@@ -155,7 +139,7 @@ WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/" data-id="ckkb1n8hs000130vpauy80iwh" data-title="链式树遍历演示" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/" data-id="ckkb1n8hs000130vpauy80iwh" data-title="链式树遍历演示" class="article-share-link">Compartir</a>
       
       
       
@@ -194,7 +178,7 @@ WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" data-id="ckkb1n8ho000030vp4hi16rct" data-title="非线性结构树的概述" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" data-id="ckkb1n8ho000030vp4hi16rct" data-title="非线性结构树的概述" class="article-share-link">Compartir</a>
       
       
       
@@ -232,7 +216,7 @@ WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" data-id="ckk9rw1eu0000ssvpggqm04jw" data-title="循环队列演示" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" data-id="ckk9rw1eu0000ssvpggqm04jw" data-title="循环队列演示" class="article-share-link">Compartir</a>
       
       
       
@@ -271,7 +255,7 @@ WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" data-id="ckk9qd5aa0000dwvp6yi0ddxy" data-title="线性结构队列概述" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" data-id="ckk9qd5aa0000dwvp6yi0ddxy" data-title="线性结构队列概述" class="article-share-link">Compartir</a>
       
       
       
@@ -309,7 +293,7 @@ WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/22/%E9%93%BE%E5%BC%8F%E6%A0%88%E6%BC%94%E7%A4%BA/" data-id="ckk8294of0000gwvp7frk0hq4" data-title="链式栈演示" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/22/%E9%93%BE%E5%BC%8F%E6%A0%88%E6%BC%94%E7%A4%BA/" data-id="ckk8294of0000gwvp7frk0hq4" data-title="链式栈演示" class="article-share-link">Compartir</a>
       
       
       
@@ -347,7 +331,7 @@ WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/22/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk80dqb70000rsvp77ho0tof" data-title="动态构造学生信息系统并实现插入删除等功能（链表）" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/22/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk80dqb70000rsvp77ho0tof" data-title="动态构造学生信息系统并实现插入删除等功能（链表）" class="article-share-link">Compartir</a>
       
       
       
@@ -385,7 +369,7 @@ WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD/" data-id="ckk6mxwcz0000a8vp3v61g0pe" data-title="动态构造链表并进行插入删除等功能" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD/" data-id="ckk6mxwcz0000a8vp3v61g0pe" data-title="动态构造链表并进行插入删除等功能" class="article-share-link">Compartir</a>
       
       
       
@@ -423,7 +407,7 @@ WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E6%95%B0%E7%BB%84%EF%BC%89/" data-id="ckk6mot9n0000eovp7qz2a9oo" data-title="动态构造学生信息系统并实现插入删除等功能（数组）" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E6%95%B0%E7%BB%84%EF%BC%89/" data-id="ckk6mot9n0000eovp7qz2a9oo" data-title="动态构造学生信息系统并实现插入删除等功能（数组）" class="article-share-link">Compartir</a>
       
       
       
@@ -461,7 +445,7 @@ WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E6%93%8D%E4%BD%9C/" data-id="ckk6b7ho300002ovpduf10q58" data-title="动态构造一维数组并进行插入删除等操作" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E6%93%8D%E4%BD%9C/" data-id="ckk6b7ho300002ovpduf10q58" data-title="动态构造一维数组并进行插入删除等操作" class="article-share-link">Compartir</a>
       
       
       
@@ -477,7 +461,7 @@ WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小�
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Siguiente &raquo;</a>
   </nav>
 
 </section>
@@ -494,7 +478,7 @@ WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小�
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -504,7 +488,7 @@ WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小�
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
         
@@ -542,7 +526,7 @@ WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小�
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
