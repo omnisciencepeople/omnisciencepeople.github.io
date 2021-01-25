@@ -6,13 +6,15 @@
   
   <title>赫夫曼树概述 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="article">
+  <meta name="description" content="赫夫曼树，又称最优树，是一类带权路径长度最短的树 专业术语 结点的权值（weight）：树节点间与连线相关的数（如频率等）； 节点路径长度：从根节点到该结点的路径上的连线数； 树路径长度：树的每个叶子节点的路径长度之和； 结点带权路径长度：结点路径长度与它的权值的乘积； 树的带权路径长度（weighted path length）：树的每个叶子节点的带权路径长度之和； WPL越小，二叉树性能越优，">
+<meta property="og:type" content="article">
 <meta property="og:title" content="赫夫曼树概述">
 <meta property="og:url" content="https://username.github.io/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/index.html">
 <meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="赫夫曼树，又称最优树，是一类带权路径长度最短的树 专业术语 结点的权值（weight）：树节点间与连线相关的数（如频率等）； 节点路径长度：从根节点到该结点的路径上的连线数； 树路径长度：树的每个叶子节点的路径长度之和； 结点带权路径长度：结点路径长度与它的权值的乘积； 树的带权路径长度（weighted path length）：树的每个叶子节点的带权路径长度之和； WPL越小，二叉树性能越优，">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-25T03:44:39.000Z">
-<meta property="article:modified_time" content="2021-01-25T03:44:40.001Z">
+<meta property="article:modified_time" content="2021-01-25T10:04:05.462Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -61,10 +63,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -93,11 +95,31 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2>赫夫曼树，又称最优树，是一类带权路径长度最短的树</h2>
+<h2>专业术语</h2>
+结点的权值（weight）：树节点间与连线相关的数（如频率等）；
+节点路径长度：从根节点到该结点的路径上的连线数；
+树路径长度：树的每个叶子节点的路径长度之和；
+结点带权路径长度：结点路径长度与它的权值的乘积；
+树的带权路径长度（weighted path length）：树的每个叶子节点的带权路径长度之和；
+WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小；
+<h2>赫夫曼算法</h2>
+1.根据给定的n个权值{w1,w2,w3,...,Wn}构成n棵二叉树的集合F={T1,T2,...,Tn},其中每个二叉树Ti（1=< i<= n）只有一
+个带权为Wi（1=< i<= n）的根节点，其左右子树均为空；
+2.在F中选取两棵根节点权值最小的树作为左右子树构成一棵新的二叉树，该二叉树的权值为其左右子树权值之和；
+3.在F中删除选取的两棵二叉树，同时将新的二叉树放入F中；
+4.重复2和3的操作直至F中只剩下一棵树，该树即为赫夫曼树;
+<h2>赫夫曼编码</h2>
+赫夫曼编码：可以有效地压缩数据（通常可节省%20~%90的空间，具体压缩率取决于数据的特性）
+要设计长短不等的编码，则必须是任一个字符的编码都不是另一个字符的编码的前缀，这种编码称做前缀编码；
+可以利用二叉树来设计二进制的前缀编码，约定左子树表示字符'0',右子树表示字符'1'；从根节点到叶子节点的路径上分支字
+符组成的字符串作为该叶子节点字符的编码，该编码必为前缀编码；
+设计总长最短的二进制前缀编码即为以n种字符出现的频率为权，设计一棵赫夫曼树的问题得到的二进制前缀编码称为赫夫曼编码
+赫夫曼树的每个结点包括四部分：该结点的权值、双亲游标、左孩子游标、游标孩子；
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/" data-id="ckkc121eb0000p0vpaixvf6nd" data-title="赫夫曼树概述" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/" data-id="ckkc121eb0000p0vpaixvf6nd" data-title="赫夫曼树概述" class="article-share-link">Teilen</a>
       
       
       
@@ -109,7 +131,7 @@
   
   
     <a href="/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">链式树遍历演示</div>
     </a>
   
@@ -133,7 +155,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -143,7 +165,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
