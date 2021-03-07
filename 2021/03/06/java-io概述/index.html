@@ -14,7 +14,7 @@
 <meta property="og:description" content="流定义：流就是程序和设备之间有用于数据传输的管道，这根管道管道上有很多按钮，不同的按钮可以实现不同的功能； 分类：Java.io包中定义多个流类型来实现输入输出功能：（1）按数据流的方向不同可以分为输入流和输出流；（2）按照数据处理的单位可以分为字符流和字节流；（3）按照功能不同可以分为节点流（原始流）和处理流（包裹流）；注：处理流就是包裹在原始节点上的流相当于包裹在管道上的管道； 我们主要学习以">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-06T14:47:23.000Z">
-<meta property="article:modified_time" content="2021-03-07T03:35:23.535Z">
+<meta property="article:modified_time" content="2021-03-07T13:17:40.045Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -63,10 +63,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -97,12 +97,12 @@
       
         <p>流<br>定义：流就是程序和设备之间有用于数据传输的管道，这根管道管道上有很多按钮，不同的按钮可以实现不同的功能；</p>
 <p>分类：<br>Java.io包中定义多个流类型来实现输入输出功能：<br>（1）按数据流的方向不同可以分为输入流和输出流；<br>（2）按照数据处理的单位可以分为字符流和字节流；<br>（3）按照功能不同可以分为节点流（原始流）和处理流（包裹流）；<br>注：处理流就是包裹在原始节点上的流相当于包裹在管道上的管道；</p>
-<p>我们主要学习以下几种流：<br>（1）四大基本流<br>J2SDK所提供的所有流类型分别继承以下四种抽象流类型<br>inputstream（字节流和输入流）、outputstream（字节流和输出流）、reader（字符流和输入流）、writer（字符流和输出流）<br>通常我们使用的它们的子类。<br>（2）文件流<br>通过文件流我们可以以字符或字节为单位将文件的内容读取或将内容写入文件中<br>分为：<br>字节流：FileInputstream、FileOutputstream<br>字符流: FileReader、FileWriter<br>(3)缓冲流<br>缓冲流是带有缓冲区的输入输出流；<br>缓冲流本身为处理流，不能单独存在，必须依附于节点流；<br>缓冲流作用：<br>1.可以显著减少我们对IO访问的次数，保护我们的硬盘；<br>2/缓冲流要套接在相应的节点流上，对读写的数据提供了缓冲的功能，提高了读写的效率，同时增加了一些新的方法；<br>分类：<br>BufferReader、BufferWriter、BufferInputstream、BufferOutputstream<br>（4）数据流<br>它是以一种与机器无关的方式，将Java基本类型数据和string类型数据从输入流读取或写入到输入流；<br>分为：DataInputsream、DataOutputstream<br>(5)转换流<br>分为InputstreamReader（将Inputstream转换为Reader）、OutputstreamWriter（将Outputstream转换为Writer）<br>转换流为处理流，不能单独存在，必须依附相应的节点流<br>（6）print流<br>分为printWriter、printstream<br>print流的print方法可以写入所有基本类型数据的字符串形式表示<br>print流在基本输出流的基础上提供了增强的功能，可以方便的输出各种类型数据的格式化表示形式；<br>print流重载了print和println方法用于各种类型数据的格式化输出；<br>所谓格式化输出指的是将一个数据用其字符串格式输出；<br>printWriter和printstream区别：<br>作为处理流使用时，printstream只能封装Outputstream类型的字节流，而printWriter可封装Outputstream类型的字节流，<br>也可封装Writer类型的字符流；<br>printWriter中的println方法具有更好的跨平台性；<br>（7）object流<br>分为ObjectInputstream、Objectoutputstream<br>Object流用于对象的序列化；<br>对象的序列化是指将一个对象直接转化为字节流，然后将字节流直接写入到本地硬盘或网络中；<br>如果想将某个类对象序列化，则该类必须实现Serializable接口（该接口无任何方法，这种类型的接口被称为标识接口）；<br>如果一个类对象实现了Serializable接口潜在含义告诉编译器该类对象允许被序列化，若程序中已经存在序列该对象的代码，编<br>译器会自动处理来完成该对象的序列化；<br>如果一个类对象未实现Serializable接口，程序中存在序列该对象的代码，编译器会报错；<br>在Java中被transient修饰的成员变量在对象序列化时无法被序列化；<br>注：<br>（1）以stream结尾的流是字节流；<br>（2）以字节为单位读取数据<u>显示</u>时不能读取汉字否则会造成乱码；因为汉字的两个字节均包含有效信息，使用<br>Inputstream的read方法只能读取汉字的最后一个字节，这样解码时会出现错误；可以读取字母，虽然字母由两个字节存储，但<br>只有最后一个字节包含有效信息；<br>（3）字节流可以完成对各种信息的复制如文本、声音、视频、图片等，而字符流只能完成文本信息的复制；因为字节流无需解码<br>而字符流需要解码；<br>（4）对于输出的缓冲流，写入的数据会先存入缓冲区，使用flush方法可以清空缓冲区数据，将缓冲区数据全部压入目的地。只<br>有输出流有flush方法；<br>（5）BufferReader中的readline方法用于读取一行字符串，遇到回车符会终止读取，并将读取到的回车符自动丢弃；<br>如果只输入回车，readline返回的是” “(空字符串)而不是null；如果想输入回车符，则调用BufferWriter中的newline方法<br>（6）print流提供的打印方法不会抛出异常；<br>（7）DataOutputstream中的write方法是将数据的二进制数据写入文件；</p>
+<p>我们主要学习以下几种流：<br>（1）四大基本流<br>J2SDK所提供的所有流类型分别继承以下四种抽象流类型<br>inputstream（字节流和输入流）、outputstream（字节流和输出流）、reader（字符流和输入流）、writer（字符流和输出流）<br>通常我们使用的它们的子类。<br>（2）文件流<br>通过文件流我们可以以字符或字节为单位将文件的内容读取或将内容写入文件中<br>分为：<br>字节流：FileInputstream、FileOutputstream<br>字符流: FileReader、FileWriter<br>(3)缓冲流<br>缓冲流是带有缓冲区的输入输出流；<br>缓冲流本身为处理流，不能单独存在，必须依附于节点流；<br>缓冲流作用：<br>1.可以显著减少我们对IO访问的次数，保护我们的硬盘；<br>2/缓冲流要套接在相应的节点流上，对读写的数据提供了缓冲的功能，提高了读写的效率，同时增加了一些新的方法；<br>分类：<br>BufferedReader、BufferedWriter、BufferedInputstream、BufferedOutputstream<br>（4）数据流<br>它是以一种与机器无关的方式，将Java基本类型数据和string类型数据从输入流读取或写入到输入流；<br>分为：DataInputsream、DataOutputstream<br>(5)转换流<br>分为InputstreamReader（将Inputstream转换为Reader）、OutputstreamWriter（将Outputstream转换为Writer）<br>转换流为处理流，不能单独存在，必须依附相应的节点流<br>（6）print流<br>分为printWriter、printstream<br>print流的print方法可以写入所有基本类型数据的字符串形式表示<br>print流在基本输出流的基础上提供了增强的功能，可以方便的输出各种类型数据的格式化表示形式；<br>print流重载了print和println方法用于各种类型数据的格式化输出；<br>所谓格式化输出指的是将一个数据用其字符串格式输出；<br>printWriter和printstream区别：<br>作为处理流使用时，printstream只能封装Outputstream类型的字节流，而printWriter可封装Outputstream类型的字节流，<br>也可封装Writer类型的字符流；<br>printWriter中的println方法具有更好的跨平台性；<br>（7）object流<br>分为ObjectInputstream、Objectoutputstream<br>Object流用于对象的序列化；<br>对象的序列化是指将一个对象直接转化为字节流，然后将字节流直接写入到本地硬盘或网络中；<br>如果想将某个类对象序列化，则该类必须实现Serializable接口（该接口无任何方法，这种类型的接口被称为标识接口）；<br>如果一个类对象实现了Serializable接口潜在含义告诉编译器该类对象允许被序列化，若程序中已经存在序列该对象的代码，编<br>译器会自动处理来完成该对象的序列化；<br>如果一个类对象未实现Serializable接口，程序中存在序列该对象的代码，编译器会报错；<br>在Java中被transient修饰的成员变量在对象序列化时无法被序列化；<br>注：<br>（1）以stream结尾的流是字节流；<br>（2）以字节为单位读取数据<u>显示</u>时不能读取汉字否则会造成乱码；因为汉字的两个字节均包含有效信息，使用<br>Inputstream的read方法只能读取汉字的最后一个字节，这样解码时会出现错误；可以读取字母，虽然字母由两个字节存储，但<br>只有最后一个字节包含有效信息；<br>（3）字节流可以完成对各种信息的复制如文本、声音、视频、图片等，而字符流只能完成文本信息的复制；因为字节流无需解码<br>而字符流需要解码；<br>（4）对于输出的缓冲流，写入的数据会先存入缓冲区，使用flush方法可以清空缓冲区数据，将缓冲区数据全部压入目的地。只<br>有输出流有flush方法；<br>（5）BufferedReader中的readline方法用于读取一行字符串，遇到回车符会终止读取，并将读取到的回车符自动丢弃；<br>如果只输入回车，readline返回的是” “(空字符串)而不是null；如果想输入回车符，则调用BufferedWriter中的newline方法<br>（6）print流提供的打印方法不会抛出异常；<br>（7）DataOutputstream中的write方法是将数据的二进制数据写入文件；</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/06/java-io%E6%A6%82%E8%BF%B0/" data-id="cklxucpmp0000jkvpa9ub74h1" data-title="java io概述" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/03/06/java-io%E6%A6%82%E8%BF%B0/" data-id="cklxucpmp0000jkvpa9ub74h1" data-title="java io概述" class="article-share-link">Teilen</a>
       
       
       
@@ -113,7 +113,7 @@
 <nav id="article-nav">
   
     <a href="/2021/03/07/java-io%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
           java io程序演示
@@ -123,7 +123,7 @@
   
   
     <a href="/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">赫夫曼树概述</div>
     </a>
   
@@ -147,7 +147,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -157,7 +157,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
