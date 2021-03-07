@@ -71,6 +71,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-链表概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/19/%E9%93%BE%E8%A1%A8%E6%A6%82%E8%BF%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-01-19T06:49:02.000Z" itemprop="datePublished">2021-01-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/19/%E9%93%BE%E8%A1%A8%E6%A6%82%E8%BF%B0/">链表概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>算法：<br>     通俗定义：解决问题的方法和步骤；<br>     狭义定义：对存储数据的操作；算法依附存储结构；不同存储结构所执行的算法不同；<br>     广义定义：<br>             广义的算法也叫泛型；<br>             无论数据如何存储，对数据进行的操作是一样的；<br>     我们至少可以通过两种结构来存储数据：<br>          数组<br>             优点：存取速度快；查找速度快；<br>             缺点：需要一块连续的很大的内存；插入和删除效率低；<br>          链表<br>             优点：插入和删除效率高；无需连续很大的内存；<br>             缺点：存取速度慢；查找元素效率低；<br>链表专业术语：<br>头结点：数据类型和首结点一致；<br>       为首结点前面的结点；<br>       不存放有效数据；<br>       方便对链表的操作；<br>头指针:存放头结点地址的指针变量；<br>首结点：存放第一个有效数据的结点；<br>尾结点：存放最后一个有效数据的结点；<br>确定一个链表只需知道一个参数：头指针；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/19/%E9%93%BE%E8%A1%A8%E6%A6%82%E8%BF%B0/" data-id="ckk3o4vok0000xovp5jbg8071" data-title="链表概述" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-位运算符举例" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/19/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%BE%E4%BE%8B/" class="article-date">
@@ -450,46 +489,6 @@ pst-&gt;age含义：pst指向结构体中age这个成员；
 
 
   
-    <article id="post-一个指针变量到底占几个字节" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/17/%E4%B8%80%E4%B8%AA%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E5%88%B0%E5%BA%95%E5%8D%A0%E5%87%A0%E4%B8%AA%E5%AD%97%E8%8A%82/" class="article-date">
-  <time class="dt-published" datetime="2021-01-17T12:58:15.000Z" itemprop="datePublished">2021-01-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/17/%E4%B8%80%E4%B8%AA%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E5%88%B0%E5%BA%95%E5%8D%A0%E5%87%A0%E4%B8%AA%E5%AD%97%E8%8A%82/">一个指针变量到底占几个字节</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;33;</span><br><span class="line">    char ch&#x3D;&#39;y&#39;;</span><br><span class="line">    double j&#x3D;66;</span><br><span class="line">    int*p&#x3D;&amp;i;</span><br><span class="line">    char*q&#x3D;&amp;ch;</span><br><span class="line">    double*r&#x3D;&amp;j;</span><br><span class="line">    printf(&quot;%d %d %d\n&quot;,sizeof(p),sizeof(q),sizeof(r));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">输出 4 4 4</span><br></pre></td></tr></table></figure>
-<p>注：<br>sizeof(数据类型)<br>功能：测量该数据类型所占的字节数；<br>一个指针变量无论它指向的变量占几个字节，该指针变量只占四个字节；<br>指针变量只指向该变量的第一个字节，由指针变量类型确定具体变量，指针变量需要用4个字节去表示；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/17/%E4%B8%80%E4%B8%AA%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E5%88%B0%E5%BA%95%E5%8D%A0%E5%87%A0%E4%B8%AA%E5%AD%97%E8%8A%82/" data-id="ckk15lq8i0000kgvpfvqv33fr" data-title="一个指针变量到底占几个字节" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -526,6 +525,10 @@ pst-&gt;age含义：pst指向结构体中age这个成员；
       <ul>
         
           <li>
+            <a href="/2021/03/07/java-io%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/">java io程序演示</a>
+          </li>
+        
+          <li>
             <a href="/2021/03/06/java-io%E6%A6%82%E8%BF%B0/">java io概述</a>
           </li>
         
@@ -539,10 +542,6 @@ pst-&gt;age含义：pst指向结构体中age这个成员；
         
           <li>
             <a href="/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/">非线性结构树的概述</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/">循环队列演示</a>
           </li>
         
       </ul>

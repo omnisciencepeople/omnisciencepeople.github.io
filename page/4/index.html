@@ -71,6 +71,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-一个指针变量到底占几个字节" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/17/%E4%B8%80%E4%B8%AA%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E5%88%B0%E5%BA%95%E5%8D%A0%E5%87%A0%E4%B8%AA%E5%AD%97%E8%8A%82/" class="article-date">
+  <time class="dt-published" datetime="2021-01-17T12:58:15.000Z" itemprop="datePublished">2021-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/17/%E4%B8%80%E4%B8%AA%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E5%88%B0%E5%BA%95%E5%8D%A0%E5%87%A0%E4%B8%AA%E5%AD%97%E8%8A%82/">一个指针变量到底占几个字节</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;33;</span><br><span class="line">    char ch&#x3D;&#39;y&#39;;</span><br><span class="line">    double j&#x3D;66;</span><br><span class="line">    int*p&#x3D;&amp;i;</span><br><span class="line">    char*q&#x3D;&amp;ch;</span><br><span class="line">    double*r&#x3D;&amp;j;</span><br><span class="line">    printf(&quot;%d %d %d\n&quot;,sizeof(p),sizeof(q),sizeof(r));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">输出 4 4 4</span><br></pre></td></tr></table></figure>
+<p>注：<br>sizeof(数据类型)<br>功能：测量该数据类型所占的字节数；<br>一个指针变量无论它指向的变量占几个字节，该指针变量只占四个字节；<br>指针变量只指向该变量的第一个字节，由指针变量类型确定具体变量，指针变量需要用4个字节去表示；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/17/%E4%B8%80%E4%B8%AA%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E5%88%B0%E5%BA%95%E5%8D%A0%E5%87%A0%E4%B8%AA%E5%AD%97%E8%8A%82/" data-id="ckk15lq8i0000kgvpfvqv33fr" data-title="一个指针变量到底占几个字节" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-如何确定一个一维数组" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/17/%E5%A6%82%E4%BD%95%E7%A1%AE%E5%AE%9A%E4%B8%80%E4%B8%AA%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/" class="article-date">
@@ -433,44 +473,6 @@
 
 
   
-    <article id="post-用布尔函数判断是否为素数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/16/%E7%94%A8%E5%B8%83%E5%B0%94%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E7%B4%A0%E6%95%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-16T09:28:59.000Z" itemprop="datePublished">2021-01-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/16/%E7%94%A8%E5%B8%83%E5%B0%94%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E7%B4%A0%E6%95%B0/">用布尔函数判断是否为素数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line">bool Isprime(int val);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int val;</span><br><span class="line">    char ch;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">     printf(&quot;请输入你要判断的数字:&quot;);</span><br><span class="line">     scanf(&quot;%d&quot;,&amp;val);</span><br><span class="line">     if(Isprime(val))</span><br><span class="line">        printf(&quot;Yes\n&quot;);</span><br><span class="line">     else</span><br><span class="line">        printf(&quot;No\n&quot;);</span><br><span class="line">     printf(&quot;请问你是否还要继续（Y&#x2F;N）:&quot;);</span><br><span class="line">     scanf(&quot; %c&quot;,&amp;ch);</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;||ch&#x3D;&#x3D;&#39;y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">bool Isprime(int val)</span><br><span class="line">&#123;</span><br><span class="line">    for(int j&#x3D;2;j&lt;val;j++)</span><br><span class="line">        if(val%j&#x3D;&#x3D;0)</span><br><span class="line">            break;</span><br><span class="line">    if(val&#x3D;&#x3D;j)</span><br><span class="line">        return true;</span><br><span class="line">    else</span><br><span class="line">        return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/16/%E7%94%A8%E5%B8%83%E5%B0%94%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E7%B4%A0%E6%95%B0/" data-id="ckjziw4t40000z8vpgbgyg7aw" data-title="用布尔函数判断是否为素数" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -507,6 +509,10 @@
       <ul>
         
           <li>
+            <a href="/2021/03/07/java-io%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/">java io程序演示</a>
+          </li>
+        
+          <li>
             <a href="/2021/03/06/java-io%E6%A6%82%E8%BF%B0/">java io概述</a>
           </li>
         
@@ -520,10 +526,6 @@
         
           <li>
             <a href="/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/">非线性结构树的概述</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/">循环队列演示</a>
           </li>
         
       </ul>
