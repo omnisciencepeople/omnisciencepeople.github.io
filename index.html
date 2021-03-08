@@ -59,10 +59,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -107,10 +107,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import java.io.*;</span><br><span class="line">public class test6&#123;</span><br><span class="line">    public static void main(String[] args)throws Exception&#123;</span><br><span class="line">        BufferedReader br&#x3D;new BufferedReader(new InputStreamReader(System.in));&#x2F;&#x2F;调用InputStreamReader将System.in标准字节输入流转化为字符输入流</span><br><span class="line">        String str&#x3D;br.readLine();</span><br><span class="line">        System.out.println(str);</span><br><span class="line">        br.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>(7)比较Print流和数据输出流的区别</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import  java.io.*;</span><br><span class="line">public class test7&#123;</span><br><span class="line">  public static void main(String[] args)throws Exception&#123;</span><br><span class="line">    DataOutputStream dos&#x3D;new DataOutputStream(new FileOutputStream(&quot;E:\\javaworkspace\\流\\4.txt&quot;));&#x2F;&#x2F;创建一个数据输出流，将数据写入底层输出流；运用多态</span><br><span class="line">    long m&#x3D;1234567;</span><br><span class="line">    dos.writeLong(m);&#x2F;&#x2F;将m的二进制数据写入到相应的输出流中</span><br><span class="line">    PrintStream ps&#x3D;new PrintStream(new FileOutputStream(&quot;E:\\javaworkspace\\流\\5.txt&quot;));&#x2F;&#x2F;创建一个输出流，将数据打印到底层输出流中</span><br><span class="line">    ps.println(1234567);&#x2F;&#x2F;将1234567的字符串格式打印到底层输出流中</span><br><span class="line">    dos.close();</span><br><span class="line">    ps.close();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(8)输入输出重定向(print流)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import java.io.*;</span><br><span class="line">import java.util.*;&#x2F;&#x2F;java.util包中包含Scanner类</span><br><span class="line">public class test8&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        PrintStream psOut&#x3D;null;</span><br><span class="line">        PrintStream psErr&#x3D;null;</span><br><span class="line">        Scanner sc&#x3D;null; </span><br><span class="line">        try</span><br><span class="line">        &#123;</span><br><span class="line">            psOut&#x3D;new PrintStream(&quot;E:\\javaworkspace\\流\\Out.txt&quot;);</span><br><span class="line">            psErr&#x3D;new PrintStream(&quot;E:\\javaworkspace\\流\\Err.txt&quot;);</span><br><span class="line">            sc&#x3D;new Scanner (System.in);&#x2F;&#x2F;System.in是标准的输入流，表示从键盘输入</span><br><span class="line">            System.setOut(psOut);&#x2F;&#x2F;调用System类的静态方法setOut重新分配“标准”输出流，将默认在显示器上输出改为在psOut所关联的文件输出</span><br><span class="line">            System.setErr(psErr);&#x2F;&#x2F;调用System类的静态方法seErr重新分配“标准”错误输出流，将默认在显示器上输出改为在psErr所关联的文件输出</span><br><span class="line">            while(true)</span><br><span class="line">            &#123;</span><br><span class="line">            psOut.println(sc.nextInt());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        catch(Exception e)</span><br><span class="line">        &#123;</span><br><span class="line">            System.err.println(&quot;错误信息为：&quot;);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/07/java-io%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="cklylt0qj0000egvpbkhrdpmm" data-title="java io程序演示" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/03/07/java-io%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="cklylt0qj0000egvpbkhrdpmm" data-title="java io程序演示" class="article-share-link">Teilen</a>
       
       
       
@@ -151,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/06/java-io%E6%A6%82%E8%BF%B0/" data-id="cklxucpmp0000jkvpa9ub74h1" data-title="java io概述" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/03/06/java-io%E6%A6%82%E8%BF%B0/" data-id="cklxucpmp0000jkvpa9ub74h1" data-title="java io概述" class="article-share-link">Teilen</a>
       
       
       
@@ -193,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/" data-id="ckkc121eb0000p0vpaixvf6nd" data-title="赫夫曼树概述" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/" data-id="ckkc121eb0000p0vpaixvf6nd" data-title="赫夫曼树概述" class="article-share-link">Teilen</a>
       
       
       
@@ -231,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/" data-id="ckkb1n8hs000130vpauy80iwh" data-title="链式树遍历演示" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/" data-id="ckkb1n8hs000130vpauy80iwh" data-title="链式树遍历演示" class="article-share-link">Teilen</a>
       
       
       
@@ -270,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" data-id="ckkb1n8ho000030vp4hi16rct" data-title="非线性结构树的概述" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" data-id="ckkb1n8ho000030vp4hi16rct" data-title="非线性结构树的概述" class="article-share-link">Teilen</a>
       
       
       
@@ -308,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" data-id="ckk9rw1eu0000ssvpggqm04jw" data-title="循环队列演示" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" data-id="ckk9rw1eu0000ssvpggqm04jw" data-title="循环队列演示" class="article-share-link">Teilen</a>
       
       
       
@@ -347,7 +349,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" data-id="ckk9qd5aa0000dwvp6yi0ddxy" data-title="线性结构队列概述" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" data-id="ckk9qd5aa0000dwvp6yi0ddxy" data-title="线性结构队列概述" class="article-share-link">Teilen</a>
       
       
       
@@ -385,7 +387,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/22/%E9%93%BE%E5%BC%8F%E6%A0%88%E6%BC%94%E7%A4%BA/" data-id="ckk8294of0000gwvp7frk0hq4" data-title="链式栈演示" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/01/22/%E9%93%BE%E5%BC%8F%E6%A0%88%E6%BC%94%E7%A4%BA/" data-id="ckk8294of0000gwvp7frk0hq4" data-title="链式栈演示" class="article-share-link">Teilen</a>
       
       
       
@@ -423,7 +425,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/22/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk80dqb70000rsvp77ho0tof" data-title="动态构造学生信息系统并实现插入删除等功能（链表）" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/01/22/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk80dqb70000rsvp77ho0tof" data-title="动态构造学生信息系统并实现插入删除等功能（链表）" class="article-share-link">Teilen</a>
       
       
       
@@ -461,7 +463,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD/" data-id="ckk6mxwcz0000a8vp3v61g0pe" data-title="动态构造链表并进行插入删除等功能" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD/" data-id="ckk6mxwcz0000a8vp3v61g0pe" data-title="动态构造链表并进行插入删除等功能" class="article-share-link">Teilen</a>
       
       
       
@@ -477,7 +479,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -494,7 +496,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -504,7 +506,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
