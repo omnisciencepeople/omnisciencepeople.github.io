@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>排序之选择排序法 | My Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="选择排序n个元素经过数次比较后找到最小值位置（开始时最小值位置为0），将其与第一个元素互换，再对n-1个元素选择排序；每次确定一个最小值；程序：对九个数选择排序 12345678910111213141516171819202122232425262728293031public class test10&amp;#123;    public static void main(String[] args">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序之选择排序法">
+<meta property="og:url" content="https://username.github.io/2021/03/08/%E6%8E%92%E5%BA%8F%E4%B9%8B%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E6%B3%95/index.html">
+<meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="选择排序n个元素经过数次比较后找到最小值位置（开始时最小值位置为0），将其与第一个元素互换，再对n-1个元素选择排序；每次确定一个最小值；程序：对九个数选择排序 12345678910111213141516171819202122232425262728293031public class test10&amp;#123;    public static void main(String[] args">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-03-08T13:31:29.000Z">
+<meta property="article:modified_time" content="2021-03-08T14:12:45.462Z">
+<meta property="article:author" content="omnisciencepeople">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="My Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">My Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-排序之选择排序法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/08/%E6%8E%92%E5%BA%8F%E4%B9%8B%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2021-03-08T13:31:29.000Z" itemprop="datePublished">2021-03-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      排序之选择排序法
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>选择排序<br>n个元素经过数次比较后找到最小值位置（开始时最小值位置为0），将其与第一个元素互换，再对n-1个元素选择排序；每<br>次确定一个最小值；<br>程序：对九个数选择排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class test10&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;4,5,8,1,3,9,2,7,6&#125;;</span><br><span class="line">        int minpos;&#x2F;&#x2F;定义一个变量，该变量存放最小值下标</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length-1;i++)&#x2F;&#x2F;需要经过length-1次遍历，每次遍历找出一个最小值</span><br><span class="line">        &#123;</span><br><span class="line">            minpos&#x3D;i;</span><br><span class="line">            for(int j&#x3D;i+1;j&lt;arr.length;j++)</span><br><span class="line">                 minpos&#x3D;arr[j]&lt;arr[minpos]?j:minpos;&#x2F;&#x2F;找出每次的最小值的下标</span><br><span class="line">            swap(arr,minpos,i);&#x2F;&#x2F;互换最小值和i位置</span><br><span class="line">            System.out.println(&quot;minpos&#x3D;&quot;+minpos);</span><br><span class="line">            System.out.println(&quot;经过&quot;+(i+1)+&quot;次排序为：&quot;);</span><br><span class="line">            print(arr);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void swap(int[] arr,int minpos,int i )</span><br><span class="line">    &#123;</span><br><span class="line">        int temp;</span><br><span class="line">        temp&#x3D;arr[minpos];</span><br><span class="line">        arr[minpos]&#x3D;arr[i];</span><br><span class="line">        arr[i]&#x3D;temp;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void print(int[] arr)</span><br><span class="line">    &#123;</span><br><span class="line">      for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">      &#123;</span><br><span class="line">          System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">      &#125;    </span><br><span class="line">      System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/08/%E6%8E%92%E5%BA%8F%E4%B9%8B%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E6%B3%95/" data-id="ckm0nzwhd0000l0vp6l8086x0" data-title="排序之选择排序法" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/07/java-io%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">java io程序演示</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/03/08/%E6%8E%92%E5%BA%8F%E4%B9%8B%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E6%B3%95/">排序之选择排序法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/07/java-io%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/">java io程序演示</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/06/java-io%E6%A6%82%E8%BF%B0/">java io概述</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/">赫夫曼树概述</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/">链式树遍历演示</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 omnisciencepeople<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
