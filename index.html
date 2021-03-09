@@ -57,12 +57,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Rechercher"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,46 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-排序之插入排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time class="dt-published" datetime="2021-03-09T08:03:00.000Z" itemprop="datePublished">2021-03-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">排序之插入排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class Insertion&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,2,8,3,9,4,6,5,10&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length-1;i++)&#123;           </span><br><span class="line">            for(int j&#x3D;i+1;j&gt;0&amp;&amp;arr[j-1]&gt;arr[j];j--)</span><br><span class="line">               swap(arr,j-1,j);</span><br><span class="line">           System.out.println(&quot;经过&quot;+(i+1)+&quot;次排序后为:&quot;);</span><br><span class="line">           print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    static void print(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">           System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">           System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">    static void swap(int[] arr,int i,int j)&#123;</span><br><span class="line">        int temp&#x3D;arr[i];</span><br><span class="line">        arr[i]&#x3D;arr[j];</span><br><span class="line">        arr[j]&#x3D;temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不用swap：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class Insertion&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,2,8,3,9,4,6,5,10&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length-1;i++)&#123;</span><br><span class="line">            int temp&#x3D;arr[i+1];           </span><br><span class="line">            int j;</span><br><span class="line">            for(j&#x3D;i+1;j&gt;0&amp;&amp;arr[j-1]&gt;temp;j--)</span><br><span class="line">                arr[j]&#x3D;arr[j-1];</span><br><span class="line">             arr[j]&#x3D;temp;</span><br><span class="line">           System.out.println(&quot;经过&quot;+(i+1)+&quot;次排序后为:&quot;);</span><br><span class="line">           print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    static void print(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">           System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">           System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">    static void swap(int[] arr,int i,int j)&#123;</span><br><span class="line">        int temp&#x3D;arr[i];</span><br><span class="line">        arr[i]&#x3D;arr[j];</span><br><span class="line">        arr[j]&#x3D;temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" data-id="ckm1qsovx0000j0vp6zw7d4s6" data-title="排序之插入排序" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-排序之冒泡排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -93,13 +133,13 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public class test11&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,2,8,3,9,4,6,5,10&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length-1;i++)&#123;</span><br><span class="line">           for(int j&#x3D;0;j&lt;arr.length-1-i;j++)</span><br><span class="line">               if(arr[j+1]&lt;arr[j])</span><br><span class="line">                 swap(arr,j,j+1);</span><br><span class="line">           System.out.println(&quot;经过&quot;+(i+1)+&quot;次排序后为:&quot;);</span><br><span class="line">           print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    static void print(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">           System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">           System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">    static void swap(int[] arr,int i,int j)&#123;</span><br><span class="line">        int temp&#x3D;arr[i];</span><br><span class="line">        arr[i]&#x3D;arr[j];</span><br><span class="line">        arr[j]&#x3D;temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public class Bubble&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,2,8,3,9,4,6,5,10&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length-1;i++)&#123;</span><br><span class="line">           for(int j&#x3D;0;j&lt;arr.length-1-i;j++)</span><br><span class="line">               if(arr[j+1]&lt;arr[j])</span><br><span class="line">                 swap(arr,j,j+1);</span><br><span class="line">           System.out.println(&quot;经过&quot;+(i+1)+&quot;次排序后为:&quot;);</span><br><span class="line">           print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    static void print(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">           System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">           System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">    static void swap(int[] arr,int i,int j)&#123;</span><br><span class="line">        int temp&#x3D;arr[i];</span><br><span class="line">        arr[i]&#x3D;arr[j];</span><br><span class="line">        arr[j]&#x3D;temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>优化：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for(int j&#x3D;0;j&lt;arr.length-1-i;j++)</span><br><span class="line">    if(arr[j+1]&lt;arr[j])</span><br><span class="line">       swap(arr,j,j+1);</span><br><span class="line">改为</span><br><span class="line">for(int j&#x3D;0;j&lt;arr.length-1-i&amp;&amp;arr[j+1]&lt;arr[j];j++)</span><br><span class="line">    swap(arr,j,j+1);</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckm1q62k50000csvp2ftqb1uo" data-title="排序之冒泡排序" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckm1q62k50000csvp2ftqb1uo" data-title="排序之冒泡排序" class="article-share-link">Share</a>
       
       
       
@@ -145,7 +185,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/08/%E5%A6%82%E4%BD%95%E5%86%99%E7%AE%97%E6%B3%95%EF%BC%9F/" data-id="ckm0o5kx90000pgvp1n6odp98" data-title="如何写算法？" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/03/08/%E5%A6%82%E4%BD%95%E5%86%99%E7%AE%97%E6%B3%95%EF%BC%9F/" data-id="ckm0o5kx90000pgvp1n6odp98" data-title="如何写算法？" class="article-share-link">Share</a>
       
       
       
@@ -180,11 +220,11 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>选择排序<br>n个元素经过数次比较后找到最小值位置（开始时最小值位置为0），将其与第一个元素互换，再对n-1个元素选择排序；每<br>次确定一个最小值；<br>程序：对九个数选择排序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class test10&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;4,5,8,1,3,9,2,7,6&#125;;</span><br><span class="line">        int minpos;&#x2F;&#x2F;定义一个变量，该变量存放最小值下标</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length-1;i++)&#x2F;&#x2F;需要经过length-1次遍历，每次遍历找出一个最小值</span><br><span class="line">        &#123;</span><br><span class="line">            minpos&#x3D;i;</span><br><span class="line">            for(int j&#x3D;i+1;j&lt;arr.length;j++)</span><br><span class="line">                 minpos&#x3D;arr[j]&lt;arr[minpos]?j:minpos;&#x2F;&#x2F;找出每次的最小值的下标</span><br><span class="line">            swap(arr,minpos,i);&#x2F;&#x2F;互换最小值和i位置</span><br><span class="line">            System.out.println(&quot;minpos&#x3D;&quot;+minpos);</span><br><span class="line">            System.out.println(&quot;经过&quot;+(i+1)+&quot;次排序为：&quot;);</span><br><span class="line">            print(arr);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void swap(int[] arr,int minpos,int i )</span><br><span class="line">    &#123;</span><br><span class="line">        int temp;</span><br><span class="line">        temp&#x3D;arr[minpos];</span><br><span class="line">        arr[minpos]&#x3D;arr[i];</span><br><span class="line">        arr[i]&#x3D;temp;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void print(int[] arr)</span><br><span class="line">    &#123;</span><br><span class="line">      for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">      &#123;</span><br><span class="line">          System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">      &#125;    </span><br><span class="line">      System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class Slection&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;4,5,8,1,3,9,2,7,6&#125;;</span><br><span class="line">        int minpos;&#x2F;&#x2F;定义一个变量，该变量存放最小值下标</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length-1;i++)&#x2F;&#x2F;需要经过length-1次遍历，每次遍历找出一个最小值</span><br><span class="line">        &#123;</span><br><span class="line">            minpos&#x3D;i;</span><br><span class="line">            for(int j&#x3D;i+1;j&lt;arr.length;j++)</span><br><span class="line">                 minpos&#x3D;arr[j]&lt;arr[minpos]?j:minpos;&#x2F;&#x2F;找出每次的最小值的下标</span><br><span class="line">            swap(arr,minpos,i);&#x2F;&#x2F;互换最小值和i位置</span><br><span class="line">            System.out.println(&quot;minpos&#x3D;&quot;+minpos);</span><br><span class="line">            System.out.println(&quot;经过&quot;+(i+1)+&quot;次排序为：&quot;);</span><br><span class="line">            print(arr);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void swap(int[] arr,int minpos,int i )</span><br><span class="line">    &#123;</span><br><span class="line">        int temp;</span><br><span class="line">        temp&#x3D;arr[minpos];</span><br><span class="line">        arr[minpos]&#x3D;arr[i];</span><br><span class="line">        arr[i]&#x3D;temp;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void print(int[] arr)</span><br><span class="line">    &#123;</span><br><span class="line">      for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">      &#123;</span><br><span class="line">          System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">      &#125;    </span><br><span class="line">      System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/08/%E6%8E%92%E5%BA%8F%E4%B9%8B%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E6%B3%95/" data-id="ckm0nzwhd0000l0vp6l8086x0" data-title="排序之选择排序法" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/03/08/%E6%8E%92%E5%BA%8F%E4%B9%8B%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E6%B3%95/" data-id="ckm0nzwhd0000l0vp6l8086x0" data-title="排序之选择排序法" class="article-share-link">Share</a>
       
       
       
@@ -239,7 +279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/07/java-io%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="cklylt0qj0000egvpbkhrdpmm" data-title="java io程序演示" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/03/07/java-io%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="cklylt0qj0000egvpbkhrdpmm" data-title="java io程序演示" class="article-share-link">Share</a>
       
       
       
@@ -280,7 +320,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/06/java-io%E6%A6%82%E8%BF%B0/" data-id="cklxucpmp0000jkvpa9ub74h1" data-title="java io概述" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/03/06/java-io%E6%A6%82%E8%BF%B0/" data-id="cklxucpmp0000jkvpa9ub74h1" data-title="java io概述" class="article-share-link">Share</a>
       
       
       
@@ -322,7 +362,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/" data-id="ckkc121eb0000p0vpaixvf6nd" data-title="赫夫曼树概述" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/" data-id="ckkc121eb0000p0vpaixvf6nd" data-title="赫夫曼树概述" class="article-share-link">Share</a>
       
       
       
@@ -360,7 +400,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/" data-id="ckkb1n8hs000130vpauy80iwh" data-title="链式树遍历演示" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/" data-id="ckkb1n8hs000130vpauy80iwh" data-title="链式树遍历演示" class="article-share-link">Share</a>
       
       
       
@@ -399,7 +439,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" data-id="ckkb1n8ho000030vp4hi16rct" data-title="非线性结构树的概述" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" data-id="ckkb1n8ho000030vp4hi16rct" data-title="非线性结构树的概述" class="article-share-link">Share</a>
       
       
       
@@ -437,46 +477,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" data-id="ckk9rw1eu0000ssvpggqm04jw" data-title="循环队列演示" class="article-share-link">Partager</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-线性结构队列概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-23T12:10:11.000Z" itemprop="datePublished">2021-01-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/">线性结构队列概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>队列：一种可实现先进先出的存储结构；<br>分类：静态队列（一般用循环队列实现）、链式队列；<br>1.静态队列一般为什么必须为循环队列？<br>传统数组实现队列会造成空间浪费；<br>2.循环队列需要几个参数来确定？<br>两个参数front和rear；<br>front永远指向队列的第一个元素，rear永远指向最后一个有效元素的下一个位置；<br>3.front和rear这两个参数在不同场合的不同含义？<br>队列初始化：front和rear值都为0；<br>队列为空：front和rear值相等但不一定为0；<br>队列非空：front为第一个元素，rear为最后一个有效元素的下一个位置；<br>4.循环队列入队伪算法：<br>将值存入rear所代表的位置；rear=（rear+1）/数组长度；<br>5.循环队列出队伪算法：<br>front=（front+1）/数组长度；<br>6.如何判断循环队列是否为满？<br>要么多设置一个参数，该参数名为长度，但频繁更新较麻烦；<br>要么存n个元素，找n+1个空间，空间浪费率为1/n+1，n越大，浪费率越低；这种方式front与rear相邻时为满；此时（rear<br>+1）/数组长度=front；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" data-id="ckk9qd5aa0000dwvp6yi0ddxy" data-title="线性结构队列概述" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" data-id="ckk9rw1eu0000ssvpggqm04jw" data-title="循环队列演示" class="article-share-link">Share</a>
       
       
       
@@ -492,7 +493,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Suivant &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -519,9 +520,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">排序之插入排序</a>
+          </li>
         
           <li>
             <a href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">排序之冒泡排序</a>
@@ -539,10 +544,6 @@
             <a href="/2021/03/07/java-io%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/">java io程序演示</a>
           </li>
         
-          <li>
-            <a href="/2021/03/06/java-io%E6%A6%82%E8%BF%B0/">java io概述</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -557,7 +558,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Propulsé par <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
