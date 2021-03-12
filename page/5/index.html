@@ -71,6 +71,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-指针与数组注意事项" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/17/%E6%8C%87%E9%92%88%E4%B8%8E%E6%95%B0%E7%BB%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="article-date">
+  <time class="dt-published" datetime="2021-01-17T09:20:43.000Z" itemprop="datePublished">2021-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/17/%E6%8C%87%E9%92%88%E4%B8%8E%E6%95%B0%E7%BB%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">指针与数组注意事项</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>在指针指向一个数组元素时，可对指针做以下运算：<br>1.加一个整数；<br>2.减一个整数；<br>3.自加；<br>4.自减；<br>5.两个指针相减，如p1-p2(只有p1和p2都指向同一个数组时才有意义)，由p1-p2可知p1和p2之间有多少个内存单元；<br>注：指针变量不能相加，相乘除，这样做没有任何实际意义</p>
+<p>若指针变量已指向数组中的一个元素，则p+1指向该元素的下一个元素；<br>注：p+1并非将p的值简单加一而是加上一个数组元素所占的字节数；<br>数组元素类型      所占字节<br>   float           4<br>   long            4<br>   int             4<br>   char            1<br>通过定义指针变量的类型将1转化成相应字节数;<br>int a[10];<br>int* p;<br>p=&amp;a[0];<br>若p的值为2000，则p+1的值为2000+1*4=2004；<br>(p+i)和（a+i）即为a[i]的地址，则它们都指向a[i]这个元素;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/17/%E6%8C%87%E9%92%88%E4%B8%8E%E6%95%B0%E7%BB%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" data-id="ckk0xksr40000a8vp0j820uob" data-title="指针与数组注意事项" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-指针和数组" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/17/%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" class="article-date">
@@ -429,44 +469,6 @@
 
 
   
-    <article id="post-函数变量之静态局部变量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E9%9D%99%E6%80%81%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" class="article-date">
-  <time class="dt-published" datetime="2021-01-16T04:15:50.000Z" itemprop="datePublished">2021-01-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E9%9D%99%E6%80%81%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/">函数变量之静态局部变量</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int f(int a);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,a&#x3D;2;</span><br><span class="line">    for(i&#x3D;1;i&lt;&#x3D;3;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;%d\n&quot;,f(a));</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">int f(int a)</span><br><span class="line">&#123;</span><br><span class="line">    int b&#x3D;0;</span><br><span class="line">    static int c&#x3D;3;</span><br><span class="line">    b++;</span><br><span class="line">    c++;</span><br><span class="line">    return (a+b+c);</span><br><span class="line">&#125;</span><br><span class="line">输出：</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E9%9D%99%E6%80%81%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" data-id="ckjz7zsnd0000p8vp4mergd0t" data-title="函数变量之静态局部变量" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -503,6 +505,10 @@
       <ul>
         
           <li>
+            <a href="/2021/03/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/">排序之希尔排序</a>
+          </li>
+        
+          <li>
             <a href="/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/">Java容器程序演示和内容补充</a>
           </li>
         
@@ -516,10 +522,6 @@
         
           <li>
             <a href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">排序之插入排序</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">排序之冒泡排序</a>
           </li>
         
       </ul>

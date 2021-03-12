@@ -71,6 +71,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-函数变量之静态局部变量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E9%9D%99%E6%80%81%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" class="article-date">
+  <time class="dt-published" datetime="2021-01-16T04:15:50.000Z" itemprop="datePublished">2021-01-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E9%9D%99%E6%80%81%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/">函数变量之静态局部变量</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int f(int a);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,a&#x3D;2;</span><br><span class="line">    for(i&#x3D;1;i&lt;&#x3D;3;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;%d\n&quot;,f(a));</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">int f(int a)</span><br><span class="line">&#123;</span><br><span class="line">    int b&#x3D;0;</span><br><span class="line">    static int c&#x3D;3;</span><br><span class="line">    b++;</span><br><span class="line">    c++;</span><br><span class="line">    return (a+b+c);</span><br><span class="line">&#125;</span><br><span class="line">输出：</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E9%9D%99%E6%80%81%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" data-id="ckjz7zsnd0000p8vp4mergd0t" data-title="函数变量之静态局部变量" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-变量的存储方式和生存期" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/15/%E5%8F%98%E9%87%8F%E7%9A%84%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%92%8C%E7%94%9F%E5%AD%98%E6%9C%9F/" class="article-date">
@@ -418,46 +456,6 @@
 
 
   
-    <article id="post-scanf输入字符串时注意事项" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="article-date">
-  <time class="dt-published" datetime="2021-01-14T10:07:59.000Z" itemprop="datePublished">2021-01-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">scanf输入字符串时注意事项</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a[100];</span><br><span class="line">    scanf(&quot;%s&quot;,&amp;a);&#x2F;&#x2F;error:字符数组中字符数组名即为该数组第一个元素的地址或者说该数组的起始地址；</span><br><span class="line">    scanf(&quot;%s&quot;,a)</span><br><span class="line">    printf(&quot;%s\n&quot;,a);&#x2F;&#x2F;字符数组以%s输出时，输出控制项为字符数组名；</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a[100],b[100],c[100];</span><br><span class="line">    scanf(&quot;%s%s%s&quot;,a,b,c);&#x2F;&#x2F;若输入How are you?输出How are you?；若输入Howareyou?输出无输出;有空格字符分隔</span><br><span class="line">    作为三个字符串输入，无空格字符，当作一个字符串输入；</span><br><span class="line">    两者a[100],b[100],c[100]不同</span><br><span class="line">    printf(&quot;%s%s%s\n&quot;,a,b,c);&#x2F;&#x2F;字符数组以%s输出时，输出控制项为字符数组名；</span><br><span class="line">    char ch[100];</span><br><span class="line">    scanf(&quot;%s&quot;,ch);&#x2F;&#x2F;若输入How are you？&#x2F;&#x2F;输出How；系统将空格字符当作字符串间的分隔符故输出How</span><br><span class="line">    printf(&quot;%s\n&quot;,ch);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>字符串的输出只需要字符数组首地址即可，系统会沿着第一个字符的地址找下去直至遇到\0；系统这么做的前提是数组为连续分<br>配的内存；<br>疑问：<br>    char ch[1或2];<br>    scanf(“%s”,ch);//若输入How are you？为什么输出How；<br>    printf(“%s\n”,ch);</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" data-id="ckjwqignx0000rkvpg3vea5yz" data-title="scanf输入字符串时注意事项" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -494,6 +492,10 @@
       <ul>
         
           <li>
+            <a href="/2021/03/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/">排序之希尔排序</a>
+          </li>
+        
+          <li>
             <a href="/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/">Java容器程序演示和内容补充</a>
           </li>
         
@@ -507,10 +509,6 @@
         
           <li>
             <a href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">排序之插入排序</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">排序之冒泡排序</a>
           </li>
         
       </ul>
