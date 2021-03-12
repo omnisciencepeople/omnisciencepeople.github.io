@@ -14,7 +14,7 @@
 <meta property="og:description" content="java之自动装箱：容器中存入的是一定是对象，不能放孤立的值，容器内如果放孤立的值，它会被转化成相应的对象；预备知识：对于任意的类A，设有一个A类对象aa若System.out.println(aa);则等价于System.out.println(aa.toString());Object类中含有hashcode方法、equals方法、toString方法等Java中所有类默认继承Object类建">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-11T14:04:42.000Z">
-<meta property="article:modified_time" content="2021-03-12T00:48:26.709Z">
+<meta property="article:modified_time" content="2021-03-12T00:51:04.627Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -63,10 +63,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -103,12 +103,12 @@
 <p>容器之Iterator接口：<br>要想遍历容器中的所有元素，判断是否存在下一元素，返回下一个元素都是非常麻烦的事，这些复杂容易出现错误的操作在Java<br>中用hasNext()、Next()、remove()这三个方法表示，这三个方法的具体实现sun公司已经设计好了，并且API中所有继承了<br>Collection的类都已经实现了Iterator接口中的这三个方法；<br>Iterator接口以统一的方式对各种不同集合中的元素进行遍历；<br>实现了Iterator接口的对象又称迭代器，利用该对象可方便地对容器中的元素进行遍历；</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Iterator中常用方法：</span><br><span class="line">Boolean hasNext();&#x2F;&#x2F;用于判断游标右边是否存在元素；</span><br><span class="line">Object next();&#x2F;&#x2F;返回游标右边的元素，然后游标移向下一个位置</span><br><span class="line">void remove();&#x2F;&#x2F;删除最近返回的元素，在调用remove之前我们必须调用一次Next方法，调用一次next方法只能调用一次</span><br><span class="line">remove方法</span><br></pre></td></tr></table></figure>
 <p>容器之treeset：<br>treeset是一个有序的集合，treeset内元素按照升序排列，因此treeset元素必须实现Comparable接口<br>所有可以排序的类都应实现Comparable接口<br>hashset性能通常优于treeset，我们通常使用hashset在我们需要排序时才使用hashset</p>
-<p>预备知识：<br>散列码：Object中的hashcode方法会返回该对象内存真实地址的整数化表示，这个形象的又不是真实地址的整数值就是散列码，又称哈希码;<br>哈希码与地址有关，但不一定是地址;<br>哈希表：哈希表不止存储需要保存的数据，更会存储该数据的主键；实际是先保留主键，然后哈希表会根据注键某种算法自动计算出以当前主键为主键的数据的hashcode，然后根据hashcode计算出数据存储位置然后将该数据存进去；<br>哈希表又称散列表<br>哈希表中不允许存在重复的键</p>
+<p>预备知识：<br>散列码：Object中的hashcode方法会返回该对象内存真实地址的整数化表示，这个形象的又不是真实地址的整数值就是散列码，又称哈希码;<br>哈希码与地址有关，但不一定是地址;<br>哈希表：哈希表不止存储需要保存的数据，更会存储该数据的主键；实际是先保留主键，然后哈希表会根据主键某种算法自动计算出以当前主键为主键的数据的hashcode，然后根据hashcode计算出数据存储位置然后将该数据存进去；<br>哈希表又称散列表<br>哈希表中不允许存在重复的键</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/" data-id="ckm4y2bbv0000x8vp5soghlab" data-title="Java容器概述2" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/" data-id="ckm4y2bbv0000x8vp5soghlab" data-title="Java容器概述2" class="article-share-link">Teilen</a>
       
       
       
@@ -120,7 +120,7 @@
   
   
     <a href="/2021/03/10/java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">java容器概述</div>
     </a>
   
@@ -144,7 +144,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -154,7 +154,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
