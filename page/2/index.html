@@ -57,12 +57,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Buscar"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,47 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-java-io概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/06/java-io%E6%A6%82%E8%BF%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-03-06T14:47:23.000Z" itemprop="datePublished">2021-03-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/06/java-io%E6%A6%82%E8%BF%B0/">java io概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>流<br>定义：流就是程序和设备之间有用于数据传输的管道，这根管道管道上有很多按钮，不同的按钮可以实现不同的功能；</p>
+<p>分类：<br>Java.io包中定义多个流类型来实现输入输出功能：<br>（1）按数据流的方向不同可以分为输入流和输出流；<br>（2）按照数据处理的单位可以分为字符流和字节流；<br>（3）按照功能不同可以分为节点流（原始流）和处理流（包裹流）；<br>注：处理流就是包裹在原始节点上的流相当于包裹在管道上的管道；</p>
+<p>我们主要学习以下几种流：<br>（1）四大基本流<br>J2SDK所提供的所有流类型分别继承以下四种抽象流类型<br>inputstream（字节流和输入流）、outputstream（字节流和输出流）、reader（字符流和输入流）、writer（字符流和输出流）<br>通常我们使用的它们的子类。<br>（2）文件流<br>通过文件流我们可以以字符或字节为单位将文件的内容读取或将内容写入文件中<br>分为：<br>字节流：FileInputstream、FileOutputstream<br>字符流: FileReader、FileWriter<br>(3)缓冲流<br>缓冲流是带有缓冲区的输入输出流；<br>缓冲流本身为处理流，不能单独存在，必须依附于节点流；<br>缓冲流作用：<br>1.可以显著减少我们对IO访问的次数，保护我们的硬盘；<br>2缓冲流要套接在相应的节点流上，对读写的数据提供了缓冲的功能，提高了读写的效率，同时增加了一些新的方法；<br>分类：<br>BufferedReader、BufferedWriter、BufferedInputstream、BufferedOutputstream<br>（4）数据流<br>它是以一种与机器无关的方式，将Java基本类型数据和string类型数据从输入流读取或写入到输入流；<br>分为：DataInputsream、DataOutputstream<br>(5)转换流<br>分为InputstreamReader（将Inputstream转换为Reader）、OutputstreamWriter（将Outputstream转换为Writer）<br>转换流为处理流，不能单独存在，必须依附相应的节点流<br>（6）print流<br>分为printWriter、printstream<br>print流的print方法可以写入所有基本类型数据的字符串形式表示<br>print流在基本输出流的基础上提供了增强的功能，可以方便的输出各种类型数据的格式化表示形式；<br>print流重载了print和println方法用于各种类型数据的格式化输出；<br>所谓格式化输出指的是将一个数据用其字符串格式输出；<br>printWriter和printstream区别：<br>作为处理流使用时，printstream只能封装Outputstream类型的字节流，而printWriter可封装Outputstream类型的字节流，<br>也可封装Writer类型的字符流；<br>printWriter中的println方法具有更好的跨平台性；<br>（7）object流<br>分为ObjectInputstream、Objectoutputstream<br>Object流用于对象的序列化；<br>对象的序列化是指将一个对象直接转化为字节流，然后将字节流直接写入到本地硬盘或网络中；<br>如果想将某个类对象序列化，则该类必须实现Serializable接口（该接口无任何方法，这种类型的接口被称为标识接口）；<br>如果一个类对象实现了Serializable接口潜在含义告诉编译器该类对象允许被序列化，若程序中已经存在序列该对象的代码，编<br>译器会自动处理来完成该对象的序列化；<br>如果一个类对象未实现Serializable接口，程序中存在序列该对象的代码，编译器会报错；<br>在Java中被transient修饰的成员变量在对象序列化时无法被序列化；<br>注：<br>（1）以stream结尾的流是字节流；<br>（2）以字节为单位读取数据<u>显示</u>时不能读取汉字否则会造成乱码；因为汉字的两个字节均包含有效信息，使用<br>Inputstream的read方法只能读取汉字的最后一个字节，这样解码时会出现错误；可以读取字母，虽然字母由两个字节存储，但<br>只有最后一个字节包含有效信息；<br>（3）字节流可以完成对各种信息的复制如文本、声音、视频、图片等，而字符流只能完成文本信息的复制；因为字节流无需解码<br>而字符流需要解码；<br>（4）对于输出的缓冲流，写入的数据会先存入缓冲区，使用flush方法可以清空缓冲区数据，将缓冲区数据全部压入目的地。只<br>有输出流有flush方法；<br>（5）BufferedReader中的readline方法用于读取一行字符串，遇到回车符会终止读取，并将读取到的回车符自动丢弃；<br>如果只输入回车，readline返回的是” “(空字符串)而不是null；如果想输入回车符，则调用BufferedWriter中的newline方法<br>（6）print流提供的打印方法不会抛出异常；<br>（7）DataOutputstream中的write方法是将数据的二进制数据写入文件；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/06/java-io%E6%A6%82%E8%BF%B0/" data-id="cklxucpmp0000jkvpa9ub74h1" data-title="java io概述" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-赫夫曼树概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -101,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/" data-id="ckkc121eb0000p0vpaixvf6nd" data-title="赫夫曼树概述" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/" data-id="ckkc121eb0000p0vpaixvf6nd" data-title="赫夫曼树概述" class="article-share-link">Share</a>
       
       
       
@@ -139,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/" data-id="ckkb1n8hs000130vpauy80iwh" data-title="链式树遍历演示" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/" data-id="ckkb1n8hs000130vpauy80iwh" data-title="链式树遍历演示" class="article-share-link">Share</a>
       
       
       
@@ -178,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" data-id="ckkb1n8ho000030vp4hi16rct" data-title="非线性结构树的概述" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" data-id="ckkb1n8ho000030vp4hi16rct" data-title="非线性结构树的概述" class="article-share-link">Share</a>
       
       
       
@@ -216,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" data-id="ckk9rw1eu0000ssvpggqm04jw" data-title="循环队列演示" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" data-id="ckk9rw1eu0000ssvpggqm04jw" data-title="循环队列演示" class="article-share-link">Share</a>
       
       
       
@@ -255,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" data-id="ckk9qd5aa0000dwvp6yi0ddxy" data-title="线性结构队列概述" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" data-id="ckk9qd5aa0000dwvp6yi0ddxy" data-title="线性结构队列概述" class="article-share-link">Share</a>
       
       
       
@@ -293,7 +334,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/22/%E9%93%BE%E5%BC%8F%E6%A0%88%E6%BC%94%E7%A4%BA/" data-id="ckk8294of0000gwvp7frk0hq4" data-title="链式栈演示" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/22/%E9%93%BE%E5%BC%8F%E6%A0%88%E6%BC%94%E7%A4%BA/" data-id="ckk8294of0000gwvp7frk0hq4" data-title="链式栈演示" class="article-share-link">Share</a>
       
       
       
@@ -331,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/22/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk80dqb70000rsvp77ho0tof" data-title="动态构造学生信息系统并实现插入删除等功能（链表）" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/22/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk80dqb70000rsvp77ho0tof" data-title="动态构造学生信息系统并实现插入删除等功能（链表）" class="article-share-link">Share</a>
       
       
       
@@ -369,7 +410,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD/" data-id="ckk6mxwcz0000a8vp3v61g0pe" data-title="动态构造链表并进行插入删除等功能" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD/" data-id="ckk6mxwcz0000a8vp3v61g0pe" data-title="动态构造链表并进行插入删除等功能" class="article-share-link">Share</a>
       
       
       
@@ -407,45 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E6%95%B0%E7%BB%84%EF%BC%89/" data-id="ckk6mot9n0000eovp7qz2a9oo" data-title="动态构造学生信息系统并实现插入删除等功能（数组）" class="article-share-link">Compartir</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-动态构造一维数组并进行插入删除等操作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E6%93%8D%E4%BD%9C/" class="article-date">
-  <time class="dt-published" datetime="2021-01-20T10:34:20.000Z" itemprop="datePublished">2021-01-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E6%93%8D%E4%BD%9C/">动态构造一维数组并进行插入删除等操作</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line">typedef struct Arr</span><br><span class="line">&#123;</span><br><span class="line">    int* pBase;</span><br><span class="line">    int len;</span><br><span class="line">    int cnt;</span><br><span class="line">&#125;ARR,* PARR;</span><br><span class="line">void init_arr(PARR,int);</span><br><span class="line">void traverse_arr(PARR);</span><br><span class="line">bool Is_empty(PARR);</span><br><span class="line">bool Is_full(PARR);</span><br><span class="line">bool append_arr(PARR,int);</span><br><span class="line">bool Insert_arr(PARR,int,int);</span><br><span class="line">bool Delete_arr(PARR,int,int*);</span><br><span class="line">void sort_arr(PARR);</span><br><span class="line">void Inversion_arr(PARR);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int val;</span><br><span class="line">    ARR arr;</span><br><span class="line">    init_arr(&amp;arr,6);</span><br><span class="line">    traverse_arr(&amp;arr);</span><br><span class="line">    append_arr(&amp;arr,1);</span><br><span class="line">    append_arr(&amp;arr,2);</span><br><span class="line">    append_arr(&amp;arr,3);</span><br><span class="line">    append_arr(&amp;arr,4);</span><br><span class="line">    traverse_arr(&amp;arr);</span><br><span class="line">    Insert_arr(&amp;arr,3,5);</span><br><span class="line">    Insert_arr(&amp;arr,6,10);</span><br><span class="line">    traverse_arr(&amp;arr);</span><br><span class="line">    if(Delete_arr(&amp;arr,5,&amp;val))</span><br><span class="line">    &#123;</span><br><span class="line">        traverse_arr(&amp;arr);</span><br><span class="line">        printf(&quot;删除成功，你删除的元素为：%d\n&quot;,val);</span><br><span class="line">    &#125;</span><br><span class="line">    sort_arr(&amp;arr);</span><br><span class="line">    traverse_arr(&amp;arr);</span><br><span class="line">    Inversion_arr(&amp;arr);</span><br><span class="line">    traverse_arr(&amp;arr);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">void init_arr(PARR PArr,int len)</span><br><span class="line">&#123;</span><br><span class="line">    PArr-&gt;pBase&#x3D;(int*)malloc(sizeof(int)*len);</span><br><span class="line">    if(PArr-&gt;pBase&#x3D;&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;动态构造数组失败程序终止\n&quot;);</span><br><span class="line">        exit(-1);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        PArr-&gt;len&#x3D;len;</span><br><span class="line">        PArr-&gt;cnt&#x3D;0;</span><br><span class="line">    &#125;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br><span class="line">void traverse_arr(PARR PArr)</span><br><span class="line">&#123;</span><br><span class="line">    if(Is_empty(PArr))</span><br><span class="line">       printf(&quot;数组为空&quot;);</span><br><span class="line">    else</span><br><span class="line">       for(int i&#x3D;0;i&lt;PArr-&gt;cnt;i++)</span><br><span class="line">           printf(&quot;%d &quot;,PArr-&gt;pBase[i]);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br><span class="line">bool Is_empty(PARR PArr)</span><br><span class="line">&#123;</span><br><span class="line">    if(PArr-&gt;cnt&#x3D;&#x3D;0)</span><br><span class="line">       return true;</span><br><span class="line">    else</span><br><span class="line">       return false;</span><br><span class="line">&#125;</span><br><span class="line">bool Is_full(PARR PArr)</span><br><span class="line">&#123;</span><br><span class="line">    if(PArr-&gt;cnt&#x3D;&#x3D;PArr-&gt;len)</span><br><span class="line">       return true;</span><br><span class="line">    else</span><br><span class="line">       return false;</span><br><span class="line">&#125;</span><br><span class="line">bool append_arr(PARR PArr,int val)</span><br><span class="line">&#123;</span><br><span class="line">    if(Is_full(PArr))</span><br><span class="line">        return false;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        PArr-&gt;pBase[PArr-&gt;cnt]&#x3D;val;</span><br><span class="line">        PArr-&gt;cnt++;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">bool Insert_arr(PARR PArr,int pos,int val)&#x2F;&#x2F;pos值从1开始</span><br><span class="line">&#123;</span><br><span class="line">    if(Is_full(PArr)||pos&lt;1||pos&gt;PArr-&gt;cnt+1)</span><br><span class="line">      return false;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">      for(int i&#x3D;PArr-&gt;cnt-1;i&gt;&#x3D;pos-1;i--)</span><br><span class="line">        PArr-&gt;pBase[i+1]&#x3D;PArr-&gt;pBase[i];</span><br><span class="line">      PArr-&gt;pBase[pos-1]&#x3D;val;</span><br><span class="line">      PArr-&gt;cnt++;</span><br><span class="line">      return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">bool Delete_arr(PARR PArr,int pos,int* val)</span><br><span class="line">&#123;</span><br><span class="line">    if(Is_empty(PArr)||pos&lt;1||pos&gt;PArr-&gt;cnt)</span><br><span class="line">      return false;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        *val&#x3D;PArr-&gt;pBase[pos-1];</span><br><span class="line">        for(int i&#x3D;pos-1;i&lt;PArr-&gt;cnt-1;i++)</span><br><span class="line">          PArr-&gt;pBase[i]&#x3D;PArr-&gt;pBase[i+1];</span><br><span class="line">        PArr-&gt;cnt--;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void sort_arr(PARR PArr)</span><br><span class="line">&#123;</span><br><span class="line">    int t;</span><br><span class="line">    for(int i&#x3D;0;i&lt;PArr-&gt;cnt-1;i++)</span><br><span class="line">      for(int j&#x3D;0;j&lt;PArr-&gt;cnt-1-i;j++)</span><br><span class="line">         if(PArr-&gt;pBase[j]&gt;PArr-&gt;pBase[j+1])</span><br><span class="line">         &#123;</span><br><span class="line">             t&#x3D;PArr-&gt;pBase[j];</span><br><span class="line">             PArr-&gt;pBase[j]&#x3D;PArr-&gt;pBase[j+1];</span><br><span class="line">             PArr-&gt;pBase[j+1]&#x3D;t;</span><br><span class="line">         &#125;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br><span class="line">void Inversion_arr(PARR PArr)</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;0;</span><br><span class="line">    int j&#x3D;PArr-&gt;cnt-1;</span><br><span class="line">    int t;</span><br><span class="line">    while(i&lt;j)</span><br><span class="line">    &#123;</span><br><span class="line">     t&#x3D;PArr-&gt;pBase[i];</span><br><span class="line">     PArr-&gt;pBase[i]&#x3D;PArr-&gt;pBase[j];</span><br><span class="line">     PArr-&gt;pBase[j]&#x3D;t;</span><br><span class="line">     i++;</span><br><span class="line">     j--;</span><br><span class="line">    &#125;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E6%93%8D%E4%BD%9C/" data-id="ckk6b7ho300002ovpduf10q58" data-title="动态构造一维数组并进行插入删除等操作" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E6%95%B0%E7%BB%84%EF%BC%89/" data-id="ckk6mot9n0000eovp7qz2a9oo" data-title="动态构造学生信息系统并实现插入删除等功能（数组）" class="article-share-link">Share</a>
       
       
       
@@ -461,7 +464,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Previo</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">Siguiente &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -478,7 +481,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -488,9 +491,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/03/12/%E6%8E%92%E5%BA%8F%E6%B1%87%E6%80%BB/">排序汇总</a>
+          </li>
         
           <li>
             <a href="/2021/03/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/">排序之希尔排序</a>
@@ -508,10 +515,6 @@
             <a href="/2021/03/10/java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/">java容器概述</a>
           </li>
         
-          <li>
-            <a href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">排序之插入排序</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -526,7 +529,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Construido por <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
