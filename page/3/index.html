@@ -57,12 +57,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Buscar"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,47 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-动态构造数组链表" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8/" class="article-date">
+  <time class="dt-published" datetime="2021-01-20T08:15:21.000Z" itemprop="datePublished">2021-01-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8/">动态构造数组链表</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>动态构造一维数组：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;&#x2F;&#x2F;包含exit函数</span><br><span class="line">#include&lt;malloc.h&gt;&#x2F;&#x2F;包含malloc函数</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int len;</span><br><span class="line">    printf(&quot;请输入你想要构造数组的长度：&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;len);</span><br><span class="line">    int* PArr&#x3D;(int*)malloc(sizeof(int)*len);&#x2F;&#x2F;动态构造数组</span><br><span class="line">    if(PArr&#x3D;&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;动态数组构造失败，程序终止\n&quot;);</span><br><span class="line">        exit(-1);</span><br><span class="line">    &#125;&#x2F;&#x2F;检验动态数组是否构造成功</span><br><span class="line">    printf(&quot;请为数组赋值：&quot;);</span><br><span class="line">    for(int i&#x3D;0;i&lt;len;i++)</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;PArr[i]);</span><br><span class="line">    printf(&quot;输出数组为：&quot;);</span><br><span class="line">    for(i&#x3D;0;i&lt;len;i++)</span><br><span class="line">        printf(&quot;%d &quot;,PArr[i]);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>动态构造单链表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;&#x2F;&#x2F;包含malloc函数</span><br><span class="line">#include&lt;stdlib.h&gt;&#x2F;&#x2F;包含exit函数</span><br><span class="line">struct Node</span><br><span class="line">&#123;</span><br><span class="line">    int data;</span><br><span class="line">    struct Node* Next;</span><br><span class="line">&#125;;&#x2F;&#x2F;每个结点都包括指针域和数据域故使用结构体</span><br><span class="line">struct Node* creat_list();&#x2F;&#x2F;构造链表并返回头结点的地址</span><br><span class="line">void traverse_list(struct Node*);&#x2F;&#x2F;输出链表</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    struct Node* head&#x3D;NULL;&#x2F;&#x2F;定义一个头指针，确定一个链表只需知链表的头指针</span><br><span class="line">    head&#x3D;creat_list();</span><br><span class="line">    traverse_list(head);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">struct Node* creat_list()</span><br><span class="line">&#123;</span><br><span class="line">    struct Node*phead&#x3D;(struct Node*)malloc(sizeof(struct Node));&#x2F;&#x2F;构造一个头结点</span><br><span class="line">    if(phead&#x3D;&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;头结点构造失败，程序终止\n&quot;);</span><br><span class="line">        exit(-1);</span><br><span class="line">    &#125;&#x2F;&#x2F;判断头结点是否构造成功</span><br><span class="line">    struct Node* ptail&#x3D;phead;&#x2F;&#x2F;定义一个中间变量一边链接链表的每个结点</span><br><span class="line">    ptail-&gt;Next&#x3D;NULL;</span><br><span class="line">    int len,val;</span><br><span class="line">    printf(&quot;请输入你想要构造结点的个数：&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;len);</span><br><span class="line">    printf(&quot;请为每一个结点赋值：&quot;);</span><br><span class="line">    for(int i&#x3D;0;i&lt;len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        struct Node* pNext&#x3D;(struct Node*)malloc(sizeof(struct Node));</span><br><span class="line">        if(pNext&#x3D;&#x3D;NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            printf(&quot;结点构造失败，程序终止\n&quot;);</span><br><span class="line">            exit(-1);</span><br><span class="line">        &#125;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;val);</span><br><span class="line">        pNext-&gt;data&#x3D;val;</span><br><span class="line">        pNext-&gt;Next&#x3D;NULL;&#x2F;&#x2F;65到75之间构造节点并对节点进行操作</span><br><span class="line">        ptail-&gt;Next&#x3D;pNext;</span><br><span class="line">        ptail&#x3D;pNext;&#x2F;&#x2F;76到77链接结点构造链表</span><br><span class="line">    &#125;</span><br><span class="line">    return phead;&#x2F;&#x2F;返回链表头结点的地址给头指针</span><br><span class="line">&#125;</span><br><span class="line">void traverse_list(struct Node*p)</span><br><span class="line">&#123;</span><br><span class="line">    p&#x3D;p-&gt;Next;</span><br><span class="line">    printf(&quot;输出链表为：&quot;);</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;%d &quot;,p-&gt;data);</span><br><span class="line">        p&#x3D;p-&gt;Next;</span><br><span class="line">    &#125;while(p!&#x3D;NULL);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8/" data-id="ckk56svys0000c0vp5ipja5f9" data-title="动态构造数组链表" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-数据结构之线性结构" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -101,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" data-id="ckk4vukjd0000hgvpay0m2mr2" data-title="数据结构之线性结构" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" data-id="ckk4vukjd0000hgvpay0m2mr2" data-title="数据结构之线性结构" class="article-share-link">Teilen</a>
       
       
       
@@ -146,7 +187,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E6%8C%87%E9%92%88%E3%80%81%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%8A%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E5%92%8C%E9%87%8A%E6%94%BE%E5%B0%8F%E5%A4%8D%E4%B9%A0/" data-id="ckk4ur7ed0000igvp9ga90edt" data-title="指针、结构体及动态内存分配和释放小复习" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/20/%E6%8C%87%E9%92%88%E3%80%81%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%8A%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E5%92%8C%E9%87%8A%E6%94%BE%E5%B0%8F%E5%A4%8D%E4%B9%A0/" data-id="ckk4ur7ed0000igvp9ga90edt" data-title="指针、结构体及动态内存分配和释放小复习" class="article-share-link">Teilen</a>
       
       
       
@@ -191,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/" data-id="ckk40m2rh0000b0vp4r1hhp58" data-title="数据结构概述" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/" data-id="ckk40m2rh0000b0vp4r1hhp58" data-title="数据结构概述" class="article-share-link">Teilen</a>
       
       
       
@@ -229,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E4%B8%BE%E4%BE%8B/" data-id="ckk3w7v700000a0vpb5jq0muk" data-title="动态构造链表举例" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E4%B8%BE%E4%BE%8B/" data-id="ckk3w7v700000a0vpb5jq0muk" data-title="动态构造链表举例" class="article-share-link">Teilen</a>
       
       
       
@@ -267,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%EF%BC%88%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk3uygzr000010vp8m5qht2n" data-title="动态构造学生信息系统（链表）" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%EF%BC%88%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk3uygzr000010vp8m5qht2n" data-title="动态构造学生信息系统（链表）" class="article-share-link">Teilen</a>
       
       
       
@@ -306,7 +347,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/19/NULL%E5%90%AB%E4%B9%89/" data-id="ckk3oxd9l0000q4vp4b9o3esy" data-title="NULL含义" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/19/NULL%E5%90%AB%E4%B9%89/" data-id="ckk3oxd9l0000q4vp4b9o3esy" data-title="NULL含义" class="article-share-link">Teilen</a>
       
       
       
@@ -345,7 +386,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/19/%E9%93%BE%E8%A1%A8%E6%A6%82%E8%BF%B0/" data-id="ckk3o4vok0000xovp5jbg8071" data-title="链表概述" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/19/%E9%93%BE%E8%A1%A8%E6%A6%82%E8%BF%B0/" data-id="ckk3o4vok0000xovp5jbg8071" data-title="链表概述" class="article-share-link">Teilen</a>
       
       
       
@@ -383,7 +424,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/19/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%BE%E4%BE%8B/" data-id="ckk3myd4x0000ccvp592b5nk5" data-title="位运算符举例" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/19/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%BE%E4%BE%8B/" data-id="ckk3myd4x0000ccvp592b5nk5" data-title="位运算符举例" class="article-share-link">Teilen</a>
       
       
       
@@ -423,46 +464,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/19/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6/" data-id="ckk3myd500001ccvp5l23a36b" data-title="位运算符" class="article-share-link">Compartir</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-数值型数据在计算机内部的表示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/19/%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E9%83%A8%E7%9A%84%E8%A1%A8%E7%A4%BA/" class="article-date">
-  <time class="dt-published" datetime="2021-01-19T03:23:25.000Z" itemprop="datePublished">2021-01-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/19/%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E9%83%A8%E7%9A%84%E8%A1%A8%E7%A4%BA/">数值型数据在计算机内部的表示</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>数值型数据包括无符号数和有符号数；<br>有符号数包括原码、反码、补码；<br>无符号数：<br>1.非负整数，数值位均表示大小；若字长为n，则表示2的n次方个数（0到2的n次方-1）<br>有符号数：<br>最高为表示符号位（0正1负）；<br>机器数：连同符号位数值化来供机器识别；<br>真值：机器数表示的真实数值；<br>原码：最高位表符号位，数值部分为真值的绝对值；<br>反码：正数反码为其本身；负数除最高位，按位取反；用反码做运算时，若有进位则循环进位；<br>补码：正数补码为其本身；负数补码除符号位外其余按位取反并在末尾加一；用补码做运算时，若有进位则舍弃进位；<br>补码求真值：<br>1.根据最高位确定符号位；<br>2.若为正数则数值位不变；若为负数则连同符号位取反加一<br>补充：<br>数值型数据在计算机内用补码表示；<br>非数值型数据在计算机内表示：汉字输入码（外码）-&gt;汉字交换码（国标码）-&gt;汉字机内码-&gt;汉字地址码-&gt;汉字字形码；<br>区位码+20H20H-&gt;国标码+80H80H-&gt;机内码；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/19/%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E9%83%A8%E7%9A%84%E8%A1%A8%E7%A4%BA/" data-id="ckk3m5mun000068vp10hpfnt4" data-title="数值型数据在计算机内部的表示" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/19/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6/" data-id="ckk3myd500001ccvp5l23a36b" data-title="位运算符" class="article-share-link">Teilen</a>
       
       
       
@@ -478,7 +480,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Previo</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">Siguiente &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -495,7 +497,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -505,9 +507,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/">Java容器程序演示和内容补充</a>
+          </li>
         
           <li>
             <a href="/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/">Java容器概述2</a>
@@ -525,10 +531,6 @@
             <a href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">排序之冒泡排序</a>
           </li>
         
-          <li>
-            <a href="/2021/03/08/%E5%A6%82%E4%BD%95%E5%86%99%E7%AE%97%E6%B3%95%EF%BC%9F/">如何写算法？</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -543,7 +545,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Construido por <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
