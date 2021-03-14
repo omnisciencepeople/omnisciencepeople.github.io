@@ -59,10 +59,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,46 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-java容器程序演示和内容补充2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/13/java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%852/" class="article-date">
+  <time class="dt-published" datetime="2021-03-13T08:48:49.000Z" itemprop="datePublished">2021-03-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/13/java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%852/">java容器程序演示和内容补充2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>map接口：<br>如何解决哈希冲突？<br>java利用桶来解决哈希冲突;<br>map中不存对象本身而是存存储地址，对象存入到后面的线性链表（每个结点存入的是键值对）;<br>hashmap底层实现是数组+链表+红黑树（二叉查找树）的结合；<br>hashmap中当key是用户自定义对象时需要重写hashCode和equals方法;<br>在HashMap中存储了自定义对象后，要进行取值的过程，会进行hashCode和equals方法的比较，假如不重写，那么使用的就是Object中的hashCode和equals中的方法，都是利用地址值来比较，这样不符合我们的期望，我们更期望的是，当来两个不同的对象，但是他们的属性值是完全一样的，我们认为这是同一个东西，才是我们真正期望的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">public class test22&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        HashMap hm&#x3D;new HashMap();</span><br><span class="line">        hm.put(1001,new student(&quot;张三&quot;,10,201208));</span><br><span class="line">        hm.put(1002,new student(&quot;张三&quot;,10,201208));</span><br><span class="line">        hm.put(1003,new student(&quot;张三&quot;,10,201208));</span><br><span class="line">        hm.put(1003,new student(&quot;张si&quot;,10,201208));</span><br><span class="line">        Set S&#x3D;hm.keySet();&#x2F;&#x2F;调用hm.keySet方法返回容器键的集合</span><br><span class="line">        Iterator it&#x3D;S.iterator();</span><br><span class="line">        while(it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            Integer key&#x3D;(Integer)it.next();&#x2F;&#x2F;返回Object对象，需要强制类型转化</span><br><span class="line">            System.out.println(hm.get(key));</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(hm.get(1005));</span><br><span class="line">        System.out.println(hm.get(1003));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class student&#123;</span><br><span class="line">    private int age;</span><br><span class="line">    private String name;</span><br><span class="line">    private int id;</span><br><span class="line">    public student(String name,int age,int id)&#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">        this.age&#x3D;age;</span><br><span class="line">        this.name&#x3D;name;</span><br><span class="line">    &#125;</span><br><span class="line">    public String toString()&#123;</span><br><span class="line">        return name+&quot; &quot;+id+&quot; &quot;+age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">以用户自定义对象为键对象</span><br><span class="line">import java.util.*;</span><br><span class="line">public class test23&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        HashMap hm&#x3D;new HashMap();</span><br><span class="line">        hm.put(new student(&quot;张三&quot;,10,201208),1001);</span><br><span class="line">        hm.put(new student(&quot;张三&quot;,10,201208),1002);</span><br><span class="line">        hm.put(new student(&quot;张三&quot;,10,201208),1003);</span><br><span class="line">        hm.put(new student(&quot;张三&quot;,10,201208),1004);</span><br><span class="line">        Set S&#x3D;hm.keySet();</span><br><span class="line">        Iterator it&#x3D;S.iterator();</span><br><span class="line">        while(it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            student key&#x3D;(student)it.next();</span><br><span class="line">            System.out.println(hm.get(key));</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(hm.get(new student(&quot;张三&quot;,10,201208)));</span><br><span class="line">        System.out.println(hm.get(1001));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class student&#123;</span><br><span class="line">    private int age;</span><br><span class="line">    private String name;</span><br><span class="line">    private int id;</span><br><span class="line">    public student(String name,int age,int id)&#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">        this.age&#x3D;age;</span><br><span class="line">        this.name&#x3D;name;</span><br><span class="line">    &#125;</span><br><span class="line">    public String toString()&#123;</span><br><span class="line">        return name+&quot; &quot;+id+&quot; &quot;+age;</span><br><span class="line">    &#125;</span><br><span class="line">    public int hashCode()&#123;</span><br><span class="line">        return new String(name+id+age).hashCode();</span><br><span class="line">    &#125;</span><br><span class="line">    public boolean equals(Object o)&#123;</span><br><span class="line">        student st&#x3D;(student) o;</span><br><span class="line">        return st.id&#x3D;&#x3D;this.id&amp;&amp;st.name&#x3D;&#x3D;this.name&amp;&amp;st.age&#x3D;&#x3D;this.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/13/java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%852/" data-id="ckm8ov7yc00005svp0fxj0vht" data-title="java容器程序演示和内容补充2" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-排序汇总" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -97,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E6%B1%87%E6%80%BB/" data-id="ckm6fvhdb0000n4vp80ip6yw1" data-title="排序汇总" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E6%B1%87%E6%80%BB/" data-id="ckm6fvhdb0000n4vp80ip6yw1" data-title="排序汇总" class="article-share-link">Share</a>
       
       
       
@@ -136,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" data-id="ckm6fbis7000070vpg1d6davz" data-title="排序之希尔排序" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" data-id="ckm6fbis7000070vpg1d6davz" data-title="排序之希尔排序" class="article-share-link">Share</a>
       
       
       
@@ -186,7 +226,7 @@
 <p>重写hashcode方法重要性：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">class A&#123;</span><br><span class="line">    private int id;</span><br><span class="line">    public A(int id)&#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class B&#123;</span><br><span class="line">    private int id;</span><br><span class="line">    public B(int id)&#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">    &#125;</span><br><span class="line">    public int hashCode()&#123;</span><br><span class="line">        return new Integer(id).hashCode();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class test20&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        System.out.println(&quot;new A(1).hashCode()&#x3D;&quot;+new A(1).hashCode());</span><br><span class="line">        System.out.println(&quot;new A(1).hashCode()&#x3D;&quot;+new A(1).hashCode());</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(&quot;new Integer(1).hashCode()&#x3D;&quot;+new Integer(1).hashCode());</span><br><span class="line">        System.out.println(&quot;new Integer(1).hashCode()&#x3D;&quot;+new Integer(1).hashCode());</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(&quot;new String(\&quot;哈哈\&quot;).hashCode()&#x3D;&quot;+new String(&quot;哈哈&quot;).hashCode());</span><br><span class="line">        System.out.println(&quot;new String(\&quot;哈哈\&quot;).hashCode()&#x3D;&quot;+new String(&quot;哈哈&quot;).hashCode());</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(&quot;\&quot;哈哈\&quot;.hashCode()&#x3D;&quot;+(&quot;哈哈&quot;).hashCode());</span><br><span class="line">        System.out.println(&quot;\&quot;哈哈\&quot;.hashCode()&#x3D;&quot;+(&quot;哈哈&quot;).hashCode());</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(&quot;new B(1).hashCode()&#x3D;&quot;+new B(1).hashCode());</span><br><span class="line">        System.out.println(&quot;new B(1).hashCode()&#x3D;&quot;+new B(1).hashCode());</span><br><span class="line">        System.out.println();</span><br><span class="line">        Integer it1&#x3D;new Integer(1);</span><br><span class="line">        Integer it2&#x3D;new Integer(1);</span><br><span class="line">        System.out.println(it1&#x3D;&#x3D;it2);</span><br><span class="line">        System.out.println(it2.equals(it2));</span><br><span class="line">        System.out.println(it1.hashCode()&#x3D;&#x3D;it2.hashCode());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果：</span><br><span class="line">new A(1).hashCode()&#x3D;366712642</span><br><span class="line">new A(1).hashCode()&#x3D;1829164700</span><br><span class="line"></span><br><span class="line">new Integer(1).hashCode()&#x3D;1</span><br><span class="line">new Integer(1).hashCode()&#x3D;1</span><br><span class="line"></span><br><span class="line">new String(&quot;哈哈&quot;).hashCode()&#x3D;694528</span><br><span class="line">new String(&quot;哈哈&quot;).hashCode()&#x3D;694528</span><br><span class="line"></span><br><span class="line">&quot;哈哈&quot;.hashCode()&#x3D;694528</span><br><span class="line">&quot;哈哈&quot;.hashCode()&#x3D;694528</span><br><span class="line"></span><br><span class="line">new B(1).hashCode()&#x3D;1</span><br><span class="line">new B(1).hashCode()&#x3D;1</span><br><span class="line"></span><br><span class="line">false</span><br><span class="line">true</span><br><span class="line">true</span><br></pre></td></tr></table></figure>
 <p>String和Integer这些Java自带的类都重写了hashCode方法，如果Integer和String new出的对象内容相同则这些对象的<br>hashCode返回值是相同的，尽管他们占用不同的内存；<br>用户自定义的类如本程序的A类，即便内容相同hashCode返回值也不同，因为未重写hashCode方法；<br>如果希望自己定义的类对象占用内存不同但内容相同，返回相同的hashCode方法则程序员必须手动重写hashCode方法如本程序的B类；</p>
-<p>为什么set（以hashset为实现类）中必须重写hashCode方法和equals方法？<br>假定有一个对象aa，要放在set容器中（以hashset为实现类）<br>存放原理：<br>我们先根据aa的hashCode方法按照某中算法找到它在set容器中的位置，后存放进去(实际上并未放入容器中，而是放入后面的<br>线性链表中)，这是调用equals方法判断它与后面链表中的元素是否存在重复，若重复则不存放，不重复则存放；<br>set容器并未存放对象本身，它存放的是存储地址；<br>所以我们必须重写这些方法；</p>
+<p>为什么set（以hashset为实现类）中必须重写hashCode方法和equals方法？<br>假定有一个对象aa，要放在set容器中（以hashset为实现类）<br>存放原理：<br>我们先根据aa的hashCode方法按照某中算法找到它在set容器中的位置，后存放进去(实际上并未放入容器中，而是放入后面的<br>线性链表中)，这是调用equals方法判断它与后面链表中的元素是否存在重复，若重复则不存放，不重复则存放；<br>set容器并未存放对象本身，它存放的是存储地址；<br>所以我们必须重写这些方法；<br>如果只重写了hashCode方法而未重写equals方法，同样会造成重复，因为未重写equals方法，equals判断的是内存地址的异同<br>而非内容的异同；如容器内存入两个两个内容相同的类A对象;<br>如果只重写了equals方法而未重写hashCode方法，同样会造成重复,如存入两个内容相同的类A对象（找到的存储地址不同）；</p>
 <p>放在什么容器中需要重写hashCode方法和equals方法？<br>hashset、hashmap。hashtable需全部重写；<br>Treeset、Treemap无需重写，因为该树有序的（我们必须指定比较标准因此这两个实现类造出的容器内的类对象必须实现<br>Comparable接口并重写compareTo方法）</p>
 <p>如何重写hashCode方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public int hashCode()</span><br><span class="line">&#123;</span><br><span class="line">    return 当前类中基本类型对象的hashCode方法;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -195,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/" data-id="ckm6c07sl0000tgvp1ttw3d77" data-title="Java容器程序演示和内容补充" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/" data-id="ckm6c07sl0000tgvp1ttw3d77" data-title="Java容器程序演示和内容补充" class="article-share-link">Share</a>
       
       
       
@@ -242,7 +282,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/" data-id="ckm4y2bbv0000x8vp5soghlab" data-title="Java容器概述2" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/" data-id="ckm4y2bbv0000x8vp5soghlab" data-title="Java容器概述2" class="article-share-link">Share</a>
       
       
       
@@ -292,7 +332,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/10/java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/" data-id="ckm2v9qeb0000t4vpgjj03cdc" data-title="java容器概述" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/10/java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/" data-id="ckm2v9qeb0000t4vpgjj03cdc" data-title="java容器概述" class="article-share-link">Share</a>
       
       
       
@@ -332,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" data-id="ckm1qsovx0000j0vp6zw7d4s6" data-title="排序之插入排序" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" data-id="ckm1qsovx0000j0vp6zw7d4s6" data-title="排序之插入排序" class="article-share-link">Share</a>
       
       
       
@@ -372,7 +412,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckm1q62k50000csvp2ftqb1uo" data-title="排序之冒泡排序" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckm1q62k50000csvp2ftqb1uo" data-title="排序之冒泡排序" class="article-share-link">Share</a>
       
       
       
@@ -418,7 +458,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/08/%E5%A6%82%E4%BD%95%E5%86%99%E7%AE%97%E6%B3%95%EF%BC%9F/" data-id="ckm0o5kx90000pgvp1n6odp98" data-title="如何写算法？" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/08/%E5%A6%82%E4%BD%95%E5%86%99%E7%AE%97%E6%B3%95%EF%BC%9F/" data-id="ckm0o5kx90000pgvp1n6odp98" data-title="如何写算法？" class="article-share-link">Share</a>
       
       
       
@@ -457,62 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/08/%E6%8E%92%E5%BA%8F%E4%B9%8B%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E6%B3%95/" data-id="ckm0nzwhd0000l0vp6l8086x0" data-title="排序之选择排序法" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-java-io程序演示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/07/java-io%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" class="article-date">
-  <time class="dt-published" datetime="2021-03-07T03:36:19.000Z" itemprop="datePublished">2021-03-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/07/java-io%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/">java io程序演示</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>(1)将当前程序显示到屏幕上（文件流）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import java.io.*;&#x2F;&#x2F;导入java .io包来使用相关流</span><br><span class="line">public class test1&#123;</span><br><span class="line">    public static void main(String[] args)throws Exception&#123;</span><br><span class="line">        FileReader fr&#x3D;new FileReader(&quot;E:\\javaworkspace\\流\\test1.java&quot;);&#x2F;&#x2F;调用FileReader的构造方法将fr与该文件关联起来，该构造方法会抛出FileNotFoundException</span><br><span class="line">        int ch&#x3D;fr.read();&#x2F;&#x2F;调用fr的read（）方法读取一个字符，它返回的是该字符的整数表示，它会抛出IOException</span><br><span class="line">        while(-1!&#x3D;ch)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.printf(&quot;%c&quot;,ch);&#x2F;&#x2F;将该字符输出</span><br><span class="line">            ch&#x3D;fr.read();&#x2F;&#x2F;读取下一个字符并返回其整数形式，若读至末尾，则返回-1</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.printf(&quot;哈哈&quot;);</span><br><span class="line">        fr.close();&#x2F;&#x2F;调用fr的close方法，关闭该流并释放与该流相关的所有系统资源，它会抛出IOException</span><br><span class="line">        System.out.printf(&quot;哈哈&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>(2)将当前程序写入到一个文件中去（文件流）（该文件无需创建，只要写清存放路径即可）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import java.io.*;&#x2F;&#x2F;导入java. io包使用相关流</span><br><span class="line">public class test2&#123;</span><br><span class="line">    public static void main(String[] args)throws Exception&#123;</span><br><span class="line">        FileReader fr&#x3D;new FileReader(&quot;E:\\javaworkspace\\流\\test2.java&quot;);&#x2F;&#x2F;调用其构造方法，使其与文件相关联，会抛出FileNotFoundException</span><br><span class="line">        FileWriter fw&#x3D;new FileWriter(&quot;E:\\javaworkspace\\流\\1.txt&quot;);&#x2F;&#x2F;调用其构造方法，使其与文件相关联，会抛出FileNotFoundException</span><br><span class="line">        char[] buf&#x3D;new char[1024];&#x2F;&#x2F;构造一个字符数组用作中间媒介</span><br><span class="line">        int len&#x3D;fr.read(buf);&#x2F;&#x2F;将从E:\\javaworkspace\\流\\test2.java读取的一系列字符存入字符数组buf并返回存入的字符数，如果读至末尾则返回-1;会抛出IOException</span><br><span class="line">        while(-1!&#x3D;len)</span><br><span class="line">        &#123;</span><br><span class="line">            fw.write(buf,0,len);&#x2F;&#x2F;将buf数组中的从下标为0开始的len个字符写入到输出流中;会抛出IOException</span><br><span class="line">            len&#x3D;fr.read(buf);</span><br><span class="line">        &#125;</span><br><span class="line">        fw.flush();&#x2F;&#x2F;清空缓冲区内存，将停留在缓冲区中的数据全部压入到预定目的地;会抛出IOException</span><br><span class="line">        fr.close();&#x2F;&#x2F;关闭该流并释放与之相关联的所有系统资源;会抛出IOException</span><br><span class="line">      fw.close();&#x2F;&#x2F;关闭该流并释放与之相关联的所有系统资源;会抛出IOException    </span><br><span class="line">        System.out.println(&quot;哈哈&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>(3)用缓冲流将当前程序写入到一个文件中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import java.io.*;&#x2F;&#x2F;导入java. io包使用相关流</span><br><span class="line">public class test3&#123;</span><br><span class="line">    public static void main(String[] args)throws Exception&#123;</span><br><span class="line">        BufferedReader br&#x3D;new BufferedReader(new FileReader(&quot;E:\\javaworkspace\\流\\test3.java&quot;));&#x2F;&#x2F;调用其构造方法创建一个缓冲区，使其与文件相关联，会抛出FileNotFoundException;同时运用了多态</span><br><span class="line">        BufferedWriter bw&#x3D;new BufferedWriter(new FileWriter(&quot;E:\\javaworkspace\\流\\2.txt&quot;));&#x2F;&#x2F;调用其构造方法创建一个缓冲区，使其与文件相关联，会抛出FileNotFoundException;同时运用了多态</span><br><span class="line">        char[] buf&#x3D;new char[1024];&#x2F;&#x2F;构造一个字符数组用作中间媒介</span><br><span class="line">        int len&#x3D;br.read(buf);&#x2F;&#x2F;将从E:\\javaworkspace\\流\\test3.java读取的一系列字符存入字符数组buf并返回存入的字符数，如果读至末尾则返回-1;会抛出IOException</span><br><span class="line">        while(-1!&#x3D;len)</span><br><span class="line">        &#123;</span><br><span class="line">            bw.write(buf,0,len);&#x2F;&#x2F;将buf数组中的从下标为0开始的len个字符写入到输出流中;会抛出IOException</span><br><span class="line">            len&#x3D;br.read(buf);</span><br><span class="line">        &#125;</span><br><span class="line">        bw.flush();&#x2F;&#x2F;清空缓冲区内存，将停留在缓冲区中的数据全部压入到预定目的地;会抛出IOException</span><br><span class="line">        br.close();&#x2F;&#x2F;关闭该流并释放与之相关联的所有系统资源;会抛出IOException</span><br><span class="line">        bw.close();&#x2F;&#x2F;关闭该流并释放与之相关联的所有系统资源;会抛出IOException</span><br><span class="line">        System.out.println(&quot;哈哈&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>(4)用缓冲流将当前程序写入到一个文件当中，并用try…catch处理异常</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">import java.io.*;</span><br><span class="line">public class test4&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        BufferedReader br&#x3D;null;</span><br><span class="line">        BufferedWriter bw&#x3D;null;</span><br><span class="line">        String str&#x3D;null;</span><br><span class="line">        try</span><br><span class="line">        &#123;</span><br><span class="line">            br&#x3D;new BufferedReader(new FileReader(&quot;E:\\javaworkspace\\流\\test4.java&quot;));</span><br><span class="line">            bw&#x3D;new BufferedWriter(new FileWriter(&quot;E:\\javaworkspace\\流\\3.txt&quot;));</span><br><span class="line">            str&#x3D;br.readLine();&#x2F;&#x2F;调用BufferedReader中的readLine方法用于读取一行字符；遇到回车符会停止读取，并丢弃读取到的换行符</span><br><span class="line">            while(null!&#x3D;str)</span><br><span class="line">            &#123;</span><br><span class="line">                bw.write(str);&#x2F;&#x2F;调用BufferedWriter中的write(String str)方法将字符串写入到输出流中</span><br><span class="line">                bw.newLine();&#x2F;&#x2F;调用BufferedWriter中的newLine方法用于写入一个回车符</span><br><span class="line">                str&#x3D;br.readLine();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        catch(FileNotFoundException e)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(&quot;文件未找到&quot;);</span><br><span class="line">            System.exit(-1);</span><br><span class="line">        &#125;</span><br><span class="line">        catch(Exception e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            System.exit(-1);</span><br><span class="line">        &#125;</span><br><span class="line">        finally</span><br><span class="line">        &#123;</span><br><span class="line">            try</span><br><span class="line">            &#123;</span><br><span class="line">                bw.flush();</span><br><span class="line">                bw.close();</span><br><span class="line">                br.close();</span><br><span class="line">            &#125;</span><br><span class="line">            catch(Exception e)</span><br><span class="line">            &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">                System.exit(-1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>（5）将long类型数据写入Byte类型数组中并将它解读出来（数据流）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import java.io.*;</span><br><span class="line">public class test5&#123;</span><br><span class="line">    public static void main(String[] args)throws Exception&#123;</span><br><span class="line">        ByteArrayOutputStream baos&#x3D;new ByteArrayOutputStream();&#x2F;&#x2F;创建一个字节数组输出流</span><br><span class="line">        DataOutputStream dos&#x3D;new DataOutputStream(baos);&#x2F;&#x2F;调用DataOutputStream构造方法创建数据输出流，以将数据写入底层输出流；运用了多态</span><br><span class="line">        long i&#x3D;12345L;</span><br><span class="line">        dos.writeLong(i);&#x2F;&#x2F;将long类型数据写入底层输出流</span><br><span class="line">        byte[] buf&#x3D;baos.toByteArray();&#x2F;&#x2F;创建一个新分配的字节数组,其大小是此输出流的当前大小，缓冲区的有效内容已被复制到其中。 </span><br><span class="line">        ByteArrayInputStream bais&#x3D;new ByteArrayInputStream(buf);&#x2F;&#x2F;使用buf创建一个字节数组输入流</span><br><span class="line">        DataInputStream dis&#x3D;new DataInputStream(bais);&#x2F;&#x2F;调用DataIntputStream构造方法创建数据输入流，将位于底层输入流的数据读取出来</span><br><span class="line">        long m&#x3D;dis.readLong();&#x2F;&#x2F;将数据读取出来并返回读取出来的值</span><br><span class="line">        System.out.println(m);</span><br><span class="line">        dos.flush();</span><br><span class="line">        dos.close();</span><br><span class="line">        dis.close();</span><br><span class="line">        baos.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>(6)从键盘输入字符串直接赋给String对象(转换流、缓冲流)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import java.io.*;</span><br><span class="line">public class test6&#123;</span><br><span class="line">    public static void main(String[] args)throws Exception&#123;</span><br><span class="line">        BufferedReader br&#x3D;new BufferedReader(new InputStreamReader(System.in));&#x2F;&#x2F;调用InputStreamReader将System.in标准字节输入流转化为字符输入流</span><br><span class="line">        String str&#x3D;br.readLine();</span><br><span class="line">        System.out.println(str);</span><br><span class="line">        br.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>(7)比较Print流和数据输出流的区别</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import  java.io.*;</span><br><span class="line">public class test7&#123;</span><br><span class="line">  public static void main(String[] args)throws Exception&#123;</span><br><span class="line">    DataOutputStream dos&#x3D;new DataOutputStream(new FileOutputStream(&quot;E:\\javaworkspace\\流\\4.txt&quot;));&#x2F;&#x2F;创建一个数据输出流，将数据写入底层输出流；运用多态</span><br><span class="line">    long m&#x3D;1234567;</span><br><span class="line">    dos.writeLong(m);&#x2F;&#x2F;将m的二进制数据写入到相应的输出流中</span><br><span class="line">    PrintStream ps&#x3D;new PrintStream(new FileOutputStream(&quot;E:\\javaworkspace\\流\\5.txt&quot;));&#x2F;&#x2F;创建一个输出流，将数据打印到底层输出流中</span><br><span class="line">    ps.println(1234567);&#x2F;&#x2F;将1234567的字符串格式打印到底层输出流中</span><br><span class="line">    dos.close();</span><br><span class="line">    ps.close();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>(8)输入输出重定向(print流)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import java.io.*;</span><br><span class="line">import java.util.*;&#x2F;&#x2F;java.util包中包含Scanner类</span><br><span class="line">public class test8&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        PrintStream psOut&#x3D;null;</span><br><span class="line">        PrintStream psErr&#x3D;null;</span><br><span class="line">        Scanner sc&#x3D;null; </span><br><span class="line">        try</span><br><span class="line">        &#123;</span><br><span class="line">            psOut&#x3D;new PrintStream(&quot;E:\\javaworkspace\\流\\Out.txt&quot;);</span><br><span class="line">            psErr&#x3D;new PrintStream(&quot;E:\\javaworkspace\\流\\Err.txt&quot;);</span><br><span class="line">            sc&#x3D;new Scanner (System.in);&#x2F;&#x2F;System.in是标准的输入流，表示从键盘输入</span><br><span class="line">            System.setOut(psOut);&#x2F;&#x2F;调用System类的静态方法setOut重新分配“标准”输出流，将默认在显示器上输出改为在psOut所关联的文件输出</span><br><span class="line">            System.setErr(psErr);&#x2F;&#x2F;调用System类的静态方法seErr重新分配“标准”错误输出流，将默认在显示器上输出改为在psErr所关联的文件输出</span><br><span class="line">            while(true)</span><br><span class="line">            &#123;</span><br><span class="line">            psOut.println(sc.nextInt());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        catch(Exception e)</span><br><span class="line">        &#123;</span><br><span class="line">            System.err.println(&quot;错误信息为：&quot;);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>(9)对象的序列化(Object流和文件流)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">import java.io.*;</span><br><span class="line">class student implements Serializable&#x2F;&#x2F;Serializable接口为标识接口（空接口），表示该类对象允许被序列化；任何对象要想被序列化，必须实现Serializable接口</span><br><span class="line">&#123;</span><br><span class="line">    public int age;</span><br><span class="line">    public String name;</span><br><span class="line">    transient int id&#x3D;0;&#x2F;&#x2F;被transient修饰的成员变量无法被序列化</span><br><span class="line">    public student(int age,String name,int id)&#123;</span><br><span class="line">        this.age&#x3D;age;</span><br><span class="line">        this.name&#x3D;name;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class test9&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        ObjectInputStream ois&#x3D;null;</span><br><span class="line">        ObjectOutputStream oos&#x3D;null;</span><br><span class="line">        student st&#x3D;null;</span><br><span class="line">        try</span><br><span class="line">        &#123;</span><br><span class="line">            oos&#x3D;new ObjectOutputStream(new FileOutputStream(&quot;E:\\javaworkspace\\流\\6.txt&quot;));</span><br><span class="line">            ois&#x3D;new ObjectInputStream(new FileInputStream(&quot;E:\\javaworkspace\\流\\6.txt&quot;));</span><br><span class="line">            oos.writeObject(new student (19,&quot;张三&quot;,2020));&#x2F;&#x2F;将对象写入到底层输出流中</span><br><span class="line">            st&#x3D;(student) ois.readObject();&#x2F;&#x2F;读取对象并强制类型转换</span><br><span class="line">            System.out.println(st.name+&quot; &quot;+st.id+&quot; &quot;+st.age);</span><br><span class="line">        &#125;</span><br><span class="line">        catch(FileNotFoundException e)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(&quot;文件未找到&quot;);</span><br><span class="line">            System.exit(-1);</span><br><span class="line">        &#125;</span><br><span class="line">        catch(Exception e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            System.exit(-1);</span><br><span class="line">        &#125;</span><br><span class="line">        finally</span><br><span class="line">        &#123;</span><br><span class="line">            try</span><br><span class="line">            &#123;</span><br><span class="line">            oos.close();</span><br><span class="line">            ois.close();</span><br><span class="line">            &#125;</span><br><span class="line">            catch(Exception e)</span><br><span class="line">            &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">                System.exit(-1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/07/java-io%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="cklylt0qj0000egvpbkhrdpmm" data-title="java io程序演示" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/08/%E6%8E%92%E5%BA%8F%E4%B9%8B%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E6%B3%95/" data-id="ckm0nzwhd0000l0vp6l8086x0" data-title="排序之选择排序法" class="article-share-link">Share</a>
       
       
       
@@ -528,7 +513,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -545,7 +530,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -555,9 +540,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/03/13/java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%852/">java容器程序演示和内容补充2</a>
+          </li>
         
           <li>
             <a href="/2021/03/12/%E6%8E%92%E5%BA%8F%E6%B1%87%E6%80%BB/">排序汇总</a>
@@ -573,10 +562,6 @@
         
           <li>
             <a href="/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/">Java容器概述2</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/10/java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/">java容器概述</a>
           </li>
         
       </ul>
