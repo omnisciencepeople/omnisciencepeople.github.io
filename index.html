@@ -59,10 +59,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -93,12 +93,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>什么叫程序？<br>程序是一个严格有序的集合，它规定了计算机完成某一任务时所执行的操作以及这些操作的执行顺序。<br>单道程序设计环境：<br>单道程序设计环境是指计算机中除了操作系统以外只存在一个用户程序，即用户程序独享整个计算机资源。<br>单道程序设计环境特点：<br>资源独占性：任何时候位于内存中的程序可以使用计算机系统的一切资源，不可能有其他程序与之竞争。<br>执行顺序性：内存中每次只能有一个程序，各个程序按次执行，绝不可能出现在一个程序运行过程中，又夹杂另一个程序运行的<br>现象存在，一次只能运行一个程序。<br>结果的再现性：若运行环境和初始条件相同，同一个程序运行的结果总是一样的。<br>多道程序设计环境：<br>多道程序设计环境计算机中除了操作系统外还存在很多用户程序，这些程序同时运行。<br>多道程序设计环境特点：<br>间断性：由于资源共享和合作，并发程序间相互制约，造成合作执行间断；<br>失去封闭性：易受到外界环境影响。<br>不可再现性：重复执行同一程序时，可能得到不同的结果。因为同一个机器上同时运行多个程序，你永远不知道跟你一起抢占资<br>源的是哪个程序，过一段时间，运行环境可能就变了。<br>进程的由来:<br>一方面为了不改变“ ‘程序’ 是一个在时间上严格有序的指令集合，是静态的保存在存储介质上的”这个概念原有的含义，又能够刻画多个程序共同运行时呈现的新特征，在操作系统中，引入了”进程”这一新的概念。<br>进程是什么？<br>进程是程序在某一个数据集上的执行。<br>进程特征：<br>动态性：进程是程序的一次执行过程，具有生命周期，能够动态产生和消亡。<br>并发性：任何进程可以与其他进程并发执行；<br>独立性：进程是系统进行资源分配和调度的最小单位。<br>结构性：进程由进程控制块、数据集合、程序三部分组成；<br>什么是线程？<br>线程是程序的不同执行路径。<br>为什么出现线程？<br>线程能直接共享数据和资源，进程不能。<br>线程对系统资源冲击比较小，启动比较快，退出比较快。<br>多重进程不可预期且测试困难。<br>进程和线程的区别：<br>进程是系统进行进行资源分配和调度的最小单位；线程是程序执行的最小单位。<br>一个进程由一个一个或多个线程组成，线程是一个进程中代码执行的不同执行路径。<br>进程之间相互独立，但同一个进程下的各个线程之间共享程序内存空间及一些进程级资源，某进程内的线程在其他进程不可见。<br>线程上下文切换比进程上下文切换快得多。<br>任务调度：<br>大部分操作系统的任务调度采用的是时间片轮转的抢占式调度方式。<br>每个线程执行一段时间后强制暂停去执行另一个线程，不论线程的优先级多高，每次执行的时间都是一定的。<br>优先级高的调度的概率会变大。<br>任务执行的一段时间称为时间片，任务执行的状态叫做运行状态，任务被暂停处于的状态叫做就绪状态，等待它的下一个时间片<br>到来。这样每个任务都能执行，由于CPU执行的效率非常高，时间片非常短，在各个任务快速的切换，给人的感觉好像多个任务<br>在同时执行，这就是并发。<br>并发和并行：<br>并发：同一时刻只有一条指令执行，但多个指令被快速轮换，使得在宏观上具有多个指令同时执行的效果。<br>并行：同一时刻有多个指令同时执行，无论从宏观还是微观来看，二者都是同时执行。<br>单线程：不过程序多复杂，我们都能用一根线表示，它是有顺序的称这为单线程。<br>多线程：一个程序的流程在其他地方又单独开辟别的线程，不停占用CPU交替执行。</p>
+        <p>什么叫程序？<br>程序是一个严格有序的集合，它规定了计算机完成某一任务时所执行的操作以及这些操作的执行顺序。<br>单道程序设计环境：<br>单道程序设计环境是指计算机中除了操作系统以外只存在一个用户程序，即用户程序独享整个计算机资源。<br>单道程序设计环境特点：<br>资源独占性：任何时候位于内存中的程序可以使用计算机系统的一切资源，不可能有其他程序与之竞争。<br>执行顺序性：内存中每次只能有一个程序，各个程序按次执行，绝不可能出现在一个程序运行过程中，又夹杂另一个程序运行的<br>现象存在，一次只能运行一个程序。<br>结果的再现性：若运行环境和初始条件相同，同一个程序运行的结果总是一样的。<br>多道程序设计环境：<br>多道程序设计环境计算机中除了操作系统外还存在很多用户程序，这些程序同时运行。<br>多道程序设计环境特点：<br>间断性：由于资源共享和合作，并发程序间相互制约，造成合作执行间断；<br>失去封闭性：易受到外界环境影响。<br>不可再现性：重复执行同一程序时，可能得到不同的结果。因为同一个机器上同时运行多个程序，你永远不知道跟你一起抢占资<br>源的是哪个程序，过一段时间，运行环境可能就变了。<br>进程的由来:<br>一方面为了不改变“ ‘程序’ 是一个在时间上严格有序的指令集合，是静态的保存在存储介质上的”这个概念原有的含义，又能够刻画多个程序共同运行时呈现的新特征，在操作系统中，引入了”进程”这一新的概念。<br>进程是什么？<br>进程是程序在某一个数据集上的执行。<br>进程特征：<br>动态性：进程是程序的一次执行过程，具有生命周期，能够动态产生和消亡。<br>并发性：任何进程可以与其他进程并发执行；<br>独立性：进程是系统进行资源分配和调度的最小单位。<br>结构性：进程由进程控制块、数据集合、程序三部分组成；<br>什么是线程？<br>线程是程序的不同执行路径。<br>为什么出现线程？<br>线程能直接共享数据和资源，进程不能。<br>线程对系统资源冲击比较小，启动比较快，退出比较快。<br>多重进程不可预期且测试困难。<br>进程和线程的区别：<br>进程是系统进行进行资源分配和调度的最小单位；线程是程序执行的最小单位。<br>一个进程由一个一个或多个线程组成，线程是一个进程中代码执行的不同执行路径。<br>进程之间相互独立，但同一个进程下的各个线程之间共享程序内存空间及一些进程级资源，某进程内的线程在其他进程不可见。<br>线程上下文切换比进程上下文切换快得多。<br>任务调度：<br>大部分操作系统的任务调度采用的是时间片轮转的抢占式调度方式。<br>每个线程执行一段时间后强制暂停去执行另一个线程，不论线程的优先级多高，每次执行的时间都是一定的。<br>优先级高的调度的概率会变大。<br>任务执行的一段时间称为时间片，任务执行的状态叫做运行状态，任务被暂停处于的状态叫做就绪状态，等待它的下一个时间片<br>到来。这样每个任务都能执行，由于CPU执行的效率非常高，时间片非常短，在各个任务快速的切换，给人的感觉好像多个任务<br>在同时执行，这就是并发。<br>并发和并行：<br>并发：同一时刻只有一条指令执行，但多个指令被快速轮换，使得在宏观上具有多个指令同时执行的效果。<br>并行：同一时刻有多个指令同时执行，无论从宏观还是微观来看，二者都是同时执行。<br>单线程：不过程序多复杂，我们都能用一根线表示，它是有顺序的称这为单线程。<br>多线程：一个程序的流程在其他地方又单独开辟别的线程，不停占用CPU交替执行。<br>###线程状态的切换###</p>
 <img src="/2021/03/14/Java%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0/C.png" class="">
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/14/Java%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0/" data-id="ckm8pdvhb0000rkvpcvqiho2h" data-title="Java线程概述" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/14/Java%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0/" data-id="ckm8pdvhb0000rkvpcvqiho2h" data-title="Java线程概述" class="article-share-link">Share</a>
       
       
       
@@ -137,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/14/java%E5%AE%B9%E5%99%A8%E4%B9%8B%E6%B3%9B%E5%9E%8B/" data-id="ckm8p9pf20000ekvpa7w861cs" data-title="java容器之泛型" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/14/java%E5%AE%B9%E5%99%A8%E4%B9%8B%E6%B3%9B%E5%9E%8B/" data-id="ckm8p9pf20000ekvpa7w861cs" data-title="java容器之泛型" class="article-share-link">Share</a>
       
       
       
@@ -177,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/13/java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%852/" data-id="ckm8ov7yc00005svp0fxj0vht" data-title="java容器程序演示和内容补充2" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/13/java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%852/" data-id="ckm8ov7yc00005svp0fxj0vht" data-title="java容器程序演示和内容补充2" class="article-share-link">Share</a>
       
       
       
@@ -215,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E6%B1%87%E6%80%BB/" data-id="ckm6fvhdb0000n4vp80ip6yw1" data-title="排序汇总" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E6%B1%87%E6%80%BB/" data-id="ckm6fvhdb0000n4vp80ip6yw1" data-title="排序汇总" class="article-share-link">Share</a>
       
       
       
@@ -254,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" data-id="ckm6fbis7000070vpg1d6davz" data-title="排序之希尔排序" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" data-id="ckm6fbis7000070vpg1d6davz" data-title="排序之希尔排序" class="article-share-link">Share</a>
       
       
       
@@ -313,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/" data-id="ckm6c07sl0000tgvp1ttw3d77" data-title="Java容器程序演示和内容补充" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/" data-id="ckm6c07sl0000tgvp1ttw3d77" data-title="Java容器程序演示和内容补充" class="article-share-link">Share</a>
       
       
       
@@ -360,7 +360,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/" data-id="ckm4y2bbv0000x8vp5soghlab" data-title="Java容器概述2" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/" data-id="ckm4y2bbv0000x8vp5soghlab" data-title="Java容器概述2" class="article-share-link">Share</a>
       
       
       
@@ -410,7 +410,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/10/java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/" data-id="ckm2v9qeb0000t4vpgjj03cdc" data-title="java容器概述" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/10/java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/" data-id="ckm2v9qeb0000t4vpgjj03cdc" data-title="java容器概述" class="article-share-link">Share</a>
       
       
       
@@ -450,7 +450,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" data-id="ckm1qsovx0000j0vp6zw7d4s6" data-title="排序之插入排序" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" data-id="ckm1qsovx0000j0vp6zw7d4s6" data-title="排序之插入排序" class="article-share-link">Share</a>
       
       
       
@@ -490,7 +490,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckm1q62k50000csvp2ftqb1uo" data-title="排序之冒泡排序" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckm1q62k50000csvp2ftqb1uo" data-title="排序之冒泡排序" class="article-share-link">Share</a>
       
       
       
@@ -506,7 +506,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -523,7 +523,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -533,7 +533,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
