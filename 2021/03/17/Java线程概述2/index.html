@@ -14,7 +14,7 @@
 <meta property="og:description" content="Java线程创建方式：一1.创建一个thread继承类A，并重写A从thread中继承的run方法2.创建一个A类对象aa3.调用aa从thread类中继承的start方法（该方法会开辟一个新的线程并自动调用run方法）二1.创建一个实现Runnable接口的类A，并重写从Runnable接口继承的run方法2.创建A类对象aa3.以aa创建一个thread对象 T 如Thread T&#x3D;new T">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-16T22:40:20.000Z">
-<meta property="article:modified_time" content="2021-03-19T12:33:00.041Z">
+<meta property="article:modified_time" content="2021-03-20T01:52:07.088Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -105,9 +105,14 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public static void sleep(long millis) throws InterruptedException&#x2F;&#x2F;指定毫秒</span><br><span class="line">public static void sleep(long millis,int nanos) throws InterruptedException&#x2F;&#x2F;指定毫秒纳秒</span><br></pre></td></tr></table></figure>
 <p>sleep 方法会抛出Interrupted Exception 异常，我们必须对其进行捕捉处理 </p>
 <p>线程的让步<br>线程让出CPU，并进入就绪状态<br>public static void yield()//以类名调用</p>
+<p>线程休眠和让步区别：<br>线程休眠后当前线程进入阻塞状态，转而去执行另一个线程，之后随机执行；<br>线程让步后成当前线程进入就绪状态，转而去执行另外一个线程，之后交替执行；</p>
 <p>线程的串行化<br>在多线程中，如果在一个线程运行的过程中要用到另一个线程的运行结果，则可进行线程的串行化处理<br>方法：public final void join() throws InterruptedException</p>
 <p>线程的挂起和恢复：<br>线程的挂起：暂停停止当前运行中的线程，使之转入阻塞状态，并不会自动恢复运行；<br>线程的恢复：使一个已经挂起的线程恢复运行；<br>public final void suspend()<br>public final void resume()<br>suspend方法挂起线程时并不会释放其锁的资源，这可能会影响其他线程的运行，并且容易导致其他线程的死锁，不提倡使用；<br>死锁：A和B都相互需要对方的资源，但彼此都守着资源，不给对方使用，导致A和B都无法运行；</p>
-<p>线程的同步问题：<br>经典问题：一张票被多个站台卖</p>
+<p>线程的同步问题：<br>经典问题：一张票被多个站台卖<br>一张票被多个站台卖可能会产生一张票被卖多次的问题；<br>产生原因：<br>1.很多代码对同一个资源访问，产生顺序的问题，互斥问题。<br>2.CPU可以在多个线程的任一点之间来回切换，它们不是互斥的。<br>互斥（同步）：关键步骤只能由一个线程访问，其他线程不可访问；<br>以买票为例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(票数大于0)</span><br><span class="line">&#123;</span><br><span class="line">    卖一张票；</span><br><span class="line">    票数减一；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>假设有三个线程A、B、C。我们知道CPU可在A、B、C任意一个点来回切换；<br>A发现票数大于0，卖票，但票数未减一就切换到B，B发现票数大于0，卖票，但票数未减一就切换到C，C发现票数大于0，卖票，<br>票数减一，这样一张票就被卖了三次。CPU在3个线程之间的来回切换可发生在0任意一个点，导致卖票发生紊乱，因为代码1到5<br>行不是一个整体。<br>我们希望正常情况：A卖这张票，B、C不可卖，且B、C不可卖下一张票，A卖完这一张票后，下一张票共同竞争，让CPU决定谁卖；<br>我们引入Synchronized关键词来解决该问题：<br>Synchronized可用来修饰某个方法、某个方法内部的代码块；<br>修饰一个方法:<br>Synchronized void f(){}<br>修饰一个代码块<br>Synchronized(对象名)<br>{<br>    同步代码块<br>}<br>Synchronized修饰一个代码块时：<br>Synchronized(对象名aa)功能：判断aa是否被其他线程霸占，如果发现被其他线程霸占，当前线程陷入等待中。如果发现aa<br>没有被其他线程霸占，当前线程霸占aa，并执行同步代码块。在当前线程执行期间，CPU可能会切换到其他线程，但其他线程无<br>法执行同步代码块（因为当前线程霸占了aa对象），当前线程执行完同步代码块后会自动释放对aa霸占，此时他和其他线程共同<br>竞争对aa的霸占，最终CPU会选择其中的某个线程执行。<br>导致的结果是一个线程正在操作某资源时，将不允许其他线程操作该资源，即一次只允许一个线程操作该资源。<br>霸占的专业术语叫锁定，霸占住的对象叫监听器。<br>Synchronized修饰方法时实际上锁定的是该方法this指针所指向的对象即正在调用该方法的对象；</p>
+<p>this.notify()详解：<br>不是叫醒正在执行this.notify()的线程，而是叫醒一个正在wait this对象的其他线程，如果有多个线程正在wait this对<br>象，通常叫醒最先wait this对象的线程但具体叫醒哪一个是由系统调度器控制，程序员无法控制。<br>执行this.notify()方法如果一个线程都没唤醒也是允许的；<br>this.notifyAll()详解：<br>唤醒所有因为wait方法而陷入阻塞状态的线程，使之进入就绪状态；<br>wait方法详解：<br>会使线程进入阻塞状态，同时会使线程释放对this对象的锁定；</p>
+<p>生产者消费者问题：<br>为什么用while判断，而不用if？<br>如何实现生产消费？<br>这两个问题我会在之后的程序中详解</p>
 
       
     </div>
