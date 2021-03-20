@@ -57,12 +57,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Buscar"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,45 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-线性结构队列概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-01-23T12:10:11.000Z" itemprop="datePublished">2021-01-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/">线性结构队列概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>队列：一种可实现先进先出的存储结构；<br>分类：静态队列（一般用循环队列实现）、链式队列；<br>1.静态队列一般为什么必须为循环队列？<br>传统数组实现队列会造成空间浪费；<br>2.循环队列需要几个参数来确定？<br>两个参数front和rear；<br>front永远指向队列的第一个元素，rear永远指向最后一个有效元素的下一个位置；<br>3.front和rear这两个参数在不同场合的不同含义？<br>队列初始化：front和rear值都为0；<br>队列为空：front和rear值相等但不一定为0；<br>队列非空：front为第一个元素，rear为最后一个有效元素的下一个位置；<br>4.循环队列入队伪算法：<br>将值存入rear所代表的位置；rear=（rear+1）/数组长度；<br>5.循环队列出队伪算法：<br>front=（front+1）/数组长度；<br>6.如何判断循环队列是否为满？<br>要么多设置一个参数，该参数名为长度，但频繁更新较麻烦；<br>要么存n个元素，找n+1个空间，空间浪费率为1/n+1，n越大，浪费率越低；这种方式front与rear相邻时为满；此时（rear<br>+1）/数组长度=front；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" data-id="ckk9qd5aa0000dwvp6yi0ddxy" data-title="线性结构队列概述" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-链式栈演示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -97,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/22/%E9%93%BE%E5%BC%8F%E6%A0%88%E6%BC%94%E7%A4%BA/" data-id="ckk8294of0000gwvp7frk0hq4" data-title="链式栈演示" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/22/%E9%93%BE%E5%BC%8F%E6%A0%88%E6%BC%94%E7%A4%BA/" data-id="ckk8294of0000gwvp7frk0hq4" data-title="链式栈演示" class="article-share-link">Teilen</a>
       
       
       
@@ -135,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/22/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk80dqb70000rsvp77ho0tof" data-title="动态构造学生信息系统并实现插入删除等功能（链表）" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/22/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk80dqb70000rsvp77ho0tof" data-title="动态构造学生信息系统并实现插入删除等功能（链表）" class="article-share-link">Teilen</a>
       
       
       
@@ -173,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD/" data-id="ckk6mxwcz0000a8vp3v61g0pe" data-title="动态构造链表并进行插入删除等功能" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD/" data-id="ckk6mxwcz0000a8vp3v61g0pe" data-title="动态构造链表并进行插入删除等功能" class="article-share-link">Teilen</a>
       
       
       
@@ -211,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E6%95%B0%E7%BB%84%EF%BC%89/" data-id="ckk6mot9n0000eovp7qz2a9oo" data-title="动态构造学生信息系统并实现插入删除等功能（数组）" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E6%95%B0%E7%BB%84%EF%BC%89/" data-id="ckk6mot9n0000eovp7qz2a9oo" data-title="动态构造学生信息系统并实现插入删除等功能（数组）" class="article-share-link">Teilen</a>
       
       
       
@@ -249,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E6%93%8D%E4%BD%9C/" data-id="ckk6b7ho300002ovpduf10q58" data-title="动态构造一维数组并进行插入删除等操作" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E6%93%8D%E4%BD%9C/" data-id="ckk6b7ho300002ovpduf10q58" data-title="动态构造一维数组并进行插入删除等操作" class="article-share-link">Teilen</a>
       
       
       
@@ -290,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%EF%BC%88%E6%95%B0%E7%BB%84%E5%92%8C%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk5afmvy000000vp75vod50n" data-title="动态构造学生信息系统（数组和链表）" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%EF%BC%88%E6%95%B0%E7%BB%84%E5%92%8C%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk5afmvy000000vp75vod50n" data-title="动态构造学生信息系统（数组和链表）" class="article-share-link">Teilen</a>
       
       
       
@@ -331,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8/" data-id="ckk56svys0000c0vp5ipja5f9" data-title="动态构造数组链表" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8/" data-id="ckk56svys0000c0vp5ipja5f9" data-title="动态构造数组链表" class="article-share-link">Teilen</a>
       
       
       
@@ -373,7 +412,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" data-id="ckk4vukjd0000hgvpay0m2mr2" data-title="数据结构之线性结构" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" data-id="ckk4vukjd0000hgvpay0m2mr2" data-title="数据结构之线性结构" class="article-share-link">Teilen</a>
       
       
       
@@ -418,52 +457,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E6%8C%87%E9%92%88%E3%80%81%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%8A%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E5%92%8C%E9%87%8A%E6%94%BE%E5%B0%8F%E5%A4%8D%E4%B9%A0/" data-id="ckk4ur7ed0000igvp9ga90edt" data-title="指针、结构体及动态内存分配和释放小复习" class="article-share-link">Compartir</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-数据结构概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-19T11:18:22.000Z" itemprop="datePublished">2021-01-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/">数据结构概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>数据结构定义：<br>我们如何把大量而复杂的问题以特定的数据类型和特定的存储结构将它保存到存储器，及在此基础上实现某个功能（如查找、排序、删除）而执行相应的操作；<br>数据结构关注的是个体及个体与个体之间关系的保存；</p>
-<p>算法：<br>通俗上，为解决问题的方法和步骤即对存储数据的操作从而解决问题；<br>在狭义上，算法依附存储结构；<br>在广义上，无论数据以何种方式存储，对数据的操作是一样的；<br>算法的评判标准：<br>1.时间复杂度<br>程序执行的次数并非时间；<br>2.空间复杂度<br>算法执行过程中大概所占用的最大内存；<br>3.难易程度<br>4.健壮性<br>5.正确性</p>
-<p>程序=数据存储（数据结构）+对数据的操作（算法）+可被其执行的语言；<br>数据结构的地位：<br>1.软件中最核心的课程；<br>2.软件开发中最基础最重要的理论基础；</p>
-<p>指针、结构体、动态内存分配和释放小复习</p>
-<p>模块一：线性结构<br>              连续存储（数组）<br>              离散存储（链表）<br>              常见应用：栈和队列；</p>
-<p>模块二：非线性结构<br>                树<br>                图</p>
-<p>模块三：<br>        查找<br>        排序</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/" data-id="ckk40m2rh0000b0vp4r1hhp58" data-title="数据结构概述" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/01/20/%E6%8C%87%E9%92%88%E3%80%81%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%8A%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E5%92%8C%E9%87%8A%E6%94%BE%E5%B0%8F%E5%A4%8D%E4%B9%A0/" data-id="ckk4ur7ed0000igvp9ga90edt" data-title="指针、结构体及动态内存分配和释放小复习" class="article-share-link">Teilen</a>
       
       
       
@@ -479,7 +473,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Previo</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">Siguiente &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -496,7 +490,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -506,9 +500,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA/">java线程演示</a>
+          </li>
         
           <li>
             <a href="/2021/03/17/Java%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B02/">Java线程概述2</a>
@@ -526,10 +524,6 @@
             <a href="/2021/03/13/java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%852/">java容器程序演示和内容补充2</a>
           </li>
         
-          <li>
-            <a href="/2021/03/12/%E6%8E%92%E5%BA%8F%E6%B1%87%E6%80%BB/">排序汇总</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -544,7 +538,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Construido por <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
