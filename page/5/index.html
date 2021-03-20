@@ -71,6 +71,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-动态构造学生信息系统并按成绩排序（数组）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E6%8C%89%E6%88%90%E7%BB%A9%E6%8E%92%E5%BA%8F%EF%BC%88%E6%95%B0%E7%BB%84%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2021-01-19T02:57:34.000Z" itemprop="datePublished">2021-01-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E6%8C%89%E6%88%90%E7%BB%A9%E6%8E%92%E5%BA%8F%EF%BC%88%E6%95%B0%E7%BB%84%EF%BC%89/">动态构造学生信息系统并按成绩排序（数组）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">struct student</span><br><span class="line">&#123;</span><br><span class="line">    char name[100];</span><br><span class="line">    int num;</span><br><span class="line">    char sex;</span><br><span class="line">    int age;</span><br><span class="line">    float score;</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int len;</span><br><span class="line">    struct student t;</span><br><span class="line">    printf(&quot;请输入你要构造学生信息的个数：&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;len);</span><br><span class="line">    struct student* st&#x3D;(struct student*)malloc(sizeof(struct student)*len);</span><br><span class="line">    if(st&#x3D;&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;内存分配失败，程序失败\n&quot;);</span><br><span class="line">        exit(-1);</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i&#x3D;0;i&lt;len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;请输入第%d个学生的信息：\n&quot;,i+1);</span><br><span class="line">        printf(&quot;name&#x3D;&quot;);</span><br><span class="line">        scanf(&quot;%s&quot;,st[i].name);</span><br><span class="line">        printf(&quot;num&#x3D;&quot;);</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;st[i].num);</span><br><span class="line">        printf(&quot;sex&#x3D;&quot;);</span><br><span class="line">        scanf(&quot; %c&quot;,&amp;st[i].sex);</span><br><span class="line">        printf(&quot;age&#x3D;&quot;);</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;st[i].age);</span><br><span class="line">        printf(&quot;score&#x3D;&quot;);</span><br><span class="line">        scanf(&quot;%f&quot;,&amp;st[i].score);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    for(i&#x3D;0;i&lt;len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;输出第%d个学生的信息：\n&quot;,i+1);</span><br><span class="line">        printf(&quot;name&#x3D;%s\nnum&#x3D;%d\nsex&#x3D;%c\nage&#x3D;%d\nscore&#x3D;%f\n&quot;,st[i].name,st[i].num,st[i].sex,st[i].age,st[i].score);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;\n按成绩排序输出为:\n&quot;);</span><br><span class="line">    for(i&#x3D;0;i&lt;len-1;i++)</span><br><span class="line">        for(int j&#x3D;0;j&lt;len-1-i;j++)</span><br><span class="line">            if(st[j].score&gt;st[j+1].score)</span><br><span class="line">            &#123;</span><br><span class="line">                t&#x3D;st[j];</span><br><span class="line">                st[j]&#x3D;st[j+1];</span><br><span class="line">                st[j+1]&#x3D;t;</span><br><span class="line">            &#125;</span><br><span class="line">    for(i&#x3D;0;i&lt;len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;输出第%d个学生的信息：\n&quot;,i+1);</span><br><span class="line">        printf(&quot;name&#x3D;%s\nnum&#x3D;%d\nsex&#x3D;%c\nage&#x3D;%d\nscore&#x3D;%f\n&quot;,st[i].name,st[i].num,st[i].sex,st[i].age,st[i].score);</span><br><span class="line">    &#125;</span><br><span class="line">    free(st);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E6%8C%89%E6%88%90%E7%BB%A9%E6%8E%92%E5%BA%8F%EF%BC%88%E6%95%B0%E7%BB%84%EF%BC%89/" data-id="ckk3esoxm00003kvp0di5c3e7" data-title="动态构造学生信息系统并按成绩排序（数组）" class="article-share-link">Compartir</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-结构体概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/19/%E7%BB%93%E6%9E%84%E4%BD%93%E6%A6%82%E8%BF%B0/" class="article-date">
@@ -456,47 +494,6 @@ pst-&gt;age含义：pst指向结构体中age这个成员；
 
 
   
-    <article id="post-指针程序互换两个数字" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/17/%E6%8C%87%E9%92%88%E7%A8%8B%E5%BA%8F%E4%BA%92%E6%8D%A2%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/" class="article-date">
-  <time class="dt-published" datetime="2021-01-17T08:21:44.000Z" itemprop="datePublished">2021-01-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/17/%E6%8C%87%E9%92%88%E7%A8%8B%E5%BA%8F%E4%BA%92%E6%8D%A2%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/">指针程序互换两个数字</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a&#x3D;1,b&#x3D;2;</span><br><span class="line">    int *p1,*p2,*p;</span><br><span class="line">    p1&#x3D;&amp;a;</span><br><span class="line">    p2&#x3D;&amp;b;</span><br><span class="line">    p&#x3D;p1;</span><br><span class="line">    p1&#x3D;p2;</span><br><span class="line">    p2&#x3D;p;</span><br><span class="line">    printf(&quot;a&#x3D;%d b&#x3D;%d\n&quot;,a,b);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">输出a&#x3D;1，b&#x3D;2;</span><br><span class="line">注：</span><br><span class="line">该程序没有互换成功，只是互换两个变量的地址；</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a&#x3D;1,b&#x3D;2;</span><br><span class="line">    int* p1,* p2,p;</span><br><span class="line">    p1&#x3D;&amp;a;</span><br><span class="line">    p2&#x3D;&amp;b;</span><br><span class="line">    p&#x3D;*p1;</span><br><span class="line">    * p1&#x3D;* p2;</span><br><span class="line">    * p2&#x3D;p;</span><br><span class="line">    printf(&quot;a&#x3D;%d b&#x3D;%d\n&quot;,a,b);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">输出a&#x3D;2，b&#x3D;1;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void huhuan(int* p,int*q)</span><br><span class="line">&#123;</span><br><span class="line">    int t;</span><br><span class="line">    t&#x3D;*p;</span><br><span class="line">    *p&#x3D;*q;</span><br><span class="line">    *q&#x3D;t;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a&#x3D;1,b&#x3D;2;</span><br><span class="line">    huhuan(&amp;a,&amp;b);</span><br><span class="line">    printf(&quot;a&#x3D;%d b&#x3D;%d\n&quot;,a,b);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">输出a&#x3D;2，b&#x3D;1;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void huhuan(int* p,int*q)</span><br><span class="line">&#123;</span><br><span class="line">    int* t;</span><br><span class="line">    t&#x3D;p;</span><br><span class="line">    p&#x3D;q;</span><br><span class="line">    q&#x3D;t;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a&#x3D;1,b&#x3D;2;</span><br><span class="line">    huhuan(&amp;a,&amp;b);</span><br><span class="line">    printf(&quot;a&#x3D;%d b&#x3D;%d\n&quot;,a,b);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">输出a&#x3D;1，b&#x3D;2;</span><br><span class="line">a,b的地址同样没有互换成功;</span><br><span class="line">调用函数一旦结束，为这个函数所分配的内存空间全部释放（p,q,t的内存空间被释放）；</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/17/%E6%8C%87%E9%92%88%E7%A8%8B%E5%BA%8F%E4%BA%92%E6%8D%A2%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/" data-id="ckk0wfz9c000068vp1p69ccfd" data-title="指针程序互换两个数字" class="article-share-link">Compartir</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -533,6 +530,10 @@ pst-&gt;age含义：pst指向结构体中age这个成员；
       <ul>
         
           <li>
+            <a href="/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA2/">java线程演示2</a>
+          </li>
+        
+          <li>
             <a href="/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA/">java线程演示</a>
           </li>
         
@@ -546,10 +547,6 @@ pst-&gt;age含义：pst指向结构体中age这个成员；
         
           <li>
             <a href="/2021/03/14/java%E5%AE%B9%E5%99%A8%E4%B9%8B%E6%B3%9B%E5%9E%8B/">java容器之泛型</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/13/java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%852/">java容器程序演示和内容补充2</a>
           </li>
         
       </ul>
