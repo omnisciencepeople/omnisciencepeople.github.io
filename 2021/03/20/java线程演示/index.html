@@ -6,15 +6,15 @@
   
   <title>java线程演示 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="创建线程的第一种方法： 创建一个Thread继承类并重写Thred类中的run方法， 创建Thread类对象，通过该类从Thread继承过来的start方法调用run方法， 直接调用run方法是不会开辟出新的线程的 1234567891011121314151617181920class A extends Thread&amp;#123;    public void run()    &amp;#123;">
+  <meta name="description" content="1.创建线程的第一种方法：创建一个Thread继承类并重写Thred类中的run方法，创建Thread类对象，通过该类从Thread继承过来的start方法调用run方法，直接调用run方法是不会开辟出新的线程的 1234567891011121314151617181920class A extends Thread&amp;#123;    public void run()    &amp;#123;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java线程演示">
 <meta property="og:url" content="https://username.github.io/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="创建线程的第一种方法： 创建一个Thread继承类并重写Thred类中的run方法， 创建Thread类对象，通过该类从Thread继承过来的start方法调用run方法， 直接调用run方法是不会开辟出新的线程的 1234567891011121314151617181920class A extends Thread&amp;#123;    public void run()    &amp;#123;">
+<meta property="og:description" content="1.创建线程的第一种方法：创建一个Thread继承类并重写Thred类中的run方法，创建Thread类对象，通过该类从Thread继承过来的start方法调用run方法，直接调用run方法是不会开辟出新的线程的 1234567891011121314151617181920class A extends Thread&amp;#123;    public void run()    &amp;#123;">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-20T02:19:32.000Z">
-<meta property="article:modified_time" content="2021-03-20T02:58:46.381Z">
+<meta property="article:modified_time" content="2021-03-20T03:00:00.986Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -95,10 +95,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3>创建线程的第一种方法：</h3>
-<p>创建一个Thread继承类并重写Thred类中的run方法，</p>
-<p>创建Thread类对象，通过该类从Thread继承过来的start方法调用run方法，</p>
-<p>直接调用run方法是不会开辟出新的线程的</p>
+        <p>1.创建线程的第一种方法：<br>创建一个Thread继承类并重写Thred类中的run方法，<br>创建Thread类对象，通过该类从Thread继承过来的start方法调用run方法，<br>直接调用run方法是不会开辟出新的线程的</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class A extends Thread</span><br><span class="line">&#123;</span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">        while(true)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(&quot;AAAA&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class test1&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Thread it&#x3D;new Thread();</span><br><span class="line">        it.start();&#x2F;&#x2F;调用start方法，开辟新的线程并自动调用run方法</span><br><span class="line">        while(true)</span><br><span class="line">        &#123;</span><br><span class="line">        System.out.println(&quot;BBBB&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
