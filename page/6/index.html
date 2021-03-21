@@ -71,6 +71,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-指针返回一个以上的值" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/17/%E6%8C%87%E9%92%88%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E4%BB%A5%E4%B8%8A%E7%9A%84%E5%80%BC/" class="article-date">
+  <time class="dt-published" datetime="2021-01-17T08:51:04.000Z" itemprop="datePublished">2021-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/17/%E6%8C%87%E9%92%88%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E4%BB%A5%E4%B8%8A%E7%9A%84%E5%80%BC/">指针返回一个以上的值</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void g(int*,int*);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a&#x3D;5,b&#x3D;3;</span><br><span class="line">    g(&amp;a,&amp;b);</span><br><span class="line">    printf(&quot;a&#x3D;%d b&#x3D;%d\n&quot;,a,b);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">void g(int* p,int* q)</span><br><span class="line">&#123;</span><br><span class="line">    *p&#x3D;1;</span><br><span class="line">    *q&#x3D;2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如何通过被调函数修改主调函数的值：<br>1.实参为该变量地址；<br>2.形参为指针变量；<br>3.在被调函数中通过*形参名的的方式修改主调函数相关变量的值；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/17/%E6%8C%87%E9%92%88%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E4%BB%A5%E4%B8%8A%E7%9A%84%E5%80%BC/" data-id="ckk0wtfva00009gvp2bqq2wfe" data-title="指针返回一个以上的值" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-指针程序互换两个数字" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/17/%E6%8C%87%E9%92%88%E7%A8%8B%E5%BA%8F%E4%BA%92%E6%8D%A2%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/" class="article-date">
@@ -424,46 +464,6 @@
 
 
   
-    <article id="post-函数递归之流程解析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/" class="article-date">
-  <time class="dt-published" datetime="2021-01-15T12:53:41.000Z" itemprop="datePublished">2021-01-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/">函数递归之流程解析</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int f(int);&#x2F;&#x2F;函数声明可不加形参，但必须末尾有引号；</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   int i&#x3D;f(3);</span><br><span class="line">   printf(&quot;i&#x3D;%d\n&quot;,i);</span><br><span class="line">   return 0;</span><br><span class="line">&#125;</span><br><span class="line">int f(int i)</span><br><span class="line">&#123;</span><br><span class="line">    if(i&#x3D;&#x3D;1)</span><br><span class="line">       printf(&quot;哈哈\n&quot;);</span><br><span class="line">    else</span><br><span class="line">       i&#x3D; f(i-1);</span><br><span class="line">    return i;</span><br><span class="line">&#125;</span><br><span class="line">输出：哈哈</span><br><span class="line">      i&#x3D;1</span><br></pre></td></tr></table></figure>
-<p>函数调用流程：<br>f(3)-&gt;i=f(2)-&gt;i=f(1)-&gt;f(1)输出 哈哈;<br>return 1-&gt;f(1)完成-&gt;i=1-&gt;return 1-&gt;f(2)完成-&gt;i=1-&gt;return 1-&gt;f(3)完成;<br>跳出f函数 输出1；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/" data-id="ckjyb1iq20000w8vpanm74gld" data-title="函数递归之流程解析" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -500,6 +500,10 @@
       <ul>
         
           <li>
+            <a href="/2021/03/21/java%E7%BA%BF%E7%A8%8B%E4%B9%8B%E6%B6%88%E8%B4%B9%E8%80%85%E7%94%9F%E4%BA%A7%E8%80%85/">java线程之消费者生产者</a>
+          </li>
+        
+          <li>
             <a href="/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA2/">java线程演示2</a>
           </li>
         
@@ -513,10 +517,6 @@
         
           <li>
             <a href="/2021/03/14/Java%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0/">Java线程概述</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/14/java%E5%AE%B9%E5%99%A8%E4%B9%8B%E6%B3%9B%E5%9E%8B/">java容器之泛型</a>
           </li>
         
       </ul>

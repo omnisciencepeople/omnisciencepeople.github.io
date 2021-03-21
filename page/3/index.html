@@ -71,6 +71,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-非线性结构树的概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-01-23T13:56:31.000Z" itemprop="datePublished">2021-01-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/">非线性结构树的概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>树<br>专业定义：有且只有一个称为根的结点；有若干个互不相交的子树，这些子树本身也为一棵树；<br>通俗定义：树由结点和边组成（边指的是指针域）；每个结点只有一个父节点，但可以有多个子节点（根节点除外，根节点无父节点）；<br>专业术语：<br>父节点、子节点、子孙、堂兄弟（父亲为兄弟，他们的孩子为堂兄弟）、祖先；<br>深度：从根节点到最底层节点的层数；根节点为第一层；<br>叶子节点：无子结点的结点；<br>非终端节点：实际上为非叶子节点（有子节点的结点）；<br>度：子结点的个数<br>树的度：子结点个数的最大值；<br>树分类：<br>    一般树<br>         任意一个子结点的个数不受限制；<br>    二叉树<br>         任何一个节点的个数最多两个，且子结点顺序不可更改（有序树）；<br>         分类：<br>             一般二叉树<br>             满二叉树：每一层的节点数都是最大节点数的二叉树；<br>             完全二叉树：如果只是删除了满二叉树最底层最右边的连续若干个结点（此时深度未发生变化），这样形成的二叉树为完全二叉树；<br>             满二叉树是完全二叉树的一个特例；<br>    森林<br>          n个互不相交的树的集合；<br>树的存储<br>        二叉树的存储<br>               连续存储【必须转化为完全二叉树进行存储：内存是线性一维的；存储不可只存储有效节点，否则无法还原二叉树】<br>                    优点：查找某个结点的父节点和子节点（也包括判断有没有子节点）速度快；<br>                    缺点：耗用内存空间过大；<br>               链式存储：<br>                   耗用内存少，浪费空间少；<br>        一般树的存储<br>               双亲表示法<br>                     求父节点方便，求子结点难；<br>               孩子表示法<br>                     求子结点方便，求父节点难；<br>               双亲孩子表示法<br>                     求子结点和父节点都方便；<br>               二叉树表示法<br>                     将普通树转化为二叉树来存储；<br>                     具体实现方法：<br>                     设法保证任意一个结点的左指针域指向他的第一个孩子，他的右指针域指向他的第一个兄弟；只要满足此条件就可将一个普通树转化为二叉树；<br>                     一个普通树转化成二叉树一定无右子树；<br>        森林的存储<br>               将森林转化为二叉树进行存储；<br>二叉树操作：<br>       先序遍历：<br>       1.先访问根节点；<br>       2.再先序遍历左子树；<br>       3.再先序遍历右子树；<br>       中序遍历：<br>       1.先中序访问左子树；<br>       2.再访问根节点；<br>       3.再中序访问右子树；<br>       后序遍历：<br>       1.先后序访问左子树；<br>       2.再后序访问右子树；<br>       3.再访问根节点；<br>       先序中序后序将非线性结构转化为线性结构输出；<br>       已知两种遍历方式求原始二叉树：<br>             1.单个遍历方式无法还原二叉树；<br>             2.已知先序和后序无法还原二叉树；<br>             3.通过先序和中序 或 中序和后序可还原原始二叉树；<br>             例如<br>             已知先序：ABCDEFGH 中序：BDCEAFHG则后序为DECBHGFA;<br>             已知先序：ABDGHCEFI 中序：GDHBAECIF则后序为GHDBEIFCA;<br>             已知先序：ABFDCLMN 中序：BFACDLNM则后序为FBCNMLDA;<br>             已知先序：MFLAQGBE 中序：FALGQMEB则后序为AGQLFEBM;<br>             已知中序：BDCEAFHG 后序：DECBHGFA则先序为ABCDEFGH;<br>树应用：<br>1.树为数据库中数据组织的一种重要形式；<br>2.操作系统子父进程的关系本身为一棵树；<br>3.面向对象语言中类的继承关系本身为一棵树；<br>4.赫夫曼树（如何存树使效率达到最高）；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" data-id="ckkb1n8ho000030vp4hi16rct" data-title="非线性结构树的概述" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-循环队列演示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" class="article-date">
@@ -420,48 +459,6 @@
 
 
   
-    <article id="post-数据结构之线性结构" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" class="article-date">
-  <time class="dt-published" datetime="2021-01-20T03:21:02.000Z" itemprop="datePublished">2021-01-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/">数据结构之线性结构</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>什么是线性结构？<br>用一根线能将所有点串在一起的结构；</p>
-<p>线性结构分类<br>连续存储（数组）<br>              优点：存储速度快、查找元素效率高；<br>              缺点：需连续的很大的内存、插入删除效率低；<br>离散存储（链表）<br>              优点：空间无限制，插入删除效率高；<br>              缺点：查找元素效率低、存储速度慢；</p>
-<p>线性结构应用<br>1.栈<br>一种先进后出的存储结构；<br>分类：静态栈（顺序栈）、动态栈（链式栈）<br>算法：压栈、出栈；<br>应用：<br>函数调用、中断、表达式求值、缓冲处理、迷宫<br>2.队列<br>一种先进先出的存储结构；<br>分类：链式队列、动态队列；<br>算法：出队、入队；<br>应用：<br>凡是和时间有关的操作都和队列有关；</p>
-<p>线性结构的算法<br>遍历、查找、清空、销毁、删除、求长度、排序、插入</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" data-id="ckk4vukjd0000hgvpay0m2mr2" data-title="数据结构之线性结构" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -498,6 +495,10 @@
       <ul>
         
           <li>
+            <a href="/2021/03/21/java%E7%BA%BF%E7%A8%8B%E4%B9%8B%E6%B6%88%E8%B4%B9%E8%80%85%E7%94%9F%E4%BA%A7%E8%80%85/">java线程之消费者生产者</a>
+          </li>
+        
+          <li>
             <a href="/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA2/">java线程演示2</a>
           </li>
         
@@ -511,10 +512,6 @@
         
           <li>
             <a href="/2021/03/14/Java%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0/">Java线程概述</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/14/java%E5%AE%B9%E5%99%A8%E4%B9%8B%E6%B3%9B%E5%9E%8B/">java容器之泛型</a>
           </li>
         
       </ul>
