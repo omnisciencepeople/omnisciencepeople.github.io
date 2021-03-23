@@ -71,6 +71,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-java之awt程序演示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" class="article-date">
+  <time class="dt-published" datetime="2021-03-23T02:39:25.000Z" itemprop="datePublished">2021-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/">java之awt程序演示</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3>演示一</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;&#x2F;&#x2F;导入用于创建用户界面和绘制图形和图像的所有类。 </span><br><span class="line">import java.awt.event.*;&#x2F;&#x2F;导入用于处理AWT组件触发的不同类型事件的接口和类。 </span><br><span class="line">public class test1&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f&#x3D;new Frame (&quot;对话框&quot;);&#x2F;&#x2F;创建一个框架（容器），使用其构造方法public Frame(String title)throws HeadlessException，title显示在框架边框中做标题；</span><br><span class="line">        Button bn&#x3D;new Button (&quot;OK&quot;);&#x2F;&#x2F;造出一个按钮，名字为OK，Button组件不能单独存在，要放入容器中；</span><br><span class="line">        Button bn1&#x3D;new Button(&quot;hello&quot;);</span><br><span class="line">        f.addWindowListener(new A());&#x2F;&#x2F;new出的对象做事件监听器，f产生事件，故f为事件源，如果事件发生，事件监听器会自动调用相应的事件处理方法处理事件；</span><br><span class="line">        bn.addActionListener(new B());</span><br><span class="line">        bn1.addActionListener(new C());</span><br><span class="line">        f.setLayout(new GridLayout());&#x2F;&#x2F;将Frame默认布局管理器（BorderLayout）改为GridLayout；</span><br><span class="line">        f.add(bn);</span><br><span class="line">        f.add(bn1);</span><br><span class="line">        f.pack();&#x2F;&#x2F;不能改变组件大小，会把组件包裹起来，会根据所容纳组件大小自动调整自身的大小</span><br><span class="line">        f.setSize(400,400);</span><br><span class="line">        f.setLocation(400,400);</span><br><span class="line">        f.setVisible(true);&#x2F;&#x2F;设置窗口为可见；</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class A extends WindowAdapter</span><br><span class="line">&#123; </span><br><span class="line">    @Override</span><br><span class="line">    public void windowClosing(WindowEvent e)&#x2F;&#x2F;重写父类方法实现功能，e用来接收事件；</span><br><span class="line">    &#123;</span><br><span class="line">        System.exit(-1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class B implements ActionListener</span><br><span class="line">&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void actionPerformed(ActionEvent e)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(&quot;你好&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class C implements ActionListener</span><br><span class="line">&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void actionPerformed(ActionEvent e)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(&quot;我很好&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="ckmlhq26j0000tcvp8d6ta9qf" data-title="java之awt程序演示" class="article-share-link">Compartir</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-java之awt展望" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/03/22/java%E4%B9%8Bawt%E5%B1%95%E6%9C%9B/" class="article-date">
@@ -466,44 +505,6 @@
 
 
   
-    <article id="post-排序汇总" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/12/%E6%8E%92%E5%BA%8F%E6%B1%87%E6%80%BB/" class="article-date">
-  <time class="dt-published" datetime="2021-03-12T15:09:18.000Z" itemprop="datePublished">2021-03-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/12/%E6%8E%92%E5%BA%8F%E6%B1%87%E6%80%BB/">排序汇总</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <img src="/2021/03/12/%E6%8E%92%E5%BA%8F%E6%B1%87%E6%80%BB/sort1.png" class="">
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E6%B1%87%E6%80%BB/" data-id="ckm6fvhdb0000n4vp80ip6yw1" data-title="排序汇总" class="article-share-link">Compartir</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -540,6 +541,10 @@
       <ul>
         
           <li>
+            <a href="/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/">java之awt程序演示</a>
+          </li>
+        
+          <li>
             <a href="/2021/03/22/java%E4%B9%8Bawt%E5%B1%95%E6%9C%9B/">java之awt展望</a>
           </li>
         
@@ -553,10 +558,6 @@
         
           <li>
             <a href="/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA2/">java线程演示2</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA/">java线程演示</a>
           </li>
         
       </ul>

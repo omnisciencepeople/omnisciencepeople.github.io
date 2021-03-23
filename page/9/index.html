@@ -71,6 +71,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-求一元二次方程解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2021-01-13T14:08:55.000Z" itemprop="datePublished">2021-01-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/">求一元二次方程解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    float a,b,c,delta;</span><br><span class="line">    double x1,x2;</span><br><span class="line">    char ch;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">     printf(&quot;请为一元二次方程的系数赋值(中间以空格相隔):&quot;);</span><br><span class="line">     scanf(&quot;%f %f %f&quot;,&amp;a,&amp;b,&amp;c);</span><br><span class="line">     delta&#x3D;b*b-4*a*c;</span><br><span class="line">     if(delta&gt;0)</span><br><span class="line">       &#123;</span><br><span class="line">         x1&#x3D;(-b+sqrt(delta))&#x2F;(2*a);</span><br><span class="line">         x2&#x3D;(-b-sqrt(delta))&#x2F;(2*a);</span><br><span class="line">         printf(&quot;x1&#x3D;%lf x2&#x3D;%lf\n&quot;,x1,x2);</span><br><span class="line">       &#125;</span><br><span class="line">     else if(delta&#x3D;&#x3D;0)</span><br><span class="line">       &#123;</span><br><span class="line">         x1&#x3D;x2&#x3D;(-b)&#x2F;(2*a);</span><br><span class="line">         printf(&quot;x1&#x3D;%lf x2&#x3D;%lf\n&quot;,x1,x2);</span><br><span class="line">       &#125;</span><br><span class="line">     else</span><br><span class="line">         printf(&quot;无解\n&quot;);</span><br><span class="line">     printf(&quot;请问你是否还要继续（Y&#x2F;N）:&quot;);</span><br><span class="line">     scanf(&quot; %c&quot;,&amp;ch);</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/" data-id="ckjviiymk000014vpg7wed5nw" data-title="求一元二次方程解" class="article-share-link">Compartir</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-斐波拉契数列" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/13/%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E6%95%B0%E5%88%97/" class="article-date">
@@ -421,44 +459,6 @@
 
 
   
-    <article id="post-if求分数等级" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/13/if%E6%B1%82%E5%88%86%E6%95%B0%E7%AD%89%E7%BA%A7/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T09:20:56.000Z" itemprop="datePublished">2021-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/13/if%E6%B1%82%E5%88%86%E6%95%B0%E7%AD%89%E7%BA%A7/">if求分数等级</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    float score;</span><br><span class="line">    char ch;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">     printf(&quot;请输入你的成绩:&quot;);</span><br><span class="line">     scanf(&quot;%f&quot;,&amp;score);</span><br><span class="line">     if(score&gt;100)</span><br><span class="line">        printf(&quot;做梦!\n&quot;);</span><br><span class="line">     else if(80&lt;&#x3D;score&amp;&amp;score&lt;&#x3D;100)</span><br><span class="line">        printf(&quot;优秀!\n&quot;);</span><br><span class="line">     else if(70&lt;&#x3D;score&amp;&amp;score&lt;80)</span><br><span class="line">        printf(&quot;良好!\n&quot;);</span><br><span class="line">     else if(60&lt;&#x3D;score&amp;&amp;score&lt;70)</span><br><span class="line">        printf(&quot;及格!\n&quot;);</span><br><span class="line">     else if(0&lt;&#x3D;score&amp;&amp;score&lt;60)</span><br><span class="line">        printf(&quot;挂科!\n&quot;);</span><br><span class="line">     else</span><br><span class="line">        printf(&quot;你输入的成绩错误!\n&quot;);</span><br><span class="line">     printf(&quot;你是否还要继续（Y&#x2F;N）:\n&quot;);</span><br><span class="line">     scanf(&quot; %c&quot;,&amp;ch);&#x2F;&#x2F;这里%c前加一个空格才可实现人机交互；</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/if%E6%B1%82%E5%88%86%E6%95%B0%E7%AD%89%E7%BA%A7/" data-id="ckjv7tdni0000fsvp4nnb11et" data-title="if求分数等级" class="article-share-link">Compartir</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -495,6 +495,10 @@
       <ul>
         
           <li>
+            <a href="/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/">java之awt程序演示</a>
+          </li>
+        
+          <li>
             <a href="/2021/03/22/java%E4%B9%8Bawt%E5%B1%95%E6%9C%9B/">java之awt展望</a>
           </li>
         
@@ -508,10 +512,6 @@
         
           <li>
             <a href="/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA2/">java线程演示2</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA/">java线程演示</a>
           </li>
         
       </ul>
