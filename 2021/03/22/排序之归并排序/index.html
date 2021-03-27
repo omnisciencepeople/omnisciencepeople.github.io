@@ -6,13 +6,15 @@
   
   <title>排序之归并排序 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="article">
+  <meta name="description" content="归并排序是递归的过程；归并排序要求前后两部分必须有序；下面将下列例子: 归并前后有序1 12345678910111213141516171819202122232425262728293031323334353637383940public class mergesort &amp;#123;    public static void main(String[] args)&amp;#123;">
+<meta property="og:type" content="article">
 <meta property="og:title" content="排序之归并排序">
 <meta property="og:url" content="https://username.github.io/2021/03/22/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="归并排序是递归的过程；归并排序要求前后两部分必须有序；下面将下列例子: 归并前后有序1 12345678910111213141516171819202122232425262728293031323334353637383940public class mergesort &amp;#123;    public static void main(String[] args)&amp;#123;">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-22T13:39:10.000Z">
-<meta property="article:modified_time" content="2021-03-22T13:39:10.401Z">
+<meta property="article:modified_time" content="2021-03-27T13:43:15.908Z">
 <meta property="article:author" content="omnisciencepeople">
 <meta name="twitter:card" content="summary">
   
@@ -93,7 +95,103 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <p>归并排序是递归的过程；<br>归并排序要求前后两部分必须有序；<br>下面将下列例子:</p>
+<h3>归并前后有序1</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">public class mergesort &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,6,9,4,6,8&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">        print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        merge_sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void merge_sort(int[] arr)&#123;</span><br><span class="line">        int leftptr&#x3D;0;</span><br><span class="line">        int middle&#x3D;arr.length&#x2F;2;</span><br><span class="line">        int rightptr&#x3D;middle+1;</span><br><span class="line">        int cnt&#x3D;0;</span><br><span class="line">        int[] arr1&#x3D;new int[arr.length];</span><br><span class="line">        while(rightptr&lt;arr.length&amp;&amp;leftptr&lt;&#x3D;middle)&#123;</span><br><span class="line">        if(arr[leftptr]&lt;&#x3D;arr[rightptr])</span><br><span class="line">        &#123;</span><br><span class="line">            arr1[cnt]&#x3D;arr[leftptr];</span><br><span class="line">            cnt++;</span><br><span class="line">            leftptr++;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            arr1[cnt]&#x3D;arr[rightptr];</span><br><span class="line">            cnt++;</span><br><span class="line">            rightptr++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">        while(rightptr&lt;arr.length)&#123;arr1[cnt]&#x3D;arr[rightptr];cnt++;rightptr++;&#125;</span><br><span class="line">        while(leftptr&lt;&#x3D;middle)&#123;arr1[cnt]&#x3D;arr[leftptr];cnt++;leftptr++;&#125;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length;i++)&#123;arr[i]&#x3D;arr1[i];&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    static void print(int[] arr)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">            System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3>归并前后有序2：改进1</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">public class mergesort2 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,6,9,11,4,6,8,10&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">        print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        merge_sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void merge_sort(int[] arr)&#123;</span><br><span class="line">        int leftptr&#x3D;0;</span><br><span class="line">        int middle&#x3D;arr.length&#x2F;2;</span><br><span class="line">        int rightptr&#x3D;middle+1;</span><br><span class="line">        int cnt&#x3D;0;</span><br><span class="line">        int[] arr1&#x3D;new int[arr.length];</span><br><span class="line">        while(rightptr&lt;arr.length &amp;&amp; leftptr&lt;&#x3D;middle)&#123;</span><br><span class="line">        arr1[cnt++]&#x3D;arr[leftptr]&lt;&#x3D;arr[rightptr]?arr[leftptr++]:arr[rightptr++];</span><br><span class="line">    &#125;</span><br><span class="line">        while(rightptr&lt;arr.length)&#123;arr1[cnt++]&#x3D;arr[rightptr++];&#125;</span><br><span class="line">        while(leftptr&lt;&#x3D;middle)&#123;arr1[cnt++]&#x3D;arr[leftptr++];&#125;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length;i++)&#123;arr[i]&#x3D;arr1[i];&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    static void print(int[] arr)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">            System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;h3&gt;归并前后有序3&lt;&#x2F;h3&gt;</span><br></pre></td></tr></table></figure>
+public class mergesort3 {
+    public static void main(String[] args){
+        int[] arr={1,5,6,9,4,6,8,10};
+        sort(arr);
+        print(arr);
+    }
+    static void sort(int[] arr){
+        merge_sort(arr);
+    }
+    static void merge_sort(int[] arr){
+        int leftptr=0;
+        int middle=arr.length/2-1;
+        int rightptr=middle+1;
+        int cnt=0;
+        int[] arr1=new int[arr.length];
+        while(rightptr<arr.length&&leftptr<=middle){
+        arr1[cnt++]=arr[leftptr]<=arr[rightptr]?arr[leftptr++]:arr[rightptr++];
+    }
+        while(rightptr<arr.length){arr1[cnt++]=arr[rightptr++];}
+        while(leftptr<=middle){arr1[cnt++]=arr[leftptr++];}
+        for(int i=0;i<arr.length;i++){arr[i]=arr1[i];}
+    }
+    static void print(int[] arr)
+    {
+        for(int i=0;i<arr.length;i++)
+            System.out.print(arr[i]+" ");
+        System.out.println();
+    }
+}
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h3&gt;归并前后有序4:优化&lt;&#x2F;h3&gt;</span><br></pre></td></tr></table></figure>
+public class mergesort5 {
+    public static void main(String[] args){
+        int[] arr={1,5,6,9,4,6,8,10};
+        sort(arr,1,6);
+        print(arr);
+    }
+    static void sort(int[] arr,int left,int right){
+        int middle=left+(right-left)/2;
+        if(left==right) return;
+        if(left<0||right<0||left>right) return;
+        merge_sort(arr,left,middle,right);
+    }
+    static void merge_sort(int[] arr,int left,int middle,int right){
+        int rightptr=middle+1;
+        int leftptr=left;
+        int cnt=left;
+        int[] arr1=new int[arr.length];
+        while(rightptr<=right&&leftptr<=middle){
+        arr1[cnt++]=arr[leftptr]<=arr[rightptr]?arr[leftptr++]:arr[rightptr++];
+    }
+        while(rightptr<=right){arr1[cnt++]=arr[rightptr++];}
+        while(leftptr<=middle){arr1[cnt++]=arr[leftptr++];}
+        for(int i=left;i<=right;i++){arr[i]=arr1[i];}
+    }
+    static void print(int[] arr)
+    {
+        for(int i=0;i<arr.length;i++)
+            System.out.print(arr[i]+" ");
+        System.out.println();
+    }
+}
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h3&gt;在任何情况下归并&lt;&#x2F;h3&gt;</span><br></pre></td></tr></table></figure>
+public class mergesort6 {
+    public static void main(String[] args){
+        int[] arr={1,5,2,5,235,214,5145,14564,548,2,8,4,2,6,89,21,471,52,53,2,4,47};
+        sort(arr,0,arr.length-1);
+        print(arr);
+    }
+    static void sort(int[] arr,int left,int right){
+        int middle=left+(right-left)/2;
+        if(right==left||right<0||left<0||left>right) return;
+        sort(arr,left,middle);
+        sort(arr,middle+1,right);
+        merge_sort(arr,left,middle,right);
+    }
+    static void merge_sort(int[] arr,int left,int middle,int right){
+        int leftptr=left;
+        int rightptr=middle+1;
+        int cnt=left;
+        int[] arr1=new int[arr.length];
+        while(leftptr<=middle&&rightptr<=right){arr1[cnt++]=arr[leftptr]<=arr[rightptr]?arr[leftptr++]:arr[rightptr++];}
+        while(leftptr<=middle){arr1[cnt++]=arr[leftptr++];}
+        while(rightptr<=right){arr1[cnt++]=arr[rightptr++];}
+        for(int i=left;i<=right;i++) arr[i]=arr1[i];
+    }
+   static void print(int[] arr){
+       for(int i=0;i<arr.length;i++)
+           System.out.print(arr[i]+" ");
+       System.out.println();
+    }
+}
+```
       
     </div>
     <footer class="article-footer">
