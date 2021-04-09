@@ -71,6 +71,83 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-循环队列演示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" class="article-date">
+  <time class="dt-published" datetime="2021-01-23T13:16:30.000Z" itemprop="datePublished">2021-01-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/">循环队列演示</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">typedef struct queue</span><br><span class="line">&#123;</span><br><span class="line">    int* pbase;</span><br><span class="line">    int front;</span><br><span class="line">    int rear;</span><br><span class="line">&#125;QUEUE,*PQUEUE;</span><br><span class="line">void traverse_queue(PQUEUE pqueue,int len);</span><br><span class="line">bool Is_empty(PQUEUE pqueue);</span><br><span class="line">int  init_queue(PQUEUE pqueue);</span><br><span class="line">bool Is_full(PQUEUE pqueue,int len);</span><br><span class="line">bool en_queue(PQUEUE pqueue,int len,int val);</span><br><span class="line">bool out_queue(PQUEUE pqueue,int len);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int len;</span><br><span class="line">    QUEUE queue;</span><br><span class="line">    len&#x3D;init_queue(&amp;queue);</span><br><span class="line">    traverse_queue(&amp;queue,len);</span><br><span class="line">    en_queue(&amp;queue,len,1);</span><br><span class="line">    en_queue(&amp;queue,len,2);</span><br><span class="line">    en_queue(&amp;queue,len,3);</span><br><span class="line">    en_queue(&amp;queue,len,4);</span><br><span class="line">    traverse_queue(&amp;queue,len);</span><br><span class="line">    out_queue(&amp;queue,len);</span><br><span class="line">    out_queue(&amp;queue,len);</span><br><span class="line">    traverse_queue(&amp;queue,len);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">int init_queue(PQUEUE pqueue)</span><br><span class="line">&#123;</span><br><span class="line">    int len;</span><br><span class="line">    printf(&quot;请输入队列长度（实际队列长度加一）:&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;len);</span><br><span class="line">    pqueue-&gt;pbase&#x3D;(int*)malloc(sizeof(int)*len);</span><br><span class="line">    if(pqueue-&gt;pbase&#x3D;&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;循环队列构造失败，程序终止\n&quot;);</span><br><span class="line">        exit(-1);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        pqueue-&gt;front&#x3D;0;</span><br><span class="line">        pqueue-&gt;rear&#x3D;0;</span><br><span class="line">    &#125;</span><br><span class="line">    return len;</span><br><span class="line">&#125;</span><br><span class="line">bool Is_empty(PQUEUE pqueue)</span><br><span class="line">&#123;</span><br><span class="line">    if(pqueue-&gt;front&#x3D;&#x3D;pqueue-&gt;rear)</span><br><span class="line">        return true;</span><br><span class="line">    else</span><br><span class="line">        return false;</span><br><span class="line">&#125;</span><br><span class="line">void traverse_queue(PQUEUE pqueue,int len)</span><br><span class="line">&#123;</span><br><span class="line">    if(Is_empty(pqueue))</span><br><span class="line">        printf(&quot;队列为空\n&quot;);</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        int m&#x3D;pqueue-&gt;front;</span><br><span class="line">        while(m!&#x3D;pqueue-&gt;rear)</span><br><span class="line">        &#123;</span><br><span class="line">          printf(&quot;%d &quot;,pqueue-&gt;pbase[m]);</span><br><span class="line">          m&#x3D;(m+1)%len;</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">bool Is_full(PQUEUE pqueue,int len)</span><br><span class="line">&#123;</span><br><span class="line">    if((pqueue-&gt;rear+1)%len&#x3D;&#x3D;pqueue-&gt;front)</span><br><span class="line">        return true;</span><br><span class="line">    else</span><br><span class="line">        return false;</span><br><span class="line">&#125;</span><br><span class="line">bool en_queue(PQUEUE pqueue,int len,int val)</span><br><span class="line">&#123;</span><br><span class="line">    if(Is_full(pqueue,len))</span><br><span class="line">        return false;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        pqueue-&gt;pbase[pqueue-&gt;rear]&#x3D;val;</span><br><span class="line">        pqueue-&gt;rear&#x3D;(pqueue-&gt;rear+1)%len;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">bool out_queue(PQUEUE pqueue,int len)</span><br><span class="line">&#123;</span><br><span class="line">    if(Is_empty(pqueue))</span><br><span class="line">        return false;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        pqueue-&gt;front&#x3D;(pqueue-&gt;front+1)%len;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" data-id="ckk9rw1eu0000ssvpggqm04jw" data-title="循环队列演示" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-线性结构队列概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-01-23T12:10:11.000Z" itemprop="datePublished">2021-01-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/">线性结构队列概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>队列：一种可实现先进先出的存储结构；<br>分类：静态队列（一般用循环队列实现）、链式队列；<br>1.静态队列一般为什么必须为循环队列？<br>传统数组实现队列会造成空间浪费；<br>2.循环队列需要几个参数来确定？<br>两个参数front和rear；<br>front永远指向队列的第一个元素，rear永远指向最后一个有效元素的下一个位置；<br>3.front和rear这两个参数在不同场合的不同含义？<br>队列初始化：front和rear值都为0；<br>队列为空：front和rear值相等但不一定为0；<br>队列非空：front为第一个元素，rear为最后一个有效元素的下一个位置；<br>4.循环队列入队伪算法：<br>将值存入rear所代表的位置；rear=（rear+1）/数组长度；<br>5.循环队列出队伪算法：<br>front=（front+1）/数组长度；<br>6.如何判断循环队列是否为满？<br>要么多设置一个参数，该参数名为长度，但频繁更新较麻烦；<br>要么存n个元素，找n+1个空间，空间浪费率为1/n+1，n越大，浪费率越低；这种方式front与rear相邻时为满；此时（rear<br>+1）/数组长度=front；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" data-id="ckk9qd5aa0000dwvp6yi0ddxy" data-title="线性结构队列概述" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-链式栈演示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/22/%E9%93%BE%E5%BC%8F%E6%A0%88%E6%BC%94%E7%A4%BA/" class="article-date">
@@ -385,101 +462,11 @@
 
 
   
-    <article id="post-指针、结构体及动态内存分配和释放小复习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/20/%E6%8C%87%E9%92%88%E3%80%81%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%8A%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E5%92%8C%E9%87%8A%E6%94%BE%E5%B0%8F%E5%A4%8D%E4%B9%A0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-20T02:11:41.000Z" itemprop="datePublished">2021-01-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/20/%E6%8C%87%E9%92%88%E3%80%81%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%8A%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E5%92%8C%E9%87%8A%E6%94%BE%E5%B0%8F%E5%A4%8D%E4%B9%A0/">指针、结构体及动态内存分配和释放小复习</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>指针小复习：<br>1.指针非法访问：定义一个指针变量并未初始化，此时该指针变量有指向，指向一个我们不知道的内存单元，我们可以访问p即<br>输出该内存单元的地址，但我们不可访问p所指向的内存单元的内容，因为该内存单元的操作权限未分配给本程序；<br>2.指针就是地址（内存单元的编号），本质上为一个操作受限的非负整数；<br>  指针变量是存放内存单元地址的变量即存放指针的变量；<br>3.CPU和内存条之间有三根线：数据总线（传输数据）、控制总线（控制输入输出、控制只读只写或读写）、地址总线（确定内<br>存单元）；<br>4.内存释放：并非内存真正释放而是指系统将分配给本程序的内存空间的操作权限收回，里面的数据未流失，只是本程序不可访<br>问；内存释放后内存中数据依然存在故定义变量需要初始化，否则会得到一个垃圾值；<br>5.确定一维数组需要知道两个条件：数组首地址和数组长度；<br>6.无论一个指针变量指向的变量占几个字节，该指针变量只占四个字节；<br>7.若想要通过其他函数改变主函数中变量的值，实参必须为该变量的地址；<br>8.int* p=&i;//p保留了i的地址；p指向i；*p就等同于i；<br>9.数组名为数组首地址，是一个常量；</p>
-<p>结构体小复习：<br>1.定义：将一些基本数据类型组合在一起形成的新的复合数据类型；<br>2.定义结构体变量时末尾有分号；定义结构体变量时可整体赋值，否则只能单个赋值；<br>单个赋值时，为字符串赋值需用strcpy函数进行，不能直接赋值；<br>3.struct student st,* pst;pst=&st;//规定pst-&gt;数据成员 就等价于 (*pst).数据成员 就等价于 st.数据成员;<br>4.结构体变量不能加减乘除，但可相互赋值;<br>5.调用函数时是直接发送变量还是发送变量地址:<br>发送变量：耗内存（需发送大量字节）、耗时间;<br>发送变量地址:省时间、省内存（只需发送4个字节）;</p>
-<p>动态内存分配专题：<br>1.内存分配的两种方式：<br>从静态存储区分配：<br>编译器请求系统自动分配和释放，生命周期和程序长存；<br>从动态存储区分配：<br>栈（stack）：在函数调用期间分配存储空间，函数结束时释放存储空间；生命周期和函数长存；<br>堆（heap）：由程序员手动分配和释放，函数结束后内存空间不会被释放故可以跨函数使用；但会存在内存泄露（内存越用越少）和程序崩溃(动态分配的内存被多次释放)等问题；<br>2.动态内存分配方式：<br>使用malloc函数<br>注：使用该函数必须添加malloc.h该头文件；<br>    该函数只能有一个形参；<br>    该函数只会返回所分配内存空间的第一个字节的地址；<br>3.举例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int f();</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;9;</span><br><span class="line">    i&#x3D;f();</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">int f()</span><br><span class="line">&#123;</span><br><span class="line">    int j&#x3D;20;</span><br><span class="line">    return j;</span><br><span class="line">&#125;</span><br><span class="line">输出20；</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void f(int);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;9;</span><br><span class="line">    f(i);</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">void f(int j)</span><br><span class="line">&#123;</span><br><span class="line">    j&#x3D;20;</span><br><span class="line">&#125;</span><br><span class="line">输出9</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void f(int*);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;9;</span><br><span class="line">    f(&amp;i);</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">void f(int* j)</span><br><span class="line">&#123;</span><br><span class="line">    *j&#x3D;20;</span><br><span class="line">&#125;</span><br><span class="line">输出20；</span><br></pre></td></tr></table></figure>
-<p>下列程序中p指向一个合法单元的是（C）<br>A.main()<br>{<br>    int* p;<br>    f(p);<br>}<br>int f(int* p)<br>{<br>    int s;<br>    p=&s;<br>}<br>B.main()<br>{<br>    int* p;<br>    f(&amp;p);<br>}<br>int f(int** p)<br>{<br>    int s;<br>    * p=&s;<br>}<br>C.main()<br>{<br>    int* p;<br>    f(&amp;p);<br>}<br>int f(int** p)<br>{<br>     * p=(int*)malloc(4);<br>}</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E6%8C%87%E9%92%88%E3%80%81%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%8A%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E5%92%8C%E9%87%8A%E6%94%BE%E5%B0%8F%E5%A4%8D%E4%B9%A0/" data-id="ckk4ur7ed0000igvp9ga90edt" data-title="指针、结构体及动态内存分配和释放小复习" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-数据结构概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-19T11:18:22.000Z" itemprop="datePublished">2021-01-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/">数据结构概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>数据结构定义：<br>我们如何把大量而复杂的问题以特定的数据类型和特定的存储结构将它保存到存储器，及在此基础上实现某个功能（如查找、排序、删除）而执行相应的操作；<br>数据结构关注的是个体及个体与个体之间关系的保存；</p>
-<p>算法：<br>通俗上，为解决问题的方法和步骤即对存储数据的操作从而解决问题；<br>在狭义上，算法依附存储结构；<br>在广义上，无论数据以何种方式存储，对数据的操作是一样的；<br>算法的评判标准：<br>1.时间复杂度<br>程序执行的次数并非时间；<br>2.空间复杂度<br>算法执行过程中大概所占用的最大内存；<br>3.难易程度<br>4.健壮性<br>5.正确性</p>
-<p>程序=数据存储（数据结构）+对数据的操作（算法）+可被其执行的语言；<br>数据结构的地位：<br>1.软件中最核心的课程；<br>2.软件开发中最基础最重要的理论基础；</p>
-<p>指针、结构体、动态内存分配和释放小复习</p>
-<p>模块一：线性结构<br>              连续存储（数组）<br>              离散存储（链表）<br>              常见应用：栈和队列；</p>
-<p>模块二：非线性结构<br>                树<br>                图</p>
-<p>模块三：<br>        查找<br>        排序</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/" data-id="ckk40m2rh0000b0vp4r1hhp58" data-title="数据结构概述" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -511,6 +498,14 @@
       <ul>
         
           <li>
+            <a href="/2021/04/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">排序之计数排序</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/09/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%8F%8C%E8%BD%B4%E6%8E%92%E5%BA%8F/">快速排序之双轴排序</a>
+          </li>
+        
+          <li>
             <a href="/2021/04/06/%E9%AA%8C%E8%AF%81%E6%8E%92%E5%BA%8F%E6%AD%A3%E7%A1%AE%E6%80%A7%E7%9A%84%E7%AE%97%E6%B3%95/">验证排序正确性的算法</a>
           </li>
         
@@ -520,14 +515,6 @@
         
           <li>
             <a href="/2021/03/26/Java%E5%BC%82%E5%B8%B8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/">Java异常程序演示</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/26/Java%E5%BC%82%E5%B8%B8%E6%A6%82%E8%BF%B0/">Java异常概述</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/">java之awt程序演示</a>
           </li>
         
       </ul>

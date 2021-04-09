@@ -71,6 +71,96 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-java容器概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/10/java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-03-10T03:12:09.000Z" itemprop="datePublished">2021-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/10/java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/">java容器概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>容器是一个集合，用于存放对象；<br>如果一个类用于存放其它的类对象，那么该类叫做容器;</p>
+<p>为什么需要容器？<br>容器弥补了数组的缺陷：数组长度难以扩充、元素类型必须相同；<br>如A[] aa=new A[10],表示分配了一个数组，每个元素都是A类对象的引用，若想要扩充数组长度为15，不能再原数组内存后面直接追加内存，必须另外分配一块内存为15，然后利用System.arraycopy方法将原数组内容拷贝到新的内存中，耗时又耗内存；</p>
+<p>容器与现实的关系：<br>容器是将若干用途、性质相近或相同的数据组合在一起的整体；</p>
+<p>数学上集合分为三类:<br>集（set，不允许重复、不区分元素顺序）；<br>列表（List,区分元素顺序、允许重复）；<br>映射（map，保存成对的键值信息，映射不能包含重复的键，每个键最多映射一个值）；<br>Java设计了三种接口类型分别是set、List、Map来对应数学上三种集合;<br>Map存事物信息时不仅要存入事物的基本信息（值），更要存入事物最独特的特征（键）；</p>
+<p>容器以接口为核心组合在一起；<br>容器API位于Java.util包中<br>容器框架<br>        1.《interface》collection:《interface》set（实现类：Hashset、Treeset）、《interface》list（实现类Arraylist、Linkedlist)<br>        2.《interface》map（实现类：Hashmap、Treemap）</p>
+<p>容器之collection：<br>collection接口定义了存取一组对象的方法，其子接口分别定义了存储方式：set中数据对象无序不可重复;list中数据对象有序可重复;<br>map接口定义了“键-值映射对”方法;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">collection中方法介绍：</span><br><span class="line">int size();&#x2F;&#x2F;返回collection容器中元素的个数</span><br><span class="line">Boolean Isempty();&#x2F;&#x2F;判断容器是否为空</span><br><span class="line">Boolean containAll(Collection e);&#x2F;&#x2F;判断当前集合是否包含容器e中的全部元素</span><br><span class="line">Iterator iterator();&#x2F;&#x2F;返回能够遍历当前容器所有元素的迭代器；</span><br><span class="line">Object[] toArray();&#x2F;&#x2F;容器不是数组，不能通过下标方式访问容器中的元素；调用此方法，返回其包含此容器全部元素的数组</span><br><span class="line">&#x2F;&#x2F;如Object[] ob&#x3D;a.toArray();&#x2F;&#x2F;a为容器</span><br><span class="line">    System.out.println(ob[2]);</span><br><span class="line">Boolean add(Object e);&#x2F;&#x2F;将对象e添加到集合中去</span><br><span class="line">Boolean remove(Object o)&#x2F;&#x2F;删除某个元素</span><br><span class="line">Boolean addAll(Collection e);&#x2F;&#x2F;将容器e中全部元素添加到当前容器中</span><br><span class="line">Boolean removeAll(Collection e);&#x2F;&#x2F;将当前容器中包含在容器e中的元素全部删除</span><br><span class="line">void clear();&#x2F;&#x2F;将当前容器中所有元素都清除</span><br><span class="line">Boolean equals(Object);&#x2F;&#x2F;继承自Java.lang中的Object类</span><br><span class="line">int hashcode()；&#x2F;&#x2F;继承自Java.lang中的Object类，返回内存地址十六进制的哈希码表示</span><br></pre></td></tr></table></figure>
+<p>容器之List:<br>List表示的是线性结构而不是链表；<br>List继承自接口Collection；<br>实现了list接口的容器类中元素有顺序可重复；<br>List容器中的元素都对应一个整数器的序号，记录其在容器中的位置，可以根据序号存取容器的元素<br>Java提供的List实现类 ：Arraylist、Linkedlist等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">java中list接口提供了一些方法：</span><br><span class="line">Object get(int index);&#x2F;&#x2F;找到列表中位置为index的元素</span><br><span class="line">Object set(int index,Object element);&#x2F;&#x2F;将列表中下标为index的元素替换为element</span><br><span class="line">Object add(int index,Object O);&#x2F;&#x2F;将O添加到下标为index的位置</span><br><span class="line">Object remove(int index);&#x2F;&#x2F;删除下标为index的元素；</span><br><span class="line">int indexof(Object O);&#x2F;&#x2F;找到O元素的下标</span><br><span class="line">int lastindexof(Object O);&#x2F;&#x2F;找到最后O元素的下标</span><br></pre></td></tr></table></figure>
+<p>set接口中无set（）get（）方法，因为set接口是无序的，不存在元素具体位置这个概念；<br>Arraylist和Linkedlist比较:<br>都实现了List接口中的方法但内部实现不同；<br>Arraylist底层采用数组实现，Linkedlist底层一般以双向链表实现；<br>Arraylist查找存取速度快，插入删除速度慢；Linkedlist查找存取速度慢，插入删除速度快；</p>
+<p>容器之set:<br>set继承自Collection<br>实现了set类的容器内元素无序且不能重复；<br>set接口实现类：Treeset、Hashset等<br>我们需要同时重写默认父类Object中的Hashcode方法和equals方法来使set容器中元素不可重复；<br>如果我们定义了set接口而未全部重写它的hashcode方法和equals方法，则set容器中的元素就会重复；</p>
+<p>容器之map接口:<br>Map（映射）是一种将键对象和值对象进行映射的集合，它的每个元素都包含一对键对象和值对象；<br>向Map中加入元素时，必须提供一对键对象和值对象，从Map集合中检索元素时，只要给出键对象，就能返回相应的值对象；<br>接口Map提供了根据关键字找出对应值的方法：Object get(Object key)//会返回值对象<br>接口Map提供了设置键值对的方法：Object put(Object key,Object value)；//根据Key值计算出存储位置然后将Value存入<br>存入此位置，如果该位置原来已有元素则覆盖它；该方法返回覆盖之前的元素对象的值，如果以前此位置为空则返回null;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Map方法（并非全部）：</span><br><span class="line">Set keySet()&#x2F;&#x2F;返回此地图中键的set集合;</span><br><span class="line">boolean containsKey(Object key);&#x2F;&#x2F;如果此映射包含指定键，则返回true ；</span><br><span class="line">boolean containsValue(Object value);&#x2F;&#x2F;如果此映射将一个或多个键映射到指定的值，则返回true;</span><br><span class="line">int size();&#x2F;&#x2F;返回此地图中键值映射的数量。</span><br><span class="line">boolean isEmpty()如果此地图不包含键值映射，则返回 true;</span><br><span class="line">Object remove(Object key);&#x2F;&#x2F;如果存在（从可选的操作），从该地图中删除一个键的映射;</span><br><span class="line">void putAll(Map m);&#x2F;&#x2F;将指定地图的所有映射复制到此映射（可选操作）;</span><br><span class="line">void clear();&#x2F;&#x2F;从该地图中删除所有的映射（可选操作）;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/10/java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/" data-id="ckm2v9qeb0000t4vpgjj03cdc" data-title="java容器概述" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-排序之插入排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time class="dt-published" datetime="2021-03-09T08:03:00.000Z" itemprop="datePublished">2021-03-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">排序之插入排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class Insertion&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,2,8,3,9,4,6,5,10&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length-1;i++)&#123;           </span><br><span class="line">            for(int j&#x3D;i+1;j&gt;0&amp;&amp;arr[j-1]&gt;arr[j];j--)&#x2F;&#x2F;前面有序，故可这样写</span><br><span class="line">               swap(arr,j-1,j);</span><br><span class="line">           System.out.println(&quot;经过&quot;+(i+1)+&quot;次排序后为:&quot;);</span><br><span class="line">           print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    static void print(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">           System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">           System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">    static void swap(int[] arr,int i,int j)&#123;</span><br><span class="line">        int temp&#x3D;arr[i];</span><br><span class="line">        arr[i]&#x3D;arr[j];</span><br><span class="line">        arr[j]&#x3D;temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不用swap：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class Insertion_sort&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,2,8,3,9,4,6,5,10&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length-1;i++)&#123;</span><br><span class="line">            int temp&#x3D;arr[i+1];           </span><br><span class="line">            int j;</span><br><span class="line">            for(j&#x3D;i+1;j&gt;0&amp;&amp;arr[j-1]&gt;temp;j--)</span><br><span class="line">                arr[j]&#x3D;arr[j-1];</span><br><span class="line">             arr[j]&#x3D;temp;</span><br><span class="line">           System.out.println(&quot;经过&quot;+(i+1)+&quot;次排序后为:&quot;);</span><br><span class="line">           print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    static void print(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">           System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">           System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">    static void swap(int[] arr,int i,int j)&#123;</span><br><span class="line">        int temp&#x3D;arr[i];</span><br><span class="line">        arr[i]&#x3D;arr[j];</span><br><span class="line">        arr[j]&#x3D;temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" data-id="ckm1qsovx0000j0vp6zw7d4s6" data-title="排序之插入排序" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-排序之冒泡排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" class="article-date">
@@ -411,88 +501,11 @@
 
 
   
-    <article id="post-循环队列演示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" class="article-date">
-  <time class="dt-published" datetime="2021-01-23T13:16:30.000Z" itemprop="datePublished">2021-01-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/">循环队列演示</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">typedef struct queue</span><br><span class="line">&#123;</span><br><span class="line">    int* pbase;</span><br><span class="line">    int front;</span><br><span class="line">    int rear;</span><br><span class="line">&#125;QUEUE,*PQUEUE;</span><br><span class="line">void traverse_queue(PQUEUE pqueue,int len);</span><br><span class="line">bool Is_empty(PQUEUE pqueue);</span><br><span class="line">int  init_queue(PQUEUE pqueue);</span><br><span class="line">bool Is_full(PQUEUE pqueue,int len);</span><br><span class="line">bool en_queue(PQUEUE pqueue,int len,int val);</span><br><span class="line">bool out_queue(PQUEUE pqueue,int len);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int len;</span><br><span class="line">    QUEUE queue;</span><br><span class="line">    len&#x3D;init_queue(&amp;queue);</span><br><span class="line">    traverse_queue(&amp;queue,len);</span><br><span class="line">    en_queue(&amp;queue,len,1);</span><br><span class="line">    en_queue(&amp;queue,len,2);</span><br><span class="line">    en_queue(&amp;queue,len,3);</span><br><span class="line">    en_queue(&amp;queue,len,4);</span><br><span class="line">    traverse_queue(&amp;queue,len);</span><br><span class="line">    out_queue(&amp;queue,len);</span><br><span class="line">    out_queue(&amp;queue,len);</span><br><span class="line">    traverse_queue(&amp;queue,len);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">int init_queue(PQUEUE pqueue)</span><br><span class="line">&#123;</span><br><span class="line">    int len;</span><br><span class="line">    printf(&quot;请输入队列长度（实际队列长度加一）:&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;len);</span><br><span class="line">    pqueue-&gt;pbase&#x3D;(int*)malloc(sizeof(int)*len);</span><br><span class="line">    if(pqueue-&gt;pbase&#x3D;&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;循环队列构造失败，程序终止\n&quot;);</span><br><span class="line">        exit(-1);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        pqueue-&gt;front&#x3D;0;</span><br><span class="line">        pqueue-&gt;rear&#x3D;0;</span><br><span class="line">    &#125;</span><br><span class="line">    return len;</span><br><span class="line">&#125;</span><br><span class="line">bool Is_empty(PQUEUE pqueue)</span><br><span class="line">&#123;</span><br><span class="line">    if(pqueue-&gt;front&#x3D;&#x3D;pqueue-&gt;rear)</span><br><span class="line">        return true;</span><br><span class="line">    else</span><br><span class="line">        return false;</span><br><span class="line">&#125;</span><br><span class="line">void traverse_queue(PQUEUE pqueue,int len)</span><br><span class="line">&#123;</span><br><span class="line">    if(Is_empty(pqueue))</span><br><span class="line">        printf(&quot;队列为空\n&quot;);</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        int m&#x3D;pqueue-&gt;front;</span><br><span class="line">        while(m!&#x3D;pqueue-&gt;rear)</span><br><span class="line">        &#123;</span><br><span class="line">          printf(&quot;%d &quot;,pqueue-&gt;pbase[m]);</span><br><span class="line">          m&#x3D;(m+1)%len;</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">bool Is_full(PQUEUE pqueue,int len)</span><br><span class="line">&#123;</span><br><span class="line">    if((pqueue-&gt;rear+1)%len&#x3D;&#x3D;pqueue-&gt;front)</span><br><span class="line">        return true;</span><br><span class="line">    else</span><br><span class="line">        return false;</span><br><span class="line">&#125;</span><br><span class="line">bool en_queue(PQUEUE pqueue,int len,int val)</span><br><span class="line">&#123;</span><br><span class="line">    if(Is_full(pqueue,len))</span><br><span class="line">        return false;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        pqueue-&gt;pbase[pqueue-&gt;rear]&#x3D;val;</span><br><span class="line">        pqueue-&gt;rear&#x3D;(pqueue-&gt;rear+1)%len;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">bool out_queue(PQUEUE pqueue,int len)</span><br><span class="line">&#123;</span><br><span class="line">    if(Is_empty(pqueue))</span><br><span class="line">        return false;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        pqueue-&gt;front&#x3D;(pqueue-&gt;front+1)%len;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" data-id="ckk9rw1eu0000ssvpggqm04jw" data-title="循环队列演示" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-线性结构队列概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-23T12:10:11.000Z" itemprop="datePublished">2021-01-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/">线性结构队列概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>队列：一种可实现先进先出的存储结构；<br>分类：静态队列（一般用循环队列实现）、链式队列；<br>1.静态队列一般为什么必须为循环队列？<br>传统数组实现队列会造成空间浪费；<br>2.循环队列需要几个参数来确定？<br>两个参数front和rear；<br>front永远指向队列的第一个元素，rear永远指向最后一个有效元素的下一个位置；<br>3.front和rear这两个参数在不同场合的不同含义？<br>队列初始化：front和rear值都为0；<br>队列为空：front和rear值相等但不一定为0；<br>队列非空：front为第一个元素，rear为最后一个有效元素的下一个位置；<br>4.循环队列入队伪算法：<br>将值存入rear所代表的位置；rear=（rear+1）/数组长度；<br>5.循环队列出队伪算法：<br>front=（front+1）/数组长度；<br>6.如何判断循环队列是否为满？<br>要么多设置一个参数，该参数名为长度，但频繁更新较麻烦；<br>要么存n个元素，找n+1个空间，空间浪费率为1/n+1，n越大，浪费率越低；这种方式front与rear相邻时为满；此时（rear<br>+1）/数组长度=front；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" data-id="ckk9qd5aa0000dwvp6yi0ddxy" data-title="线性结构队列概述" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -524,6 +537,14 @@
       <ul>
         
           <li>
+            <a href="/2021/04/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">排序之计数排序</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/09/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%8F%8C%E8%BD%B4%E6%8E%92%E5%BA%8F/">快速排序之双轴排序</a>
+          </li>
+        
+          <li>
             <a href="/2021/04/06/%E9%AA%8C%E8%AF%81%E6%8E%92%E5%BA%8F%E6%AD%A3%E7%A1%AE%E6%80%A7%E7%9A%84%E7%AE%97%E6%B3%95/">验证排序正确性的算法</a>
           </li>
         
@@ -533,14 +554,6 @@
         
           <li>
             <a href="/2021/03/26/Java%E5%BC%82%E5%B8%B8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/">Java异常程序演示</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/26/Java%E5%BC%82%E5%B8%B8%E6%A6%82%E8%BF%B0/">Java异常概述</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/">java之awt程序演示</a>
           </li>
         
       </ul>
