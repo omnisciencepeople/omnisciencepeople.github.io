@@ -57,12 +57,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS-hírfolyam"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Keresés"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Rechercher"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Keresés"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -98,7 +98,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/" data-id="cknaby3bd00007wvpewomc35t" data-title="排序之计数排序" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/04/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/" data-id="cknaby3bd00007wvpewomc35t" data-title="排序之计数排序" class="article-share-link">Megosztás</a>
       
       
       
@@ -132,11 +132,11 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Random;</span><br><span class="line">import java.util.Arrays;</span><br><span class="line">&#x2F;**</span><br><span class="line"> * @author MiaoZhiJun</span><br><span class="line"> * @className DualPivotSort</span><br><span class="line"> * @description 双轴快速排序算法</span><br><span class="line"> * @date 2021&#x2F;4&#x2F;10&#x2F;13:00</span><br><span class="line"> *&#x2F;</span><br><span class="line">public class DualPivotSort &#123;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">      Random r&#x3D;new Random();</span><br><span class="line">      int[] arr&#x3D;new int[1000];</span><br><span class="line">      for(int i&#x3D;0;i&lt;arr.length;i++) </span><br><span class="line">          arr[i]&#x3D;r.nextInt(1000);</span><br><span class="line">      DualPivotQuickSort(arr,0,arr.length-1);</span><br><span class="line">      System.out.println(Arrays.toString(arr));</span><br><span class="line">  &#125;</span><br><span class="line">  public static void DualPivotQuickSort(int[] arr,int left,int right) &#123;</span><br><span class="line">      if(left&gt;&#x3D;right||left&lt;0||right&lt;0) return;</span><br><span class="line">      if(arr[left]&gt;arr[right]) swap(arr,left,right);</span><br><span class="line">      int pivot1&#x3D;arr[left];</span><br><span class="line">      int pivot2&#x3D;arr[right];</span><br><span class="line">      int leftptr&#x3D;left;</span><br><span class="line">      int rightptr&#x3D;right;</span><br><span class="line">      int mid&#x3D;left+1;</span><br><span class="line">      OUT_LOOP:while(mid&lt;rightptr)</span><br><span class="line">      &#123;</span><br><span class="line">          if(arr[mid]&lt;&#x3D;pivot1) &#123;</span><br><span class="line">              swap(arr, ++leftptr, mid++);</span><br><span class="line">          &#125;</span><br><span class="line">          else if(arr[mid]&lt;&#x3D;pivot2) &#123;</span><br><span class="line">              mid++;</span><br><span class="line">          &#125;</span><br><span class="line">          else &#123;</span><br><span class="line">              while(arr[--rightptr]&gt;pivot2) </span><br><span class="line">                  if(mid&gt;&#x3D;rightptr) break OUT_LOOP;</span><br><span class="line">              if(arr[rightptr]&lt;&#x3D;pivot1) &#123;</span><br><span class="line">                     swap(arr,mid,rightptr);</span><br><span class="line">                     swap(arr,++leftptr,mid);</span><br><span class="line">                      &#125;</span><br><span class="line">              else</span><br><span class="line">                  swap(arr,mid,rightptr);</span><br><span class="line">              mid++;</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">      swap(arr,left,leftptr);</span><br><span class="line">      swap(arr,right,rightptr);</span><br><span class="line">      DualPivotQuickSort(arr,left,leftptr-1);</span><br><span class="line">      DualPivotQuickSort(arr,leftptr+1,rightptr-1);</span><br><span class="line">      DualPivotQuickSort(arr,rightptr+1,right);</span><br><span class="line">          &#125;</span><br><span class="line">      </span><br><span class="line">  static void swap(int[] arr,int i,int j) &#123;</span><br><span class="line">      int temp&#x3D;arr[i];</span><br><span class="line">      arr[i]&#x3D;arr[j];</span><br><span class="line">      arr[j]&#x3D;temp;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/09/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%8F%8C%E8%BD%B4%E6%8E%92%E5%BA%8F/" data-id="cknaby3bi00017wvp7zri9w87" data-title="快速排序之双轴排序" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/04/09/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%8F%8C%E8%BD%B4%E6%8E%92%E5%BA%8F/" data-id="cknaby3bi00017wvp7zri9w87" data-title="快速排序之双轴排序" class="article-share-link">Megosztás</a>
       
       
       
@@ -174,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/06/%E9%AA%8C%E8%AF%81%E6%8E%92%E5%BA%8F%E6%AD%A3%E7%A1%AE%E6%80%A7%E7%9A%84%E7%AE%97%E6%B3%95/" data-id="ckn61gwix0001novpcs1tbxbv" data-title="验证排序正确性的算法" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/04/06/%E9%AA%8C%E8%AF%81%E6%8E%92%E5%BA%8F%E6%AD%A3%E7%A1%AE%E6%80%A7%E7%9A%84%E7%AE%97%E6%B3%95/" data-id="ckn61gwix0001novpcs1tbxbv" data-title="验证排序正确性的算法" class="article-share-link">Megosztás</a>
       
       
       
@@ -225,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/06/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E7%BB%8F%E5%85%B8%E5%8D%95%E8%BD%B4%E6%8E%92%E5%BA%8F%EF%BC%89/" data-id="ckn61gwil0000novp56xdhcad" data-title="排序之快速排序（经典单轴排序）" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/04/06/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E7%BB%8F%E5%85%B8%E5%8D%95%E8%BD%B4%E6%8E%92%E5%BA%8F%EF%BC%89/" data-id="ckn61gwil0000novp56xdhcad" data-title="排序之快速排序（经典单轴排序）" class="article-share-link">Megosztás</a>
       
       
       
@@ -291,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/26/Java%E5%BC%82%E5%B8%B8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="ckmpykono0000ucvp4a3p0ir5" data-title="Java异常程序演示" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/03/26/Java%E5%BC%82%E5%B8%B8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="ckmpykono0000ucvp4a3p0ir5" data-title="Java异常程序演示" class="article-share-link">Megosztás</a>
       
       
       
@@ -342,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/26/Java%E5%BC%82%E5%B8%B8%E6%A6%82%E8%BF%B0/" data-id="ckmpykonr0001ucvp65qw0tt9" data-title="Java异常概述" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/03/26/Java%E5%BC%82%E5%B8%B8%E6%A6%82%E8%BF%B0/" data-id="ckmpykonr0001ucvp65qw0tt9" data-title="Java异常概述" class="article-share-link">Megosztás</a>
       
       
       
@@ -405,7 +405,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="ckmlhq26j0000tcvp8d6ta9qf" data-title="java之awt程序演示" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="ckmlhq26j0000tcvp8d6ta9qf" data-title="java之awt程序演示" class="article-share-link">Megosztás</a>
       
       
       
@@ -454,7 +454,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/22/java%E4%B9%8Bawt%E5%B1%95%E6%9C%9B/" data-id="ckmkmyu550000ocvpczcaggnf" data-title="java之awt展望概述" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/03/22/java%E4%B9%8Bawt%E5%B1%95%E6%9C%9B/" data-id="ckmkmyu550000ocvpczcaggnf" data-title="java之awt展望概述" class="article-share-link">Megosztás</a>
       
       
       
@@ -502,7 +502,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/22/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" data-id="ckmkmyu5a0001ocvp9yuw2uul" data-title="排序之归并排序" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/03/22/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" data-id="ckmkmyu5a0001ocvp9yuw2uul" data-title="排序之归并排序" class="article-share-link">Megosztás</a>
       
       
       
@@ -543,7 +543,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/21/java%E7%BA%BF%E7%A8%8B%E4%B9%8B%E6%B6%88%E8%B4%B9%E8%80%85%E7%94%9F%E4%BA%A7%E8%80%85/" data-id="ckmihabu100005cvpa2i0elx0" data-title="java线程之消费者生产者" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/03/21/java%E7%BA%BF%E7%A8%8B%E4%B9%8B%E6%B6%88%E8%B4%B9%E8%80%85%E7%94%9F%E4%BA%A7%E8%80%85/" data-id="ckmihabu100005cvpa2i0elx0" data-title="java线程之消费者生产者" class="article-share-link">Megosztás</a>
       
       
       
@@ -559,7 +559,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Suivant &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Következő &raquo;</a>
   </nav>
 
 </section>
@@ -576,7 +576,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archív</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -586,7 +586,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Legfrissebb bejegyzések</h3>
     <div class="widget">
       <ul>
         
@@ -624,7 +624,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Propulsé par <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
