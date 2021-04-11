@@ -71,6 +71,151 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-排序之希尔排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time class="dt-published" datetime="2021-03-12T14:46:33.000Z" itemprop="datePublished">2021-03-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/">排序之希尔排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>希尔排序：是优化了插入排序的排序，又称缩小增量排序；<br>基本思想：先将整个待排记录序列分割成若干个子序列，分别进行插入排序，待整个序列中的记录基本有序时，再对全体记录直<br>接进行一次插入排序；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class Shell_sort&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,2,8,3,9,4,6,5,10,56165,5,5156,515,113,3,35,451,151,3484,51,54,1,14,1,1,351,01,13,131,345,1,346431,4,1,4&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        int h&#x3D;1;</span><br><span class="line">        while(h&lt;arr.length&#x2F;3)   </span><br><span class="line">        &#123;</span><br><span class="line">            h&#x3D;3*h+1;</span><br><span class="line">        &#125;&#x2F;&#x2F;求出最大增量</span><br><span class="line">        for(int gap&#x3D;h;gap&gt;0;gap&#x3D;(gap-1)&#x2F;3)&#x2F;&#x2F;不断缩小增量进行插入排序</span><br><span class="line">           for(int i&#x3D;gap;i&lt;arr.length;i++)&#x2F;&#x2F;从gap开始遍历</span><br><span class="line">             for(int j&#x3D;i;j&gt;gap-1&amp;&amp;arr[j]&lt;arr[j-gap];j-&#x3D;gap)&#x2F;&#x2F;希尔排序前面有序，故可这样写</span><br><span class="line">                 swap(arr,j,j-gap);</span><br><span class="line">           print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void print(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">           System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">           System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">    static void swap(int[] arr,int i,int j)&#123;</span><br><span class="line">        int temp&#x3D;arr[i];</span><br><span class="line">        arr[i]&#x3D;arr[j];</span><br><span class="line">        arr[j]&#x3D;temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" data-id="ckm6fbis7000070vpg1d6davz" data-title="排序之希尔排序" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Java容器程序演示和内容补充" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/" class="article-date">
+  <time class="dt-published" datetime="2021-03-12T08:18:41.000Z" itemprop="datePublished">2021-03-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/">Java容器程序演示和内容补充</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">public class test15&#123;</span><br><span class="line">   public static void main(String[] args)&#123;</span><br><span class="line">   ArrayList aa&#x3D;new ArrayList();&#x2F;&#x2F;构造一个初始容量为十的空列表。 </span><br><span class="line">   aa.add(12345);&#x2F;&#x2F;12345会被自动封装成相应的Integer对象</span><br><span class="line">   aa.add(&quot;张三&quot;);&#x2F;&#x2F;字符串为一个对象</span><br><span class="line">   aa.add(66.6);&#x2F;&#x2F;66.6会被自动封装成一个Double对象</span><br><span class="line">   aa.add(new A());</span><br><span class="line">   System.out.println(aa);&#x2F;&#x2F;默认调用每个元素的toString方法</span><br><span class="line">   &#x2F;&#x2F;System.out.println(aa[2]);&#x2F;&#x2F;error 容器不是数组</span><br><span class="line">   System.out.println(aa.get(2));&#x2F;&#x2F;调用List中的get方法得到下标为2的元素</span><br><span class="line">   Object[] ob&#x3D;aa.toArray();&#x2F;&#x2F;toArray方法以正确的顺序返回一个包含此列表中所有元素的数组。 </span><br><span class="line">   System.out.println(ob[2]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">     public String toString()&#123;</span><br><span class="line">         return &quot;哈哈&quot;;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*</span><br><span class="line">编译时会产生和泛型相关的错误，可忽略，之后会解决</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+
+
+<p>collections类方法使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">public class test16&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        List L&#x3D;new LinkedList();</span><br><span class="line">        for(int i&#x3D;0;i&lt;7;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            L.add(&quot;a&quot;+i);</span><br><span class="line">        &#125;</span><br><span class="line">        Collections.shuffle(L);&#x2F;&#x2F;将容器内元素随机排列</span><br><span class="line">        System.out.println(L);</span><br><span class="line">        Collections.sort(L);&#x2F;&#x2F;将容器内元素排序（默认升序）</span><br><span class="line">        System.out.println(L);</span><br><span class="line">        System.out.println(Collections.binarySearch(L,&quot;a5&quot;));&#x2F;&#x2F;采用折半查找方法查找元素（前提该元素必须是升序排列，否则查找会失败）</span><br><span class="line">        System.out.println(Collections.binarySearch(L,&quot;a7&quot;));</span><br><span class="line">        Collections.reverse(L);</span><br><span class="line">        System.out.println(L);</span><br><span class="line">        System.out.println(Collections.binarySearch(L,&quot;a5&quot;));</span><br><span class="line">        Collections.fill(L,&quot;222&quot;);&#x2F;&#x2F;以222重写容器内所有元素</span><br><span class="line">        System.out.println(L);</span><br><span class="line">        System.out.println(Collections.binarySearch(L,&quot;a5&quot;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*</span><br><span class="line">编译时会产生和泛型相关的错误，可忽略，之后会解决</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>Comparable接口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">class student&#123;</span><br><span class="line">    private int id;</span><br><span class="line">    private String name;</span><br><span class="line">    public student(int id,String name)</span><br><span class="line">    &#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">        this.name&#x3D;name;</span><br><span class="line">    &#125;</span><br><span class="line">    public String toString()</span><br><span class="line">    &#123;</span><br><span class="line">        return id+&quot; &quot;+name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class test18&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        List L&#x3D;new LinkedList();</span><br><span class="line">        L.add(new student(1000,&quot;张三&quot;));</span><br><span class="line">        L.add(new student(1004,&quot;张四&quot;));</span><br><span class="line">        L.add(new student(1002,&quot;张五&quot;));</span><br><span class="line">        L.add(new student(1001,&quot;张六&quot;));</span><br><span class="line">        Collections.sort(L);&#x2F;&#x2F;用户自定义类未制定比较标准，故无法比较</span><br><span class="line">        System.out.println(L);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*会报错，由于无比较标准*&#x2F;</span><br><span class="line"></span><br><span class="line">正确如下：</span><br><span class="line">import java.util.*;</span><br><span class="line">class student implements Comparable&#123;</span><br><span class="line">    private int id;</span><br><span class="line">    private String name;</span><br><span class="line">    public student(int id,String name)</span><br><span class="line">    &#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">        this.name&#x3D;name;</span><br><span class="line">    &#125;</span><br><span class="line">    public String toString()</span><br><span class="line">    &#123;</span><br><span class="line">        return id+&quot; &quot;+name;</span><br><span class="line">    &#125;</span><br><span class="line">    public int compareTo(Object o)</span><br><span class="line">    &#123;</span><br><span class="line">        student st&#x3D;(student)o;&#x2F;&#x2F;多态父类引用无法调用子类特有的方法和属性，只能调用子类从父类继承过来的方法和属</span><br><span class="line">                             &#x2F;&#x2F;性，如果想要调用子类特有的方法和属性，则需对父类引用进行强制类型转换</span><br><span class="line">        return this.id-st.id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class test18&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        List L&#x3D;new LinkedList();</span><br><span class="line">        L.add(new student(1000,&quot;张三&quot;));</span><br><span class="line">        L.add(new student(1004,&quot;张四&quot;));</span><br><span class="line">        L.add(new student(1002,&quot;张五&quot;));</span><br><span class="line">        L.add(new student(1001,&quot;张六&quot;));</span><br><span class="line">        Collections.sort(L);&#x2F;&#x2F;虽然是用户自定义类但制定了比较标准，故可比较；sort方法自动调用了类student的</span><br><span class="line">                            &#x2F;&#x2F;CompareTo方法</span><br><span class="line">        System.out.println(L);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*凡是需要排序的类（基本数据类型和String类除外）都须考虑实现Comparable接口并重写其compareTo方法以制定比较标准*&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>set容器元素重复出现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">class student&#123;</span><br><span class="line">    private int id;</span><br><span class="line">    private String name;</span><br><span class="line">    public student(int id,String name)</span><br><span class="line">    &#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">        this.name&#x3D;name;</span><br><span class="line">    &#125;</span><br><span class="line">    public String toString()&#123;</span><br><span class="line">        return id+&quot; &quot;+name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class test19&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Set s&#x3D;new HashSet();</span><br><span class="line">        s.add(new student(1000,&quot;张三&quot;));</span><br><span class="line">        s.add(new student(1001,&quot;李四&quot;));</span><br><span class="line">        s.add(new student(1002,&quot;王五&quot;));</span><br><span class="line">        s.add(new student(1002,&quot;王五&quot;));</span><br><span class="line">        System.out.println(s);&#x2F;&#x2F;set内元素无序，故输出元素无序</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*未做处理，故有重复元素出现*&#x2F;</span><br></pre></td></tr></table></figure>
+<p>set元素重复问题处理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">class student&#123;</span><br><span class="line">    private int id;</span><br><span class="line">    private String name;</span><br><span class="line">    public student(int id,String name)</span><br><span class="line">    &#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">        this.name&#x3D;name;</span><br><span class="line">    &#125;</span><br><span class="line">    public String toString()&#123;</span><br><span class="line">        return id+&quot; &quot;+name;</span><br><span class="line">    &#125;</span><br><span class="line">    public int hashCode()&#123;</span><br><span class="line">        return new String(id+name).hashCode();</span><br><span class="line">    &#125;</span><br><span class="line">    public boolean equals(Object o)</span><br><span class="line">    &#123;</span><br><span class="line">        student st&#x3D; (student)o;</span><br><span class="line">        return st.id&#x3D;&#x3D;this.id&amp;&amp;st.name&#x3D;&#x3D;this.name;</span><br><span class="line">    &#125; </span><br><span class="line">    &#x2F;&#x2F;子类重写父类方法，访问权限不能低于父类，抛出范围不能大于父类</span><br><span class="line">    &#x2F;&#x2F;hashCode方法和equals方法继承自Object类</span><br><span class="line">&#125;</span><br><span class="line">public class test19&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Set s&#x3D;new HashSet();</span><br><span class="line">        s.add(new student(1000,&quot;张三&quot;));</span><br><span class="line">        s.add(new student(1001,&quot;李四&quot;));</span><br><span class="line">        s.add(new student(1002,&quot;王五&quot;));</span><br><span class="line">        s.add(new student(1002,&quot;王五&quot;));</span><br><span class="line">        System.out.println(s);&#x2F;&#x2F;set内元素无序，故输出元素无序</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;我们必须同时重写equals方法和hashcode方法才可解决set容器内元素重复问题</span><br></pre></td></tr></table></figure>
+<p>重写hashcode方法重要性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">class A&#123;</span><br><span class="line">    private int id;</span><br><span class="line">    public A(int id)&#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class B&#123;</span><br><span class="line">    private int id;</span><br><span class="line">    public B(int id)&#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">    &#125;</span><br><span class="line">    public int hashCode()&#123;</span><br><span class="line">        return new Integer(id).hashCode();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class test20&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        System.out.println(&quot;new A(1).hashCode()&#x3D;&quot;+new A(1).hashCode());</span><br><span class="line">        System.out.println(&quot;new A(1).hashCode()&#x3D;&quot;+new A(1).hashCode());</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(&quot;new Integer(1).hashCode()&#x3D;&quot;+new Integer(1).hashCode());</span><br><span class="line">        System.out.println(&quot;new Integer(1).hashCode()&#x3D;&quot;+new Integer(1).hashCode());</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(&quot;new String(\&quot;哈哈\&quot;).hashCode()&#x3D;&quot;+new String(&quot;哈哈&quot;).hashCode());</span><br><span class="line">        System.out.println(&quot;new String(\&quot;哈哈\&quot;).hashCode()&#x3D;&quot;+new String(&quot;哈哈&quot;).hashCode());</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(&quot;\&quot;哈哈\&quot;.hashCode()&#x3D;&quot;+(&quot;哈哈&quot;).hashCode());</span><br><span class="line">        System.out.println(&quot;\&quot;哈哈\&quot;.hashCode()&#x3D;&quot;+(&quot;哈哈&quot;).hashCode());</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(&quot;new B(1).hashCode()&#x3D;&quot;+new B(1).hashCode());</span><br><span class="line">        System.out.println(&quot;new B(1).hashCode()&#x3D;&quot;+new B(1).hashCode());</span><br><span class="line">        System.out.println();</span><br><span class="line">        Integer it1&#x3D;new Integer(1);</span><br><span class="line">        Integer it2&#x3D;new Integer(1);</span><br><span class="line">        System.out.println(it1&#x3D;&#x3D;it2);</span><br><span class="line">        System.out.println(it2.equals(it2));</span><br><span class="line">        System.out.println(it1.hashCode()&#x3D;&#x3D;it2.hashCode());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果：</span><br><span class="line">new A(1).hashCode()&#x3D;366712642</span><br><span class="line">new A(1).hashCode()&#x3D;1829164700</span><br><span class="line"></span><br><span class="line">new Integer(1).hashCode()&#x3D;1</span><br><span class="line">new Integer(1).hashCode()&#x3D;1</span><br><span class="line"></span><br><span class="line">new String(&quot;哈哈&quot;).hashCode()&#x3D;694528</span><br><span class="line">new String(&quot;哈哈&quot;).hashCode()&#x3D;694528</span><br><span class="line"></span><br><span class="line">&quot;哈哈&quot;.hashCode()&#x3D;694528</span><br><span class="line">&quot;哈哈&quot;.hashCode()&#x3D;694528</span><br><span class="line"></span><br><span class="line">new B(1).hashCode()&#x3D;1</span><br><span class="line">new B(1).hashCode()&#x3D;1</span><br><span class="line"></span><br><span class="line">false</span><br><span class="line">true</span><br><span class="line">true</span><br></pre></td></tr></table></figure>
+<p>String和Integer这些Java自带的类都重写了hashCode方法，如果Integer和String new出的对象内容相同则这些对象的<br>hashCode返回值是相同的，尽管他们占用不同的内存；<br>用户自定义的类如本程序的A类，即便内容相同hashCode返回值也不同，因为未重写hashCode方法；<br>如果希望自己定义的类对象占用内存不同但内容相同，返回相同的hashCode方法则程序员必须手动重写hashCode方法如本程序的B类；</p>
+<p>为什么set（以hashset为实现类）中必须重写hashCode方法和equals方法？<br>假定有一个对象aa，要放在set容器中（以hashset为实现类）<br>存放原理：<br>我们先根据aa的hashCode方法按照某中算法找到它在set容器中的位置，后存放进去(实际上并未放入容器中，而是放入后面的<br>线性链表中)，这是调用equals方法判断它与后面链表中的元素是否存在重复，若重复则不存放，不重复则存放；<br>set容器并未存放对象本身，它存放的是存储地址；<br>所以我们必须重写这些方法；<br>如果只重写了hashCode方法而未重写equals方法，同样会造成重复，因为未重写equals方法，equals判断的是内存地址的异同<br>而非内容的异同；如容器内存入两个两个内容相同的类A对象;<br>如果只重写了equals方法而未重写hashCode方法，同样会造成重复,如存入两个内容相同的类A对象（找到的存储地址不同）；</p>
+<p>放在什么容器中需要重写hashCode方法和equals方法？<br>hashset、hashmap。hashtable需全部重写；<br>Treeset、Treemap无需重写，因为该树有序的（我们必须指定比较标准因此这两个实现类造出的容器内的类对象必须实现<br>Comparable接口并重写compareTo方法）</p>
+<p>如何重写hashCode方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public int hashCode()</span><br><span class="line">&#123;</span><br><span class="line">    return 当前类中基本类型对象的hashCode方法;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Iterator遍历：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">class point&#123;</span><br><span class="line">   private int i;</span><br><span class="line">   private int j;</span><br><span class="line">   public point(int j,int i)</span><br><span class="line">   &#123;</span><br><span class="line">       this.i&#x3D;i;</span><br><span class="line">       this.j&#x3D;j;</span><br><span class="line">   &#125;</span><br><span class="line">   public String toString()&#123;</span><br><span class="line">       return &quot;[&quot;+i+&quot;,&quot;+j+&quot;]&quot;;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class test21&#123;</span><br><span class="line">   public static void main(String[] args)&#123;</span><br><span class="line">       ArrayList aa&#x3D;new ArrayList();</span><br><span class="line">       aa.add(&quot;one&quot;);</span><br><span class="line">       aa.add(22);</span><br><span class="line">       aa.add(new point(1,1));</span><br><span class="line">       System.out.println(&quot;容器a1的元素为：&quot;);</span><br><span class="line">       showcollection(aa);</span><br><span class="line">       HashSet hs&#x3D;new HashSet();</span><br><span class="line">       hs.add(22);</span><br><span class="line">       hs.add(new point(1,2));</span><br><span class="line">       System.out.println(&quot;容器hs的元素为：&quot;);</span><br><span class="line">       showcollection(hs);</span><br><span class="line">   &#125;</span><br><span class="line">   static void showcollection(Collection e)&#123;</span><br><span class="line">       Iterator it&#x3D;e.iterator();</span><br><span class="line">       while(it.hasNext())</span><br><span class="line">       &#123;</span><br><span class="line">           System.out.println(it.next());</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;容器中所有继承了Collection接口的类都默认实现了Iterator中的三个方法</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/" data-id="ckm6c07sl0000tgvp1ttw3d77" data-title="Java容器程序演示和内容补充" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Java容器概述2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/" class="article-date">
+  <time class="dt-published" datetime="2021-03-11T14:04:42.000Z" itemprop="datePublished">2021-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/">Java容器概述2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>java之自动装箱：<br>容器中存入的是一定是对象，不能放孤立的值，容器内如果放孤立的值，它会被转化成相应的对象；<br>预备知识：<br>对于任意的类A，设有一个A类对象aa<br>若System.out.println(aa);则等价于System.out.println(aa.toString());<br>Object类中含有hashcode方法、equals方法、toString方法等<br>Java中所有类默认继承Object类<br>建议所有子类重写toString方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Collection c&#x3D;new Arraylist();&#x2F;&#x2F;运用多态</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">System.out.println(c);&#x2F;&#x2F;等价于[调用第一个元素方法的toString方法，调用第二个元素方法的toString方法，调用第三个元素方法的toString方法，...]</span><br></pre></td></tr></table></figure>
+<p>容器之Collections：<br>Collection接口的实现类;<br>Arraylist、Linkedlist本身并未提供排序、查找等功能，这些方法是由collections类实现的，该类中含有很多Public<br>static方法，可直接对collection接口的实现类进行操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">collections类中提供了一些方法：</span><br><span class="line">Public static void sort(List);&#x2F;&#x2F;排序（默认升序）</span><br><span class="line">Public static void shuffle(List);&#x2F;&#x2F;随机排列</span><br><span class="line">Public static void reverse(List);&#x2F;&#x2F;逆序排列</span><br><span class="line">Public static void fill(List,Object);&#x2F;&#x2F;用一个特定的对象重写容器中的每个元素</span><br><span class="line">Public static void copy(List dest,List src);&#x2F;&#x2F;将src容器内容拷贝到dest容器中</span><br><span class="line">Public static int bindarysearch();&#x2F;&#x2F;对于升序的List容器，采用折半查找特定的对象；折半查找必须是升序的;</span><br></pre></td></tr></table></figure>
+<p>容器之Comparable接口：<br>为什么使用Compareable接口？<br>基本类型数据和String类型数据，它们彼此间的比较标准Java本身已经制定好了<br>用户自定义类对象之间比较的标准，Java本身未提供;所以一个容器中含有用户自定义数据时，并且我们需要对容器中的元素进<br>行排序和查找，我们必须指定元素与元素之间的比较标准，凡是需要排序的场合均可考虑实现Cpmparable接口;<br>Comparable接口介绍:<br>该接口中只有一个方法int compareTo(Object o);返回一个负整数，零或正整数，因为该对象小于，等于或大于指定对象。<br>实现了Comparable接口的实现类通过重写compareTo方法从而确定该类对象的排列方式；</p>
+<p>容器之Iterator接口：<br>要想遍历容器中的所有元素，判断是否存在下一元素，返回下一个元素都是非常麻烦的事，这些复杂容易出现错误的操作在Java<br>中用hasNext()、Next()、remove()这三个方法表示，这三个方法的具体实现sun公司已经设计好了，并且API中所有继承了<br>Collection的类都已经实现了Iterator接口中的这三个方法；<br>Iterator接口以统一的方式对各种不同集合中的元素进行遍历；<br>实现了Iterator接口的对象又称迭代器，利用该对象可方便地对容器中的元素进行遍历；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Iterator中常用方法：</span><br><span class="line">Boolean hasNext();&#x2F;&#x2F;用于判断游标右边是否存在元素；</span><br><span class="line">Object next();&#x2F;&#x2F;返回游标右边的元素，然后游标移向下一个位置</span><br><span class="line">void remove();&#x2F;&#x2F;删除最近返回的元素，在调用remove之前我们必须调用一次Next方法，调用一次next方法只能调用一次</span><br><span class="line">remove方法</span><br></pre></td></tr></table></figure>
+<p>容器之treeset：<br>treeset是一个有序的集合，treeset内元素按照升序排列，因此treeset元素必须实现Comparable接口<br>所有可以排序的类都应实现Comparable接口<br>hashset性能通常优于treeset，我们通常使用hashset，在我们需要排序时才使用hashset</p>
+<p>预备知识：<br>散列码：Object中的hashcode方法会返回该对象内存真实地址的整数化表示，这个形象的又不是真实地址的整数值就是散列码，又称哈希码;<br>哈希码与地址有关，但不一定是地址;<br>哈希表：哈希表不止存储需要保存的数据，更会存储该数据的主键；实际是先保留主键，然后哈希表会根据主键某种算法自动计算出以当前主键为主键的数据的hashcode，然后根据hashcode计算出数据存储位置然后将该数据存进去；<br>哈希表又称散列表<br>哈希表中不允许存在重复的键<br>哈希表主要是为了提高数据的存储速度和查找速度而设计的；<br>几乎所有的哈希表都会产生哈希冲突<br>Java中利用桶来解决哈希冲突<br>哈希冲突指关键字映射的地址相同导致前面的数据被覆盖；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/" data-id="ckm4y2bbv0000x8vp5soghlab" data-title="Java容器概述2" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-java容器概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/03/10/java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/" class="article-date">
@@ -382,125 +527,6 @@
 
 
   
-    <article id="post-赫夫曼树概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-25T03:44:39.000Z" itemprop="datePublished">2021-01-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/">赫夫曼树概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>赫夫曼树，又称最优树，是一类带权路径长度最短的树；</p>
-<p>专业术语<br>结点的权值（weight）：树节点间与连线相关的数（如频率等）；<br>节点路径长度：从根节点到该结点的路径上的连线数；<br>树路径长度：树的每个叶子节点的路径长度之和；<br>结点带权路径长度：结点路径长度与它的权值的乘积；<br>树的带权路径长度（weighted path length）：树的每个叶子节点的带权路径长度之和；<br>WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小；</p>
-<p>赫夫曼算法<br>1.根据给定的n个权值{w1,w2,w3,…,Wn}构成n棵二叉树的集合F={T1,T2,…,Tn},其中每个二叉树Ti（1=&lt; i&lt;= n）只有一<br>个带权为Wi（1=&lt; i&lt;= n）的根节点，其左右子树均为空；<br>2.在F中选取两棵根节点权值最小的树作为左右子树构成一棵新的二叉树，该二叉树的权值为其左右子树权值之和；<br>3.在F中删除选取的两棵二叉树，同时将新的二叉树放入F中；<br>4.重复2和3的操作直至F中只剩下一棵树，该树即为赫夫曼树;</p>
-<p>赫夫曼编码<br>赫夫曼编码：可以有效地压缩数据（通常可节省%20~%90的空间，具体压缩率取决于数据的特性）<br>要设计长短不等的编码，则必须是任一个字符的编码都不是另一个字符的编码的前缀，这种编码称做前缀编码；<br>可以利用二叉树来设计二进制的前缀编码，约定左子树表示字符’0’,右子树表示字符’1’；从根节点到叶子节点的路径上分支字<br>符组成的字符串作为该叶子节点字符的编码，该编码必为前缀编码；<br>设计总长最短的二进制前缀编码即为以n种字符出现的频率为权，设计一棵赫夫曼树的问题得到的二进制前缀编码称为赫夫曼编码<br>赫夫曼树的每个结点包括四部分：该结点的权值、双亲游标、左孩子游标、右孩子游标；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/25/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91%E6%A6%82%E8%BF%B0/" data-id="ckkc121eb0000p0vpaixvf6nd" data-title="赫夫曼树概述" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-链式树遍历演示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/" class="article-date">
-  <time class="dt-published" datetime="2021-01-24T11:12:43.000Z" itemprop="datePublished">2021-01-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/">链式树遍历演示</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">typedef struct TNode</span><br><span class="line">&#123;</span><br><span class="line">    char ch;</span><br><span class="line">    struct TNode*PLnode;</span><br><span class="line">    struct TNode*PRnode;</span><br><span class="line">&#125;TN,*PTN;</span><br><span class="line">void intraverse_tree(PTN pT);</span><br><span class="line">void pretraverse_tree(PTN pT);</span><br><span class="line">void posttraverse_tree(PTN pT);</span><br><span class="line">PTN creat_tree();</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    PTN pt;</span><br><span class="line">    pt&#x3D;creat_tree();</span><br><span class="line">    printf(&quot;先序输出为:\n&quot;);</span><br><span class="line">    pretraverse_tree(pt);</span><br><span class="line">    printf(&quot;中序输出为:\n&quot;);</span><br><span class="line">    intraverse_tree(pt);</span><br><span class="line">    printf(&quot;后序输出为:\n&quot;);</span><br><span class="line">    posttraverse_tree(pt);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">PTN creat_tree()</span><br><span class="line">&#123;</span><br><span class="line">    PTN pA&#x3D;(PTN)malloc(sizeof(TN));</span><br><span class="line">    PTN pB&#x3D;(PTN)malloc(sizeof(TN));</span><br><span class="line">    PTN pC&#x3D;(PTN)malloc(sizeof(TN));</span><br><span class="line">    PTN pD&#x3D;(PTN)malloc(sizeof(TN));</span><br><span class="line">    PTN pE&#x3D;(PTN)malloc(sizeof(TN));</span><br><span class="line">    pA-&gt;ch&#x3D;&#39;A&#39;;</span><br><span class="line">    pB-&gt;ch&#x3D;&#39;B&#39;;</span><br><span class="line">    pC-&gt;ch&#x3D;&#39;C&#39;;</span><br><span class="line">    pD-&gt;ch&#x3D;&#39;D&#39;;</span><br><span class="line">    pE-&gt;ch&#x3D;&#39;E&#39;;</span><br><span class="line">    pA-&gt;PLnode&#x3D;pB;</span><br><span class="line">    pA-&gt;PRnode&#x3D;pC;</span><br><span class="line">    pB-&gt;PLnode&#x3D;pB-&gt;PRnode&#x3D;NULL;</span><br><span class="line">    pC-&gt;PLnode&#x3D;pD;</span><br><span class="line">    pC-&gt;PRnode&#x3D;NULL;</span><br><span class="line">    pD-&gt;PRnode&#x3D;pE;</span><br><span class="line">    pD-&gt;PLnode&#x3D;NULL;</span><br><span class="line">    pE-&gt;PLnode&#x3D;pE-&gt;PRnode&#x3D;NULL;</span><br><span class="line">    return pA;</span><br><span class="line">&#125;</span><br><span class="line">void pretraverse_tree(PTN pT)</span><br><span class="line">&#123;</span><br><span class="line">    if(pT!&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;%c\n&quot;,pT-&gt;ch);</span><br><span class="line">        if(pT-&gt;PLnode!&#x3D;NULL)</span><br><span class="line">           pretraverse_tree(pT-&gt;PLnode);</span><br><span class="line">        if(pT-&gt;PRnode!&#x3D;NULL)</span><br><span class="line">           pretraverse_tree(pT-&gt;PRnode);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void intraverse_tree(PTN pT)</span><br><span class="line">&#123;</span><br><span class="line">    if(pT!&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">       if(pT-&gt;PLnode!&#x3D;NULL)</span><br><span class="line">          intraverse_tree(pT-&gt;PLnode);    </span><br><span class="line">       printf(&quot;%c\n&quot;,pT-&gt;ch);</span><br><span class="line">       if(pT-&gt;PRnode!&#x3D;NULL)</span><br><span class="line">          intraverse_tree(pT-&gt;PRnode);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void posttraverse_tree(PTN pT)</span><br><span class="line">&#123;</span><br><span class="line">    if(pT!&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">      if(pT-&gt;PLnode!&#x3D;NULL)</span><br><span class="line">          posttraverse_tree(pT-&gt;PLnode);</span><br><span class="line">      if(pT-&gt;PRnode!&#x3D;NULL)</span><br><span class="line">          posttraverse_tree(pT-&gt;PRnode);</span><br><span class="line">      printf(&quot;%c\n&quot;,pT-&gt;ch);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/" data-id="ckkb1n8hs000130vpauy80iwh" data-title="链式树遍历演示" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-非线性结构树的概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-23T13:56:31.000Z" itemprop="datePublished">2021-01-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/">非线性结构树的概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>树<br>专业定义：有且只有一个称为根的结点；有若干个互不相交的子树，这些子树本身也为一棵树；<br>通俗定义：树由结点和边组成（边指的是指针域）；每个结点只有一个父节点，但可以有多个子节点（根节点除外，根节点无父节点）；<br>专业术语：<br>父节点、子节点、子孙、堂兄弟（父亲为兄弟，他们的孩子为堂兄弟）、祖先；<br>深度：从根节点到最底层节点的层数；根节点为第一层；<br>叶子节点：无子结点的结点；<br>非终端节点：实际上为非叶子节点（有子节点的结点）；<br>度：子结点的个数<br>树的度：子结点个数的最大值；<br>树分类：<br>    一般树<br>         任意一个子结点的个数不受限制；<br>    二叉树<br>         任何一个节点的个数最多两个，且子结点顺序不可更改（有序树）；<br>         分类：<br>             一般二叉树<br>             满二叉树：每一层的节点数都是最大节点数的二叉树；<br>             完全二叉树：如果只是删除了满二叉树最底层最右边的连续若干个结点（此时深度未发生变化），这样形成的二叉树为完全二叉树；<br>             满二叉树是完全二叉树的一个特例；<br>    森林<br>          n个互不相交的树的集合；<br>树的存储<br>        二叉树的存储<br>               连续存储【必须转化为完全二叉树进行存储：内存是线性一维的；存储不可只存储有效节点，否则无法还原二叉树】<br>                    优点：查找某个结点的父节点和子节点（也包括判断有没有子节点）速度快；<br>                    缺点：耗用内存空间过大；<br>               链式存储：<br>                   耗用内存少，浪费空间少；<br>        一般树的存储<br>               双亲表示法<br>                     求父节点方便，求子结点难；<br>               孩子表示法<br>                     求子结点方便，求父节点难；<br>               双亲孩子表示法<br>                     求子结点和父节点都方便；<br>               二叉树表示法<br>                     将普通树转化为二叉树来存储；<br>                     具体实现方法：<br>                     设法保证任意一个结点的左指针域指向他的第一个孩子，他的右指针域指向他的第一个兄弟；只要满足此条件就可将一个普通树转化为二叉树；<br>                     一个普通树转化成二叉树一定无右子树；<br>        森林的存储<br>               将森林转化为二叉树进行存储；<br>二叉树操作：<br>       先序遍历：<br>       1.先访问根节点；<br>       2.再先序遍历左子树；<br>       3.再先序遍历右子树；<br>       中序遍历：<br>       1.先中序访问左子树；<br>       2.再访问根节点；<br>       3.再中序访问右子树；<br>       后序遍历：<br>       1.先后序访问左子树；<br>       2.再后序访问右子树；<br>       3.再访问根节点；<br>       先序中序后序将非线性结构转化为线性结构输出；<br>       已知两种遍历方式求原始二叉树：<br>             1.单个遍历方式无法还原二叉树；<br>             2.已知先序和后序无法还原二叉树；<br>             3.通过先序和中序 或 中序和后序可还原原始二叉树；<br>             例如<br>             已知先序：ABCDEFGH 中序：BDCEAFHG则后序为DECBHGFA;<br>             已知先序：ABDGHCEFI 中序：GDHBAECIF则后序为GHDBEIFCA;<br>             已知先序：ABFDCLMN 中序：BFACDLNM则后序为FBCNMLDA;<br>             已知先序：MFLAQGBE 中序：FALGQMEB则后序为AGQLFEBM;<br>             已知中序：BDCEAFHG 后序：DECBHGFA则先序为ABCDEFGH;<br>树应用：<br>1.树为数据库中数据组织的一种重要形式；<br>2.操作系统子父进程的关系本身为一棵树；<br>3.面向对象语言中类的继承关系本身为一棵树；<br>4.赫夫曼树（如何存树使效率达到最高）；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" data-id="ckkb1n8ho000030vp4hi16rct" data-title="非线性结构树的概述" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -537,23 +563,23 @@
       <ul>
         
           <li>
+            <a href="/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BBindarysort/">排序之Bindarysort</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BTimsort/">排序之Timsort</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/11/%E6%B5%85%E8%B0%88%E5%B7%A5%E4%B8%9A%E5%BF%AB%E6%8E%92/">浅谈工业快排</a>
+          </li>
+        
+          <li>
             <a href="/2021/04/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">排序之计数排序</a>
           </li>
         
           <li>
             <a href="/2021/04/09/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%8F%8C%E8%BD%B4%E6%8E%92%E5%BA%8F/">快速排序之双轴排序</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/06/%E9%AA%8C%E8%AF%81%E6%8E%92%E5%BA%8F%E6%AD%A3%E7%A1%AE%E6%80%A7%E7%9A%84%E7%AE%97%E6%B3%95/">验证排序正确性的算法</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/06/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E7%BB%8F%E5%85%B8%E5%8D%95%E8%BD%B4%E6%8E%92%E5%BA%8F%EF%BC%89/">排序之快速排序（经典单轴排序）</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/26/Java%E5%BC%82%E5%B8%B8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/">Java异常程序演示</a>
           </li>
         
       </ul>
