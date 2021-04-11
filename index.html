@@ -131,7 +131,10 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">*@author MiaoZhiJun</span><br><span class="line">*@datetime 2021&#x2F;4&#x2F;31 19:31</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+<p>Timsort : Tim Peter发明的算法。<br>Timsort运用二分插入排序和归并排序，是归并排序的优化；减少了对升序部分的回溯和降序部分的性能倒退；<br>python内部的sorted和List.sort以及java中的Arrays.sort中同样用到Timsort;<br>Timsort的运用基于一个事实：<br>现实生活中，大多数真实的数据集中，大部分元素是排好序的;即不论一组数据多复杂，其局部是有序的；<br>Timsort术语：<br>run:一组数据的集合，该组数据严格有序(单调递增或单调递减)，不能出现重复元素；<br>python内部元素个数&gt;64时用Timsort;元素个数&lt;64时用二分插入排序；<br>java内部元素个数&gt;32时用Timsort；元素个数&lt;32时用二分插入排序；<br>Timsort步骤:<br>1.遍历全部元素，查找严格单调递减或单调递增的区间（区间长度:java为16到32;python为32到64；一般区间长度为2的n次方）并划分出区间放入栈中;<br>2.栈中满足规则： Z&gt;X+Y和Y&gt;X，这样可以提高归并的效率（X、Y、Z为run长度）</p>
+<p>举例：对8，10，15，6，18，12，7，5，4，3，20，8，11，22，9，9，17排序<br>这里元素较少，我们取区间最小长度为4；<br>（1）8，15，16严格有序（严格单调递增），不过长度为3，不能划分为一个区间，故将后面的6运用二分插入排序放在前面的序<br>列中，这样就划分一个区间run[0]={6,8,15,16}将其放入栈中<br>(2)18,12,7,5,4,3严格有序（严格单调递减），故将其逆序后划分为一个区间run[1]={3,4,5,7,12,18}将其放入栈中<br>(3)由于run[1]长度大于run[0],故让run[1]和run[0]出栈,并将其归并并记作run[0]={3,4,5,6,7,8,12,15,16,18},将run<br>[0]放入栈中;<br>(4)20,8严格有序，但长度为2，将11和22二分插入排序放在该序列中，将该序列逆序并划分成一个区间run[1]={8,11,20,22};<br>将run[1]放入栈中;<br>(5)最后三个元素只好划分为一个区间run[2],并将其放入栈中；<br>(6)栈中从上依次归并得到有序数列；<br>Timsort稳定，最好时间复杂度为o(n),最坏时间复杂度为o(nlogn);空间复杂度为o(nlogn);</p>
+
       
     </div>
     <footer class="article-footer">
