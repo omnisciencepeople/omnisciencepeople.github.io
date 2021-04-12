@@ -57,12 +57,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Rechercher"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,45 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-函数概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/15/%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-01-15T01:35:13.000Z" itemprop="datePublished">2021-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/15/%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B0/">函数概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>为什么需要函数：<br>1.函数可避免大量重复性代码；<br>2.有利于程序模块化；<br>函数定义1：<br>逻辑上，能完成特定独立功能的代码单元块；<br>物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；<br>函数适用范围：<br>适用大量同类型问题；<br>函数功能越单一越好（可移植性越强）；<br>函数定义2：<br>  函数返回值类型 函数名（函数形参）<br>  {<br>      函数执行体<br>  }<br>定义2本质：<br>1.详细描述函数之所以能实现某个特定功能的具体实现方法；<br>2.return表达式：向主调函数返回函数值；为空则表示终止函数；<br>3.函数返回值类型称函数类型；如果函数返回值类型和return表达式中数据类型不同的话，以函数名前返回值类型为主；（函数类型决定返回值类型）<br>函数分类：<br>有参函数和无参函数；<br>有返回值函数和无返回值函数；<br>库函数和用户自定义函数；<br>普通函数和主函数；<br>值传递函数和地址传递函数；<br>函数注意问题：<br>一个程序有且只有一个主函数；<br>主函数可调用普通函数；<br>普通函数不可调用主函数；<br>普通函数可相互调用；<br>程序从主函数入主函数出；<br>函数必须先定义后使用；<br>函数声明：<br>1.告诉编译器即将出现的若干个字母代表函数；<br>2.告诉编译器即将出现的若干个字母代表函数具体情况；<br>3.其为一个语句必加分号；<br>4.对库函数的声明是通过#include&lt;库函数所在文件名.h&gt;来实现的；<br>函数形参和实参：<br>个数相同；位置对应；类型相互兼容；<br>函数重要性：<br>函数为C语言的基本单位，类为Java/C++/C#的基本单位；<br>常见的系统函数：<br>sqrt:求平方根；<br>abs：求整型数据的绝对值；<br>fabs：求浮点型数据绝对值；<br>变量分类：<br>1.按作用域：全局变量和局部变量；<br>2.按存储方式：静态局部变量，自动变量，寄存器变量,静态外部变量，外部变量；<br>注：在一个函数内部定义的变量或函数的形参称为局部变量；<br>在所有函数外部定义的变量称全局变量；<br>全局变量和局部变量命名冲突问题：<br>在一个函数内部，若定义一个局部变量，其名与全局变量相同，局部变量会屏蔽掉全局变量；<br>俗称“强龙不压地头蛇”。<br>例如：<br>#include&lt;stdio.h&gt;<br>int i=99;//定义一个全局变量；<br>void f(int i)//定义一个局部变量，名字和全局变量相同；<br>{<br>  printf(“%d\n”,i);<br>}<br>int main()<br>{<br>   f(8);//调用f函数；<br>   return 0;<br>}<br>//输出8，而非99；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B0/" data-id="ckjxwgffc0001gsvp9gz23bsr" data-title="函数概述" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-比较3个字符串找出其中最大者" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -97,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/15/%E6%AF%94%E8%BE%833%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%BE%E5%87%BA%E5%85%B6%E4%B8%AD%E6%9C%80%E5%A4%A7%E8%80%85/" data-id="ckjxlyt330000zgvp38fx824n" data-title="比较3个字符串找出其中最大者" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/15/%E6%AF%94%E8%BE%833%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%BE%E5%87%BA%E5%85%B6%E4%B8%AD%E6%9C%80%E5%A4%A7%E8%80%85/" data-id="ckjxlyt330000zgvp38fx824n" data-title="比较3个字符串找出其中最大者" class="article-share-link">Teilen</a>
       
       
       
@@ -135,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E8%BE%93%E5%85%A5%E4%B8%80%E8%A1%8C%E5%AD%97%E7%AC%A6%EF%BC%8C%E7%BB%9F%E8%AE%A1%E5%85%B6%E4%B8%AD%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%8D%95%E8%AF%8D%EF%BC%88%E5%8D%95%E8%AF%8D%E9%97%B4%E4%BB%A5%E7%A9%BA%E6%A0%BC%E5%88%86%E9%9A%94%E5%BC%80%EF%BC%89/" data-id="ckjwyw0x40000gwvpaik85leb" data-title="输入一行字符，统计其中有多少个单词（单词间以空格分隔开）" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/14/%E8%BE%93%E5%85%A5%E4%B8%80%E8%A1%8C%E5%AD%97%E7%AC%A6%EF%BC%8C%E7%BB%9F%E8%AE%A1%E5%85%B6%E4%B8%AD%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%8D%95%E8%AF%8D%EF%BC%88%E5%8D%95%E8%AF%8D%E9%97%B4%E4%BB%A5%E7%A9%BA%E6%A0%BC%E5%88%86%E9%9A%94%E5%BC%80%EF%BC%89/" data-id="ckjwyw0x40000gwvpaik85leb" data-title="输入一行字符，统计其中有多少个单词（单词间以空格分隔开）" class="article-share-link">Teilen</a>
       
       
       
@@ -173,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/" data-id="ckjwxykqa0000ycvp7ds71yvd" data-title="使用字符串处理函数" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/14/%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/" data-id="ckjwxykqa0000ycvp7ds71yvd" data-title="使用字符串处理函数" class="article-share-link">Teilen</a>
       
       
       
@@ -213,7 +252,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" data-id="ckjwqignx0000rkvpg3vea5yz" data-title="scanf输入字符串时注意事项" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" data-id="ckjwqignx0000rkvpg3vea5yz" data-title="scanf输入字符串时注意事项" class="article-share-link">Teilen</a>
       
       
       
@@ -254,7 +293,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/" data-id="ckjwotkcl00004ovpa56t0xtm" data-title="字符数组" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/14/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/" data-id="ckjwotkcl00004ovpa56t0xtm" data-title="字符数组" class="article-share-link">Teilen</a>
       
       
       
@@ -292,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E6%B1%82%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8F%8A%E6%9C%80%E5%A4%A7%E5%80%BC%E8%A1%8C%E5%88%97%E6%95%B0/" data-id="ckjwa1lbx00008cvp2wcm7aak" data-title="求二维数组最大值及最大值行列数" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/14/%E6%B1%82%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8F%8A%E6%9C%80%E5%A4%A7%E5%80%BC%E8%A1%8C%E5%88%97%E6%95%B0/" data-id="ckjwa1lbx00008cvp2wcm7aak" data-title="求二维数组最大值及最大值行列数" class="article-share-link">Teilen</a>
       
       
       
@@ -330,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E8%A1%8C%E5%88%97%E4%BA%92%E6%8D%A2/" data-id="ckjw9q0nc0000p0vpc6xc4o0t" data-title="二维数组行列互换" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/14/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E8%A1%8C%E5%88%97%E4%BA%92%E6%8D%A2/" data-id="ckjw9q0nc0000p0vpc6xc4o0t" data-title="二维数组行列互换" class="article-share-link">Teilen</a>
       
       
       
@@ -368,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckjw8lzmm0000t0vp2ztk9niw" data-title="一维数组冒泡排序" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/14/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckjw8lzmm0000t0vp2ztk9niw" data-title="一维数组冒泡排序" class="article-share-link">Teilen</a>
       
       
       
@@ -406,46 +445,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E9%80%86%E5%BA%8F%E8%BE%93%E5%87%BA/" data-id="ckjvkkjyw0000okvpcghi9vhy" data-title="一维数组逆序输出" class="article-share-link">Partager</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-数组" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/13/%E6%95%B0%E7%BB%84/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T14:45:25.000Z" itemprop="datePublished">2021-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/13/%E6%95%B0%E7%BB%84/">数组</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>数组作用：为解决大量同类型数据的存储和使用；模拟现实世界；<br>数组分类:一维数组、二维数组、三维数组；<br>一维数组定义:为n个变量连续分配存储空间；所有变量数据类型相同；所有变量所占字节相同；<br>一维数组初始化:<br>定义时整体赋值，否则需单个赋值；<br>1.完全初始化<br>     int a[3]={1,2,3};<br>     输出1，2，3；<br>2.部分初始化:<br>     int a[3]={1,2};<br>     输出1，2 ，0；<br>     未初始化值为0；<br>3.不初始化：<br>      int a[3];<br>      输出三个垃圾值；<br>一维数组的输出:<br>循环输出；<br> int a[n];//n表示元素的个数；元素为a[0]到a[n-1];<br>二维和三维数组大体同一维类似；<br>事实上，不存在多维数组，因为内存是线性一维的；<br>n维数组可以看作是每个元素是n-1维数组的一维数组；<br>例如:int a[3][4]可以看作为含有3个元素一维数组，只不过每个元素是含有4个元素的一维数组；<br>int a[3][4][5]可以看作是含有3个元素的一维数组，只不过每个元素是4行5列的二维数组；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E6%95%B0%E7%BB%84/" data-id="ckjvk989e0000asvpcmm30t45" data-title="数组" class="article-share-link">Partager</a>
+      <a data-url="https://username.github.io/2021/01/13/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E9%80%86%E5%BA%8F%E8%BE%93%E5%87%BA/" data-id="ckjvkkjyw0000okvpcghi9vhy" data-title="一维数组逆序输出" class="article-share-link">Teilen</a>
       
       
       
@@ -461,7 +461,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/8/">&laquo; Précédent</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/">Suivant &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/8/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -478,7 +478,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -488,9 +488,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/04/12/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8FC-%E7%89%88/">归并排序C++版</a>
+          </li>
         
           <li>
             <a href="/2021/04/12/%E5%8F%8C%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/">双轴快排C++版</a>
@@ -508,10 +512,6 @@
             <a href="/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BBindarysort/">排序之Bindarysort</a>
           </li>
         
-          <li>
-            <a href="/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BTimsort/">排序之Timsort</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -526,7 +526,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Propulsé par <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
