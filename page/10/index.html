@@ -59,10 +59,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,84 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-switch用法及break用法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/13/switch%E7%94%A8%E6%B3%95%E5%8F%8Abreak%E7%94%A8%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2021-01-13T14:24:07.000Z" itemprop="datePublished">2021-01-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/13/switch%E7%94%A8%E6%B3%95%E5%8F%8Abreak%E7%94%A8%E6%B3%95/">switch用法及break用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    printf(&quot;请输入你想要进入的楼层:&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;i);</span><br><span class="line">    switch(i)</span><br><span class="line">    &#123;</span><br><span class="line">        case 1:</span><br><span class="line">             printf(&quot;1层开\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 2:</span><br><span class="line">             printf(&quot;2层开\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 3:</span><br><span class="line">             printf(&quot;3层开\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 4:</span><br><span class="line">             printf(&quot;4层开\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        default:</span><br><span class="line">             printf(&quot;输入楼层错误\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>switch(i)<br>{<br>    case 1:<br>         A;<br>    case 2:<br>         B;<br>    default:<br>         C;<br>    case 3:<br>         D;<br>}<br>输入1，执行A B C D;<br>输入2，执行B C D;<br>输入3，执行D;<br>输入4，执行C D;<br>break 用法:<br>1.终止距离其最近的for循环；<br>2.终止switch语句；<br>3.终止if语句（此时if属于循环内部的语句）；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/13/switch%E7%94%A8%E6%B3%95%E5%8F%8Abreak%E7%94%A8%E6%B3%95/" data-id="ckjvj3k90000078vpateg903x" data-title="switch用法及break用法" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-求一元二次方程解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2021-01-13T14:08:55.000Z" itemprop="datePublished">2021-01-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/">求一元二次方程解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    float a,b,c,delta;</span><br><span class="line">    double x1,x2;</span><br><span class="line">    char ch;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">     printf(&quot;请为一元二次方程的系数赋值(中间以空格相隔):&quot;);</span><br><span class="line">     scanf(&quot;%f %f %f&quot;,&amp;a,&amp;b,&amp;c);</span><br><span class="line">     delta&#x3D;b*b-4*a*c;</span><br><span class="line">     if(delta&gt;0)</span><br><span class="line">       &#123;</span><br><span class="line">         x1&#x3D;(-b+sqrt(delta))&#x2F;(2*a);</span><br><span class="line">         x2&#x3D;(-b-sqrt(delta))&#x2F;(2*a);</span><br><span class="line">         printf(&quot;x1&#x3D;%lf x2&#x3D;%lf\n&quot;,x1,x2);</span><br><span class="line">       &#125;</span><br><span class="line">     else if(delta&#x3D;&#x3D;0)</span><br><span class="line">       &#123;</span><br><span class="line">         x1&#x3D;x2&#x3D;(-b)&#x2F;(2*a);</span><br><span class="line">         printf(&quot;x1&#x3D;%lf x2&#x3D;%lf\n&quot;,x1,x2);</span><br><span class="line">       &#125;</span><br><span class="line">     else</span><br><span class="line">         printf(&quot;无解\n&quot;);</span><br><span class="line">     printf(&quot;请问你是否还要继续（Y&#x2F;N）:&quot;);</span><br><span class="line">     scanf(&quot; %c&quot;,&amp;ch);</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/" data-id="ckjviiymk000014vpg7wed5nw" data-title="求一元二次方程解" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-斐波拉契数列" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -97,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E6%95%B0%E5%88%97/" data-id="ckjvi06h80000qovpdguy0gg3" data-title="斐波拉契数列" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/13/%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E6%95%B0%E5%88%97/" data-id="ckjvi06h80000qovpdguy0gg3" data-title="斐波拉契数列" class="article-share-link">Share</a>
       
       
       
@@ -135,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E5%9B%9E%E6%96%87%E6%95%B0/" data-id="ckjvhl30d0000y4vpezyo9gl9" data-title="回文数" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/13/%E5%9B%9E%E6%96%87%E6%95%B0/" data-id="ckjvhl30d0000y4vpezyo9gl9" data-title="回文数" class="article-share-link">Share</a>
       
       
       
@@ -175,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/" data-id="ckjvheq250000hsvpha4shri2" data-title="三目运算符" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/13/%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/" data-id="ckjvheq250000hsvpha4shri2" data-title="三目运算符" class="article-share-link">Share</a>
       
       
       
@@ -213,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8F%8A%E8%87%AA%E5%A2%9E%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-id="ckjvh94yy00007cvp98z4bn34" data-title="逗号表达式及自增表达式" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/13/%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8F%8A%E8%87%AA%E5%A2%9E%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-id="ckjvh94yy00007cvp98z4bn34" data-title="逗号表达式及自增表达式" class="article-share-link">Share</a>
       
       
       
@@ -251,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E6%B1%821-1-2-1-3-1-4-1-100/" data-id="ckjvacfy40000j4vp241q5kfv" data-title="求1-1/2+1/3-1/4+...-1/100" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/13/%E6%B1%821-1-2-1-3-1-4-1-100/" data-id="ckjvacfy40000j4vp241q5kfv" data-title="求1-1/2+1/3-1/4+...-1/100" class="article-share-link">Share</a>
       
       
       
@@ -291,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E6%B1%821-1-2-1-100/" data-id="ckjv9pqs90000e4vph5ir6288" data-title="求1+1/2+...+1/100" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/13/%E6%B1%821-1-2-1-100/" data-id="ckjv9pqs90000e4vph5ir6288" data-title="求1+1/2+...+1/100" class="article-share-link">Share</a>
       
       
       
@@ -331,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E5%A6%82%E4%BD%95%E7%9C%8B%E6%87%82%E7%A8%8B%E5%BA%8F/" data-id="ckjv8zft80000ksvp3nur5m2x" data-title="如何看懂程序" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/13/%E5%A6%82%E4%BD%95%E7%9C%8B%E6%87%82%E7%A8%8B%E5%BA%8F/" data-id="ckjv8zft80000ksvp3nur5m2x" data-title="如何看懂程序" class="article-share-link">Share</a>
       
       
       
@@ -369,85 +447,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E5%AF%B9%E4%B8%89%E4%B8%AA%E6%95%B0%E5%AD%97%E4%BB%8E%E5%B0%8F%E5%88%B0%E5%A4%A7%E6%8E%92%E5%BA%8F/" data-id="ckjv8g4pp0000ecvp0czrgbde" data-title="对三个数字从小到大排序" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-互换两个数字" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/13/%E4%BA%92%E6%8D%A2%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T09:25:48.000Z" itemprop="datePublished">2021-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/13/%E4%BA%92%E6%8D%A2%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/">互换两个数字</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a,b,t;</span><br><span class="line">    scanf(&quot;%d %d&quot;,&amp;a,&amp;b);</span><br><span class="line">    printf(&quot;赋值后的结果为：a&#x3D;%d b&#x3D;%d\n&quot;,a,b);</span><br><span class="line">    t&#x3D;a;</span><br><span class="line">    a&#x3D;b;</span><br><span class="line">    b&#x3D;t;</span><br><span class="line">    printf(&quot;互换后的结果为:a&#x3D;%d b&#x3D;%d\n&quot;,a,b);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>互换两个值需要中间值的存在，我们要以计算机的思维考虑问题;</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E4%BA%92%E6%8D%A2%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/" data-id="ckjv8645f00003cvpb78car5e" data-title="互换两个数字" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-if求分数等级" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/13/if%E6%B1%82%E5%88%86%E6%95%B0%E7%AD%89%E7%BA%A7/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T09:20:56.000Z" itemprop="datePublished">2021-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/13/if%E6%B1%82%E5%88%86%E6%95%B0%E7%AD%89%E7%BA%A7/">if求分数等级</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    float score;</span><br><span class="line">    char ch;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">     printf(&quot;请输入你的成绩:&quot;);</span><br><span class="line">     scanf(&quot;%f&quot;,&amp;score);</span><br><span class="line">     if(score&gt;100)</span><br><span class="line">        printf(&quot;做梦!\n&quot;);</span><br><span class="line">     else if(80&lt;&#x3D;score&amp;&amp;score&lt;&#x3D;100)</span><br><span class="line">        printf(&quot;优秀!\n&quot;);</span><br><span class="line">     else if(70&lt;&#x3D;score&amp;&amp;score&lt;80)</span><br><span class="line">        printf(&quot;良好!\n&quot;);</span><br><span class="line">     else if(60&lt;&#x3D;score&amp;&amp;score&lt;70)</span><br><span class="line">        printf(&quot;及格!\n&quot;);</span><br><span class="line">     else if(0&lt;&#x3D;score&amp;&amp;score&lt;60)</span><br><span class="line">        printf(&quot;挂科!\n&quot;);</span><br><span class="line">     else</span><br><span class="line">        printf(&quot;你输入的成绩错误!\n&quot;);</span><br><span class="line">     printf(&quot;你是否还要继续（Y&#x2F;N）:\n&quot;);</span><br><span class="line">     scanf(&quot; %c&quot;,&amp;ch);&#x2F;&#x2F;这里%c前加一个空格才可实现人机交互；</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/if%E6%B1%82%E5%88%86%E6%95%B0%E7%AD%89%E7%BA%A7/" data-id="ckjv7tdni0000fsvp4nnb11et" data-title="if求分数等级" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/13/%E5%AF%B9%E4%B8%89%E4%B8%AA%E6%95%B0%E5%AD%97%E4%BB%8E%E5%B0%8F%E5%88%B0%E5%A4%A7%E6%8E%92%E5%BA%8F/" data-id="ckjv8g4pp0000ecvp0czrgbde" data-title="对三个数字从小到大排序" class="article-share-link">Share</a>
       
       
       
@@ -463,7 +463,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/9/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/11/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -480,7 +480,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -490,9 +490,17 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/04/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%A1%B6%E6%8E%92%E5%BA%8F/">排序之桶排序</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/">排序之基数排序</a>
+          </li>
         
           <li>
             <a href="/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BBindarysort/">排序之Bindarysort</a>
@@ -504,14 +512,6 @@
         
           <li>
             <a href="/2021/04/11/%E6%B5%85%E8%B0%88%E5%B7%A5%E4%B8%9A%E5%BF%AB%E6%8E%92/">浅谈工业快排</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">排序之计数排序</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/09/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%8F%8C%E8%BD%B4%E6%8E%92%E5%BA%8F/">快速排序之双轴排序</a>
           </li>
         
       </ul>
