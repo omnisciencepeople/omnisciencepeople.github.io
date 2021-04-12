@@ -57,12 +57,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Rechercher"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,45 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-java容器之泛型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/14/java%E5%AE%B9%E5%99%A8%E4%B9%8B%E6%B3%9B%E5%9E%8B/" class="article-date">
+  <time class="dt-published" datetime="2021-03-14T05:00:28.000Z" itemprop="datePublished">2021-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/14/java%E5%AE%B9%E5%99%A8%E4%B9%8B%E6%B3%9B%E5%9E%8B/">java容器之泛型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>我们编译程序时可能会出现“ 有关详细信息, 请使用 -Xlint:unchecked 重新编译。”这种情况，是因为我们没有限制一个容器或者接口中可以传入的数据类型；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">public class test23&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        HashMap&lt;student,Integer&gt; hm&#x3D;new HashMap&lt;student,Integer&gt; ();</span><br><span class="line">        hm.put(new student(&quot;张三&quot;,10,201208),1001);</span><br><span class="line">        hm.put(new student(&quot;张三&quot;,10,201208),1002);</span><br><span class="line">        hm.put(new student(&quot;张三&quot;,10,201208),1003);</span><br><span class="line">        hm.put(new student(&quot;张三&quot;,10,201208),1004);</span><br><span class="line">        Set&lt;student&gt; S&#x3D;hm.keySet();</span><br><span class="line">        Iterator&lt;student&gt; it&#x3D;S.iterator();</span><br><span class="line">        while(it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(hm.get(it.next()));</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(hm.get(new student(&quot;张三&quot;,10,201208)));</span><br><span class="line">        System.out.println(hm.get(1001));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class student&#123;</span><br><span class="line">    private int age;</span><br><span class="line">    private String name;</span><br><span class="line">    private int id;</span><br><span class="line">    public student(String name,int age,int id)&#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">        this.age&#x3D;age;</span><br><span class="line">        this.name&#x3D;name;</span><br><span class="line">    &#125;</span><br><span class="line">    public String toString()&#123;</span><br><span class="line">        return name+&quot; &quot;+id+&quot; &quot;+age;</span><br><span class="line">    &#125;</span><br><span class="line">    public int hashCode()&#123;</span><br><span class="line">        return new String(name+id+age).hashCode();</span><br><span class="line">    &#125;</span><br><span class="line">    public boolean equals(Object o)&#123;</span><br><span class="line">        student st&#x3D;(student) o;</span><br><span class="line">        return st.id&#x3D;&#x3D;this.id&amp;&amp;st.name&#x3D;&#x3D;this.name&amp;&amp;st.age&#x3D;&#x3D;this.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/14/java%E5%AE%B9%E5%99%A8%E4%B9%8B%E6%B3%9B%E5%9E%8B/" data-id="ckm8p9pf20000ekvpa7w861cs" data-title="java容器之泛型" class="article-share-link">Partager</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-java容器程序演示和内容补充2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -99,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/13/java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%852/" data-id="ckm8ov7yc00005svp0fxj0vht" data-title="java容器程序演示和内容补充2" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/03/13/java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%852/" data-id="ckm8ov7yc00005svp0fxj0vht" data-title="java容器程序演示和内容补充2" class="article-share-link">Partager</a>
       
       
       
@@ -137,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E6%B1%87%E6%80%BB/" data-id="ckm6fvhdb0000n4vp80ip6yw1" data-title="排序汇总" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E6%B1%87%E6%80%BB/" data-id="ckm6fvhdb0000n4vp80ip6yw1" data-title="排序汇总" class="article-share-link">Partager</a>
       
       
       
@@ -176,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" data-id="ckm6fbis7000070vpg1d6davz" data-title="排序之希尔排序" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" data-id="ckm6fbis7000070vpg1d6davz" data-title="排序之希尔排序" class="article-share-link">Partager</a>
       
       
       
@@ -235,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/" data-id="ckm6c07sl0000tgvp1ttw3d77" data-title="Java容器程序演示和内容补充" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/" data-id="ckm6c07sl0000tgvp1ttw3d77" data-title="Java容器程序演示和内容补充" class="article-share-link">Partager</a>
       
       
       
@@ -282,7 +321,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/" data-id="ckm4y2bbv0000x8vp5soghlab" data-title="Java容器概述2" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/" data-id="ckm4y2bbv0000x8vp5soghlab" data-title="Java容器概述2" class="article-share-link">Partager</a>
       
       
       
@@ -332,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/10/java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/" data-id="ckm2v9qeb0000t4vpgjj03cdc" data-title="java容器概述" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/03/10/java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/" data-id="ckm2v9qeb0000t4vpgjj03cdc" data-title="java容器概述" class="article-share-link">Partager</a>
       
       
       
@@ -372,7 +411,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" data-id="ckm1qsovx0000j0vp6zw7d4s6" data-title="排序之插入排序" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" data-id="ckm1qsovx0000j0vp6zw7d4s6" data-title="排序之插入排序" class="article-share-link">Partager</a>
       
       
       
@@ -412,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckm1q62k50000csvp2ftqb1uo" data-title="排序之冒泡排序" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckm1q62k50000csvp2ftqb1uo" data-title="排序之冒泡排序" class="article-share-link">Partager</a>
       
       
       
@@ -458,46 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/08/%E5%A6%82%E4%BD%95%E5%86%99%E7%AE%97%E6%B3%95%EF%BC%9F/" data-id="ckm0o5kx90000pgvp1n6odp98" data-title="如何写算法？" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-排序之选择排序法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/08/%E6%8E%92%E5%BA%8F%E4%B9%8B%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2021-03-08T13:31:29.000Z" itemprop="datePublished">2021-03-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/08/%E6%8E%92%E5%BA%8F%E4%B9%8B%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E6%B3%95/">排序之选择排序法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>选择排序<br>n个元素经过数次比较后找到最小值位置（开始时最小值位置为0），将其与第一个元素互换，再对n-1个元素选择排序；每<br>次确定一个最小值；<br>程序：对九个数选择排序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class Slection_sort&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;4,5,8,1,3,9,2,7,6&#125;;</span><br><span class="line">        int minpos;&#x2F;&#x2F;定义一个变量，该变量存放最小值下标</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length-1;i++)&#x2F;&#x2F;需要经过length-1次遍历，每次遍历找出一个最小值</span><br><span class="line">        &#123;</span><br><span class="line">            minpos&#x3D;i;</span><br><span class="line">            for(int j&#x3D;i+1;j&lt;arr.length;j++)</span><br><span class="line">                 minpos&#x3D;arr[j]&lt;arr[minpos]?j:minpos;&#x2F;&#x2F;找出每次的最小值的下标</span><br><span class="line">            swap(arr,minpos,i);&#x2F;&#x2F;互换最小值和i位置</span><br><span class="line">            System.out.println(&quot;minpos&#x3D;&quot;+minpos);</span><br><span class="line">            System.out.println(&quot;经过&quot;+(i+1)+&quot;次排序为：&quot;);</span><br><span class="line">            print(arr);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void swap(int[] arr,int minpos,int i )</span><br><span class="line">    &#123;</span><br><span class="line">        int temp;</span><br><span class="line">        temp&#x3D;arr[minpos];</span><br><span class="line">        arr[minpos]&#x3D;arr[i];</span><br><span class="line">        arr[i]&#x3D;temp;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void print(int[] arr)</span><br><span class="line">    &#123;</span><br><span class="line">      for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">      &#123;</span><br><span class="line">          System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">      &#125;    </span><br><span class="line">      System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/08/%E6%8E%92%E5%BA%8F%E4%B9%8B%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E6%B3%95/" data-id="ckm0nzwhd0000l0vp6l8086x0" data-title="排序之选择排序法" class="article-share-link">Share</a>
+      <a data-url="https://username.github.io/2021/03/08/%E5%A6%82%E4%BD%95%E5%86%99%E7%AE%97%E6%B3%95%EF%BC%9F/" data-id="ckm0o5kx90000pgvp1n6odp98" data-title="如何写算法？" class="article-share-link">Partager</a>
       
       
       
@@ -513,7 +513,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Précédent</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/">Suivant &raquo;</a>
   </nav>
 
 </section>
@@ -540,9 +540,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/04/12/%E5%8F%8C%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/">双轴快排C++版</a>
+          </li>
         
           <li>
             <a href="/2021/04/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%A1%B6%E6%8E%92%E5%BA%8F/">排序之桶排序</a>
@@ -560,10 +564,6 @@
             <a href="/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BTimsort/">排序之Timsort</a>
           </li>
         
-          <li>
-            <a href="/2021/04/11/%E6%B5%85%E8%B0%88%E5%B7%A5%E4%B8%9A%E5%BF%AB%E6%8E%92/">浅谈工业快排</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -578,7 +578,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Propulsé par <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
