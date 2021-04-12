@@ -59,10 +59,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,122 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-非线性结构树的概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-01-23T13:56:31.000Z" itemprop="datePublished">2021-01-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/">非线性结构树的概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>树<br>专业定义：有且只有一个称为根的结点；有若干个互不相交的子树，这些子树本身也为一棵树；<br>通俗定义：树由结点和边组成（边指的是指针域）；每个结点只有一个父节点，但可以有多个子节点（根节点除外，根节点无父节点）；<br>专业术语：<br>父节点、子节点、子孙、堂兄弟（父亲为兄弟，他们的孩子为堂兄弟）、祖先；<br>深度：从根节点到最底层节点的层数；根节点为第一层；<br>叶子节点：无子结点的结点；<br>非终端节点：实际上为非叶子节点（有子节点的结点）；<br>度：子结点的个数<br>树的度：子结点个数的最大值；<br>树分类：<br>    一般树<br>         任意一个子结点的个数不受限制；<br>    二叉树<br>         任何一个节点的个数最多两个，且子结点顺序不可更改（有序树）；<br>         分类：<br>             一般二叉树<br>             满二叉树：每一层的节点数都是最大节点数的二叉树；<br>             完全二叉树：如果只是删除了满二叉树最底层最右边的连续若干个结点（此时深度未发生变化），这样形成的二叉树为完全二叉树；<br>             满二叉树是完全二叉树的一个特例；<br>    森林<br>          n个互不相交的树的集合；<br>树的存储<br>        二叉树的存储<br>               连续存储【必须转化为完全二叉树进行存储：内存是线性一维的；存储不可只存储有效节点，否则无法还原二叉树】<br>                    优点：查找某个结点的父节点和子节点（也包括判断有没有子节点）速度快；<br>                    缺点：耗用内存空间过大；<br>               链式存储：<br>                   耗用内存少，浪费空间少；<br>        一般树的存储<br>               双亲表示法<br>                     求父节点方便，求子结点难；<br>               孩子表示法<br>                     求子结点方便，求父节点难；<br>               双亲孩子表示法<br>                     求子结点和父节点都方便；<br>               二叉树表示法<br>                     将普通树转化为二叉树来存储；<br>                     具体实现方法：<br>                     设法保证任意一个结点的左指针域指向他的第一个孩子，他的右指针域指向他的第一个兄弟；只要满足此条件就可将一个普通树转化为二叉树；<br>                     一个普通树转化成二叉树一定无右子树；<br>        森林的存储<br>               将森林转化为二叉树进行存储；<br>二叉树操作：<br>       先序遍历：<br>       1.先访问根节点；<br>       2.再先序遍历左子树；<br>       3.再先序遍历右子树；<br>       中序遍历：<br>       1.先中序访问左子树；<br>       2.再访问根节点；<br>       3.再中序访问右子树；<br>       后序遍历：<br>       1.先后序访问左子树；<br>       2.再后序访问右子树；<br>       3.再访问根节点；<br>       先序中序后序将非线性结构转化为线性结构输出；<br>       已知两种遍历方式求原始二叉树：<br>             1.单个遍历方式无法还原二叉树；<br>             2.已知先序和后序无法还原二叉树；<br>             3.通过先序和中序 或 中序和后序可还原原始二叉树；<br>             例如<br>             已知先序：ABCDEFGH 中序：BDCEAFHG则后序为DECBHGFA;<br>             已知先序：ABDGHCEFI 中序：GDHBAECIF则后序为GHDBEIFCA;<br>             已知先序：ABFDCLMN 中序：BFACDLNM则后序为FBCNMLDA;<br>             已知先序：MFLAQGBE 中序：FALGQMEB则后序为AGQLFEBM;<br>             已知中序：BDCEAFHG 后序：DECBHGFA则先序为ABCDEFGH;<br>树应用：<br>1.树为数据库中数据组织的一种重要形式；<br>2.操作系统子父进程的关系本身为一棵树；<br>3.面向对象语言中类的继承关系本身为一棵树；<br>4.赫夫曼树（如何存树使效率达到最高）；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" data-id="ckkb1n8ho000030vp4hi16rct" data-title="非线性结构树的概述" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-循环队列演示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" class="article-date">
+  <time class="dt-published" datetime="2021-01-23T13:16:30.000Z" itemprop="datePublished">2021-01-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/">循环队列演示</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">typedef struct queue</span><br><span class="line">&#123;</span><br><span class="line">    int* pbase;</span><br><span class="line">    int front;</span><br><span class="line">    int rear;</span><br><span class="line">&#125;QUEUE,*PQUEUE;</span><br><span class="line">void traverse_queue(PQUEUE pqueue,int len);</span><br><span class="line">bool Is_empty(PQUEUE pqueue);</span><br><span class="line">int  init_queue(PQUEUE pqueue);</span><br><span class="line">bool Is_full(PQUEUE pqueue,int len);</span><br><span class="line">bool en_queue(PQUEUE pqueue,int len,int val);</span><br><span class="line">bool out_queue(PQUEUE pqueue,int len);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int len;</span><br><span class="line">    QUEUE queue;</span><br><span class="line">    len&#x3D;init_queue(&amp;queue);</span><br><span class="line">    traverse_queue(&amp;queue,len);</span><br><span class="line">    en_queue(&amp;queue,len,1);</span><br><span class="line">    en_queue(&amp;queue,len,2);</span><br><span class="line">    en_queue(&amp;queue,len,3);</span><br><span class="line">    en_queue(&amp;queue,len,4);</span><br><span class="line">    traverse_queue(&amp;queue,len);</span><br><span class="line">    out_queue(&amp;queue,len);</span><br><span class="line">    out_queue(&amp;queue,len);</span><br><span class="line">    traverse_queue(&amp;queue,len);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">int init_queue(PQUEUE pqueue)</span><br><span class="line">&#123;</span><br><span class="line">    int len;</span><br><span class="line">    printf(&quot;请输入队列长度（实际队列长度加一）:&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;len);</span><br><span class="line">    pqueue-&gt;pbase&#x3D;(int*)malloc(sizeof(int)*len);</span><br><span class="line">    if(pqueue-&gt;pbase&#x3D;&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;循环队列构造失败，程序终止\n&quot;);</span><br><span class="line">        exit(-1);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        pqueue-&gt;front&#x3D;0;</span><br><span class="line">        pqueue-&gt;rear&#x3D;0;</span><br><span class="line">    &#125;</span><br><span class="line">    return len;</span><br><span class="line">&#125;</span><br><span class="line">bool Is_empty(PQUEUE pqueue)</span><br><span class="line">&#123;</span><br><span class="line">    if(pqueue-&gt;front&#x3D;&#x3D;pqueue-&gt;rear)</span><br><span class="line">        return true;</span><br><span class="line">    else</span><br><span class="line">        return false;</span><br><span class="line">&#125;</span><br><span class="line">void traverse_queue(PQUEUE pqueue,int len)</span><br><span class="line">&#123;</span><br><span class="line">    if(Is_empty(pqueue))</span><br><span class="line">        printf(&quot;队列为空\n&quot;);</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        int m&#x3D;pqueue-&gt;front;</span><br><span class="line">        while(m!&#x3D;pqueue-&gt;rear)</span><br><span class="line">        &#123;</span><br><span class="line">          printf(&quot;%d &quot;,pqueue-&gt;pbase[m]);</span><br><span class="line">          m&#x3D;(m+1)%len;</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">bool Is_full(PQUEUE pqueue,int len)</span><br><span class="line">&#123;</span><br><span class="line">    if((pqueue-&gt;rear+1)%len&#x3D;&#x3D;pqueue-&gt;front)</span><br><span class="line">        return true;</span><br><span class="line">    else</span><br><span class="line">        return false;</span><br><span class="line">&#125;</span><br><span class="line">bool en_queue(PQUEUE pqueue,int len,int val)</span><br><span class="line">&#123;</span><br><span class="line">    if(Is_full(pqueue,len))</span><br><span class="line">        return false;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        pqueue-&gt;pbase[pqueue-&gt;rear]&#x3D;val;</span><br><span class="line">        pqueue-&gt;rear&#x3D;(pqueue-&gt;rear+1)%len;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">bool out_queue(PQUEUE pqueue,int len)</span><br><span class="line">&#123;</span><br><span class="line">    if(Is_empty(pqueue))</span><br><span class="line">        return false;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        pqueue-&gt;front&#x3D;(pqueue-&gt;front+1)%len;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" data-id="ckk9rw1eu0000ssvpggqm04jw" data-title="循环队列演示" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-线性结构队列概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-01-23T12:10:11.000Z" itemprop="datePublished">2021-01-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/">线性结构队列概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>队列：一种可实现先进先出的存储结构；<br>分类：静态队列（一般用循环队列实现）、链式队列；<br>1.静态队列一般为什么必须为循环队列？<br>传统数组实现队列会造成空间浪费；<br>2.循环队列需要几个参数来确定？<br>两个参数front和rear；<br>front永远指向队列的第一个元素，rear永远指向最后一个有效元素的下一个位置；<br>3.front和rear这两个参数在不同场合的不同含义？<br>队列初始化：front和rear值都为0；<br>队列为空：front和rear值相等但不一定为0；<br>队列非空：front为第一个元素，rear为最后一个有效元素的下一个位置；<br>4.循环队列入队伪算法：<br>将值存入rear所代表的位置；rear=（rear+1）/数组长度；<br>5.循环队列出队伪算法：<br>front=（front+1）/数组长度；<br>6.如何判断循环队列是否为满？<br>要么多设置一个参数，该参数名为长度，但频繁更新较麻烦；<br>要么存n个元素，找n+1个空间，空间浪费率为1/n+1，n越大，浪费率越低；这种方式front与rear相邻时为满；此时（rear<br>+1）/数组长度=front；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" data-id="ckk9qd5aa0000dwvp6yi0ddxy" data-title="线性结构队列概述" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-链式栈演示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -97,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/22/%E9%93%BE%E5%BC%8F%E6%A0%88%E6%BC%94%E7%A4%BA/" data-id="ckk8294of0000gwvp7frk0hq4" data-title="链式栈演示" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/22/%E9%93%BE%E5%BC%8F%E6%A0%88%E6%BC%94%E7%A4%BA/" data-id="ckk8294of0000gwvp7frk0hq4" data-title="链式栈演示" class="article-share-link">Share</a>
       
       
       
@@ -135,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/22/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk80dqb70000rsvp77ho0tof" data-title="动态构造学生信息系统并实现插入删除等功能（链表）" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/22/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk80dqb70000rsvp77ho0tof" data-title="动态构造学生信息系统并实现插入删除等功能（链表）" class="article-share-link">Share</a>
       
       
       
@@ -173,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD/" data-id="ckk6mxwcz0000a8vp3v61g0pe" data-title="动态构造链表并进行插入删除等功能" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD/" data-id="ckk6mxwcz0000a8vp3v61g0pe" data-title="动态构造链表并进行插入删除等功能" class="article-share-link">Share</a>
       
       
       
@@ -211,7 +327,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E6%95%B0%E7%BB%84%EF%BC%89/" data-id="ckk6mot9n0000eovp7qz2a9oo" data-title="动态构造学生信息系统并实现插入删除等功能（数组）" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/21/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E5%8A%9F%E8%83%BD%EF%BC%88%E6%95%B0%E7%BB%84%EF%BC%89/" data-id="ckk6mot9n0000eovp7qz2a9oo" data-title="动态构造学生信息系统并实现插入删除等功能（数组）" class="article-share-link">Share</a>
       
       
       
@@ -249,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E6%93%8D%E4%BD%9C/" data-id="ckk6b7ho300002ovpduf10q58" data-title="动态构造一维数组并进行插入删除等操作" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4%E7%AD%89%E6%93%8D%E4%BD%9C/" data-id="ckk6b7ho300002ovpduf10q58" data-title="动态构造一维数组并进行插入删除等操作" class="article-share-link">Share</a>
       
       
       
@@ -290,7 +406,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%EF%BC%88%E6%95%B0%E7%BB%84%E5%92%8C%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk5afmvy000000vp75vod50n" data-title="动态构造学生信息系统（数组和链表）" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%EF%BC%88%E6%95%B0%E7%BB%84%E5%92%8C%E9%93%BE%E8%A1%A8%EF%BC%89/" data-id="ckk5afmvy000000vp75vod50n" data-title="动态构造学生信息系统（数组和链表）" class="article-share-link">Share</a>
       
       
       
@@ -331,139 +447,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8/" data-id="ckk56svys0000c0vp5ipja5f9" data-title="动态构造数组链表" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-数据结构之线性结构" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" class="article-date">
-  <time class="dt-published" datetime="2021-01-20T03:21:02.000Z" itemprop="datePublished">2021-01-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/">数据结构之线性结构</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>什么是线性结构？<br>用一根线能将所有点串在一起的结构；</p>
-<p>线性结构分类<br>连续存储（数组）<br>              优点：存储速度快、查找元素效率高；<br>              缺点：需连续的很大的内存、插入删除效率低；<br>离散存储（链表）<br>              优点：空间无限制，插入删除效率高；<br>              缺点：查找元素效率低、存储速度慢；</p>
-<p>线性结构应用<br>1.栈<br>一种先进后出的存储结构；<br>分类：静态栈（顺序栈）、动态栈（链式栈）<br>算法：压栈、出栈；<br>应用：<br>函数调用、中断、表达式求值、缓冲处理、迷宫<br>2.队列<br>一种先进先出的存储结构；<br>分类：链式队列、动态队列；<br>算法：出队、入队；<br>应用：<br>凡是和时间有关的操作都和队列有关；</p>
-<p>线性结构的算法<br>遍历、查找、清空、销毁、删除、求长度、排序、插入</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" data-id="ckk4vukjd0000hgvpay0m2mr2" data-title="数据结构之线性结构" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-指针、结构体及动态内存分配和释放小复习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/20/%E6%8C%87%E9%92%88%E3%80%81%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%8A%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E5%92%8C%E9%87%8A%E6%94%BE%E5%B0%8F%E5%A4%8D%E4%B9%A0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-20T02:11:41.000Z" itemprop="datePublished">2021-01-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/20/%E6%8C%87%E9%92%88%E3%80%81%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%8A%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E5%92%8C%E9%87%8A%E6%94%BE%E5%B0%8F%E5%A4%8D%E4%B9%A0/">指针、结构体及动态内存分配和释放小复习</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>指针小复习：<br>1.指针非法访问：定义一个指针变量并未初始化，此时该指针变量有指向，指向一个我们不知道的内存单元，我们可以访问p即<br>输出该内存单元的地址，但我们不可访问p所指向的内存单元的内容，因为该内存单元的操作权限未分配给本程序；<br>2.指针就是地址（内存单元的编号），本质上为一个操作受限的非负整数；<br>  指针变量是存放内存单元地址的变量即存放指针的变量；<br>3.CPU和内存条之间有三根线：数据总线（传输数据）、控制总线（控制输入输出、控制只读只写或读写）、地址总线（确定内<br>存单元）；<br>4.内存释放：并非内存真正释放而是指系统将分配给本程序的内存空间的操作权限收回，里面的数据未流失，只是本程序不可访<br>问；内存释放后内存中数据依然存在故定义变量需要初始化，否则会得到一个垃圾值；<br>5.确定一维数组需要知道两个条件：数组首地址和数组长度；<br>6.无论一个指针变量指向的变量占几个字节，该指针变量只占四个字节；<br>7.若想要通过其他函数改变主函数中变量的值，实参必须为该变量的地址；<br>8.int* p=&i;//p保留了i的地址；p指向i；*p就等同于i；<br>9.数组名为数组首地址，是一个常量；</p>
-<p>结构体小复习：<br>1.定义：将一些基本数据类型组合在一起形成的新的复合数据类型；<br>2.定义结构体变量时末尾有分号；定义结构体变量时可整体赋值，否则只能单个赋值；<br>单个赋值时，为字符串赋值需用strcpy函数进行，不能直接赋值；<br>3.struct student st,* pst;pst=&st;//规定pst-&gt;数据成员 就等价于 (*pst).数据成员 就等价于 st.数据成员;<br>4.结构体变量不能加减乘除，但可相互赋值;<br>5.调用函数时是直接发送变量还是发送变量地址:<br>发送变量：耗内存（需发送大量字节）、耗时间;<br>发送变量地址:省时间、省内存（只需发送4个字节）;</p>
-<p>动态内存分配专题：<br>1.内存分配的两种方式：<br>从静态存储区分配：<br>编译器请求系统自动分配和释放，生命周期和程序长存；<br>从动态存储区分配：<br>栈（stack）：在函数调用期间分配存储空间，函数结束时释放存储空间；生命周期和函数长存；<br>堆（heap）：由程序员手动分配和释放，函数结束后内存空间不会被释放故可以跨函数使用；但会存在内存泄露（内存越用越少）和程序崩溃(动态分配的内存被多次释放)等问题；<br>2.动态内存分配方式：<br>使用malloc函数<br>注：使用该函数必须添加malloc.h该头文件；<br>    该函数只能有一个形参；<br>    该函数只会返回所分配内存空间的第一个字节的地址；<br>3.举例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int f();</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;9;</span><br><span class="line">    i&#x3D;f();</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">int f()</span><br><span class="line">&#123;</span><br><span class="line">    int j&#x3D;20;</span><br><span class="line">    return j;</span><br><span class="line">&#125;</span><br><span class="line">输出20；</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void f(int);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;9;</span><br><span class="line">    f(i);</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">void f(int j)</span><br><span class="line">&#123;</span><br><span class="line">    j&#x3D;20;</span><br><span class="line">&#125;</span><br><span class="line">输出9</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void f(int*);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;9;</span><br><span class="line">    f(&amp;i);</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">void f(int* j)</span><br><span class="line">&#123;</span><br><span class="line">    *j&#x3D;20;</span><br><span class="line">&#125;</span><br><span class="line">输出20；</span><br></pre></td></tr></table></figure>
-<p>下列程序中p指向一个合法单元的是（C）<br>A.main()<br>{<br>    int* p;<br>    f(p);<br>}<br>int f(int* p)<br>{<br>    int s;<br>    p=&s;<br>}<br>B.main()<br>{<br>    int* p;<br>    f(&amp;p);<br>}<br>int f(int** p)<br>{<br>    int s;<br>    * p=&s;<br>}<br>C.main()<br>{<br>    int* p;<br>    f(&amp;p);<br>}<br>int f(int** p)<br>{<br>     * p=(int*)malloc(4);<br>}</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/20/%E6%8C%87%E9%92%88%E3%80%81%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%8A%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E5%92%8C%E9%87%8A%E6%94%BE%E5%B0%8F%E5%A4%8D%E4%B9%A0/" data-id="ckk4ur7ed0000igvp9ga90edt" data-title="指针、结构体及动态内存分配和释放小复习" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-数据结构概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-19T11:18:22.000Z" itemprop="datePublished">2021-01-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/">数据结构概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>数据结构定义：<br>我们如何把大量而复杂的问题以特定的数据类型和特定的存储结构将它保存到存储器，及在此基础上实现某个功能（如查找、排序、删除）而执行相应的操作；<br>数据结构关注的是个体及个体与个体之间关系的保存；</p>
-<p>算法：<br>通俗上，为解决问题的方法和步骤即对存储数据的操作从而解决问题；<br>在狭义上，算法依附存储结构；<br>在广义上，无论数据以何种方式存储，对数据的操作是一样的；<br>算法的评判标准：<br>1.时间复杂度<br>程序执行的次数并非时间；<br>2.空间复杂度<br>算法执行过程中大概所占用的最大内存；<br>3.难易程度<br>4.健壮性<br>5.正确性</p>
-<p>程序=数据存储（数据结构）+对数据的操作（算法）+可被其执行的语言；<br>数据结构的地位：<br>1.软件中最核心的课程；<br>2.软件开发中最基础最重要的理论基础；</p>
-<p>指针、结构体、动态内存分配和释放小复习</p>
-<p>模块一：线性结构<br>              连续存储（数组）<br>              离散存储（链表）<br>              常见应用：栈和队列；</p>
-<p>模块二：非线性结构<br>                树<br>                图</p>
-<p>模块三：<br>        查找<br>        排序</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/" data-id="ckk40m2rh0000b0vp4r1hhp58" data-title="数据结构概述" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/20/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8/" data-id="ckk56svys0000c0vp5ipja5f9" data-title="动态构造数组链表" class="article-share-link">Share</a>
       
       
       
@@ -479,7 +463,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -496,7 +480,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -506,9 +490,21 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/04/12/%E6%B7%B1%E5%88%BB%E7%9A%84%E6%95%99%E8%AE%AD/">深刻的教训</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/12/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8FC-%E7%89%88/">计数排序C++版</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/12/%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8FC-%E7%89%88/">二分插入排序C++版</a>
+          </li>
         
           <li>
             <a href="/2021/04/12/%E5%8D%95%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/">单轴快排C++版</a>
@@ -516,18 +512,6 @@
         
           <li>
             <a href="/2021/04/12/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8FC-%E7%89%88/">归并排序C++版</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/12/%E5%8F%8C%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/">双轴快排C++版</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%A1%B6%E6%8E%92%E5%BA%8F/">排序之桶排序</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/">排序之基数排序</a>
           </li>
         
       </ul>

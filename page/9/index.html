@@ -59,10 +59,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,122 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-函数递归之流程解析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/" class="article-date">
+  <time class="dt-published" datetime="2021-01-15T12:53:41.000Z" itemprop="datePublished">2021-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/">函数递归之流程解析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int f(int);&#x2F;&#x2F;函数声明可不加形参，但必须末尾有引号；</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   int i&#x3D;f(3);</span><br><span class="line">   printf(&quot;i&#x3D;%d\n&quot;,i);</span><br><span class="line">   return 0;</span><br><span class="line">&#125;</span><br><span class="line">int f(int i)</span><br><span class="line">&#123;</span><br><span class="line">    if(i&#x3D;&#x3D;1)</span><br><span class="line">       printf(&quot;哈哈\n&quot;);</span><br><span class="line">    else</span><br><span class="line">       i&#x3D; f(i-1);</span><br><span class="line">    return i;</span><br><span class="line">&#125;</span><br><span class="line">输出：哈哈</span><br><span class="line">      i&#x3D;1</span><br></pre></td></tr></table></figure>
+<p>函数调用流程：<br>f(3)-&gt;i=f(2)-&gt;i=f(1)-&gt;f(1)输出 哈哈;<br>return 1-&gt;f(1)完成-&gt;i=1-&gt;return 1-&gt;f(2)完成-&gt;i=1-&gt;return 1-&gt;f(3)完成;<br>跳出f函数 输出1；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/" data-id="ckjyb1iq20000w8vpanm74gld" data-title="函数递归之流程解析" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-函数递归之阶乘" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E9%98%B6%E4%B9%98/" class="article-date">
+  <time class="dt-published" datetime="2021-01-15T12:41:20.000Z" itemprop="datePublished">2021-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E9%98%B6%E4%B9%98/">函数递归之阶乘</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int f(int i)</span><br><span class="line">&#123;</span><br><span class="line">    if(i&#x3D;&#x3D;1)</span><br><span class="line">      return 1;</span><br><span class="line">    else</span><br><span class="line">      return i*f(i-1);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    char ch;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">     printf(&quot;请输入你想求的阶乘数：&quot;);</span><br><span class="line">     scanf(&quot;%d&quot;,&amp;i);</span><br><span class="line">     printf(&quot;%d的阶乘为%d\n&quot;,i,f(i));</span><br><span class="line">     printf(&quot;你是否还要继续（Y&#x2F;N）:&quot;);</span><br><span class="line">     scanf(&quot; %c&quot;,&amp;ch);</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E9%98%B6%E4%B9%98/" data-id="ckjya5roc0000uovpdb8terb9" data-title="函数递归之阶乘" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-函数递归之汉诺塔" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E6%B1%89%E8%AF%BA%E5%A1%94/" class="article-date">
+  <time class="dt-published" datetime="2021-01-15T06:41:23.000Z" itemprop="datePublished">2021-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E6%B1%89%E8%AF%BA%E5%A1%94/">函数递归之汉诺塔</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void hannuota(int i,char A ,char B,char C)</span><br><span class="line">&#123;</span><br><span class="line">    if(i&#x3D;&#x3D;1)</span><br><span class="line">       printf(&quot;将编号为%d的盘子从%c移到%c\n&quot;,i,A,C);</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">       hannuota(i-1,A,C,B);&#x2F;&#x2F;将i-1个盘从A借助C移到B；</span><br><span class="line">       printf(&quot;将编号为%d的盘子从%c移到%c\n&quot;,i,A,C);&#x2F;&#x2F;将编号为i的盘从A移到C;</span><br><span class="line">       hannuota(i-1,B,A,C);&#x2F;&#x2F;将i-1个盘从B借助A移到C;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    printf(&quot;请为盘子的个数赋值：&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;i);</span><br><span class="line">    hannuota(i,&#39;A&#39;,&#39;B&#39;,&#39;C&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E6%B1%89%E8%AF%BA%E5%A1%94/" data-id="ckjy9osuz0000ekvpbygo3ar8" data-title="函数递归之汉诺塔" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-函数递归概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -98,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E6%A6%82%E8%BF%B0/" data-id="ckjxwttx20000nkvp4bebgubb" data-title="函数递归概述" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E6%A6%82%E8%BF%B0/" data-id="ckjxwttx20000nkvp4bebgubb" data-title="函数递归概述" class="article-share-link">Share</a>
       
       
       
@@ -137,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B0/" data-id="ckjxwgffc0001gsvp9gz23bsr" data-title="函数概述" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B0/" data-id="ckjxwgffc0001gsvp9gz23bsr" data-title="函数概述" class="article-share-link">Share</a>
       
       
       
@@ -175,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/15/%E6%AF%94%E8%BE%833%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%BE%E5%87%BA%E5%85%B6%E4%B8%AD%E6%9C%80%E5%A4%A7%E8%80%85/" data-id="ckjxlyt330000zgvp38fx824n" data-title="比较3个字符串找出其中最大者" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/15/%E6%AF%94%E8%BE%833%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%BE%E5%87%BA%E5%85%B6%E4%B8%AD%E6%9C%80%E5%A4%A7%E8%80%85/" data-id="ckjxlyt330000zgvp38fx824n" data-title="比较3个字符串找出其中最大者" class="article-share-link">Share</a>
       
       
       
@@ -213,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E8%BE%93%E5%85%A5%E4%B8%80%E8%A1%8C%E5%AD%97%E7%AC%A6%EF%BC%8C%E7%BB%9F%E8%AE%A1%E5%85%B6%E4%B8%AD%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%8D%95%E8%AF%8D%EF%BC%88%E5%8D%95%E8%AF%8D%E9%97%B4%E4%BB%A5%E7%A9%BA%E6%A0%BC%E5%88%86%E9%9A%94%E5%BC%80%EF%BC%89/" data-id="ckjwyw0x40000gwvpaik85leb" data-title="输入一行字符，统计其中有多少个单词（单词间以空格分隔开）" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/14/%E8%BE%93%E5%85%A5%E4%B8%80%E8%A1%8C%E5%AD%97%E7%AC%A6%EF%BC%8C%E7%BB%9F%E8%AE%A1%E5%85%B6%E4%B8%AD%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%8D%95%E8%AF%8D%EF%BC%88%E5%8D%95%E8%AF%8D%E9%97%B4%E4%BB%A5%E7%A9%BA%E6%A0%BC%E5%88%86%E9%9A%94%E5%BC%80%EF%BC%89/" data-id="ckjwyw0x40000gwvpaik85leb" data-title="输入一行字符，统计其中有多少个单词（单词间以空格分隔开）" class="article-share-link">Share</a>
       
       
       
@@ -251,7 +367,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/" data-id="ckjwxykqa0000ycvp7ds71yvd" data-title="使用字符串处理函数" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/14/%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/" data-id="ckjwxykqa0000ycvp7ds71yvd" data-title="使用字符串处理函数" class="article-share-link">Share</a>
       
       
       
@@ -291,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" data-id="ckjwqignx0000rkvpg3vea5yz" data-title="scanf输入字符串时注意事项" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" data-id="ckjwqignx0000rkvpg3vea5yz" data-title="scanf输入字符串时注意事项" class="article-share-link">Share</a>
       
       
       
@@ -332,121 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/" data-id="ckjwotkcl00004ovpa56t0xtm" data-title="字符数组" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-求二维数组最大值及最大值行列数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/14/%E6%B1%82%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8F%8A%E6%9C%80%E5%A4%A7%E5%80%BC%E8%A1%8C%E5%88%97%E6%95%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-14T03:10:50.000Z" itemprop="datePublished">2021-01-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/14/%E6%B1%82%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8F%8A%E6%9C%80%E5%A4%A7%E5%80%BC%E8%A1%8C%E5%88%97%E6%95%B0/">求二维数组最大值及最大值行列数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  int a[3][4]&#x3D;&#123;&#123;1,2,3,4&#125;,&#123;5,6,7,8&#125;,&#123;9,10,11,12&#125;&#125;;</span><br><span class="line">  int max&#x3D;a[0][0];</span><br><span class="line">  int row,colum;</span><br><span class="line">  for(int i&#x3D;0;i&lt;3;i++)</span><br><span class="line">     for(int j&#x3D;0;j&lt;4;j++)</span><br><span class="line">     &#123;</span><br><span class="line">         if(a[i][j]&gt;max)</span><br><span class="line">            &#123;</span><br><span class="line">                max&#x3D;a[i][j];</span><br><span class="line">                row&#x3D;i;</span><br><span class="line">                colum&#x3D;j;</span><br><span class="line">            &#125;</span><br><span class="line">     &#125;</span><br><span class="line">  printf(&quot;max&#x3D;%d\nrow&#x3D;%d\ncolum&#x3D;%d\n&quot;,max,row,colum);</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E6%B1%82%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8F%8A%E6%9C%80%E5%A4%A7%E5%80%BC%E8%A1%8C%E5%88%97%E6%95%B0/" data-id="ckjwa1lbx00008cvp2wcm7aak" data-title="求二维数组最大值及最大值行列数" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-二维数组行列互换" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/14/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E8%A1%8C%E5%88%97%E4%BA%92%E6%8D%A2/" class="article-date">
-  <time class="dt-published" datetime="2021-01-14T03:02:35.000Z" itemprop="datePublished">2021-01-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/14/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E8%A1%8C%E5%88%97%E4%BA%92%E6%8D%A2/">二维数组行列互换</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[2][3]&#x3D;&#123;&#123;1,2,3&#125;,&#123;4,5,6&#125;&#125;;</span><br><span class="line">    int b[3][2],i,j;</span><br><span class="line">    for(i&#x3D;0;i&lt;2;i++)</span><br><span class="line">    &#123;</span><br><span class="line">       for(j&#x3D;0;j&lt;3;j++)</span><br><span class="line">       &#123;</span><br><span class="line">           printf(&quot;%d &quot;,a[i][j]);</span><br><span class="line">           b[j][i]&#x3D;a[i][j];</span><br><span class="line">       &#125;</span><br><span class="line">       printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;互换后的结果:\n&quot;);</span><br><span class="line">    for(i&#x3D;0;i&lt;3;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(j&#x3D;0;j&lt;2;j++)</span><br><span class="line">            printf(&quot;%d &quot;,b[i][j]);</span><br><span class="line">        printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E8%A1%8C%E5%88%97%E4%BA%92%E6%8D%A2/" data-id="ckjw9q0nc0000p0vpc6xc4o0t" data-title="二维数组行列互换" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-一维数组冒泡排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/14/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" class="article-date">
-  <time class="dt-published" datetime="2021-01-14T02:18:50.000Z" itemprop="datePublished">2021-01-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/14/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">一维数组冒泡排序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,j,t;</span><br><span class="line">    int a[10];</span><br><span class="line">    printf(&quot;请为数组赋值(中间以空格相隔):\n&quot;);</span><br><span class="line">    for(i&#x3D;0;i&lt;10;i++)</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</span><br><span class="line">    for(i&#x3D;0;i&lt;9;i++)</span><br><span class="line">       for(j&#x3D;0;j&lt;9-i;j++)</span><br><span class="line">           if(a[j]&gt;a[j+1])</span><br><span class="line">              &#123;</span><br><span class="line">                  t&#x3D;a[j];</span><br><span class="line">                  a[j]&#x3D;a[j+1];</span><br><span class="line">                  a[j+1]&#x3D;t;</span><br><span class="line">              &#125;</span><br><span class="line">    printf(&quot;排序后的结果为:\n&quot;);</span><br><span class="line">    for(i&#x3D;0;i&lt;10;i++)</span><br><span class="line">        printf(&quot;%d &quot;,a[i]);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckjw8lzmm0000t0vp2ztk9niw" data-title="一维数组冒泡排序" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/14/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/" data-id="ckjwotkcl00004ovpa56t0xtm" data-title="字符数组" class="article-share-link">Share</a>
       
       
       
@@ -462,7 +464,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/8/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -479,7 +481,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -489,9 +491,21 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/04/12/%E6%B7%B1%E5%88%BB%E7%9A%84%E6%95%99%E8%AE%AD/">深刻的教训</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/12/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8FC-%E7%89%88/">计数排序C++版</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/12/%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8FC-%E7%89%88/">二分插入排序C++版</a>
+          </li>
         
           <li>
             <a href="/2021/04/12/%E5%8D%95%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/">单轴快排C++版</a>
@@ -499,18 +513,6 @@
         
           <li>
             <a href="/2021/04/12/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8FC-%E7%89%88/">归并排序C++版</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/12/%E5%8F%8C%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/">双轴快排C++版</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%A1%B6%E6%8E%92%E5%BA%8F/">排序之桶排序</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/">排序之基数排序</a>
           </li>
         
       </ul>
