@@ -71,6 +71,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-指针简单程序讲解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/17/%E6%8C%87%E9%92%88%E7%AE%80%E5%8D%95%E7%A8%8B%E5%BA%8F%E8%AE%B2%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2021-01-17T00:15:56.000Z" itemprop="datePublished">2021-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/17/%E6%8C%87%E9%92%88%E7%AE%80%E5%8D%95%E7%A8%8B%E5%BA%8F%E8%AE%B2%E8%A7%A3/">指针简单程序讲解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int* p;&#x2F;&#x2F;定义一个指针变量（用于存放地址的变量）；p为指针变量的名字，int*为一个数据类型表示p存放int类型变量</span><br><span class="line">    的地址；</span><br><span class="line">    int i&#x3D;3;</span><br><span class="line">    p&#x3D;i;&#x2F;&#x2F;error;p为存放变量地址的变量而非存放变量的变量；</span><br><span class="line">    p&#x3D;&amp;i;&#x2F;&#x2F;ok;p保存了i的地址因此p指向i;</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    printf(&quot;%d\n&quot;,*p);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注：<br>p指向i，但修改i的值不影响p的值，修改p的值不影响i的值；<br>如果一个指针变量指向了一个普通变量，那么（* 指针变量）就等同于普通变量，在本程序中在所有出现* p的地方，都可以替<br>换为i；同理所有i都可替换为* p；<br>*p就是以p的内容为地址的变量</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/17/%E6%8C%87%E9%92%88%E7%AE%80%E5%8D%95%E7%A8%8B%E5%BA%8F%E8%AE%B2%E8%A7%A3/" data-id="ckk0ed2fm0000x0vpbxm3ehy4" data-title="指针简单程序讲解" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-指针概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/16/%E6%8C%87%E9%92%88%E6%A6%82%E8%BF%B0/" class="article-date">
@@ -417,45 +457,6 @@
 
 
   
-    <article id="post-函数递归概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E6%A6%82%E8%BF%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-15T06:37:20.000Z" itemprop="datePublished">2021-01-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E6%A6%82%E8%BF%B0/">函数递归概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>定义：函数直接或间接调用自己；<br>函数为什么可以自己调用自己？<br>前提：函数的调用是通过栈实现的；<br>A.一个函数在运行期间去调用其它函数，在运行被调函数前需做三件事：<br>1.将所有实参、返回地址（下一条指令的地址）等信息传给被调函数保存；<br>2.为被调函数的局部变量分配内存（包括形参）；<br>3.将控制转移到被调函数的入口从而执行被调函数；<br>B.从被调函数转移到主调函数前系统也需做三件事：<br>1.保存被调函数返回的结果；<br>2.释放被调函数所占用的内存空间（系统收回被调用函数占用的内存空间的使用权限）；<br>3.依照被调函数所保存的返回地址，将控制转移到主调函数（从被调函数跳出）；<br>C.当多个函数相互调用时，按照“后调用先返回”的原则，函数间的信息传递和控制转移必须借助栈来实现。即整个程序运行所需<br>的数据空间安排在一个栈中。每调用一个函数时，就在栈顶分配一个存储区进行压栈操作，每当一个函数退出时，就释放它的存<br>储区即出栈。当前运行的函数永远在栈顶。<br>D.在计算机看来，函数A调用函数B 和 函数A调用函数A是没有区别的。（执行步骤相同）<br>注：<br>不能无限压栈和出栈，否则系统会崩溃；<br>递归必须满足两个条件：<br>1.递归必须有明确的终止条件；<br>2.该函数所处理的数据规模必须在递减；n-&gt;n-1-&gt;n-2-&gt;n-3-&gt;…-&gt;1<br>递归和循环的关系：<br>所有循环都可转化为递归；所有递归不一定能由循环实现；<br>递归和循环优缺点：<br>递归：<br>优点：易于理解；缺点：速度慢、存储空间大（浪费空间多）；<br>循环：<br>优点：速度快、存储空间小（浪费空间少）；缺点：不易理解；<br>递归应用：<br>树和森林以递归方式定义；<br>树和图的很多算法都是以递归实现；<br>很多数学公式都是以递归方式定义的，如斐波拉契数列；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E6%A6%82%E8%BF%B0/" data-id="ckjxwttx20000nkvp4bebgubb" data-title="函数递归概述" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -492,6 +493,10 @@
       <ul>
         
           <li>
+            <a href="/2021/04/12/%E5%8D%95%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/">单轴快排C++版</a>
+          </li>
+        
+          <li>
             <a href="/2021/04/12/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8FC-%E7%89%88/">归并排序C++版</a>
           </li>
         
@@ -505,10 +510,6 @@
         
           <li>
             <a href="/2021/04/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/">排序之基数排序</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BBindarysort/">排序之Bindarysort</a>
           </li>
         
       </ul>

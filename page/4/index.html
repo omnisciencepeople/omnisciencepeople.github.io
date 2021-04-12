@@ -71,6 +71,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-排序之冒泡排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time class="dt-published" datetime="2021-03-09T07:55:06.000Z" itemprop="datePublished">2021-03-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">排序之冒泡排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public class Bubble_sort&#123;</span><br><span class="line">    public static void main( String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,2,8,3,9,4,6,5,10&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length-1;i++)&#123;</span><br><span class="line">           for(int j&#x3D;0;j&lt;arr.length-1-i;j++)</span><br><span class="line">               if(arr[j+1]&lt;arr[j])</span><br><span class="line">                 swap(arr,j,j+1);</span><br><span class="line">           System.out.println(&quot;经过&quot;+(i+1)+&quot;次排序后为:&quot;);</span><br><span class="line">           print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    static void print(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">           System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">           System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">    static void swap(int[] arr,int i,int j)&#123;</span><br><span class="line">        int temp&#x3D;arr[i];</span><br><span class="line">        arr[i]&#x3D;arr[j];</span><br><span class="line">        arr[j]&#x3D;temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>优化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for(int j&#x3D;0;j&lt;arr.length-1-i;j++)</span><br><span class="line">    if(arr[j+1]&lt;arr[j])</span><br><span class="line">       swap(arr,j,j+1);</span><br><span class="line">改为</span><br><span class="line">for(int j&#x3D;0;j&lt;arr.length-1-i&amp;&amp;arr[j+1]&lt;arr[j];j++)</span><br><span class="line">    swap(arr,j,j+1);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckm1q62k50000csvp2ftqb1uo" data-title="排序之冒泡排序" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-如何写算法？" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/03/08/%E5%A6%82%E4%BD%95%E5%86%99%E7%AE%97%E6%B3%95%EF%BC%9F/" class="article-date">
@@ -448,44 +488,6 @@
 
 
   
-    <article id="post-链式栈演示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/22/%E9%93%BE%E5%BC%8F%E6%A0%88%E6%BC%94%E7%A4%BA/" class="article-date">
-  <time class="dt-published" datetime="2021-01-22T09:07:03.000Z" itemprop="datePublished">2021-01-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/22/%E9%93%BE%E5%BC%8F%E6%A0%88%E6%BC%94%E7%A4%BA/">链式栈演示</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">typedef struct Node</span><br><span class="line">&#123;</span><br><span class="line">    int data;</span><br><span class="line">    struct Node*Next;</span><br><span class="line">&#125;NODE,*PNODE;</span><br><span class="line">typedef struct stack</span><br><span class="line">&#123;</span><br><span class="line">    PNODE PT;</span><br><span class="line">    PNODE PB;</span><br><span class="line">&#125;STACK,*PSTACK;</span><br><span class="line">void init_stack(PSTACK pstack);</span><br><span class="line">void traverse_stack(PSTACK pstack);</span><br><span class="line">bool Is_empty(PSTACK pstack);</span><br><span class="line">void push_stack(PSTACK pstack,int val);</span><br><span class="line">bool pop_stack(PSTACK pstack,int* val);</span><br><span class="line">void clear_stack(PSTACK pstack);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int val;</span><br><span class="line">    STACK stack;</span><br><span class="line">    init_stack(&amp;stack);</span><br><span class="line">    traverse_stack(&amp;stack);</span><br><span class="line">    push_stack(&amp;stack,1);</span><br><span class="line">    push_stack(&amp;stack,2);</span><br><span class="line">    push_stack(&amp;stack,3);</span><br><span class="line">    traverse_stack(&amp;stack);</span><br><span class="line">    push_stack(&amp;stack,4);</span><br><span class="line">    traverse_stack(&amp;stack);</span><br><span class="line">    if(pop_stack(&amp;stack,&amp;val))</span><br><span class="line">        printf(&quot;出栈成功,你出栈的元素为%d\n&quot;,val);</span><br><span class="line">    else</span><br><span class="line">        printf(&quot;出栈失败\n&quot;);</span><br><span class="line">    traverse_stack(&amp;stack);</span><br><span class="line">    clear_stack(&amp;stack);</span><br><span class="line">    traverse_stack(&amp;stack);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">void init_stack(PSTACK pstack)</span><br><span class="line">&#123;</span><br><span class="line">    pstack-&gt;PT&#x3D;(PNODE)malloc(sizeof(NODE));</span><br><span class="line">    if(pstack-&gt;PT&#x3D;&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;构造链式栈失败，程序终止\n&quot;);</span><br><span class="line">        exit(-1);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        pstack-&gt;PT-&gt;Next&#x3D;NULL;</span><br><span class="line">        pstack-&gt;PB&#x3D;pstack-&gt;PT;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void traverse_stack(PSTACK pstack)</span><br><span class="line">&#123;</span><br><span class="line">    if(Is_empty(pstack))</span><br><span class="line">        printf(&quot;栈为空\n&quot;);</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        PNODE p&#x3D;pstack-&gt;PT;</span><br><span class="line">        while(p!&#x3D;pstack-&gt;PB)</span><br><span class="line">        &#123;</span><br><span class="line">            printf(&quot;%d &quot;,p-&gt;data);</span><br><span class="line">            p&#x3D;p-&gt;Next; </span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">bool Is_empty(PSTACK pstack)</span><br><span class="line">&#123;</span><br><span class="line">    if(pstack-&gt;PB&#x3D;&#x3D;pstack-&gt;PT)</span><br><span class="line">        return true;</span><br><span class="line">    else</span><br><span class="line">        return false;</span><br><span class="line">&#125;</span><br><span class="line">void push_stack(PSTACK pstack,int val)</span><br><span class="line">&#123;</span><br><span class="line">    PNODE pNew&#x3D;(PNODE)malloc(sizeof(NODE));</span><br><span class="line">    if(pNew&#x3D;&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;压栈失败，程序终止\n&quot;);</span><br><span class="line">        exit(-1);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">      pNew-&gt;data&#x3D;val;</span><br><span class="line">      pNew-&gt;Next&#x3D;pstack-&gt;PT;</span><br><span class="line">      pstack-&gt;PT&#x3D;pNew;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">bool pop_stack(PSTACK pstack,int* val)</span><br><span class="line">&#123;</span><br><span class="line">    if(Is_empty(pstack))</span><br><span class="line">        return false;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        PNODE q&#x3D;pstack-&gt;PT;</span><br><span class="line">        * val&#x3D;q-&gt;data;</span><br><span class="line">         pstack-&gt;PT&#x3D;q-&gt;Next;</span><br><span class="line">        free(q);</span><br><span class="line">        q&#x3D;NULL;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void clear_stack(PSTACK pstack)</span><br><span class="line">&#123;</span><br><span class="line">    PNODE p&#x3D;pstack-&gt;PT;</span><br><span class="line">    PNODE q&#x3D;NULL;</span><br><span class="line">    while(p!&#x3D;pstack-&gt;PB)</span><br><span class="line">    &#123;</span><br><span class="line">        q&#x3D;p-&gt;Next;</span><br><span class="line">        free(p);</span><br><span class="line">        p&#x3D;q;</span><br><span class="line">    &#125;</span><br><span class="line">    pstack-&gt;PT&#x3D;pstack-&gt;PB;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/22/%E9%93%BE%E5%BC%8F%E6%A0%88%E6%BC%94%E7%A4%BA/" data-id="ckk8294of0000gwvp7frk0hq4" data-title="链式栈演示" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -522,6 +524,10 @@
       <ul>
         
           <li>
+            <a href="/2021/04/12/%E5%8D%95%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/">单轴快排C++版</a>
+          </li>
+        
+          <li>
             <a href="/2021/04/12/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8FC-%E7%89%88/">归并排序C++版</a>
           </li>
         
@@ -535,10 +541,6 @@
         
           <li>
             <a href="/2021/04/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/">排序之基数排序</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BBindarysort/">排序之Bindarysort</a>
           </li>
         
       </ul>

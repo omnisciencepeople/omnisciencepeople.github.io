@@ -71,6 +71,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Java线程概述2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/17/Java%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B02/" class="article-date">
+  <time class="dt-published" datetime="2021-03-16T22:40:20.000Z" itemprop="datePublished">2021-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/17/Java%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B02/">Java线程概述2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Java线程创建方式：<br>一<br>1.创建一个thread继承类A，并重写A从thread中继承的run方法<br>2.创建一个A类对象aa<br>3.调用aa从thread类中继承的start方法（该方法会开辟一个新的线程并自动调用run方法）<br>二<br>1.创建一个实现Runnable接口的类A，并重写从Runnable接口继承的run方法<br>2.创建A类对象aa<br>3.以aa创建一个thread对象 T 如Thread T=new Thread(aa);<br>4.调用T的start方法开辟一个新的线程，并自动调用aa中的run方法</p>
+<p>注意问题：<br>执行一个线程实际上就是执行run方法中的代码，直接调用run方法是不会开辟出新的线程的；<br>执行完aa.start（）后，程序不会立刻执行aa对象所对应的线程，它只是表示aa线程有了可以立即被CPU执行的资格（就绪状<br>态），但由于想抢占CPU执行的线程有很多，CPU不一定会立即执行aa所对应的线程。<br>一个thread对象有且只能代表一个线程<br>一个thread对象不能调用两次start方法，否则会抛出java.lang.IllealThreadState Exception异常<br>一个thread对象只能创建一个线程<br>先执行主线程再执行子线程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">thread 常用方法：</span><br><span class="line">public final void setName(String name)&#x2F;&#x2F;设置当前线程的名字</span><br><span class="line">public static Thread CurrentThread()&#x2F;&#x2F;返回当前正在执行线程的引用</span><br><span class="line">public final String getName()&#x2F;&#x2F;返回当前线程的名字</span><br></pre></td></tr></table></figure>
+<p>线程的控制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">线程控制基本方法</span><br><span class="line">isAlive()&#x2F;&#x2F;判断当前线程是否终止</span><br><span class="line">getPriority()&#x2F;&#x2F;获得线程的优先级数值</span><br><span class="line">Setpriority()&#x2F;&#x2F;设置线程的优先级数值</span><br><span class="line">Thread.sleep()&#x2F;&#x2F;将当前线程睡眠指定至毫秒数，线程进入阻塞状态</span><br><span class="line">join()&#x2F;&#x2F;调用某线程的该方法，将当前线程与该线程合并，即等待该线程结束，再恢复到当前线程的运行 </span><br><span class="line">yield()&#x2F;&#x2F;让出CPU，当前线程进入就绪状态等待调度</span><br><span class="line">wait()&#x2F;&#x2F;当前线程进入阻塞状态，进入waitpool中 </span><br><span class="line">notify()&#x2F;&#x2F;唤醒waitpool中任意一个线程</span><br><span class="line">notifyAll()&#x2F;&#x2F;唤醒waitpool中所有线程</span><br></pre></td></tr></table></figure>
+<p>线程优先级：<br>线程优先级用数字表示，范围1到10<br>主线程的缺省优先级为5（默认优先级为5），子线程的优先级默认与父线程相同<br>创建一个线程默认优先级为5<br>Java提供一个线程调度器用来监视所有进入就绪状态的所有线程，线程调度器会根据线程优先级决定应该调度哪个线程执行<br>优先级越高越好<br>通常高优先级线程将先于优先级低的线程执行，但并不总是这样，因此实际开发中并不单纯依赖优先级来决定线程运行次序。<br>Thread. NORM_PRIORITY=5<br>Thread. MIN_PRIORITY=1<br>Thread. MAX_PRIORITY=10</p>
+<p>线程的休眠：<br>线程的休眠是指：暂停执行当前运行中的线程，使之进入阻塞状态，待经过指定的延迟时间后再醒来并转入就绪状态<br>Thread中提供的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public static void sleep(long millis) throws InterruptedException&#x2F;&#x2F;指定毫秒</span><br><span class="line">public static void sleep(long millis,int nanos) throws InterruptedException&#x2F;&#x2F;指定毫秒纳秒</span><br></pre></td></tr></table></figure>
+<p>sleep 方法会抛出Interrupted Exception 异常，我们必须对其进行捕捉处理 </p>
+<p>线程的让步<br>线程让出CPU，并进入就绪状态<br>public static void yield()//以类名调用</p>
+<p>线程休眠和让步区别：<br>线程休眠后当前线程进入阻塞状态，转而去执行另一个线程，之后随机执行；<br>线程让步后成当前线程进入就绪状态，转而去执行另外一个线程，之后交替执行；</p>
+<p>线程的串行化<br>在多线程中，如果在一个线程运行的过程中要用到另一个线程的运行结果，则可进行线程的串行化处理<br>方法：public final void join() throws InterruptedException</p>
+<p>线程的挂起和恢复：<br>线程的挂起：暂停停止当前运行中的线程，使之转入阻塞状态，并不会自动恢复运行；<br>线程的恢复：使一个已经挂起的线程恢复运行；<br>public final void suspend()<br>public final void resume()<br>suspend方法挂起线程时并不会释放其锁的资源，这可能会影响其他线程的运行，并且容易导致其他线程的死锁，不提倡使用；<br>死锁：A和B都相互需要对方的资源，但彼此都守着资源，不给对方使用，导致A和B都无法运行；</p>
+<p>线程的同步问题：<br>经典问题：一张票被多个站台卖<br>一张票被多个站台卖可能会产生一张票被卖多次的问题；<br>产生原因：<br>1.很多代码对同一个资源访问，产生顺序的问题，互斥问题。<br>2.CPU可以在多个线程的任一点之间来回切换，它们不是互斥的。<br>互斥（同步）：关键步骤只能由一个线程访问，其他线程不可访问；<br>以买票为例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(票数大于0)</span><br><span class="line">&#123;</span><br><span class="line">    卖一张票；</span><br><span class="line">    票数减一；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>假设有三个线程A、B、C。我们知道CPU可在A、B、C任意一个点来回切换；<br>A发现票数大于0，卖票，但票数未减一就切换到B，B发现票数大于0，卖票，但票数未减一就切换到C，C发现票数大于0，卖票，<br>票数减一，这样一张票就被卖了三次。CPU在3个线程之间的来回切换可发生在0任意一个点，导致卖票发生紊乱，因为代码1到5<br>行不是一个整体。<br>我们希望正常情况：A卖这张票，B、C不可卖，且B、C不可卖下一张票，A卖完这一张票后，下一张票共同竞争，让CPU决定谁卖；<br>我们引入Synchronized关键词来解决该问题：<br>Synchronized可用来修饰某个方法、某个方法内部的代码块；<br>修饰一个方法:<br>Synchronized void f(){}<br>修饰一个代码块<br>Synchronized(对象名)<br>{<br>    同步代码块<br>}<br>Synchronized修饰一个代码块时：<br>Synchronized(对象名aa)功能：判断aa是否被其他线程霸占，如果发现被其他线程霸占，当前线程陷入等待中。如果发现aa<br>没有被其他线程霸占，当前线程霸占aa，并执行同步代码块。在当前线程执行期间，CPU可能会切换到其他线程，但其他线程无<br>法执行同步代码块（因为当前线程霸占了aa对象），当前线程执行完同步代码块后会自动释放对aa霸占，此时他和其他线程共同<br>竞争对aa的霸占，最终CPU会选择其中的某个线程执行。<br>导致的结果是一个线程正在操作某资源时，将不允许其他线程操作该资源，即一次只允许一个线程操作该资源。<br>霸占的专业术语叫锁定，霸占住的对象叫监听器。<br>Synchronized修饰方法时实际上锁定的是该方法this指针所指向的对象即正在调用该方法的对象；</p>
+<p>this.notify()详解：<br>不是叫醒正在执行this.notify()的线程，而是叫醒一个正在wait this对象的其他线程，如果有多个线程正在wait this对<br>象，通常叫醒最先wait this对象的线程但具体叫醒哪一个是由系统调度器控制，程序员无法控制。<br>执行this.notify()方法如果一个线程都没唤醒也是允许的；<br>this.notifyAll()详解：<br>唤醒所有因为wait方法而陷入阻塞状态的线程，使之进入就绪状态；<br>wait方法详解：<br>会使线程进入阻塞状态，同时会使线程释放对this对象的锁定；</p>
+<p>生产者消费者问题：<br>为什么用while判断，而不用if？<br>如何实现生产消费？<br>这两个问题我会在之后的程序中详解</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/17/Java%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B02/" data-id="ckmcmdib60000z0vp75jf6q1h" data-title="Java线程概述2" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Java线程概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/03/14/Java%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0/" class="article-date">
@@ -463,46 +519,6 @@
 
 
   
-    <article id="post-排序之冒泡排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" class="article-date">
-  <time class="dt-published" datetime="2021-03-09T07:55:06.000Z" itemprop="datePublished">2021-03-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">排序之冒泡排序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public class Bubble_sort&#123;</span><br><span class="line">    public static void main( String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,2,8,3,9,4,6,5,10&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length-1;i++)&#123;</span><br><span class="line">           for(int j&#x3D;0;j&lt;arr.length-1-i;j++)</span><br><span class="line">               if(arr[j+1]&lt;arr[j])</span><br><span class="line">                 swap(arr,j,j+1);</span><br><span class="line">           System.out.println(&quot;经过&quot;+(i+1)+&quot;次排序后为:&quot;);</span><br><span class="line">           print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    static void print(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">           System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">           System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">    static void swap(int[] arr,int i,int j)&#123;</span><br><span class="line">        int temp&#x3D;arr[i];</span><br><span class="line">        arr[i]&#x3D;arr[j];</span><br><span class="line">        arr[j]&#x3D;temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>优化：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for(int j&#x3D;0;j&lt;arr.length-1-i;j++)</span><br><span class="line">    if(arr[j+1]&lt;arr[j])</span><br><span class="line">       swap(arr,j,j+1);</span><br><span class="line">改为</span><br><span class="line">for(int j&#x3D;0;j&lt;arr.length-1-i&amp;&amp;arr[j+1]&lt;arr[j];j++)</span><br><span class="line">    swap(arr,j,j+1);</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckm1q62k50000csvp2ftqb1uo" data-title="排序之冒泡排序" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -539,6 +555,10 @@
       <ul>
         
           <li>
+            <a href="/2021/04/12/%E5%8D%95%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/">单轴快排C++版</a>
+          </li>
+        
+          <li>
             <a href="/2021/04/12/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8FC-%E7%89%88/">归并排序C++版</a>
           </li>
         
@@ -552,10 +572,6 @@
         
           <li>
             <a href="/2021/04/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/">排序之基数排序</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BBindarysort/">排序之Bindarysort</a>
           </li>
         
       </ul>
