@@ -71,6 +71,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Java容器概述2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/" class="article-date">
+  <time class="dt-published" datetime="2021-03-11T14:04:42.000Z" itemprop="datePublished">2021-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/">Java容器概述2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>java之自动装箱：<br>容器中存入的是一定是对象，不能放孤立的值，容器内如果放孤立的值，它会被转化成相应的对象；<br>预备知识：<br>对于任意的类A，设有一个A类对象aa<br>若System.out.println(aa);则等价于System.out.println(aa.toString());<br>Object类中含有hashcode方法、equals方法、toString方法等<br>Java中所有类默认继承Object类<br>建议所有子类重写toString方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Collection c&#x3D;new Arraylist();&#x2F;&#x2F;运用多态</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">System.out.println(c);&#x2F;&#x2F;等价于[调用第一个元素方法的toString方法，调用第二个元素方法的toString方法，调用第三个元素方法的toString方法，...]</span><br></pre></td></tr></table></figure>
+<p>容器之Collections：<br>Collection接口的实现类;<br>Arraylist、Linkedlist本身并未提供排序、查找等功能，这些方法是由collections类实现的，该类中含有很多Public<br>static方法，可直接对collection接口的实现类进行操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">collections类中提供了一些方法：</span><br><span class="line">Public static void sort(List);&#x2F;&#x2F;排序（默认升序）</span><br><span class="line">Public static void shuffle(List);&#x2F;&#x2F;随机排列</span><br><span class="line">Public static void reverse(List);&#x2F;&#x2F;逆序排列</span><br><span class="line">Public static void fill(List,Object);&#x2F;&#x2F;用一个特定的对象重写容器中的每个元素</span><br><span class="line">Public static void copy(List dest,List src);&#x2F;&#x2F;将src容器内容拷贝到dest容器中</span><br><span class="line">Public static int bindarysearch();&#x2F;&#x2F;对于升序的List容器，采用折半查找特定的对象；折半查找必须是升序的;</span><br></pre></td></tr></table></figure>
+<p>容器之Comparable接口：<br>为什么使用Compareable接口？<br>基本类型数据和String类型数据，它们彼此间的比较标准Java本身已经制定好了<br>用户自定义类对象之间比较的标准，Java本身未提供;所以一个容器中含有用户自定义数据时，并且我们需要对容器中的元素进<br>行排序和查找，我们必须指定元素与元素之间的比较标准，凡是需要排序的场合均可考虑实现Cpmparable接口;<br>Comparable接口介绍:<br>该接口中只有一个方法int compareTo(Object o);返回一个负整数，零或正整数，因为该对象小于，等于或大于指定对象。<br>实现了Comparable接口的实现类通过重写compareTo方法从而确定该类对象的排列方式；</p>
+<p>容器之Iterator接口：<br>要想遍历容器中的所有元素，判断是否存在下一元素，返回下一个元素都是非常麻烦的事，这些复杂容易出现错误的操作在Java<br>中用hasNext()、Next()、remove()这三个方法表示，这三个方法的具体实现sun公司已经设计好了，并且API中所有继承了<br>Collection的类都已经实现了Iterator接口中的这三个方法；<br>Iterator接口以统一的方式对各种不同集合中的元素进行遍历；<br>实现了Iterator接口的对象又称迭代器，利用该对象可方便地对容器中的元素进行遍历；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Iterator中常用方法：</span><br><span class="line">Boolean hasNext();&#x2F;&#x2F;用于判断游标右边是否存在元素；</span><br><span class="line">Object next();&#x2F;&#x2F;返回游标右边的元素，然后游标移向下一个位置</span><br><span class="line">void remove();&#x2F;&#x2F;删除最近返回的元素，在调用remove之前我们必须调用一次Next方法，调用一次next方法只能调用一次</span><br><span class="line">remove方法</span><br></pre></td></tr></table></figure>
+<p>容器之treeset：<br>treeset是一个有序的集合，treeset内元素按照升序排列，因此treeset元素必须实现Comparable接口<br>所有可以排序的类都应实现Comparable接口<br>hashset性能通常优于treeset，我们通常使用hashset，在我们需要排序时才使用hashset</p>
+<p>预备知识：<br>散列码：Object中的hashcode方法会返回该对象内存真实地址的整数化表示，这个形象的又不是真实地址的整数值就是散列码，又称哈希码;<br>哈希码与地址有关，但不一定是地址;<br>哈希表：哈希表不止存储需要保存的数据，更会存储该数据的主键；实际是先保留主键，然后哈希表会根据主键某种算法自动计算出以当前主键为主键的数据的hashcode，然后根据hashcode计算出数据存储位置然后将该数据存进去；<br>哈希表又称散列表<br>哈希表中不允许存在重复的键<br>哈希表主要是为了提高数据的存储速度和查找速度而设计的；<br>几乎所有的哈希表都会产生哈希冲突<br>Java中利用桶来解决哈希冲突<br>哈希冲突指关键字映射的地址相同导致前面的数据被覆盖；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/11/Java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B02/" data-id="ckm4y2bbv0000x8vp5soghlab" data-title="Java容器概述2" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-java容器概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/03/10/java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/" class="article-date">
@@ -462,45 +509,6 @@
 
 
   
-    <article id="post-非线性结构树的概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-23T13:56:31.000Z" itemprop="datePublished">2021-01-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/">非线性结构树的概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>树<br>专业定义：有且只有一个称为根的结点；有若干个互不相交的子树，这些子树本身也为一棵树；<br>通俗定义：树由结点和边组成（边指的是指针域）；每个结点只有一个父节点，但可以有多个子节点（根节点除外，根节点无父节点）；<br>专业术语：<br>父节点、子节点、子孙、堂兄弟（父亲为兄弟，他们的孩子为堂兄弟）、祖先；<br>深度：从根节点到最底层节点的层数；根节点为第一层；<br>叶子节点：无子结点的结点；<br>非终端节点：实际上为非叶子节点（有子节点的结点）；<br>度：子结点的个数<br>树的度：子结点个数的最大值；<br>树分类：<br>    一般树<br>         任意一个子结点的个数不受限制；<br>    二叉树<br>         任何一个节点的个数最多两个，且子结点顺序不可更改（有序树）；<br>         分类：<br>             一般二叉树<br>             满二叉树：每一层的节点数都是最大节点数的二叉树；<br>             完全二叉树：如果只是删除了满二叉树最底层最右边的连续若干个结点（此时深度未发生变化），这样形成的二叉树为完全二叉树；<br>             满二叉树是完全二叉树的一个特例；<br>    森林<br>          n个互不相交的树的集合；<br>树的存储<br>        二叉树的存储<br>               连续存储【必须转化为完全二叉树进行存储：内存是线性一维的；存储不可只存储有效节点，否则无法还原二叉树】<br>                    优点：查找某个结点的父节点和子节点（也包括判断有没有子节点）速度快；<br>                    缺点：耗用内存空间过大；<br>               链式存储：<br>                   耗用内存少，浪费空间少；<br>        一般树的存储<br>               双亲表示法<br>                     求父节点方便，求子结点难；<br>               孩子表示法<br>                     求子结点方便，求父节点难；<br>               双亲孩子表示法<br>                     求子结点和父节点都方便；<br>               二叉树表示法<br>                     将普通树转化为二叉树来存储；<br>                     具体实现方法：<br>                     设法保证任意一个结点的左指针域指向他的第一个孩子，他的右指针域指向他的第一个兄弟；只要满足此条件就可将一个普通树转化为二叉树；<br>                     一个普通树转化成二叉树一定无右子树；<br>        森林的存储<br>               将森林转化为二叉树进行存储；<br>二叉树操作：<br>       先序遍历：<br>       1.先访问根节点；<br>       2.再先序遍历左子树；<br>       3.再先序遍历右子树；<br>       中序遍历：<br>       1.先中序访问左子树；<br>       2.再访问根节点；<br>       3.再中序访问右子树；<br>       后序遍历：<br>       1.先后序访问左子树；<br>       2.再后序访问右子树；<br>       3.再访问根节点；<br>       先序中序后序将非线性结构转化为线性结构输出；<br>       已知两种遍历方式求原始二叉树：<br>             1.单个遍历方式无法还原二叉树；<br>             2.已知先序和后序无法还原二叉树；<br>             3.通过先序和中序 或 中序和后序可还原原始二叉树；<br>             例如<br>             已知先序：ABCDEFGH 中序：BDCEAFHG则后序为DECBHGFA;<br>             已知先序：ABDGHCEFI 中序：GDHBAECIF则后序为GHDBEIFCA;<br>             已知先序：ABFDCLMN 中序：BFACDLNM则后序为FBCNMLDA;<br>             已知先序：MFLAQGBE 中序：FALGQMEB则后序为AGQLFEBM;<br>             已知中序：BDCEAFHG 后序：DECBHGFA则先序为ABCDEFGH;<br>树应用：<br>1.树为数据库中数据组织的一种重要形式；<br>2.操作系统子父进程的关系本身为一棵树；<br>3.面向对象语言中类的继承关系本身为一棵树；<br>4.赫夫曼树（如何存树使效率达到最高）；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/" data-id="ckkb1n8ho000030vp4hi16rct" data-title="非线性结构树的概述" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -537,6 +545,10 @@
       <ul>
         
           <li>
+            <a href="/2021/04/13/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8FC-%E7%89%88/">基数排序C++版</a>
+          </li>
+        
+          <li>
             <a href="/2021/04/13/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/">基数排序</a>
           </li>
         
@@ -550,10 +562,6 @@
         
           <li>
             <a href="/2021/04/12/%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8FC-%E7%89%88/">二分插入排序C++版</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/12/%E5%8D%95%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/">单轴快排C++版</a>
           </li>
         
       </ul>
