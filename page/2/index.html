@@ -57,12 +57,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Buscar"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,45 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-排序之计数排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time class="dt-published" datetime="2021-04-09T13:13:12.000Z" itemprop="datePublished">2021-04-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">排序之计数排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>计数排序是非比较排序，利用了数组下标有序的技巧；<br>桶思想的一种；<br>运用于量大但范围小的数据排序如某大型企业员工年龄排序、快速得知你的高考名次；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.Random;</span><br><span class="line">public class countsort &#123;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">      Random r&#x3D;new Random();</span><br><span class="line">      int[] arr&#x3D;new int[1000];</span><br><span class="line">      for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">             arr[i]&#x3D;r.nextInt(100); </span><br><span class="line">      int[] result&#x3D;sort(arr);</span><br><span class="line">      System.out.println(Arrays.toString(result));</span><br><span class="line">  &#125;</span><br><span class="line">  static int[]  sort(int[] arr) &#123;</span><br><span class="line">      int[] result&#x3D;new int[arr.length];</span><br><span class="line">      int[] count&#x3D;new int [findmax(arr)-findmin(arr)+1];&#x2F;&#x2F;在一定程度上节省空间</span><br><span class="line">      for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">          count[arr[i]-findmin(arr)]++;&#x2F;&#x2F;以原数组元素为计数数组下标并统计统计元素出现次数</span><br><span class="line">      for(int i&#x3D;1;i&lt;count.length;i++)</span><br><span class="line">          count[i]&#x3D;count[i-1]+count[i];&#x2F;&#x2F;累加数组</span><br><span class="line">      for(int i&#x3D;arr.length-1;i&gt;&#x3D;0;i--)</span><br><span class="line">          result[--count[arr[i]-findmin(arr)]]&#x3D;arr[i];&#x2F;&#x2F;将原数组逆序遍历</span><br><span class="line">      return result;</span><br><span class="line">  &#125;&#x2F;&#x2F;累加数组和逆序遍历保证计数排序的稳定性</span><br><span class="line">  static int findmax(int[] arr) &#123;</span><br><span class="line">      int max&#x3D;arr[0];</span><br><span class="line">      for(int i&#x3D;1;i&lt;arr.length;i++)</span><br><span class="line">           if(arr[i]&gt;&#x3D;max)</span><br><span class="line">               max&#x3D;arr[i];</span><br><span class="line">      return max;</span><br><span class="line">  &#125;</span><br><span class="line">  static int findmin(int[] arr) &#123;</span><br><span class="line">      int min&#x3D;arr[0];</span><br><span class="line">      for(int i&#x3D;1;i&lt;arr.length;i++)</span><br><span class="line">           if(arr[i]&lt;&#x3D;min)</span><br><span class="line">               min&#x3D;arr[i];</span><br><span class="line">      return min;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/04/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/" data-id="cknaby3bd00007wvpewomc35t" data-title="排序之计数排序" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-快速排序之双轴排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -97,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/09/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%8F%8C%E8%BD%B4%E6%8E%92%E5%BA%8F/" data-id="cknaby3bi00017wvp7zri9w87" data-title="快速排序之双轴排序" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/04/09/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%8F%8C%E8%BD%B4%E6%8E%92%E5%BA%8F/" data-id="cknaby3bi00017wvp7zri9w87" data-title="快速排序之双轴排序" class="article-share-link">Teilen</a>
       
       
       
@@ -135,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/06/%E9%AA%8C%E8%AF%81%E6%8E%92%E5%BA%8F%E6%AD%A3%E7%A1%AE%E6%80%A7%E7%9A%84%E7%AE%97%E6%B3%95/" data-id="ckn61gwix0001novpcs1tbxbv" data-title="验证排序正确性的算法" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/04/06/%E9%AA%8C%E8%AF%81%E6%8E%92%E5%BA%8F%E6%AD%A3%E7%A1%AE%E6%80%A7%E7%9A%84%E7%AE%97%E6%B3%95/" data-id="ckn61gwix0001novpcs1tbxbv" data-title="验证排序正确性的算法" class="article-share-link">Teilen</a>
       
       
       
@@ -186,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/06/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E7%BB%8F%E5%85%B8%E5%8D%95%E8%BD%B4%E6%8E%92%E5%BA%8F%EF%BC%89/" data-id="ckn61gwil0000novp56xdhcad" data-title="排序之快速排序（经典单轴排序）" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/04/06/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E7%BB%8F%E5%85%B8%E5%8D%95%E8%BD%B4%E6%8E%92%E5%BA%8F%EF%BC%89/" data-id="ckn61gwil0000novp56xdhcad" data-title="排序之快速排序（经典单轴排序）" class="article-share-link">Teilen</a>
       
       
       
@@ -252,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/26/Java%E5%BC%82%E5%B8%B8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="ckmpykono0000ucvp4a3p0ir5" data-title="Java异常程序演示" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/03/26/Java%E5%BC%82%E5%B8%B8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="ckmpykono0000ucvp4a3p0ir5" data-title="Java异常程序演示" class="article-share-link">Teilen</a>
       
       
       
@@ -303,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/26/Java%E5%BC%82%E5%B8%B8%E6%A6%82%E8%BF%B0/" data-id="ckmpykonr0001ucvp65qw0tt9" data-title="Java异常概述" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/03/26/Java%E5%BC%82%E5%B8%B8%E6%A6%82%E8%BF%B0/" data-id="ckmpykonr0001ucvp65qw0tt9" data-title="Java异常概述" class="article-share-link">Teilen</a>
       
       
       
@@ -366,7 +405,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="ckmlhq26j0000tcvp8d6ta9qf" data-title="java之awt程序演示" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="ckmlhq26j0000tcvp8d6ta9qf" data-title="java之awt程序演示" class="article-share-link">Teilen</a>
       
       
       
@@ -416,7 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/22/java%E4%B9%8Bawt%E5%B1%95%E6%9C%9B/" data-id="ckmkmyu550000ocvpczcaggnf" data-title="java之awt展望概述" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/03/22/java%E4%B9%8Bawt%E5%B1%95%E6%9C%9B/" data-id="ckmkmyu550000ocvpczcaggnf" data-title="java之awt展望概述" class="article-share-link">Teilen</a>
       
       
       
@@ -464,7 +503,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/22/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" data-id="ckmkmyu5a0001ocvp9yuw2uul" data-title="排序之归并排序" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/03/22/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" data-id="ckmkmyu5a0001ocvp9yuw2uul" data-title="排序之归并排序" class="article-share-link">Teilen</a>
       
       
       
@@ -505,56 +544,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/21/java%E7%BA%BF%E7%A8%8B%E4%B9%8B%E6%B6%88%E8%B4%B9%E8%80%85%E7%94%9F%E4%BA%A7%E8%80%85/" data-id="ckmihabu100005cvpa2i0elx0" data-title="java线程之消费者生产者" class="article-share-link">Compartir</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-java线程演示2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA2/" class="article-date">
-  <time class="dt-published" datetime="2021-03-20T12:53:24.000Z" itemprop="datePublished">2021-03-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA2/">java线程演示2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>卖票1：两个站台卖各自的两百张票</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">class A implements Runnable</span><br><span class="line">&#123;</span><br><span class="line">    private int tickets&#x3D;100;</span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">        while(true)</span><br><span class="line">        &#123;</span><br><span class="line">            if(0&lt;tickets)</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+&quot;正在卖出第&quot;+tickets+&quot;票&quot;);</span><br><span class="line">                tickets--;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">              break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public  class test10&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        A aa1&#x3D;new A();</span><br><span class="line">        Thread t1&#x3D;new Thread(aa1);</span><br><span class="line">        t1.start();</span><br><span class="line">        A aa2&#x3D;new A();</span><br><span class="line">        Thread t2&#x3D;new Thread(aa2);</span><br><span class="line">        t2.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>卖票2：两个站台卖同样10000票</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class A implements Runnable</span><br><span class="line">&#123;</span><br><span class="line">    public int tickets&#x3D;10000;</span><br><span class="line">    public String str&#x3D;new String(&quot;哈哈&quot;);</span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">        </span><br><span class="line">        while (true)</span><br><span class="line">        &#123;</span><br><span class="line">            synchronized(str)</span><br><span class="line">         &#123;</span><br><span class="line">            if(0&lt;tickets)</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+&quot;正在卖出第&quot;+tickets+&quot;票&quot;);</span><br><span class="line">                tickets--;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">              break;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public  class test11&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        A aa1&#x3D;new A();</span><br><span class="line">        Thread t1&#x3D;new Thread(aa1);</span><br><span class="line">        t1.setName(&quot;A&quot;);</span><br><span class="line">        t1.start();</span><br><span class="line">        Thread t2&#x3D;new Thread(aa1);</span><br><span class="line">        t2.setName(&quot;B&quot;);</span><br><span class="line">        t2.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>买票3：两个线程，却只有一个线程在买票</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">class A implements Runnable</span><br><span class="line">&#123;</span><br><span class="line">    public int tickets&#x3D;10000;</span><br><span class="line">    public String str&#x3D;new String(&quot;哈哈&quot;);</span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">        synchronized(str)</span><br><span class="line">        &#123;</span><br><span class="line">        while (true)</span><br><span class="line">        &#123;</span><br><span class="line">            if(0&lt;tickets)</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+&quot;正在卖出第&quot;+tickets+&quot;票&quot;);</span><br><span class="line">                tickets--;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">              break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public  class test12&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        A aa1&#x3D;new A();</span><br><span class="line">        Thread t1&#x3D;new Thread(aa1);</span><br><span class="line">        t1.setName(&quot;A&quot;);</span><br><span class="line">        t1.start();</span><br><span class="line">        Thread t2&#x3D;new Thread(aa1);    </span><br><span class="line">        t2.setName(&quot;B&quot;);</span><br><span class="line">        t2.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>卖票4：两个线程锁定的不是同一个对象，导致线程之间不互斥</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">class A implements Runnable</span><br><span class="line">&#123;</span><br><span class="line">    public int tickets&#x3D;10000;</span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">      String str&#x3D;new String(&quot;哈哈&quot;);</span><br><span class="line">        while (true)</span><br><span class="line">        &#123;</span><br><span class="line">            synchronized(str)&#x2F;&#x2F;两个线程锁定的不是同一个对象</span><br><span class="line">        &#123;</span><br><span class="line">            if(0&lt;tickets)</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+&quot;正在卖出第&quot;+tickets+&quot;票&quot;);</span><br><span class="line">                tickets--;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">              break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public  class test13&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        A aa1&#x3D;new A();</span><br><span class="line">        Thread t1&#x3D;new Thread(aa1);</span><br><span class="line">        t1.setName(&quot;A&quot;);</span><br><span class="line">        t1.start();</span><br><span class="line">        Thread t2&#x3D;new Thread(aa1);    </span><br><span class="line">        t2.setName(&quot;B&quot;);</span><br><span class="line">        t2.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>卖票5：在run内部和外部同时创建对象，以内部为主；<br>两个线程锁定的不是同一个对象，导致线程之间不互斥</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class A implements Runnable</span><br><span class="line">&#123;</span><br><span class="line">    public int tickets&#x3D;10000;</span><br><span class="line">    String str&#x3D;new String(&quot;哈哈&quot;);</span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">      String str&#x3D;new String(&quot;哈哈&quot;);</span><br><span class="line">        while (true)</span><br><span class="line">        &#123;</span><br><span class="line">            synchronized(str)&#x2F;&#x2F;两个线程锁定的不是同一个对象</span><br><span class="line">        &#123;</span><br><span class="line">            if(0&lt;tickets)</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+&quot;正在卖出第&quot;+tickets+&quot;票&quot;);</span><br><span class="line">                tickets--;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">              break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public  class test13&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        A aa1&#x3D;new A();</span><br><span class="line">        Thread t1&#x3D;new Thread(aa1);</span><br><span class="line">        t1.setName(&quot;A&quot;);</span><br><span class="line">        t1.start();</span><br><span class="line">        Thread t2&#x3D;new Thread(aa1);    </span><br><span class="line">        t2.setName(&quot;B&quot;);</span><br><span class="line">        t2.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>卖票6：可以两个线程互斥</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">class A implements Runnable</span><br><span class="line">&#123;</span><br><span class="line">    public int tickets&#x3D;10000;</span><br><span class="line">    public void run()</span><br><span class="line">    &#123;</span><br><span class="line">      String str&#x3D;&quot;哈哈&quot;;</span><br><span class="line">        while (true)</span><br><span class="line">        &#123;</span><br><span class="line">            synchronized(str)&#x2F;&#x2F;两个线程锁定的是同一个对象</span><br><span class="line">        &#123;</span><br><span class="line">            if(0&lt;tickets)</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+&quot;正在卖出第&quot;+tickets+&quot;票&quot;);</span><br><span class="line">                tickets--;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">              break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public  class test13&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        A aa1&#x3D;new A();</span><br><span class="line">        Thread t1&#x3D;new Thread(aa1);</span><br><span class="line">        t1.setName(&quot;A&quot;);</span><br><span class="line">        t1.start();</span><br><span class="line">        Thread t2&#x3D;new Thread(aa1);    </span><br><span class="line">        t2.setName(&quot;B&quot;);</span><br><span class="line">        t2.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA2/" data-id="ckmhqgsjo0000g0vp1ree76nu" data-title="java线程演示2" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/03/21/java%E7%BA%BF%E7%A8%8B%E4%B9%8B%E6%B6%88%E8%B4%B9%E8%80%85%E7%94%9F%E4%BA%A7%E8%80%85/" data-id="ckmihabu100005cvpa2i0elx0" data-title="java线程之消费者生产者" class="article-share-link">Teilen</a>
       
       
       
@@ -570,7 +560,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Previo</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/">Siguiente &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -587,7 +577,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -597,9 +587,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/04/13/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/">基数排序</a>
+          </li>
         
           <li>
             <a href="/2021/04/12/%E6%B7%B1%E5%88%BB%E7%9A%84%E6%95%99%E8%AE%AD/">深刻的教训</a>
@@ -617,10 +611,6 @@
             <a href="/2021/04/12/%E5%8D%95%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/">单轴快排C++版</a>
           </li>
         
-          <li>
-            <a href="/2021/04/12/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8FC-%E7%89%88/">归并排序C++版</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -635,7 +625,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Construido por <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

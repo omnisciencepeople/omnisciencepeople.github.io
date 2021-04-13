@@ -57,12 +57,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Buscar"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,44 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-基数排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/13/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time class="dt-published" datetime="2021-04-13T07:30:15.000Z" itemprop="datePublished">2021-04-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/13/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/">基数排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * @author MiaoZhiJun</span><br><span class="line"> * @description 基数排序</span><br><span class="line"> * @date 2021&#x2F;4&#x2F;13 15:30</span><br><span class="line"> *&#x2F;</span><br><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.Random;</span><br><span class="line">public class RadixSort &#123;</span><br><span class="line"> public static void main(String[] args) &#123;</span><br><span class="line">     int[] arr&#x3D;new int[20];</span><br><span class="line">     for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">         arr[i]&#x3D;new Random().nextInt(10000);</span><br><span class="line">     print(arr);</span><br><span class="line">     int digit&#x3D;findmaxdigit(arr);</span><br><span class="line">     Radixsort(arr,digit);</span><br><span class="line">     print(arr);</span><br><span class="line">   &#125;</span><br><span class="line">  static void print(int[] arr) &#123;</span><br><span class="line">      for(int e:arr)</span><br><span class="line">          System.out.print(e+&quot; &quot;);</span><br><span class="line">      System.out.println();</span><br><span class="line">  &#125;</span><br><span class="line">  static int findmaxdigit(int[] arr) &#123;</span><br><span class="line">      int max&#x3D;arr[0];</span><br><span class="line">      for(int i&#x3D;1;i&lt;arr.length;i++)</span><br><span class="line">          if(max&lt;arr[i])max&#x3D;arr[i];</span><br><span class="line">      int cnt&#x3D;0;</span><br><span class="line">      while(max!&#x3D;0) &#123;max&#x2F;&#x3D;10; cnt++;&#125;</span><br><span class="line">      return cnt;</span><br><span class="line">   &#125;&#x2F;&#x2F;找到最大位数，该位数决定了循环次数</span><br><span class="line">  static void Radixsort(int[] arr,int digit) &#123;</span><br><span class="line">       int[] result&#x3D;new int[arr.length];</span><br><span class="line">       int[] count&#x3D;new int[10];</span><br><span class="line">       for(int i&#x3D;0;i&lt;digit;i++)</span><br><span class="line">       &#123;</span><br><span class="line">           int division &#x3D;(int) Math.pow(10, i);</span><br><span class="line">           for( int m&#x3D;0;m&lt;arr.length;m++)</span><br><span class="line">               count[arr[m]&#x2F;division%10]++;</span><br><span class="line">           for(int j&#x3D;1;j&lt;10;j++)</span><br><span class="line">               count[j]&#x3D;count[j]+count[j-1];</span><br><span class="line">           for(int k&#x3D;arr.length-1;k&gt;&#x3D;0;k--)</span><br><span class="line">               result[--count[arr[k]&#x2F;division%10]]&#x3D;arr[k];</span><br><span class="line">           System.arraycopy(result, 0, arr, 0, arr.length);</span><br><span class="line">           Arrays.fill(count, 0);</span><br><span class="line">       &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/04/13/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/" data-id="cknfqh2fx0000f8vpeh4ngsd4" data-title="基数排序" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-深刻的教训" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -97,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/12/%E6%B7%B1%E5%88%BB%E7%9A%84%E6%95%99%E8%AE%AD/" data-id="cknes66rn0001k4vpbrhbfi0o" data-title="深刻的教训" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/04/12/%E6%B7%B1%E5%88%BB%E7%9A%84%E6%95%99%E8%AE%AD/" data-id="cknes66rn0001k4vpbrhbfi0o" data-title="深刻的教训" class="article-share-link">Teilen</a>
       
       
       
@@ -135,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/12/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8FC-%E7%89%88/" data-id="cknes66ro0002k4vp19tr68uk" data-title="计数排序C++版" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/04/12/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8FC-%E7%89%88/" data-id="cknes66ro0002k4vp19tr68uk" data-title="计数排序C++版" class="article-share-link">Teilen</a>
       
       
       
@@ -173,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/12/%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8FC-%E7%89%88/" data-id="cknes66rl0000k4vp7dyub4oy" data-title="二分插入排序C++版" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/04/12/%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8FC-%E7%89%88/" data-id="cknes66rl0000k4vp7dyub4oy" data-title="二分插入排序C++版" class="article-share-link">Teilen</a>
       
       
       
@@ -211,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/12/%E5%8D%95%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/" data-id="cknedsi9b0000n8vpa6888jcp" data-title="单轴快排C++版" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/04/12/%E5%8D%95%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/" data-id="cknedsi9b0000n8vpa6888jcp" data-title="单轴快排C++版" class="article-share-link">Teilen</a>
       
       
       
@@ -249,7 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/12/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8FC-%E7%89%88/" data-id="cknecpjy80000ggvphtwofxg0" data-title="归并排序C++版" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/04/12/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8FC-%E7%89%88/" data-id="cknecpjy80000ggvphtwofxg0" data-title="归并排序C++版" class="article-share-link">Teilen</a>
       
       
       
@@ -287,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/12/%E5%8F%8C%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/" data-id="ckne8zls60000ikvp6cyf20mv" data-title="双轴快排C++版" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/04/12/%E5%8F%8C%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/" data-id="ckne8zls60000ikvp6cyf20mv" data-title="双轴快排C++版" class="article-share-link">Teilen</a>
       
       
       
@@ -326,7 +364,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BBindarysort/" data-id="ckncfajcv00021ovpdvj3edot" data-title="排序之Bindarysort" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BBindarysort/" data-id="ckncfajcv00021ovpdvj3edot" data-title="排序之Bindarysort" class="article-share-link">Teilen</a>
       
       
       
@@ -371,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BTimsort/" data-id="ckncfajcu00011ovphy2whma7" data-title="排序之Timsort" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BTimsort/" data-id="ckncfajcu00011ovphy2whma7" data-title="排序之Timsort" class="article-share-link">Teilen</a>
       
       
       
@@ -410,46 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/11/%E6%B5%85%E8%B0%88%E5%B7%A5%E4%B8%9A%E5%BF%AB%E6%8E%92/" data-id="ckncfajcr00001ovpej5o8d2a" data-title="浅谈工业快排" class="article-share-link">Compartir</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-排序之计数排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/04/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/" class="article-date">
-  <time class="dt-published" datetime="2021-04-09T13:13:12.000Z" itemprop="datePublished">2021-04-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/04/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">排序之计数排序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>计数排序是非比较排序，利用了数组下标有序的技巧；<br>桶思想的一种；<br>运用于量大但范围小的数据排序如某大型企业员工年龄排序、快速得知你的高考名次；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.Random;</span><br><span class="line">public class countsort &#123;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">      Random r&#x3D;new Random();</span><br><span class="line">      int[] arr&#x3D;new int[1000];</span><br><span class="line">      for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">             arr[i]&#x3D;r.nextInt(100); </span><br><span class="line">      int[] result&#x3D;sort(arr);</span><br><span class="line">      System.out.println(Arrays.toString(result));</span><br><span class="line">  &#125;</span><br><span class="line">  static int[]  sort(int[] arr) &#123;</span><br><span class="line">      int[] result&#x3D;new int[arr.length];</span><br><span class="line">      int[] count&#x3D;new int [findmax(arr)-findmin(arr)+1];&#x2F;&#x2F;在一定程度上节省空间</span><br><span class="line">      for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">          count[arr[i]-findmin(arr)]++;&#x2F;&#x2F;以原数组元素为计数数组下标并统计统计元素出现次数</span><br><span class="line">      for(int i&#x3D;1;i&lt;count.length;i++)</span><br><span class="line">          count[i]&#x3D;count[i-1]+count[i];&#x2F;&#x2F;累加数组</span><br><span class="line">      for(int i&#x3D;arr.length-1;i&gt;&#x3D;0;i--)</span><br><span class="line">          result[--count[arr[i]-findmin(arr)]]&#x3D;arr[i];&#x2F;&#x2F;将原数组逆序遍历</span><br><span class="line">      return result;</span><br><span class="line">  &#125;&#x2F;&#x2F;累加数组和逆序遍历保证计数排序的稳定性</span><br><span class="line">  static int findmax(int[] arr) &#123;</span><br><span class="line">      int max&#x3D;arr[0];</span><br><span class="line">      for(int i&#x3D;1;i&lt;arr.length;i++)</span><br><span class="line">           if(arr[i]&gt;&#x3D;max)</span><br><span class="line">               max&#x3D;arr[i];</span><br><span class="line">      return max;</span><br><span class="line">  &#125;</span><br><span class="line">  static int findmin(int[] arr) &#123;</span><br><span class="line">      int min&#x3D;arr[0];</span><br><span class="line">      for(int i&#x3D;1;i&lt;arr.length;i++)</span><br><span class="line">           if(arr[i]&lt;&#x3D;min)</span><br><span class="line">               min&#x3D;arr[i];</span><br><span class="line">      return min;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/" data-id="cknaby3bd00007wvpewomc35t" data-title="排序之计数排序" class="article-share-link">Compartir</a>
+      <a data-url="https://username.github.io/2021/04/11/%E6%B5%85%E8%B0%88%E5%B7%A5%E4%B8%9A%E5%BF%AB%E6%8E%92/" data-id="ckncfajcr00001ovpej5o8d2a" data-title="浅谈工业快排" class="article-share-link">Teilen</a>
       
       
       
@@ -465,7 +464,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Siguiente &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -482,7 +481,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -492,9 +491,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/04/13/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/">基数排序</a>
+          </li>
         
           <li>
             <a href="/2021/04/12/%E6%B7%B1%E5%88%BB%E7%9A%84%E6%95%99%E8%AE%AD/">深刻的教训</a>
@@ -512,10 +515,6 @@
             <a href="/2021/04/12/%E5%8D%95%E8%BD%B4%E5%BF%AB%E6%8E%92C-%E7%89%88/">单轴快排C++版</a>
           </li>
         
-          <li>
-            <a href="/2021/04/12/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8FC-%E7%89%88/">归并排序C++版</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -530,7 +529,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Construido por <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
