@@ -71,84 +71,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-三目运算符" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/13/%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T13:47:21.000Z" itemprop="datePublished">2021-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/13/%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/">三目运算符</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;(3&gt;2?5:3);</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">输出5；</span><br></pre></td></tr></table></figure>
-<p>A?B:C相当于<br>if(A)<br>  B;<br>else<br>  C;</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/" data-id="ckjvheq250000hsvpha4shri2" data-title="三目运算符" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-逗号表达式及自增表达式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/13/%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8F%8A%E8%87%AA%E5%A2%9E%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T13:41:05.000Z" itemprop="datePublished">2021-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/13/%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8F%8A%E8%87%AA%E5%A2%9E%E8%A1%A8%E8%BE%BE%E5%BC%8F/">逗号表达式及自增表达式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a;</span><br><span class="line">    int i&#x3D;1;</span><br><span class="line">    a&#x3D;(i++,++i,i+3,i+5);</span><br><span class="line">    printf(&quot;%d&quot;,&amp;a);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*</span><br><span class="line">输出8</span><br><span class="line">i++先赋值再自增；</span><br><span class="line">++i先自增再赋值；</span><br><span class="line">（A,B,C,D）从左到右依次执行，逗号表达式最终值为最后一项；</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8F%8A%E8%87%AA%E5%A2%9E%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-id="ckjvh94yy00007cvp98z4bn34" data-title="逗号表达式及自增表达式" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-求1-1-2-1-3-1-4-1-100" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/13/%E6%B1%821-1-2-1-3-1-4-1-100/" class="article-date">
@@ -448,6 +370,82 @@
     </div>
     <footer class="article-footer">
       <a data-url="https://username.github.io/2021/01/13/C%E8%AF%AD%E8%A8%80scanf%E7%94%A8%E6%B3%95/" data-id="ckjv63jag00000svp4c0u3xoh" data-title="C语言scanf用法" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-C语言printf用法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/13/C%E8%AF%AD%E8%A8%80printf%E7%94%A8%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2021-01-13T08:27:44.000Z" itemprop="datePublished">2021-01-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/13/C%E8%AF%AD%E8%A8%80printf%E7%94%A8%E6%B3%95/">C语言printf用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;Hello world!\n&quot;);</span><br><span class="line">    int i&#x3D;5,j&#x3D;1;</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    printf(&quot;%d %d\n&quot;,i,j);</span><br><span class="line">    printf(&quot;%d,%d\n&quot;,i,j);</span><br><span class="line">    printf(&quot;i&#x3D;%d,j&#x3D;%d\n&quot;,i,j);</span><br><span class="line">    printf(&quot;%5d%5d\n&quot;,i,j);</span><br><span class="line">    printf(&quot;%-5d%-5d\n&quot;,i,j);</span><br><span class="line">    float a&#x3D;1.23;</span><br><span class="line">    printf(&quot;%f\n&quot;,a);</span><br><span class="line">    printf(&quot;%5.3f\n&quot;,a);</span><br><span class="line">    printf(&quot;%5.1f\n&quot;,a);</span><br><span class="line">    printf(&quot;%-5.1f\n&quot;,a);</span><br><span class="line">    float b&#x3D;126.456789;</span><br><span class="line">    printf(&quot;%e\n&quot;,b);</span><br><span class="line">    printf(&quot;%15.8e\n&quot;,b);</span><br><span class="line">    printf(&quot;%-15.1e\n&quot;,b);</span><br><span class="line">    printf(&quot;%%d\n&quot;);</span><br><span class="line">    printf(&quot;\\\n&quot;);</span><br><span class="line">    printf(&quot;\&quot;\&quot;\n&quot;);</span><br><span class="line">    printf(&quot;%f%%\n&quot;,a);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/13/C%E8%AF%AD%E8%A8%80printf%E7%94%A8%E6%B3%95/" data-id="ckjv5wiuh0000agvpeo1g9ypw" data-title="C语言printf用法" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-求一个数是否是素数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/13/%E6%B1%82%E4%B8%80%E4%B8%AA%E6%95%B0%E6%98%AF%E5%90%A6%E6%98%AF%E7%B4%A0%E6%95%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-01-13T08:11:22.000Z" itemprop="datePublished">2021-01-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/13/%E6%B1%82%E4%B8%80%E4%B8%AA%E6%95%B0%E6%98%AF%E5%90%A6%E6%98%AF%E7%B4%A0%E6%95%B0/">求一个数是否是素数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,j;</span><br><span class="line">    printf(&quot;请输入你要判断的数字:&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;i);</span><br><span class="line">    for(j&#x3D;2;j&lt;&#x3D;i;j++)</span><br><span class="line">        if(i%j&#x3D;&#x3D;0)</span><br><span class="line">           break;</span><br><span class="line">    if(i&#x3D;&#x3D;j)</span><br><span class="line">       printf(&quot;Yes!\n&quot;);</span><br><span class="line">    else</span><br><span class="line">       printf(&quot;No!&quot;\n);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/13/%E6%B1%82%E4%B8%80%E4%B8%AA%E6%95%B0%E6%98%AF%E5%90%A6%E6%98%AF%E7%B4%A0%E6%95%B0/" data-id="ckjv5hd9i00009wvp58yz17ry" data-title="求一个数是否是素数" class="article-share-link">Share</a>
       
       
       
