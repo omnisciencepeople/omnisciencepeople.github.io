@@ -57,12 +57,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Buscar"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,104 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-java之awt展望" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/22/java%E4%B9%8Bawt%E5%B1%95%E6%9C%9B/" class="article-date">
+  <time class="dt-published" datetime="2021-03-22T13:39:42.000Z" itemprop="datePublished">2021-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/22/java%E4%B9%8Bawt%E5%B1%95%E6%9C%9B/">java之awt展望概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>GUI：<br>“Graphical User Interface”的缩写，意为：图形化用户界面。</p>
+<p>组件（Component）：是图形用户界面的基本组成元素，凡是能以图形化方式显示在屏幕上并能与用户进行交互的对象均为组件<br>如菜单、按钮、标签、文本框、滚动条等；<br>分类:java.awt.Component、java.awt.Menucomponent<br>java.awt.Component是抽象类，它是java除菜单相关组件之外的所有AWT组件类的根父类，该类规定了GUI组件的基本特性如尺<br>寸、位置、颜色等，并实现了一个GUI组件所应具备的基本功能;</p>
+<p>容器：组件通常不能单独显示出来，必须将其存放于一定的容器中才可以显示出来；<br>有一类特殊的组件是专门存放其他组件的，这类组件叫做容器。<br>java.awt.container是所有容器的父类，继承自java.awt.Component;<br>容器类本身也是一个组件，具有组件的全部性质，但反过来组件不一定为容器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">容器分布关系：</span><br><span class="line">Component：</span><br><span class="line">          Container:</span><br><span class="line">                    Window(默认BoderLayout布局管理器):Frame和dialog</span><br><span class="line">                    Panel（默认FlowLayout布局管理器）：applet</span><br></pre></td></tr></table></figure>
+<p>Frame常用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public void setBounds(int x,int y,int width,int height);&#x2F;&#x2F;设置组件（相对整个屏幕）距离左边距离，距离上边距离，宽度，高度</span><br><span class="line">public void setSize(int width,int height);&#x2F;&#x2F;调整窗体的大小（宽度和高度）</span><br><span class="line">public void setLocation(int x,int y);&#x2F;&#x2F;调整组件的位置（距离左边距离，距离上边距离）;</span><br><span class="line">public void setVisible(boolean b);&#x2F;&#x2F;设置组件是否可见，如果true ，使Window可见，否则隐藏Window ;</span><br><span class="line">public void setBackground(Color C);&#x2F;&#x2F;设置窗口的背景颜色</span><br></pre></td></tr></table></figure>
+<p>Panel:<br>是容器，但不能单独存在，必须添加到其他容器中。<br>拥有其从父类继承过来的方法;<br>构造方法：<br>public Panel();使用默认布局管理器FlowLayout创建新面板<br>public Panel(LayoutManager layout);使用指定的布局管理器创建一个新面板</p>
+<p>布局管理器:<br>容器对其中包含的组件的排列方式，包括组件的位置和大小设定称为容器的布局；<br>为使图形用户界面具有良好的平台无关性，java语言提供了布局管理器来管理容器的布局，而不直接设置组件的尺寸和位置，每<br>个容器都有一个默认的布局管理器，当容器需要对某个组件进行定位或判断其大小尺寸时，就会自动调用其对应的布局管理器。<br>在AWT中常见的布局管理器：<br>BorderLayout、FlowLayout、GridLayout<br>FlowLayout<br>1.是panel类默认的布局管理器；<br>2.对组件进行定位，行内从左到右，一行排满后换行；<br>3.不改变组件原有大小，按照组件原有大小显示组件，可设置组件间的间距、行距及对齐方向；<br>4.FlowLayout默认的排列方式为居中；<br>5.常用方法：<br>new FlowLayout(FlowLayout.RIGHT,20,40);//右对齐，组件之间水平间距为20个像素，垂直距离为40个像素；<br>new FlowLayout(FlowLayout.LEFT);//左对齐，水平和垂直距离默认为5个像素<br>new FlowLayout();//默认为居中对齐方式，水平和垂直间距为5个像素<br>BorderLayout<br>1.是Frame类默认布局管理器<br>2.将容器划分为 东(EAST)西(WEST)南(SOUTH)北(NORTH)中(CENTER)五个区域，组件只能被添加到指定的区域<br>3.如果不指定组件的加入部位，则默认加入到CENTER区<br>4.每个区域只能加入一个组件，如加入多个，则先前加入的被覆盖<br>5.BorderLayout允许 南北区域水平缩放、东西区域垂直缩放、中部可任意缩放<br>GridLayout<br>1.该种布局方式将空间划分为规则的矩形网格，每个单元格区域大小相等，组件被添加到每个单元格。先从左到右填满一行后再从上往下填充。<br>2.填充时以行数为准；<br>3.构造方法：<br>public GridLayout();//在单个行中创建一个每个组件的默认值为一列的网格布局。<br>public GridLayout(int rows,int cols);//创建具有指定行数和列数的网格布局。 布局中的所有组件都具有相同的大小。<br>public GridLayout(int rows,int cols,int hgap,int vgap);//创建具有指定行数和列数的网格布局。 布局中的所有组<br>件都具有相同的大小。 此外，水平和垂直间隙被设置为指定的值。 每个列之间放置水平间隙。 在每行之间放置垂直间隙。<br>rows - 行，值为零表示任意数量的行<br>cols - 值为零，表示任意数量的列<br>hgap - 水平间隙<br>vgap - 垂直间隙 </p>
+<p>布局管理器总结：<br>1.Frame为顶级窗口，Frame缺省布局管理器为BorderLayout;<br>2.Panel无法单独显示，必须添加到某个容器中;<br>3.Panel缺性布局管理器为FlowLayout<br>4.当将Panel添加到某个容器中时，Panel仍可以拥有自己的布局管理器;<br>5.使用布局管理器时，布局管理器负责各组件的位置和大小，因此用户无法在这种情况下设置组件的大小和位置属性，如果想要<br>自定义组件的属性，则应取消默认布局管理器，调用setLayout(null);</p>
+<p>事件处理：<br>事件：用户对组件的一个操作；<br>事件源：能够产生事件的GUI组件对象；<br>事件处理方法：能够接受、解析、处理事件类对象，实现与用户交互功能的方法；<br>事件监听器：可以处理事件的类对象；<br>事件处理步骤：<br>假定事件为A<br>1.向事件源注册某种事件的事件监听器 addAListener(aa);<br>2.设计好可以处理这种事件的监听器<br>class 类名 implements AListener{<br>    重写AListener接口中的方法<br>}<br>要想设计能够处理A事件的监听器，只需编写实现了AListener接口的类即可，因为AListener接口已经定义了可以处理A事件的方法;<br>事件处理相关概念：<br>默认情况下事件源不会自动产生事件，程序员需要做两件事：<br>1.告诉事件源产生哪种事件即向事件源注册某种事件的事件监听器；<br>2.设计好可以处理这种事件的事件监听器；<br>一旦完成了这两步操作，当用户对事件源进行操作时，事件源就会自动产生事件并将事件封装成一个事件对象传递<br>给事件监听器，当事件监听器接受到事件源发送的对象时，会自动调用相应的事件处理方法来处理事件；<br>事件有哪些？<br>java.awt.event包含了所有的事件，常见的事件：<br>Action Event:激活组件时发生的事件（如单击）<br>Key Event：操作键盘时产生的事件；<br>Mouse Event：操作鼠标时发生的事件；<br>Window Event：操作窗口时发生的事件，如最大化、最小化；</p>
+<p>内部类：<br>定义在A类内部但定义在A类所有属性方法之外的类B称为内部类；<br>B为A的内部类，A为B的外部类；<br>内部类访问原则：<br>内部类可以访问外部类所有成员；<br>外部类的方法和属性不可直接访问内部类成员但可以new出内部类对象；<br>内部类优点：<br>可以让一个类方便的访问另一个类的所有成员；<br>增加程序的安全性，有效避免了其他不相关类对该类的访问；<br>什么时间使用内部类？<br>如果一个类A要使用B类所有成员，且A类无需被除B类以外的类或成员访问，我们应将A类定义为B类的内部类；</p>
+<p>匿名类：<br>是一种特殊的内部类；<br>创建匿名类的三种方式：<br>1.实现接口<br>假入A为接口名<br>格式：<br>new A（）<br>{<br>    实现接口中的方法；<br>}<br>功能：生成了一个实现A接口的匿名类对象；<br>2.实现抽象类<br>假定A为抽象类<br>格式：<br>new A()<br>{<br>    实现所有抽象方法；<br>    添加自己的方法或属性；<br>}<br>功能：生成了实现A类所有抽象方法的匿名类对象；<br>3.继承父类<br>假定A为类名<br>格式：<br>new A()<br>{<br>    重写A中方法的代码；<br>    添加自己的属性和方法；<br>}<br>功能生成一个A类的子类对象，该匿名类继承了A所有的非private成员；<br>如果在一个方法内部定义了一个匿名类，则该匿名类可以访问外部类的所有成员；<br>也可以访问包裹该匿名类方法的所有final类型变量；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/22/java%E4%B9%8Bawt%E5%B1%95%E6%9C%9B/" data-id="ckmkmyu550000ocvpczcaggnf" data-title="java之awt展望概述" class="article-share-link">Compartir</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-排序之归并排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/22/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time class="dt-published" datetime="2021-03-22T13:39:10.000Z" itemprop="datePublished">2021-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/22/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">排序之归并排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>归并排序是递归的过程；<br>归并排序要求前后两部分必须有序；<br>下面将下列例子:</p>
+<h3>归并前后有序1</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">public class mergesort &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,6,9,4,6,8&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">        print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        merge_sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void merge_sort(int[] arr)&#123;</span><br><span class="line">        int leftptr&#x3D;0;&#x2F;&#x2F;左指针</span><br><span class="line">        int middle&#x3D;arr.length&#x2F;2;&#x2F;&#x2F;中间值（奇数）</span><br><span class="line">        int rightptr&#x3D;middle+1;&#x2F;&#x2F;右指针</span><br><span class="line">        int cnt&#x3D;0;</span><br><span class="line">        int[] arr1&#x3D;new int[arr.length];</span><br><span class="line">        while(rightptr&lt; arr.length &amp;&amp; leftptr&lt;&#x3D;middle)&#123;</span><br><span class="line">        if(arr[leftptr]&lt; &#x3D;arr[rightptr])</span><br><span class="line">        &#123;</span><br><span class="line">            arr1[cnt]&#x3D;arr[leftptr];</span><br><span class="line">            cnt++;</span><br><span class="line">            leftptr++;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            arr1[cnt]&#x3D;arr[rightptr];</span><br><span class="line">            cnt++;</span><br><span class="line">            rightptr++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;&#x2F;&#x2F;比较完成第一步</span><br><span class="line">        while(rightptr&lt; arr.length)&#123;arr1[cnt]&#x3D;arr[rightptr];cnt++;rightptr++;&#125;</span><br><span class="line">        while(leftptr&lt;&#x3D;middle)&#123;arr1[cnt]&#x3D;arr[leftptr];cnt++;leftptr++;&#125;&#x2F;&#x2F;比较完成第二步</span><br><span class="line">        for(int i&#x3D;0;i&lt; arr.length;i++)&#123;arr[i]&#x3D;arr1[i];&#125;&#x2F;&#x2F;拷贝</span><br><span class="line">    &#125;</span><br><span class="line">    static void print(int[] arr)&#x2F;&#x2F;输出</span><br><span class="line">    &#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt; arr.length;i++)</span><br><span class="line">            System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3>归并前后有序2：改进1</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class mergesort2 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,6,9,11,4,6,8,10&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">        print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        merge_sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void merge_sort(int[] arr)&#123;</span><br><span class="line">        int leftptr&#x3D;0;</span><br><span class="line">        int middle&#x3D;arr.length&#x2F;2;</span><br><span class="line">        int rightptr&#x3D;middle+1;</span><br><span class="line">        int cnt&#x3D;0;</span><br><span class="line">        int[] arr1&#x3D;new int[arr.length];</span><br><span class="line">        while(rightptr&lt; arr.length &amp;&amp; leftptr&lt;&#x3D;middle)&#123;</span><br><span class="line">        arr1[cnt++]&#x3D;arr[leftptr]&lt;&#x3D;arr[rightptr]?arr[leftptr++]:arr[rightptr++];</span><br><span class="line">    &#125;</span><br><span class="line">        while(rightptr&lt; arr.length)&#123;arr1[cnt++]&#x3D;arr[rightptr++];&#125;</span><br><span class="line">        while(leftptr&lt; &#x3D;middle)&#123;arr1[cnt++]&#x3D;arr[leftptr++];&#125;</span><br><span class="line">        for(int i&#x3D;0;i&lt; arr.length;i++)&#123;arr[i]&#x3D;arr1[i];&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    static void print(int[] arr)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt; arr.length;i++)</span><br><span class="line">            System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3>归并前后有序3</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class mergesort3 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,6,9,4,6,8,10&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">        print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        merge_sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void merge_sort(int[] arr)&#123;</span><br><span class="line">        int leftptr&#x3D;0;</span><br><span class="line">        int middle&#x3D;arr.length&#x2F;2-1;&#x2F;&#x2F;中间值（偶数）</span><br><span class="line">        int rightptr&#x3D;middle+1;</span><br><span class="line">        int cnt&#x3D;0;</span><br><span class="line">        int[] arr1&#x3D;new int[arr.length];</span><br><span class="line">        while(rightptr&lt; arr.length &amp;&amp; leftptr&lt; &#x3D;middle)&#123;</span><br><span class="line">        arr1[cnt++]&#x3D;arr[leftptr]&lt;&#x3D;arr[rightptr]?arr[leftptr++]:arr[rightptr++];</span><br><span class="line">    &#125;</span><br><span class="line">        while(rightptr&lt; arr.length)&#123;arr1[cnt++]&#x3D;arr[rightptr++];&#125;</span><br><span class="line">        while(leftptr&lt;&#x3D;middle)&#123;arr1[cnt++]&#x3D;arr[leftptr++];&#125;</span><br><span class="line">        for(int i&#x3D;0;i&lt; arr.length;i++)&#123;arr[i]&#x3D;arr1[i];&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    static void print(int[] arr)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt; arr.length;i++)</span><br><span class="line">            System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3>归并前后有序4:优化</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class mergesort5 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,6,9,4,6,8,10&#125;;</span><br><span class="line">        sort(arr,1,6);</span><br><span class="line">        print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr,int left,int right)&#123;</span><br><span class="line">        int middle&#x3D;left+(right-left)&#x2F;2;&#x2F;&#x2F;不论奇数还是偶数都成立</span><br><span class="line">        if(left&#x3D;&#x3D;right) return;</span><br><span class="line">        if(left&lt; 0|| right&lt; 0|| left&gt;right) return;</span><br><span class="line">        merge_sort(arr,left,middle,right);</span><br><span class="line">    &#125;</span><br><span class="line">    static void merge_sort(int[] arr,int left,int middle,int right)&#123;</span><br><span class="line">        int rightptr&#x3D;middle+1;</span><br><span class="line">        int leftptr&#x3D;left;</span><br><span class="line">        int cnt&#x3D;left;</span><br><span class="line">        int[] arr1&#x3D;new int[arr.length];</span><br><span class="line">        while(rightptr&lt;&#x3D;right &amp;&amp; leftptr&lt;&#x3D;middle)&#123;</span><br><span class="line">        arr1[cnt++]&#x3D;arr[leftptr]&lt;&#x3D;arr[rightptr]?arr[leftptr++]:arr[rightptr++];</span><br><span class="line">    &#125;</span><br><span class="line">        while(rightptr&lt;&#x3D;right)&#123;arr1[cnt++]&#x3D;arr[rightptr++];&#125;</span><br><span class="line">        while(leftptr&lt;&#x3D;middle)&#123;arr1[cnt++]&#x3D;arr[leftptr++];&#125;</span><br><span class="line">        for(int i&#x3D;left;i&lt;&#x3D;right;i++)&#123;arr[i]&#x3D;arr1[i];&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    static void print(int[] arr)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt; arr.length;i++)</span><br><span class="line">            System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3>在任何情况下归并</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class mergesort6 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,2,5,235,214,5145,14564,548,2,8,4,2,6,89,21,471,52,53,2,4,47&#125;;</span><br><span class="line">        sort(arr,0,arr.length-1);</span><br><span class="line">        print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr,int left,int right)&#123;</span><br><span class="line">        int middle&#x3D;left+(right-left)&#x2F;2;</span><br><span class="line">        if(right&#x3D;&#x3D;left || right&lt; 0 || left&lt; 0 || left&gt;right) return;</span><br><span class="line">        sort(arr,left,middle);</span><br><span class="line">        sort(arr,middle+1,right);</span><br><span class="line">        merge_sort(arr,left,middle,right);</span><br><span class="line">    &#125;</span><br><span class="line">    static void merge_sort(int[] arr,int left,int middle,int right)&#123;</span><br><span class="line">        int leftptr&#x3D;left;</span><br><span class="line">        int rightptr&#x3D;middle+1;</span><br><span class="line">        int cnt&#x3D;left;</span><br><span class="line">        int[] arr1&#x3D;new int[arr.length];</span><br><span class="line">        while(leftptr&lt;&#x3D;middle &amp;&amp; rightptr&lt;&#x3D;right)&#123;arr1[cnt++]&#x3D;arr[leftptr]&lt;&#x3D;arr[rightptr]?arr[leftptr++]:arr[rightptr++];&#125;</span><br><span class="line">        while(leftptr&lt;&#x3D;middle)&#123;arr1[cnt++]&#x3D;arr[leftptr++];&#125;</span><br><span class="line">        while(rightptr&lt;&#x3D;right)&#123;arr1[cnt++]&#x3D;arr[rightptr++];&#125;</span><br><span class="line">        for(int i&#x3D;left;i&lt;&#x3D;right;i++) arr[i]&#x3D;arr1[i];</span><br><span class="line">    &#125;</span><br><span class="line">   static void print(int[] arr)&#123;</span><br><span class="line">       for(int i&#x3D;0;i&lt; arr.length;i++)</span><br><span class="line">           System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">       System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/03/22/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" data-id="ckmkmyu5a0001ocvp9yuw2uul" data-title="排序之归并排序" class="article-share-link">Compartir</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-java线程之消费者生产者" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -100,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/21/java%E7%BA%BF%E7%A8%8B%E4%B9%8B%E6%B6%88%E8%B4%B9%E8%80%85%E7%94%9F%E4%BA%A7%E8%80%85/" data-id="ckmihabu100005cvpa2i0elx0" data-title="java线程之消费者生产者" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/21/java%E7%BA%BF%E7%A8%8B%E4%B9%8B%E6%B6%88%E8%B4%B9%E8%80%85%E7%94%9F%E4%BA%A7%E8%80%85/" data-id="ckmihabu100005cvpa2i0elx0" data-title="java线程之消费者生产者" class="article-share-link">Compartir</a>
       
       
       
@@ -149,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA2/" data-id="ckmhqgsjo0000g0vp1ree76nu" data-title="java线程演示2" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA2/" data-id="ckmhqgsjo0000g0vp1ree76nu" data-title="java线程演示2" class="article-share-link">Compartir</a>
       
       
       
@@ -203,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA/" data-id="ckmh4vwll0000cgvp9i2e0hwg" data-title="java线程演示" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/20/java%E7%BA%BF%E7%A8%8B%E6%BC%94%E7%A4%BA/" data-id="ckmh4vwll0000cgvp9i2e0hwg" data-title="java线程演示" class="article-share-link">Compartir</a>
       
       
       
@@ -259,7 +357,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/17/Java%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B02/" data-id="ckmcmdib60000z0vp75jf6q1h" data-title="Java线程概述2" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/17/Java%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B02/" data-id="ckmcmdib60000z0vp75jf6q1h" data-title="Java线程概述2" class="article-share-link">Compartir</a>
       
       
       
@@ -299,7 +397,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/14/Java%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0/" data-id="ckm8pdvhb0000rkvpcvqiho2h" data-title="Java线程概述" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/14/Java%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%BF%B0/" data-id="ckm8pdvhb0000rkvpcvqiho2h" data-title="Java线程概述" class="article-share-link">Compartir</a>
       
       
       
@@ -338,7 +436,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/14/java%E5%AE%B9%E5%99%A8%E4%B9%8B%E6%B3%9B%E5%9E%8B/" data-id="ckm8p9pf20000ekvpa7w861cs" data-title="java容器之泛型" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/14/java%E5%AE%B9%E5%99%A8%E4%B9%8B%E6%B3%9B%E5%9E%8B/" data-id="ckm8p9pf20000ekvpa7w861cs" data-title="java容器之泛型" class="article-share-link">Compartir</a>
       
       
       
@@ -378,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/13/java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%852/" data-id="ckm8ov7yc00005svp0fxj0vht" data-title="java容器程序演示和内容补充2" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/13/java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%852/" data-id="ckm8ov7yc00005svp0fxj0vht" data-title="java容器程序演示和内容补充2" class="article-share-link">Compartir</a>
       
       
       
@@ -416,105 +514,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E6%B1%87%E6%80%BB/" data-id="ckm6fvhdb0000n4vp80ip6yw1" data-title="排序汇总" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-排序之希尔排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" class="article-date">
-  <time class="dt-published" datetime="2021-03-12T14:46:33.000Z" itemprop="datePublished">2021-03-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/">排序之希尔排序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>希尔排序：是优化了插入排序的排序，又称缩小增量排序；<br>基本思想：先将整个待排记录序列分割成若干个子序列，分别进行插入排序，待整个序列中的记录基本有序时，再对全体记录直<br>接进行一次插入排序；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class Shell_sort&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,2,8,3,9,4,6,5,10,56165,5,5156,515,113,3,35,451,151,3484,51,54,1,14,1,1,351,01,13,131,345,1,346431,4,1,4&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        int h&#x3D;1;</span><br><span class="line">        while(h&lt;arr.length&#x2F;3)   </span><br><span class="line">        &#123;</span><br><span class="line">            h&#x3D;3*h+1;</span><br><span class="line">        &#125;&#x2F;&#x2F;求出最大增量</span><br><span class="line">        for(int gap&#x3D;h;gap&gt;0;gap&#x3D;(gap-1)&#x2F;3)&#x2F;&#x2F;不断缩小增量进行插入排序</span><br><span class="line">           for(int i&#x3D;gap;i&lt;arr.length;i++)&#x2F;&#x2F;从gap开始遍历</span><br><span class="line">             for(int j&#x3D;i;j&gt;gap-1&amp;&amp;arr[j]&lt;arr[j-gap];j-&#x3D;gap)&#x2F;&#x2F;希尔排序前面有序，故可这样写</span><br><span class="line">                 swap(arr,j,j-gap);</span><br><span class="line">           print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void print(int[] arr)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">           System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">           System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">    static void swap(int[] arr,int i,int j)&#123;</span><br><span class="line">        int temp&#x3D;arr[i];</span><br><span class="line">        arr[i]&#x3D;arr[j];</span><br><span class="line">        arr[j]&#x3D;temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" data-id="ckm6fbis7000070vpg1d6davz" data-title="排序之希尔排序" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Java容器程序演示和内容补充" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/" class="article-date">
-  <time class="dt-published" datetime="2021-03-12T08:18:41.000Z" itemprop="datePublished">2021-03-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/">Java容器程序演示和内容补充</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">public class test15&#123;</span><br><span class="line">   public static void main(String[] args)&#123;</span><br><span class="line">   ArrayList aa&#x3D;new ArrayList();&#x2F;&#x2F;构造一个初始容量为十的空列表。 </span><br><span class="line">   aa.add(12345);&#x2F;&#x2F;12345会被自动封装成相应的Integer对象</span><br><span class="line">   aa.add(&quot;张三&quot;);&#x2F;&#x2F;字符串为一个对象</span><br><span class="line">   aa.add(66.6);&#x2F;&#x2F;66.6会被自动封装成一个Double对象</span><br><span class="line">   aa.add(new A());</span><br><span class="line">   System.out.println(aa);&#x2F;&#x2F;默认调用每个元素的toString方法</span><br><span class="line">   &#x2F;&#x2F;System.out.println(aa[2]);&#x2F;&#x2F;error 容器不是数组</span><br><span class="line">   System.out.println(aa.get(2));&#x2F;&#x2F;调用List中的get方法得到下标为2的元素</span><br><span class="line">   Object[] ob&#x3D;aa.toArray();&#x2F;&#x2F;toArray方法以正确的顺序返回一个包含此列表中所有元素的数组。 </span><br><span class="line">   System.out.println(ob[2]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">     public String toString()&#123;</span><br><span class="line">         return &quot;哈哈&quot;;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*</span><br><span class="line">编译时会产生和泛型相关的错误，可忽略，之后会解决</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
-
-
-<p>collections类方法使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">public class test16&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        List L&#x3D;new LinkedList();</span><br><span class="line">        for(int i&#x3D;0;i&lt;7;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            L.add(&quot;a&quot;+i);</span><br><span class="line">        &#125;</span><br><span class="line">        Collections.shuffle(L);&#x2F;&#x2F;将容器内元素随机排列</span><br><span class="line">        System.out.println(L);</span><br><span class="line">        Collections.sort(L);&#x2F;&#x2F;将容器内元素排序（默认升序）</span><br><span class="line">        System.out.println(L);</span><br><span class="line">        System.out.println(Collections.binarySearch(L,&quot;a5&quot;));&#x2F;&#x2F;采用折半查找方法查找元素（前提该元素必须是升序排列，否则查找会失败）</span><br><span class="line">        System.out.println(Collections.binarySearch(L,&quot;a7&quot;));</span><br><span class="line">        Collections.reverse(L);</span><br><span class="line">        System.out.println(L);</span><br><span class="line">        System.out.println(Collections.binarySearch(L,&quot;a5&quot;));</span><br><span class="line">        Collections.fill(L,&quot;222&quot;);&#x2F;&#x2F;以222重写容器内所有元素</span><br><span class="line">        System.out.println(L);</span><br><span class="line">        System.out.println(Collections.binarySearch(L,&quot;a5&quot;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*</span><br><span class="line">编译时会产生和泛型相关的错误，可忽略，之后会解决</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
-
-<p>Comparable接口：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">class student&#123;</span><br><span class="line">    private int id;</span><br><span class="line">    private String name;</span><br><span class="line">    public student(int id,String name)</span><br><span class="line">    &#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">        this.name&#x3D;name;</span><br><span class="line">    &#125;</span><br><span class="line">    public String toString()</span><br><span class="line">    &#123;</span><br><span class="line">        return id+&quot; &quot;+name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class test18&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        List L&#x3D;new LinkedList();</span><br><span class="line">        L.add(new student(1000,&quot;张三&quot;));</span><br><span class="line">        L.add(new student(1004,&quot;张四&quot;));</span><br><span class="line">        L.add(new student(1002,&quot;张五&quot;));</span><br><span class="line">        L.add(new student(1001,&quot;张六&quot;));</span><br><span class="line">        Collections.sort(L);&#x2F;&#x2F;用户自定义类未制定比较标准，故无法比较</span><br><span class="line">        System.out.println(L);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*会报错，由于无比较标准*&#x2F;</span><br><span class="line"></span><br><span class="line">正确如下：</span><br><span class="line">import java.util.*;</span><br><span class="line">class student implements Comparable&#123;</span><br><span class="line">    private int id;</span><br><span class="line">    private String name;</span><br><span class="line">    public student(int id,String name)</span><br><span class="line">    &#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">        this.name&#x3D;name;</span><br><span class="line">    &#125;</span><br><span class="line">    public String toString()</span><br><span class="line">    &#123;</span><br><span class="line">        return id+&quot; &quot;+name;</span><br><span class="line">    &#125;</span><br><span class="line">    public int compareTo(Object o)</span><br><span class="line">    &#123;</span><br><span class="line">        student st&#x3D;(student)o;&#x2F;&#x2F;多态父类引用无法调用子类特有的方法和属性，只能调用子类从父类继承过来的方法和属</span><br><span class="line">                             &#x2F;&#x2F;性，如果想要调用子类特有的方法和属性，则需对父类引用进行强制类型转换</span><br><span class="line">        return this.id-st.id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class test18&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        List L&#x3D;new LinkedList();</span><br><span class="line">        L.add(new student(1000,&quot;张三&quot;));</span><br><span class="line">        L.add(new student(1004,&quot;张四&quot;));</span><br><span class="line">        L.add(new student(1002,&quot;张五&quot;));</span><br><span class="line">        L.add(new student(1001,&quot;张六&quot;));</span><br><span class="line">        Collections.sort(L);&#x2F;&#x2F;虽然是用户自定义类但制定了比较标准，故可比较；sort方法自动调用了类student的</span><br><span class="line">                            &#x2F;&#x2F;CompareTo方法</span><br><span class="line">        System.out.println(L);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*凡是需要排序的类（基本数据类型和String类除外）都须考虑实现Comparable接口并重写其compareTo方法以制定比较标准*&#x2F;</span><br></pre></td></tr></table></figure>
-
-<p>set容器元素重复出现：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">class student&#123;</span><br><span class="line">    private int id;</span><br><span class="line">    private String name;</span><br><span class="line">    public student(int id,String name)</span><br><span class="line">    &#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">        this.name&#x3D;name;</span><br><span class="line">    &#125;</span><br><span class="line">    public String toString()&#123;</span><br><span class="line">        return id+&quot; &quot;+name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class test19&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Set s&#x3D;new HashSet();</span><br><span class="line">        s.add(new student(1000,&quot;张三&quot;));</span><br><span class="line">        s.add(new student(1001,&quot;李四&quot;));</span><br><span class="line">        s.add(new student(1002,&quot;王五&quot;));</span><br><span class="line">        s.add(new student(1002,&quot;王五&quot;));</span><br><span class="line">        System.out.println(s);&#x2F;&#x2F;set内元素无序，故输出元素无序</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*未做处理，故有重复元素出现*&#x2F;</span><br></pre></td></tr></table></figure>
-<p>set元素重复问题处理：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">class student&#123;</span><br><span class="line">    private int id;</span><br><span class="line">    private String name;</span><br><span class="line">    public student(int id,String name)</span><br><span class="line">    &#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">        this.name&#x3D;name;</span><br><span class="line">    &#125;</span><br><span class="line">    public String toString()&#123;</span><br><span class="line">        return id+&quot; &quot;+name;</span><br><span class="line">    &#125;</span><br><span class="line">    public int hashCode()&#123;</span><br><span class="line">        return new String(id+name).hashCode();</span><br><span class="line">    &#125;</span><br><span class="line">    public boolean equals(Object o)</span><br><span class="line">    &#123;</span><br><span class="line">        student st&#x3D; (student)o;</span><br><span class="line">        return st.id&#x3D;&#x3D;this.id&amp;&amp;st.name&#x3D;&#x3D;this.name;</span><br><span class="line">    &#125; </span><br><span class="line">    &#x2F;&#x2F;子类重写父类方法，访问权限不能低于父类，抛出范围不能大于父类</span><br><span class="line">    &#x2F;&#x2F;hashCode方法和equals方法继承自Object类</span><br><span class="line">&#125;</span><br><span class="line">public class test19&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Set s&#x3D;new HashSet();</span><br><span class="line">        s.add(new student(1000,&quot;张三&quot;));</span><br><span class="line">        s.add(new student(1001,&quot;李四&quot;));</span><br><span class="line">        s.add(new student(1002,&quot;王五&quot;));</span><br><span class="line">        s.add(new student(1002,&quot;王五&quot;));</span><br><span class="line">        System.out.println(s);&#x2F;&#x2F;set内元素无序，故输出元素无序</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;我们必须同时重写equals方法和hashcode方法才可解决set容器内元素重复问题</span><br></pre></td></tr></table></figure>
-<p>重写hashcode方法重要性：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">class A&#123;</span><br><span class="line">    private int id;</span><br><span class="line">    public A(int id)&#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class B&#123;</span><br><span class="line">    private int id;</span><br><span class="line">    public B(int id)&#123;</span><br><span class="line">        this.id&#x3D;id;</span><br><span class="line">    &#125;</span><br><span class="line">    public int hashCode()&#123;</span><br><span class="line">        return new Integer(id).hashCode();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class test20&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        System.out.println(&quot;new A(1).hashCode()&#x3D;&quot;+new A(1).hashCode());</span><br><span class="line">        System.out.println(&quot;new A(1).hashCode()&#x3D;&quot;+new A(1).hashCode());</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(&quot;new Integer(1).hashCode()&#x3D;&quot;+new Integer(1).hashCode());</span><br><span class="line">        System.out.println(&quot;new Integer(1).hashCode()&#x3D;&quot;+new Integer(1).hashCode());</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(&quot;new String(\&quot;哈哈\&quot;).hashCode()&#x3D;&quot;+new String(&quot;哈哈&quot;).hashCode());</span><br><span class="line">        System.out.println(&quot;new String(\&quot;哈哈\&quot;).hashCode()&#x3D;&quot;+new String(&quot;哈哈&quot;).hashCode());</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(&quot;\&quot;哈哈\&quot;.hashCode()&#x3D;&quot;+(&quot;哈哈&quot;).hashCode());</span><br><span class="line">        System.out.println(&quot;\&quot;哈哈\&quot;.hashCode()&#x3D;&quot;+(&quot;哈哈&quot;).hashCode());</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(&quot;new B(1).hashCode()&#x3D;&quot;+new B(1).hashCode());</span><br><span class="line">        System.out.println(&quot;new B(1).hashCode()&#x3D;&quot;+new B(1).hashCode());</span><br><span class="line">        System.out.println();</span><br><span class="line">        Integer it1&#x3D;new Integer(1);</span><br><span class="line">        Integer it2&#x3D;new Integer(1);</span><br><span class="line">        System.out.println(it1&#x3D;&#x3D;it2);</span><br><span class="line">        System.out.println(it2.equals(it2));</span><br><span class="line">        System.out.println(it1.hashCode()&#x3D;&#x3D;it2.hashCode());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果：</span><br><span class="line">new A(1).hashCode()&#x3D;366712642</span><br><span class="line">new A(1).hashCode()&#x3D;1829164700</span><br><span class="line"></span><br><span class="line">new Integer(1).hashCode()&#x3D;1</span><br><span class="line">new Integer(1).hashCode()&#x3D;1</span><br><span class="line"></span><br><span class="line">new String(&quot;哈哈&quot;).hashCode()&#x3D;694528</span><br><span class="line">new String(&quot;哈哈&quot;).hashCode()&#x3D;694528</span><br><span class="line"></span><br><span class="line">&quot;哈哈&quot;.hashCode()&#x3D;694528</span><br><span class="line">&quot;哈哈&quot;.hashCode()&#x3D;694528</span><br><span class="line"></span><br><span class="line">new B(1).hashCode()&#x3D;1</span><br><span class="line">new B(1).hashCode()&#x3D;1</span><br><span class="line"></span><br><span class="line">false</span><br><span class="line">true</span><br><span class="line">true</span><br></pre></td></tr></table></figure>
-<p>String和Integer这些Java自带的类都重写了hashCode方法，如果Integer和String new出的对象内容相同则这些对象的<br>hashCode返回值是相同的，尽管他们占用不同的内存；<br>用户自定义的类如本程序的A类，即便内容相同hashCode返回值也不同，因为未重写hashCode方法；<br>如果希望自己定义的类对象占用内存不同但内容相同，返回相同的hashCode方法则程序员必须手动重写hashCode方法如本程序的B类；</p>
-<p>为什么set（以hashset为实现类）中必须重写hashCode方法和equals方法？<br>假定有一个对象aa，要放在set容器中（以hashset为实现类）<br>存放原理：<br>我们先根据aa的hashCode方法按照某中算法找到它在set容器中的位置，后存放进去(实际上并未放入容器中，而是放入后面的<br>线性链表中)，这是调用equals方法判断它与后面链表中的元素是否存在重复，若重复则不存放，不重复则存放；<br>set容器并未存放对象本身，它存放的是存储地址；<br>所以我们必须重写这些方法；<br>如果只重写了hashCode方法而未重写equals方法，同样会造成重复，因为未重写equals方法，equals判断的是内存地址的异同<br>而非内容的异同；如容器内存入两个两个内容相同的类A对象;<br>如果只重写了equals方法而未重写hashCode方法，同样会造成重复,如存入两个内容相同的类A对象（找到的存储地址不同）；</p>
-<p>放在什么容器中需要重写hashCode方法和equals方法？<br>hashset、hashmap。hashtable需全部重写；<br>Treeset、Treemap无需重写，因为该树有序的（我们必须指定比较标准因此这两个实现类造出的容器内的类对象必须实现<br>Comparable接口并重写compareTo方法）</p>
-<p>如何重写hashCode方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public int hashCode()</span><br><span class="line">&#123;</span><br><span class="line">    return 当前类中基本类型对象的hashCode方法;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Iterator遍历：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">class point&#123;</span><br><span class="line">   private int i;</span><br><span class="line">   private int j;</span><br><span class="line">   public point(int j,int i)</span><br><span class="line">   &#123;</span><br><span class="line">       this.i&#x3D;i;</span><br><span class="line">       this.j&#x3D;j;</span><br><span class="line">   &#125;</span><br><span class="line">   public String toString()&#123;</span><br><span class="line">       return &quot;[&quot;+i+&quot;,&quot;+j+&quot;]&quot;;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class test21&#123;</span><br><span class="line">   public static void main(String[] args)&#123;</span><br><span class="line">       ArrayList aa&#x3D;new ArrayList();</span><br><span class="line">       aa.add(&quot;one&quot;);</span><br><span class="line">       aa.add(22);</span><br><span class="line">       aa.add(new point(1,1));</span><br><span class="line">       System.out.println(&quot;容器a1的元素为：&quot;);</span><br><span class="line">       showcollection(aa);</span><br><span class="line">       HashSet hs&#x3D;new HashSet();</span><br><span class="line">       hs.add(22);</span><br><span class="line">       hs.add(new point(1,2));</span><br><span class="line">       System.out.println(&quot;容器hs的元素为：&quot;);</span><br><span class="line">       showcollection(hs);</span><br><span class="line">   &#125;</span><br><span class="line">   static void showcollection(Collection e)&#123;</span><br><span class="line">       Iterator it&#x3D;e.iterator();</span><br><span class="line">       while(it.hasNext())</span><br><span class="line">       &#123;</span><br><span class="line">           System.out.println(it.next());</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;容器中所有继承了Collection接口的类都默认实现了Iterator中的三个方法</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/" data-id="ckm6c07sl0000tgvp1ttw3d77" data-title="Java容器程序演示和内容补充" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/12/%E6%8E%92%E5%BA%8F%E6%B1%87%E6%80%BB/" data-id="ckm6fvhdb0000n4vp80ip6yw1" data-title="排序汇总" class="article-share-link">Compartir</a>
       
       
       
@@ -530,7 +530,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/4/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Previo</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/4/">Siguiente &raquo;</a>
   </nav>
 
 </section>
@@ -547,7 +547,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -557,9 +557,17 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/04/14/%E7%AE%97%E6%B3%95%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/">算法小技巧总结</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/14/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%A1%B6%E6%8E%92%E5%BA%8F/">排序之桶排序</a>
+          </li>
         
           <li>
             <a href="/2021/04/13/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8FC-%E7%89%88/">基数排序C++版</a>
@@ -571,14 +579,6 @@
         
           <li>
             <a href="/2021/04/12/%E6%B7%B1%E5%88%BB%E7%9A%84%E6%95%99%E8%AE%AD/">深刻的教训</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/12/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8FC-%E7%89%88/">计数排序C++版</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/12/%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8FC-%E7%89%88/">二分插入排序C++版</a>
           </li>
         
       </ul>
@@ -595,7 +595,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

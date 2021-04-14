@@ -57,12 +57,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Buscar"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,87 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-scanf输入字符串时注意事项" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="article-date">
+  <time class="dt-published" datetime="2021-01-14T10:07:59.000Z" itemprop="datePublished">2021-01-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">scanf输入字符串时注意事项</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a[100];</span><br><span class="line">    scanf(&quot;%s&quot;,&amp;a);&#x2F;&#x2F;error:字符数组中字符数组名即为该数组第一个元素的地址或者说该数组的起始地址；</span><br><span class="line">    scanf(&quot;%s&quot;,a)</span><br><span class="line">    printf(&quot;%s\n&quot;,a);&#x2F;&#x2F;字符数组以%s输出时，输出控制项为字符数组名；</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a[100],b[100],c[100];</span><br><span class="line">    scanf(&quot;%s%s%s&quot;,a,b,c);&#x2F;&#x2F;若输入How are you?输出How are you?；若输入Howareyou?输出无输出;有空格字符分隔</span><br><span class="line">    作为三个字符串输入，无空格字符，当作一个字符串输入；</span><br><span class="line">    两者a[100],b[100],c[100]不同</span><br><span class="line">    printf(&quot;%s%s%s\n&quot;,a,b,c);&#x2F;&#x2F;字符数组以%s输出时，输出控制项为字符数组名；</span><br><span class="line">    char ch[100];</span><br><span class="line">    scanf(&quot;%s&quot;,ch);&#x2F;&#x2F;若输入How are you？&#x2F;&#x2F;输出How；系统将空格字符当作字符串间的分隔符故输出How</span><br><span class="line">    printf(&quot;%s\n&quot;,ch);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>字符串的输出只需要字符数组首地址即可，系统会沿着第一个字符的地址找下去直至遇到\0；系统这么做的前提是数组为连续分<br>配的内存；<br>疑问：<br>    char ch[1或2];<br>    scanf(“%s”,ch);//若输入How are you？为什么输出How；<br>    printf(“%s\n”,ch);</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" data-id="ckjwqignx0000rkvpg3vea5yz" data-title="scanf输入字符串时注意事项" class="article-share-link">Compartir</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-字符数组" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/14/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/" class="article-date">
+  <time class="dt-published" datetime="2021-01-14T03:14:25.000Z" itemprop="datePublished">2021-01-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/14/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/">字符数组</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>定义字符数组与定义数值型数据的方法类似，例如char a[10];<br>字符数组的初始化（这里说的是定义时并初始化而定义以后单个初始化）：<br>1.完全初始化<br>如 char a[13]={‘I’,’ ‘,’a’,’m’,’a’,’C’,’h’,’i’,’n’,’e’,’s’,’e’,’.’};<br>2.不完全初始化<br>如 char a[3]={‘I’};<br>未初始化的元素自动定为空字符（\0）；<br>3.未初始化<br>如 char a[3];<br>输出值为垃圾值；</p>
+<p>若{}内提供的初值个数大于数组长度则会报错；因此，在定义字符数组时应估计其实际长度保证实际长度不大于数组长度；<br>字符数组的结束标志：以空字符(\0)为结束标志；以空字符作为结束标志不会产生任何附加操作或增加有效字符，只起一个供辨<br>别的标志；<br>printf(“How do you do?\n”);系统会自动在最后一个字符\n后加一个\0；<br>char a[5]={“china”};//error 此时数组实际长度为6&gt;5;字符串赋值；<br>char a[5]={‘c’,’h’,’i’,’n’,’a’};//ok 字符赋值；</p>
+<p>字符数组的输出：<br>1.输出字符不包括空字符；<br>2.若以%s格式符输出时，printf函数的输出控制项为字符数组名；<br>3.若数组长度大于数组实际长度也只遇到\0结束；<br>4.若包含一个以上的空字符，则遇到第一个空字符就结束；<br>5.可用scanf函数输入一个字符串<br>如 scanf(“%s”,字符数组名)；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/01/14/%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84/" data-id="ckjwotkcl00004ovpa56t0xtm" data-title="字符数组" class="article-share-link">Compartir</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-求二维数组最大值及最大值行列数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -97,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E6%B1%82%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8F%8A%E6%9C%80%E5%A4%A7%E5%80%BC%E8%A1%8C%E5%88%97%E6%95%B0/" data-id="ckjwa1lbx00008cvp2wcm7aak" data-title="求二维数组最大值及最大值行列数" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/14/%E6%B1%82%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8F%8A%E6%9C%80%E5%A4%A7%E5%80%BC%E8%A1%8C%E5%88%97%E6%95%B0/" data-id="ckjwa1lbx00008cvp2wcm7aak" data-title="求二维数组最大值及最大值行列数" class="article-share-link">Compartir</a>
       
       
       
@@ -135,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E8%A1%8C%E5%88%97%E4%BA%92%E6%8D%A2/" data-id="ckjw9q0nc0000p0vpc6xc4o0t" data-title="二维数组行列互换" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/14/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E8%A1%8C%E5%88%97%E4%BA%92%E6%8D%A2/" data-id="ckjw9q0nc0000p0vpc6xc4o0t" data-title="二维数组行列互换" class="article-share-link">Compartir</a>
       
       
       
@@ -173,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/14/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckjw8lzmm0000t0vp2ztk9niw" data-title="一维数组冒泡排序" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/14/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="ckjw8lzmm0000t0vp2ztk9niw" data-title="一维数组冒泡排序" class="article-share-link">Compartir</a>
       
       
       
@@ -211,7 +292,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E9%80%86%E5%BA%8F%E8%BE%93%E5%87%BA/" data-id="ckjvkkjyw0000okvpcghi9vhy" data-title="一维数组逆序输出" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/13/%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E9%80%86%E5%BA%8F%E8%BE%93%E5%87%BA/" data-id="ckjvkkjyw0000okvpcghi9vhy" data-title="一维数组逆序输出" class="article-share-link">Compartir</a>
       
       
       
@@ -250,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E6%95%B0%E7%BB%84/" data-id="ckjvk989e0000asvpcmm30t45" data-title="数组" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/13/%E6%95%B0%E7%BB%84/" data-id="ckjvk989e0000asvpcmm30t45" data-title="数组" class="article-share-link">Compartir</a>
       
       
       
@@ -291,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/continue%E7%94%A8%E6%B3%95/" data-id="ckjvjbcyl0000mwvp06u9dm55" data-title="continue用法" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/13/continue%E7%94%A8%E6%B3%95/" data-id="ckjvjbcyl0000mwvp06u9dm55" data-title="continue用法" class="article-share-link">Compartir</a>
       
       
       
@@ -331,7 +412,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/switch%E7%94%A8%E6%B3%95%E5%8F%8Abreak%E7%94%A8%E6%B3%95/" data-id="ckjvj3k90000078vpateg903x" data-title="switch用法及break用法" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/13/switch%E7%94%A8%E6%B3%95%E5%8F%8Abreak%E7%94%A8%E6%B3%95/" data-id="ckjvj3k90000078vpateg903x" data-title="switch用法及break用法" class="article-share-link">Compartir</a>
       
       
       
@@ -369,83 +450,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/" data-id="ckjviiymk000014vpg7wed5nw" data-title="求一元二次方程解" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-斐波拉契数列" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/13/%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E6%95%B0%E5%88%97/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T13:58:41.000Z" itemprop="datePublished">2021-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/13/%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E6%95%B0%E5%88%97/">斐波拉契数列</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int f1,f2,f3,n;</span><br><span class="line">    char ch;</span><br><span class="line">    f1&#x3D;1;</span><br><span class="line">    f2&#x3D;2;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">    printf(&quot;请输入你要求的项数:&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    if(n&#x3D;&#x3D;1)</span><br><span class="line">       f3&#x3D;f1;</span><br><span class="line">    else if(n&#x3D;&#x3D;2)</span><br><span class="line">       f3&#x3D;f2;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">       f3&#x3D;f1+f2;</span><br><span class="line">       f1&#x3D;f2;</span><br><span class="line">       f2&#x3D;f3;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;第%d项为%d\n&quot;,n,f3);</span><br><span class="line">    printf(&quot;你是否还要继续（Y&#x2F;N）:&quot;);</span><br><span class="line">    scanf(&quot; %c&quot;,&amp;ch);</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E6%95%B0%E5%88%97/" data-id="ckjvi06h80000qovpdguy0gg3" data-title="斐波拉契数列" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-回文数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/13/%E5%9B%9E%E6%96%87%E6%95%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-01-13T13:51:53.000Z" itemprop="datePublished">2021-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/13/%E5%9B%9E%E6%96%87%E6%95%B0/">回文数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int val;</span><br><span class="line">    int sum&#x3D;0;</span><br><span class="line">    int m;</span><br><span class="line">    printf(&quot;请输入你要判断的数字:&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;val);</span><br><span class="line">    m&#x3D;val;</span><br><span class="line">    while(m)</span><br><span class="line">    &#123;</span><br><span class="line">        sum&#x3D;sum*10+m%10;</span><br><span class="line">        m&#x2F;&#x3D;10;</span><br><span class="line">    &#125;</span><br><span class="line">    if(sum&#x3D;&#x3D;val)</span><br><span class="line">      printf(&quot;YES!\n&quot;);</span><br><span class="line">    else</span><br><span class="line">      printf(&quot;NO\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/01/13/%E5%9B%9E%E6%96%87%E6%95%B0/" data-id="ckjvhl30d0000y4vpezyo9gl9" data-title="回文数" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/" data-id="ckjviiymk000014vpg7wed5nw" data-title="求一元二次方程解" class="article-share-link">Compartir</a>
       
       
       
@@ -461,7 +466,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/9/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/11/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/9/">&laquo; Previo</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/11/">Siguiente &raquo;</a>
   </nav>
 
 </section>
@@ -478,7 +483,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -488,9 +493,17 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/04/14/%E7%AE%97%E6%B3%95%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/">算法小技巧总结</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/14/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%A1%B6%E6%8E%92%E5%BA%8F/">排序之桶排序</a>
+          </li>
         
           <li>
             <a href="/2021/04/13/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8FC-%E7%89%88/">基数排序C++版</a>
@@ -502,14 +515,6 @@
         
           <li>
             <a href="/2021/04/12/%E6%B7%B1%E5%88%BB%E7%9A%84%E6%95%99%E8%AE%AD/">深刻的教训</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/12/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8FC-%E7%89%88/">计数排序C++版</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/12/%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8FC-%E7%89%88/">二分插入排序C++版</a>
           </li>
         
       </ul>
@@ -526,7 +531,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

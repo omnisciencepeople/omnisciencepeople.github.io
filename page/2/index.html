@@ -57,12 +57,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Buscar"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://username.github.io"></form>
       </div>
     </div>
   </div>
@@ -70,6 +70,90 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-排序之Bindarysort" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BBindarysort/" class="article-date">
+  <time class="dt-published" datetime="2021-04-11T00:22:29.000Z" itemprop="datePublished">2021-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BBindarysort/">排序之Bindarysort</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * @author MiaoZhiJun</span><br><span class="line"> * @date 2021&#x2F;4&#x2F;11&#x2F;15:52</span><br><span class="line"> * @className binarysort</span><br><span class="line"> * @description 二分插入排序</span><br><span class="line"> *&#x2F;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Random;</span><br><span class="line">import java.util.Arrays;</span><br><span class="line"></span><br><span class="line">public class binarysort &#123;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">      int[] arr&#x3D;new int[20];</span><br><span class="line">      for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">          arr[i]&#x3D;new Random().nextInt(20);</span><br><span class="line">      sort(arr);</span><br><span class="line">      System.out.println(Arrays.toString(arr));</span><br><span class="line">  &#125;</span><br><span class="line">  static void sort(int[] arr) &#123;</span><br><span class="line">      for(int i&#x3D;1;i&lt;arr.length;i++)</span><br><span class="line">          binary_sort(arr,i,arr[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  static void binary_sort(int[] arr,int right,int point) &#123;</span><br><span class="line">      if(right&lt;&#x3D;0) return;</span><br><span class="line">      int leftptr&#x3D;0;</span><br><span class="line">      int rightptr&#x3D;right-1;</span><br><span class="line">      int middle;</span><br><span class="line">      while(leftptr&lt;&#x3D;rightptr) &#123;</span><br><span class="line">          middle&#x3D;leftptr+(rightptr-leftptr)&#x2F;2;</span><br><span class="line">          if(arr[middle]&lt;&#x3D;point) leftptr&#x3D;middle+1;</span><br><span class="line">          else  rightptr&#x3D;middle-1;</span><br><span class="line">      &#125;</span><br><span class="line">      for(int j&#x3D;right-1;j&gt;&#x3D;rightptr+1;j--)</span><br><span class="line">          arr[j+1]&#x3D;arr[j];</span><br><span class="line">      arr[rightptr+1]&#x3D;point;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BBindarysort/" data-id="ckncfajcv00021ovpdvj3edot" data-title="排序之Bindarysort" class="article-share-link">Compartir</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-排序之Timsort" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BTimsort/" class="article-date">
+  <time class="dt-published" datetime="2021-04-11T00:21:26.000Z" itemprop="datePublished">2021-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BTimsort/">排序之Timsort</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">*@author MiaoZhiJun</span><br><span class="line">*@datetime 2021&#x2F;4&#x2F;11 19:31</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+<p>Timsort : Tim Peters在2002年为Python开发基础设施时结合使用归并和插入，并辅以另外一些技术手段，实现了后来被人称为Timsort的排序算法;<br>Timsort运用二分插入排序和归并排序，是归并排序的优化；减少了对升序部分的回溯和降序部分的性能倒退；<br>python内部的sorted和List.sort以及java中的Arrays.sort中同样用到Timsort;</p>
+<p>Timsort的运用基于一个事实：<br>现实生活中，大多数真实的数据集中，大部分元素是排好序的;即不论一组数据多复杂，其局部是有序的；</p>
+<p>Timsort术语：<br>run:一组数据的集合，该组数据严格有序(单调递增或单调递减)，不能出现重复元素；<br>python内部元素个数&gt;64时用Timsort;元素个数&lt;64时用二分插入排序；<br>java内部元素个数&gt;32时用Timsort；元素个数&lt;32时用二分插入排序；</p>
+<p>Timsort步骤:<br>1.遍历全部元素，查找严格单调递减或单调递增的区间（区间长度:java为16到32;python为32到64；一般区间长度为2的n次方）并划分出区间放入栈中;（该栈为Run栈）<br>2.栈中满足规则： Z&gt;X+Y和Y&gt;X，这样可以提高归并的效率（X、Y、Z为run长度,Z、Y、X依次放入栈中）<br>3.栈中从上到下依次归并，得到有序数列;</p>
+<p>举例：对8，10，15，6，18，12，7，5，4，3，20，8，11，22，9，9，17排序<br>这里元素较少，我们取区间最小长度为4；<br>（1）8，15，16严格有序（严格单调递增），不过长度为3，不能划分为一个区间，故将后面的6运用二分插入排序放在前面的序列中，这样就划分一个区间run[0]={6,8,15,16}将其放入栈中;<br>(2)18,12,7,5,4,3严格有序（严格单调递减），故将其逆序后划分为一个区间run[1]={3,4,5,7,12,18}将其放入栈中;<br>(3)由于run[1]长度大于run[0],故让run[1]和run[0]出栈,并将其归并并记作run[0]={3,4,5,6,7,8,12,15,16,18},将run[0]放入栈中;<br>(4)20,8严格有序，但长度为2，将11和22二分插入排序放在该序列中，将该序列逆序并划分成一个区间run[1]={8,11,20,22};将run[1]放入栈中;<br>(5)最后三个元素只好划分为一个区间run[2],并将其放入栈中;<br>(6)栈中从上到下依次归并，得到有序数列;</p>
+<p>Timsort稳定，最好时间复杂度为o(n),最坏时间复杂度为o(nlogn);空间复杂度为o(nlogn);</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://username.github.io/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BTimsort/" data-id="ckncfajcu00011ovphy2whma7" data-title="排序之Timsort" class="article-share-link">Compartir</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-浅谈工业快排" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -98,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/11/%E6%B5%85%E8%B0%88%E5%B7%A5%E4%B8%9A%E5%BF%AB%E6%8E%92/" data-id="ckncfajcr00001ovpej5o8d2a" data-title="浅谈工业快排" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/04/11/%E6%B5%85%E8%B0%88%E5%B7%A5%E4%B8%9A%E5%BF%AB%E6%8E%92/" data-id="ckncfajcr00001ovpej5o8d2a" data-title="浅谈工业快排" class="article-share-link">Compartir</a>
       
       
       
@@ -137,7 +221,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/" data-id="cknaby3bd00007wvpewomc35t" data-title="排序之计数排序" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/04/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/" data-id="cknaby3bd00007wvpewomc35t" data-title="排序之计数排序" class="article-share-link">Compartir</a>
       
       
       
@@ -175,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/09/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%8F%8C%E8%BD%B4%E6%8E%92%E5%BA%8F/" data-id="cknaby3bi00017wvp7zri9w87" data-title="快速排序之双轴排序" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/04/09/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%8F%8C%E8%BD%B4%E6%8E%92%E5%BA%8F/" data-id="cknaby3bi00017wvp7zri9w87" data-title="快速排序之双轴排序" class="article-share-link">Compartir</a>
       
       
       
@@ -213,7 +297,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/06/%E9%AA%8C%E8%AF%81%E6%8E%92%E5%BA%8F%E6%AD%A3%E7%A1%AE%E6%80%A7%E7%9A%84%E7%AE%97%E6%B3%95/" data-id="ckn61gwix0001novpcs1tbxbv" data-title="验证排序正确性的算法" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/04/06/%E9%AA%8C%E8%AF%81%E6%8E%92%E5%BA%8F%E6%AD%A3%E7%A1%AE%E6%80%A7%E7%9A%84%E7%AE%97%E6%B3%95/" data-id="ckn61gwix0001novpcs1tbxbv" data-title="验证排序正确性的算法" class="article-share-link">Compartir</a>
       
       
       
@@ -264,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/04/06/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E7%BB%8F%E5%85%B8%E5%8D%95%E8%BD%B4%E6%8E%92%E5%BA%8F%EF%BC%89/" data-id="ckn61gwil0000novp56xdhcad" data-title="排序之快速排序（经典单轴排序）" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/04/06/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E7%BB%8F%E5%85%B8%E5%8D%95%E8%BD%B4%E6%8E%92%E5%BA%8F%EF%BC%89/" data-id="ckn61gwil0000novp56xdhcad" data-title="排序之快速排序（经典单轴排序）" class="article-share-link">Compartir</a>
       
       
       
@@ -330,7 +414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/26/Java%E5%BC%82%E5%B8%B8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="ckmpykono0000ucvp4a3p0ir5" data-title="Java异常程序演示" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/26/Java%E5%BC%82%E5%B8%B8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="ckmpykono0000ucvp4a3p0ir5" data-title="Java异常程序演示" class="article-share-link">Compartir</a>
       
       
       
@@ -381,7 +465,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/26/Java%E5%BC%82%E5%B8%B8%E6%A6%82%E8%BF%B0/" data-id="ckmpykonr0001ucvp65qw0tt9" data-title="Java异常概述" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/26/Java%E5%BC%82%E5%B8%B8%E6%A6%82%E8%BF%B0/" data-id="ckmpykonr0001ucvp65qw0tt9" data-title="Java异常概述" class="article-share-link">Compartir</a>
       
       
       
@@ -444,105 +528,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="ckmlhq26j0000tcvp8d6ta9qf" data-title="java之awt程序演示" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-java之awt展望" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/22/java%E4%B9%8Bawt%E5%B1%95%E6%9C%9B/" class="article-date">
-  <time class="dt-published" datetime="2021-03-22T13:39:42.000Z" itemprop="datePublished">2021-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/22/java%E4%B9%8Bawt%E5%B1%95%E6%9C%9B/">java之awt展望概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>GUI：<br>“Graphical User Interface”的缩写，意为：图形化用户界面。</p>
-<p>组件（Component）：是图形用户界面的基本组成元素，凡是能以图形化方式显示在屏幕上并能与用户进行交互的对象均为组件<br>如菜单、按钮、标签、文本框、滚动条等；<br>分类:java.awt.Component、java.awt.Menucomponent<br>java.awt.Component是抽象类，它是java除菜单相关组件之外的所有AWT组件类的根父类，该类规定了GUI组件的基本特性如尺<br>寸、位置、颜色等，并实现了一个GUI组件所应具备的基本功能;</p>
-<p>容器：组件通常不能单独显示出来，必须将其存放于一定的容器中才可以显示出来；<br>有一类特殊的组件是专门存放其他组件的，这类组件叫做容器。<br>java.awt.container是所有容器的父类，继承自java.awt.Component;<br>容器类本身也是一个组件，具有组件的全部性质，但反过来组件不一定为容器。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">容器分布关系：</span><br><span class="line">Component：</span><br><span class="line">          Container:</span><br><span class="line">                    Window(默认BoderLayout布局管理器):Frame和dialog</span><br><span class="line">                    Panel（默认FlowLayout布局管理器）：applet</span><br></pre></td></tr></table></figure>
-<p>Frame常用方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public void setBounds(int x,int y,int width,int height);&#x2F;&#x2F;设置组件（相对整个屏幕）距离左边距离，距离上边距离，宽度，高度</span><br><span class="line">public void setSize(int width,int height);&#x2F;&#x2F;调整窗体的大小（宽度和高度）</span><br><span class="line">public void setLocation(int x,int y);&#x2F;&#x2F;调整组件的位置（距离左边距离，距离上边距离）;</span><br><span class="line">public void setVisible(boolean b);&#x2F;&#x2F;设置组件是否可见，如果true ，使Window可见，否则隐藏Window ;</span><br><span class="line">public void setBackground(Color C);&#x2F;&#x2F;设置窗口的背景颜色</span><br></pre></td></tr></table></figure>
-<p>Panel:<br>是容器，但不能单独存在，必须添加到其他容器中。<br>拥有其从父类继承过来的方法;<br>构造方法：<br>public Panel();使用默认布局管理器FlowLayout创建新面板<br>public Panel(LayoutManager layout);使用指定的布局管理器创建一个新面板</p>
-<p>布局管理器:<br>容器对其中包含的组件的排列方式，包括组件的位置和大小设定称为容器的布局；<br>为使图形用户界面具有良好的平台无关性，java语言提供了布局管理器来管理容器的布局，而不直接设置组件的尺寸和位置，每<br>个容器都有一个默认的布局管理器，当容器需要对某个组件进行定位或判断其大小尺寸时，就会自动调用其对应的布局管理器。<br>在AWT中常见的布局管理器：<br>BorderLayout、FlowLayout、GridLayout<br>FlowLayout<br>1.是panel类默认的布局管理器；<br>2.对组件进行定位，行内从左到右，一行排满后换行；<br>3.不改变组件原有大小，按照组件原有大小显示组件，可设置组件间的间距、行距及对齐方向；<br>4.FlowLayout默认的排列方式为居中；<br>5.常用方法：<br>new FlowLayout(FlowLayout.RIGHT,20,40);//右对齐，组件之间水平间距为20个像素，垂直距离为40个像素；<br>new FlowLayout(FlowLayout.LEFT);//左对齐，水平和垂直距离默认为5个像素<br>new FlowLayout();//默认为居中对齐方式，水平和垂直间距为5个像素<br>BorderLayout<br>1.是Frame类默认布局管理器<br>2.将容器划分为 东(EAST)西(WEST)南(SOUTH)北(NORTH)中(CENTER)五个区域，组件只能被添加到指定的区域<br>3.如果不指定组件的加入部位，则默认加入到CENTER区<br>4.每个区域只能加入一个组件，如加入多个，则先前加入的被覆盖<br>5.BorderLayout允许 南北区域水平缩放、东西区域垂直缩放、中部可任意缩放<br>GridLayout<br>1.该种布局方式将空间划分为规则的矩形网格，每个单元格区域大小相等，组件被添加到每个单元格。先从左到右填满一行后再从上往下填充。<br>2.填充时以行数为准；<br>3.构造方法：<br>public GridLayout();//在单个行中创建一个每个组件的默认值为一列的网格布局。<br>public GridLayout(int rows,int cols);//创建具有指定行数和列数的网格布局。 布局中的所有组件都具有相同的大小。<br>public GridLayout(int rows,int cols,int hgap,int vgap);//创建具有指定行数和列数的网格布局。 布局中的所有组<br>件都具有相同的大小。 此外，水平和垂直间隙被设置为指定的值。 每个列之间放置水平间隙。 在每行之间放置垂直间隙。<br>rows - 行，值为零表示任意数量的行<br>cols - 值为零，表示任意数量的列<br>hgap - 水平间隙<br>vgap - 垂直间隙 </p>
-<p>布局管理器总结：<br>1.Frame为顶级窗口，Frame缺省布局管理器为BorderLayout;<br>2.Panel无法单独显示，必须添加到某个容器中;<br>3.Panel缺性布局管理器为FlowLayout<br>4.当将Panel添加到某个容器中时，Panel仍可以拥有自己的布局管理器;<br>5.使用布局管理器时，布局管理器负责各组件的位置和大小，因此用户无法在这种情况下设置组件的大小和位置属性，如果想要<br>自定义组件的属性，则应取消默认布局管理器，调用setLayout(null);</p>
-<p>事件处理：<br>事件：用户对组件的一个操作；<br>事件源：能够产生事件的GUI组件对象；<br>事件处理方法：能够接受、解析、处理事件类对象，实现与用户交互功能的方法；<br>事件监听器：可以处理事件的类对象；<br>事件处理步骤：<br>假定事件为A<br>1.向事件源注册某种事件的事件监听器 addAListener(aa);<br>2.设计好可以处理这种事件的监听器<br>class 类名 implements AListener{<br>    重写AListener接口中的方法<br>}<br>要想设计能够处理A事件的监听器，只需编写实现了AListener接口的类即可，因为AListener接口已经定义了可以处理A事件的方法;<br>事件处理相关概念：<br>默认情况下事件源不会自动产生事件，程序员需要做两件事：<br>1.告诉事件源产生哪种事件即向事件源注册某种事件的事件监听器；<br>2.设计好可以处理这种事件的事件监听器；<br>一旦完成了这两步操作，当用户对事件源进行操作时，事件源就会自动产生事件并将事件封装成一个事件对象传递<br>给事件监听器，当事件监听器接受到事件源发送的对象时，会自动调用相应的事件处理方法来处理事件；<br>事件有哪些？<br>java.awt.event包含了所有的事件，常见的事件：<br>Action Event:激活组件时发生的事件（如单击）<br>Key Event：操作键盘时产生的事件；<br>Mouse Event：操作鼠标时发生的事件；<br>Window Event：操作窗口时发生的事件，如最大化、最小化；</p>
-<p>内部类：<br>定义在A类内部但定义在A类所有属性方法之外的类B称为内部类；<br>B为A的内部类，A为B的外部类；<br>内部类访问原则：<br>内部类可以访问外部类所有成员；<br>外部类的方法和属性不可直接访问内部类成员但可以new出内部类对象；<br>内部类优点：<br>可以让一个类方便的访问另一个类的所有成员；<br>增加程序的安全性，有效避免了其他不相关类对该类的访问；<br>什么时间使用内部类？<br>如果一个类A要使用B类所有成员，且A类无需被除B类以外的类或成员访问，我们应将A类定义为B类的内部类；</p>
-<p>匿名类：<br>是一种特殊的内部类；<br>创建匿名类的三种方式：<br>1.实现接口<br>假入A为接口名<br>格式：<br>new A（）<br>{<br>    实现接口中的方法；<br>}<br>功能：生成了一个实现A接口的匿名类对象；<br>2.实现抽象类<br>假定A为抽象类<br>格式：<br>new A()<br>{<br>    实现所有抽象方法；<br>    添加自己的方法或属性；<br>}<br>功能：生成了实现A类所有抽象方法的匿名类对象；<br>3.继承父类<br>假定A为类名<br>格式：<br>new A()<br>{<br>    重写A中方法的代码；<br>    添加自己的属性和方法；<br>}<br>功能生成一个A类的子类对象，该匿名类继承了A所有的非private成员；<br>如果在一个方法内部定义了一个匿名类，则该匿名类可以访问外部类的所有成员；<br>也可以访问包裹该匿名类方法的所有final类型变量；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/22/java%E4%B9%8Bawt%E5%B1%95%E6%9C%9B/" data-id="ckmkmyu550000ocvpczcaggnf" data-title="java之awt展望概述" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-排序之归并排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/22/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" class="article-date">
-  <time class="dt-published" datetime="2021-03-22T13:39:10.000Z" itemprop="datePublished">2021-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/22/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">排序之归并排序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>归并排序是递归的过程；<br>归并排序要求前后两部分必须有序；<br>下面将下列例子:</p>
-<h3>归并前后有序1</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">public class mergesort &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,6,9,4,6,8&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">        print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        merge_sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void merge_sort(int[] arr)&#123;</span><br><span class="line">        int leftptr&#x3D;0;&#x2F;&#x2F;左指针</span><br><span class="line">        int middle&#x3D;arr.length&#x2F;2;&#x2F;&#x2F;中间值（奇数）</span><br><span class="line">        int rightptr&#x3D;middle+1;&#x2F;&#x2F;右指针</span><br><span class="line">        int cnt&#x3D;0;</span><br><span class="line">        int[] arr1&#x3D;new int[arr.length];</span><br><span class="line">        while(rightptr&lt; arr.length &amp;&amp; leftptr&lt;&#x3D;middle)&#123;</span><br><span class="line">        if(arr[leftptr]&lt; &#x3D;arr[rightptr])</span><br><span class="line">        &#123;</span><br><span class="line">            arr1[cnt]&#x3D;arr[leftptr];</span><br><span class="line">            cnt++;</span><br><span class="line">            leftptr++;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            arr1[cnt]&#x3D;arr[rightptr];</span><br><span class="line">            cnt++;</span><br><span class="line">            rightptr++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;&#x2F;&#x2F;比较完成第一步</span><br><span class="line">        while(rightptr&lt; arr.length)&#123;arr1[cnt]&#x3D;arr[rightptr];cnt++;rightptr++;&#125;</span><br><span class="line">        while(leftptr&lt;&#x3D;middle)&#123;arr1[cnt]&#x3D;arr[leftptr];cnt++;leftptr++;&#125;&#x2F;&#x2F;比较完成第二步</span><br><span class="line">        for(int i&#x3D;0;i&lt; arr.length;i++)&#123;arr[i]&#x3D;arr1[i];&#125;&#x2F;&#x2F;拷贝</span><br><span class="line">    &#125;</span><br><span class="line">    static void print(int[] arr)&#x2F;&#x2F;输出</span><br><span class="line">    &#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt; arr.length;i++)</span><br><span class="line">            System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3>归并前后有序2：改进1</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class mergesort2 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,6,9,11,4,6,8,10&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">        print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        merge_sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void merge_sort(int[] arr)&#123;</span><br><span class="line">        int leftptr&#x3D;0;</span><br><span class="line">        int middle&#x3D;arr.length&#x2F;2;</span><br><span class="line">        int rightptr&#x3D;middle+1;</span><br><span class="line">        int cnt&#x3D;0;</span><br><span class="line">        int[] arr1&#x3D;new int[arr.length];</span><br><span class="line">        while(rightptr&lt; arr.length &amp;&amp; leftptr&lt;&#x3D;middle)&#123;</span><br><span class="line">        arr1[cnt++]&#x3D;arr[leftptr]&lt;&#x3D;arr[rightptr]?arr[leftptr++]:arr[rightptr++];</span><br><span class="line">    &#125;</span><br><span class="line">        while(rightptr&lt; arr.length)&#123;arr1[cnt++]&#x3D;arr[rightptr++];&#125;</span><br><span class="line">        while(leftptr&lt; &#x3D;middle)&#123;arr1[cnt++]&#x3D;arr[leftptr++];&#125;</span><br><span class="line">        for(int i&#x3D;0;i&lt; arr.length;i++)&#123;arr[i]&#x3D;arr1[i];&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    static void print(int[] arr)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt; arr.length;i++)</span><br><span class="line">            System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3>归并前后有序3</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class mergesort3 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,6,9,4,6,8,10&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">        print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr)&#123;</span><br><span class="line">        merge_sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void merge_sort(int[] arr)&#123;</span><br><span class="line">        int leftptr&#x3D;0;</span><br><span class="line">        int middle&#x3D;arr.length&#x2F;2-1;&#x2F;&#x2F;中间值（偶数）</span><br><span class="line">        int rightptr&#x3D;middle+1;</span><br><span class="line">        int cnt&#x3D;0;</span><br><span class="line">        int[] arr1&#x3D;new int[arr.length];</span><br><span class="line">        while(rightptr&lt; arr.length &amp;&amp; leftptr&lt; &#x3D;middle)&#123;</span><br><span class="line">        arr1[cnt++]&#x3D;arr[leftptr]&lt;&#x3D;arr[rightptr]?arr[leftptr++]:arr[rightptr++];</span><br><span class="line">    &#125;</span><br><span class="line">        while(rightptr&lt; arr.length)&#123;arr1[cnt++]&#x3D;arr[rightptr++];&#125;</span><br><span class="line">        while(leftptr&lt;&#x3D;middle)&#123;arr1[cnt++]&#x3D;arr[leftptr++];&#125;</span><br><span class="line">        for(int i&#x3D;0;i&lt; arr.length;i++)&#123;arr[i]&#x3D;arr1[i];&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    static void print(int[] arr)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt; arr.length;i++)</span><br><span class="line">            System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3>归并前后有序4:优化</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class mergesort5 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,6,9,4,6,8,10&#125;;</span><br><span class="line">        sort(arr,1,6);</span><br><span class="line">        print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr,int left,int right)&#123;</span><br><span class="line">        int middle&#x3D;left+(right-left)&#x2F;2;&#x2F;&#x2F;不论奇数还是偶数都成立</span><br><span class="line">        if(left&#x3D;&#x3D;right) return;</span><br><span class="line">        if(left&lt; 0|| right&lt; 0|| left&gt;right) return;</span><br><span class="line">        merge_sort(arr,left,middle,right);</span><br><span class="line">    &#125;</span><br><span class="line">    static void merge_sort(int[] arr,int left,int middle,int right)&#123;</span><br><span class="line">        int rightptr&#x3D;middle+1;</span><br><span class="line">        int leftptr&#x3D;left;</span><br><span class="line">        int cnt&#x3D;left;</span><br><span class="line">        int[] arr1&#x3D;new int[arr.length];</span><br><span class="line">        while(rightptr&lt;&#x3D;right &amp;&amp; leftptr&lt;&#x3D;middle)&#123;</span><br><span class="line">        arr1[cnt++]&#x3D;arr[leftptr]&lt;&#x3D;arr[rightptr]?arr[leftptr++]:arr[rightptr++];</span><br><span class="line">    &#125;</span><br><span class="line">        while(rightptr&lt;&#x3D;right)&#123;arr1[cnt++]&#x3D;arr[rightptr++];&#125;</span><br><span class="line">        while(leftptr&lt;&#x3D;middle)&#123;arr1[cnt++]&#x3D;arr[leftptr++];&#125;</span><br><span class="line">        for(int i&#x3D;left;i&lt;&#x3D;right;i++)&#123;arr[i]&#x3D;arr1[i];&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    static void print(int[] arr)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt; arr.length;i++)</span><br><span class="line">            System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3>在任何情况下归并</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class mergesort6 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] arr&#x3D;&#123;1,5,2,5,235,214,5145,14564,548,2,8,4,2,6,89,21,471,52,53,2,4,47&#125;;</span><br><span class="line">        sort(arr,0,arr.length-1);</span><br><span class="line">        print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    static void sort(int[] arr,int left,int right)&#123;</span><br><span class="line">        int middle&#x3D;left+(right-left)&#x2F;2;</span><br><span class="line">        if(right&#x3D;&#x3D;left || right&lt; 0 || left&lt; 0 || left&gt;right) return;</span><br><span class="line">        sort(arr,left,middle);</span><br><span class="line">        sort(arr,middle+1,right);</span><br><span class="line">        merge_sort(arr,left,middle,right);</span><br><span class="line">    &#125;</span><br><span class="line">    static void merge_sort(int[] arr,int left,int middle,int right)&#123;</span><br><span class="line">        int leftptr&#x3D;left;</span><br><span class="line">        int rightptr&#x3D;middle+1;</span><br><span class="line">        int cnt&#x3D;left;</span><br><span class="line">        int[] arr1&#x3D;new int[arr.length];</span><br><span class="line">        while(leftptr&lt;&#x3D;middle &amp;&amp; rightptr&lt;&#x3D;right)&#123;arr1[cnt++]&#x3D;arr[leftptr]&lt;&#x3D;arr[rightptr]?arr[leftptr++]:arr[rightptr++];&#125;</span><br><span class="line">        while(leftptr&lt;&#x3D;middle)&#123;arr1[cnt++]&#x3D;arr[leftptr++];&#125;</span><br><span class="line">        while(rightptr&lt;&#x3D;right)&#123;arr1[cnt++]&#x3D;arr[rightptr++];&#125;</span><br><span class="line">        for(int i&#x3D;left;i&lt;&#x3D;right;i++) arr[i]&#x3D;arr1[i];</span><br><span class="line">    &#125;</span><br><span class="line">   static void print(int[] arr)&#123;</span><br><span class="line">       for(int i&#x3D;0;i&lt; arr.length;i++)</span><br><span class="line">           System.out.print(arr[i]+&quot; &quot;);</span><br><span class="line">       System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://username.github.io/2021/03/22/%E6%8E%92%E5%BA%8F%E4%B9%8B%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" data-id="ckmkmyu5a0001ocvp9yuw2uul" data-title="排序之归并排序" class="article-share-link">Teilen</a>
+      <a data-url="https://username.github.io/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" data-id="ckmlhq26j0000tcvp8d6ta9qf" data-title="java之awt程序演示" class="article-share-link">Compartir</a>
       
       
       
@@ -558,7 +544,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Previo</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/">Siguiente &raquo;</a>
   </nav>
 
 </section>
@@ -575,7 +561,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
@@ -585,9 +571,17 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/04/14/%E7%AE%97%E6%B3%95%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/">算法小技巧总结</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/14/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%A1%B6%E6%8E%92%E5%BA%8F/">排序之桶排序</a>
+          </li>
         
           <li>
             <a href="/2021/04/13/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8FC-%E7%89%88/">基数排序C++版</a>
@@ -599,14 +593,6 @@
         
           <li>
             <a href="/2021/04/12/%E6%B7%B1%E5%88%BB%E7%9A%84%E6%95%99%E8%AE%AD/">深刻的教训</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/12/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8FC-%E7%89%88/">计数排序C++版</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/12/%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8FC-%E7%89%88/">二分插入排序C++版</a>
           </li>
         
       </ul>
@@ -623,7 +609,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 omnisciencepeople<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
