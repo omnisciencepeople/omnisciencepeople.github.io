@@ -158,6 +158,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-使用字符串处理函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/14/%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/">使用字符串处理函数</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+<!--显示阅读次数完毕-->
+        
+        <a href="/2021/01/14/%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/" class="archive-article-date">
+  	<time datetime="2021-01-14T13:47:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char str[]&#x3D;&#123;&quot;hello world&quot;&#125;;</span><br><span class="line">    puts(str);&#x2F;&#x2F;字符串输出函数相当于printf函数</span><br><span class="line">    gets(str);&#x2F;&#x2F;字符数组赋值函数相当于scanf函数</span><br><span class="line">    puts(str);</span><br><span class="line">    char str1[30]&#x3D;&#123;&quot;hello&quot;&#125;;</span><br><span class="line">    char str2[]&#x3D;&#123;&quot;China&quot;&#125;;</span><br><span class="line">    puts(strcat(str1,str2));&#x2F;&#x2F;strcat字符串连接函数，函数调用后得到一个函数值：数组str1的首地址；</span><br><span class="line">    字符数组1必须足够大以便容纳连接后的字符串；连接前两个字符串后面都有&#39;\0&#39;,连接时将字符数组1后面的\0取消，只在</span><br><span class="line">    新字符串最后保留&#39;\0&#39;;</span><br><span class="line">    strcpy(str1,str2);&#x2F;&#x2F;字符数组1必须为数组名，字符数组2可为字符数组名也可为字符串常量；</span><br><span class="line">    puts(str1);</span><br><span class="line">    strcpy(str1,&quot;hello&quot;);</span><br><span class="line">    puts(str1);</span><br><span class="line">    strncpy(str1,str2,2);&#x2F;&#x2F;将字符串2最前面的两个字符复制到字符数组1上取代字符数组1原有的最前面的两个字符；</span><br><span class="line">    puts(str1);</span><br><span class="line">    strcmp(str1,str2);&#x2F;&#x2F;字符串比较函数：将两个字符串自左到右逐个字符比较（按ASCII码数值大小比较），直至出现不</span><br><span class="line">    同的字符为止以第一对不相同字符比较的结果为准；若字符全部相同则认为这两个字符串相等；相同函数值为0；字符数组1</span><br><span class="line">    大于2函数值为正整数；反之为负整数；</span><br><span class="line">    strlen(str1);&#x2F;&#x2F;测字符串长度的函数；</span><br><span class="line">    strlwr(str1);&#x2F;&#x2F;转化为小写的函数；</span><br><span class="line">    strupr(str1);&#x2F;&#x2F;转化为大写的函数；</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/14/%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-scanf输入字符串时注意事项" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -725,71 +790,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/01/13/switch%E7%94%A8%E6%B3%95%E5%8F%8Abreak%E7%94%A8%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-求一元二次方程解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/">求一元二次方程解</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-
-<!--显示阅读次数完毕-->
-        
-        <a href="/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2021-01-13T14:08:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    float a,b,c,delta;</span><br><span class="line">    double x1,x2;</span><br><span class="line">    char ch;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">     printf(&quot;请为一元二次方程的系数赋值(中间以空格相隔):&quot;);</span><br><span class="line">     scanf(&quot;%f %f %f&quot;,&amp;a,&amp;b,&amp;c);</span><br><span class="line">     delta&#x3D;b*b-4*a*c;</span><br><span class="line">     if(delta&gt;0)</span><br><span class="line">       &#123;</span><br><span class="line">         x1&#x3D;(-b+sqrt(delta))&#x2F;(2*a);</span><br><span class="line">         x2&#x3D;(-b-sqrt(delta))&#x2F;(2*a);</span><br><span class="line">         printf(&quot;x1&#x3D;%lf x2&#x3D;%lf\n&quot;,x1,x2);</span><br><span class="line">       &#125;</span><br><span class="line">     else if(delta&#x3D;&#x3D;0)</span><br><span class="line">       &#123;</span><br><span class="line">         x1&#x3D;x2&#x3D;(-b)&#x2F;(2*a);</span><br><span class="line">         printf(&quot;x1&#x3D;%lf x2&#x3D;%lf\n&quot;,x1,x2);</span><br><span class="line">       &#125;</span><br><span class="line">     else</span><br><span class="line">         printf(&quot;无解\n&quot;);</span><br><span class="line">     printf(&quot;请问你是否还要继续（Y&#x2F;N）:&quot;);</span><br><span class="line">     scanf(&quot; %c&quot;,&amp;ch);</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/">展开全文 >></a>
         </p>
       
 
