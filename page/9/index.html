@@ -618,73 +618,6 @@
 
 
   
-    <article id="post-haha" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/15/haha/">函数概述</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-
-<!--显示阅读次数完毕-->
-        
-        <a href="/2021/01/15/haha/" class="archive-article-date">
-  	<time datetime="2021-01-15T01:35:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <a id="more"></a>
-<p>为什么需要函数：<br>1.函数可避免大量重复性代码；<br>2.有利于程序模块化；<br>函数定义1：<br>逻辑上，能完成特定独立功能的代码单元块；<br>物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；<br>函数适用范围：<br>适用大量同类型问题；<br>函数功能越单一越好（可移植性越强）；<br>函数定义2：<br>  函数返回值类型 函数名（函数形参）<br>  {<br>      函数执行体<br>  }<br>定义2本质：<br>1.详细描述函数之所以能实现某个特定功能的具体实现方法；<br>2.return表达式：向主调函数返回函数值；为空则表示终止函数；<br>3.函数返回值类型称函数类型；如果函数返回值类型和return表达式中数据类型不同的话，以函数名前返回值类型为主；（函数类型决定返回值类型）<br>函数分类：<br>有参函数和无参函数；<br>有返回值函数和无返回值函数；<br>库函数和用户自定义函数；<br>普通函数和主函数；<br>值传递函数和地址传递函数；<br>函数注意问题：<br>一个程序有且只有一个主函数；<br>主函数可调用普通函数；<br>普通函数不可调用主函数；<br>普通函数可相互调用；<br>程序从主函数入主函数出；<br>函数必须先定义后使用；<br>函数声明：<br>1.告诉编译器即将出现的若干个字母代表函数；<br>2.告诉编译器即将出现的若干个字母代表函数具体情况；<br>3.其为一个语句必加分号；<br>4.对库函数的声明是通过#include&lt;库函数所在文件名.h&gt;来实现的；<br>函数形参和实参：<br>个数相同；位置对应；类型相互兼容；<br>函数重要性：<br>函数为C语言的基本单位，类为Java/C++/C#的基本单位；<br>常见的系统函数：<br>sqrt:求平方根；<br>abs：求整型数据的绝对值；<br>fabs：求浮点型数据绝对值；<br>变量分类：<br>1.按作用域：全局变量和局部变量；<br>2.按存储方式：静态局部变量，自动变量，寄存器变量,静态外部变量，外部变量；<br>注：在一个函数内部定义的变量或函数的形参称为局部变量；<br>在所有函数外部定义的变量称全局变量；<br>全局变量和局部变量命名冲突问题：<br>在一个函数内部，若定义一个局部变量，其名与全局变量相同，局部变量会屏蔽掉全局变量；<br>俗称“强龙不压地头蛇”。<br>例如：<br>#include&lt;stdio.h&gt;<br>int i=99;//定义一个全局变量；<br>void f(int i)//定义一个局部变量，名字和全局变量相同；<br>{<br>  printf(“%d\n”,i);<br>}<br>int main()<br>{<br>   f(8);//调用f函数；<br>   return 0;<br>}<br>//输出8，而非99；</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/15/haha/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-比较3个字符串找出其中最大者" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -786,6 +719,71 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/01/14/%E8%BE%93%E5%85%A5%E4%B8%80%E8%A1%8C%E5%AD%97%E7%AC%A6%EF%BC%8C%E7%BB%9F%E8%AE%A1%E5%85%B6%E4%B8%AD%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%8D%95%E8%AF%8D%EF%BC%88%E5%8D%95%E8%AF%8D%E9%97%B4%E4%BB%A5%E7%A9%BA%E6%A0%BC%E5%88%86%E9%9A%94%E5%BC%80%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-使用字符串处理函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/14/%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/">使用字符串处理函数</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+<!--显示阅读次数完毕-->
+        
+        <a href="/2021/01/14/%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/" class="archive-article-date">
+  	<time datetime="2021-01-14T13:47:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char str[]&#x3D;&#123;&quot;hello world&quot;&#125;;</span><br><span class="line">    puts(str);&#x2F;&#x2F;字符串输出函数相当于printf函数</span><br><span class="line">    gets(str);&#x2F;&#x2F;字符数组赋值函数相当于scanf函数</span><br><span class="line">    puts(str);</span><br><span class="line">    char str1[30]&#x3D;&#123;&quot;hello&quot;&#125;;</span><br><span class="line">    char str2[]&#x3D;&#123;&quot;China&quot;&#125;;</span><br><span class="line">    puts(strcat(str1,str2));&#x2F;&#x2F;strcat字符串连接函数，函数调用后得到一个函数值：数组str1的首地址；</span><br><span class="line">    字符数组1必须足够大以便容纳连接后的字符串；连接前两个字符串后面都有&#39;\0&#39;,连接时将字符数组1后面的\0取消，只在</span><br><span class="line">    新字符串最后保留&#39;\0&#39;;</span><br><span class="line">    strcpy(str1,str2);&#x2F;&#x2F;字符数组1必须为数组名，字符数组2可为字符数组名也可为字符串常量；</span><br><span class="line">    puts(str1);</span><br><span class="line">    strcpy(str1,&quot;hello&quot;);</span><br><span class="line">    puts(str1);</span><br><span class="line">    strncpy(str1,str2,2);&#x2F;&#x2F;将字符串2最前面的两个字符复制到字符数组1上取代字符数组1原有的最前面的两个字符；</span><br><span class="line">    puts(str1);</span><br><span class="line">    strcmp(str1,str2);&#x2F;&#x2F;字符串比较函数：将两个字符串自左到右逐个字符比较（按ASCII码数值大小比较），直至出现不</span><br><span class="line">    同的字符为止以第一对不相同字符比较的结果为准；若字符全部相同则认为这两个字符串相等；相同函数值为0；字符数组1</span><br><span class="line">    大于2函数值为正整数；反之为负整数；</span><br><span class="line">    strlen(str1);&#x2F;&#x2F;测字符串长度的函数；</span><br><span class="line">    strlwr(str1);&#x2F;&#x2F;转化为小写的函数；</span><br><span class="line">    strupr(str1);&#x2F;&#x2F;转化为大写的函数；</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/14/%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/">展开全文 >></a>
         </p>
       
 
