@@ -181,8 +181,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * @author MiaoZhiJun</span><br><span class="line"> * @date 2021&#x2F;4&#x2F;11&#x2F;15:52</span><br><span class="line"> * @className binarysort</span><br><span class="line"> * @description 二分插入排序</span><br><span class="line"> *&#x2F;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Random;</span><br><span class="line">import java.util.Arrays;</span><br><span class="line"></span><br><span class="line">public class binarysort &#123;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">      int[] arr&#x3D;new int[20];</span><br><span class="line">      for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">          arr[i]&#x3D;new Random().nextInt(20);</span><br><span class="line">      sort(arr);</span><br><span class="line">      System.out.println(Arrays.toString(arr));</span><br><span class="line">  &#125;</span><br><span class="line">  static void sort(int[] arr) &#123;</span><br><span class="line">      for(int i&#x3D;1;i&lt;arr.length;i++)</span><br><span class="line">          binary_sort(arr,i,arr[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  static void binary_sort(int[] arr,int right,int point) &#123;</span><br><span class="line">      if(right&lt;&#x3D;0) return;</span><br><span class="line">      int leftptr&#x3D;0;</span><br><span class="line">      int rightptr&#x3D;right-1;</span><br><span class="line">      int middle;</span><br><span class="line">      while(leftptr&lt;&#x3D;rightptr) &#123;</span><br><span class="line">          middle&#x3D;leftptr+(rightptr-leftptr)&#x2F;2;</span><br><span class="line">          if(arr[middle]&lt;&#x3D;point) leftptr&#x3D;middle+1;</span><br><span class="line">          else  rightptr&#x3D;middle-1;</span><br><span class="line">      &#125;</span><br><span class="line">      for(int j&#x3D;right-1;j&gt;&#x3D;rightptr+1;j--)</span><br><span class="line">          arr[j+1]&#x3D;arr[j];</span><br><span class="line">      arr[rightptr+1]&#x3D;point;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Random;</span><br><span class="line">import java.util.Arrays;</span><br><span class="line"></span><br><span class="line">public class binarysort &#123;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">      int[] arr&#x3D;new int[20];</span><br><span class="line">      for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">          arr[i]&#x3D;new Random().nextInt(20);</span><br><span class="line">      sort(arr);</span><br><span class="line">      System.out.println(Arrays.toString(arr));</span><br><span class="line">  &#125;</span><br><span class="line">  static void sort(int[] arr) &#123;</span><br><span class="line">      for(int i&#x3D;1;i&lt;arr.length;i++)</span><br><span class="line">          binary_sort(arr,i,arr[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  static void binary_sort(int[] arr,int right,int point) &#123;</span><br><span class="line">      if(right&lt;&#x3D;0) return;</span><br><span class="line">      int leftptr&#x3D;0;</span><br><span class="line">      int rightptr&#x3D;right-1;</span><br><span class="line">      int middle;</span><br><span class="line">      while(leftptr&lt;&#x3D;rightptr) &#123;</span><br><span class="line">          middle&#x3D;leftptr+(rightptr-leftptr)&#x2F;2;</span><br><span class="line">          if(arr[middle]&lt;&#x3D;point) leftptr&#x3D;middle+1;</span><br><span class="line">          else  rightptr&#x3D;middle-1;</span><br><span class="line">      &#125;</span><br><span class="line">      for(int j&#x3D;right-1;j&gt;&#x3D;rightptr+1;j--)</span><br><span class="line">          arr[j+1]&#x3D;arr[j];</span><br><span class="line">      arr[rightptr+1]&#x3D;point;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -258,8 +257,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">*@author MiaoZhiJun</span><br><span class="line">*@datetime 2021&#x2F;4&#x2F;11 19:31</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
-<p>Timsort : Tim Peters在2002年为Python开发基础设施时结合使用归并和插入，并辅以另外一些技术手段，实现了后来被人称为Timsort的排序算法;<br>Timsort运用二分插入排序和归并排序，是归并排序的优化；减少了对升序部分的回溯和降序部分的性能倒退；<br>python内部的sorted和List.sort以及java中的Arrays.sort中同样用到Timsort;</p>
+        <p>Timsort : Tim Peters在2002年为Python开发基础设施时结合使用归并和插入，并辅以另外一些技术手段，实现了后来被人称为Timsort的排序算法;<br>Timsort运用二分插入排序和归并排序，是归并排序的优化；减少了对升序部分的回溯和降序部分的性能倒退；<br>python内部的sorted和List.sort以及java中的Arrays.sort中同样用到Timsort;</p>
 <p>Timsort的运用基于一个事实：<br>现实生活中，大多数真实的数据集中，大部分元素是排好序的;即不论一组数据多复杂，其局部是有序的；</p>
 <p>Timsort术语：<br>run:一组数据的集合，该组数据严格有序(单调递增或单调递减)，不能出现重复元素；<br>python内部元素个数&gt;64时用Timsort;元素个数&lt;64时用二分插入排序；<br>java内部元素个数&gt;32时用Timsort；元素个数&lt;32时用二分插入排序；</p>
 <p>Timsort步骤:<br>1.遍历全部元素，查找严格单调递减或单调递增的区间（区间长度:java为16到32;python为32到64；一般区间长度为2的n次方）并划分出区间放入栈中;（该栈为Run栈）<br>2.栈中满足规则： Z&gt;X+Y和Y&gt;X，这样可以提高归并的效率（X、Y、Z为run长度,Z、Y、X依次放入栈中）<br>3.栈中从上到下依次归并，得到有序数列;</p>
@@ -341,8 +339,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">*@author MiaoZhiJun</span><br><span class="line">*@description 工业快排手绘图</span><br><span class="line">*@datetime 2021&#x2F;4&#x2F;11 23:05</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
-<img src="/2021/04/11/%E6%B5%85%E8%B0%88%E5%B7%A5%E4%B8%9A%E5%BF%AB%E6%8E%92/3.png" class="">
+        <img src="/2021/04/11/%E6%B5%85%E8%B0%88%E5%B7%A5%E4%B8%9A%E5%BF%AB%E6%8E%92/3.png" class="">
       
 
       
@@ -504,6 +501,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/排序JAVA//" class="article-tag-list-link color2">排序JAVA</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -762,6 +770,21 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/JAVA//" class="article-tag-list-link color5">JAVA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/JAVA/异常//" class="article-tag-list-link color3">异常</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -840,6 +863,21 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/JAVA//" class="article-tag-list-link color5">JAVA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/JAVA/异常//" class="article-tag-list-link color3">异常</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -930,6 +968,21 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/JAVA//" class="article-tag-list-link color5">JAVA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/JAVA/AWT//" class="article-tag-list-link color4">AWT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -1061,6 +1114,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">[object Object]</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数组操作</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
