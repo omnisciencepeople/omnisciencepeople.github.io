@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>函数递归之阶乘 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910111213141516171819202122#include&lt;stdio.h&gt;int f(int i)&amp;#123;    if(i&#x3D;&#x3D;1)      return 1;    else      return i*f(i-1);&amp;#125;int main()&amp;#123;    int i;    char ch;    do    &amp;#1">
+  <meta name="description" content="12345678910111213141516171819202122#include&lt;stdio.h&gt;int f(int i)&amp;#123;    if(i&#x3D;&#x3D;1)      return 1;    else      return i*f(i-1);&amp;#125;int main()&amp;#123;    int i;    char ch;    do    &amp;#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数递归之阶乘">
 <meta property="og:url" content="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92%E4%B9%8B%E9%98%B6%E4%B9%98/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="12345678910111213141516171819202122#include&lt;stdio.h&gt;int f(int i)&amp;#123;    if(i&#x3D;&#x3D;1)      return 1;    else      return i*f(i-1);&amp;#125;int main()&amp;#123;    int i;    char ch;    do    &amp;#1">
+<meta property="og:description" content="12345678910111213141516171819202122#include&lt;stdio.h&gt;int f(int i)&amp;#123;    if(i&#x3D;&#x3D;1)      return 1;    else      return i*f(i-1);&amp;#125;int main()&amp;#123;    int i;    char ch;    do    &amp;#">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-15T12:41:20.000Z">
-<meta property="article:modified_time" content="2021-04-15T01:10:45.007Z">
+<meta property="article:modified_time" content="2021-04-16T07:30:39.392Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -191,7 +191,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int f(int i)</span><br><span class="line">&#123;</span><br><span class="line">    if(i&#x3D;&#x3D;1)</span><br><span class="line">      return 1;</span><br><span class="line">    else</span><br><span class="line">      return i*f(i-1);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    char ch;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">     printf(&quot;请输入你想求的阶乘数：&quot;);</span><br><span class="line">     scanf(&quot;%d&quot;,&amp;i);</span><br><span class="line">     printf(&quot;%d的阶乘为%d\n&quot;,i,f(i));</span><br><span class="line">     printf(&quot;你是否还要继续（Y&#x2F;N）:&quot;);</span><br><span class="line">     scanf(&quot; %c&quot;,&amp;ch);</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int f(int i)</span><br><span class="line">&#123;</span><br><span class="line">    if(i&#x3D;&#x3D;1)</span><br><span class="line">      return 1;</span><br><span class="line">    else</span><br><span class="line">      return i*f(i-1);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    char ch;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">     printf(&quot;请输入你想求的阶乘数：&quot;);</span><br><span class="line">     scanf(&quot;%d&quot;,&amp;i);</span><br><span class="line">     printf(&quot;%d的阶乘为%d\n&quot;,i,f(i));</span><br><span class="line">     printf(&quot;你是否还要继续（Y&#x2F;N）:&quot;);</span><br><span class="line">     scanf(&quot; %c&quot;,&amp;ch);</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -231,6 +232,21 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言/递归//" class="article-tag-list-link color3">递归</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 

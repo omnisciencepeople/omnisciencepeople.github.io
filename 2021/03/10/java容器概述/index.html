@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>java容器概述 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="容器是一个集合，用于存放对象；如果一个类用于存放其它的类对象，那么该类叫做容器; 为什么需要容器？容器弥补了数组的缺陷：数组长度难以扩充、元素类型必须相同；如A[] aa&#x3D;new A[10],表示分配了一个数组，每个元素都是A类对象的引用，若想要扩充数组长度为15，不能再原数组内存后面直接追加内存，必须另外分配一块内存为15，然后利用System.arraycopy方法将原数组内容拷贝到新的内存中">
+  <meta name="description" content="容器是一个集合，用于存放对象；如果一个类用于存放其它的类对象，那么该类叫做容器; 为什么需要容器？容器弥补了数组的缺陷：数组长度难以扩充、元素类型必须相同；如A[] aa&#x3D;new A[10],表示分配了一个数组，每个元素都是A类对象的引用，若想要扩充数组长度为15，不能再原数组内存后面直接追加内存，必须另外分配一块内存为15，然后利用System.arraycopy方法将原数组内容拷贝到新的内存">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java容器概述">
 <meta property="og:url" content="https://username.github.io/2021/03/10/java%E5%AE%B9%E5%99%A8%E6%A6%82%E8%BF%B0/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="容器是一个集合，用于存放对象；如果一个类用于存放其它的类对象，那么该类叫做容器; 为什么需要容器？容器弥补了数组的缺陷：数组长度难以扩充、元素类型必须相同；如A[] aa&#x3D;new A[10],表示分配了一个数组，每个元素都是A类对象的引用，若想要扩充数组长度为15，不能再原数组内存后面直接追加内存，必须另外分配一块内存为15，然后利用System.arraycopy方法将原数组内容拷贝到新的内存中">
+<meta property="og:description" content="容器是一个集合，用于存放对象；如果一个类用于存放其它的类对象，那么该类叫做容器; 为什么需要容器？容器弥补了数组的缺陷：数组长度难以扩充、元素类型必须相同；如A[] aa&#x3D;new A[10],表示分配了一个数组，每个元素都是A类对象的引用，若想要扩充数组长度为15，不能再原数组内存后面直接追加内存，必须另外分配一块内存为15，然后利用System.arraycopy方法将原数组内容拷贝到新的内存">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-10T03:12:09.000Z">
-<meta property="article:modified_time" content="2021-04-15T01:02:34.780Z">
+<meta property="article:modified_time" content="2021-04-16T06:13:21.844Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -191,18 +191,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>容器是一个集合，用于存放对象；<br>如果一个类用于存放其它的类对象，那么该类叫做容器;</p>
-<p>为什么需要容器？<br>容器弥补了数组的缺陷：数组长度难以扩充、元素类型必须相同；<br>如A[] aa=new A[10],表示分配了一个数组，每个元素都是A类对象的引用，若想要扩充数组长度为15，不能再原数组内存后面直接追加内存，必须另外分配一块内存为15，然后利用System.arraycopy方法将原数组内容拷贝到新的内存中，耗时又耗内存；</p>
-<p>容器与现实的关系：<br>容器是将若干用途、性质相近或相同的数据组合在一起的整体；</p>
+        <a id="more"></a>
+<p>容器是一个集合，用于存放对象；<br>如果一个类用于存放其它的类对象，那么该类叫做容器;</p>
+<h3 id="为什么需要容器？"><a href="#为什么需要容器？" class="headerlink" title="为什么需要容器？"></a>为什么需要容器？</h3><p>容器弥补了数组的缺陷：数组长度难以扩充、元素类型必须相同；<br>如A[] aa=new A[10],表示分配了一个数组，每个元素都是A类对象的引用，若想要扩充数组长度为15，不能再原数组内存后面直接追加内存，必须另外分配一块内存为15，然后利用System.arraycopy方法将原数组内容拷贝到新的内存中，耗时又耗内存；</p>
+<h3 id="容器与现实的关系："><a href="#容器与现实的关系：" class="headerlink" title="容器与现实的关系："></a>容器与现实的关系：</h3><p>容器是将若干用途、性质相近或相同的数据组合在一起的整体；</p>
 <p>数学上集合分为三类:<br>集（set，不允许重复、不区分元素顺序）；<br>列表（List,区分元素顺序、允许重复）；<br>映射（map，保存成对的键值信息，映射不能包含重复的键，每个键最多映射一个值）；<br>Java设计了三种接口类型分别是set、List、Map来对应数学上三种集合;<br>Map存事物信息时不仅要存入事物的基本信息（值），更要存入事物最独特的特征（键）；</p>
-<p>容器以接口为核心组合在一起；<br>容器API位于Java.util包中<br>容器框架<br>        1.《interface》collection:《interface》set（实现类：Hashset、Treeset）、《interface》list（实现类Arraylist、Linkedlist)<br>        2.《interface》map（实现类：Hashmap、Treemap）</p>
+<p>容器以接口为核心组合在一起；<br>容器API位于Java.util包中</p>
+<h3 id="容器框架"><a href="#容器框架" class="headerlink" title="容器框架"></a>容器框架</h3><pre><code>    1.《interface》collection:《interface》set（实现类：Hashset、Treeset）、《interface》list（实现类Arraylist、Linkedlist)
+    2.《interface》map（实现类：Hashmap、Treemap）</code></pre>
 <p>容器之collection：<br>collection接口定义了存取一组对象的方法，其子接口分别定义了存储方式：set中数据对象无序不可重复;list中数据对象有序可重复;<br>map接口定义了“键-值映射对”方法;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">collection中方法介绍：</span><br><span class="line">int size();&#x2F;&#x2F;返回collection容器中元素的个数</span><br><span class="line">Boolean Isempty();&#x2F;&#x2F;判断容器是否为空</span><br><span class="line">Boolean containAll(Collection e);&#x2F;&#x2F;判断当前集合是否包含容器e中的全部元素</span><br><span class="line">Iterator iterator();&#x2F;&#x2F;返回能够遍历当前容器所有元素的迭代器；</span><br><span class="line">Object[] toArray();&#x2F;&#x2F;容器不是数组，不能通过下标方式访问容器中的元素；调用此方法，返回其包含此容器全部元素的数组</span><br><span class="line">&#x2F;&#x2F;如Object[] ob&#x3D;a.toArray();&#x2F;&#x2F;a为容器</span><br><span class="line">    System.out.println(ob[2]);</span><br><span class="line">Boolean add(Object e);&#x2F;&#x2F;将对象e添加到集合中去</span><br><span class="line">Boolean remove(Object o)&#x2F;&#x2F;删除某个元素</span><br><span class="line">Boolean addAll(Collection e);&#x2F;&#x2F;将容器e中全部元素添加到当前容器中</span><br><span class="line">Boolean removeAll(Collection e);&#x2F;&#x2F;将当前容器中包含在容器e中的元素全部删除</span><br><span class="line">void clear();&#x2F;&#x2F;将当前容器中所有元素都清除</span><br><span class="line">Boolean equals(Object);&#x2F;&#x2F;继承自Java.lang中的Object类</span><br><span class="line">int hashcode()；&#x2F;&#x2F;继承自Java.lang中的Object类，返回内存地址十六进制的哈希码表示</span><br></pre></td></tr></table></figure>
-<p>容器之List:<br>List表示的是线性结构而不是链表；<br>List继承自接口Collection；<br>实现了list接口的容器类中元素有顺序可重复；<br>List容器中的元素都对应一个整数器的序号，记录其在容器中的位置，可以根据序号存取容器的元素<br>Java提供的List实现类 ：Arraylist、Linkedlist等</p>
+<h3 id="容器之List"><a href="#容器之List" class="headerlink" title="容器之List:"></a>容器之List:</h3><p>List表示的是线性结构而不是链表；<br>List继承自接口Collection；<br>实现了list接口的容器类中元素有顺序可重复；<br>List容器中的元素都对应一个整数器的序号，记录其在容器中的位置，可以根据序号存取容器的元素<br>Java提供的List实现类 ：Arraylist、Linkedlist等</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">java中list接口提供了一些方法：</span><br><span class="line">Object get(int index);&#x2F;&#x2F;找到列表中位置为index的元素</span><br><span class="line">Object set(int index,Object element);&#x2F;&#x2F;将列表中下标为index的元素替换为element</span><br><span class="line">Object add(int index,Object O);&#x2F;&#x2F;将O添加到下标为index的位置</span><br><span class="line">Object remove(int index);&#x2F;&#x2F;删除下标为index的元素；</span><br><span class="line">int indexof(Object O);&#x2F;&#x2F;找到O元素的下标</span><br><span class="line">int lastindexof(Object O);&#x2F;&#x2F;找到最后O元素的下标</span><br></pre></td></tr></table></figure>
 <p>set接口中无set（）get（）方法，因为set接口是无序的，不存在元素具体位置这个概念；<br>Arraylist和Linkedlist比较:<br>都实现了List接口中的方法但内部实现不同；<br>Arraylist底层采用数组实现，Linkedlist底层一般以双向链表实现；<br>Arraylist查找存取速度快，插入删除速度慢；Linkedlist查找存取速度慢，插入删除速度快；</p>
-<p>容器之set:<br>set继承自Collection<br>实现了set类的容器内元素无序且不能重复；<br>set接口实现类：Treeset、Hashset等<br>我们需要同时重写默认父类Object中的Hashcode方法和equals方法来使set容器中元素不可重复；<br>如果我们定义了set接口而未全部重写它的hashcode方法和equals方法，则set容器中的元素就会重复；</p>
-<p>容器之map接口:<br>Map（映射）是一种将键对象和值对象进行映射的集合，它的每个元素都包含一对键对象和值对象；<br>向Map中加入元素时，必须提供一对键对象和值对象，从Map集合中检索元素时，只要给出键对象，就能返回相应的值对象；<br>接口Map提供了根据关键字找出对应值的方法：Object get(Object key)//会返回值对象<br>接口Map提供了设置键值对的方法：Object put(Object key,Object value)；//根据Key值计算出存储位置然后将Value存入<br>存入此位置，如果该位置原来已有元素则覆盖它；该方法返回覆盖之前的元素对象的值，如果以前此位置为空则返回null;</p>
+<h3 id="容器之set"><a href="#容器之set" class="headerlink" title="容器之set:"></a>容器之set:</h3><p>set继承自Collection<br>实现了set类的容器内元素无序且不能重复；<br>set接口实现类：Treeset、Hashset等<br>我们需要同时重写默认父类Object中的Hashcode方法和equals方法来使set容器中元素不可重复；<br>如果我们定义了set接口而未全部重写它的hashcode方法和equals方法，则set容器中的元素就会重复；</p>
+<h3 id="容器之map接口"><a href="#容器之map接口" class="headerlink" title="容器之map接口:"></a>容器之map接口:</h3><p>Map（映射）是一种将键对象和值对象进行映射的集合，它的每个元素都包含一对键对象和值对象；<br>向Map中加入元素时，必须提供一对键对象和值对象，从Map集合中检索元素时，只要给出键对象，就能返回相应的值对象；<br>接口Map提供了根据关键字找出对应值的方法：Object get(Object key)//会返回值对象<br>接口Map提供了设置键值对的方法：Object put(Object key,Object value)；//根据Key值计算出存储位置然后将Value存入<br>存入此位置，如果该位置原来已有元素则覆盖它；该方法返回覆盖之前的元素对象的值，如果以前此位置为空则返回null;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Map方法（并非全部）：</span><br><span class="line">Set keySet()&#x2F;&#x2F;返回此地图中键的set集合;</span><br><span class="line">boolean containsKey(Object key);&#x2F;&#x2F;如果此映射包含指定键，则返回true ；</span><br><span class="line">boolean containsValue(Object value);&#x2F;&#x2F;如果此映射将一个或多个键映射到指定的值，则返回true;</span><br><span class="line">int size();&#x2F;&#x2F;返回此地图中键值映射的数量。</span><br><span class="line">boolean isEmpty()如果此地图不包含键值映射，则返回 true;</span><br><span class="line">Object remove(Object key);&#x2F;&#x2F;如果存在（从可选的操作），从该地图中删除一个键的映射;</span><br><span class="line">void putAll(Map m);&#x2F;&#x2F;将指定地图的所有映射复制到此映射（可选操作）;</span><br><span class="line">void clear();&#x2F;&#x2F;从该地图中删除所有的映射（可选操作）;</span><br></pre></td></tr></table></figure>
       
 
@@ -359,7 +362,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E5%AE%B9%E5%99%A8%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">为什么需要容器？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E4%B8%8E%E7%8E%B0%E5%AE%9E%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">容器与现实的关系：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E6%A1%86%E6%9E%B6"><span class="toc-number">3.</span> <span class="toc-text">容器框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E4%B9%8BList"><span class="toc-number">4.</span> <span class="toc-text">容器之List:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E4%B9%8Bset"><span class="toc-number">5.</span> <span class="toc-text">容器之set:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E4%B9%8Bmap%E6%8E%A5%E5%8F%A3"><span class="toc-number">6.</span> <span class="toc-text">容器之map接口:</span></a></li></ol>
                     </div>
                 </span>
             </div>

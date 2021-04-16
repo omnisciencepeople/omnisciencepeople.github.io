@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>一个指针变量到底占几个字节 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910111213#include&lt;stdio.h&gt;int main()&amp;#123;    int i&#x3D;33;    char ch&#x3D;&#39;y&#39;;    double j&#x3D;66;    int*p&#x3D;&amp;i;    char*q&#x3D;&amp;ch;    double*r&#x3D;&amp;j;    p">
+  <meta name="description" content="12345678910111213#include&lt;stdio.h&gt;int main()&amp;#123;    int i&#x3D;33;    char ch&#x3D;&#39;y&#39;;    double j&#x3D;66;    int*p&#x3D;&amp;i;    char*q&#x3D;&amp;ch;    double*r&#x3D;&amp;j;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一个指针变量到底占几个字节">
 <meta property="og:url" content="https://username.github.io/2021/01/17/%E4%B8%80%E4%B8%AA%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E5%88%B0%E5%BA%95%E5%8D%A0%E5%87%A0%E4%B8%AA%E5%AD%97%E8%8A%82/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="12345678910111213#include&lt;stdio.h&gt;int main()&amp;#123;    int i&#x3D;33;    char ch&#x3D;&#39;y&#39;;    double j&#x3D;66;    int*p&#x3D;&amp;i;    char*q&#x3D;&amp;ch;    double*r&#x3D;&amp;j;    p">
+<meta property="og:description" content="12345678910111213#include&lt;stdio.h&gt;int main()&amp;#123;    int i&#x3D;33;    char ch&#x3D;&#39;y&#39;;    double j&#x3D;66;    int*p&#x3D;&amp;i;    char*q&#x3D;&amp;ch;    double*r&#x3D;&amp;j;">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-17T12:58:15.000Z">
-<meta property="article:modified_time" content="2021-01-17T13:12:31.521Z">
+<meta property="article:modified_time" content="2021-04-16T08:12:43.341Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -191,7 +191,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;33;</span><br><span class="line">    char ch&#x3D;&#39;y&#39;;</span><br><span class="line">    double j&#x3D;66;</span><br><span class="line">    int*p&#x3D;&amp;i;</span><br><span class="line">    char*q&#x3D;&amp;ch;</span><br><span class="line">    double*r&#x3D;&amp;j;</span><br><span class="line">    printf(&quot;%d %d %d\n&quot;,sizeof(p),sizeof(q),sizeof(r));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">输出 4 4 4</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;33;</span><br><span class="line">    char ch&#x3D;&#39;y&#39;;</span><br><span class="line">    double j&#x3D;66;</span><br><span class="line">    int*p&#x3D;&amp;i;</span><br><span class="line">    char*q&#x3D;&amp;ch;</span><br><span class="line">    double*r&#x3D;&amp;j;</span><br><span class="line">    printf(&quot;%d %d %d\n&quot;,sizeof(p),sizeof(q),sizeof(r));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">输出 4 4 4</span><br></pre></td></tr></table></figure>
 <p>注：<br>sizeof(数据类型)<br>功能：测量该数据类型所占的字节数；<br>一个指针变量无论它指向的变量占几个字节，该指针变量只占四个字节；<br>指针变量只指向该变量的第一个字节，由指针变量类型确定具体变量，指针变量需要用4个字节去表示；</p>
 
       
@@ -233,6 +234,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 

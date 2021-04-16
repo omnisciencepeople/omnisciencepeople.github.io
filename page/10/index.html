@@ -158,73 +158,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-scanf输入字符串时注意事项" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">scanf输入字符串时注意事项</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-
-<!--显示阅读次数完毕-->
-        
-        <a href="/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="archive-article-date">
-  	<time datetime="2021-01-14T10:07:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a[100];</span><br><span class="line">    scanf(&quot;%s&quot;,&amp;a);&#x2F;&#x2F;error:字符数组中字符数组名即为该数组第一个元素的地址或者说该数组的起始地址；</span><br><span class="line">    scanf(&quot;%s&quot;,a)</span><br><span class="line">    printf(&quot;%s\n&quot;,a);&#x2F;&#x2F;字符数组以%s输出时，输出控制项为字符数组名；</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a[100],b[100],c[100];</span><br><span class="line">    scanf(&quot;%s%s%s&quot;,a,b,c);&#x2F;&#x2F;若输入How are you?输出How are you?；若输入Howareyou?输出无输出;有空格字符分隔</span><br><span class="line">    作为三个字符串输入，无空格字符，当作一个字符串输入；</span><br><span class="line">    两者a[100],b[100],c[100]不同</span><br><span class="line">    printf(&quot;%s%s%s\n&quot;,a,b,c);&#x2F;&#x2F;字符数组以%s输出时，输出控制项为字符数组名；</span><br><span class="line">    char ch[100];</span><br><span class="line">    scanf(&quot;%s&quot;,ch);&#x2F;&#x2F;若输入How are you？&#x2F;&#x2F;输出How；系统将空格字符当作字符串间的分隔符故输出How</span><br><span class="line">    printf(&quot;%s\n&quot;,ch);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>字符串的输出只需要字符数组首地址即可，系统会沿着第一个字符的地址找下去直至遇到\0；系统这么做的前提是数组为连续分<br>配的内存；<br>疑问：<br>    char ch[1或2];<br>    scanf(“%s”,ch);//若输入How are you？为什么输出How；<br>    printf(“%s\n”,ch);</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-字符数组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -248,9 +181,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>定义字符数组与定义数值型数据的方法类似，例如char a[10];<br>字符数组的初始化（这里说的是定义时并初始化而定义以后单个初始化）：<br>1.完全初始化<br>如 char a[13]={‘I’,’ ‘,’a’,’m’,’a’,’C’,’h’,’i’,’n’,’e’,’s’,’e’,’.’};<br>2.不完全初始化<br>如 char a[3]={‘I’};<br>未初始化的元素自动定为空字符（\0）；<br>3.未初始化<br>如 char a[3];<br>输出值为垃圾值；</p>
+        <a id="more"></a>
+<p>定义字符数组与定义数值型数据的方法类似，例如char a[10];</p>
+<h3 id="字符数组的初始化（这里说的是定义时并初始化而定义以后单个初始化）："><a href="#字符数组的初始化（这里说的是定义时并初始化而定义以后单个初始化）：" class="headerlink" title="字符数组的初始化（这里说的是定义时并初始化而定义以后单个初始化）："></a>字符数组的初始化（这里说的是定义时并初始化而定义以后单个初始化）：</h3><p>1.完全初始化<br>如 char a[13]={‘I’,’ ‘,’a’,’m’,’a’,’C’,’h’,’i’,’n’,’e’,’s’,’e’,’.’};<br>2.不完全初始化<br>如 char a[3]={‘I’};<br>未初始化的元素自动定为空字符（\0）；<br>3.未初始化<br>如 char a[3];<br>输出值为垃圾值；</p>
 <p>若{}内提供的初值个数大于数组长度则会报错；因此，在定义字符数组时应估计其实际长度保证实际长度不大于数组长度；<br>字符数组的结束标志：以空字符(\0)为结束标志；以空字符作为结束标志不会产生任何附加操作或增加有效字符，只起一个供辨<br>别的标志；<br>printf(“How do you do?\n”);系统会自动在最后一个字符\n后加一个\0；<br>char a[5]={“china”};//error 此时数组实际长度为6&gt;5;字符串赋值；<br>char a[5]={‘c’,’h’,’i’,’n’,’a’};//ok 字符赋值；</p>
-<p>字符数组的输出：<br>1.输出字符不包括空字符；<br>2.若以%s格式符输出时，printf函数的输出控制项为字符数组名；<br>3.若数组长度大于数组实际长度也只遇到\0结束；<br>4.若包含一个以上的空字符，则遇到第一个空字符就结束；<br>5.可用scanf函数输入一个字符串<br>如 scanf(“%s”,字符数组名)；</p>
+<h3 id="字符数组的输出："><a href="#字符数组的输出：" class="headerlink" title="字符数组的输出："></a>字符数组的输出：</h3><p>1.输出字符不包括空字符；<br>2.若以%s格式符输出时，printf函数的输出控制项为字符数组名；<br>3.若数组长度大于数组实际长度也只遇到\0结束；<br>4.若包含一个以上的空字符，则遇到第一个空字符就结束；<br>5.可用scanf函数输入一个字符串<br>如 scanf(“%s”,字符数组名)；</p>
 
       
 
@@ -260,6 +195,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -316,7 +262,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  int a[3][4]&#x3D;&#123;&#123;1,2,3,4&#125;,&#123;5,6,7,8&#125;,&#123;9,10,11,12&#125;&#125;;</span><br><span class="line">  int max&#x3D;a[0][0];</span><br><span class="line">  int row,colum;</span><br><span class="line">  for(int i&#x3D;0;i&lt;3;i++)</span><br><span class="line">     for(int j&#x3D;0;j&lt;4;j++)</span><br><span class="line">     &#123;</span><br><span class="line">         if(a[i][j]&gt;max)</span><br><span class="line">            &#123;</span><br><span class="line">                max&#x3D;a[i][j];</span><br><span class="line">                row&#x3D;i;</span><br><span class="line">                colum&#x3D;j;</span><br><span class="line">            &#125;</span><br><span class="line">     &#125;</span><br><span class="line">  printf(&quot;max&#x3D;%d\nrow&#x3D;%d\ncolum&#x3D;%d\n&quot;,max,row,colum);</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  int a[3][4]&#x3D;&#123;&#123;1,2,3,4&#125;,&#123;5,6,7,8&#125;,&#123;9,10,11,12&#125;&#125;;</span><br><span class="line">  int max&#x3D;a[0][0];</span><br><span class="line">  int row,colum;</span><br><span class="line">  for(int i&#x3D;0;i&lt;3;i++)</span><br><span class="line">     for(int j&#x3D;0;j&lt;4;j++)</span><br><span class="line">     &#123;</span><br><span class="line">         if(a[i][j]&gt;max)</span><br><span class="line">            &#123;</span><br><span class="line">                max&#x3D;a[i][j];</span><br><span class="line">                row&#x3D;i;</span><br><span class="line">                colum&#x3D;j;</span><br><span class="line">            &#125;</span><br><span class="line">     &#125;</span><br><span class="line">  printf(&quot;max&#x3D;%d\nrow&#x3D;%d\ncolum&#x3D;%d\n&quot;,max,row,colum);</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -325,6 +272,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -381,7 +339,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[2][3]&#x3D;&#123;&#123;1,2,3&#125;,&#123;4,5,6&#125;&#125;;</span><br><span class="line">    int b[3][2],i,j;</span><br><span class="line">    for(i&#x3D;0;i&lt;2;i++)</span><br><span class="line">    &#123;</span><br><span class="line">       for(j&#x3D;0;j&lt;3;j++)</span><br><span class="line">       &#123;</span><br><span class="line">           printf(&quot;%d &quot;,a[i][j]);</span><br><span class="line">           b[j][i]&#x3D;a[i][j];</span><br><span class="line">       &#125;</span><br><span class="line">       printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;互换后的结果:\n&quot;);</span><br><span class="line">    for(i&#x3D;0;i&lt;3;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(j&#x3D;0;j&lt;2;j++)</span><br><span class="line">            printf(&quot;%d &quot;,b[i][j]);</span><br><span class="line">        printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[2][3]&#x3D;&#123;&#123;1,2,3&#125;,&#123;4,5,6&#125;&#125;;</span><br><span class="line">    int b[3][2],i,j;</span><br><span class="line">    for(i&#x3D;0;i&lt;2;i++)</span><br><span class="line">    &#123;</span><br><span class="line">       for(j&#x3D;0;j&lt;3;j++)</span><br><span class="line">       &#123;</span><br><span class="line">           printf(&quot;%d &quot;,a[i][j]);</span><br><span class="line">           b[j][i]&#x3D;a[i][j];</span><br><span class="line">       &#125;</span><br><span class="line">       printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;互换后的结果:\n&quot;);</span><br><span class="line">    for(i&#x3D;0;i&lt;3;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(j&#x3D;0;j&lt;2;j++)</span><br><span class="line">            printf(&quot;%d &quot;,b[i][j]);</span><br><span class="line">        printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -390,6 +349,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -446,7 +416,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,j,t;</span><br><span class="line">    int a[10];</span><br><span class="line">    printf(&quot;请为数组赋值(中间以空格相隔):\n&quot;);</span><br><span class="line">    for(i&#x3D;0;i&lt;10;i++)</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</span><br><span class="line">    for(i&#x3D;0;i&lt;9;i++)</span><br><span class="line">       for(j&#x3D;0;j&lt;9-i;j++)</span><br><span class="line">           if(a[j]&gt;a[j+1])</span><br><span class="line">              &#123;</span><br><span class="line">                  t&#x3D;a[j];</span><br><span class="line">                  a[j]&#x3D;a[j+1];</span><br><span class="line">                  a[j+1]&#x3D;t;</span><br><span class="line">              &#125;</span><br><span class="line">    printf(&quot;排序后的结果为:\n&quot;);</span><br><span class="line">    for(i&#x3D;0;i&lt;10;i++)</span><br><span class="line">        printf(&quot;%d &quot;,a[i]);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,j,t;</span><br><span class="line">    int a[10];</span><br><span class="line">    printf(&quot;请为数组赋值(中间以空格相隔):\n&quot;);</span><br><span class="line">    for(i&#x3D;0;i&lt;10;i++)</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</span><br><span class="line">    for(i&#x3D;0;i&lt;9;i++)</span><br><span class="line">       for(j&#x3D;0;j&lt;9-i;j++)</span><br><span class="line">           if(a[j]&gt;a[j+1])</span><br><span class="line">              &#123;</span><br><span class="line">                  t&#x3D;a[j];</span><br><span class="line">                  a[j]&#x3D;a[j+1];</span><br><span class="line">                  a[j+1]&#x3D;t;</span><br><span class="line">              &#125;</span><br><span class="line">    printf(&quot;排序后的结果为:\n&quot;);</span><br><span class="line">    for(i&#x3D;0;i&lt;10;i++)</span><br><span class="line">        printf(&quot;%d &quot;,a[i]);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -455,6 +426,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -511,7 +493,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[5]&#x3D;&#123;1,2,3,4,5&#125;;</span><br><span class="line">    int t,i&#x3D;0,j&#x3D;4;</span><br><span class="line">    while(i&lt;j)</span><br><span class="line">    &#123;</span><br><span class="line">        t&#x3D;a[i];</span><br><span class="line">        a[i]&#x3D;a[j];</span><br><span class="line">        a[j]&#x3D;t;</span><br><span class="line">        i++;</span><br><span class="line">        j--;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int k&#x3D;0;k&lt;5;k++)</span><br><span class="line">        printf(&quot;%d &quot;,a[k]);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[5]&#x3D;&#123;1,2,3,4,5&#125;;</span><br><span class="line">    int t,i&#x3D;0,j&#x3D;4;</span><br><span class="line">    while(i&lt;j)</span><br><span class="line">    &#123;</span><br><span class="line">        t&#x3D;a[i];</span><br><span class="line">        a[i]&#x3D;a[j];</span><br><span class="line">        a[j]&#x3D;t;</span><br><span class="line">        i++;</span><br><span class="line">        j--;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int k&#x3D;0;k&lt;5;k++)</span><br><span class="line">        printf(&quot;%d &quot;,a[k]);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -520,6 +503,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -576,7 +570,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>数组作用：为解决大量同类型数据的存储和使用；模拟现实世界；<br>数组分类:一维数组、二维数组、三维数组；<br>一维数组定义:为n个变量连续分配存储空间；所有变量数据类型相同；所有变量所占字节相同；<br>一维数组初始化:<br>定义时整体赋值，否则需单个赋值；<br>1.完全初始化<br>     int a[3]={1,2,3};<br>     输出1，2，3；<br>2.部分初始化:<br>     int a[3]={1,2};<br>     输出1，2 ，0；<br>     未初始化值为0；<br>3.不初始化：<br>      int a[3];<br>      输出三个垃圾值；<br>一维数组的输出:<br>循环输出；<br> int a[n];//n表示元素的个数；元素为a[0]到a[n-1];<br>二维和三维数组大体同一维类似；<br>事实上，不存在多维数组，因为内存是线性一维的；<br>n维数组可以看作是每个元素是n-1维数组的一维数组；<br>例如:int a[3][4]可以看作为含有3个元素一维数组，只不过每个元素是含有4个元素的一维数组；<br>int a[3][4][5]可以看作是含有3个元素的一维数组，只不过每个元素是4行5列的二维数组；</p>
+        <a id="more"></a>
+<p>数组作用：为解决大量同类型数据的存储和使用；模拟现实世界；<br>数组分类:一维数组、二维数组、三维数组；<br>一维数组定义:为n个变量连续分配存储空间；所有变量数据类型相同；所有变量所占字节相同；<br>一维数组初始化:<br>定义时整体赋值，否则需单个赋值；<br>1.完全初始化<br>     int a[3]={1,2,3};<br>     输出1，2，3；<br>2.部分初始化:<br>     int a[3]={1,2};<br>     输出1，2 ，0；<br>     未初始化值为0；<br>3.不初始化：<br>      int a[3];<br>      输出三个垃圾值；<br>一维数组的输出:<br>循环输出；<br> int a[n];//n表示元素的个数；元素为a[0]到a[n-1];<br>二维和三维数组大体同一维类似；<br>事实上，不存在多维数组，因为内存是线性一维的；<br>n维数组可以看作是每个元素是n-1维数组的一维数组；<br>例如:int a[3][4]可以看作为含有3个元素一维数组，只不过每个元素是含有4个元素的一维数组；<br>int a[3][4][5]可以看作是含有3个元素的一维数组，只不过每个元素是4行5列的二维数组；</p>
 
       
 
@@ -586,6 +581,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -642,8 +648,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    for(A;B;C)</span><br><span class="line">    &#123;</span><br><span class="line">        D;</span><br><span class="line">        E;</span><br><span class="line">        continue;</span><br><span class="line">        F;</span><br><span class="line">        G;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<img src="/2021/01/13/continue%E7%94%A8%E6%B3%95/a.png" class="">
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    for(A;B;C)</span><br><span class="line">    &#123;</span><br><span class="line">        D;</span><br><span class="line">        E;</span><br><span class="line">        continue;</span><br><span class="line">        F;</span><br><span class="line">        G;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>执行顺序A-&gt;B-&gt;D-&gt;E-&gt;C-&gt;…<br>执行过程中跳过了F和G；<br>continue用于跳过本次循环余下的语句，转去判断是否执行下次循环；</p>
 
       
@@ -654,6 +660,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -710,8 +727,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    printf(&quot;请输入你想要进入的楼层:&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;i);</span><br><span class="line">    switch(i)</span><br><span class="line">    &#123;</span><br><span class="line">        case 1:</span><br><span class="line">             printf(&quot;1层开\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 2:</span><br><span class="line">             printf(&quot;2层开\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 3:</span><br><span class="line">             printf(&quot;3层开\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 4:</span><br><span class="line">             printf(&quot;4层开\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        default:</span><br><span class="line">             printf(&quot;输入楼层错误\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>switch(i)<br>{<br>    case 1:<br>         A;<br>    case 2:<br>         B;<br>    default:<br>         C;<br>    case 3:<br>         D;<br>}<br>输入1，执行A B C D;<br>输入2，执行B C D;<br>输入3，执行D;<br>输入4，执行C D;<br>break 用法:<br>1.终止距离其最近的for循环；<br>2.终止switch语句；<br>3.终止if语句（此时if属于循环内部的语句）；</p>
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    printf(&quot;请输入你想要进入的楼层:&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;i);</span><br><span class="line">    switch(i)</span><br><span class="line">    &#123;</span><br><span class="line">        case 1:</span><br><span class="line">             printf(&quot;1层开\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 2:</span><br><span class="line">             printf(&quot;2层开\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 3:</span><br><span class="line">             printf(&quot;3层开\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 4:</span><br><span class="line">             printf(&quot;4层开\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        default:</span><br><span class="line">             printf(&quot;输入楼层错误\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">switch(i)</span><br><span class="line">&#123;</span><br><span class="line">    case 1:</span><br><span class="line">         A;</span><br><span class="line">    case 2:</span><br><span class="line">         B;</span><br><span class="line">    default:</span><br><span class="line">         C;</span><br><span class="line">    case 3:</span><br><span class="line">         D;</span><br><span class="line">&#125;</span><br><span class="line">输入1，执行A B C D;</span><br><span class="line">输入2，执行B C D;</span><br><span class="line">输入3，执行D;</span><br><span class="line">输入4，执行C D;</span><br></pre></td></tr></table></figure>
+<p>break 用法:<br>1.终止距离其最近的for循环；<br>2.终止switch语句；<br>3.终止if语句（此时if属于循环内部的语句）；</p>
 
       
 
@@ -721,6 +740,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -777,7 +807,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    float a,b,c,delta;</span><br><span class="line">    double x1,x2;</span><br><span class="line">    char ch;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">     printf(&quot;请为一元二次方程的系数赋值(中间以空格相隔):&quot;);</span><br><span class="line">     scanf(&quot;%f %f %f&quot;,&amp;a,&amp;b,&amp;c);</span><br><span class="line">     delta&#x3D;b*b-4*a*c;</span><br><span class="line">     if(delta&gt;0)</span><br><span class="line">       &#123;</span><br><span class="line">         x1&#x3D;(-b+sqrt(delta))&#x2F;(2*a);</span><br><span class="line">         x2&#x3D;(-b-sqrt(delta))&#x2F;(2*a);</span><br><span class="line">         printf(&quot;x1&#x3D;%lf x2&#x3D;%lf\n&quot;,x1,x2);</span><br><span class="line">       &#125;</span><br><span class="line">     else if(delta&#x3D;&#x3D;0)</span><br><span class="line">       &#123;</span><br><span class="line">         x1&#x3D;x2&#x3D;(-b)&#x2F;(2*a);</span><br><span class="line">         printf(&quot;x1&#x3D;%lf x2&#x3D;%lf\n&quot;,x1,x2);</span><br><span class="line">       &#125;</span><br><span class="line">     else</span><br><span class="line">         printf(&quot;无解\n&quot;);</span><br><span class="line">     printf(&quot;请问你是否还要继续（Y&#x2F;N）:&quot;);</span><br><span class="line">     scanf(&quot; %c&quot;,&amp;ch);</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    float a,b,c,delta;</span><br><span class="line">    double x1,x2;</span><br><span class="line">    char ch;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">     printf(&quot;请为一元二次方程的系数赋值(中间以空格相隔):&quot;);</span><br><span class="line">     scanf(&quot;%f %f %f&quot;,&amp;a,&amp;b,&amp;c);</span><br><span class="line">     delta&#x3D;b*b-4*a*c;</span><br><span class="line">     if(delta&gt;0)</span><br><span class="line">       &#123;</span><br><span class="line">         x1&#x3D;(-b+sqrt(delta))&#x2F;(2*a);</span><br><span class="line">         x2&#x3D;(-b-sqrt(delta))&#x2F;(2*a);</span><br><span class="line">         printf(&quot;x1&#x3D;%lf x2&#x3D;%lf\n&quot;,x1,x2);</span><br><span class="line">       &#125;</span><br><span class="line">     else if(delta&#x3D;&#x3D;0)</span><br><span class="line">       &#123;</span><br><span class="line">         x1&#x3D;x2&#x3D;(-b)&#x2F;(2*a);</span><br><span class="line">         printf(&quot;x1&#x3D;%lf x2&#x3D;%lf\n&quot;,x1,x2);</span><br><span class="line">       &#125;</span><br><span class="line">     else</span><br><span class="line">         printf(&quot;无解\n&quot;);</span><br><span class="line">     printf(&quot;请问你是否还要继续（Y&#x2F;N）:&quot;);</span><br><span class="line">     scanf(&quot; %c&quot;,&amp;ch);</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -786,10 +817,98 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/01/13/%E6%B1%82%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E8%A7%A3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-斐波拉契数列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/13/%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E6%95%B0%E5%88%97/">斐波拉契数列</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+<!--显示阅读次数完毕-->
+        
+        <a href="/2021/01/13/%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E6%95%B0%E5%88%97/" class="archive-article-date">
+  	<time datetime="2021-01-13T13:58:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int f1,f2,f3,n;</span><br><span class="line">    char ch;</span><br><span class="line">    f1&#x3D;1;</span><br><span class="line">    f2&#x3D;2;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">    printf(&quot;请输入你要求的项数:&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    if(n&#x3D;&#x3D;1)</span><br><span class="line">       f3&#x3D;f1;</span><br><span class="line">    else if(n&#x3D;&#x3D;2)</span><br><span class="line">       f3&#x3D;f2;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">       f3&#x3D;f1+f2;</span><br><span class="line">       f1&#x3D;f2;</span><br><span class="line">       f2&#x3D;f3;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;第%d项为%d\n&quot;,n,f3);</span><br><span class="line">    printf(&quot;你是否还要继续（Y&#x2F;N）:&quot;);</span><br><span class="line">    scanf(&quot; %c&quot;,&amp;ch);</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/13/%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E6%95%B0%E5%88%97/">展开全文 >></a>
         </p>
       
 

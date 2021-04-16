@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>数值型数据在计算机内部的表示 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数值型数据包括无符号数和有符号数；有符号数包括原码、反码、补码；无符号数：1.非负整数，数值位均表示大小；若字长为n，则表示2的n次方个数（0到2的n次方-1）有符号数：最高为表示符号位（0正1负）；机器数：连同符号位数值化来供机器识别；真值：机器数表示的真实数值；原码：最高位表符号位，数值部分为真值的绝对值；反码：正数反码为其本身；负数除最高位，按位取反；用反码做运算时，若有进位则循环进位；补码">
+  <meta name="description" content="数值型数据包括无符号数和有符号数；有符号数包括原码、反码、补码；无符号数：1.非负整数，数值位均表示大小；若字长为n，则表示2的n次方个数（0到2的n次方-1）有符号数：最高为表示符号位（0正1负）；机器数：连同符号位数值化来供机器识别；真值：机器数表示的真实数值；原码：最高位表符号位，数值部分为真值的绝对值；反码：正数反码为其本身；负数除最高位，按位取反；用反码做运算时，若有进位则循环进位；补">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数值型数据在计算机内部的表示">
 <meta property="og:url" content="https://username.github.io/2021/01/19/%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E9%83%A8%E7%9A%84%E8%A1%A8%E7%A4%BA/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="数值型数据包括无符号数和有符号数；有符号数包括原码、反码、补码；无符号数：1.非负整数，数值位均表示大小；若字长为n，则表示2的n次方个数（0到2的n次方-1）有符号数：最高为表示符号位（0正1负）；机器数：连同符号位数值化来供机器识别；真值：机器数表示的真实数值；原码：最高位表符号位，数值部分为真值的绝对值；反码：正数反码为其本身；负数除最高位，按位取反；用反码做运算时，若有进位则循环进位；补码">
+<meta property="og:description" content="数值型数据包括无符号数和有符号数；有符号数包括原码、反码、补码；无符号数：1.非负整数，数值位均表示大小；若字长为n，则表示2的n次方个数（0到2的n次方-1）有符号数：最高为表示符号位（0正1负）；机器数：连同符号位数值化来供机器识别；真值：机器数表示的真实数值；原码：最高位表符号位，数值部分为真值的绝对值；反码：正数反码为其本身；负数除最高位，按位取反；用反码做运算时，若有进位则循环进位；补">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-19T03:23:25.000Z">
-<meta property="article:modified_time" content="2021-01-19T06:24:36.657Z">
+<meta property="article:modified_time" content="2021-04-16T08:09:49.136Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -191,7 +191,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>数值型数据包括无符号数和有符号数；<br>有符号数包括原码、反码、补码；<br>无符号数：<br>1.非负整数，数值位均表示大小；若字长为n，则表示2的n次方个数（0到2的n次方-1）<br>有符号数：<br>最高为表示符号位（0正1负）；<br>机器数：连同符号位数值化来供机器识别；<br>真值：机器数表示的真实数值；<br>原码：最高位表符号位，数值部分为真值的绝对值；<br>反码：正数反码为其本身；负数除最高位，按位取反；用反码做运算时，若有进位则循环进位；<br>补码：正数补码为其本身；负数补码除符号位外其余按位取反并在末尾加一；用补码做运算时，若有进位则舍弃进位；<br>补码求真值：<br>1.根据最高位确定符号位；<br>2.若为正数则数值位不变；若为负数则连同符号位取反加一<br>补充：<br>数值型数据在计算机内用补码表示；<br>非数值型数据在计算机内表示：汉字输入码（外码）-&gt;汉字交换码（国标码）-&gt;汉字机内码-&gt;汉字地址码-&gt;汉字字形码；<br>区位码+20H20H-&gt;国标码+80H80H-&gt;机内码；</p>
+        <a id="more"></a>
+<p>数值型数据包括无符号数和有符号数；<br>有符号数包括原码、反码、补码；<br>无符号数：<br>1.非负整数，数值位均表示大小；若字长为n，则表示2的n次方个数（0到2的n次方-1）<br>有符号数：<br>最高为表示符号位（0正1负）；<br>机器数：连同符号位数值化来供机器识别；<br>真值：机器数表示的真实数值；<br>原码：最高位表符号位，数值部分为真值的绝对值；<br>反码：正数反码为其本身；负数除最高位，按位取反；用反码做运算时，若有进位则循环进位；<br>补码：正数补码为其本身；负数补码除符号位外其余按位取反并在末尾加一；用补码做运算时，若有进位则舍弃进位；<br>补码求真值：<br>1.根据最高位确定符号位；<br>2.若为正数则数值位不变；若为负数则连同符号位取反加一<br>补充：<br>数值型数据在计算机内用补码表示；<br>非数值型数据在计算机内表示：汉字输入码（外码）-&gt;汉字交换码（国标码）-&gt;汉字机内码-&gt;汉字地址码-&gt;汉字字形码；<br>区位码+20H20H-&gt;国标码+80H80H-&gt;机内码；</p>
 
       
 
@@ -232,6 +233,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 

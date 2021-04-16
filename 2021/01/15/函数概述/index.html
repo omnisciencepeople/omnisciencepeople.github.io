@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>函数概述 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="为什么需要函数：1.函数可避免大量重复性代码；2.有利于程序模块化；函数定义1：逻辑上，能完成特定独立功能的代码单元块；物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；函数适用范围：适用大量同类型问题；函数功能越单一越好（可移植性越强）；函数定义2：  函数返回值类型 函数名（函数形参）  {      函数执行体  }定义2本质：1.详细描述函数之所以能实现某个特定功能的具体实现方法">
+  <meta name="description" content="为什么需要函数：1.函数可避免大量重复性代码；2.有利于程序模块化；函数定义1：逻辑上，能完成特定独立功能的代码单元块；物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；函数适用范围：适用大量同类型问题；函数功能越单一越好（可移植性越强）；函数定义2：  函数返回值类型 函数名（函数形参）  {      函数执行体  }定义2本质：1.详细描述函数之所以能实现某个特定功能的具体实现方">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数概述">
 <meta property="og:url" content="https://username.github.io/2021/01/15/%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B0/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="为什么需要函数：1.函数可避免大量重复性代码；2.有利于程序模块化；函数定义1：逻辑上，能完成特定独立功能的代码单元块；物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；函数适用范围：适用大量同类型问题；函数功能越单一越好（可移植性越强）；函数定义2：  函数返回值类型 函数名（函数形参）  {      函数执行体  }定义2本质：1.详细描述函数之所以能实现某个特定功能的具体实现方法">
+<meta property="og:description" content="为什么需要函数：1.函数可避免大量重复性代码；2.有利于程序模块化；函数定义1：逻辑上，能完成特定独立功能的代码单元块；物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；函数适用范围：适用大量同类型问题；函数功能越单一越好（可移植性越强）；函数定义2：  函数返回值类型 函数名（函数形参）  {      函数执行体  }定义2本质：1.详细描述函数之所以能实现某个特定功能的具体实现方">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-15T01:35:13.000Z">
-<meta property="article:modified_time" content="2021-01-17T03:47:40.269Z">
+<meta property="article:modified_time" content="2021-04-16T07:33:20.105Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -191,8 +191,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>为什么需要函数：<br>1.函数可避免大量重复性代码；<br>2.有利于程序模块化；<br>函数定义1：<br>逻辑上，能完成特定独立功能的代码单元块；<br>物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；<br>函数适用范围：<br>适用大量同类型问题；<br>函数功能越单一越好（可移植性越强）；<br>函数定义2：<br>  函数返回值类型 函数名（函数形参）<br>  {<br>      函数执行体<br>  }<br>定义2本质：<br>1.详细描述函数之所以能实现某个特定功能的具体实现方法；<br>2.return表达式：向主调函数返回函数值；为空则表示终止函数；<br>3.函数返回值类型称函数类型；如果函数返回值类型和return表达式中数据类型不同的话，以函数名前返回值类型为主；（函数类型决定返回值类型）<br>函数分类：<br>有参函数和无参函数；<br>有返回值函数和无返回值函数；<br>库函数和用户自定义函数；<br>普通函数和主函数；<br>值传递函数和地址传递函数；<br>函数注意问题：<br>一个程序有且只有一个主函数；<br>主函数可调用普通函数；<br>普通函数不可调用主函数；<br>普通函数可相互调用；<br>程序从主函数入主函数出；<br>函数必须先定义后使用；<br>函数声明：<br>1.告诉编译器即将出现的若干个字母代表函数；<br>2.告诉编译器即将出现的若干个字母代表函数具体情况；<br>3.其为一个语句必加分号；<br>4.对库函数的声明是通过#include&lt;库函数所在文件名.h&gt;来实现的；<br>函数形参和实参：<br>个数相同；位置对应；类型相互兼容；<br>函数重要性：<br>函数为C语言的基本单位，类为Java/C++/C#的基本单位；<br>常见的系统函数：<br>sqrt:求平方根；<br>abs：求整型数据的绝对值；<br>fabs：求浮点型数据绝对值；<br>变量分类：<br>1.按作用域：全局变量和局部变量；<br>2.按存储方式：静态局部变量，自动变量，寄存器变量,静态外部变量，外部变量；<br>注：在一个函数内部定义的变量或函数的形参称为局部变量；<br>在所有函数外部定义的变量称全局变量；<br>全局变量和局部变量命名冲突问题：<br>在一个函数内部，若定义一个局部变量，其名与全局变量相同，局部变量会屏蔽掉全局变量；<br>俗称“强龙不压地头蛇”。<br>例如：<br>#include&lt;stdio.h&gt;<br>int i=99;//定义一个全局变量；<br>void f(int i)//定义一个局部变量，名字和全局变量相同；<br>{<br>  printf(“%d\n”,i);<br>}<br>int main()<br>{<br>   f(8);//调用f函数；<br>   return 0;<br>}<br>//输出8，而非99；</p>
-
+        <a id="more"></a>
+<h3 id="为什么需要函数："><a href="#为什么需要函数：" class="headerlink" title="为什么需要函数："></a>为什么需要函数：</h3><p>1.函数可避免大量重复性代码；<br>2.有利于程序模块化；<br>函数定义1：<br>逻辑上，能完成特定独立功能的代码单元块；<br>物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；<br>函数适用范围：<br>适用大量同类型问题；<br>函数功能越单一越好（可移植性越强）；<br>函数定义2：<br>  函数返回值类型 函数名（函数形参）<br>  {<br>      函数执行体<br>  }<br>定义2本质：<br>1.详细描述函数之所以能实现某个特定功能的具体实现方法；<br>2.return表达式：向主调函数返回函数值；为空则表示终止函数；<br>3.函数返回值类型称函数类型；如果函数返回值类型和return表达式中数据类型不同的话，以函数名前返回值类型为主；（函数类型决定返回值类型）</p>
+<h3 id="函数分类："><a href="#函数分类：" class="headerlink" title="函数分类："></a>函数分类：</h3><p>有参函数和无参函数；<br>有返回值函数和无返回值函数；<br>库函数和用户自定义函数；<br>普通函数和主函数；<br>值传递函数和地址传递函数；</p>
+<h3 id="函数注意问题："><a href="#函数注意问题：" class="headerlink" title="函数注意问题："></a>函数注意问题：</h3><p>一个程序有且只有一个主函数；<br>主函数可调用普通函数；<br>普通函数不可调用主函数；<br>普通函数可相互调用；<br>程序从主函数入主函数出；<br>函数必须先定义后使用；</p>
+<h3 id="函数声明："><a href="#函数声明：" class="headerlink" title="函数声明："></a>函数声明：</h3><p>1.告诉编译器即将出现的若干个字母代表函数；<br>2.告诉编译器即将出现的若干个字母代表函数具体情况；<br>3.其为一个语句必加分号；<br>4.对库函数的声明是通过#include&lt;库函数所在文件名.h&gt;来实现的；</p>
+<h3 id="函数形参和实参："><a href="#函数形参和实参：" class="headerlink" title="函数形参和实参："></a>函数形参和实参：</h3><p>个数相同；位置对应；类型相互兼容；</p>
+<h3 id="函数重要性："><a href="#函数重要性：" class="headerlink" title="函数重要性："></a>函数重要性：</h3><p>函数为C语言的基本单位，类为Java/C++/C#的基本单位；</p>
+<h3 id="常见的系统函数："><a href="#常见的系统函数：" class="headerlink" title="常见的系统函数："></a>常见的系统函数：</h3><p>sqrt:求平方根；<br>abs：求整型数据的绝对值；<br>fabs：求浮点型数据绝对值；</p>
+<h3 id="变量分类："><a href="#变量分类：" class="headerlink" title="变量分类："></a>变量分类：</h3><p>1.按作用域：全局变量和局部变量；<br>2.按存储方式：静态局部变量，自动变量，寄存器变量,静态外部变量，外部变量；<br>注：在一个函数内部定义的变量或函数的形参称为局部变量；<br>在所有函数外部定义的变量称全局变量；<br>全局变量和局部变量命名冲突问题：<br>在一个函数内部，若定义一个局部变量，其名与全局变量相同，局部变量会屏蔽掉全局变量；<br>俗称“强龙不压地头蛇”。<br>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int i&#x3D;99;&#x2F;&#x2F;定义一个全局变量；</span><br><span class="line">void f(int i)&#x2F;&#x2F;定义一个局部变量，名字和全局变量相同；</span><br><span class="line">&#123;</span><br><span class="line">  printf(&quot;%d\n&quot;,i);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   f(8);&#x2F;&#x2F;调用f函数；</span><br><span class="line">   return 0;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;输出8，而非99；</span><br></pre></td></tr></table></figure>
       
 
       
@@ -232,6 +240,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -333,7 +352,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">为什么需要函数：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">函数分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%B3%A8%E6%84%8F%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">函数注意问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">函数声明：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BD%A2%E5%8F%82%E5%92%8C%E5%AE%9E%E5%8F%82%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">函数形参和实参：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%A6%81%E6%80%A7%EF%BC%9A"><span class="toc-number">6.</span> <span class="toc-text">函数重要性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-number">7.</span> <span class="toc-text">常见的系统函数：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-number">8.</span> <span class="toc-text">变量分类：</span></a></li></ol>
                     </div>
                 </span>
             </div>

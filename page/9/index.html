@@ -158,71 +158,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-函数变量之静态局部变量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E9%9D%99%E6%80%81%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/">函数变量之静态局部变量</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-
-<!--显示阅读次数完毕-->
-        
-        <a href="/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E9%9D%99%E6%80%81%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/" class="archive-article-date">
-  	<time datetime="2021-01-16T04:15:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int f(int a);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,a&#x3D;2;</span><br><span class="line">    for(i&#x3D;1;i&lt;&#x3D;3;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;%d\n&quot;,f(a));</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">int f(int a)</span><br><span class="line">&#123;</span><br><span class="line">    int b&#x3D;0;</span><br><span class="line">    static int c&#x3D;3;</span><br><span class="line">    b++;</span><br><span class="line">    c++;</span><br><span class="line">    return (a+b+c);</span><br><span class="line">&#125;</span><br><span class="line">输出：</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E9%9D%99%E6%80%81%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-变量的存储方式和生存期" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -246,7 +181,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>变量的存储方式有两种：静态存储方式和动态存储方式；<br>静态存储方式：指程序在运行期间由系统分配固定的存储空间的方式；<br>动态存储方式：指程序在运行期间根据需要进行动态的分配存储空间的方式；<br>内存中供用户使用的存储空间分为三部分：<br>1.程序区<br>2.静态存储区<br>3.动态存储区<br>全局变量全部存放在静态存储区，程序执行完毕就释放，在程序执行过程中，它们占据着固定的存储单元而不是动态地进行分配<br>和释放；<br>在动态存储区中存放以下数据：<br>1.函数形参<br>2.自动变量<br>3.函数调用时的现场保护和返回地址等<br>对以上数据在函数调用时分配存储空间，函数结束时就释放；在函数执行过程中，这种分配和释放是动态的；如果在一个程序中<br>两次调用同一函数（此函数中定义了局部变量）在两次调用时分配给这些局部变量的存储空间的地址可能是不同的；<br>局部变量的存储类别：<br>1.自动变量（auto变量）<br>函数的形参和函数的局部变量，生命周期和函数相同，函数调用结束后就自动释放这些存储空间；<br>auto 可省略；<br>2.静态局部变量<br>用关键词 “static”指定该变量为静态局部变量<br>函数结束后该变量所占用的存储的单元不会释放从而该局部变量的值得以保存；<br>静态局部变量缺点：占内存（长期占用不释放，而不能像动态内存那样一个存储单元可以先后为多个变量使用，节约内存）；<br>降低了程序的可读性（当调用次数过多时往往弄不清静态局部变量的当前值）；<br>3.寄存器变量<br>存储在CPU的寄存器中；<br>为提高执行效率；<br>对寄存器的存取速度远高于对内存的存取速度；<br>全局变量的存储类别<br>1.在一个文件内扩展外部变量的作用域extern<br>2.将外部变量的作用域扩展至其他文件extern<br>3.将外部变量的作用域限制在本文件中static<br>static声明一个变量的作用：<br>1.对局部变量进行声明，把它分配在静态存储区，该变量在整个程序执行不释放，其所分配的存储空间始终存在直至程序结束，<br>函数内有效；<br>2.对全局变量进行声明，则该变量作用域只限于本文件夹不能被其他文件引用；</p>
+        <a id="more"></a>
+<p>变量的存储方式有两种：静态存储方式和动态存储方式；<br>静态存储方式：指程序在运行期间由系统分配固定的存储空间的方式；<br>动态存储方式：指程序在运行期间根据需要进行动态的分配存储空间的方式；<br>内存中供用户使用的存储空间分为三部分：<br>1.程序区<br>2.静态存储区<br>3.动态存储区<br>全局变量全部存放在静态存储区，程序执行完毕就释放，在程序执行过程中，它们占据着固定的存储单元而不是动态地进行分配和释放；<br>在动态存储区中存放以下数据：<br>1.函数形参<br>2.自动变量<br>3.函数调用时的现场保护和返回地址等<br>对以上数据在函数调用时分配存储空间，函数结束时就释放；在函数执行过程中，这种分配和释放是动态的；如果在一个程序中两次调用同一函数（此函数中定义了局部变量）在两次调用时分配给这些局部变量的存储空间的地址可能是不同的；<br>局部变量的存储类别：<br>1.自动变量（auto变量）<br>函数的形参和函数的局部变量，生命周期和函数相同，函数调用结束后就自动释放这些存储空间；<br>auto 可省略；<br>2.静态局部变量<br>用关键词 “static”指定该变量为静态局部变量<br>函数结束后该变量所占用的存储的单元不会释放从而该局部变量的值得以保存；<br>静态局部变量缺点：占内存（长期占用不释放，而不能像动态内存那样一个存储单元可以先后为多个变量使用，节约内存）；<br>降低了程序的可读性（当调用次数过多时往往弄不清静态局部变量的当前值）；<br>3.寄存器变量<br>存储在CPU的寄存器中；<br>为提高执行效率；<br>对寄存器的存取速度远高于对内存的存取速度；<br>全局变量的存储类别<br>1.在一个文件内扩展外部变量的作用域extern<br>2.将外部变量的作用域扩展至其他文件extern<br>3.将外部变量的作用域限制在本文件中static<br>static声明一个变量的作用：<br>1.对局部变量进行声明，把它分配在静态存储区，该变量在整个程序执行不释放，其所分配的存储空间始终存在直至程序结束，函数内有效；<br>2.对全局变量进行声明，则该变量作用域只限于本文件夹不能被其他文件引用；</p>
 
       
 
@@ -256,6 +192,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -312,7 +259,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int f(int);&#x2F;&#x2F;函数声明可不加形参，但必须末尾有引号；</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   int i&#x3D;f(3);</span><br><span class="line">   printf(&quot;i&#x3D;%d\n&quot;,i);</span><br><span class="line">   return 0;</span><br><span class="line">&#125;</span><br><span class="line">int f(int i)</span><br><span class="line">&#123;</span><br><span class="line">    if(i&#x3D;&#x3D;1)</span><br><span class="line">       printf(&quot;哈哈\n&quot;);</span><br><span class="line">    else</span><br><span class="line">       i&#x3D; f(i-1);</span><br><span class="line">    return i;</span><br><span class="line">&#125;</span><br><span class="line">输出：哈哈</span><br><span class="line">      i&#x3D;1</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int f(int);&#x2F;&#x2F;函数声明可不加形参，但必须末尾有引号；</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   int i&#x3D;f(3);</span><br><span class="line">   printf(&quot;i&#x3D;%d\n&quot;,i);</span><br><span class="line">   return 0;</span><br><span class="line">&#125;</span><br><span class="line">int f(int i)</span><br><span class="line">&#123;</span><br><span class="line">    if(i&#x3D;&#x3D;1)</span><br><span class="line">       printf(&quot;哈哈\n&quot;);</span><br><span class="line">    else</span><br><span class="line">       i&#x3D; f(i-1);</span><br><span class="line">    return i;</span><br><span class="line">&#125;</span><br><span class="line">输出：哈哈</span><br><span class="line">      i&#x3D;1</span><br></pre></td></tr></table></figure>
 <p>函数调用流程：<br>f(3)-&gt;i=f(2)-&gt;i=f(1)-&gt;f(1)输出 哈哈;<br>return 1-&gt;f(1)完成-&gt;i=1-&gt;return 1-&gt;f(2)完成-&gt;i=1-&gt;return 1-&gt;f(3)完成;<br>跳出f函数 输出1；</p>
 
       
@@ -323,6 +271,21 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言/递归//" class="article-tag-list-link color3">递归</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -379,7 +342,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int f(int i)</span><br><span class="line">&#123;</span><br><span class="line">    if(i&#x3D;&#x3D;1)</span><br><span class="line">      return 1;</span><br><span class="line">    else</span><br><span class="line">      return i*f(i-1);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    char ch;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">     printf(&quot;请输入你想求的阶乘数：&quot;);</span><br><span class="line">     scanf(&quot;%d&quot;,&amp;i);</span><br><span class="line">     printf(&quot;%d的阶乘为%d\n&quot;,i,f(i));</span><br><span class="line">     printf(&quot;你是否还要继续（Y&#x2F;N）:&quot;);</span><br><span class="line">     scanf(&quot; %c&quot;,&amp;ch);</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int f(int i)</span><br><span class="line">&#123;</span><br><span class="line">    if(i&#x3D;&#x3D;1)</span><br><span class="line">      return 1;</span><br><span class="line">    else</span><br><span class="line">      return i*f(i-1);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    char ch;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">     printf(&quot;请输入你想求的阶乘数：&quot;);</span><br><span class="line">     scanf(&quot;%d&quot;,&amp;i);</span><br><span class="line">     printf(&quot;%d的阶乘为%d\n&quot;,i,f(i));</span><br><span class="line">     printf(&quot;你是否还要继续（Y&#x2F;N）:&quot;);</span><br><span class="line">     scanf(&quot; %c&quot;,&amp;ch);</span><br><span class="line">    &#125;while(ch&#x3D;&#x3D;&#39;Y&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -388,6 +352,21 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言/递归//" class="article-tag-list-link color3">递归</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -444,7 +423,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void hannuota(int i,char A ,char B,char C)</span><br><span class="line">&#123;</span><br><span class="line">    if(i&#x3D;&#x3D;1)</span><br><span class="line">       printf(&quot;将编号为%d的盘子从%c移到%c\n&quot;,i,A,C);</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">       hannuota(i-1,A,C,B);&#x2F;&#x2F;将i-1个盘从A借助C移到B；</span><br><span class="line">       printf(&quot;将编号为%d的盘子从%c移到%c\n&quot;,i,A,C);&#x2F;&#x2F;将编号为i的盘从A移到C;</span><br><span class="line">       hannuota(i-1,B,A,C);&#x2F;&#x2F;将i-1个盘从B借助A移到C;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    printf(&quot;请为盘子的个数赋值：&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;i);</span><br><span class="line">    hannuota(i,&#39;A&#39;,&#39;B&#39;,&#39;C&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void hannuota(int i,char A ,char B,char C)</span><br><span class="line">&#123;</span><br><span class="line">    if(i&#x3D;&#x3D;1)</span><br><span class="line">       printf(&quot;将编号为%d的盘子从%c移到%c\n&quot;,i,A,C);</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">       hannuota(i-1,A,C,B);&#x2F;&#x2F;将i-1个盘从A借助C移到B；</span><br><span class="line">       printf(&quot;将编号为%d的盘子从%c移到%c\n&quot;,i,A,C);&#x2F;&#x2F;将编号为i的盘从A移到C;</span><br><span class="line">       hannuota(i-1,B,A,C);&#x2F;&#x2F;将i-1个盘从B借助A移到C;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    printf(&quot;请为盘子的个数赋值：&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;i);</span><br><span class="line">    hannuota(i,&#39;A&#39;,&#39;B&#39;,&#39;C&#39;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -453,6 +433,21 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言/递归//" class="article-tag-list-link color3">递归</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -509,7 +504,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>定义：函数直接或间接调用自己；<br>函数为什么可以自己调用自己？<br>前提：函数的调用是通过栈实现的；<br>A.一个函数在运行期间去调用其它函数，在运行被调函数前需做三件事：<br>1.将所有实参、返回地址（下一条指令的地址）等信息传给被调函数保存；<br>2.为被调函数的局部变量分配内存（包括形参）；<br>3.将控制转移到被调函数的入口从而执行被调函数；<br>B.从被调函数转移到主调函数前系统也需做三件事：<br>1.保存被调函数返回的结果；<br>2.释放被调函数所占用的内存空间（系统收回被调用函数占用的内存空间的使用权限）；<br>3.依照被调函数所保存的返回地址，将控制转移到主调函数（从被调函数跳出）；<br>C.当多个函数相互调用时，按照“后调用先返回”的原则，函数间的信息传递和控制转移必须借助栈来实现。即整个程序运行所需<br>的数据空间安排在一个栈中。每调用一个函数时，就在栈顶分配一个存储区进行压栈操作，每当一个函数退出时，就释放它的存<br>储区即出栈。当前运行的函数永远在栈顶。<br>D.在计算机看来，函数A调用函数B 和 函数A调用函数A是没有区别的。（执行步骤相同）<br>注：<br>不能无限压栈和出栈，否则系统会崩溃；<br>递归必须满足两个条件：<br>1.递归必须有明确的终止条件；<br>2.该函数所处理的数据规模必须在递减；n-&gt;n-1-&gt;n-2-&gt;n-3-&gt;…-&gt;1<br>递归和循环的关系：<br>所有循环都可转化为递归；所有递归不一定能由循环实现；<br>递归和循环优缺点：<br>递归：<br>优点：易于理解；缺点：速度慢、存储空间大（浪费空间多）；<br>循环：<br>优点：速度快、存储空间小（浪费空间少）；缺点：不易理解；<br>递归应用：<br>树和森林以递归方式定义；<br>树和图的很多算法都是以递归实现；<br>很多数学公式都是以递归方式定义的，如斐波拉契数列；</p>
+        <a id="more"></a>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>定义：函数直接或间接调用自己；<br>函数为什么可以自己调用自己？<br>前提：函数的调用是通过栈实现的；<br>A.一个函数在运行期间去调用其它函数，在运行被调函数前需做三件事：<br>1.将所有实参、返回地址（下一条指令的地址）等信息传给被调函数保存；<br>2.为被调函数的局部变量分配内存（包括形参）；<br>3.将控制转移到被调函数的入口从而执行被调函数；<br>B.从被调函数转移到主调函数前系统也需做三件事：<br>1.保存被调函数返回的结果；<br>2.释放被调函数所占用的内存空间（系统收回被调用函数占用的内存空间的使用权限）；<br>3.依照被调函数所保存的返回地址，将控制转移到主调函数（从被调函数跳出）；<br>C.当多个函数相互调用时，按照“后调用先返回”的原则，函数间的信息传递和控制转移必须借助栈来实现。即整个程序运行所需<br>的数据空间安排在一个栈中。每调用一个函数时，就在栈顶分配一个存储区进行压栈操作，每当一个函数退出时，就释放它的存<br>储区即出栈。当前运行的函数永远在栈顶。<br>D.在计算机看来，函数A调用函数B 和 函数A调用函数A是没有区别的。（执行步骤相同）<br>注：<br>不能无限压栈和出栈，否则系统会崩溃；<br>递归必须满足两个条件：<br>1.递归必须有明确的终止条件；<br>2.该函数所处理的数据规模必须在递减；n-&gt;n-1-&gt;n-2-&gt;n-3-&gt;…-&gt;1<br>递归和循环的关系：<br>所有循环都可转化为递归；所有递归不一定能由循环实现；<br>递归和循环优缺点：<br>递归：<br>优点：易于理解；缺点：速度慢、存储空间大（浪费空间多）；<br>循环：<br>优点：速度快、存储空间小（浪费空间少）；缺点：不易理解；<br>递归应用：<br>树和森林以递归方式定义；<br>树和图的很多算法都是以递归实现；<br>很多数学公式都是以递归方式定义的，如斐波拉契数列；</p>
 
       
 
@@ -519,6 +515,21 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言/递归//" class="article-tag-list-link color3">递归</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -575,8 +586,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>为什么需要函数：<br>1.函数可避免大量重复性代码；<br>2.有利于程序模块化；<br>函数定义1：<br>逻辑上，能完成特定独立功能的代码单元块；<br>物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；<br>函数适用范围：<br>适用大量同类型问题；<br>函数功能越单一越好（可移植性越强）；<br>函数定义2：<br>  函数返回值类型 函数名（函数形参）<br>  {<br>      函数执行体<br>  }<br>定义2本质：<br>1.详细描述函数之所以能实现某个特定功能的具体实现方法；<br>2.return表达式：向主调函数返回函数值；为空则表示终止函数；<br>3.函数返回值类型称函数类型；如果函数返回值类型和return表达式中数据类型不同的话，以函数名前返回值类型为主；（函数类型决定返回值类型）<br>函数分类：<br>有参函数和无参函数；<br>有返回值函数和无返回值函数；<br>库函数和用户自定义函数；<br>普通函数和主函数；<br>值传递函数和地址传递函数；<br>函数注意问题：<br>一个程序有且只有一个主函数；<br>主函数可调用普通函数；<br>普通函数不可调用主函数；<br>普通函数可相互调用；<br>程序从主函数入主函数出；<br>函数必须先定义后使用；<br>函数声明：<br>1.告诉编译器即将出现的若干个字母代表函数；<br>2.告诉编译器即将出现的若干个字母代表函数具体情况；<br>3.其为一个语句必加分号；<br>4.对库函数的声明是通过#include&lt;库函数所在文件名.h&gt;来实现的；<br>函数形参和实参：<br>个数相同；位置对应；类型相互兼容；<br>函数重要性：<br>函数为C语言的基本单位，类为Java/C++/C#的基本单位；<br>常见的系统函数：<br>sqrt:求平方根；<br>abs：求整型数据的绝对值；<br>fabs：求浮点型数据绝对值；<br>变量分类：<br>1.按作用域：全局变量和局部变量；<br>2.按存储方式：静态局部变量，自动变量，寄存器变量,静态外部变量，外部变量；<br>注：在一个函数内部定义的变量或函数的形参称为局部变量；<br>在所有函数外部定义的变量称全局变量；<br>全局变量和局部变量命名冲突问题：<br>在一个函数内部，若定义一个局部变量，其名与全局变量相同，局部变量会屏蔽掉全局变量；<br>俗称“强龙不压地头蛇”。<br>例如：<br>#include&lt;stdio.h&gt;<br>int i=99;//定义一个全局变量；<br>void f(int i)//定义一个局部变量，名字和全局变量相同；<br>{<br>  printf(“%d\n”,i);<br>}<br>int main()<br>{<br>   f(8);//调用f函数；<br>   return 0;<br>}<br>//输出8，而非99；</p>
-
+        <a id="more"></a>
+<h3 id="为什么需要函数："><a href="#为什么需要函数：" class="headerlink" title="为什么需要函数："></a>为什么需要函数：</h3><p>1.函数可避免大量重复性代码；<br>2.有利于程序模块化；<br>函数定义1：<br>逻辑上，能完成特定独立功能的代码单元块；<br>物理上，能接收数据，能对接收数据进行处理，能将处理结果返回；<br>函数适用范围：<br>适用大量同类型问题；<br>函数功能越单一越好（可移植性越强）；<br>函数定义2：<br>  函数返回值类型 函数名（函数形参）<br>  {<br>      函数执行体<br>  }<br>定义2本质：<br>1.详细描述函数之所以能实现某个特定功能的具体实现方法；<br>2.return表达式：向主调函数返回函数值；为空则表示终止函数；<br>3.函数返回值类型称函数类型；如果函数返回值类型和return表达式中数据类型不同的话，以函数名前返回值类型为主；（函数类型决定返回值类型）</p>
+<h3 id="函数分类："><a href="#函数分类：" class="headerlink" title="函数分类："></a>函数分类：</h3><p>有参函数和无参函数；<br>有返回值函数和无返回值函数；<br>库函数和用户自定义函数；<br>普通函数和主函数；<br>值传递函数和地址传递函数；</p>
+<h3 id="函数注意问题："><a href="#函数注意问题：" class="headerlink" title="函数注意问题："></a>函数注意问题：</h3><p>一个程序有且只有一个主函数；<br>主函数可调用普通函数；<br>普通函数不可调用主函数；<br>普通函数可相互调用；<br>程序从主函数入主函数出；<br>函数必须先定义后使用；</p>
+<h3 id="函数声明："><a href="#函数声明：" class="headerlink" title="函数声明："></a>函数声明：</h3><p>1.告诉编译器即将出现的若干个字母代表函数；<br>2.告诉编译器即将出现的若干个字母代表函数具体情况；<br>3.其为一个语句必加分号；<br>4.对库函数的声明是通过#include&lt;库函数所在文件名.h&gt;来实现的；</p>
+<h3 id="函数形参和实参："><a href="#函数形参和实参：" class="headerlink" title="函数形参和实参："></a>函数形参和实参：</h3><p>个数相同；位置对应；类型相互兼容；</p>
+<h3 id="函数重要性："><a href="#函数重要性：" class="headerlink" title="函数重要性："></a>函数重要性：</h3><p>函数为C语言的基本单位，类为Java/C++/C#的基本单位；</p>
+<h3 id="常见的系统函数："><a href="#常见的系统函数：" class="headerlink" title="常见的系统函数："></a>常见的系统函数：</h3><p>sqrt:求平方根；<br>abs：求整型数据的绝对值；<br>fabs：求浮点型数据绝对值；</p>
+<h3 id="变量分类："><a href="#变量分类：" class="headerlink" title="变量分类："></a>变量分类：</h3><p>1.按作用域：全局变量和局部变量；<br>2.按存储方式：静态局部变量，自动变量，寄存器变量,静态外部变量，外部变量；<br>注：在一个函数内部定义的变量或函数的形参称为局部变量；<br>在所有函数外部定义的变量称全局变量；<br>全局变量和局部变量命名冲突问题：<br>在一个函数内部，若定义一个局部变量，其名与全局变量相同，局部变量会屏蔽掉全局变量；<br>俗称“强龙不压地头蛇”。<br>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int i&#x3D;99;&#x2F;&#x2F;定义一个全局变量；</span><br><span class="line">void f(int i)&#x2F;&#x2F;定义一个局部变量，名字和全局变量相同；</span><br><span class="line">&#123;</span><br><span class="line">  printf(&quot;%d\n&quot;,i);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   f(8);&#x2F;&#x2F;调用f函数；</span><br><span class="line">   return 0;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;输出8，而非99；</span><br></pre></td></tr></table></figure>
       
 
       
@@ -585,6 +604,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -641,7 +671,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char str[3][20];&#x2F;&#x2F;定义一个二维数组str，大小为3行20列，每一行可容纳一个字符串（最多为20个字符）；</span><br><span class="line">    char a[20];&#x2F;&#x2F;定义一个一维数组作为中间变量交换字符串；</span><br><span class="line">    for(int i&#x3D;0;i&lt;3;i++)</span><br><span class="line">       gets(str[i]);&#x2F;&#x2F;为每一行赋值</span><br><span class="line">    if(strcmp(str[0],str[1])&gt;0)</span><br><span class="line">       strcpy(a,str[0]);</span><br><span class="line">    else</span><br><span class="line">       strcpy(a,str[1]);</span><br><span class="line">    if(strcmp(str[2],a)&gt;0)</span><br><span class="line">       strcpy(a,str[2]);</span><br><span class="line">    printf(&quot;%s\n&quot;,a);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char str[3][20];&#x2F;&#x2F;定义一个二维数组str，大小为3行20列，每一行可容纳一个字符串（最多为20个字符）；</span><br><span class="line">    char a[20];&#x2F;&#x2F;定义一个一维数组作为中间变量交换字符串；</span><br><span class="line">    for(int i&#x3D;0;i&lt;3;i++)</span><br><span class="line">       gets(str[i]);&#x2F;&#x2F;为每一行赋值</span><br><span class="line">    if(strcmp(str[0],str[1])&gt;0)</span><br><span class="line">       strcpy(a,str[0]);</span><br><span class="line">    else</span><br><span class="line">       strcpy(a,str[1]);</span><br><span class="line">    if(strcmp(str[2],a)&gt;0)</span><br><span class="line">       strcpy(a,str[2]);</span><br><span class="line">    printf(&quot;%s\n&quot;,a);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -650,6 +681,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -706,7 +748,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,num&#x3D;0,word&#x3D;0;</span><br><span class="line">    char str[100];</span><br><span class="line">    char ch;</span><br><span class="line">    gets(str);&#x2F;&#x2F;也可以scanf(&quot;%s&quot;,str);</span><br><span class="line">    for(i&#x3D;0;(ch&#x3D;str[i])!&#x3D;&#39;\0&#39;;i++)</span><br><span class="line">       if(ch&#x3D;&#x3D;&#39; &#39;)</span><br><span class="line">         word&#x3D;0;</span><br><span class="line">       else</span><br><span class="line">           if(word&#x3D;&#x3D;0)</span><br><span class="line">             &#123;</span><br><span class="line">                 word&#x3D;1;</span><br><span class="line">                 num++;</span><br><span class="line">             &#125;</span><br><span class="line">    printf(&quot;单词数量为:%d\n&quot;,num);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,num&#x3D;0,word&#x3D;0;</span><br><span class="line">    char str[100];</span><br><span class="line">    char ch;</span><br><span class="line">    gets(str);&#x2F;&#x2F;也可以scanf(&quot;%s&quot;,str);</span><br><span class="line">    for(i&#x3D;0;(ch&#x3D;str[i])!&#x3D;&#39;\0&#39;;i++)</span><br><span class="line">       if(ch&#x3D;&#x3D;&#39; &#39;)</span><br><span class="line">         word&#x3D;0;</span><br><span class="line">       else</span><br><span class="line">           if(word&#x3D;&#x3D;0)</span><br><span class="line">             &#123;</span><br><span class="line">                 word&#x3D;1;</span><br><span class="line">                 num++;</span><br><span class="line">             &#125;</span><br><span class="line">    printf(&quot;单词数量为:%d\n&quot;,num);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -715,6 +758,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -771,7 +825,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char str[]&#x3D;&#123;&quot;hello world&quot;&#125;;</span><br><span class="line">    puts(str);&#x2F;&#x2F;字符串输出函数相当于printf函数</span><br><span class="line">    gets(str);&#x2F;&#x2F;字符数组赋值函数相当于scanf函数</span><br><span class="line">    puts(str);</span><br><span class="line">    char str1[30]&#x3D;&#123;&quot;hello&quot;&#125;;</span><br><span class="line">    char str2[]&#x3D;&#123;&quot;China&quot;&#125;;</span><br><span class="line">    puts(strcat(str1,str2));&#x2F;&#x2F;strcat字符串连接函数，函数调用后得到一个函数值：数组str1的首地址；</span><br><span class="line">    字符数组1必须足够大以便容纳连接后的字符串；连接前两个字符串后面都有&#39;\0&#39;,连接时将字符数组1后面的\0取消，只在</span><br><span class="line">    新字符串最后保留&#39;\0&#39;;</span><br><span class="line">    strcpy(str1,str2);&#x2F;&#x2F;字符数组1必须为数组名，字符数组2可为字符数组名也可为字符串常量；</span><br><span class="line">    puts(str1);</span><br><span class="line">    strcpy(str1,&quot;hello&quot;);</span><br><span class="line">    puts(str1);</span><br><span class="line">    strncpy(str1,str2,2);&#x2F;&#x2F;将字符串2最前面的两个字符复制到字符数组1上取代字符数组1原有的最前面的两个字符；</span><br><span class="line">    puts(str1);</span><br><span class="line">    strcmp(str1,str2);&#x2F;&#x2F;字符串比较函数：将两个字符串自左到右逐个字符比较（按ASCII码数值大小比较），直至出现不</span><br><span class="line">    同的字符为止以第一对不相同字符比较的结果为准；若字符全部相同则认为这两个字符串相等；相同函数值为0；字符数组1</span><br><span class="line">    大于2函数值为正整数；反之为负整数；</span><br><span class="line">    strlen(str1);&#x2F;&#x2F;测字符串长度的函数；</span><br><span class="line">    strlwr(str1);&#x2F;&#x2F;转化为小写的函数；</span><br><span class="line">    strupr(str1);&#x2F;&#x2F;转化为大写的函数；</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char str[]&#x3D;&#123;&quot;hello world&quot;&#125;;</span><br><span class="line">    puts(str);&#x2F;&#x2F;字符串输出函数相当于printf函数</span><br><span class="line">    gets(str);&#x2F;&#x2F;字符数组赋值函数相当于scanf函数</span><br><span class="line">    puts(str);</span><br><span class="line">    char str1[30]&#x3D;&#123;&quot;hello&quot;&#125;;</span><br><span class="line">    char str2[]&#x3D;&#123;&quot;China&quot;&#125;;</span><br><span class="line">    puts(strcat(str1,str2));&#x2F;&#x2F;strcat字符串连接函数，函数调用后得到一个函数值：数组str1的首地址；</span><br><span class="line">    字符数组1必须足够大以便容纳连接后的字符串；连接前两个字符串后面都有&#39;\0&#39;,连接时将字符数组1后面的\0取消，只在</span><br><span class="line">    新字符串最后保留&#39;\0&#39;;</span><br><span class="line">    strcpy(str1,str2);&#x2F;&#x2F;字符数组1必须为数组名，字符数组2可为字符数组名也可为字符串常量；</span><br><span class="line">    puts(str1);</span><br><span class="line">    strcpy(str1,&quot;hello&quot;);</span><br><span class="line">    puts(str1);</span><br><span class="line">    strncpy(str1,str2,2);&#x2F;&#x2F;将字符串2最前面的两个字符复制到字符数组1上取代字符数组1原有的最前面的两个字符；</span><br><span class="line">    puts(str1);</span><br><span class="line">    strcmp(str1,str2);&#x2F;&#x2F;字符串比较函数：将两个字符串自左到右逐个字符比较（按ASCII码数值大小比较），直至出现不</span><br><span class="line">    同的字符为止以第一对不相同字符比较的结果为准；若字符全部相同则认为这两个字符串相等；相同函数值为0；字符数组1</span><br><span class="line">    大于2函数值为正整数；反之为负整数；</span><br><span class="line">    strlen(str1);&#x2F;&#x2F;测字符串长度的函数；</span><br><span class="line">    strlwr(str1);&#x2F;&#x2F;转化为小写的函数；</span><br><span class="line">    strupr(str1);&#x2F;&#x2F;转化为大写的函数；</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -780,10 +835,100 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/01/14/%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-scanf输入字符串时注意事项" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">scanf输入字符串时注意事项</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+<!--显示阅读次数完毕-->
+        
+        <a href="/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="archive-article-date">
+  	<time datetime="2021-01-14T10:07:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a[100];</span><br><span class="line">    scanf(&quot;%s&quot;,&amp;a);&#x2F;&#x2F;error:字符数组中字符数组名即为该数组第一个元素的地址或者说该数组的起始地址；</span><br><span class="line">    scanf(&quot;%s&quot;,a)</span><br><span class="line">    printf(&quot;%s\n&quot;,a);&#x2F;&#x2F;字符数组以%s输出时，输出控制项为字符数组名；</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a[100],b[100],c[100];</span><br><span class="line">    scanf(&quot;%s%s%s&quot;,a,b,c);&#x2F;&#x2F;若输入How are you?输出How are you?；若输入Howareyou?输出无输出;有空格字符分隔</span><br><span class="line">    作为三个字符串输入，无空格字符，当作一个字符串输入；</span><br><span class="line">    两者a[100],b[100],c[100]不同</span><br><span class="line">    printf(&quot;%s%s%s\n&quot;,a,b,c);&#x2F;&#x2F;字符数组以%s输出时，输出控制项为字符数组名；</span><br><span class="line">    char ch[100];</span><br><span class="line">    scanf(&quot;%s&quot;,ch);&#x2F;&#x2F;若输入How are you？&#x2F;&#x2F;输出How；系统将空格字符当作字符串间的分隔符故输出How</span><br><span class="line">    printf(&quot;%s\n&quot;,ch);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>字符串的输出只需要字符数组首地址即可，系统会沿着第一个字符的地址找下去直至遇到\0；系统这么做的前提是数组为连续分配的内存；<br>疑问：<br>    char ch[1或2];<br>    scanf(“%s”,ch);//若输入How are you？为什么输出How；<br>    printf(“%s\n”,ch);</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">展开全文 >></a>
         </p>
       
 

@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>函数变量之全局变量 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123456789101112131415161718#include&lt;stdio.h&gt;int A,B,C;&#x2F;&#x2F;定义了三个全局变量;必须定义在函数前;int max();&#x2F;&#x2F;函数声明int main()&amp;#123;    printf(&quot;请输入三个整数(中间以空格隔开):&quot;);    scanf(&quot;%d %d %d&amp;">
+  <meta name="description" content="123456789101112131415161718#include&lt;stdio.h&gt;int A,B,C;&#x2F;&#x2F;定义了三个全局变量;必须定义在函数前;int max();&#x2F;&#x2F;函数声明int main()&amp;#123;    printf(&quot;请输入三个整数(中间以空格隔开):&quot;);    scanf(&quot;%d %d %d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数变量之全局变量">
 <meta property="og:url" content="https://username.github.io/2021/01/16/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E4%B9%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="123456789101112131415161718#include&lt;stdio.h&gt;int A,B,C;&#x2F;&#x2F;定义了三个全局变量;必须定义在函数前;int max();&#x2F;&#x2F;函数声明int main()&amp;#123;    printf(&quot;请输入三个整数(中间以空格隔开):&quot;);    scanf(&quot;%d %d %d&amp;">
+<meta property="og:description" content="123456789101112131415161718#include&lt;stdio.h&gt;int A,B,C;&#x2F;&#x2F;定义了三个全局变量;必须定义在函数前;int max();&#x2F;&#x2F;函数声明int main()&amp;#123;    printf(&quot;请输入三个整数(中间以空格隔开):&quot;);    scanf(&quot;%d %d %d">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-16T04:44:11.000Z">
-<meta property="article:modified_time" content="2021-01-17T01:37:16.673Z">
+<meta property="article:modified_time" content="2021-04-16T07:28:32.516Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -191,7 +191,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int A,B,C;&#x2F;&#x2F;定义了三个全局变量;必须定义在函数前;</span><br><span class="line">int max();&#x2F;&#x2F;函数声明</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;请输入三个整数(中间以空格隔开):&quot;);</span><br><span class="line">    scanf(&quot;%d %d %d&quot;,&amp;A,&amp;B,&amp;C);</span><br><span class="line">    printf(&quot;max is %d\n&quot;,max());&#x2F;&#x2F;A,B,C为全局变量所以在调用max函数时用不到传参，max可以直接使用A,B,C;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">int max()</span><br><span class="line">&#123;</span><br><span class="line">    int m;</span><br><span class="line">    m&#x3D;A&gt;B?A:C;</span><br><span class="line">    if(C&gt;m)</span><br><span class="line">        m&#x3D;C;</span><br><span class="line">    return m;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int A,B,C;&#x2F;&#x2F;定义了三个全局变量;必须定义在函数前;</span><br><span class="line">int max();&#x2F;&#x2F;函数声明</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;请输入三个整数(中间以空格隔开):&quot;);</span><br><span class="line">    scanf(&quot;%d %d %d&quot;,&amp;A,&amp;B,&amp;C);</span><br><span class="line">    printf(&quot;max is %d\n&quot;,max());&#x2F;&#x2F;A,B,C为全局变量所以在调用max函数时用不到传参，max可以直接使用A,B,C;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">int max()</span><br><span class="line">&#123;</span><br><span class="line">    int m;</span><br><span class="line">    m&#x3D;A&gt;B?A:C;</span><br><span class="line">    if(C&gt;m)</span><br><span class="line">        m&#x3D;C;</span><br><span class="line">    return m;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -231,6 +232,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
