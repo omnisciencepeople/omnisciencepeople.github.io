@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>非线性结构树的概述 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="树专业定义：有且只有一个称为根的结点；有若干个互不相交的子树，这些子树本身也为一棵树；通俗定义：树由结点和边组成（边指的是指针域）；每个结点只有一个父节点，但可以有多个子节点（根节点除外，根节点无父节点）；专业术语：父节点、子节点、子孙、堂兄弟（父亲为兄弟，他们的孩子为堂兄弟）、祖先；深度：从根节点到最底层节点的层数；根节点为第一层；叶子节点：无子结点的结点；非终端节点：实际上为非叶子节点（有子">
+  <meta name="description" content="非线性结构树的概述">
 <meta property="og:type" content="article">
 <meta property="og:title" content="非线性结构树的概述">
 <meta property="og:url" content="https://username.github.io/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="树专业定义：有且只有一个称为根的结点；有若干个互不相交的子树，这些子树本身也为一棵树；通俗定义：树由结点和边组成（边指的是指针域）；每个结点只有一个父节点，但可以有多个子节点（根节点除外，根节点无父节点）；专业术语：父节点、子节点、子孙、堂兄弟（父亲为兄弟，他们的孩子为堂兄弟）、祖先；深度：从根节点到最底层节点的层数；根节点为第一层；叶子节点：无子结点的结点；非终端节点：实际上为非叶子节点（有子">
+<meta property="og:description" content="非线性结构树的概述">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-23T13:56:31.000Z">
-<meta property="article:modified_time" content="2021-04-16T07:26:57.031Z">
+<meta property="article:modified_time" content="2021-04-16T10:41:34.754Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -191,7 +191,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <p> 非线性结构树的概述</p>
+<a id="more"></a>
 <h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p>专业定义：有且只有一个称为根的结点；有若干个互不相交的子树，这些子树本身也为一棵树；<br>通俗定义：树由结点和边组成（边指的是指针域）；每个结点只有一个父节点，但可以有多个子节点（根节点除外，根节点无父节点）；<br>专业术语：<br>父节点、子节点、子孙、堂兄弟（父亲为兄弟，他们的孩子为堂兄弟）、祖先；<br>深度：从根节点到最底层节点的层数；根节点为第一层；<br>叶子节点：无子结点的结点；<br>非终端节点：实际上为非叶子节点（有子节点的结点）；<br>度：子结点的个数<br>树的度：子结点个数的最大值；<br>树分类：<br>    一般树<br>         任意一个子结点的个数不受限制；<br>    二叉树<br>         任何一个节点的个数最多两个，且子结点顺序不可更改（有序树）；<br>         分类：<br>             一般二叉树<br>             满二叉树：每一层的节点数都是最大节点数的二叉树；<br>             完全二叉树：如果只是删除了满二叉树最底层最右边的连续若干个结点（此时深度未发生变化），这样形成的二叉树为完全二叉树；<br>             满二叉树是完全二叉树的一个特例；<br>    森林<br>          n个互不相交的树的集合；</p>
 <h3 id="树的存储"><a href="#树的存储" class="headerlink" title="树的存储"></a>树的存储</h3><pre><code>    二叉树的存储
            连续存储【必须转化为完全二叉树进行存储：内存是线性一维的；存储不可只存储有效节点，否则无法还原二叉树】

@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>排序之计数排序 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="计数排序是非比较排序，利用了数组下标有序的技巧；桶思想的一种；运用于量大但范围小的数据排序如某大型企业员工年龄排序、快速得知你的高考名次； 12345678910111213141516171819202122232425262728293031323334353637import java.util.Arrays;import java.util.Random;public class cou">
+  <meta name="description" content="排序之计数排序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="排序之计数排序">
 <meta property="og:url" content="https://username.github.io/2021/04/09/%E6%8E%92%E5%BA%8F%E4%B9%8B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="计数排序是非比较排序，利用了数组下标有序的技巧；桶思想的一种；运用于量大但范围小的数据排序如某大型企业员工年龄排序、快速得知你的高考名次； 12345678910111213141516171819202122232425262728293031323334353637import java.util.Arrays;import java.util.Random;public class cou">
+<meta property="og:description" content="排序之计数排序">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-04-09T13:13:12.000Z">
-<meta property="article:modified_time" content="2021-04-16T08:00:42.504Z">
+<meta property="article:modified_time" content="2021-04-16T10:48:35.392Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -191,7 +191,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <p>排序之计数排序</p>
+<a id="more"></a>
 <p>计数排序是非比较排序，利用了数组下标有序的技巧；<br>桶思想的一种；<br>运用于量大但范围小的数据排序如某大型企业员工年龄排序、快速得知你的高考名次；</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.Random;</span><br><span class="line">public class countsort &#123;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">      Random r&#x3D;new Random();</span><br><span class="line">      int[] arr&#x3D;new int[1000];</span><br><span class="line">      for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">             arr[i]&#x3D;r.nextInt(100); </span><br><span class="line">      int[] result&#x3D;sort(arr);</span><br><span class="line">      System.out.println(Arrays.toString(result));</span><br><span class="line">  &#125;</span><br><span class="line">  static int[]  sort(int[] arr) &#123;</span><br><span class="line">      int[] result&#x3D;new int[arr.length];</span><br><span class="line">      int[] count&#x3D;new int [findmax(arr)-findmin(arr)+1];&#x2F;&#x2F;在一定程度上节省空间</span><br><span class="line">      for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">          count[arr[i]-findmin(arr)]++;&#x2F;&#x2F;以原数组元素为计数数组下标并统计统计元素出现次数</span><br><span class="line">      for(int i&#x3D;1;i&lt;count.length;i++)</span><br><span class="line">          count[i]&#x3D;count[i-1]+count[i];&#x2F;&#x2F;累加数组</span><br><span class="line">      for(int i&#x3D;arr.length-1;i&gt;&#x3D;0;i--)</span><br><span class="line">          result[--count[arr[i]-findmin(arr)]]&#x3D;arr[i];&#x2F;&#x2F;将原数组逆序遍历</span><br><span class="line">      return result;</span><br><span class="line">  &#125;&#x2F;&#x2F;累加数组和逆序遍历保证计数排序的稳定性</span><br><span class="line">  static int findmax(int[] arr) &#123;</span><br><span class="line">      int max&#x3D;arr[0];</span><br><span class="line">      for(int i&#x3D;1;i&lt;arr.length;i++)</span><br><span class="line">           if(arr[i]&gt;&#x3D;max)</span><br><span class="line">               max&#x3D;arr[i];</span><br><span class="line">      return max;</span><br><span class="line">  &#125;</span><br><span class="line">  static int findmin(int[] arr) &#123;</span><br><span class="line">      int min&#x3D;arr[0];</span><br><span class="line">      for(int i&#x3D;1;i&lt;arr.length;i++)</span><br><span class="line">           if(arr[i]&lt;&#x3D;min)</span><br><span class="line">               min&#x3D;arr[i];</span><br><span class="line">      return min;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       

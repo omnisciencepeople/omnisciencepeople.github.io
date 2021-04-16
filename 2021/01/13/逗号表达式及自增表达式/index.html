@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>逗号表达式及自增表达式 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123456789101112131415#include&lt;stdio.h&gt;int main()&amp;#123;    int a;    int i&#x3D;1;    a&#x3D;(i++,++i,i+3,i+5);    printf(&quot;%d&quot;,&amp;a);    return 0;&amp;#125;&#x2F;*输出8i++先赋值再自增；++i先自增再赋值；">
+  <meta name="description" content="逗号表达式及自增表达式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="逗号表达式及自增表达式">
 <meta property="og:url" content="https://username.github.io/2021/01/13/%E9%80%97%E5%8F%B7%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8F%8A%E8%87%AA%E5%A2%9E%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="123456789101112131415#include&lt;stdio.h&gt;int main()&amp;#123;    int a;    int i&#x3D;1;    a&#x3D;(i++,++i,i+3,i+5);    printf(&quot;%d&quot;,&amp;a);    return 0;&amp;#125;&#x2F;*输出8i++先赋值再自增；++i先自增再赋值；">
+<meta property="og:description" content="逗号表达式及自增表达式">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-13T13:41:05.000Z">
-<meta property="article:modified_time" content="2021-04-16T07:24:37.194Z">
+<meta property="article:modified_time" content="2021-04-16T10:40:44.779Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -191,7 +191,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <p>逗号表达式及自增表达式</p>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a;</span><br><span class="line">    int i&#x3D;1;</span><br><span class="line">    a&#x3D;(i++,++i,i+3,i+5);</span><br><span class="line">    printf(&quot;%d&quot;,&amp;a);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*</span><br><span class="line">输出8</span><br><span class="line">i++先赋值再自增；</span><br><span class="line">++i先自增再赋值；</span><br><span class="line">（A,B,C,D）从左到右依次执行，逗号表达式最终值为最后一项；</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
       
 

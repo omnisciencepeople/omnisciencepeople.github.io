@@ -181,10 +181,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p>1.&amp;<br>按位与 与&amp;&amp;（并且）含义完全不同；<br>1&amp;1=1；1&amp;0=0；0&amp;1=0；0&amp;0=0；<br>2.|<br>按位或 与||（或者）含义完全不同；<br>1|1=1；1|0=1；0|1=1；0|0=0；<br>3.~<br>按位取反（包括符号位）<br>4.^<br>按位异或 相同为0，不同为1；<br>1^1=0;0^1=1;1^0=1;0^0=0;<br>5.&lt;&lt;<br>按位左移 右边补0；左移n位相当于乘以2的n次方倍；<br>6.&gt;&gt;<br>按位右移 左边按最高位补；右移n位相当于除以2的n次方；<br>前提：数据不能丢失；</p>
-<p>位运算符现实意义：可以对数据的操作精确到每一位；</p>
-
+        <p> 位运算符</p>
+        
+          <a class="article-more-a" href="/2021/01/19/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6/#more">more >></a>
+        
       
 
       
@@ -260,9 +260,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p>数值型数据包括无符号数和有符号数；<br>有符号数包括原码、反码、补码；<br>无符号数：<br>1.非负整数，数值位均表示大小；若字长为n，则表示2的n次方个数（0到2的n次方-1）<br>有符号数：<br>最高为表示符号位（0正1负）；<br>机器数：连同符号位数值化来供机器识别；<br>真值：机器数表示的真实数值；<br>原码：最高位表符号位，数值部分为真值的绝对值；<br>反码：正数反码为其本身；负数除最高位，按位取反；用反码做运算时，若有进位则循环进位；<br>补码：正数补码为其本身；负数补码除符号位外其余按位取反并在末尾加一；用补码做运算时，若有进位则舍弃进位；<br>补码求真值：<br>1.根据最高位确定符号位；<br>2.若为正数则数值位不变；若为负数则连同符号位取反加一<br>补充：<br>数值型数据在计算机内用补码表示；<br>非数值型数据在计算机内表示：汉字输入码（外码）-&gt;汉字交换码（国标码）-&gt;汉字机内码-&gt;汉字地址码-&gt;汉字字形码；<br>区位码+20H20H-&gt;国标码+80H80H-&gt;机内码；</p>
-
+        <p>数值型数据在计算机内部的表示</p>
+        
+          <a class="article-more-a" href="/2021/01/19/%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E9%83%A8%E7%9A%84%E8%A1%A8%E7%A4%BA/#more">more >></a>
+        
       
 
       
@@ -338,11 +339,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p>枚举：将一个事物所有的取值一一列举出来；<br>举例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">enum weekday</span><br><span class="line">&#123;</span><br><span class="line">    Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    enum weekday day;&#x2F;&#x2F;定义了一个变量，它的数据类型为enum weekday；</span><br><span class="line">    day&#x3D;Friday;</span><br><span class="line">    printf(&quot;%d\n&quot;,day);</span><br><span class="line">    printf(&quot;请为day赋值:\nday&#x3D;&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;day);</span><br><span class="line">    switch(day)</span><br><span class="line">    &#123;</span><br><span class="line">        case 0:</span><br><span class="line">             printf(&quot;Mon\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 1:</span><br><span class="line">             printf(&quot;Tue\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 2:</span><br><span class="line">             printf(&quot;Wed\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 3:</span><br><span class="line">             printf(&quot;Thu\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 4:</span><br><span class="line">             printf(&quot;Fri\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 5:</span><br><span class="line">             printf(&quot;Sat\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">        case 6:</span><br><span class="line">             printf(&quot;Sun\n&quot;);</span><br><span class="line">             break;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>枚举优点：代码更安全；<br>枚举缺点：书写麻烦；</p>
-
+        <p>枚举</p>
+        
+          <a class="article-more-a" href="/2021/01/19/%E6%9E%9A%E4%B8%BE/#more">more >></a>
+        
       
 
       
@@ -418,21 +418,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h3 id="为什么需要结构体？"><a href="#为什么需要结构体？" class="headerlink" title="为什么需要结构体？"></a>为什么需要结构体？</h3><p>为表示复杂的事物，普通数据类型无法满足要求；<br>结构体定义1：<br>把一些基本类型组合在一起形成一个新的复合数据类型；<br>结构体类型变量的定义：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">struct 结构体名</span><br><span class="line">      &#123;成员表列&#125;;</span><br></pre></td></tr></table></figure>
-<p>1.先声明结构体类型再定义该类型的变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">struct student</span><br><span class="line">&#123;</span><br><span class="line">    char name[100];</span><br><span class="line">    int age;</span><br><span class="line">    float score;</span><br><span class="line">&#125;;</span><br><span class="line">struct student st;</span><br></pre></td></tr></table></figure>
-<p>2.定义时同时定义</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">struct student</span><br><span class="line">&#123;</span><br><span class="line">    char name[100];</span><br><span class="line">    int age;</span><br><span class="line">    float score;</span><br><span class="line">&#125;st;</span><br></pre></td></tr></table></figure>
-<p>3.省略结构体类型名（不提倡使用）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">struct</span><br><span class="line">&#123;</span><br><span class="line">    char name[100];</span><br><span class="line">    int age;</span><br><span class="line">    float score;</span><br><span class="line">&#125;st;</span><br></pre></td></tr></table></figure>
-<p>如何使用结构体变量：<br>1.赋值和初始化：<br>定义时初始化可整体赋值如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">struct student</span><br><span class="line">&#123;</span><br><span class="line">    char name[100];</span><br><span class="line">    int age;</span><br><span class="line">    float score;</span><br><span class="line">&#125;st&#x3D;&#123;&quot;张三&quot;,18,100&#125;;</span><br></pre></td></tr></table></figure>
-<p>定义后只能单个赋值如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">struct student</span><br><span class="line">&#123;</span><br><span class="line">    char name[100];</span><br><span class="line">    int age;</span><br><span class="line">    float score;</span><br><span class="line">&#125;st;</span><br><span class="line">st.name&#x3D;&quot;张三&quot;；</span><br><span class="line">st.age&#x3D;18;</span><br><span class="line">st.score&#x3D;100;</span><br></pre></td></tr></table></figure>
-<p>2.如何表示结构体变量中的每一个成员：<br>结构体变量名.成员名；<br>指针变量名-&gt;成员名如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">struct student</span><br><span class="line">&#123;</span><br><span class="line">    char name[100];</span><br><span class="line">    int age;</span><br><span class="line">    float score;</span><br><span class="line">&#125;;</span><br><span class="line">struct student st&#x3D;&#123;&quot;张三&quot;,18,100&#125;；</span><br><span class="line">struct student*pst&#x3D;&amp;st;</span><br><span class="line">pst-&gt;age&#x3D;88;&#x2F;&#x2F;在计算机内部会被转化成（*pst）.age；</span><br><span class="line">pst-&gt;age含义：pst指向结构体中age这个成员；</span><br><span class="line">3.结构体变量的运算：</span><br><span class="line">不能相加减乘除但可以相互赋值；</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p>结构体概述</p>
+        
+          <a class="article-more-a" href="/2021/01/19/%E7%BB%93%E6%9E%84%E4%BD%93%E6%A6%82%E8%BF%B0/#more">more >></a>
+        
       
 
       
@@ -508,13 +497,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void f(int** q)</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;5;</span><br><span class="line">    *q&#x3D;&amp;i;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int* p;</span><br><span class="line">    f(&amp;p);</span><br><span class="line">    printf(&quot;%d\n&quot;,*p);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个程序语法上没出错，但逻辑上错误；<br>f函数结束后，为其分配的内存空间被释放（内存空间的操作权限被收回）；<br>p保留了i的地址，但p无法访问i的内容，因为为i分配的内存空间的操作权限没有分配给本程序；</p>
-<p>动态内存的跨函数使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">void f(int** q)</span><br><span class="line">&#123;</span><br><span class="line">    *q&#x3D;(int*)malloc(sizeof(int));</span><br><span class="line">    **q&#x3D;5;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int *p;</span><br><span class="line">    f(&amp;p);</span><br><span class="line">    printf(&quot;%d\n&quot;,*p);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>该程序没有逻辑上的错误，因为动态分配的内存在函数结束后内存不会被释放；</p>
-
+        <p>跨函数使用</p>
+        
+          <a class="article-more-a" href="/2021/01/18/%E8%B7%A8%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/#more">more >></a>
+        
       
 
       
@@ -590,8 +576,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int len,i;</span><br><span class="line">    printf(&quot;请输入数组的长度:&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;len);</span><br><span class="line">    int * p&#x3D;(int *)malloc(sizeof(int)*len);</span><br><span class="line">    printf(&quot;请为数组元素赋值:\n&quot;);</span><br><span class="line">    for( i&#x3D;0;i&lt;len;i++)</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;p[i]);</span><br><span class="line">    printf(&quot;输出数组为：\n&quot;);</span><br><span class="line">    for( i&#x3D;0;i&lt;len;i++)</span><br><span class="line">        printf(&quot;%d &quot;,p[i]);</span><br><span class="line">    free(p);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>动态构造一维数组</p>
+        
+          <a class="article-more-a" href="/2021/01/18/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/#more">more >></a>
+        
       
 
       
@@ -667,12 +655,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h3 id="传统数组缺点："><a href="#传统数组缺点：" class="headerlink" title="传统数组缺点："></a>传统数组缺点：</h3><p>传统数组长度必须事先制定且只能是常整数，不是变量；<br>传统数组的内存无法手动分配和释放，数组一旦定义，系统为其分配的空间会一直存在直至函数结束；<br>数组的长度不能在函数运行期间动态扩充或缩小；<br>传统数组不能跨函数使用；</p>
-<h3 id="为什么需要动态内存："><a href="#为什么需要动态内存：" class="headerlink" title="为什么需要动态内存："></a>为什么需要动态内存：</h3><p>动态内存很好地解决了传统数组的缺陷；</p>
-<h3 id="动态内存和静态内存的区别："><a href="#动态内存和静态内存的区别：" class="headerlink" title="动态内存和静态内存的区别："></a>动态内存和静态内存的区别：</h3><p>静态内存由系统自动分配和释放是在栈中分配的；<br>静态内存以压栈方式分配空间，以出栈的方式释放空间；<br>动态内存由程序员手动分配和释放，是在堆中分配的，故可以跨函数使用；</p>
-<h3 id="动态内存分配的方法："><a href="#动态内存分配的方法：" class="headerlink" title="动态内存分配的方法："></a>动态内存分配的方法：</h3><p>通过malloc函数，它是memory allocate的缩写；<br>int* p=(int*)malloc(4);//分配了4+4=8个字节；p指针变量（静态分配的内存）占4个字节，p所指向的内存（动态分配的内存）占4个字节；<br>注：<br>1.要使用malloc函数必须添加malloc.h这个头文件；<br>2.malloc函数只有一个形参，并且形参为整型；<br>3.数字4表示请求系统为本程序分配4个字节；<br>4.malloc函数只能返回第一个字节的地址，通过强制类型转换将一变成相应字节数<br>5.动态分配的内存要及时手动释放，否则会造成内存泄漏（内存越用越少）；但同样不能重复释放该内存，否则程序会崩溃；</p>
-
+        <p>动态内存分配概述</p>
+        
+          <a class="article-more-a" href="/2021/01/17/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E6%A6%82%E8%BF%B0/#more">more >></a>
+        
       
 
       
@@ -748,10 +734,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;33;</span><br><span class="line">    char ch&#x3D;&#39;y&#39;;</span><br><span class="line">    double j&#x3D;66;</span><br><span class="line">    int*p&#x3D;&amp;i;</span><br><span class="line">    char*q&#x3D;&amp;ch;</span><br><span class="line">    double*r&#x3D;&amp;j;</span><br><span class="line">    printf(&quot;%d %d %d\n&quot;,sizeof(p),sizeof(q),sizeof(r));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">输出 4 4 4</span><br></pre></td></tr></table></figure>
-<p>注：<br>sizeof(数据类型)<br>功能：测量该数据类型所占的字节数；<br>一个指针变量无论它指向的变量占几个字节，该指针变量只占四个字节；<br>指针变量只指向该变量的第一个字节，由指针变量类型确定具体变量，指针变量需要用4个字节去表示；</p>
-
+        <p>一个指针变量到底占几个字节</p>
+        
+          <a class="article-more-a" href="/2021/01/17/%E4%B8%80%E4%B8%AA%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E5%88%B0%E5%BA%95%E5%8D%A0%E5%87%A0%E4%B8%AA%E5%AD%97%E8%8A%82/#more">more >></a>
+        
       
 
       
@@ -827,10 +813,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void f(int* p,int len);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[5]&#x3D;&#123;1,2,3,4,5&#125;;</span><br><span class="line">    f(a,5);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">void f(int* p,int len)</span><br><span class="line">&#123;</span><br><span class="line">    for(int i&#x3D;0;i&lt;len;i++)</span><br><span class="line">        printf(&quot;%d &quot;,*(p+i));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>确定一个一维数组需要知道两个条件：<br>1.数组首地址；<br>2.数组长度(数组的终止由数组的长度决定)；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void f(int* p,int len);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[5]&#x3D;&#123;1,2,3,4,5&#125;;</span><br><span class="line">    f(a,5);</span><br><span class="line">    printf(&quot;%d\n&quot;,a[3]);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">void f(int* p,int len)</span><br><span class="line">&#123;</span><br><span class="line">   p[3]&#x3D;88;&#x2F;&#x2F;p[3]相当于*（p+3）相当于a[3];</span><br><span class="line">&#125;</span><br><span class="line">输出88；</span><br></pre></td></tr></table></figure>
+        <p>如何确定一个一维数组</p>
+        
+          <a class="article-more-a" href="/2021/01/17/%E5%A6%82%E4%BD%95%E7%A1%AE%E5%AE%9A%E4%B8%80%E4%B8%AA%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/#more">more >></a>
+        
       
 
       
@@ -906,10 +892,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p>在指针指向一个数组元素时，可对指针做以下运算：<br>1.加一个整数；<br>2.减一个整数；<br>3.自加；<br>4.自减；<br>5.两个指针相减，如p1-p2(只有p1和p2都指向同一个数组时才有意义)，由p1-p2可知p1和p2之间有多少个内存单元；<br>注：指针变量不能相加，相乘除，这样做没有任何实际意义</p>
-<p>若指针变量已指向数组中的一个元素，则p+1指向该元素的下一个元素；<br>注：p+1并非将p的值简单加一而是加上一个数组元素所占的字节数；<br>数组元素类型      所占字节<br>   float           4<br>   long            4<br>   int             4<br>   char            1<br>通过定义指针变量的类型将1转化成相应字节数;<br>int a[10];<br>int* p;<br>p=&amp;a[0];<br>若p的值为2000，则p+1的值为2000+1*4=2004；<br>(p+i)和（a+i）即为a[i]的地址，则它们都指向a[i]这个元素;</p>
-
+        <p>指针与数组注意事项</p>
+        
+          <a class="article-more-a" href="/2021/01/17/%E6%8C%87%E9%92%88%E4%B8%8E%E6%95%B0%E7%BB%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/#more">more >></a>
+        
       
 
       

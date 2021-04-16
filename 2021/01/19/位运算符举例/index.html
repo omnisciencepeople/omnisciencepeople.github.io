@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>位运算符举例 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910111213141516171819202122232425262728#include&lt;stdio.h&gt;int main()&amp;#123;    int i&#x3D;5;    int j&#x3D;7;    int k&#x3D;i&amp;j;    printf(&quot;%d\n&quot;,k);    k&#x3D;i|j;    printf">
+  <meta name="description" content="位运算符举例">
 <meta property="og:type" content="article">
 <meta property="og:title" content="位运算符举例">
 <meta property="og:url" content="https://username.github.io/2021/01/19/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%BE%E4%BE%8B/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728#include&lt;stdio.h&gt;int main()&amp;#123;    int i&#x3D;5;    int j&#x3D;7;    int k&#x3D;i&amp;j;    printf(&quot;%d\n&quot;,k);    k&#x3D;i|j;    printf">
+<meta property="og:description" content="位运算符举例">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-19T06:38:36.000Z">
-<meta property="article:modified_time" content="2021-04-16T08:11:40.795Z">
+<meta property="article:modified_time" content="2021-04-16T10:53:27.342Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -191,7 +191,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <p>位运算符举例</p>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;5;</span><br><span class="line">    int j&#x3D;7;</span><br><span class="line">    int k&#x3D;i&amp;j;</span><br><span class="line">    printf(&quot;%d\n&quot;,k);</span><br><span class="line">    k&#x3D;i|j;</span><br><span class="line">    printf(&quot;%d\n&quot;,k);</span><br><span class="line">    k&#x3D;i&amp;&amp;j;</span><br><span class="line">    printf(&quot;%d\n&quot;,k);</span><br><span class="line">    k&#x3D;i^j;</span><br><span class="line">    printf(&quot;%d\n&quot;,k);</span><br><span class="line">    k&#x3D;~i;</span><br><span class="line">    printf(&quot;%d\n&quot;,k);</span><br><span class="line">    k&#x3D;i&lt;&lt;2;</span><br><span class="line">    printf(&quot;%d\n&quot;,k);</span><br><span class="line">    k&#x3D;i&gt;&gt;1;</span><br><span class="line">    printf(&quot;%d\n&quot;,k);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">输出 5</span><br><span class="line">     7</span><br><span class="line">     1</span><br><span class="line">     2</span><br><span class="line">     -6</span><br><span class="line">     20</span><br><span class="line">     2</span><br></pre></td></tr></table></figure>
       
 

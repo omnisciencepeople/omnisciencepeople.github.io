@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>动态构造一维数组 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123456789101112131415161718#include&lt;stdio.h&gt;#include&lt;malloc.h&gt;int main()&amp;#123;    int len,i;    printf(&quot;请输入数组的长度:&quot;);    scanf(&quot;%d&quot;,&amp;len);    int * p&#x3D;(int *)ma">
+  <meta name="description" content="动态构造一维数组">
 <meta property="og:type" content="article">
 <meta property="og:title" content="动态构造一维数组">
 <meta property="og:url" content="https://username.github.io/2021/01/18/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="123456789101112131415161718#include&lt;stdio.h&gt;#include&lt;malloc.h&gt;int main()&amp;#123;    int len,i;    printf(&quot;请输入数组的长度:&quot;);    scanf(&quot;%d&quot;,&amp;len);    int * p&#x3D;(int *)ma">
+<meta property="og:description" content="动态构造一维数组">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-18T13:51:38.000Z">
-<meta property="article:modified_time" content="2021-04-16T07:19:41.386Z">
+<meta property="article:modified_time" content="2021-04-16T10:40:05.753Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -191,7 +191,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <p>动态构造一维数组</p>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int len,i;</span><br><span class="line">    printf(&quot;请输入数组的长度:&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;len);</span><br><span class="line">    int * p&#x3D;(int *)malloc(sizeof(int)*len);</span><br><span class="line">    printf(&quot;请为数组元素赋值:\n&quot;);</span><br><span class="line">    for( i&#x3D;0;i&lt;len;i++)</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;p[i]);</span><br><span class="line">    printf(&quot;输出数组为：\n&quot;);</span><br><span class="line">    for( i&#x3D;0;i&lt;len;i++)</span><br><span class="line">        printf(&quot;%d &quot;,p[i]);</span><br><span class="line">    free(p);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 

@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>排序之Timsort | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Timsort : Tim Peters在2002年为Python开发基础设施时结合使用归并和插入，并辅以另外一些技术手段，实现了后来被人称为Timsort的排序算法;Timsort运用二分插入排序和归并排序，是归并排序的优化；减少了对升序部分的回溯和降序部分的性能倒退；python内部的sorted和List.sort以及java中的Arrays.sort中同样用到Timsort; Timso">
+  <meta name="description" content="排序之Timsort">
 <meta property="og:type" content="article">
 <meta property="og:title" content="排序之Timsort">
 <meta property="og:url" content="https://username.github.io/2021/04/11/%E6%8E%92%E5%BA%8F%E4%B9%8BTimsort/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="Timsort : Tim Peters在2002年为Python开发基础设施时结合使用归并和插入，并辅以另外一些技术手段，实现了后来被人称为Timsort的排序算法;Timsort运用二分插入排序和归并排序，是归并排序的优化；减少了对升序部分的回溯和降序部分的性能倒退；python内部的sorted和List.sort以及java中的Arrays.sort中同样用到Timsort; Timso">
+<meta property="og:description" content="排序之Timsort">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-04-11T00:21:26.000Z">
-<meta property="article:modified_time" content="2021-04-16T07:58:42.574Z">
+<meta property="article:modified_time" content="2021-04-16T10:47:40.666Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -191,7 +191,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <p>排序之Timsort</p>
+<a id="more"></a>
 <p>Timsort : Tim Peters在2002年为Python开发基础设施时结合使用归并和插入，并辅以另外一些技术手段，实现了后来被人称为Timsort的排序算法;<br>Timsort运用二分插入排序和归并排序，是归并排序的优化；减少了对升序部分的回溯和降序部分的性能倒退；<br>python内部的sorted和List.sort以及java中的Arrays.sort中同样用到Timsort;</p>
 <p>Timsort的运用基于一个事实：<br>现实生活中，大多数真实的数据集中，大部分元素是排好序的;即不论一组数据多复杂，其局部是有序的；</p>
 <p>Timsort术语：<br>run:一组数据的集合，该组数据严格有序(单调递增或单调递减)，不能出现重复元素；<br>python内部元素个数&gt;64时用Timsort;元素个数&lt;64时用二分插入排序；<br>java内部元素个数&gt;32时用Timsort；元素个数&lt;32时用二分插入排序；</p>
