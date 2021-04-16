@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>java io概述 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="流定义：流就是程序和设备之间有用于数据传输的管道，这根管道管道上有很多按钮，不同的按钮可以实现不同的功能； 分类：Java.io包中定义多个流类型来实现输入输出功能：（1）按数据流的方向不同可以分为输入流和输出流；（2）按照数据处理的单位可以分为字符流和字节流；（3）按照功能不同可以分为节点流（原始流）和处理流（包裹流）；注：处理流就是包裹在原始节点上的流相当于包裹在管道上的管道； 我们主要学习">
+  <meta name="description" content="io概述">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java io概述">
 <meta property="og:url" content="https://username.github.io/2021/03/06/java-io%E6%A6%82%E8%BF%B0/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="流定义：流就是程序和设备之间有用于数据传输的管道，这根管道管道上有很多按钮，不同的按钮可以实现不同的功能； 分类：Java.io包中定义多个流类型来实现输入输出功能：（1）按数据流的方向不同可以分为输入流和输出流；（2）按照数据处理的单位可以分为字符流和字节流；（3）按照功能不同可以分为节点流（原始流）和处理流（包裹流）；注：处理流就是包裹在原始节点上的流相当于包裹在管道上的管道； 我们主要学习">
+<meta property="og:description" content="io概述">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-06T14:47:23.000Z">
-<meta property="article:modified_time" content="2021-04-16T06:09:14.209Z">
+<meta property="article:modified_time" content="2021-04-16T08:29:36.991Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -191,7 +191,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <p>io概述</p>
+<a id="more"></a>
 <h3 id="流"><a href="#流" class="headerlink" title="流"></a>流</h3><p>定义：流就是程序和设备之间有用于数据传输的管道，这根管道管道上有很多按钮，不同的按钮可以实现不同的功能；</p>
 <p>分类：<br>Java.io包中定义多个流类型来实现输入输出功能：<br>（1）按数据流的方向不同可以分为输入流和输出流；<br>（2）按照数据处理的单位可以分为字符流和字节流；<br>（3）按照功能不同可以分为节点流（原始流）和处理流（包裹流）；<br>注：处理流就是包裹在原始节点上的流相当于包裹在管道上的管道；</p>
 <h3 id="我们主要学习以下几种流："><a href="#我们主要学习以下几种流：" class="headerlink" title="我们主要学习以下几种流："></a>我们主要学习以下几种流：</h3><h4 id="（1）四大基本流"><a href="#（1）四大基本流" class="headerlink" title="（1）四大基本流"></a>（1）四大基本流</h4><p>J2SDK所提供的所有流类型分别继承以下四种抽象流类型<br>inputstream（字节流和输入流）、outputstream（字节流和输出流）、reader（字符流和输入流）、writer（字符流和输出流）<br>通常我们使用的它们的子类。</p>

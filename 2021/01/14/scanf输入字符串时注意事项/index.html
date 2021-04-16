@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>scanf输入字符串时注意事项 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910111213141516171819202122#include&lt;stdio.h&gt;int main()&amp;#123;    char a[100];    scanf(&quot;%s&quot;,&amp;a);&#x2F;&#x2F;error:字符数组中字符数组名即为该数组第一个元素的地址或者说该数组的起始地址；    scanf(&quot;%s&amp;quot">
+  <meta name="description" content="scanf输入字符串时注意事项">
 <meta property="og:type" content="article">
 <meta property="og:title" content="scanf输入字符串时注意事项">
 <meta property="og:url" content="https://username.github.io/2021/01/14/scanf%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="12345678910111213141516171819202122#include&lt;stdio.h&gt;int main()&amp;#123;    char a[100];    scanf(&quot;%s&quot;,&amp;a);&#x2F;&#x2F;error:字符数组中字符数组名即为该数组第一个元素的地址或者说该数组的起始地址；    scanf(&quot;%s&amp;quot">
+<meta property="og:description" content="scanf输入字符串时注意事项">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-14T10:07:59.000Z">
-<meta property="article:modified_time" content="2021-04-16T07:16:26.800Z">
+<meta property="article:modified_time" content="2021-04-16T08:35:52.082Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -191,7 +191,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <p>scanf输入字符串时注意事项</p>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a[100];</span><br><span class="line">    scanf(&quot;%s&quot;,&amp;a);&#x2F;&#x2F;error:字符数组中字符数组名即为该数组第一个元素的地址或者说该数组的起始地址；</span><br><span class="line">    scanf(&quot;%s&quot;,a)</span><br><span class="line">    printf(&quot;%s\n&quot;,a);&#x2F;&#x2F;字符数组以%s输出时，输出控制项为字符数组名；</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a[100],b[100],c[100];</span><br><span class="line">    scanf(&quot;%s%s%s&quot;,a,b,c);&#x2F;&#x2F;若输入How are you?输出How are you?；若输入Howareyou?输出无输出;有空格字符分隔</span><br><span class="line">    作为三个字符串输入，无空格字符，当作一个字符串输入；</span><br><span class="line">    两者a[100],b[100],c[100]不同</span><br><span class="line">    printf(&quot;%s%s%s\n&quot;,a,b,c);&#x2F;&#x2F;字符数组以%s输出时，输出控制项为字符数组名；</span><br><span class="line">    char ch[100];</span><br><span class="line">    scanf(&quot;%s&quot;,ch);&#x2F;&#x2F;若输入How are you？&#x2F;&#x2F;输出How；系统将空格字符当作字符串间的分隔符故输出How</span><br><span class="line">    printf(&quot;%s\n&quot;,ch);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>字符串的输出只需要字符数组首地址即可，系统会沿着第一个字符的地址找下去直至遇到\0；系统这么做的前提是数组为连续分配的内存；<br>疑问：<br>    char ch[1或2];<br>    scanf(“%s”,ch);//若输入How are you？为什么输出How；<br>    printf(“%s\n”,ch);</p>
 
