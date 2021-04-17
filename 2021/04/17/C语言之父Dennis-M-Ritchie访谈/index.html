@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://username.github.io">
-  <title>C语言printf用法 | Happy</title>
+  <title>C语言之父Dennis  M  Ritchie访谈 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="printf用法">
+  <meta name="description" content="C语言之父Dennis M Ritchie访谈">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言printf用法">
-<meta property="og:url" content="https://username.github.io/2021/01/13/C%E8%AF%AD%E8%A8%80printf%E7%94%A8%E6%B3%95/index.html">
+<meta property="og:title" content="C语言之父Dennis  M  Ritchie访谈">
+<meta property="og:url" content="https://username.github.io/2021/04/17/C%E8%AF%AD%E8%A8%80%E4%B9%8B%E7%88%B6Dennis-M-Ritchie%E8%AE%BF%E8%B0%88/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="printf用法">
+<meta property="og:description" content="C语言之父Dennis M Ritchie访谈">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-01-13T08:27:44.000Z">
-<meta property="article:modified_time" content="2021-04-16T08:28:18.086Z">
+<meta property="article:published_time" content="2021-04-17T15:07:35.000Z">
+<meta property="article:modified_time" content="2021-04-17T15:33:13.126Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -164,14 +164,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-C语言printf用法" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-C语言之父Dennis-M-Ritchie访谈" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      C语言printf用法
+      C语言之父Dennis  M  Ritchie访谈
     </h1>
   
 
@@ -187,17 +187,31 @@
 
 <!--显示阅读次数完毕-->
         
-        <a href="/2021/01/13/C%E8%AF%AD%E8%A8%80printf%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-01-13T08:27:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-13</time>
+        <a href="/2021/04/17/C%E8%AF%AD%E8%A8%80%E4%B9%8B%E7%88%B6Dennis-M-Ritchie%E8%AE%BF%E8%B0%88/" class="archive-article-date">
+  	<time datetime="2021-04-17T15:07:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>printf用法</p>
+        <p>C语言之父Dennis M Ritchie访谈</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;Hello world!\n&quot;);</span><br><span class="line">    int i&#x3D;5,j&#x3D;1;</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    printf(&quot;%d %d\n&quot;,i,j);</span><br><span class="line">    printf(&quot;%d,%d\n&quot;,i,j);</span><br><span class="line">    printf(&quot;i&#x3D;%d,j&#x3D;%d\n&quot;,i,j);</span><br><span class="line">    printf(&quot;%5d%5d\n&quot;,i,j);</span><br><span class="line">    printf(&quot;%-5d%-5d\n&quot;,i,j);</span><br><span class="line">    float a&#x3D;1.23;</span><br><span class="line">    printf(&quot;%f\n&quot;,a);</span><br><span class="line">    printf(&quot;%5.3f\n&quot;,a);</span><br><span class="line">    printf(&quot;%5.1f\n&quot;,a);</span><br><span class="line">    printf(&quot;%-5.1f\n&quot;,a);</span><br><span class="line">    float b&#x3D;126.456789;</span><br><span class="line">    printf(&quot;%e\n&quot;,b);</span><br><span class="line">    printf(&quot;%15.8e\n&quot;,b);</span><br><span class="line">    printf(&quot;%-15.1e\n&quot;,b);</span><br><span class="line">    printf(&quot;%%d\n&quot;);</span><br><span class="line">    printf(&quot;\\\n&quot;);</span><br><span class="line">    printf(&quot;\&quot;\&quot;\n&quot;);</span><br><span class="line">    printf(&quot;%f%%\n&quot;,a);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Dennis M Ritchie（丹尼斯·里奇）， C语言之父，UNIX之父。生于1941年9月9日，哈佛大学数学博士。<br>现在，Dennis M. Ritchie 担任朗讯科技公司贝尔实验室 (原AT&amp;T实验室)下属的计算机科学研究中心系统软件研究部的主任一职。<br>1978年Brian W. Kernighan和Dennis M. Ritchie出版了名著《C程序设计语言（The C Programming Language）》，现在此书已翻译成多种语言，成为C语言方面最权威的教材之一。<br>C语言是使用最广泛的语言之一，可以说，C语言的诞生是现代程序语言革命的起点，是程序设计语言发展史中的一个里程碑。<br>除了C语言的开发，Dennis Ritchie还和Ken Thompson一起开发了UNIX操作系统，因此，他还是名副其实的UNIX之父。<br>从二十世纪七十年代起，他因杰出的工作得到了众多计算机组织的公认和表彰。<br>1974年，美国计算机协会（ACM）授予他系统及语言杰出论文奖。<br>1982年，电气和电子工程师协会（IEEE）授予他 Emmanuel Piore 奖。<br>1983年，他获得了贝尔实验室特别人员奖和<br>1983年，还获得美国计算机协会颁发的图灵奖（又称计算机界的诺贝尔奖）。<br>1989年，他获得了NEC公司的 C&amp;C 基金奖。<br>1990年，电气和电子工程师协会又给他颁发了优秀奖章（Hamming Medal）<br>1999年，他和同为UNIX之父的Ken Thompson 获得美国国家技术奖章。等等。</p>
+<h3 id="大师的修炼之道"><a href="#大师的修炼之道" class="headerlink" title="大师的修炼之道"></a>大师的修炼之道</h3><p>Ritchie生于1941年9月9日的纽约 Bronxville，获得学士学位并且获得哈佛大学博士学位，在哈佛，先是学习物理，而后转向应用数学。正是在这时候，一个偶然的机会改变了他一生的选择。<br>大约1960年，Ritchie听取一些非课程类的计算机讲座后，开始对计算机着迷，并选择了一学期正规（介绍性的）课程。第一部分是模拟计算机，后面是关于打孔卡片设备的，然后才是关于真正的数字式计算机的，并为Univac I号机准备了一个程序。当时他是一个主修物理的学生，但是更加着迷于计算机处理的理论和实际问题。因此，他的毕业论文大部分是理论方面的，例如1968年获得数学博士时的论文《递归函数的的层次》；但是他也开始投入更大精力到实践方面，例如，作为助手，在IBM7049计算机上用了三年时间为同一个介绍性课程做后续版本。<br>在Ritchie的成长历程中，有两个人对他的影响最大，一个是他父亲Alistair E. Ritchie，而另一个是他<br>的挚友，同为UNIX发明人的Ken Thompson。<br>由于父亲的指引，他进入全球知名的研发机构——贝尔实验室。Dennis的父亲在贝尔实验室有长时间的工作经历，对晶体管电路类的东西很有研究。1967年在父亲指引下加入贝尔实验室。不久后，加入了Multics（Multiplexed Information and Computing System）项目，正是这个项目，使得他和KenThompsom 有了合作的机会。该项目由贝尔实验室、麻省理工学院和通用电器三家合作，Ritchie负责多道处理机的BCPL语言和GE650的编译器，它们都是属于GECOS系统的，同样的，他也写了ALTRAN语言的代数编译器，那是用于符号计算机的一种语言和系统。</p>
+<p><strong>关于Ken Thompson，可以从后面他对此问题的回答中得到印证。有人问过Dennis，他的偶像是谁？他的回答挺有意思。</strong><br>他说：我不是在英雄熏陶下成长起来的。很显然，对我职业生涯影响最大的人物是KenThompson。UNIX大部分是他的工作，同样也是C语言的前辈，Plan 9系统的大部分工作也是他做的。并且在这其间Ken做了第一个计算机象棋大师。</p>
+<p>Dennis协助Ken Thompson做UNIX操作系统，在UNIX系统基本就绪并且在教育、政府和商业中得到一定程度的应用时，他和另一名同伴在Ken帮助下，开始将这个操作系统移植到Interdata 8/32上，通过这种方式证明其轻便性，基于UNIX快速的传播：贝尔实验室的第7版已经成为商业化UNIX的第五版和BSD UNIX的基础——这是UNIX快速传播的两个版本。<br>在UNIX发展之过程中，他向Thompson的B语言中加入数据类型和新的句法，就这样产生了一种新语言——C，这也是他说Thompson是C语言的前辈的原因，C是便携式UNIX的基础，并且它也在其它领域得到了广泛应用；计算机各方面的应用程序和系统发展，从手持设备到巨型机，都有对它的应用，还有美国标准和国际标准的C语言，并且它是后来Bjarne Stroustrup 写的C++语言的基础。<br>他从来没有间断过在计算机及其操作系统方面的工作，他所领导的研究小组开发出了 Plan 9 和 Inferno。Ritchie的业余生活也非常精彩，工作之余，有自己精彩生活。<br>他这样描述自己的生活，干的大部分是和计算机相关的，有点纠缠不清的事情。另一方面，也时常读读书看看报。另一项爱好是旅行，他到过很多地方，特别喜欢旅行，但每次时间都不是很长。可能因为他是一个恋家的人，因而有时旅行不久后感到相当疲乏。但喜欢回想旅行经历，这时就很希望能挤出时间在一个具有异国情调的地方待得时间长一点。<br><strong>曾有人问过下面的问题，对于一个人是如何涉足软件工业领域的，不同人有不同的回答。是什么使Ritchie选择了她，又是什么使得他在此领域如此潇洒呢？</strong><br>他的回答很简洁：兴趣和好奇心！他说：我开始对于物理学比较感兴趣，现在仍然是一个业余爱好者，试图跟上物理学的一些新东西。早先上大学时，包括读研究生，我在计算机理论方面花了不少时间（如图灵机、复杂性理论）。这其间，我对真实的电脑也非常着迷，着迷于所编即所见的经历：当你编出一个程序，便能立即看到你的思想的实现！所有的事情以一种非常有趣的方式联系在了一起，也正是这一类的东西促使我进入这一领域。但不知什么原因，我没有真正想过我正在这一领域做什么，即使时光倒流到1968年，我想也是如此。一如Dennis开发的软件，DMR先生对问题的描述非常简洁。</p>
+<p><strong>问：您的生活是怎样和计算机联系在一起的？</strong><br>D M R：在大学的时候我开始对它感兴趣（大约1960-61年），我参加了一个非学术性的讲座，关于大学里的Univac I(通用自动计算机I号)，然后就选修了一些课程。<br><strong>问：您觉得怎样才是学编程的好方法？学习语言时一种好的工具是不是必需的？</strong><br>D M R：我想你最有必要做下面的事情——编一些小程序，然后编大一点的。<br><strong>问：怎样才算是一种好的大学教育呢？尤其对计算科学来说。</strong><br>D M R：教育知识面最好要宽一些，不要仅仅局限于编程。即使是编程，最好多学几种语言。我在大学时花了几年时间学习物理和计算理论知识，现在我仍然对当时的选择比较满意。<br><strong>问：数学和计算机科学有什么关系吗？</strong><br>D M R：我觉得计算机科学就是：包括工程学在内的对数学的应用。<br><strong>问：您怎样教育自己的孩子和学生？</strong><br>D M R：两者我都不可能有！我没结婚，并且我是在工业系统而不是学术机构中。<br><strong>问：您对中国和中国的程序员有什么认识？您想对他们说点什么吗？</strong><br>D M R：我访问中国好多次，但每次都很短暂，以至于很难形成一个一般的看法。上一次我还记得，在大学的见面会上，我讲了一些当时正在从事的工作的情况和历史，学生们的态度非常热情，他们提问所表达出的知识面也很宽博。</p>
+<p>贝尔实验室出大师、C语言或UNIX，任一项发明足以让Dennis成为一代又一代程序员们的偶像。但当我们接触这位伟人之后发现，Dennis是一位非常低调的人，形成对照的是他在软件业成就辉煌的40年。<br>今天，当初与他同期加入贝尔实验室的科学家中，多数人都已安享晚年或是自立门户成为老板，而Dennis还是一如既往地在这里从事自己喜欢的研究工作，著书立说，潜心编程。在完成C语言和UNIX两座高峰后，他还带领他的研究小组开发出了 新一代操作系统Plan 9 和 Inferno。<br>C语言和UNIX的发展历程，还让我们从侧面见证了业界流流传很久的话题：贝尔实验室出大师！而在谈到贝尔实验室成功的原因时，Dennis的评价只有四个字：管理得当！<br>在谈到贝尔实验室时，虽然它的称呼、Logo不断变化，但Dennis评价“贝尔实验室仍然是相当不错的干事的地方”。<br>贝尔实验室（Bell Labs）是全球驰名的研发机构，遍布全球16个国家，自1937年以来已经产生出11位诺贝尔奖获得者。贝尔实验室的科学家和研究人员自1925年以来已经获得了40,000多项发明，30,000多项专利，平均每个工作日超过4项，是全球最多产的发明源泉之一。<br>贝尔实验室原名“贝尔电话实验室”，1996年10月正式改名为“贝尔实验室”（Bell Labs），先后为AT<br>＆T和朗讯科技公司的研发机构，也是后者得以成立的支柱。它主要从事通信科技的基础研究和技术发展工作，目前还从事通信系统和设备的研制工作。<br>自1925年成立之初，它一直是世界上规模最大、通信科技和控制等方面最先进、优秀人才最集中和科技成果最突出的工业研究实验室或研发机构，它的工作人员从成立时的3600人和年经费1200万美元发展到1991年的29000人和37亿美元。在1999年，雇员人数仍为25000人，年经费36.78亿美元，依然雄居世界研发机构的榜首，被称为“世界首要的研发机构”和研发的“象牙之塔”。<br>美国国家技术奖章的统计数字是贝尔实验室成就的有力补充说明，第一次的奖章是授予贝尔实验室，1999年，Ritchie 和 Thompson因为在贝尔实验室的受人瞩目的成绩获得此项殊荣，是第六次以集体的名义和第七次个人名义获得国家技术奖章。</p>
+<p><strong>问：在AT&amp;T和Bell实验室有这样多的IT发明和著名人物，您觉得有什么秘决吗？</strong><br>D M R：我觉得这得益于我们的管理，使得有足够资金资助研究，更重要的是给予充足的时间和允许某些思想发展的时间。很幸运的另一点是，这里有一批天才人物的加入。还有一定程度的幸运在里面：1970年代，在计算机硬件条件（如小型机）发生了巨大的变化，这样使得许多机构可以顺利地开展实验，而这之前是很困难的。</p>
+<p><strong>问：现在的大学有部分学生中途退学，您怎样看待这现象呢？</strong><br>D M R：在.com泡沫时期，我曾经为此非常担心，现在，至少现在在我们国家，好象不很普遍了。可能原因在于，人们已经不再把计算机科学看作可以立即赚到大把美金的东东了，因此，现在其他的人对这门学科本身更感兴趣一点。<br>C语言UNIX双双飞，作为一门伟大的语言，C语言的发展颇为有趣，C语言是借助UNIX操作系统的翅膀而起飞的，UNIX操作系统由于C而得以快速移植落地生根，两者相辅相承，成就了软件史上最精彩的一幕。1967 年，Dennis参与的第一个项目是Multics，UNIX的诞生和Multics有一定渊源的。Multics是一个操作系统项目，被设计运行在GE-645大型主机上，但是由于整个目标过于庞大，糅合了太多的特性，Multics虽然发布了一些产品，但是性能都很低，最终以失败而告终。<br>AT&amp;T最终撤出了投入Multics项目的资源，其中一个开发者，Ken Thompson则继续为GE-645开发软件，并最终编写了一个太空旅行游戏。经过实际运行后，他发现游戏速度很慢而且耗费昂贵。在Dennis Ritchie的帮助下，Thompson用PDP-7的汇编语言重写了这个游戏，并使其在DEC PDP-7上运行起来。这次经历加上Multics项目的经验，促使Thompson开始了一个DEC PDP-7上的新操作系统项目。Thompson和Ritchie领导一组开发者，开发了一个新的多任务操作系统，这个项目被称为UNICS（Uniplexed Information andComputing System），因为它可以支持同时的多用户操作，也就是后来的UNIX。最初的UNIX是用汇编语言编写的，一些应用是由叫做B语言的解释型语言和汇编语言混合编写的，在移植的过程中遇到不少麻烦。早在对Multics项目调整过程中，就迫切需要一门高级计算机语言做工具，可供选择的范围仅仅是PL/I、Fortran等，经过一一实验，不得不放弃，最后Ken 决定设计一种自己的语言，将BCPL语言压缩到仅有8KB的内存中，B语言诞生了。<br>B语言也并非无懈可击，由于自身局限性，在设计UNIX操作系统时让设计者吃了不少苦头，为了解决程序的可移植性问题，他们决定对它进行简单改进，形成NB语言。但NB在UNIX的移植方面依然不尽人意，此后Dennis又对NB语言做了改进，C语言诞生。<br>这是个划时代的动作，C语言让UNIX能够轻易地被移植到各种不同的机器上，为UNIX的迅速普及立下汗马功劳。<br>1977年Dennis发表了不依赖于具体机器系统的C语言编译文本——《可移植的C语言编译程序》，UNIX操作系统得已推广的另一项有利举措是标准化。种种得力举措，从而使C语言成为目前世界上流行最广泛的高级程序设计语言之一。<br>1978年Brian W. Kernighan和Dennis M. Ritchie出版的名著《C程序设计语言（The C ProgrammingLanguage）》，常被人们称为K&amp;R版C教材或“白皮书”，为C语言的推广普及立下汗马功劳。<br>1988年，美国国家标准研究所（ANSI）为C语言制定了一套ANSI标准。随着标准化的深入，C语言发展迅速， 成为最受欢迎的语言之一。<br>而Dennis 由于C语言和UNIX两项成就，成为许多编程爱好者膜拜的对象。也正因此，和Ken二人于1983年获得有计算机界诺贝尔奖的ACM 图灵奖。<br>C语言最初被用于UNIX的编写，后来它被众多程序员狂热拥戴，成为使用最广泛的系统开发语言，这却是Dennis本人也没有预料到的。<br>现在，C语言，作为一种通用的程序设计语言，它主要用来进行系统程序设计。具有高效、灵活、功能丰富、表达力强和移植性好等的特点，在程序员中备受青睐。C语言广泛应用于不同的操作系统，例如UNIX、MS-DOS、Microsoft Windows及Linux等。C语言是一种面向过程的语言，同时具有高级语言和汇编语言的优点。在C语言的基础上发展起来的有支持多种程序设计风格的C++语言，网络上广泛使用的Java、JavaScript，微软的C#等。<br>而UNIX作为一种一种多用户、多任务的通用操作系统，已发展成为当前使用普遍、影响深远的工业界主流的操作系统，成为重要的企业级操作平台，广泛运行于PC、小型机等各种环境，用于大型信息系统的关键业务服务，如数据库和Internet主机。<br>在技术方面，曾有人问Dennis， C语言设计目标有没有随着时间推移而改变？如果没变，为什么？他说:我个人的目标这些年来一直未变，并且，我不是1989和1999年标准的主要推动者。无论1989年ANSI标准还是ISO标准都使事情制度化了，这些条文比我最初写的文档要好；最需要加以说明的是我早先关于函数原型做的工作，对C++语言的影响是非常重要的一个影响。<br>而在关于众多计算机语言优劣性能的激烈辩论中，始终处在中心位置的C语言作者Dennis却显得很平静。<br><strong>西班牙的一位大学生曾经问过他类似的问题: 如果 UNIX 被选为过去和当前的操作系统，尽管过去几年出现了一些面向对象的语言，毫无疑问C 也将被认为是“唯一的语言”。你怎么看待 C++ 和 Java，以及 C和 C++ 程序员之间在 UseNet 上经常发生的激烈争论呢？</strong><br>他说：C++ 的很大一部分得宜于 C。因为 C 早在 C++ 出现之前就已经具有了非常好的兼容性，所以 C++才可以采用 C 作为建构自身的基础并使用它来开发自己的编译器。C 被设计成为一种便携式汇编语言，对于这一特性人们褒贬不一，C++ 则试图把编程方法提高到面向对象这种更抽象的层次上来。从最近形成的标准来看，二者共同的缺点是：带有过多的装饰和附属物。同样的，它们都采用了相同的编程思想，都试图按照真正的需求来编写代码。Java 显然是 C++ 的改进版本。它砍掉了 C 中的指针操作部分，引入了生成独立于机器的目标文件这种编程思想(虽然这个思想并不是很新的，但是也许直到现在它才真正行了)。既然 Sun 和 Microsoft 公司(它的产品同样的有过多的装饰附件)已经把 Java 作为它们之间竞争的工具，谁也难以预料事态将向何处发展。<br>C语言是Dennis的得意这笔，对于这一笔，他看得非常平静，当问到他对C语言的将来做一下预测时，他的回答十分简洁：C语言正在被C++，也可能是Java所替代，也可能是更高级的脚本语言。当然，它在关于系统一类设计中还是相当强的工具。</p>
+<p><strong>问：您是怎样发明C语言的？发明的过程是什么样子的。它对您的生活和研究有什么影响吗？</strong><br>D M R：公正地说，发明C语言的目的是：为了写编译器和语言设计，为了更易于编写UNIX操作系统程序，我们做的一个可以在小型计算机上使用的工具。UNIX做的比较好，并且PC开始相当普遍，由于C语言在UNIX上的很好地应用，使得用它来写应用程序和操作系统迅速增长起来。因此，对我来说，C语言的确非常重要。</p>
+<p><strong>问：您觉得C语言和C++有什么不同吗？</strong><br>D M R：多年以来，C和C++，已经是两种不同的语言了；Stroustrup先生汲取了C语言语法和潜在的语义学中的许多东西，形成了C++语言。在一些交叉领域，标准委员会尽量使两种语言兼容。</p>
+<p><strong>问：您觉得计算机语言和我们人类的语言有什么不同呢？</strong><br>D M R：计算机语言更加正式和明确，有统一的规则，当然，它们都是经过设计的。人类语言有语法，但相对来说不很正式，有些规则可以打破，当然，它们有不同的目的——为了同人交流而不是同机器交流。</p>
+<p><strong>问：您对面向对象是怎样理解的？它是不是一种好的可接受的编程思考方式？有没有学习OO必须的有用的工具？</strong><br>D M R：我看过OO的东西但我现在还不是OO迷。这种思想是非常好的，也即是通过隐藏任务的执行来定义界面，但是它可能做得有点过火；它以很难发现工作本质的程序终结；它的所有的东西就是界面。</p>
+<p><strong>问：您能对IT的将来做一下预测吗？将来我们最有可能用什么语言？</strong><br>D M R：我对预测不在行，但是很明显，人们正在从象C语言之类的直接编译型语言，转换到注重解释性的语言，像某些脚本语言。</p>
+<h2 id="人物印象"><a href="#人物印象" class="headerlink" title="人物印象"></a>人物印象</h2><p>提起Dennis Ritchie 先生，不可不提他那句在IT名言：<br>“UNIX is basically a simple operating system, but you have to be a genius to understand the simplicity.”<br>这就是简洁。软件简洁之美。另外的产生一种由然的感动。<br>D M R先生的专业精神令人感动，近40年如一日，在他所从事的领域辛勤耕耘，而他的多项发明，包括C语言，UNIX，也包括现在正在进行的Plan9，无论哪一项，在软件发展史上都有着举足轻重的地位，和他的伟大成就形成对照的是他的行事，态度低调；他的表达，象他的软件一样，简洁生动而准确。Bjarne Stroustrup先生C++的成功，很大一部分也来自于C，是C语言的普及和深入，才有了后面的凤凰涅槃；从另一个角度，在同另一语言大师Pascal之父Niklaus Wirth交流时，C++的名字也是源自C语言的利器，Wirth先生不无惋惜地表示，后来他开发的语言可惜没叫Pascal2。<br>他的行事低调和他的巨大成就形成鲜明的对照。和Ken亦师亦友的关系，对工作一丝不苟的执着，无不深深地感动着我们。</p>
+
       
 
       
@@ -242,7 +256,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        			<a href="/categories/人物访谈//" class="article-tag-list-link color5">人物访谈</a>
         		</li>
       		
 		</ul>
@@ -297,14 +311,14 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/01/13/C%E8%AF%AD%E8%A8%80printf%E7%94%A8%E6%B3%95/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/04/17/C%E8%AF%AD%E8%A8%80%E4%B9%8B%E7%88%B6Dennis-M-Ritchie%E8%AE%BF%E8%B0%88/" alt="微信分享二维码">
     </div>
 </div>
 <div class="page-modal qq-share js-qq-box">
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到QQ</p>
     <div class="qq-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/01/13/C%E8%AF%AD%E8%A8%80printf%E7%94%A8%E6%B3%95/" alt="QQ分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/04/17/C%E8%AF%AD%E8%A8%80%E4%B9%8B%E7%88%B6Dennis-M-Ritchie%E8%AE%BF%E8%B0%88/" alt="QQ分享二维码">
     </div>
 </div>
 
@@ -319,18 +333,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/01/13/C%E8%AF%AD%E8%A8%80scanf%E7%94%A8%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          C语言scanf用法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/01/13/%E6%B1%82%E4%B8%80%E4%B8%AA%E6%95%B0%E6%98%AF%E5%90%A6%E6%98%AF%E7%B4%A0%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">求一个数是否是素数</div>
+    <a href="/2021/04/16/%E6%8E%92%E5%BA%8F%E4%B9%8B%E6%A1%B6%E6%8E%92%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">排序之桶排序概述</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -357,7 +362,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E5%B8%88%E7%9A%84%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93"><span class="toc-number">1.</span> <span class="toc-text">大师的修炼之道</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%BA%E7%89%A9%E5%8D%B0%E8%B1%A1"><span class="toc-number"></span> <span class="toc-text">人物印象</span></a>
                     </div>
                 </span>
             </div>
