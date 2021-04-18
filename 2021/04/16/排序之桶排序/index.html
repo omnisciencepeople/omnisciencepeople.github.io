@@ -16,7 +16,7 @@
 <meta property="og:description" content="桶排序">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-04-16T13:44:33.000Z">
-<meta property="article:modified_time" content="2021-04-17T15:04:49.853Z">
+<meta property="article:modified_time" content="2021-04-18T00:42:51.507Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -66,7 +66,7 @@
 			</ul>
 		</nav>
                           <nav>
-                              总文章数 115
+                              总文章数 116
                                            </nav>
 		<nav class="header-smart-menu">
     		
@@ -201,7 +201,8 @@
 <h3 id="桶伪算法大致："><a href="#桶伪算法大致：" class="headerlink" title="桶伪算法大致："></a>桶伪算法大致：</h3><p>将数组分为有限个桶，每个桶中在内部进行排序（有可能使用别的排序算法，或以递归的方式使<br>用桶排序进行排序），最后依次将各个桶中的记录列出来即可得到有序序列；</p>
 <h3 id="桶伪算法具体："><a href="#桶伪算法具体：" class="headerlink" title="桶伪算法具体："></a>桶伪算法具体：</h3><p>桶排序中假设待排序的一组数据（N个数据）均匀的独立分布在一个范围中，将这个范围分为几个子<br>范围（子范围个数为M），然后基于某种映射函数f，将待排序列中每个元素的关键字K映射到第i个<br>桶中（桶数组B的下标），那么k就为B[i]中的元素。B中的每个元素都是一组大小为N/M的序列，B<br>中每个元素（非空桶）内部排序后接着将非空桶中的数据合并起来即可得到一个有序序列。<br>        映射函数一般为f=array[i]/k; k^2=n; n为所有元素的个数<br>桶排序利用了函数的映射，高效与否的关键在于映射函数的确定。</p>
 <h3 id="为使桶排序高效，我们需要做到以下两点："><a href="#为使桶排序高效，我们需要做到以下两点：" class="headerlink" title="为使桶排序高效，我们需要做到以下两点："></a>为使桶排序高效，我们需要做到以下两点：</h3><p>1.在额外空间充足的情况下，尽可能增加桶的数量。<br>2.使用映射函数能够将输入的N个数据均匀分布在M个桶中.<br>为什么我们需要做到这两点呢？<br>桶排序需要尽量保证元素均匀分布，否则当所有元素集中在同一个桶中时，桶排序失效。<br>桶划分的越小，各个桶中的数据越来越少，排序所用的时间会减少，但空间消耗会增大；</p>
-<h3 id="桶排序是稳定"><a href="#桶排序是稳定" class="headerlink" title="桶排序是稳定"></a>桶排序是稳定</h3><h3 id="桶个数的确定"><a href="#桶个数的确定" class="headerlink" title="桶个数的确定"></a>桶个数的确定</h3><h3 id="桶排序算法演示"><a href="#桶排序算法演示" class="headerlink" title="桶排序算法演示"></a>桶排序算法演示</h3>
+<h3 id="桶排序是稳定"><a href="#桶排序是稳定" class="headerlink" title="桶排序是稳定"></a>桶排序是稳定</h3><h3 id="桶个数的确定"><a href="#桶个数的确定" class="headerlink" title="桶个数的确定"></a>桶个数的确定</h3><p>假定对数组arr进行排序，arr的长度为len，数组最大数为max，数组中最小数为min，<br>则<strong>gap=(max-min)/len+1</strong>,则桶的个数为<strong>Bucket_num=(max-min)/gap+1</strong>;<br>同一个桶中的元素相差最多为gap-1；<br>确定数组元素放入哪个桶中公式:<strong>(arr[i]-min)/gap</strong>;</p>
+
       
 
       
@@ -361,7 +362,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%B6%E6%8E%92%E5%BA%8F"><span class="toc-number">1.</span> <span class="toc-text">桶排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%B6%E4%BC%AA%E7%AE%97%E6%B3%95%E5%A4%A7%E8%87%B4%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">桶伪算法大致：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%B6%E4%BC%AA%E7%AE%97%E6%B3%95%E5%85%B7%E4%BD%93%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">桶伪算法具体：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BD%BF%E6%A1%B6%E6%8E%92%E5%BA%8F%E9%AB%98%E6%95%88%EF%BC%8C%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E5%81%9A%E5%88%B0%E4%BB%A5%E4%B8%8B%E4%B8%A4%E7%82%B9%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">为使桶排序高效，我们需要做到以下两点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%B6%E6%8E%92%E5%BA%8F%E6%98%AF%E7%A8%B3%E5%AE%9A"><span class="toc-number">5.</span> <span class="toc-text">桶排序是稳定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%B6%E4%B8%AA%E6%95%B0%E7%9A%84%E7%A1%AE%E5%AE%9A"><span class="toc-number">6.</span> <span class="toc-text">桶个数的确定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%B6%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%BC%94%E7%A4%BA"><span class="toc-number">7.</span> <span class="toc-text">桶排序算法演示</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%B6%E6%8E%92%E5%BA%8F"><span class="toc-number">1.</span> <span class="toc-text">桶排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%B6%E4%BC%AA%E7%AE%97%E6%B3%95%E5%A4%A7%E8%87%B4%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">桶伪算法大致：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%B6%E4%BC%AA%E7%AE%97%E6%B3%95%E5%85%B7%E4%BD%93%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">桶伪算法具体：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BD%BF%E6%A1%B6%E6%8E%92%E5%BA%8F%E9%AB%98%E6%95%88%EF%BC%8C%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E5%81%9A%E5%88%B0%E4%BB%A5%E4%B8%8B%E4%B8%A4%E7%82%B9%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">为使桶排序高效，我们需要做到以下两点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%B6%E6%8E%92%E5%BA%8F%E6%98%AF%E7%A8%B3%E5%AE%9A"><span class="toc-number">5.</span> <span class="toc-text">桶排序是稳定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%B6%E4%B8%AA%E6%95%B0%E7%9A%84%E7%A1%AE%E5%AE%9A"><span class="toc-number">6.</span> <span class="toc-text">桶个数的确定</span></a></li></ol>
                     </div>
                 </span>
             </div>
