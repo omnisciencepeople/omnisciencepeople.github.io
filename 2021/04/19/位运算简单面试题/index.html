@@ -8,13 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>位运算简单面试题 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="1.如何不定义临时变量来互换两个数？arr[i]arr[i]^arr[j];arr[j]&#x3D;arr[i]^arr[j];arr[i]&#x3D;arr[i]^arr[j]; ^:异或运算，相同为0；不同为1； 我们可以这样理解，异或运算实际上为无进位相加；同或运算：相同为1，不同为0；异或运算满足交换律和结合律，同或运算也满足交换律和结合律；0^N&#x3D;N;          N^N&#x3D;0; 2.一个数组中只有一个">
+<meta property="og:type" content="article">
 <meta property="og:title" content="位运算简单面试题">
 <meta property="og:url" content="https://username.github.io/2021/04/19/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AE%80%E5%8D%95%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
 <meta property="og:site_name" content="Happy">
+<meta property="og:description" content="1.如何不定义临时变量来互换两个数？arr[i]arr[i]^arr[j];arr[j]&#x3D;arr[i]^arr[j];arr[i]&#x3D;arr[i]^arr[j]; ^:异或运算，相同为0；不同为1； 我们可以这样理解，异或运算实际上为无进位相加；同或运算：相同为1，不同为0；异或运算满足交换律和结合律，同或运算也满足交换律和结合律；0^N&#x3D;N;          N^N&#x3D;0; 2.一个数组中只有一个">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-04-19T14:53:04.000Z">
-<meta property="article:modified_time" content="2021-04-20T14:01:39.448Z">
+<meta property="article:modified_time" content="2021-04-20T23:28:15.235Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -193,7 +195,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="1-如何不定义临时变量来互换两个数？"><a href="#1-如何不定义临时变量来互换两个数？" class="headerlink" title="1.如何不定义临时变量来互换两个数？"></a>1.如何不定义临时变量来互换两个数？</h3><p>arr[i]arr[i]^arr[j];<br>arr[j]=arr[i]^arr[j];<br>arr[i]=arr[i]^arr[j];</p>
+<p>^:异或运算，相同为0；不同为1； 我们可以这样理解，异或运算实际上为无进位相加；<br>同或运算：相同为1，不同为0；<br>异或运算满足交换律和结合律，同或运算也满足交换律和结合律；<br>0^N=N;          N^N=0;</p>
+<h3 id="2-一个数组中只有一个数出现了奇数次，其他数都出现了偶数次，怎么找到并打印该数？"><a href="#2-一个数组中只有一个数出现了奇数次，其他数都出现了偶数次，怎么找到并打印该数？" class="headerlink" title="2.一个数组中只有一个数出现了奇数次，其他数都出现了偶数次，怎么找到并打印该数？"></a>2.一个数组中只有一个数出现了奇数次，其他数都出现了偶数次，怎么找到并打印该数？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class fiindoddtimes &#123;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">	  int[] arr&#x3D; &#123;1,1,2,2,3,3,4,4,8,8,8,9,9,9,9&#125;;</span><br><span class="line">	  int ero&#x3D;0;</span><br><span class="line">	  for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">		  ero^&#x3D;arr[i];&#x2F;&#x2F;异或满足交换律，相同数异或为0;</span><br><span class="line">	  System.out.println(ero);&#x2F;&#x2F;ero即为该出现奇数次的数；</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="一个数组中有两个出现了奇数次的数，其他数都出现了偶数次，求这两个数"><a href="#一个数组中有两个出现了奇数次的数，其他数都出现了偶数次，求这两个数" class="headerlink" title="一个数组中有两个出现了奇数次的数，其他数都出现了偶数次，求这两个数"></a>一个数组中有两个出现了奇数次的数，其他数都出现了偶数次，求这两个数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class findoddtimes2 &#123;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">	  int[] arr&#x3D; &#123;1,1,1,2,2,2,5,5,5,5,4,4,4,4,7,7&#125;;</span><br><span class="line">	  int ero&#x3D;0;</span><br><span class="line">	  for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">		  ero^&#x3D;arr[i];&#x2F;&#x2F;ero&#x3D;a^b;             a!&#x3D;b ,故ero!&#x3D;0; </span><br><span class="line">	  int temp&#x3D;ero&amp;(~ero+1); &#x2F;&#x2F;打印出ero最左侧的1;</span><br><span class="line">	  int ero1&#x3D;0;</span><br><span class="line">	  for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">		  if((arr[i]&amp;temp)!&#x3D;0)</span><br><span class="line">			  ero1^&#x3D;arr[i];</span><br><span class="line">	  System.out.print(ero1+&quot;      &quot;+(ero^ero1));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="判断一个数的二进制1有几个？"><a href="#判断一个数的二进制1有几个？" class="headerlink" title="判断一个数的二进制1有几个？"></a>判断一个数的二进制1有几个？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class find1times &#123;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">	  int a&#x3D;5;</span><br><span class="line">	  int cnt&#x3D;0;</span><br><span class="line">	  while(a!&#x3D;0)</span><br><span class="line">	  &#123;</span><br><span class="line">		  int ero&#x3D;a&amp;(~a+1);</span><br><span class="line">		  cnt++;</span><br><span class="line">		  a&#x3D;a^ero;</span><br><span class="line">	  &#125;</span><br><span class="line">	  System.out.println(cnt);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -353,7 +359,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%A6%82%E4%BD%95%E4%B8%8D%E5%AE%9A%E4%B9%89%E4%B8%B4%E6%97%B6%E5%8F%98%E9%87%8F%E6%9D%A5%E4%BA%92%E6%8D%A2%E4%B8%A4%E4%B8%AA%E6%95%B0%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">1.如何不定义临时变量来互换两个数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84%E4%B8%AD%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E6%95%B0%E5%87%BA%E7%8E%B0%E4%BA%86%E5%A5%87%E6%95%B0%E6%AC%A1%EF%BC%8C%E5%85%B6%E4%BB%96%E6%95%B0%E9%83%BD%E5%87%BA%E7%8E%B0%E4%BA%86%E5%81%B6%E6%95%B0%E6%AC%A1%EF%BC%8C%E6%80%8E%E4%B9%88%E6%89%BE%E5%88%B0%E5%B9%B6%E6%89%93%E5%8D%B0%E8%AF%A5%E6%95%B0%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">2.一个数组中只有一个数出现了奇数次，其他数都出现了偶数次，怎么找到并打印该数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9C%89%E4%B8%A4%E4%B8%AA%E5%87%BA%E7%8E%B0%E4%BA%86%E5%A5%87%E6%95%B0%E6%AC%A1%E7%9A%84%E6%95%B0%EF%BC%8C%E5%85%B6%E4%BB%96%E6%95%B0%E9%83%BD%E5%87%BA%E7%8E%B0%E4%BA%86%E5%81%B6%E6%95%B0%E6%AC%A1%EF%BC%8C%E6%B1%82%E8%BF%99%E4%B8%A4%E4%B8%AA%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text">一个数组中有两个出现了奇数次的数，其他数都出现了偶数次，求这两个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%95%B0%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B61%E6%9C%89%E5%87%A0%E4%B8%AA%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">判断一个数的二进制1有几个？</span></a></li></ol>
                     </div>
                 </span>
             </div>
