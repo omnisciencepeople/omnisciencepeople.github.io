@@ -16,7 +16,7 @@
 <meta property="og:description" content="位运算简单面试题">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-04-19T14:53:04.000Z">
-<meta property="article:modified_time" content="2021-04-21T13:25:33.804Z">
+<meta property="article:modified_time" content="2021-04-21T13:27:28.582Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -195,7 +195,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>位运算简单面试题</strong></p>
+        <p>位运算简单面试题</p>
 <a id="more"></a>
 <h3 id="1-如何不定义临时变量来互换两个数？"><a href="#1-如何不定义临时变量来互换两个数？" class="headerlink" title="1.如何不定义临时变量来互换两个数？"></a>1.如何不定义临时变量来互换两个数？</h3><p>arr[i]arr[i]^arr[j];<br>arr[j]=arr[i]^arr[j];<br>arr[i]=arr[i]^arr[j];<br>i和j必须是两块不一样的内存；<br>^:异或运算，相同为0；不同为1； 我们可以这样理解，异或运算实际上为无进位相加；<br>同或运算：相同为1，不同为0；<br>异或运算满足交换律和结合律，同或运算也满足交换律和结合律；<br>0^N=N;          N^N=0;</p>
 <h3 id="2-一个数组中只有一个数出现了奇数次，其他数都出现了偶数次，怎么找到并打印该数？"><a href="#2-一个数组中只有一个数出现了奇数次，其他数都出现了偶数次，怎么找到并打印该数？" class="headerlink" title="2.一个数组中只有一个数出现了奇数次，其他数都出现了偶数次，怎么找到并打印该数？"></a>2.一个数组中只有一个数出现了奇数次，其他数都出现了偶数次，怎么找到并打印该数？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class findoddtimes &#123;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">	  int[] arr&#x3D; &#123;1,1,2,2,3,3,4,4,8,8,8,9,9,9,9&#125;;</span><br><span class="line">	  int ero&#x3D;0;</span><br><span class="line">	  for(int i&#x3D;0;i&lt;arr.length;i++)</span><br><span class="line">		  ero^&#x3D;arr[i];&#x2F;&#x2F;异或满足交换律，相同数异或为0;</span><br><span class="line">	  System.out.println(ero);&#x2F;&#x2F;ero即为该出现奇数次的数；</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
