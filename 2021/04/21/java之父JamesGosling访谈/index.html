@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://username.github.io">
-  <title>动态构造链表举例 | Happy</title>
+  <title>java之父JamesGosling访谈 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="动态构造链表举例">
+  <meta name="description" content="“微软是一个很难合作的公司，在微软的字典里似乎没有合作二字！”                                                JamesGosling">
 <meta property="og:type" content="article">
-<meta property="og:title" content="动态构造链表举例">
-<meta property="og:url" content="https://username.github.io/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E4%B8%BE%E4%BE%8B/index.html">
+<meta property="og:title" content="java之父JamesGosling访谈">
+<meta property="og:url" content="https://username.github.io/2021/04/21/java%E4%B9%8B%E7%88%B6JamesGosling%E8%AE%BF%E8%B0%88/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="动态构造链表举例">
+<meta property="og:description" content="“微软是一个很难合作的公司，在微软的字典里似乎没有合作二字！”                                                JamesGosling">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-01-19T11:07:06.000Z">
-<meta property="article:modified_time" content="2021-04-16T08:37:44.147Z">
+<meta property="article:published_time" content="2021-04-21T13:42:16.000Z">
+<meta property="article:modified_time" content="2021-04-21T13:50:52.458Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -164,14 +164,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-动态构造链表举例" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-java之父JamesGosling访谈" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      动态构造链表举例
+      java之父JamesGosling访谈
     </h1>
   
 
@@ -187,17 +187,33 @@
 
 <!--显示阅读次数完毕-->
         
-        <a href="/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E4%B8%BE%E4%BE%8B/" class="archive-article-date">
-  	<time datetime="2021-01-19T11:07:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-19</time>
+        <a href="/2021/04/21/java%E4%B9%8B%E7%88%B6JamesGosling%E8%AE%BF%E8%B0%88/" class="archive-article-date">
+  	<time datetime="2021-04-21T13:42:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>动态构造链表举例</p>
+        <p>“微软是一个很难合作的公司，在微软的字典里似乎没有合作二字！”<br>                                                JamesGosling</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">struct student</span><br><span class="line">&#123;</span><br><span class="line">    int data;</span><br><span class="line">    struct student*Next;</span><br><span class="line">&#125;;</span><br><span class="line">struct student* creat_list();</span><br><span class="line">void traverse_list(struct student*);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    struct student*head&#x3D;NULL;</span><br><span class="line">    head&#x3D;creat_list();</span><br><span class="line">    traverse_list(head);</span><br><span class="line">    free(head);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">struct student* creat_list()</span><br><span class="line">&#123;</span><br><span class="line">    struct student*phead&#x3D;(struct student*)malloc(sizeof(struct student));</span><br><span class="line">    if(phead&#x3D;&#x3D;NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;内存分配失败，程序终止\n&quot;);</span><br><span class="line">        exit(-1);</span><br><span class="line">    &#125;</span><br><span class="line">    struct student* ptail&#x3D;phead;</span><br><span class="line">    ptail-&gt;Next&#x3D;NULL;</span><br><span class="line">    int len;</span><br><span class="line">    printf(&quot;请输入你要构造学生的信息的个数:\n&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;len);</span><br><span class="line">    for(int i&#x3D;0;i&lt;len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        struct student* st&#x3D;(struct student*)malloc(sizeof(struct student));</span><br><span class="line">        if(st&#x3D;&#x3D;NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            printf(&quot;内存分配失败，程序终止\n&quot;);</span><br><span class="line">            exit(-1);</span><br><span class="line">        &#125;</span><br><span class="line">        int val;</span><br><span class="line">        printf(&quot;请输入第%d个学生的信息:\ndata&#x3D;&quot;,i+1);</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;val);</span><br><span class="line">        st-&gt;data&#x3D;val;</span><br><span class="line">        ptail-&gt;Next&#x3D;st;</span><br><span class="line">        ptail&#x3D;st;</span><br><span class="line">        st-&gt;Next&#x3D;NULL;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return phead;</span><br><span class="line">&#125;</span><br><span class="line">void traverse_list(struct student* p)</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;1;</span><br><span class="line">    p&#x3D;p-&gt;Next;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;输出第%d个学生信息:\n&quot;,i);</span><br><span class="line">        printf(&quot;输出第%d个学生信息:\n&quot;,i);</span><br><span class="line">        printf(&quot;data&#x3D;%d\n&quot;,p-&gt;data);</span><br><span class="line">        p&#x3D;p-&gt;Next;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;while(p!&#x3D;NULL);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>　　** 问：Sun近来与中国各移动厂商积极合作，发展无线增值服务，微软也刚刚开发了一组智能手机产品，Sun是如何应对的？**</p>
+<p>　　 JamesGosling：微软是一个有意思的竞争伙伴，Sun的强大武器是Java技术本身，同时，Sun和合作伙伴达成紧密合作，极大的支持软件开发团队。9月26日，Sun与联通宣布结成联盟，这是联通看到了Java在手机市场的专有性和Java具有的开放性和标准性。Java欢迎竞争，因为只有这样才能最大限度的提高领域内的技术。</p>
+<p>　<strong>问：在近几年的发展过程中，很多编程语言都逐渐消失，而Java语言却越来越火热起来，请问您其中的秘诀在哪里？</strong></p>
+<p>　　 JamesGosling：我认为，很多的编程语言在发展中并不是消失，而是转移到了其他领域中去，而Java的经久不衰，取决于Java的技术基础，如果你问编程师，为什么会选择Java，他会告诉你，Java提供了多种功能，提供了方便的平台，是个足以吸引人的工具。我认为，推动Java最主要的因素是网络，<strong>Java是以网络应用为基础的开发工具，这是它的强处</strong>。</p>
+<p>　　** 问：在传统计算机领域中，Java并不是十分大的平台，如台式PC。而在其他领域，如移 动领域，Java发展迅速，Java的未来发展方向是什么？**</p>
+<p>　　 JamesGosling：而在PC领域，我并不认为Java不够强大，在PC领域Java有很多应用，这是表面上看不到的，这主要是微软花了大力气避免用户看到，实际上Java应用很广泛，比如说人工智能游戏，在其他大的领域，Java更是应用广泛，例如在汽车，铁路机车上的即时控制系统，Java也广泛应用于军用方面。</p>
+<p>　　** 问：在中国有很多人使用手机，使用移动方案，您认为在更新的设备上使用J2ME有什么看法？**</p>
+<p>　　 JamesGosling：J2ME的规格在不断地进化，但是我们的规划过程主要是推动力是手机性能不断地增长。在两年前，当时手机比今天的性能要差得远。我拿的手机是一个诺基亚的手机，它有16兆的存储记忆，在几年之前我们会认为16兆只能在一个很强大的桌面机上实现，所以我们现在用手机可以做的工作现在变得越来越有趣，这个领域有非常光明、非常令人振奋的前景。</p>
+<p>　　** 问：大家都敬称您为Java之父，您能不能跟大家分享一下你在Java事业中最深的感受是什么？**</p>
+<p>　　 JamesGosling：当看到Java的客户通过Java完成了很多神奇的工作，像看到夏威夷火山上的观测台使用Java控制望远镜，看到荷兰健康医疗组织使用Java解决了保护隐私问题等等，那真是一种奇妙的感觉。<br>　**　问：Sun一直称由Sun开发的web服务是最好的，能不能总结一下其特性，为什么这样认为。Sun在解决和微软的web组互操作上程度如何，Sun的web服务进展怎样？**</p>
+<p>　　JamesGosling：有太多的东西可以确定Java的优势，我认为其最大的优势在于，Java是集成了许多人努力而创建的强有力的工具，可以提供很多功能。Java满足网络服务标准，具有很强的安全性。Sun花了很大的力气在解决和微软的互操作性上，遵循国际网络业的标准与微软工具进行交流，开发了大量相关工具。微软是一个很难合作的公司，在微软的字典里似乎没有合作二字，Sun花了很大的力气去遵循微软标准，扩大互操作性。而Sun的web服务未来将向扩大web应用能力，扩大通用性和边缘应用上发展。</p>
+<p>　**　问：IBM与BEA在很多方面是Sun的合作伙伴，同时，在web服务上成绩也是名列前茅，Sun是如何看待与IBM和BEA等厂商的关系的，Sun认为自己的优势在哪里？**</p>
+<p>　　JamesGosling：Sun竞争依靠的是好的产品，Sun认为的是，市场越大就有更大的机会赚钱，Sun认为应该与像IBM，BEA等厂商合作共同开发市场，而不求垄断市场，打个比方来说，市场就像是一张饼，是一张小饼分走大的一块还是一张大饼分走小的一块。Sun的经营模式是致力于扩大市场，我认为这胜过微软的垄断市场策略。</p>
+<p>　　<strong>问：你是否有过有关职业病的问题？现在好了吗？</strong></p>
+<p>　　JamesGosling：我有各种各样的职业病了，就是高度劳累的职业病。我的双手都有职业病的各种症状，但这种病实际上并不是很痛苦，只是你的神经会有一些麻木，可能不会有感觉。拿个刀子把手指砍下去可能你都不会知道，这种感觉非常可怕。如果你要坐在桌前，16个小时要是不停地在敲键盘，会有很大的损害，你一定要注意身体。16个小时工作绝不是好做法。</p>
+<p>　　JamesGosling是Sun的副总裁，Sun软件部CTO及Sun实验室主任。他曾创建了卫星数据拦截系统，Unix的多处理器版本，编译器，邮件系统和视窗管理器等。他还创建了WYSIWYG所见即所得测试编译器。早期，JamesGosling参与了Java编程语言的研究，完成了Java技术的原始编译器和虚拟机，因此以Java技术之父闻名于世。</p>
+
       
 
       
@@ -242,7 +258,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        			<a href="/categories/人物访谈//" class="article-tag-list-link color5">人物访谈</a>
         		</li>
       		
 		</ul>
@@ -297,14 +313,14 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E4%B8%BE%E4%BE%8B/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/04/21/java%E4%B9%8B%E7%88%B6JamesGosling%E8%AE%BF%E8%B0%88/" alt="微信分享二维码">
     </div>
 </div>
 <div class="page-modal qq-share js-qq-box">
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到QQ</p>
     <div class="qq-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E9%93%BE%E8%A1%A8%E4%B8%BE%E4%BE%8B/" alt="QQ分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/04/21/java%E4%B9%8B%E7%88%B6JamesGosling%E8%AE%BF%E8%B0%88/" alt="QQ分享二维码">
     </div>
 </div>
 
@@ -319,18 +335,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/01/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数据结构概述
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/01/19/%E5%8A%A8%E6%80%81%E6%9E%84%E9%80%A0%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%EF%BC%88%E9%93%BE%E8%A1%A8%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">动态构造学生信息系统（链表）</div>
+    <a href="/2021/04/21/%E5%A0%86%E6%8E%92%E5%BA%8F%E5%8F%8A%E5%85%B6%E4%BC%98%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">堆排序及其优化</div>
       <i class="icon-circle-right"></i>
     </a>
   
