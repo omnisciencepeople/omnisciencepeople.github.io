@@ -15,10 +15,12 @@
 <meta property="og:site_name" content="Happy">
 <meta property="og:description" content="汇编原理基础1">
 <meta property="og:locale">
+<meta property="og:image" content="https://username.github.io/2021/04/29/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/1.png">
 <meta property="article:published_time" content="2021-04-29T13:00:09.000Z">
-<meta property="article:modified_time" content="2021-04-29T14:39:10.692Z">
+<meta property="article:modified_time" content="2021-04-30T00:07:26.686Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://username.github.io/2021/04/29/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Happy" type="application/atom+xml">
   
@@ -206,9 +208,18 @@
 
 <h3 id="机器语言"><a href="#机器语言" class="headerlink" title="机器语言"></a>机器语言</h3><p>机器指令的集合，计算机只能识别执行机器语言；</p>
 <h3 id="汇编语言"><a href="#汇编语言" class="headerlink" title="汇编语言"></a>汇编语言</h3><p>由三部分组成:<br>汇编指令（机器语言的助记符，汇编语言的主体，决定了汇编语言的特性）<br>伪指令（编译器执行）<br>其他符号（编译器识别）</p>
-<h3 id="汇编语言与机器语言的联系"><a href="#汇编语言与机器语言的联系" class="headerlink" title="汇编语言与机器语言的联系"></a>汇编语言与机器语言的联系</h3><p>程序员—汇编语言—&gt;编译器—&gt;机器语言—计算机</p>
+<h3 id="如何将汇编语言转换为机器语言"><a href="#如何将汇编语言转换为机器语言" class="headerlink" title="如何将汇编语言转换为机器语言"></a>如何将汇编语言转换为机器语言</h3><p>程序员—汇编语言—&gt;编译器—&gt;机器语言—计算机</p>
 <p>高级语言转化成机器语言：<br><strong>高级语言源程序</strong>经过<strong>预处理</strong>和<strong>编译</strong>生成相应的<strong>汇编语言程序</strong>，由<strong>汇编程序</strong>将汇编语言程序转化为<strong>可重定位的机器语言目标代码文件</strong>，最后由<strong>链接器</strong>将可重定位的机器语言目标代码文件及库例程（系统对外提供功能接口的集合）链接起来，生成<strong>计算机可执行的目标文件</strong>。<br>可重定位指的是可以重新定位的；<br>重定位指将程序逻辑地址空间转换为物理地址空间的过程；<br>我们在写程序时用的是逻辑地址空间，但在运行时是货真价实的物理地址空间；<br>操作系统给程序分配的内存空间的起始位置是不确定的，换句话说，程序在运行时的实际物理地址<br>空间的起始位置是不确定的，所以不能在编译时将实际地址写死，否则如果编译时写死的起始位置<br>和实际运行的物理地址空间的起始位置不同，程序就会出现问题；</p>
-<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3>
+<p>Java源程序转化为机器语言程序：<br>java源程序(.java)—&gt;编译器—&gt;与平台无关的中间字节码文件（.class）—&gt;特定的JVM—&gt;特定的字节码解释程序（机器语言程序)—&gt;特定的操作系统执行</p>
+<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>主要由运算器、控制器组成，还包括一些高速缓存存储器；<br>CPU 为计算机的核心部分，控制着计算机的运行，并进行运算；<br>要让CPU工作，就必须提供指令（做什么）和数据（对谁做）；</p>
+<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><p>CPU中存储数据的器件<br>一个CPU可能有多个寄存器，寄存器被称为零级缓存，与高级缓存和二级缓存相比是更接近CPU的缓存；</p>
+<h3 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h3><p>被划分为多个存储单元，每个内存单元从0开始顺序编号；<br>显存：显卡中的内存，只有单独一块显卡是无法正常工作的；将数据存入到显存中，显卡中存在一个图形处理单元GPU会将显存中的数据读取出来并映射到屏幕上；一般GPU的速度大于CPU </p>
+<h3 id="指令和数据"><a href="#指令和数据" class="headerlink" title="指令和数据"></a>指令和数据</h3><p>存放于存储器（内存）中<br>在PC中，内存作用仅次于CPU,离开内存,性能再好的CPU也无法工作，就好比方性能再好的汽车也不能没有轮胎<br>硬盘与内存不同，CPU可直接处理内存上的数据，但无法直接处理硬盘上的数据，必须将硬盘中的数据加载到内存中，CPU才能处理；</p>
+<h3 id="CPU-如何对数据进行读写？"><a href="#CPU-如何对数据进行读写？" class="headerlink" title="CPU 如何对数据进行读写？"></a>CPU 如何对数据进行读写？</h3><h4 id="CPU要想对内存中的数据进行读写，必须与外部器件（通常为芯片）进行三类信息的交互"><a href="#CPU要想对内存中的数据进行读写，必须与外部器件（通常为芯片）进行三类信息的交互" class="headerlink" title="CPU要想对内存中的数据进行读写，必须与外部器件（通常为芯片）进行三类信息的交互"></a>CPU要想对内存中的数据进行读写，必须与外部器件（通常为芯片）进行三类信息的交互</h4><p>要进行读或者写的存储单元的位置（地址信息）<br>器件的选择、读或者写命令（控制信息）<br>要读出或写入的数据（数据信息）</p>
+<h4 id="CPU-如何将地址信息、数据信息、控制信息传输给存储器芯片？"><a href="#CPU-如何将地址信息、数据信息、控制信息传输给存储器芯片？" class="headerlink" title="CPU 如何将地址信息、数据信息、控制信息传输给存储器芯片？"></a>CPU 如何将地址信息、数据信息、控制信息传输给存储器芯片？</h4><p>电子计算机只能处理传输电信号，电信号要用导线传输<br>在计算机中由专门连接CPU和其他芯片的导线，这类导线称为总线；<br>总线<br>物理上为一根根导线的集合<br>逻辑上分为<br>地址总线（传输地址信息）<br>数据总线（传输数据总线）<br>控制总线（传输控制信息）</p>
+<h4 id="以读为例"><a href="#以读为例" class="headerlink" title="以读为例"></a>以读为例</h4><img src="/2021/04/29/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/1.png" class="">
+
+
       
 
       
@@ -359,7 +370,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E8%AF%AD%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">机器语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">汇编语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B8%8E%E6%9C%BA%E5%99%A8%E8%AF%AD%E8%A8%80%E7%9A%84%E8%81%94%E7%B3%BB"><span class="toc-number">3.</span> <span class="toc-text">汇编语言与机器语言的联系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">寄存器</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E8%AF%AD%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">机器语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">汇编语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%B0%86%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%9C%BA%E5%99%A8%E8%AF%AD%E8%A8%80"><span class="toc-number">3.</span> <span class="toc-text">如何将汇编语言转换为机器语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU"><span class="toc-number">4.</span> <span class="toc-text">CPU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">6.</span> <span class="toc-text">存储器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%92%8C%E6%95%B0%E6%8D%AE"><span class="toc-number">7.</span> <span class="toc-text">指令和数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU-%E5%A6%82%E4%BD%95%E5%AF%B9%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E8%AF%BB%E5%86%99%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">CPU 如何对数据进行读写？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CPU%E8%A6%81%E6%83%B3%E5%AF%B9%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E8%AF%BB%E5%86%99%EF%BC%8C%E5%BF%85%E9%A1%BB%E4%B8%8E%E5%A4%96%E9%83%A8%E5%99%A8%E4%BB%B6%EF%BC%88%E9%80%9A%E5%B8%B8%E4%B8%BA%E8%8A%AF%E7%89%87%EF%BC%89%E8%BF%9B%E8%A1%8C%E4%B8%89%E7%B1%BB%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BA%A4%E4%BA%92"><span class="toc-number">8.1.</span> <span class="toc-text">CPU要想对内存中的数据进行读写，必须与外部器件（通常为芯片）进行三类信息的交互</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CPU-%E5%A6%82%E4%BD%95%E5%B0%86%E5%9C%B0%E5%9D%80%E4%BF%A1%E6%81%AF%E3%80%81%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF%E3%80%81%E6%8E%A7%E5%88%B6%E4%BF%A1%E6%81%AF%E4%BC%A0%E8%BE%93%E7%BB%99%E5%AD%98%E5%82%A8%E5%99%A8%E8%8A%AF%E7%89%87%EF%BC%9F"><span class="toc-number">8.2.</span> <span class="toc-text">CPU 如何将地址信息、数据信息、控制信息传输给存储器芯片？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A5%E8%AF%BB%E4%B8%BA%E4%BE%8B"><span class="toc-number">8.3.</span> <span class="toc-text">以读为例</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
