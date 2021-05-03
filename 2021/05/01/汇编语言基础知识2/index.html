@@ -8,13 +8,15 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>汇编语言基础知识2 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="汇编原理基础知识2">
+<meta property="og:type" content="article">
 <meta property="og:title" content="汇编语言基础知识2">
 <meta property="og:url" content="https://username.github.io/2021/05/01/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862/index.html">
 <meta property="og:site_name" content="Happy">
+<meta property="og:description" content="汇编原理基础知识2">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-05-01T14:09:45.000Z">
-<meta property="article:modified_time" content="2021-05-01T14:09:45.254Z">
+<meta property="article:modified_time" content="2021-05-03T03:38:17.686Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -199,7 +201,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>汇编原理基础知识2</p>
+<a id="more"></a>
+
+<h2 id="什么是内存地址空间？"><a href="#什么是内存地址空间？" class="headerlink" title="什么是内存地址空间？"></a>什么是内存地址空间？</h2><p>一个CPU的地址总线宽度为10，那么可以寻址1024个存储单元，这1024个可以寻址的存储单元就构成了这个CPU的内存地址空间；</p>
+<h3 id="主板"><a href="#主板" class="headerlink" title="主板"></a>主板</h3><p>在每一台PC机中都有一个主板，主板上有核心器件和一些主要器件，这些器件通过总线相连；</p>
+<h3 id="接口卡"><a href="#接口卡" class="headerlink" title="接口卡"></a>接口卡</h3><p>计算机中所有可用程序控制其工作的设备必须受到CPU的控制；<br>CPU对外部设备不能直接进行控制如显示器、音响、打印机等。直接控制这些设备的是插在扩展插槽上的接口卡；<br>如控制路径：<br>CPU—&gt;显卡—&gt;显示器<br>CPU—&gt;网卡—&gt;网线<br>CPU—&gt;声卡—&gt;音箱<br>CPU—&gt;USB接口—&gt;打印机</p>
+<h3 id="各类存储器芯片"><a href="#各类存储器芯片" class="headerlink" title="各类存储器芯片"></a>各类存储器芯片</h3><p>从读写属性分为两类： RAM(随机存储器)和ROM(只读存储器)<br>从功能和连接上分为：RAM（随机存储器，一般由两部分组成：装在主板上的RAM和插在扩展插槽上的RAM）、装有BIOS的ROM、接口卡的RA</p>
+<p>M</p>
+<p>内存就是一个RAM（断电数据遗失）<br>ROM（只读，数据永久保存）</p>
+<h4 id="装有BIOS的ROM"><a href="#装有BIOS的ROM" class="headerlink" title="装有BIOS的ROM"></a>装有BIOS的ROM</h4><p>BIOS指的是Basic Input/Output System,基本输入输出系统；<br>BIOS是由主板和各类接口卡（如显卡、网卡）厂商提供的软件系统，通过它利用该硬件设备进行最<br>基本的输入输出。在主板和某些接口卡上插有存储相应BIOS的ROM；</p>
+<h3 id="上述那些存储器在物理上是独立的的器件，但有以下两个共同点"><a href="#上述那些存储器在物理上是独立的的器件，但有以下两个共同点" class="headerlink" title="上述那些存储器在物理上是独立的的器件，但有以下两个共同点"></a>上述那些存储器在物理上是独立的的器件，但有以下两个共同点</h3><p>都和CPU的总线相连；<br>CPU对它们进行读或写的时候都通过控制线发出内存读写命令；</p>
+<p><strong>这就是说，CPU在操控它们的时候，把他们当作内存来看待，把他们总的看做一个由若干个存储<br>单元构成的逻辑存储器，这个逻辑存储器就是我们所说的内存地址空间</strong></p>
+<p>注意：<br>所有物理存储器被看作是一个由若干个存储单元组成的逻辑存储器；<br>每个物理存储器在这个逻辑存储器只占有一个地址段即一段地址空间<br>CPU在这段地址空间中读写数据，实际上就是在相应的物理存储器读写数据；<br>不同计算机系统的内存地址空间的分配情况是不同的；</p>
+<h2 id="最终运行程序的是CPU，不论我们进行何种编程，要学会从CPU角度思考问题"><a href="#最终运行程序的是CPU，不论我们进行何种编程，要学会从CPU角度思考问题" class="headerlink" title="最终运行程序的是CPU，不论我们进行何种编程，要学会从CPU角度思考问题"></a>最终运行程序的是CPU，不论我们进行何种编程，要学会从CPU角度思考问题</h2>
       
 
       
@@ -239,6 +254,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/汇编原理//" class="article-tag-list-link color5">汇编原理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -348,7 +374,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录不存在
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是内存地址空间？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%9D%BF"><span class="toc-number">1.1.</span> <span class="toc-text">主板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E5%8D%A1"><span class="toc-number">1.2.</span> <span class="toc-text">接口卡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%84%E7%B1%BB%E5%AD%98%E5%82%A8%E5%99%A8%E8%8A%AF%E7%89%87"><span class="toc-number">1.3.</span> <span class="toc-text">各类存储器芯片</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A3%85%E6%9C%89BIOS%E7%9A%84ROM"><span class="toc-number">1.3.1.</span> <span class="toc-text">装有BIOS的ROM</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E8%BF%B0%E9%82%A3%E4%BA%9B%E5%AD%98%E5%82%A8%E5%99%A8%E5%9C%A8%E7%89%A9%E7%90%86%E4%B8%8A%E6%98%AF%E7%8B%AC%E7%AB%8B%E7%9A%84%E7%9A%84%E5%99%A8%E4%BB%B6%EF%BC%8C%E4%BD%86%E6%9C%89%E4%BB%A5%E4%B8%8B%E4%B8%A4%E4%B8%AA%E5%85%B1%E5%90%8C%E7%82%B9"><span class="toc-number">1.4.</span> <span class="toc-text">上述那些存储器在物理上是独立的的器件，但有以下两个共同点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%98%AFCPU%EF%BC%8C%E4%B8%8D%E8%AE%BA%E6%88%91%E4%BB%AC%E8%BF%9B%E8%A1%8C%E4%BD%95%E7%A7%8D%E7%BC%96%E7%A8%8B%EF%BC%8C%E8%A6%81%E5%AD%A6%E4%BC%9A%E4%BB%8ECPU%E8%A7%92%E5%BA%A6%E6%80%9D%E8%80%83%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">最终运行程序的是CPU，不论我们进行何种编程，要学会从CPU角度思考问题</span></a></li></ol>
                     </div>
                 </span>
             </div>
