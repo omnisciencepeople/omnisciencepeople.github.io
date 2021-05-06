@@ -8,15 +8,19 @@
   <link rel="dns-prefetch" href="https://username.github.io">
   <title>汇编语言之寄存器2 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="汇编语言之寄存器">
+<meta property="og:type" content="article">
 <meta property="og:title" content="汇编语言之寄存器2">
 <meta property="og:url" content="https://username.github.io/2021/05/05/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A82/index.html">
 <meta property="og:site_name" content="Happy">
+<meta property="og:description" content="汇编语言之寄存器">
 <meta property="og:locale">
+<meta property="og:image" content="https://username.github.io/2021/05/05/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A82/1.png">
 <meta property="article:published_time" content="2021-05-05T14:44:21.000Z">
-<meta property="article:modified_time" content="2021-05-05T14:44:21.253Z">
+<meta property="article:modified_time" content="2021-05-06T13:11:47.954Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://username.github.io/2021/05/05/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A82/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Happy" type="application/atom+xml">
   
@@ -70,7 +74,7 @@
 			</ul>
 		</nav>
                           <nav>
-                              总文章数 136
+                              总文章数 138
                                            </nav>
 		<nav class="header-smart-menu">
     		
@@ -199,7 +203,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>汇编语言之寄存器</p>
+<a id="more"></a>
+<h3 id="16位结构描述了CPU具有以下几个特性"><a href="#16位结构描述了CPU具有以下几个特性" class="headerlink" title="16位结构描述了CPU具有以下几个特性"></a>16位结构描述了CPU具有以下几个特性</h3><p>运算器一次最多可以处理16位数据<br>寄存器的宽度为16位<br>寄存器和运算器之间的通路为16位<br>8086PC机有20根地址总线，可传送20位地址，寻址能力为1M<br>8086内部为16位结构，它只能传送16位的地址，表现出来的寻址能力为64KB</p>
+<h3 id="8086CPU如何将内部16位数据转换成20位的地址？"><a href="#8086CPU如何将内部16位数据转换成20位的地址？" class="headerlink" title="8086CPU如何将内部16位数据转换成20位的地址？"></a>8086CPU如何将内部16位数据转换成20位的地址？</h3><p>8086CPU采用的是一种在内部用两个16位地址合成的方法来形成一个20位的物理地址</p>
+<h3 id="8086CPU给出物理地址的相关器件的逻辑结构"><a href="#8086CPU给出物理地址的相关器件的逻辑结构" class="headerlink" title="8086CPU给出物理地址的相关器件的逻辑结构"></a>8086CPU给出物理地址的相关器件的逻辑结构</h3><p><img src="/2021/05/05/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A82/1.png" class="" title="% }&lt;br&gt;8086CPU读出内存发生以下事情：&lt;br&gt;1.CPU的相关部件提供了两个16位的地址，一个称为段地址，一个称为偏移地址；&lt;br&gt;2.段地址和偏移地址通过内部总线送入地址加法器&lt;br&gt;3.地址加法器将两个16位地址和合成一个20位地址&lt;br&gt;4.地址总线通过内部总线将20位物理地址送入输入输出控制电路&lt;br&gt;5.输入输出控制电路将20位物理地址送入地址总线&lt;br&gt;6.20位物理地址被地址总线送入内存&lt;br&gt;7.&lt;&#x2F;p&gt; &lt;h3 id&#x3D;地址加法器合成物理地址的方法&gt;&lt;a href&#x3D;#地址加法器合成物理地址的方法 class&#x3D;headerlink title&#x3D;地址加法器合成物理地址的方法&gt;&lt;&#x2F;a&gt;地址加法器合成物理地址的方法&lt;&#x2F;h3&gt;&lt;p&gt;*&lt;em&gt;物理地址&#x3D;段地址 * 16+偏移地址*&lt;&#x2F;em&gt;&lt;br&gt;&lt;strong&gt;物理地址&#x3D;基础地址+偏移地址&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt; &lt;h3 id&#x3D;段的概念&gt;&lt;a href&#x3D;#段的概念 class&#x3D;headerlink title&#x3D;段的概念&gt;&lt;&#x2F;a&gt;段的概念&lt;&#x2F;h3&gt;&lt;p&gt;内存并没有分段，段的划分来自于CPU；&lt;br&gt;由于8086CPU用” 段地址 * 16+偏移地址&#x3D;物理地址“的方式给出内存的内存单元地址，使得我们为你可以用分段的方式管理内存；&lt;br&gt;在编程时，我们可以根据需要将若干地址连续的内存单元看成一个段，用段地址 * 16定位段的起始&lt;br&gt;地址，用偏移地址定位段中的内存单元；&lt;br&gt;一个段的起始地址必为16的倍数；&lt;br&gt;偏移地址为16位，故一个段最大长度为64KB；&lt;br&gt;可以根据需要将地址连续、起始地址为16倍数的一组内存单元定义为一个段；&lt;&#x2F;p&gt; &lt;p&gt;COU访问内存单元时，必须向内存提供内存单元的物理地址；&lt;br&gt;8086CPU用段地址和偏移地址移位相加的方法合成物理地址；&lt;br&gt;CPU可以用不同的段地址和偏移地址形成一个物理地址；&lt;br&gt;给定段地址为1000H，用偏移地址寻址，则寻址范围为10000H~1FFFFFH；&lt;br&gt;在8086PC机中存储单元地址用两个元素描述：段地址和偏移地址；&lt;&#x2F;p&gt; &lt;h3 id&#x3D;”数据在21F60H内存单元中“对于8086CPU有两种描述&gt;&lt;a href&#x3D;#”数据在21F60H内存单元中“对于8086CPU有两种描述 class&#x3D;headerlink title&#x3D;”数据在21F60H内存单元中“对于8086CPU有两种描述&gt;&lt;&#x2F;a&gt;”数据在21F60H内存单元中“对于8086CPU有两种描述&lt;&#x2F;h3&gt;&lt;p&gt;1.此数据存于2000：1F60内存单元中（常用）；&lt;br&gt;2.此数据存于内存2000段中的1F60H单元中；&lt;&#x2F;p&gt;">
       
 
       
@@ -239,6 +247,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/汇编原理//" class="article-tag-list-link color5">汇编原理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -310,6 +329,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2021/05/06/html%E4%B9%8B%E5%9D%97%E5%85%83%E7%B4%A0%E5%92%8C%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          html之块元素和行内元素
+        
+      </div>
+    </a>
+  
   
     <a href="/2021/05/04/html%E7%AE%80%E5%8D%95%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">html简单程序框架</div>
@@ -339,7 +367,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录不存在
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#16%E4%BD%8D%E7%BB%93%E6%9E%84%E6%8F%8F%E8%BF%B0%E4%BA%86CPU%E5%85%B7%E6%9C%89%E4%BB%A5%E4%B8%8B%E5%87%A0%E4%B8%AA%E7%89%B9%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">16位结构描述了CPU具有以下几个特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8086CPU%E5%A6%82%E4%BD%95%E5%B0%86%E5%86%85%E9%83%A816%E4%BD%8D%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2%E6%88%9020%E4%BD%8D%E7%9A%84%E5%9C%B0%E5%9D%80%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">8086CPU如何将内部16位数据转换成20位的地址？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8086CPU%E7%BB%99%E5%87%BA%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E7%9A%84%E7%9B%B8%E5%85%B3%E5%99%A8%E4%BB%B6%E7%9A%84%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">8086CPU给出物理地址的相关器件的逻辑结构</span></a></li></ol>
                     </div>
                 </span>
             </div>
