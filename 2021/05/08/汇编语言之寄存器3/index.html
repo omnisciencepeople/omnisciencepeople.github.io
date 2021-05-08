@@ -15,10 +15,12 @@
 <meta property="og:site_name" content="Happy">
 <meta property="og:description" content="汇编语言之寄存器3">
 <meta property="og:locale">
+<meta property="og:image" content="https://username.github.io/2021/05/08/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A83/1.png">
 <meta property="article:published_time" content="2021-05-08T01:11:30.000Z">
-<meta property="article:modified_time" content="2021-05-08T01:12:33.633Z">
+<meta property="article:modified_time" content="2021-05-08T04:12:42.813Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://username.github.io/2021/05/08/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A83/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Happy" type="application/atom+xml">
   
@@ -203,6 +205,19 @@
       
         <p>汇编语言之寄存器3</p>
 <a id="more"></a>
+
+<h3 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h3><p>8086CPU在访问内存时有相关部件提供内存单元段地址和偏移地址，送入地址加法器中合成物理地<br>址，段地址在8086CPU中的段寄存器中存放，8086CPU有四个段寄存器CS、DS、SS、ES；<br>CS和IP是8086CPU中两个最关键的寄存器，它们指示了当前读取指令的地址；<br>CP为代码段寄存器，IP为指令指针寄存器；<br><strong>8086PC机中，任意时刻，CPU将CS:IP指向的内容当作指令执行；</strong></p>
+<img src="/2021/05/08/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A83/1.png" class="">
+<h4 id="8086CPU的工作过程简要描述"><a href="#8086CPU的工作过程简要描述" class="headerlink" title="8086CPU的工作过程简要描述"></a>8086CPU的工作过程简要描述</h4><p>1.从CS:IP指向的内存单元读取指令，读取的指令进入到指令缓冲器<br>2.IP=IP+所读取指令的长度，从而进入下一条指令<br>3.执行指令。转到步骤一，重复这个过程</p>
+<h4 id="8086CPU加电启动或复位（CPU刚开始工作）时"><a href="#8086CPU加电启动或复位（CPU刚开始工作）时" class="headerlink" title="8086CPU加电启动或复位（CPU刚开始工作）时"></a>8086CPU加电启动或复位（CPU刚开始工作）时</h4><p>CS:IP =FFFF:0000 即在8086PC机刚启动时，CPU是从FFFF0H这个内存单元读取指令开始执行的</p>
+<h4 id="在任何时候，CPU将CS-IP指向的内存单元中的内容看作指令，因为在任何时候，CPU将CS、IP中的内容看作指令的段地址和偏移地址，用他们合成内存单元的物理地址，然后到内存中读取指令码"><a href="#在任何时候，CPU将CS-IP指向的内存单元中的内容看作指令，因为在任何时候，CPU将CS、IP中的内容看作指令的段地址和偏移地址，用他们合成内存单元的物理地址，然后到内存中读取指令码" class="headerlink" title="在任何时候，CPU将CS:IP指向的内存单元中的内容看作指令，因为在任何时候，CPU将CS、IP中的内容看作指令的段地址和偏移地址，用他们合成内存单元的物理地址，然后到内存中读取指令码"></a>在任何时候，CPU将CS:IP指向的内存单元中的内容看作指令，因为在任何时候，CPU将CS、IP中的内容看作指令的段地址和偏移地址，用他们合成内存单元的物理地址，然后到内存中读取指令码</h4><h3 id="修改CS和IP的指令"><a href="#修改CS和IP的指令" class="headerlink" title="修改CS和IP的指令"></a>修改CS和IP的指令</h3><p>程序员可以用指令读写的部件只有寄存器，程序员可以通过改变寄存器中的内容实现对CPU的控制；<br>CPU从何处执行指令是由于CS、IP的内容决定的，可以通过改变CS、IP中的内容来控制CPU执行目标指令；<br>MOV指令被称为传送指令，但用MOV指令无法改变CS和IP的内容，能够改变CS、IP内容的只有转移指令。<br>”JMP 段地址：偏移地址“<br>JMP 2AE3:3，该指令执行后CS=2AE3H,IP=0003H;CPU将从2AE33H处读取指令；<br><strong>”JMP 段地址：偏移地址“指令功能：用指定的段地址来修改CS，指定的偏移地址修改IP；</strong><br>若仅仅修改IP的内容，则须用”JMP 某一合法寄存器“；<br><strong>“JMP 某一合法的寄存器”功能：用寄存器中的值修改IP；</strong><br>代码段：将长度为N（N&lt;=64KB）的一组代码存放在一组连续的，起始地址为16倍数的<br>内存单元，我们认为定义了一个代码段；</p>
+<h3 id="常见的debug指令（待补充）"><a href="#常见的debug指令（待补充）" class="headerlink" title="常见的debug指令（待补充）"></a>常见的debug指令（待补充）</h3><h4 id="debug-r查看修改寄存器内容"><a href="#debug-r查看修改寄存器内容" class="headerlink" title="debug -r查看修改寄存器内容"></a>debug -r查看修改寄存器内容</h4><p>debug -r查看寄存器内容<br>debug -r ax 修改寄存器ax的内容</p>
+<h4 id="debug-d-查看内存中的内容（只会显示128个内存单元的内容）"><a href="#debug-d-查看内存中的内容（只会显示128个内存单元的内容）" class="headerlink" title="debug -d 查看内存中的内容（只会显示128个内存单元的内容）"></a>debug -d 查看内存中的内容（只会显示128个内存单元的内容）</h4><p>debug -d查看内存中的内容<br>debug -d 1000：0 查看从10000H开始的内存单元的内容<br>debug -d1000：0 9 查看10000H到10009H内存单元的内容</p>
+<h4 id="debug-e修改内存中的内容"><a href="#debug-e修改内存中的内容" class="headerlink" title="debug -e修改内存中的内容"></a>debug -e修改内存中的内容</h4><p>debug -e 1000：0 1 2 3 4 5 6修改了内存中10000H到10006H的内容<br>debug -e 1000：0 修改内容 空格表示下一个，enter表示结束</p>
+<h4 id="debug-u将内存中的机器指令转换为汇编指令"><a href="#debug-u将内存中的机器指令转换为汇编指令" class="headerlink" title="debug -u将内存中的机器指令转换为汇编指令"></a>debug -u将内存中的机器指令转换为汇编指令</h4><p>debug -u 1000：0将内存中从10000H开始的存储单元中机器指令转化为汇编指令；<br>debug -u1000：0 9将内存中从10000H到10009H的内存单元中的机器指令转化为汇编指令；</p>
+<h4 id="debug-a以汇编语言的形式在内存中写入机器指令"><a href="#debug-a以汇编语言的形式在内存中写入机器指令" class="headerlink" title="debug -a以汇编语言的形式在内存中写入机器指令"></a>debug -a以汇编语言的形式在内存中写入机器指令</h4><p>debug -a1000：0以汇编语言的形式将指定的指令写入到从10000H开始的内存单元中；</p>
+<h4 id="debug-t执行一条机器指令"><a href="#debug-t执行一条机器指令" class="headerlink" title="debug -t执行一条机器指令"></a>debug -t执行一条机器指令</h4><p>debug -t 1000：0执行从10000H开始的内存单元中的指令内容；</p>
+
       
 
       
@@ -353,7 +368,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录不存在
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">段寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8086CPU%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B%E7%AE%80%E8%A6%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">8086CPU的工作过程简要描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8086CPU%E5%8A%A0%E7%94%B5%E5%90%AF%E5%8A%A8%E6%88%96%E5%A4%8D%E4%BD%8D%EF%BC%88CPU%E5%88%9A%E5%BC%80%E5%A7%8B%E5%B7%A5%E4%BD%9C%EF%BC%89%E6%97%B6"><span class="toc-number">1.2.</span> <span class="toc-text">8086CPU加电启动或复位（CPU刚开始工作）时</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E4%BB%BB%E4%BD%95%E6%97%B6%E5%80%99%EF%BC%8CCPU%E5%B0%86CS-IP%E6%8C%87%E5%90%91%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9%E7%9C%8B%E4%BD%9C%E6%8C%87%E4%BB%A4%EF%BC%8C%E5%9B%A0%E4%B8%BA%E5%9C%A8%E4%BB%BB%E4%BD%95%E6%97%B6%E5%80%99%EF%BC%8CCPU%E5%B0%86CS%E3%80%81IP%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9%E7%9C%8B%E4%BD%9C%E6%8C%87%E4%BB%A4%E7%9A%84%E6%AE%B5%E5%9C%B0%E5%9D%80%E5%92%8C%E5%81%8F%E7%A7%BB%E5%9C%B0%E5%9D%80%EF%BC%8C%E7%94%A8%E4%BB%96%E4%BB%AC%E5%90%88%E6%88%90%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E7%9A%84%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%EF%BC%8C%E7%84%B6%E5%90%8E%E5%88%B0%E5%86%85%E5%AD%98%E4%B8%AD%E8%AF%BB%E5%8F%96%E6%8C%87%E4%BB%A4%E7%A0%81"><span class="toc-number">1.3.</span> <span class="toc-text">在任何时候，CPU将CS:IP指向的内存单元中的内容看作指令，因为在任何时候，CPU将CS、IP中的内容看作指令的段地址和偏移地址，用他们合成内存单元的物理地址，然后到内存中读取指令码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9CS%E5%92%8CIP%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">修改CS和IP的指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84debug%E6%8C%87%E4%BB%A4%EF%BC%88%E5%BE%85%E8%A1%A5%E5%85%85%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">常见的debug指令（待补充）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#debug-r%E6%9F%A5%E7%9C%8B%E4%BF%AE%E6%94%B9%E5%AF%84%E5%AD%98%E5%99%A8%E5%86%85%E5%AE%B9"><span class="toc-number">3.1.</span> <span class="toc-text">debug -r查看修改寄存器内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#debug-d-%E6%9F%A5%E7%9C%8B%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%88%E5%8F%AA%E4%BC%9A%E6%98%BE%E7%A4%BA128%E4%B8%AA%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">debug -d 查看内存中的内容（只会显示128个内存单元的内容）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#debug-e%E4%BF%AE%E6%94%B9%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">3.3.</span> <span class="toc-text">debug -e修改内存中的内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#debug-u%E5%B0%86%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="toc-number">3.4.</span> <span class="toc-text">debug -u将内存中的机器指令转换为汇编指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#debug-a%E4%BB%A5%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%9A%84%E5%BD%A2%E5%BC%8F%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%86%99%E5%85%A5%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">3.5.</span> <span class="toc-text">debug -a以汇编语言的形式在内存中写入机器指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#debug-t%E6%89%A7%E8%A1%8C%E4%B8%80%E6%9D%A1%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">3.6.</span> <span class="toc-text">debug -t执行一条机器指令</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
