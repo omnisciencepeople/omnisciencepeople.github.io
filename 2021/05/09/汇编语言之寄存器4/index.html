@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://username.github.io">
-  <title>计数排序C++版 | Happy</title>
+  <title>汇编语言之寄存器4 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="计数排序C++版">
+  <meta name="description" content="汇编语言之寄存器4">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计数排序C++版">
-<meta property="og:url" content="https://username.github.io/2021/04/12/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8FC-%E7%89%88/index.html">
+<meta property="og:title" content="汇编语言之寄存器4">
+<meta property="og:url" content="https://username.github.io/2021/05/09/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A84/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="计数排序C++版">
+<meta property="og:description" content="汇编语言之寄存器4">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-04-12T09:18:55.000Z">
-<meta property="article:modified_time" content="2021-04-16T10:45:26.406Z">
+<meta property="article:published_time" content="2021-05-09T12:10:50.000Z">
+<meta property="article:modified_time" content="2021-05-09T13:28:06.834Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -170,14 +170,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-计数排序C-版" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-汇编语言之寄存器4" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      计数排序C++版
+      汇编语言之寄存器4
     </h1>
   
 
@@ -193,17 +193,30 @@
 
 <!--显示阅读次数完毕-->
         
-        <a href="/2021/04/12/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8FC-%E7%89%88/" class="archive-article-date">
-  	<time datetime="2021-04-12T09:18:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-12</time>
+        <a href="/2021/05/09/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A84/" class="archive-article-date">
+  	<time datetime="2021-05-09T12:10:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>计数排序C++版</p>
+        <p>汇编语言之寄存器4</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include&lt;ctime&gt;</span><br><span class="line">#include&lt;cstdlib&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int findmax(int* arr,int len);</span><br><span class="line">int findmin(int* arr,int len);</span><br><span class="line">void print(int* arr,int len);</span><br><span class="line">void countsort(int*arr,int len);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    srand(time(0));</span><br><span class="line">    int* arr&#x3D;new int[20];</span><br><span class="line">    for(int i&#x3D;0;i&lt;20;i++)</span><br><span class="line">        arr[i]&#x3D;rand()%100;</span><br><span class="line">    print(arr,20);</span><br><span class="line">    countsort(arr,20);</span><br><span class="line">    print(arr,20);</span><br><span class="line">    delete[] arr;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">void print(int* arr,int len)</span><br><span class="line">&#123;</span><br><span class="line">    for(int i&#x3D;0;i&lt;len;i++)</span><br><span class="line">        cout&lt;&lt;arr[i]&lt;&lt;&quot; &quot;;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int findmax(int* arr,int len)</span><br><span class="line">&#123;</span><br><span class="line">    int max&#x3D;arr[0];</span><br><span class="line">    for(int i&#x3D;1;i&lt;len;i++)</span><br><span class="line">        if(max&lt;arr[i])</span><br><span class="line">           max&#x3D;arr[i];</span><br><span class="line">    return max;</span><br><span class="line">&#125;</span><br><span class="line">int findmin(int* arr,int len)</span><br><span class="line">&#123;</span><br><span class="line">    int min&#x3D;arr[0];</span><br><span class="line">    for(int i&#x3D;1;i&lt;len;i++)</span><br><span class="line">        if(min&gt;arr[i])</span><br><span class="line">           min&#x3D;arr[i];</span><br><span class="line">    return min;</span><br><span class="line">&#125;</span><br><span class="line">void countsort(int*arr,int len)</span><br><span class="line">&#123;</span><br><span class="line">    int length&#x3D;findmax(arr,20)-findmin(arr,20)+1;</span><br><span class="line">    int*counts&#x3D;new int[length]&#123;0&#125;;</span><br><span class="line">    int*result&#x3D;new int[len];</span><br><span class="line">    for(int i&#x3D;0;i&lt;len;i++)</span><br><span class="line">        counts[arr[i]-findmin(arr,20)]++;</span><br><span class="line">    for(int j&#x3D;1;j&lt;findmax(arr,20)-findmin(arr,20)+1;j++)</span><br><span class="line">        counts[j]&#x3D;counts[j]+counts[j-1];</span><br><span class="line">    for(int k&#x3D;len-1;k&gt;&#x3D;0;k--)</span><br><span class="line">        result[--counts[arr[k]-findmin(arr,20)]]&#x3D;arr[k];</span><br><span class="line">    for(int m&#x3D;0;m&lt;len;m++)</span><br><span class="line">        arr[m]&#x3D;result[m];</span><br><span class="line">    delete[] counts;</span><br><span class="line">    delete[] result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="字的存储"><a href="#字的存储" class="headerlink" title="字的存储"></a>字的存储</h3><p>8086CPU，用16位寄存器来存储一个字，高8位存放高位字节，低八位存放低位字节。<br>在内存中，由于内存单元为字节单元（一个内存单元存放一个字节），则一个字需要用两个地址连续的内存单元存储，字低位字节放在低地址单元，字高位字节存放于高地址单元。</p>
+<h4 id="字单元"><a href="#字单元" class="headerlink" title="字单元"></a>字单元</h4><p>字单元即存放一个字型数据（16位）的内存单元，由两个地址连续的内存单元构成，高地址单元存放字型数据高位字节，低地址单元存放字型数据的低位字节；<br>我们将起始地址为N的字单元称为N地址字单元；</p>
+<h3 id="DS和-address"><a href="#DS和-address" class="headerlink" title="DS和[address]"></a>DS和[address]</h3><p>8086CPU段寄存器CS、DS、ES、SS<br>CS：代码段寄存器，存放指令的段地址；<br>DS：数据段寄存器，存放数据的段地址；</p>
+<h4 id="以读取10000H单元的内容为例"><a href="#以读取10000H单元的内容为例" class="headerlink" title="以读取10000H单元的内容为例"></a>以读取10000H单元的内容为例</h4><p>MOV BX,1000H<br>MOV DS,BX<br>MOV AL,[0]</p>
+<p>MOV指令（传送指令）功能：<br>1.将数据传入寄存器；<br>2.将一个寄存器的内容传入到另一个寄存器<br>3.将一个内存单元的内容传入到寄存器中，必须指明从哪一个内存单元送入到哪一个寄存器；<br><strong>”MOV 寄存器，内存单元地址“，功能将内存单元的内容传入带寄存器中，寄存器通常用寄存器名来指明，内存单元则须用内存单元的地址指明；</strong></p>
+<h4 id="、、、"><a href="#、、、" class="headerlink" title="[、、、]"></a>[、、、]</h4><p>[、、、]表示一个内存单元；<br>[0] 0表示内存单元的偏移地址<br>只有一个偏移地址是无法定位一个内存单元的；<br>8086CPU在执行MOV AL,[0]这个指令时，会自动将DS中的内容当作内存单元的段地址；</p>
+<p>MOV DS,1000H这是错误的，由于8086CPU硬件设计的问题，8086CPU并不支持将数据直接送入到段寄存器的操作；</p>
+<h4 id="将AL中的数据送入到内存单元10000H中"><a href="#将AL中的数据送入到内存单元10000H中" class="headerlink" title="将AL中的数据送入到内存单元10000H中"></a>将AL中的数据送入到内存单元10000H中</h4><p>MOV BX,1000H<br>MOV DS,BX<br>MOV [0],AL<br><strong>将寄存器的内容传入到内存单元的指令格式：“MOV 内存单元地址，寄存器”</strong></p>
+<h3 id="字的传送"><a href="#字的传送" class="headerlink" title="字的传送"></a>字的传送</h3><p>8086CPU是16位结构，有16根数据线，所以一次最多可以传输16位数据，也就是说一次可以传输一个字，只要在MOV指令给出16位寄存器就可以进行16位数据的传送</p>
+<h4 id="例一"><a href="#例一" class="headerlink" title="例一"></a>例一</h4><p>MOV BX,1000H<br>MOV DS,BX<br>MOV AX,[0]     ;将1000:0处的字型数据送入AX，该字型数据的低八位字节存在1000:0处，高八位字节存放在1000:1中，指令执行时，低八位被送入AL中，高八位被送入AH中；<br>MOV [0],CX     ; 将CX中的数据送入1000:0处，CX中低八位在CL中，高八位在CH中，指令执行时，低八位被送入到低地址单元1000:0内存单元中，高八位被送入到高地址单元1000:1内存单元中；</p>
+<h3 id="MOV-、ADD、SUB指令"><a href="#MOV-、ADD、SUB指令" class="headerlink" title="MOV 、ADD、SUB指令"></a>MOV 、ADD、SUB指令</h3><h4 id="mov-指令格式"><a href="#mov-指令格式" class="headerlink" title="mov 指令格式"></a>mov 指令格式</h4><p>MOV 寄存器，数据<br>MOV 寄存器，寄存器<br>MOV 段寄存器，寄存器<br>MOV 寄存器，段寄存器<br>MOV 寄存器，内存单元<br>MOV 内存单元，寄存器</p>
+<h4 id="add指令格式"><a href="#add指令格式" class="headerlink" title="add指令格式"></a>add指令格式</h4><p>add  寄存器，数据<br>add 寄存器，寄存器<br>add 寄存器，内存单元<br>add 内存单元，寄存器</p>
+<h4 id="SUB指令格式"><a href="#SUB指令格式" class="headerlink" title="SUB指令格式"></a>SUB指令格式</h4><p>sub  寄存器，数据<br>sub 寄存器，寄存器<br>sub 寄存器，内存单元<br>sub 内存单元，寄存器</p>
+
       
 
       
@@ -248,7 +261,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/排序C//" class="article-tag-list-link color1">排序C++</a>
+        			<a href="/categories/汇编原理//" class="article-tag-list-link color5">汇编原理</a>
         		</li>
       		
 		</ul>
@@ -303,14 +316,14 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/04/12/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8FC-%E7%89%88/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/05/09/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A84/" alt="微信分享二维码">
     </div>
 </div>
 <div class="page-modal qq-share js-qq-box">
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到QQ</p>
     <div class="qq-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/04/12/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8FC-%E7%89%88/" alt="QQ分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/05/09/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A84/" alt="QQ分享二维码">
     </div>
 </div>
 
@@ -325,18 +338,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/04/12/%E6%B7%B1%E5%88%BB%E7%9A%84%E6%95%99%E8%AE%AD/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          深刻的教训
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/04/12/%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8FC-%E7%89%88/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">二分插入排序C++版</div>
+    <a href="/2021/05/08/%E6%A0%91%E4%B8%93%E9%A2%98%E4%B9%8BAVL/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">树专题之AVL</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -363,7 +367,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录不存在
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-number">1.</span> <span class="toc-text">字的存储</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E5%8D%95%E5%85%83"><span class="toc-number">1.1.</span> <span class="toc-text">字单元</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DS%E5%92%8C-address"><span class="toc-number">2.</span> <span class="toc-text">DS和[address]</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A5%E8%AF%BB%E5%8F%9610000H%E5%8D%95%E5%85%83%E7%9A%84%E5%86%85%E5%AE%B9%E4%B8%BA%E4%BE%8B"><span class="toc-number">2.1.</span> <span class="toc-text">以读取10000H单元的内容为例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E3%80%81%E3%80%81%E3%80%81"><span class="toc-number">2.2.</span> <span class="toc-text">[、、、]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86AL%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%81%E5%85%A5%E5%88%B0%E5%86%85%E5%AD%98%E5%8D%95%E5%85%8310000H%E4%B8%AD"><span class="toc-number">2.3.</span> <span class="toc-text">将AL中的数据送入到内存单元10000H中</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%9A%84%E4%BC%A0%E9%80%81"><span class="toc-number">3.</span> <span class="toc-text">字的传送</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E4%B8%80"><span class="toc-number">3.1.</span> <span class="toc-text">例一</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MOV-%E3%80%81ADD%E3%80%81SUB%E6%8C%87%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text">MOV 、ADD、SUB指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mov-%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-number">4.1.</span> <span class="toc-text">mov 指令格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#add%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-number">4.2.</span> <span class="toc-text">add指令格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SUB%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-number">4.3.</span> <span class="toc-text">SUB指令格式</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
