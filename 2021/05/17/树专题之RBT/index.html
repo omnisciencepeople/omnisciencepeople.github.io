@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://username.github.io/2021/05/17/%E6%A0%91%E4%B8%93%E9%A2%98%E4%B9%8BRBT/19.png">
 <meta property="og:image" content="https://username.github.io/2021/05/17/%E6%A0%91%E4%B8%93%E9%A2%98%E4%B9%8BRBT/20.png">
 <meta property="article:published_time" content="2021-05-17T14:00:13.000Z">
-<meta property="article:modified_time" content="2021-05-30T01:18:52.703Z">
+<meta property="article:modified_time" content="2021-05-31T03:36:50.024Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://username.github.io/2021/05/17/%E6%A0%91%E4%B8%93%E9%A2%98%E4%B9%8BRBT/1.png">
@@ -236,7 +236,7 @@
 <h3 id="有了AVL树，为什么还需要RBT？"><a href="#有了AVL树，为什么还需要RBT？" class="headerlink" title="有了AVL树，为什么还需要RBT？"></a>有了AVL树，为什么还需要RBT？</h3><p><strong>AVL树的实现比较复杂，而且插入删除性能差（旋转次数多），在实际应用中不如红黑树；</strong><br>红黑树应用非常广泛，如<strong>java中Treemap和Treeset</strong>、<strong>java8中的HashMap的底层实现用的红黑树（当链表长度&gt;8）性能有所提升</strong>、<strong>Linux底层的CFS进程调度算法中Vruntime利用RBT进行存储、I/O多路复用技术的epoll核心结构是红黑树+双向链表</strong><br><strong>RBT是BST和AVL的折中策略；</strong><br>注：<br>Linux内核主要实现两个调度算法，CFS（Complete Fair Schedule，完全公平调度）算法和实时调度算法。<br>CFS中进程的插入在红黑树右边，缓存红黑树最左边的节点；<br>CFS中的进程的选择，选择Vruntime中最小的那个进程，它对应的是红黑树最左边的叶子节点；<br>CFS中进程的的删除，按照红黑树删除，删除后更新调度信息，从RBT中选出一个最小的Vruntime值的节点，将它作为新的最左边的节点缓存起来；<br>I/O多路复用技术的Epoll支持高并发，采用事件驱动机制，Linux2.6版本才引入；</p>
 <h3 id="2-3-4树和红黑树的等价关系"><a href="#2-3-4树和红黑树的等价关系" class="headerlink" title="2-3-4树和红黑树的等价关系"></a>2-3-4树和红黑树的等价关系</h3><p>2-节点                      变为黑色<br>3-节点                     上黑下红<br>4-节点                     中黑上两边红<br>裂变状态                 中红上两边黑，新增节点为红色，如果为根节点则中间变为黑色</p>
 <h4 id="将上面的2-3-4变为红黑树"><a href="#将上面的2-3-4变为红黑树" class="headerlink" title="将上面的2-3-4变为红黑树"></a>将上面的2-3-4变为红黑树</h4><img src="/2021/05/17/%E6%A0%91%E4%B8%93%E9%A2%98%E4%B9%8BRBT/2.png" class="">
-<h2 id="RBT操作"><a href="#RBT操作" class="headerlink" title="RBT操作"></a>RBT操作</h2><p>1.销毁<br>2.遍历<br>3.求最大节点<br>4.求最小节点<br>5.求树深度<br>6.查找<br>7.插入<br>8.删除<br>9.旋转<br>10.打印<br><strong>其中销毁、遍历、求最大节点、求最小节点、求树深度、查找、旋转等操作与BST类似，我们重点说一下插入和删除操作；</strong></p>
+<h2 id="RBT操作"><a href="#RBT操作" class="headerlink" title="RBT操作"></a>RBT操作</h2><p>1.销毁<br>2.遍历（前序、中序、后序）<br>3.求最大节点<br>4.求最小节点<br>5.求树深度<br>6.查找（递归查找、非递归查找、插入时查找）<br>7.插入（插入、插入修正）<br>8.删除（删除、删除修正）<br>9.旋转（左旋、右旋）<br>10.打印（打印出具体红黑树）<br>11.求前驱节点<br>12.求后继节点<br><strong>其中销毁、遍历、求最大节点、求最小节点、求树深度、查找、旋转等操作与BST类似，我们重点说一下插入和删除操作；</strong></p>
 <h2 id="RBT插入"><a href="#RBT插入" class="headerlink" title="RBT插入"></a>RBT插入</h2><p>RBT的插入相对BST较为复杂；<br>RBT插入的节点颜色都为红色，以此保证性质4和性质5成立；<br>我们首先对节点进行辨认：</p>
 <img src="/2021/05/17/%E6%A0%91%E4%B8%93%E9%A2%98%E4%B9%8BRBT/8.png" class="">
 <p>接下来我们对RBT插入情况一一进行辨析：</p>
