@@ -5,13 +5,13 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://username.github.io">
+  <link rel="dns-prefetch" href="https://omnisciencepeople.github.io">
   <title>java之awt程序演示 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="awt程序演示">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java之awt程序演示">
-<meta property="og:url" content="https://username.github.io/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/index.html">
+<meta property="og:url" content="https://omnisciencepeople.github.io/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/index.html">
 <meta property="og:site_name" content="Happy">
 <meta property="og:description" content="awt程序演示">
 <meta property="og:locale">
@@ -212,6 +212,29 @@
 <h3 id="演示十一-内部类"><a href="#演示十一-内部类" class="headerlink" title="演示十一:内部类"></a>演示十一:内部类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.*;</span><br><span class="line">public class test14&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        T tf&#x3D;new T();</span><br><span class="line">        tf.launch();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class T</span><br><span class="line">&#123;</span><br><span class="line">    public TextField t1,t2,t3;</span><br><span class="line">  public void launch()</span><br><span class="line">  &#123;</span><br><span class="line">      t1&#x3D;new TextField(30);</span><br><span class="line">    t2&#x3D;new TextField(30);</span><br><span class="line">    t3&#x3D;new TextField(30);</span><br><span class="line">      Frame f&#x3D;new Frame(&quot;计算器&quot;);</span><br><span class="line">        f.setLayout(new FlowLayout(FlowLayout.LEFT));</span><br><span class="line">        Label L&#x3D;new Label(&quot;+&quot;);</span><br><span class="line">        f.add(t1);</span><br><span class="line">        f.add(L);</span><br><span class="line">        f.add(t2);</span><br><span class="line">        Button bn&#x3D;new Button(&quot;&#x3D;&quot;);</span><br><span class="line">        f.add(bn);</span><br><span class="line">        f.add(t3);</span><br><span class="line">        bn.addActionListener(new A());</span><br><span class="line">        f.addWindowListener(new B());</span><br><span class="line">        f.setBounds(400,400,400,400);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">  &#125;</span><br><span class="line">  class A implements ActionListener</span><br><span class="line">  &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void actionPerformed(ActionEvent e)</span><br><span class="line">    &#123;</span><br><span class="line">        String str1&#x3D;t1.getText();</span><br><span class="line">        String str2&#x3D;t2.getText();</span><br><span class="line">        t3.setText(Integer.toString(Integer.parseInt(str1)+Integer.parseInt(str2)));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">    class B extends WindowAdapter&#x2F;&#x2F;该类中包含很多方法，但都是空的</span><br><span class="line"> &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void windowClosing(WindowEvent e)</span><br><span class="line">    &#123;</span><br><span class="line">        System.exit(-1);</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*</span><br><span class="line">内部类可以使用外部类所有成员方法和属性，但外部类不能访问内部类的成员方法和属性，可以在外部类new出内部类对象，并以对象名方式调用内部类成员;</span><br><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.*;</span><br><span class="line">public class test15&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        T tf&#x3D;new T();</span><br><span class="line">        tf.aa.te();</span><br><span class="line">        tf.launch();</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line">class T</span><br><span class="line">&#123;</span><br><span class="line">    A aa&#x3D;new A();</span><br><span class="line">  public void launch()</span><br><span class="line">  &#123;</span><br><span class="line">      new A().te();</span><br><span class="line">  &#125;</span><br><span class="line">  class A </span><br><span class="line"> &#123;</span><br><span class="line">    public void te()</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(&quot;haha&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
 <h3 id="演示十二-匿名类"><a href="#演示十二-匿名类" class="headerlink" title="演示十二:匿名类"></a>演示十二:匿名类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.*;</span><br><span class="line">public class test16&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f&#x3D;new Frame();</span><br><span class="line">        f.setSize(100,100);</span><br><span class="line">        f.addWindowListener(new WindowAdapter()</span><br><span class="line">        &#123;</span><br><span class="line">            public void windowClosing(WindowEvent e)</span><br><span class="line">            &#123;</span><br><span class="line">                System.exit(-1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
+ <!-- 添加版权声明 -->
+    
+
+  <div class="declare">
+    <strong>本文作者：</strong>
+    
+      OMNSP
+    
+    <br>
+    <strong>本文链接：</strong>
+    <a href="https://omnisciencepeople.github.io/2021/03/23/java之awt程序演示/" title="java之awt程序演示" target="_blank">https://omnisciencepeople.github.io/2021/03/23/java之awt程序演示/</a>
+    <br>
+    <strong>版权声明：</strong>
+    本作品采用
+    <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    进行许可。转载请注明出处！
+    
+      <br>
+      <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
+    
+  </div>
+
+      <!-- 添加版权声明 -->
 
       
         <div class="page-reward">
@@ -314,14 +337,14 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/ithub.io/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" alt="微信分享二维码">
     </div>
 </div>
 <div class="page-modal qq-share js-qq-box">
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到QQ</p>
     <div class="qq-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" alt="QQ分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/ithub.io/2021/03/23/java%E4%B9%8Bawt%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA/" alt="QQ分享二维码">
     </div>
 </div>
 

@@ -5,13 +5,13 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://username.github.io">
+  <link rel="dns-prefetch" href="https://omnisciencepeople.github.io">
   <title>java io概述 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="io概述">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java io概述">
-<meta property="og:url" content="https://username.github.io/2021/03/06/java-io%E6%A6%82%E8%BF%B0/index.html">
+<meta property="og:url" content="https://omnisciencepeople.github.io/2021/03/06/java-io%E6%A6%82%E8%BF%B0/index.html">
 <meta property="og:site_name" content="Happy">
 <meta property="og:description" content="io概述">
 <meta property="og:locale">
@@ -209,6 +209,29 @@
 <h3 id="注："><a href="#注：" class="headerlink" title="注："></a>注：</h3><p>（1）以stream结尾的流是字节流；<br>（2）以字节为单位读取数据<u>显示</u>时不能读取汉字否则会造成乱码；因为汉字的两个字节均包含有效信息，使用<br>Inputstream的read方法只能读取汉字的最后一个字节，这样解码时会出现错误；可以读取字母，虽然字母由两个字节存储，但<br>只有最后一个字节包含有效信息；<br>（3）字节流可以完成对各种信息的复制如文本、声音、视频、图片等，而字符流只能完成文本信息的复制；因为字节流无需解码<br>而字符流需要解码；<br>（4）对于输出的缓冲流，写入的数据会先存入缓冲区，使用flush方法可以清空缓冲区数据，将缓冲区数据全部压入目的地。只<br>有输出流有flush方法；<br>（5）BufferedReader中的readline方法用于读取一行字符串，遇到回车符会终止读取，并将读取到的回车符自动丢弃；<br>如果只输入回车，readline返回的是” “(空字符串)而不是null；如果想输入回车符，则调用BufferedWriter中的newline方法<br>（6）print流提供的打印方法不会抛出异常；<br>（7）DataOutputstream中的write方法是将数据的二进制数据写入文件；</p>
 
       
+ <!-- 添加版权声明 -->
+    
+
+  <div class="declare">
+    <strong>本文作者：</strong>
+    
+      OMNSP
+    
+    <br>
+    <strong>本文链接：</strong>
+    <a href="https://omnisciencepeople.github.io/2021/03/06/java-io概述/" title="java io概述" target="_blank">https://omnisciencepeople.github.io/2021/03/06/java-io概述/</a>
+    <br>
+    <strong>版权声明：</strong>
+    本作品采用
+    <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    进行许可。转载请注明出处！
+    
+      <br>
+      <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
+    
+  </div>
+
+      <!-- 添加版权声明 -->
 
       
         <div class="page-reward">
@@ -311,14 +334,14 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/03/06/java-io%E6%A6%82%E8%BF%B0/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/ithub.io/2021/03/06/java-io%E6%A6%82%E8%BF%B0/" alt="微信分享二维码">
     </div>
 </div>
 <div class="page-modal qq-share js-qq-box">
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到QQ</p>
     <div class="qq-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/03/06/java-io%E6%A6%82%E8%BF%B0/" alt="QQ分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/ithub.io/2021/03/06/java-io%E6%A6%82%E8%BF%B0/" alt="QQ分享二维码">
     </div>
 </div>
 

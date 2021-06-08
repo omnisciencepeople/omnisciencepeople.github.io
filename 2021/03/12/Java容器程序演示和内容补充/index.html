@@ -5,13 +5,13 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://username.github.io">
+  <link rel="dns-prefetch" href="https://omnisciencepeople.github.io">
   <title>Java容器程序演示和内容补充 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="容器程序演示和内容补充">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java容器程序演示和内容补充">
-<meta property="og:url" content="https://username.github.io/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/index.html">
+<meta property="og:url" content="https://omnisciencepeople.github.io/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/index.html">
 <meta property="og:site_name" content="Happy">
 <meta property="og:description" content="容器程序演示和内容补充">
 <meta property="og:locale">
@@ -214,6 +214,29 @@
 <h3 id="如何重写hashCode方法"><a href="#如何重写hashCode方法" class="headerlink" title="如何重写hashCode方法"></a>如何重写hashCode方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public int hashCode()</span><br><span class="line">&#123;</span><br><span class="line">    return 当前类中基本类型对象的hashCode方法;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Iterator遍历："><a href="#Iterator遍历：" class="headerlink" title="Iterator遍历："></a>Iterator遍历：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">class point&#123;</span><br><span class="line">   private int i;</span><br><span class="line">   private int j;</span><br><span class="line">   public point(int j,int i)</span><br><span class="line">   &#123;</span><br><span class="line">       this.i&#x3D;i;</span><br><span class="line">       this.j&#x3D;j;</span><br><span class="line">   &#125;</span><br><span class="line">   public String toString()&#123;</span><br><span class="line">       return &quot;[&quot;+i+&quot;,&quot;+j+&quot;]&quot;;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class test21&#123;</span><br><span class="line">   public static void main(String[] args)&#123;</span><br><span class="line">       ArrayList aa&#x3D;new ArrayList();</span><br><span class="line">       aa.add(&quot;one&quot;);</span><br><span class="line">       aa.add(22);</span><br><span class="line">       aa.add(new point(1,1));</span><br><span class="line">       System.out.println(&quot;容器a1的元素为：&quot;);</span><br><span class="line">       showcollection(aa);</span><br><span class="line">       HashSet hs&#x3D;new HashSet();</span><br><span class="line">       hs.add(22);</span><br><span class="line">       hs.add(new point(1,2));</span><br><span class="line">       System.out.println(&quot;容器hs的元素为：&quot;);</span><br><span class="line">       showcollection(hs);</span><br><span class="line">   &#125;</span><br><span class="line">   static void showcollection(Collection e)&#123;</span><br><span class="line">       Iterator it&#x3D;e.iterator();</span><br><span class="line">       while(it.hasNext())</span><br><span class="line">       &#123;</span><br><span class="line">           System.out.println(it.next());</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;容器中所有继承了Collection接口的类都默认实现了Iterator中的三个方法</span><br></pre></td></tr></table></figure>
       
+ <!-- 添加版权声明 -->
+    
+
+  <div class="declare">
+    <strong>本文作者：</strong>
+    
+      OMNSP
+    
+    <br>
+    <strong>本文链接：</strong>
+    <a href="https://omnisciencepeople.github.io/2021/03/12/Java容器程序演示和内容补充/" title="Java容器程序演示和内容补充" target="_blank">https://omnisciencepeople.github.io/2021/03/12/Java容器程序演示和内容补充/</a>
+    <br>
+    <strong>版权声明：</strong>
+    本作品采用
+    <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    进行许可。转载请注明出处！
+    
+      <br>
+      <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
+    
+  </div>
+
+      <!-- 添加版权声明 -->
 
       
         <div class="page-reward">
@@ -316,14 +339,14 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/ithub.io/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/" alt="微信分享二维码">
     </div>
 </div>
 <div class="page-modal qq-share js-qq-box">
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到QQ</p>
     <div class="qq-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/" alt="QQ分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://omnisciencepeople.github.io/ithub.io/2021/03/12/Java%E5%AE%B9%E5%99%A8%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA%E5%92%8C%E5%86%85%E5%AE%B9%E8%A1%A5%E5%85%85/" alt="QQ分享二维码">
     </div>
 </div>
 
