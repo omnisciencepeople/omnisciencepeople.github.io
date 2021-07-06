@@ -16,7 +16,7 @@
 <meta property="og:description" content="一个指针变量到底占几个字节">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-17T12:58:15.000Z">
-<meta property="article:modified_time" content="2021-04-16T10:54:14.534Z">
+<meta property="article:modified_time" content="2021-07-06T03:17:34.662Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -199,7 +199,7 @@
         <p>一个指针变量到底占几个字节</p>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i&#x3D;33;</span><br><span class="line">    char ch&#x3D;&#39;y&#39;;</span><br><span class="line">    double j&#x3D;66;</span><br><span class="line">    int*p&#x3D;&amp;i;</span><br><span class="line">    char*q&#x3D;&amp;ch;</span><br><span class="line">    double*r&#x3D;&amp;j;</span><br><span class="line">    printf(&quot;%d %d %d\n&quot;,sizeof(p),sizeof(q),sizeof(r));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">输出 4 4 4</span><br></pre></td></tr></table></figure>
-<p>注：<br>sizeof(数据类型)<br>功能：测量该数据类型所占的字节数；<br>一个指针变量无论它指向的变量占几个字节，该指针变量只占四个字节；<br>指针变量只指向该变量的第一个字节，由指针变量类型确定具体变量，指针变量需要用4个字节去表示；</p>
+<p>注：<br>sizeof(数据类型)<br>功能：测量该数据类型所占的字节数；<br>一个指针变量无论它指向的变量占几个字节，该指针变量只占四个字节；<br>指针变量只指向该变量的第一个字节，由指针变量类型确定具体变量，指针变量需要用4个字节去表示；<br>该结果是在VC中的运行结果。在codeblocks中结果为8 8 8 .<br>该结果和操作系统的位数有关，64位操作系统为8，32位操作系统为4.</p>
 
       
  <!-- 添加版权声明 -->
