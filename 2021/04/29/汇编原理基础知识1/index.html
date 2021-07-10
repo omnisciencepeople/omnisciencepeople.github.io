@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://omnisciencepeople.github.io/2021/04/29/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/4.png">
 <meta property="og:image" content="https://omnisciencepeople.github.io/2021/04/29/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/3.png">
 <meta property="article:published_time" content="2021-04-29T13:00:09.000Z">
-<meta property="article:modified_time" content="2021-07-10T13:19:33.740Z">
+<meta property="article:modified_time" content="2021-07-10T13:42:40.058Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://omnisciencepeople.github.io/2021/04/29/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/1.png">
@@ -207,9 +207,9 @@
 <h3 id="汇编语言"><a href="#汇编语言" class="headerlink" title="汇编语言"></a>汇编语言</h3><p>由三部分组成:<br>汇编指令（机器语言的助记符，汇编语言的主体，决定了汇编语言的特性）：有对应的机器码。<br>伪指令（编译器执行）：没有对应的机器码。<br>其他符号（编译器识别）如+、-、 * 、/等。</p>
 <p>汇编语言与机器语言的区别在于指令的表示方法上。<br>汇编指令是机器指令便于记忆的书写格式。<br>他们之间一一对应。<br>每一种CPU都有自己的汇编指令集。</p>
 <h3 id="如何将汇编语言转换为机器语言"><a href="#如何将汇编语言转换为机器语言" class="headerlink" title="如何将汇编语言转换为机器语言"></a>如何将汇编语言转换为机器语言</h3><p>程序员—汇编语言—&gt;编译器—&gt;机器语言—计算机</p>
-<p>高级语言转化成机器语言：<br><strong>高级语言源程序</strong>经过<strong>预处理</strong>和<strong>编译</strong>生成相应的<strong>汇编语言程序</strong>，由<strong>汇编程序（汇编编译器）</strong>将汇编语言程序转化为<strong>可重定位的机器语言目标代码文件</strong>，最后由<strong>链接器</strong>将可重定位的机器语言目标代码文件及库例程（系统对外提供功能接口的集合）链接起来，生成<strong>计算机可执行的目标文件</strong>。<br>可重定位指的是可以重新定位的；<br>重定位指将程序逻辑地址空间转换为物理地址空间的过程；<br>我们在写程序时用的是逻辑地址空间，但在运行时是货真价实的物理地址空间；<br>操作系统给程序分配的内存空间的起始位置是不确定的，换句话说，程序在运行时的实际物理地址<br>空间的起始位置是不确定的，所以不能在编译时将实际地址写死，否则如果编译时写死的起始位置<br>和实际运行的物理地址空间的起始位置不同，程序就会出现问题；</p>
+<p>高级语言转化成机器语言：<br><strong>高级语言源程序</strong>经过<strong>预处理</strong>和<strong>编译</strong>生成相应的<strong>汇编语言程序</strong>，由<strong>汇编程序（汇编编译器）</strong>将汇编语言程序转化为<strong>可重定位的机器语言目标代码文件</strong>，最后由<strong>链接器</strong>将可重定位的机器语言目标代码文件及库例程（系统对外提供功能接口的集合）链接起来，生成<strong>计算机可执行的目标文件</strong>。<br>可重定位指的是可以重新定位的；<br>重定位指将程序逻辑地址空间转换为物理地址空间的过程；<br>我们在写程序时用的是逻辑地址空间，但在运行时是货真价实的物理地址空间；操作系统给程序分配的内存空间的起始位置是不确定的，换句话说，程序在运行时的实际物理地址空间的起始位置是不确定的，所以不能在编译时将实际地址写死，否则如果编译时写死的起始位置和实际运行的物理地址空间的起始位置不同，程序就会出现问题；</p>
 <p>Java源程序转化为机器语言程序：<br>java源程序(.java)—&gt;编译器—&gt;与平台无关的中间字节码文件（.class）—&gt;特定的JVM—&gt;特定的字节码解释程序（机器语言程序)—&gt;特定的操作系统执行</p>
-<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>主要由运算器、控制器组成，还包括一些高速缓存存储器；<br>CPU 为计算机的核心部分，控制着计算机的运行和运算；<br>要让CPU工作，就必须提供指令（做什么）和数据（对谁做）；<br>CPU工作原理：电平脉冲（平0凸1）</p>
+<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>主要由运算器、控制器组成，还包括一些高速缓冲存储器；<br>CPU 为计算机的核心部分，控制着计算机的运行和运算；<br>要让CPU工作，就必须提供指令（做什么）和数据（对谁做）；<br>CPU工作原理：电平脉冲（平0凸1）</p>
 <h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><p>CPU中存储数据的器件。<br>一个CPU可能有多个寄存器，寄存器被称为零级缓存，与高级缓存和二级缓存相比是更接近CPU的缓存；</p>
 <h3 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h3><p>被划分为多个存储单元，每个内存单元从0开始顺序编号；<br>显存：显卡中的内存，只有单独一块显卡是无法正常工作的；将数据存入到显存中，显卡中存在一个图形处理单元GPU会将显存中的数据读取出来并映射到屏幕上；一般GPU的速度大于CPU </p>
 <h3 id="指令和数据"><a href="#指令和数据" class="headerlink" title="指令和数据"></a>指令和数据</h3><p>存放于存储器（内存）中<br>在PC中，内存作用仅次于CPU,离开内存,性能再好的CPU也无法工作，就好比方性能再好的汽车也不能没有轮胎。<br>硬盘与内存不同，CPU可直接处理内存上的数据，但无法直接处理硬盘上的数据，必须将硬盘中的数据加载到内存中，CPU才能处理；<br>在内存和硬盘中，指令和数据并无区别，都是二进制信息，但具体是什么我们说的算。</p>
