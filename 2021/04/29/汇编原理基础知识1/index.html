@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://omnisciencepeople.github.io">
-  <title>汇编原理基础知识1 | Happy</title>
+  <title>汇编原理基础知识 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="汇编原理基础1">
+  <meta name="description" content="汇编原理基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="汇编原理基础知识1">
+<meta property="og:title" content="汇编原理基础知识">
 <meta property="og:url" content="https://omnisciencepeople.github.io/2021/04/29/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="汇编原理基础1">
+<meta property="og:description" content="汇编原理基础">
 <meta property="og:locale">
 <meta property="og:image" content="https://omnisciencepeople.github.io/2021/04/29/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/1.png">
+<meta property="og:image" content="https://omnisciencepeople.github.io/2021/04/29/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/4.png">
+<meta property="og:image" content="https://omnisciencepeople.github.io/2021/04/29/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/3.png">
 <meta property="article:published_time" content="2021-04-29T13:00:09.000Z">
-<meta property="article:modified_time" content="2021-05-03T02:43:35.500Z">
+<meta property="article:modified_time" content="2021-07-10T03:09:59.159Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://omnisciencepeople.github.io/2021/04/29/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/1.png">
@@ -179,7 +181,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      汇编原理基础知识1
+      汇编原理基础知识
     </h1>
   
 
@@ -198,23 +200,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>汇编原理基础1</p>
+        <p>汇编原理基础</p>
 <a id="more"></a>
 
 <h3 id="机器语言"><a href="#机器语言" class="headerlink" title="机器语言"></a>机器语言</h3><p>机器指令的集合，计算机只能识别执行机器语言；</p>
-<h3 id="汇编语言"><a href="#汇编语言" class="headerlink" title="汇编语言"></a>汇编语言</h3><p>由三部分组成:<br>汇编指令（机器语言的助记符，汇编语言的主体，决定了汇编语言的特性）<br>伪指令（编译器执行）<br>其他符号（编译器识别）</p>
+<h3 id="汇编语言"><a href="#汇编语言" class="headerlink" title="汇编语言"></a>汇编语言</h3><p>由三部分组成:<br>汇编指令（机器语言的助记符，汇编语言的主体，决定了汇编语言的特性）：有对应的机器码。<br>伪指令（编译器执行）：没有对应的机器码。<br>其他符号（编译器识别）如+、-、 * 、/等。</p>
+<p>汇编语言与机器语言的区别在于指令的表示方法上。<br>汇编指令是机器指令便于记忆的书写格式。<br>他们之间一一对应。<br>每一种CPU都有自己的汇编指令集。</p>
 <h3 id="如何将汇编语言转换为机器语言"><a href="#如何将汇编语言转换为机器语言" class="headerlink" title="如何将汇编语言转换为机器语言"></a>如何将汇编语言转换为机器语言</h3><p>程序员—汇编语言—&gt;编译器—&gt;机器语言—计算机</p>
 <p>高级语言转化成机器语言：<br><strong>高级语言源程序</strong>经过<strong>预处理</strong>和<strong>编译</strong>生成相应的<strong>汇编语言程序</strong>，由<strong>汇编程序（汇编编译器）</strong>将汇编语言程序转化为<strong>可重定位的机器语言目标代码文件</strong>，最后由<strong>链接器</strong>将可重定位的机器语言目标代码文件及库例程（系统对外提供功能接口的集合）链接起来，生成<strong>计算机可执行的目标文件</strong>。<br>可重定位指的是可以重新定位的；<br>重定位指将程序逻辑地址空间转换为物理地址空间的过程；<br>我们在写程序时用的是逻辑地址空间，但在运行时是货真价实的物理地址空间；<br>操作系统给程序分配的内存空间的起始位置是不确定的，换句话说，程序在运行时的实际物理地址<br>空间的起始位置是不确定的，所以不能在编译时将实际地址写死，否则如果编译时写死的起始位置<br>和实际运行的物理地址空间的起始位置不同，程序就会出现问题；</p>
 <p>Java源程序转化为机器语言程序：<br>java源程序(.java)—&gt;编译器—&gt;与平台无关的中间字节码文件（.class）—&gt;特定的JVM—&gt;特定的字节码解释程序（机器语言程序)—&gt;特定的操作系统执行</p>
-<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>主要由运算器、控制器组成，还包括一些高速缓存存储器；<br>CPU 为计算机的核心部分，控制着计算机的运行，并进行运算；<br>要让CPU工作，就必须提供指令（做什么）和数据（对谁做）；</p>
-<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><p>CPU中存储数据的器件<br>一个CPU可能有多个寄存器，寄存器被称为零级缓存，与高级缓存和二级缓存相比是更接近CPU的缓存；</p>
+<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>主要由运算器、控制器组成，还包括一些高速缓存存储器；<br>CPU 为计算机的核心部分，控制着计算机的运行和运算；<br>要让CPU工作，就必须提供指令（做什么）和数据（对谁做）；<br>CPU工作原理：电平脉冲（平0凸1）</p>
+<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><p>CPU中存储数据的器件。<br>一个CPU可能有多个寄存器，寄存器被称为零级缓存，与高级缓存和二级缓存相比是更接近CPU的缓存；</p>
 <h3 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h3><p>被划分为多个存储单元，每个内存单元从0开始顺序编号；<br>显存：显卡中的内存，只有单独一块显卡是无法正常工作的；将数据存入到显存中，显卡中存在一个图形处理单元GPU会将显存中的数据读取出来并映射到屏幕上；一般GPU的速度大于CPU </p>
-<h3 id="指令和数据"><a href="#指令和数据" class="headerlink" title="指令和数据"></a>指令和数据</h3><p>存放于存储器（内存）中<br>在PC中，内存作用仅次于CPU,离开内存,性能再好的CPU也无法工作，就好比方性能再好的汽车也不能没有轮胎<br>硬盘与内存不同，CPU可直接处理内存上的数据，但无法直接处理硬盘上的数据，必须将硬盘中的数据加载到内存中，CPU才能处理；</p>
+<h3 id="指令和数据"><a href="#指令和数据" class="headerlink" title="指令和数据"></a>指令和数据</h3><p>存放于存储器（内存）中<br>在PC中，内存作用仅次于CPU,离开内存,性能再好的CPU也无法工作，就好比方性能再好的汽车也不能没有轮胎。<br>硬盘与内存不同，CPU可直接处理内存上的数据，但无法直接处理硬盘上的数据，必须将硬盘中的数据加载到内存中，CPU才能处理；<br>在内存和硬盘中，指令和数据并无区别，都是二进制信息，但具体是什么我们说的算。</p>
 <h3 id="CPU-如何对数据进行读写？"><a href="#CPU-如何对数据进行读写？" class="headerlink" title="CPU 如何对数据进行读写？"></a>CPU 如何对数据进行读写？</h3><h4 id="CPU要想对内存中的数据进行读写，必须与外部器件（通常为芯片）进行三类信息的交互"><a href="#CPU要想对内存中的数据进行读写，必须与外部器件（通常为芯片）进行三类信息的交互" class="headerlink" title="CPU要想对内存中的数据进行读写，必须与外部器件（通常为芯片）进行三类信息的交互"></a>CPU要想对内存中的数据进行读写，必须与外部器件（通常为芯片）进行三类信息的交互</h4><p>要进行读或者写的存储单元的位置（地址信息）<br>器件的选择、读或者写命令（控制信息）<br>要读出或写入的数据（数据信息）</p>
-<h4 id="CPU-如何将地址信息、数据信息、控制信息传输给存储器芯片？"><a href="#CPU-如何将地址信息、数据信息、控制信息传输给存储器芯片？" class="headerlink" title="CPU 如何将地址信息、数据信息、控制信息传输给存储器芯片？"></a>CPU 如何将地址信息、数据信息、控制信息传输给存储器芯片？</h4><p>电子计算机只能处理传输电信号，电信号要用导线传输<br>在计算机中由专门连接CPU和其他芯片的导线，这类导线称为总线；<br>总线<br>物理上为一根根导线的集合<br>逻辑上分为<br>地址总线（传输地址信息）<br>数据总线（传输数据总线）<br>控制总线（传输控制信息）</p>
+<h4 id="CPU-如何将地址信息、数据信息、控制信息传输给存储器芯片？"><a href="#CPU-如何将地址信息、数据信息、控制信息传输给存储器芯片？" class="headerlink" title="CPU 如何将地址信息、数据信息、控制信息传输给存储器芯片？"></a>CPU 如何将地址信息、数据信息、控制信息传输给存储器芯片？</h4><p>电子计算机只能处理传输电信号，电信号要用导线传输。<br>在计算机中由专门连接CPU和其他芯片的导线，这类导线称为总线；<br>总线<br>物理上为一根根导线的集合。<br>逻辑上分为<br>地址总线（传输地址信息，其宽度决定CPU的寻址能力）<br>数据总线（传输数据总线，其宽度决定CPU与其他器件进行一次传输时传输的数据量）<br>控制总线（传输控制信息，其宽度决定了CPU对系统中其他器件的控制能力）</p>
 <h4 id="以读为例"><a href="#以读为例" class="headerlink" title="以读为例"></a>以读为例</h4><img src="/2021/04/29/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/1.png" class="">
 <h3 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h3><p>内存分为物理内存和虚拟内存；<br>物理内存：真实的内存；<br>虚拟内存：利用磁盘空间虚拟出一块逻辑内存用作虚拟内存；用作虚拟内存的空间被称为交换空间；<br>虚拟内存是为了满足物理内存的不足而提出的一种策略；<br>虚拟内存可以让程序拥有超过系统实际物理内存大小的可用空间；<br>它为每一个进程提供了一个连续的、一致的、私有的地址空间，它让每个程序都拥有一个连续的、完整的内存空间，这样能更加有效的管理内存并减少出错；</p>
-
+<h2 id="什么是内存地址空间？"><a href="#什么是内存地址空间？" class="headerlink" title="什么是内存地址空间？"></a>什么是内存地址空间？</h2><p>一个CPU的地址总线宽度为10，那么可以寻址1024个存储单元，这1024个可以寻址的存储单元就构成了这个CPU的内存地址空间；</p>
+<h3 id="主板"><a href="#主板" class="headerlink" title="主板"></a>主板</h3><p>在每一台PC机中都有一个主板，主板上有核心器件和一些主要器件，这些器件通过总线相连；</p>
+<h3 id="接口卡"><a href="#接口卡" class="headerlink" title="接口卡"></a>接口卡</h3><p>计算机中所有可用程序控制其工作的设备必须受到CPU的控制；<br>CPU对外部设备不能直接进行控制如显示器、音响、打印机等。直接控制这些设备的是插在扩展插槽上的接口卡；<br>CPU通过总线向接口卡发送命令，接口卡根据CPU的命令控制外设进行工作。<br>如控制路径：<br>CPU—&gt;显卡—&gt;显示器<br>CPU—&gt;网卡—&gt;网线<br>CPU—&gt;声卡—&gt;音箱<br>CPU—&gt;USB接口—&gt;打印机</p>
+<h3 id="各类存储器芯片"><a href="#各类存储器芯片" class="headerlink" title="各类存储器芯片"></a>各类存储器芯片</h3><p>从读写属性分为两类： RAM(随机存储器)和ROM(只读存储器)<br>从功能和连接上分为：<br>随机存储器：一般由两部分组成：装在主板上的RAM和插在扩展插槽上的RAM<br>装有BIOS的ROM<br>接口卡上的RAM</p>
+<p>内存就是一个RAM（断电数据遗失）<br>ROM（只读，数据永久保存）</p>
+<h4 id="装有BIOS的ROM"><a href="#装有BIOS的ROM" class="headerlink" title="装有BIOS的ROM"></a>装有BIOS的ROM</h4><p>BIOS指的是Basic Input/Output System,基本输入输出系统；<br>BIOS是由主板和各类接口卡（如显卡、网卡）厂商提供的软件系统，通过它利用该硬件设备进行最基本的输入输出。<br>在主板和某些接口卡上插有存储相应BIOS的ROM；</p>
+<h4 id="PC内部各类存储器逻辑链接情况"><a href="#PC内部各类存储器逻辑链接情况" class="headerlink" title="PC内部各类存储器逻辑链接情况"></a>PC内部各类存储器逻辑链接情况</h4><img src="/2021/04/29/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/4.png" class="">
+<h3 id="上述那些存储器在物理上是独立的的器件，但有以下两个共同点"><a href="#上述那些存储器在物理上是独立的的器件，但有以下两个共同点" class="headerlink" title="上述那些存储器在物理上是独立的的器件，但有以下两个共同点"></a>上述那些存储器在物理上是独立的的器件，但有以下两个共同点</h3><p>都和CPU的总线相连；<br>CPU对它们进行读或写的时候都通过控制线发出内存读写命令；</p>
+<p><strong>这就是说，CPU在操控它们的时候，把他们当作内存来看待，把他们总的看做一个由若干个存储<br>单元构成的逻辑存储器，这个逻辑存储器就是我们所说的内存地址空间</strong></p>
+<img src="/2021/04/29/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/3.png" class="">
+<p>注意：<br>所有物理存储器被看作是一个由若干个存储单元组成的逻辑存储器；<br>每个物理存储器在这个逻辑存储器只占有一个地址段即一段地址空间<br>CPU在这段地址空间中读写数据，实际上就是在相应的物理存储器读写数据；<br>不同计算机系统的内存地址空间的分配情况是不同的；</p>
+<h2 id="最终运行程序的是CPU，不论我们进行何种编程，要学会从CPU角度思考问题"><a href="#最终运行程序的是CPU，不论我们进行何种编程，要学会从CPU角度思考问题" class="headerlink" title="最终运行程序的是CPU，不论我们进行何种编程，要学会从CPU角度思考问题"></a>最终运行程序的是CPU，不论我们进行何种编程，要学会从CPU角度思考问题</h2>
       
  <!-- 添加版权声明 -->
     
@@ -226,7 +240,7 @@
     
     <br>
     <strong>本文链接：</strong>
-    <a href="https://omnisciencepeople.github.io/2021/04/29/汇编原理基础知识1/" title="汇编原理基础知识1" target="_blank">https://omnisciencepeople.github.io/2021/04/29/汇编原理基础知识1/</a>
+    <a href="https://omnisciencepeople.github.io/2021/04/29/汇编原理基础知识1/" title="汇编原理基础知识" target="_blank">https://omnisciencepeople.github.io/2021/04/29/汇编原理基础知识1/</a>
     <br>
     <strong>版权声明：</strong>
     本作品采用
@@ -366,7 +380,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E8%AF%AD%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">机器语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">汇编语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%B0%86%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%9C%BA%E5%99%A8%E8%AF%AD%E8%A8%80"><span class="toc-number">3.</span> <span class="toc-text">如何将汇编语言转换为机器语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU"><span class="toc-number">4.</span> <span class="toc-text">CPU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">6.</span> <span class="toc-text">存储器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%92%8C%E6%95%B0%E6%8D%AE"><span class="toc-number">7.</span> <span class="toc-text">指令和数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU-%E5%A6%82%E4%BD%95%E5%AF%B9%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E8%AF%BB%E5%86%99%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">CPU 如何对数据进行读写？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CPU%E8%A6%81%E6%83%B3%E5%AF%B9%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E8%AF%BB%E5%86%99%EF%BC%8C%E5%BF%85%E9%A1%BB%E4%B8%8E%E5%A4%96%E9%83%A8%E5%99%A8%E4%BB%B6%EF%BC%88%E9%80%9A%E5%B8%B8%E4%B8%BA%E8%8A%AF%E7%89%87%EF%BC%89%E8%BF%9B%E8%A1%8C%E4%B8%89%E7%B1%BB%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BA%A4%E4%BA%92"><span class="toc-number">8.1.</span> <span class="toc-text">CPU要想对内存中的数据进行读写，必须与外部器件（通常为芯片）进行三类信息的交互</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CPU-%E5%A6%82%E4%BD%95%E5%B0%86%E5%9C%B0%E5%9D%80%E4%BF%A1%E6%81%AF%E3%80%81%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF%E3%80%81%E6%8E%A7%E5%88%B6%E4%BF%A1%E6%81%AF%E4%BC%A0%E8%BE%93%E7%BB%99%E5%AD%98%E5%82%A8%E5%99%A8%E8%8A%AF%E7%89%87%EF%BC%9F"><span class="toc-number">8.2.</span> <span class="toc-text">CPU 如何将地址信息、数据信息、控制信息传输给存储器芯片？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A5%E8%AF%BB%E4%B8%BA%E4%BE%8B"><span class="toc-number">8.3.</span> <span class="toc-text">以读为例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98"><span class="toc-number">9.</span> <span class="toc-text">虚拟内存</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E8%AF%AD%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">机器语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">汇编语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%B0%86%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%9C%BA%E5%99%A8%E8%AF%AD%E8%A8%80"><span class="toc-number">3.</span> <span class="toc-text">如何将汇编语言转换为机器语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU"><span class="toc-number">4.</span> <span class="toc-text">CPU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">6.</span> <span class="toc-text">存储器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%92%8C%E6%95%B0%E6%8D%AE"><span class="toc-number">7.</span> <span class="toc-text">指令和数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU-%E5%A6%82%E4%BD%95%E5%AF%B9%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E8%AF%BB%E5%86%99%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">CPU 如何对数据进行读写？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CPU%E8%A6%81%E6%83%B3%E5%AF%B9%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E8%AF%BB%E5%86%99%EF%BC%8C%E5%BF%85%E9%A1%BB%E4%B8%8E%E5%A4%96%E9%83%A8%E5%99%A8%E4%BB%B6%EF%BC%88%E9%80%9A%E5%B8%B8%E4%B8%BA%E8%8A%AF%E7%89%87%EF%BC%89%E8%BF%9B%E8%A1%8C%E4%B8%89%E7%B1%BB%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BA%A4%E4%BA%92"><span class="toc-number">8.1.</span> <span class="toc-text">CPU要想对内存中的数据进行读写，必须与外部器件（通常为芯片）进行三类信息的交互</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CPU-%E5%A6%82%E4%BD%95%E5%B0%86%E5%9C%B0%E5%9D%80%E4%BF%A1%E6%81%AF%E3%80%81%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF%E3%80%81%E6%8E%A7%E5%88%B6%E4%BF%A1%E6%81%AF%E4%BC%A0%E8%BE%93%E7%BB%99%E5%AD%98%E5%82%A8%E5%99%A8%E8%8A%AF%E7%89%87%EF%BC%9F"><span class="toc-number">8.2.</span> <span class="toc-text">CPU 如何将地址信息、数据信息、控制信息传输给存储器芯片？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A5%E8%AF%BB%E4%B8%BA%E4%BE%8B"><span class="toc-number">8.3.</span> <span class="toc-text">以读为例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98"><span class="toc-number">9.</span> <span class="toc-text">虚拟内存</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%EF%BC%9F"><span class="toc-number"></span> <span class="toc-text">什么是内存地址空间？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%9D%BF"><span class="toc-number">1.</span> <span class="toc-text">主板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E5%8D%A1"><span class="toc-number">2.</span> <span class="toc-text">接口卡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%84%E7%B1%BB%E5%AD%98%E5%82%A8%E5%99%A8%E8%8A%AF%E7%89%87"><span class="toc-number">3.</span> <span class="toc-text">各类存储器芯片</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A3%85%E6%9C%89BIOS%E7%9A%84ROM"><span class="toc-number">3.1.</span> <span class="toc-text">装有BIOS的ROM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PC%E5%86%85%E9%83%A8%E5%90%84%E7%B1%BB%E5%AD%98%E5%82%A8%E5%99%A8%E9%80%BB%E8%BE%91%E9%93%BE%E6%8E%A5%E6%83%85%E5%86%B5"><span class="toc-number">3.2.</span> <span class="toc-text">PC内部各类存储器逻辑链接情况</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E8%BF%B0%E9%82%A3%E4%BA%9B%E5%AD%98%E5%82%A8%E5%99%A8%E5%9C%A8%E7%89%A9%E7%90%86%E4%B8%8A%E6%98%AF%E7%8B%AC%E7%AB%8B%E7%9A%84%E7%9A%84%E5%99%A8%E4%BB%B6%EF%BC%8C%E4%BD%86%E6%9C%89%E4%BB%A5%E4%B8%8B%E4%B8%A4%E4%B8%AA%E5%85%B1%E5%90%8C%E7%82%B9"><span class="toc-number">4.</span> <span class="toc-text">上述那些存储器在物理上是独立的的器件，但有以下两个共同点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%98%AFCPU%EF%BC%8C%E4%B8%8D%E8%AE%BA%E6%88%91%E4%BB%AC%E8%BF%9B%E8%A1%8C%E4%BD%95%E7%A7%8D%E7%BC%96%E7%A8%8B%EF%BC%8C%E8%A6%81%E5%AD%A6%E4%BC%9A%E4%BB%8ECPU%E8%A7%92%E5%BA%A6%E6%80%9D%E8%80%83%E9%97%AE%E9%A2%98"><span class="toc-number"></span> <span class="toc-text">最终运行程序的是CPU，不论我们进行何种编程，要学会从CPU角度思考问题</span></a>
                     </div>
                 </span>
             </div>
