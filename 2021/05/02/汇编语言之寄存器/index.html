@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://omnisciencepeople.github.io/2021/05/02/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A8/1.png">
 <meta property="og:image" content="https://omnisciencepeople.github.io/2021/05/02/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A8/2.png">
 <meta property="article:published_time" content="2021-05-02T14:37:26.000Z">
-<meta property="article:modified_time" content="2021-07-10T08:44:45.065Z">
+<meta property="article:modified_time" content="2021-07-11T03:17:30.699Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://omnisciencepeople.github.io/2021/05/02/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A8/1.png">
@@ -233,7 +233,7 @@
 <h3 id="字单元"><a href="#字单元" class="headerlink" title="字单元"></a>字单元</h3><p>字单元即存放一个字型数据（16位）的内存单元，由两个地址连续的内存单元构成，高地址单元存放字型数据高位字节，低地址单元存放字型数据的低位字节；<br>我们将起始地址为N的字单元称为N地址字单元；</p>
 <h2 id="DS和-address"><a href="#DS和-address" class="headerlink" title="DS和[address]"></a>DS和[address]</h2><p>8086CPU段寄存器CS、DS、ES、SS<br>CS：代码段寄存器，存放指令的段地址；<br>DS：数据段寄存器，存放数据的段地址；</p>
 <h3 id="以读取10000H单元的内容为例"><a href="#以读取10000H单元的内容为例" class="headerlink" title="以读取10000H单元的内容为例"></a>以读取10000H单元的内容为例</h3><p>MOV BX,1000H<br>MOV DS,BX<br>MOV AL,[0]</p>
-<p>MOV指令（传送指令）功能：<br>1.将数据传入寄存器；<br>2.将一个寄存器的内容传入到另一个寄存器<br>3.将一个内存单元的内容传入到寄存器中，必须指明从哪一个内存单元送入到哪一个寄存器；<br><strong>”MOV 寄存器，内存单元地址“，功能将内存单元的内容传入带寄存器中，寄存器通常用寄存器名来指明，内存单元则须用内存单元的地址指明；</strong></p>
+<p>MOV指令（传送指令）功能：<br>1.将数据传入寄存器；<br>2.将一个寄存器的内容传入到另一个寄存器<br>3.将一个内存单元的内容传入到寄存器中，必须指明从哪一个内存单元送入到哪一个寄存器；<br><strong>”MOV 寄存器，内存单元地址“，功能将内存单元的内容传入带寄存器中，寄存器通常用寄存器名来指明，内存单元则须用内存单元的地址指明；</strong><br>8086CPU不支持直接将数据送入段寄存器，这是硬件设计的问题。<br>MOV DS,1000H是非法的。</p>
 <h3 id="、、、"><a href="#、、、" class="headerlink" title="[、、、]"></a>[、、、]</h3><p>[、、、]表示一个内存单元；<br>[0] 0表示内存单元的偏移地址<br>只有一个偏移地址是无法定位一个内存单元的；<br>8086CPU在执行MOV AL,[0]这个指令时，会自动将DS中的内容当作内存单元的段地址；</p>
 <p>MOV DS,1000H这是错误的，由于8086CPU硬件设计的问题，8086CPU并不支持将数据直接送入到段寄存器的操作；</p>
 <h3 id="将AL中的数据送入到内存单元10000H中"><a href="#将AL中的数据送入到内存单元10000H中" class="headerlink" title="将AL中的数据送入到内存单元10000H中"></a>将AL中的数据送入到内存单元10000H中</h3><p>MOV BX,1000H<br>MOV DS,BX<br>MOV [0],AL<br><strong>将寄存器的内容传入到内存单元的指令格式：“MOV 内存单元地址，寄存器”</strong></p>
