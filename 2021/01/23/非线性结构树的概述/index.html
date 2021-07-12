@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://omnisciencepeople.github.io">
-  <title>非线性结构树的概述 | Happy</title>
+  <title>非线性结构树 | Happy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="非线性结构树的概述">
+  <meta name="description" content="Read more.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="非线性结构树的概述">
+<meta property="og:title" content="非线性结构树">
 <meta property="og:url" content="https://omnisciencepeople.github.io/2021/01/23/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%A0%91%E7%9A%84%E6%A6%82%E8%BF%B0/index.html">
 <meta property="og:site_name" content="Happy">
-<meta property="og:description" content="非线性结构树的概述">
+<meta property="og:description" content="Read more.">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-23T13:56:31.000Z">
-<meta property="article:modified_time" content="2021-04-16T10:41:34.754Z">
+<meta property="article:modified_time" content="2021-07-12T01:58:01.154Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -72,7 +72,7 @@
 			</ul>
 		</nav>
                           <nav>
-                              总文章数 143
+                              总文章数 125
                                            </nav>
 		<nav class="header-smart-menu">
     		
@@ -177,7 +177,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      非线性结构树的概述
+      非线性结构树
     </h1>
   
 
@@ -196,53 +196,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> 非线性结构树的概述</p>
+        <p>Read more.</p>
 <a id="more"></a>
-<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p>专业定义：有且只有一个称为根的结点；有若干个互不相交的子树，这些子树本身也为一棵树；<br>通俗定义：树由结点和边组成（边指的是指针域）；每个结点只有一个父节点，但可以有多个子节点（根节点除外，根节点无父节点）；<br>专业术语：<br>父节点、子节点、子孙、堂兄弟（父亲为兄弟，他们的孩子为堂兄弟）、祖先；<br>深度：从根节点到最底层节点的层数；根节点为第一层；<br>叶子节点：无子结点的结点；<br>非终端节点：实际上为非叶子节点（有子节点的结点）；<br>度：子结点的个数<br>树的度：子结点个数的最大值；<br>树分类：<br>    一般树<br>         任意一个子结点的个数不受限制；<br>    二叉树<br>         任何一个节点的个数最多两个，且子结点顺序不可更改（有序树）；<br>         分类：<br>             一般二叉树<br>             满二叉树：每一层的节点数都是最大节点数的二叉树；<br>             完全二叉树：如果只是删除了满二叉树最底层最右边的连续若干个结点（此时深度未发生变化），这样形成的二叉树为完全二叉树；<br>             满二叉树是完全二叉树的一个特例；<br>    森林<br>          n个互不相交的树的集合；</p>
-<h3 id="树的存储"><a href="#树的存储" class="headerlink" title="树的存储"></a>树的存储</h3><pre><code>    二叉树的存储
-           连续存储【必须转化为完全二叉树进行存储：内存是线性一维的；存储不可只存储有效节点，否则无法还原二叉树】
-                优点：查找某个结点的父节点和子节点（也包括判断有没有子节点）速度快；
-                缺点：耗用内存空间过大；
-           链式存储：
-               耗用内存少，浪费空间少；
-    一般树的存储
-           双亲表示法
-                 求父节点方便，求子结点难；
-           孩子表示法
-                 求子结点方便，求父节点难；
-           双亲孩子表示法
-                 求子结点和父节点都方便；
-           二叉树表示法
-                 将普通树转化为二叉树来存储；
-                 具体实现方法：
-                 设法保证任意一个结点的左指针域指向他的第一个孩子，他的右指针域指向他的第一个兄弟；只要满足此条件就可将一个普通树转化为二叉树；
-                 一个普通树转化成二叉树一定无右子树；
-    森林的存储
-           将森林转化为二叉树进行存储；</code></pre>
-<h3 id="二叉树操作："><a href="#二叉树操作：" class="headerlink" title="二叉树操作："></a>二叉树操作：</h3><pre><code>   先序遍历：
-   1.先访问根节点；
-   2.再先序遍历左子树；
-   3.再先序遍历右子树；
-   中序遍历：
-   1.先中序访问左子树；
-   2.再访问根节点；
-   3.再中序访问右子树；
-   后序遍历：
-   1.先后序访问左子树；
-   2.再后序访问右子树；
-   3.再访问根节点；
-   先序中序后序将非线性结构转化为线性结构输出；
-   已知两种遍历方式求原始二叉树：
-         1.单个遍历方式无法还原二叉树；
-         2.已知先序和后序无法还原二叉树；
-         3.通过先序和中序 或 中序和后序可还原原始二叉树；
-         例如
-         已知先序：ABCDEFGH 中序：BDCEAFHG则后序为DECBHGFA;
-         已知先序：ABDGHCEFI 中序：GDHBAECIF则后序为GHDBEIFCA;
-         已知先序：ABFDCLMN 中序：BFACDLNM则后序为FBCNMLDA;
-         已知先序：MFLAQGBE 中序：FALGQMEB则后序为AGQLFEBM;
-         已知中序：BDCEAFHG 后序：DECBHGFA则先序为ABCDEFGH;</code></pre>
-<h3 id="树应用："><a href="#树应用：" class="headerlink" title="树应用："></a>树应用：</h3><p>1.树为数据库中数据组织的一种重要形式；<br>2.操作系统子父进程的关系本身为一棵树；<br>3.面向对象语言中类的继承关系本身为一棵树；<br>4.赫夫曼树（如何存树使效率达到最高）；</p>
+<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><p>专业定义：有且只有一个称为根的结点；有若干个互不相交的子树，这些子树本身也为一棵树；<br>通俗定义：树由结点和边组成（边指的是指针域）；每个结点只有一个父节点，但可以有多个子节点（根节点除外，根节点无父节点）；<br>专业术语：<br>父节点、子节点、子孙、堂兄弟（父亲为兄弟，他们的孩子为堂兄弟）、祖先；<br>深度：从根节点到最底层节点的层数；根节点为第一层；<br>叶子节点：无子结点的结点；<br>非终端节点：实际上为非叶子节点（有子节点的结点）；<br>度：子结点的个数<br>树的度：子结点个数的最大值；<br>树分类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">一般树</span><br><span class="line">     任意一个子结点的个数不受限制；</span><br><span class="line">二叉树</span><br><span class="line">     任何一个节点的个数最多两个，且子结点顺序不可更改（有序树）；</span><br><span class="line">     分类：</span><br><span class="line">         一般二叉树</span><br><span class="line">         满二叉树：每一层的节点数都是最大节点数的二叉树；</span><br><span class="line">         完全二叉树：如果只是删除了满二叉树最底层最右边的连续若干个结点（此时深度</span><br><span class="line">                    未发生变化），这样形成的二叉树为完全二叉树；</span><br><span class="line">                    满二叉树是完全二叉树的一个特例；</span><br><span class="line">森林</span><br><span class="line">      n个互不相交的树的集合；</span><br></pre></td></tr></table></figure>
+<h2 id="树的存储"><a href="#树的存储" class="headerlink" title="树的存储"></a>树的存储</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">二叉树的存储</span><br><span class="line">       连续存储【必须转化为完全二叉树进行存储：内存是线性一维的；存储不可只存储有效节点，否则无法还原二叉树】</span><br><span class="line">            优点：查找某个结点的父节点和子节点（也包括判断有没有子节点）速度快；</span><br><span class="line">            缺点：耗用内存空间过大；</span><br><span class="line">       链式存储：</span><br><span class="line">           耗用内存少，浪费空间少；</span><br><span class="line">一般树的存储</span><br><span class="line">       双亲表示法</span><br><span class="line">             求父节点方便，求子结点难；</span><br><span class="line">       孩子表示法</span><br><span class="line">             求子结点方便，求父节点难；</span><br><span class="line">       双亲孩子表示法</span><br><span class="line">             求子结点和父节点都方便；</span><br><span class="line">       二叉树表示法</span><br><span class="line">             将普通树转化为二叉树来存储；</span><br><span class="line">             具体实现方法：</span><br><span class="line">             设法保证任意一个结点的左指针域指向他的第一个孩子，他的右指针域指向他的第一个兄弟；只要满足此条件就可将一个</span><br><span class="line">             普通树转化为二叉树；</span><br><span class="line">             一个普通树转化成二叉树一定无右子树；</span><br><span class="line">森林的存储</span><br><span class="line">       将森林转化为二叉树进行存储；</span><br></pre></td></tr></table></figure>
+<h2 id="二叉树操作："><a href="#二叉树操作：" class="headerlink" title="二叉树操作："></a>二叉树操作：</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">先序遍历：</span><br><span class="line"><span class="number">1.</span>先访问根节点；</span><br><span class="line"><span class="number">2.</span>再先序遍历左子树；</span><br><span class="line"><span class="number">3.</span>再先序遍历右子树；</span><br><span class="line">中序遍历：</span><br><span class="line"><span class="number">1.</span>先中序访问左子树；</span><br><span class="line"><span class="number">2.</span>再访问根节点；</span><br><span class="line"><span class="number">3.</span>再中序访问右子树；</span><br><span class="line">后序遍历：</span><br><span class="line"><span class="number">1.</span>先后序访问左子树；</span><br><span class="line"><span class="number">2.</span>再后序访问右子树；</span><br><span class="line"><span class="number">3.</span>再访问根节点；</span><br><span class="line">先序中序后序将非线性结构转化为线性结构输出；</span><br><span class="line">已知两种遍历方式求原始二叉树：</span><br><span class="line"><span class="number">1.</span>单个遍历方式无法还原二叉树；</span><br><span class="line"><span class="number">2.</span>已知先序和后序无法还原二叉树；</span><br><span class="line"><span class="number">3.</span>通过先序和中序 或 中序和后序可还原原始二叉树；</span><br><span class="line">例如</span><br><span class="line">已知先序：ABCDEFGH 中序：BDCEAFHG则后序为DECBHGFA;</span><br><span class="line">已知先序：ABDGHCEFI 中序：GDHBAECIF则后序为GHDBEIFCA;</span><br><span class="line">已知先序：ABFDCLMN 中序：BFACDLNM则后序为FBCNMLDA;</span><br><span class="line">已知先序：MFLAQGBE 中序：FALGQMEB则后序为AGQLFEBM;</span><br><span class="line">已知中序：BDCEAFHG 后序：DECBHGFA则先序为ABCDEFGH;</span><br></pre></td></tr></table></figure>
+<h2 id="链式树的遍历"><a href="#链式树的遍历" class="headerlink" title="链式树的遍历"></a>链式树的遍历</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> ch;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span>*<span class="title">PLnode</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span>*<span class="title">PRnode</span>;</span></span><br><span class="line">&#125;TN,*PTN;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">intraverse_tree</span><span class="params">(PTN pT)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pretraverse_tree</span><span class="params">(PTN pT)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">posttraverse_tree</span><span class="params">(PTN pT)</span></span>;</span><br><span class="line"><span class="function">PTN <span class="title">creat_tree</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    PTN pt;</span><br><span class="line">    pt=creat_tree();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;先序输出为:\n&quot;</span>);</span><br><span class="line">    pretraverse_tree(pt);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;中序输出为:\n&quot;</span>);</span><br><span class="line">    intraverse_tree(pt);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;后序输出为:\n&quot;</span>);</span><br><span class="line">    posttraverse_tree(pt);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">PTN <span class="title">creat_tree</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    PTN pA=(PTN)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(TN));</span><br><span class="line">    PTN pB=(PTN)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(TN));</span><br><span class="line">    PTN pC=(PTN)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(TN));</span><br><span class="line">    PTN pD=(PTN)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(TN));</span><br><span class="line">    PTN pE=(PTN)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(TN));</span><br><span class="line">    pA-&gt;ch=<span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">    pB-&gt;ch=<span class="string">&#x27;B&#x27;</span>;</span><br><span class="line">    pC-&gt;ch=<span class="string">&#x27;C&#x27;</span>;</span><br><span class="line">    pD-&gt;ch=<span class="string">&#x27;D&#x27;</span>;</span><br><span class="line">    pE-&gt;ch=<span class="string">&#x27;E&#x27;</span>;</span><br><span class="line">    pA-&gt;PLnode=pB;</span><br><span class="line">    pA-&gt;PRnode=pC;</span><br><span class="line">    pB-&gt;PLnode=pB-&gt;PRnode=<span class="literal">NULL</span>;</span><br><span class="line">    pC-&gt;PLnode=pD;</span><br><span class="line">    pC-&gt;PRnode=<span class="literal">NULL</span>;</span><br><span class="line">    pD-&gt;PRnode=pE;</span><br><span class="line">    pD-&gt;PLnode=<span class="literal">NULL</span>;</span><br><span class="line">    pE-&gt;PLnode=pE-&gt;PRnode=<span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> pA;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pretraverse_tree</span><span class="params">(PTN pT)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pT!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>,pT-&gt;ch);</span><br><span class="line">        <span class="keyword">if</span>(pT-&gt;PLnode!=<span class="literal">NULL</span>)</span><br><span class="line">           pretraverse_tree(pT-&gt;PLnode);</span><br><span class="line">        <span class="keyword">if</span>(pT-&gt;PRnode!=<span class="literal">NULL</span>)</span><br><span class="line">           pretraverse_tree(pT-&gt;PRnode);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">intraverse_tree</span><span class="params">(PTN pT)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pT!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">       <span class="keyword">if</span>(pT-&gt;PLnode!=<span class="literal">NULL</span>)</span><br><span class="line">          intraverse_tree(pT-&gt;PLnode);    </span><br><span class="line">       <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>,pT-&gt;ch);</span><br><span class="line">       <span class="keyword">if</span>(pT-&gt;PRnode!=<span class="literal">NULL</span>)</span><br><span class="line">          intraverse_tree(pT-&gt;PRnode);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">posttraverse_tree</span><span class="params">(PTN pT)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pT!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">if</span>(pT-&gt;PLnode!=<span class="literal">NULL</span>)</span><br><span class="line">          posttraverse_tree(pT-&gt;PLnode);</span><br><span class="line">      <span class="keyword">if</span>(pT-&gt;PRnode!=<span class="literal">NULL</span>)</span><br><span class="line">          posttraverse_tree(pT-&gt;PRnode);</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>,pT-&gt;ch);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="树应用："><a href="#树应用：" class="headerlink" title="树应用："></a>树应用：</h2><p>1.树为数据库中数据组织的一种重要形式；<br>2.操作系统子父进程的关系本身为一棵树；<br>3.面向对象语言中类的继承关系本身为一棵树；<br>4.赫夫曼树（如何存树使效率达到最高）；</p>
+<h2 id="拓展：赫夫曼树"><a href="#拓展：赫夫曼树" class="headerlink" title="拓展：赫夫曼树"></a>拓展：赫夫曼树</h2><h3 id="赫夫曼树"><a href="#赫夫曼树" class="headerlink" title="赫夫曼树"></a>赫夫曼树</h3><p>赫夫曼树，又称最优树，是一类带权路径长度最短的树；<br>专业术语<br>结点的权值（weight）：树节点间与连线相关的数（如频率等）；<br>节点路径长度：从根节点到该结点的路径上的连线数；<br>树路径长度：树的每个叶子节点的路径长度之和；<br>结点带权路径长度：结点路径长度与它的权值的乘积；<br>树的带权路径长度（weighted path length）：树的每个叶子节点的带权路径长度之和；<br>WPL越小，二叉树性能越优，赫夫曼树为最优二叉树，WPL最小；</p>
+<h3 id="赫夫曼算法"><a href="#赫夫曼算法" class="headerlink" title="赫夫曼算法"></a>赫夫曼算法</h3><p>1.根据给定的n个权值{w1,w2,w3,…,Wn}构成n棵二叉树的集合F={T1,T2,…,Tn},其中每个二叉树Ti（1=&lt; i&lt;= n）只有一个带权为Wi（1=&lt; i&lt;= n）的根节点，其左右子树均为空；<br>2.在F中选取两棵根节点权值最小的树作为左右子树构成一棵新的二叉树，该二叉树的权值为其左右子树权值之和；<br>3.在F中删除选取的两棵二叉树，同时将新的二叉树放入F中；<br>4.重复2和3的操作直至F中只剩下一棵树，该树即为赫夫曼树;</p>
+<h3 id="赫夫曼编码"><a href="#赫夫曼编码" class="headerlink" title="赫夫曼编码"></a>赫夫曼编码</h3><p>赫夫曼编码：可以有效地压缩数据（通常可节省%20~%90的空间，具体压缩率取决于数据的特性）<br>要设计长短不等的编码，则必须是任一个字符的编码都不是另一个字符的编码的前缀，这种编码称做前缀编码；<br>可以利用二叉树来设计二进制的前缀编码，约定左子树表示字符’0’,右子树表示字符’1’；从根节点到叶子节点的路径上分支字<br>符组成的字符串作为该叶子节点字符的编码，该编码必为前缀编码；<br>设计总长最短的二进制前缀编码即为以n种字符出现的频率为权，设计一棵赫夫曼树的问题得到的二进制前缀编码称为赫夫曼编码<br>赫夫曼树的每个结点包括四部分：该结点的权值、双亲游标、左孩子游标、右孩子游标；</p>
 
       
  <!-- 添加版权声明 -->
@@ -255,7 +219,7 @@
     
     <br>
     <strong>本文链接：</strong>
-    <a href="https://omnisciencepeople.github.io/2021/01/23/非线性结构树的概述/" title="非线性结构树的概述" target="_blank">https://omnisciencepeople.github.io/2021/01/23/非线性结构树的概述/</a>
+    <a href="https://omnisciencepeople.github.io/2021/01/23/非线性结构树的概述/" title="非线性结构树" target="_blank">https://omnisciencepeople.github.io/2021/01/23/非线性结构树的概述/</a>
     <br>
     <strong>版权声明：</strong>
     本作品采用
@@ -281,10 +245,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构/树//" class="article-tag-list-link color2">树</a>
         		</li>
       		
 		</ul>
@@ -361,18 +321,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/01/24/%E9%93%BE%E5%BC%8F%E6%A0%91%E9%81%8D%E5%8E%86%E6%BC%94%E7%A4%BA/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/03/06/java-io%E6%A6%82%E8%BF%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          链式树遍历演示
+          JAVA之IO
         
       </div>
     </a>
   
   
-    <a href="/2021/01/23/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%BC%94%E7%A4%BA/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">循环队列演示</div>
+    <a href="/2021/01/23/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97%E6%A6%82%E8%BF%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">线性结构队列</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -399,7 +359,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-number">2.</span> <span class="toc-text">树的存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E6%93%8D%E4%BD%9C%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">二叉树操作：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E5%BA%94%E7%94%A8%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">树应用：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-number">1.1.</span> <span class="toc-text">树的存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E6%93%8D%E4%BD%9C%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">二叉树操作：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E5%BC%8F%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-number">1.3.</span> <span class="toc-text">链式树的遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E5%BA%94%E7%94%A8%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">树应用：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%EF%BC%9A%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91"><span class="toc-number">1.5.</span> <span class="toc-text">拓展：赫夫曼树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%AB%E5%A4%AB%E6%9B%BC%E6%A0%91"><span class="toc-number">1.5.1.</span> <span class="toc-text">赫夫曼树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%AB%E5%A4%AB%E6%9B%BC%E7%AE%97%E6%B3%95"><span class="toc-number">1.5.2.</span> <span class="toc-text">赫夫曼算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%AB%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81"><span class="toc-number">1.5.3.</span> <span class="toc-text">赫夫曼编码</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
