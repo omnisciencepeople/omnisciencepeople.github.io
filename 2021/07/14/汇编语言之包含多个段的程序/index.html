@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://omnisciencepeople.github.io/2021/07/14/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%8C%85%E5%90%AB%E5%A4%9A%E4%B8%AA%E6%AE%B5%E7%9A%84%E7%A8%8B%E5%BA%8F/6.png">
 <meta property="og:image" content="https://omnisciencepeople.github.io/2021/07/14/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%8C%85%E5%90%AB%E5%A4%9A%E4%B8%AA%E6%AE%B5%E7%9A%84%E7%A8%8B%E5%BA%8F/7.png">
 <meta property="article:published_time" content="2021-07-14T09:11:48.000Z">
-<meta property="article:modified_time" content="2021-07-16T01:16:32.673Z">
+<meta property="article:modified_time" content="2021-07-17T02:34:31.024Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://omnisciencepeople.github.io/2021/07/14/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%8C%85%E5%90%AB%E5%A4%9A%E4%B8%AA%E6%AE%B5%E7%9A%84%E7%A8%8B%E5%BA%8F/1.png">
@@ -225,7 +225,7 @@
 <h2 id="将数据、代码、栈放入不同的段"><a href="#将数据、代码、栈放入不同的段" class="headerlink" title="将数据、代码、栈放入不同的段"></a>将数据、代码、栈放入不同的段</h2><p>在前面的内容中，我们在程序中用到了数据和栈，我们将数据、栈和代码都放在一个段里。<br>这样做有两个问题：<br>1.把它们放在一个段中使程序显得混乱；<br>2.前面程序中处理的数据很少，用到的栈空间也小，加上没有多少代码，放在一个段中没有问题，但如果数据、栈和代码需要的空间超过64KB，就不能放在一个段中（在8086CPU模式下，一个段中容量不能大于64KB）。<br>所以我们必须考虑用多个段存放数据、代码和段。</p>
 <h3 id="如何定义多个段？"><a href="#如何定义多个段？" class="headerlink" title="如何定义多个段？"></a>如何定义多个段？</h3><p>我们用定义和代码段相同的方法来定义多个段，然后在这些段里定义需要的数据或通过定义数据来取得栈空间。<br>以利用栈将下面数据逆序存放为例，用多个段解决。<br>0123H,0456H,0789H,0abcH,0defH,0fedH,0cbaH,0987H</p>
 <img src="/2021/07/14/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%8C%85%E5%90%AB%E5%A4%9A%E4%B8%AA%E6%AE%B5%E7%9A%84%E7%A8%8B%E5%BA%8F/7.png" class="">
-<p>我们在源程序中为这三个段起了具有含义的名称，用来存放数据的段，我们将其命名为data，用来存放代码的段，我们将其成为code，用来作为栈空间的命名为stack。<br>我们在源程序中用伪指令“assume cs:code,ds:data,ss:stack”将cs,ds,ss分别和code,data,stack相连。<br>若要CPU按照我们的安排行事，就要用机器指令控制它，源程序中的汇编指令就是COU要执行的内容。<br>标号start在code段中，这样CPU就将code段中的内容当作指令来执行了。</p>
+<p>我们在源程序中为这三个段起了具有含义的名称，用来存放数据的段，我们将其命名为data，用来存放代码的段，我们将其成为code，用来作为栈空间的命名为stack。<br>我们在源程序中用伪指令“assume cs:code,ds:data,ss:stack”将cs,ds,ss分别和code,data,stack相连。<br>若要CPU按照我们的安排行事，就要用机器指令控制它，源程序中的汇编指令就是CPU要执行的内容。<br>标号start在code段中，这样CPU就将code段中的内容当作指令来执行了。</p>
 <h3 id="如果段中的数据占N个字节，则该段实际占有的空间为-N-16-1-16"><a href="#如果段中的数据占N个字节，则该段实际占有的空间为-N-16-1-16" class="headerlink" title="如果段中的数据占N个字节，则该段实际占有的空间为(N/16+1)  * 16"></a>如果段中的数据占N个字节，则该段实际占有的空间为(N/16+1)  * 16</h3>
       
  <!-- 添加版权声明 -->
