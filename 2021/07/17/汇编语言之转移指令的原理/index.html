@@ -16,7 +16,7 @@
 <meta property="og:description" content="Read more.">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-07-17T12:44:10.000Z">
-<meta property="article:modified_time" content="2021-07-17T12:45:06.154Z">
+<meta property="article:modified_time" content="2021-07-18T01:16:59.020Z">
 <meta property="article:author" content="OMNSP">
 <meta name="twitter:card" content="summary">
   
@@ -198,6 +198,7 @@
       
         <p>Read more.</p>
 <a id="more"></a>
+<h1 id="转移指令的原理"><a href="#转移指令的原理" class="headerlink" title="转移指令的原理"></a>转移指令的原理</h1><h2 id="操作符offset"><a href="#操作符offset" class="headerlink" title="操作符offset"></a>操作符offset</h2><h2 id="jmp指令"><a href="#jmp指令" class="headerlink" title="jmp指令"></a>jmp指令</h2><h2 id="依据位移进行转移的jmp指令"><a href="#依据位移进行转移的jmp指令" class="headerlink" title="依据位移进行转移的jmp指令"></a>依据位移进行转移的jmp指令</h2><h2 id="转移的目的地址在指令中的jmp指令"><a href="#转移的目的地址在指令中的jmp指令" class="headerlink" title="转移的目的地址在指令中的jmp指令"></a>转移的目的地址在指令中的jmp指令</h2><h2 id="转移地址在寄存器中的jmp指令"><a href="#转移地址在寄存器中的jmp指令" class="headerlink" title="转移地址在寄存器中的jmp指令"></a>转移地址在寄存器中的jmp指令</h2><h2 id="转移地址在内存中的jmp指令"><a href="#转移地址在内存中的jmp指令" class="headerlink" title="转移地址在内存中的jmp指令"></a>转移地址在内存中的jmp指令</h2><h2 id="jcxz指令"><a href="#jcxz指令" class="headerlink" title="jcxz指令"></a>jcxz指令</h2><h2 id="loop指令"><a href="#loop指令" class="headerlink" title="loop指令"></a>loop指令</h2><h2 id="根据位移进行转移的意义"><a href="#根据位移进行转移的意义" class="headerlink" title="根据位移进行转移的意义"></a>根据位移进行转移的意义</h2><h2 id="编译器对转移位移超界的检测"><a href="#编译器对转移位移超界的检测" class="headerlink" title="编译器对转移位移超界的检测"></a>编译器对转移位移超界的检测</h2>
       
  <!-- 添加版权声明 -->
     
@@ -340,7 +341,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录不存在
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A4%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">转移指令的原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%AC%A6offset"><span class="toc-number">1.1.</span> <span class="toc-text">操作符offset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jmp%E6%8C%87%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text">jmp指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%9D%E6%8D%AE%E4%BD%8D%E7%A7%BB%E8%BF%9B%E8%A1%8C%E8%BD%AC%E7%A7%BB%E7%9A%84jmp%E6%8C%87%E4%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text">依据位移进行转移的jmp指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E7%9A%84%E7%9B%AE%E7%9A%84%E5%9C%B0%E5%9D%80%E5%9C%A8%E6%8C%87%E4%BB%A4%E4%B8%AD%E7%9A%84jmp%E6%8C%87%E4%BB%A4"><span class="toc-number">1.4.</span> <span class="toc-text">转移的目的地址在指令中的jmp指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E5%9C%B0%E5%9D%80%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%AD%E7%9A%84jmp%E6%8C%87%E4%BB%A4"><span class="toc-number">1.5.</span> <span class="toc-text">转移地址在寄存器中的jmp指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E5%9C%B0%E5%9D%80%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84jmp%E6%8C%87%E4%BB%A4"><span class="toc-number">1.6.</span> <span class="toc-text">转移地址在内存中的jmp指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jcxz%E6%8C%87%E4%BB%A4"><span class="toc-number">1.7.</span> <span class="toc-text">jcxz指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#loop%E6%8C%87%E4%BB%A4"><span class="toc-number">1.8.</span> <span class="toc-text">loop指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E4%BD%8D%E7%A7%BB%E8%BF%9B%E8%A1%8C%E8%BD%AC%E7%A7%BB%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">1.9.</span> <span class="toc-text">根据位移进行转移的意义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E5%AF%B9%E8%BD%AC%E7%A7%BB%E4%BD%8D%E7%A7%BB%E8%B6%85%E7%95%8C%E7%9A%84%E6%A3%80%E6%B5%8B"><span class="toc-number">1.10.</span> <span class="toc-text">编译器对转移位移超界的检测</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
